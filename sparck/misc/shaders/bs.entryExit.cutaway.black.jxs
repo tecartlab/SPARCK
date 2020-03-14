@@ -1,0 +1,49 @@
+<jittershader name="bs.entryExit.cutaway">
+	<description>
+	calculates the volume shader entry colors for the cutawy object
+	</description>
+	<param name="invtransform" type="mat4" />
+	<param name="world_matrix" type="mat4" state="WORLD_MATRIX" />
+	<language name="glsl" version="1.2">
+		<bind param="invtransform" program="vp" />
+		<bind param="world_matrix" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+uniform mat4 invtransform;
+uniform mat4 world_matrix;
+
+varying vec4 position;
+mat4 transform_matrix =  invtransform * world_matrix;
+
+void main (void){
+	position = transform_matrix * gl_Vertex;
+   	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec4 position;
+
+void main (void){
+	// if the position is outside the normalized cube (-1 ... 1.)
+	// set the blackness to 0;
+	float alpha = 1. - (floor(abs(position.x)) + floor(abs(position.y)) + floor(abs(position.z)));
+	alpha = clamp(alpha, 0., 1.);
+
+	float red = (position.x + 1.0) / 2.0;
+	float gree = (position.y + 1.0) / 2.0;
+	float blue = (position.z + 1.0) / 2.0;
+
+	gl_FragColor = vec4(red * alpha, gree * alpha, blue * alpha, 1.0);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

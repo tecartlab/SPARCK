@@ -1,0 +1,39 @@
+{
+	"digest": "Create OSC Sender",
+	"description" : {
+        "desc1" : "Creates an OSC sender. This node is needed with OscMessage and QueScript."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"OscMessage" : "",
+ 		"QueScript" : ""
+  	}
+,
+	"NodeReference": {
+        "host" : {
+            "digest" : "",
+            "descript" : "IP address"
+        },
+        "port" : {
+            "digest" : "",
+            "descript" : "port number"
+        },
+        "dump" : {
+            "digest" : "",
+            "descript" : "dumps all the osc messages out the 'dump' outlet."
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

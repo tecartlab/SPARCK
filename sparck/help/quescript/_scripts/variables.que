@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<script>
+	<var name="scriptScopeVar">{if(:scriptScopeVar == NULL, 99, scriptScopeVar)}</var>
+	<var name="g2.a1.t1">0</var>
+	<var name="g2.a1.t2">0</var>
+	<que name="que_0" loop="no">
+		<var name="arrays">1</var>
+		<print>arrays[0] {arrays[0]}</print>
+	</que>
+	<que name="que_1" loop="no">
+		<var name="queScopeVar">{scriptScopeVar / 3}</var>
+		<var name="globalVar">'test'</var>
+		<timer/><!-- timer starts the internal timer -->
+		<print>scriptScopeVar is {scriptScopeVar}</print>
+		<print>queScopeVar is {queScopeVar}</print>
+		<print>globalVar outside 'while' is {globalVar}</print>
+		<while name="while" init="{::globalVar = 1}" condition="{globalVar lt 10}" next="{globalVar = (globalVar + 1)}">
+			<!-- {!globalVar = 1} forces the instantiation of a 'globalVar' variable in this local scope -->
+			<print>globalVar inside 'while' is {globalVar}</print>
+		</while>
+		<wait anim="while"/>
+		<!-- the 'globalVar' outside while stays unaffected -->
+		<print>globalVar outside 'while' is still {globalVar}</print>
+		<expr>{scriptScopeVar = 33}</expr>
+	</que>
+	<que loop="no" name="que_2">
+		<anim name="a1" loop="no" duration="2s">
+	 		<track name="t1">0 1.</track>
+	 		<track name="t2">0 1.</track>
+	 		<print>inside animation loop: {t1} {t2}</print>
+			<expr>{g2.a1.t1 = t1}</expr>
+		</anim>
+		<while condition="{a1.t2 lt 1}">
+			<print>inside while loop: {a1.t1} {a1.t2}</print>
+			<expr>{g2.a1.t1 = a1.t1}</expr>
+			<expr>{g2.a1.t2 = a1.t2}</expr>
+		</while>
+		<play name="que_3"/>
+		<wait anim="a1"/>
+		<stop name="que_3"/>
+	</que>
+	<que loop="normal" name="que_3">
+		<print>inside another que loop: {g2.a1.t1} {g2.a1.t2}</print>
+	</que>
+</script>

@@ -1,0 +1,115 @@
+{
+	"digest": "Read and draw 2D models for Warping",
+	"description" : {
+        "desc1" : "Reads and draws 2D model Wavefront OBJ",
+        "desc2" : "It is used for mesh warping and can be directly rendered into a ViewPort"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "ViewPort" : "",
+        "CornerPin" : ""
+  	}
+,
+	"NodeReference": {
+        "mesh" : {
+            "digest" : "drag n' drop",
+            "descript" : "select the 3d model file to draw. the file needs to be located inside the ~/_assets/_models/_warps folder. you can also drag'n drop files, which will be copied into the _warps folder and autmatically selected. It needs to be of type Wavefront OBJ."
+        },
+        "lattice" : {
+            "digest" : "",
+            "descript" : "SPARCKs own MeshWarp file format. It contains the mesh data plus the lattice data. You need to save this file if you want to keep your modifications."
+        },
+        "new lattice" : {
+            "digest" : "",
+            "descript" : "creates a new lattice that is applied on the loaded mesh."
+        },
+        "edit" : {
+            "digest" : "",
+            "descript" : "focuses the editor on this node"
+        },
+        "export" : {
+            "digest" : "",
+            "descript" : "exports the final mesh (Wavefront OBJ) to the ~/_export folder. The file will be named after the node."
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "transform" : {
+            "digest" : "",
+            "descript" : "Modelview and projection transform reset flag (default = 0) When the flag is set, the modelview and projection transforms are set to the identity transform before rendering the object. This is useful for sprite or billboard overlays, or automatic scaling to window size. The transform_reset flag modes are: \n<li>0 = do nothing (default) \n<li>1 = proportional orthographic glOrtho(-aspect, aspect, -1.0, 1.0, near_clip, far_clip) \n<li>2 = orthographic normalized glOrtho(-1.0, 1.0, -1.0, 1.0, near_clip, far_clip) \n<li>3 = proportional perspective with near clip = 0.001 gluPerspective(lens_angle, aspect, 0.001/*near_clip*/, far_clip) \n<li>4 = normalized perspective with near clip = 0.001 gluPerspective(lens_angle, 1.0, 0.001/*near_clip*/, far_clip);"
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "link to Shader Node"
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "object color"
+        },
+        "depth" : {
+            "digest" : "",
+            "descript" : "depth buffering"
+        },
+        "blend" : {
+            "digest" : "",
+            "descript" : "enables blendmode"
+        },
+        "blendmode" : {
+            "digest" : "",
+            "descript" : "choose blendmode: \n\t<li>alphablend \n\t<li>add \n\t<li>multiply \n\t<li>screen \n\t<li>exclusion \n\t<li>colorblend \n\t<li>coloradd \n\t<li>alphaadd"
+        },
+        "displaylist" : {
+            "digest" : "",
+            "descript" : "enables displaylist - can speed up drawing"
+        },
+        "cachemode" : {
+            "digest" : "",
+            "descript" : "choose cachemode: \n\t<li>vertexarray \n\t<li>displaylist \n\t<li>vertexbuffer \n\t<li>immediate"
+        },
+        "polymode" : {
+            "digest" : "draw..",
+            "descript" : "\n\t<li>polygons - only faces\n\t<li>lines - only lines \n\t<li>points - only vertices"
+        },
+        "axes" : {
+            "digest" : "",
+            "descript" : "show axes of the models origin"
+        },
+        "fileWatch" : {
+            "digest" : "",
+            "descript" : "watches the model file. when it changes, it will be autmatically reloaded"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "List of supported file types:",
+        "note2" : "\t<li>Wavefront Object Model File - .obj is the only file format."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

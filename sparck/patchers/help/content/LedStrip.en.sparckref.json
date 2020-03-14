@@ -1,0 +1,109 @@
+{
+	"digest": "Creates a LedStrip",
+	"description" : {
+        "desc1" : "The 3d representation of a LedStrip. This node is subsequently used by the PixelPusher node",
+        "desc2" : "The LedStrip file is created inside Blender with the LedStrip-Exporter script."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Blender" : "http://blender.org",
+        "Export-Script" : "https://github.com/tecartlab/blender.script.io_export_ledstrip"
+    }
+,
+	"seealso": {
+        "PixelPusher" : "",
+ 		"LedStripOne" : ""
+  	}
+,
+	"NodeReference": {
+        "Filename" : {
+            "digest" : "",
+            "descript" : "select the LedStrip file. This file needs to be generated with Blender and the LedStrip-exporter"
+        },
+        "segment" : {
+            "digest" : "",
+            "descript" : "the segment that comes first"
+        },
+        "direction" : {
+            "digest" : "",
+            "descript" : "which end is connected towards the controller"
+        },
+        "leds per meter" : {
+            "digest" : "",
+            "descript" : "how many leds per meter are on this segment"
+        },
+        "inset" : {
+            "digest" : "",
+            "descript" : "number of black leds at the beginning of the segment"
+        },
+        "outset" : {
+            "digest" : "",
+            "descript" : "number of black leds at the end of the segment"
+        },
+        "swap" : {
+            "digest" : "",
+            "descript" : "swap this segment with the one above/below"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "IndexRenderGroup" : {
+            "digest" : "for the indexing render pass",
+            "descript" : "set the render group for the indexing renderpass. Capture/BoxMapCapture have an equivalent in which you can choose which group to render."
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "PreviewRenderGroup" : {
+            "digest" : "for the preview render pass",
+            "descript" : "set the render group for the preview renderpass. This rendering of the LedStrip is for preview purposes only."
+        },
+        "publish transformation" : {
+            "digest" : "",
+            "descript" : "publishes this mode transformation as a transformation node"
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "shader applied to the 3d preview representation of the LedStrip. Usually a xxxProjection-shader is used to achieve the desired results."
+        },
+        "layer" : {
+            "digest" : "",
+            "descript" : "depth layer"
+        },
+        "ledsize" : {
+            "digest" : "[m]",
+            "descript" : "the preview display size of the individual leds."
+        },
+        "show unused segments" : {
+            "digest" : "",
+            "descript" : "Unused Segements inside the LEdStrip file can be displayed."
+        },
+        "set all leds per meter value" : {
+            "digest" : "(utility)",
+            "descript" : "This sets the 'leds per meter' values for all the selected segements"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

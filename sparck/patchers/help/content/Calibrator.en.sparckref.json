@@ -1,0 +1,156 @@
+{
+	"digest": "Calibrate a projector",
+	"description" : {
+        "desc1" : "calibrate a real world projector inside SPARCK's 3D space"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Beamer" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "",
+            "descript" : "select the transformation RIG. The file needs to be located inside the ~/_assets/_projectors folder. This file is usually created with the help this node and needs to be specifically saved once the calibration process is over."
+        },
+        "RIG" : {
+            "digest" : "",
+            "descript" : "opens the transformation rig"
+        },
+        "solver" : {
+            "digest" : "",
+            "descript" : "opens the solver"
+        },
+        "edit" : {
+            "digest" : "",
+            "descript" : "sets the focus of the editor window to this node"
+        }    
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group to draw. Model/Canvas/MeshWarp/Grid have an equivalent in which you can choose which group to draw to."
+        },
+        "show beamer icon" : {
+            "digest" : "",
+            "descript" : "sets the display condition for the beamer icon on the 3DViewer: \n\t<li>off - dont display\n\t<li>always \n\t<li>editonly - display only if node has editor focus."
+        },
+        "set texture dimensions" : {
+            "digest" : "",
+            "descript" : "sets the texture size of this render pass"
+        },
+        "erase color" : {
+            "digest" : "",
+            "descript" : "custom background color"
+        },
+        "colorscheme" : {
+            "digest" : "",
+            "descript" : "sets the background color condition: \n\t<li>custom - use custom color. \n\t<li>nodecolor - (RIG color) \n\t<li>nodecolor - only on edit"
+        },
+        "stereo" : {
+            "digest" : "",
+            "descript" : "creates two renderpasses for each stereo texture"
+        },
+        "for 3DViewer" : {
+            "digest" : "calibration model",
+            "descript" : "set 3DViewer display condition for calibration-model: \n\t<li>off \n\t<li>always \n\t<li>editonly - only when editor focus"
+        },
+        "for render" : {
+            "digest" : "calibration model",
+            "descript" : "set render display condition for calibration-model: \n\t<li>off \n\t<li>always \n\t<li>editonly - only when editor focus"
+        }
+    }
+, 
+	"RIGReference" : {
+        "Model" : {
+            "digest" : "",
+            "descript" : "Calibration model. Needs to be of type Wavefront OBJ."
+        },
+        "Calibration" : {
+            "digest" : "",
+            "descript" : "The calibration settings. If you want to keep your calibration targets you need to save them here."
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "identifies the Beamer/Calibrator in the 3DViewer"
+        },
+        "near clip" : {
+            "digest" : "[m]",
+            "descript" : "near frustum clipping"
+        },
+        "far clip" : {
+            "digest" : "[m]",
+            "descript" : "far frustum clipping"
+        },
+        "distance" : {
+            "digest" : "[m]",
+            "descript" : "distance of projector from the origin target"
+        },
+        "polar" : {
+            "digest" : "[deg]",
+            "descript" : "polar angle. When used by the Calibrator - node, this setting can be modified with <alt>-mouse drag inside the editor window."
+        },
+        "azimuth" : {
+            "digest" : "[deg]",
+            "descript" : "azimuth angle. When used by the Calibrator - node, this setting can be modified with <alt>-mouse drag inside the editor window."
+        },
+        "tilt" : {
+            "digest" : "[deg]",
+            "descript" : "tilt angle."
+        },
+        "width" : {
+            "digest" : "[m]",
+            "descript" : "projection width at origin target. When used by the Calibrator - node, this setting can be modified with <ctrl>-mouse drag inside the editor window."
+        },
+        "height" : {
+            "digest" : "[m]",
+            "descript" : "projection height at origin target. When used by the Calibrator - node, this setting can be modified with <ctrl>-mouse drag inside the editor window."
+        },
+        "reset" : {
+            "digest" : "",
+            "descript" : "resets autgenerated values"
+        },
+        "position" : {
+            "digest" : "Calibration / Canvas model",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "Calibration / Canvas model",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "Calibration / Canvas model",
+            "descript" : "scale"
+        },
+        "position" : {
+            "digest" : "Stage offset",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "Stage offset",
+            "descript" : "rotation x y z"
+        },
+        "position" : {
+            "digest" : "Stage",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "Stage",
+            "descript" : "rotation x y z"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "The most important shortcuts for the editor:",
+        "note2" : "<li>s - save (if a filename has been specified before)\n<li>h - toggle visibility of help\n<li>tab - toggle [model] <-> [target] - mode \n<li><shift> tab - toggle [target] <-> [warp] - mode "
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

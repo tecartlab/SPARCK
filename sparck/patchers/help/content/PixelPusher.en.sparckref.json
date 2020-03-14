@@ -1,0 +1,59 @@
+{
+	"digest": "Connects to a PixelPusher",
+	"description" : {
+        "desc1" : "The virtual representation of a PixelPusher. This node needs the LedStrip node",
+        "desc2" : "The PixelPusher is a cheap and highly versatile LED-controller."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "PixelPusher" : "http://www.heroicrobotics.com/products/pixelpusher",
+        "ConfigGuides": "https://sites.google.com/a/heroicrobot.com/pixelpusher/home"
+    }
+,
+	"seealso": {
+        "LedStrip" : "",
+ 		"LedStripOne" : ""
+  	}
+,
+	"NodeReference": {
+        "Unique ID" : {
+            "digest" : "",
+            "descript" : "Each pixel pusher anounces itself with its IP and Mac address. If the node receives such an anouncement, it will be listed here and can be selected"
+        },
+        "strip" : {
+            "digest" : "",
+            "descript" : "select a LedStrip node"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "renderpass" : {
+            "digest" : "",
+            "descript" : "not used at the moment"
+        },
+        "autothrottle" : {
+            "digest" : "",
+            "descript" : "use autothrottle"
+        },
+        "extra delay" : {
+            "digest" : "",
+            "descript" : "add an extra delay"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "The PixelPusher is a very raw product and its documentation is very sparse and evenly distributed inside its user forum. At the end of this short intro you will find some links to the most usefull tasks like flashing a new firmware (which is actually very easy once you find the proper thread) and other usefull facts.",
+        "note2" : "The PixelPusher is connected to the computer you are running SPARCK on via a LAN. It requiers a little setup file that is stored on a memory stick which is plugged in the device itself. the setup file specifies what kind of led strips you have phyiscally attached. There are many different protocols and PixelPusher can talk most of them:",
+        "note3" : "\n\t<li>\tMBI6030 \n\t<li>\tLPD8806 \n\t<li>\tSD600A \n\t<li>\tWS2801 \n\t<li>\tP9813 \n\t<li>\tLPD6803 \n\t<li>\tTLC59711 \n\t<li>\tAPA102 \n\t<li>\tWS2811",
+        "note4" : "It is possible to attach different types of Led-Strips simultanious to the device.",
+        "note5" : "The easiest way to connect is to plug it into the same Router and assign it (inside the setup file) a unique IP address. Once the device is powered up it will tell the PixelPusher node automatically if its existence and the node connects.",
+        "note6" : "You will find much more relevant infos about the setup file inside the Hardware Config Guide (link at the top of this page)",
+        "note7" : "The links down below point to a forum for which you need to have an account. Once you are logged in you can directly jump the the thread:"
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

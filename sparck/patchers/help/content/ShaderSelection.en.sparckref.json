@@ -1,0 +1,31 @@
+{
+	"digest": "A selection of usefull shaders",
+	"description" : {
+        "desc1" : "The node makes available a number of usefull shaders."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"Canvas" : "",
+ 		"Model" : ""
+  	}
+,
+	"NodeReference": {
+        "selection" : {
+            "digest" : "",
+            "descript" : "selection of shaders"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

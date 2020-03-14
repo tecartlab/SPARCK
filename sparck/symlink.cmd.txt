@@ -1,0 +1,2 @@
+mklink /J "C:\Users\maybites\Documents\Max 8\Packages\sparck" "C:\Users\maybites\Arbeiten\01_projekte\150816_SPARCK\01_dev\app_sparck\sparck"
+mklink /J "C:\Users\IAAdmin\Documents\Max 8\Packages\sparck" "D:\00_Core\SPARCK\app_sparck\sparck"

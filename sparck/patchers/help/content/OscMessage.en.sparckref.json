@@ -1,0 +1,66 @@
+{
+	"digest": "Create Osc messages",
+	"description" : {
+        "desc1" : "Creates Osc messages from a stream of messages"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Osc" : "https://en.wikipedia.org/wiki/Open_Sound_Control"
+    }
+,
+	"seealso": {
+ 		"OscSend" : ""
+  	}
+,
+	"NodeReference": {
+        "send to" : {
+            "digest" : "",
+            "descript" : "select OscSend-node"
+        },
+        "send address" : {
+            "digest" : "",
+            "descript" : "the address in front of the sent parameters"
+        },
+        "fuse" : {
+            "digest" : "",
+            "descript" : "fuses the address with the parameter. i.e. \nunfused: /osc/address parameter value \nfused: /osc/address/parameter value"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "filter" : {
+            "digest" : "",
+            "descript" : "uses filter. if filter is enabled, only messages that match a filter will be sent, all others will perish."
+        },
+        "scan for messages" : {
+            "digest" : "",
+            "descript" : "when this button is pressed, the node will scan the messages and provides the filters with a selection"
+        },
+        "matching filter" : {
+            "digest" : "",
+            "descript" : "if the message matches the string it will pass. "
+        },
+        "matching string" : {
+            "digest" : "",
+            "descript" : "matching string"
+        },
+        "use replace" : {
+            "digest" : "",
+            "descript" : "the parameter of the message will be replaced with the replace string"
+        },
+        "replace string" : {
+            "digest" : "",
+            "descript" : "replacing string"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

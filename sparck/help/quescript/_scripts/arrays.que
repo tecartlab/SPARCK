@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<script>
+	<var name="myCities">ARRAY('Zuerich','Vienna', 'Berlin', 'London', 'Madrid', 'Casablanca', 'DONE')</var>
+	<stop/>
+	<play name="startKeepLooping"/>
+	<que name="City" loop="no">
+		<var name="myQueCities">{myCities}</var>
+		<timer/>
+		<while name="while" init="{::index = 0}" condition="{index lt LENGTH(myQueCities)}">
+			<if true="(($TIMER / 1000) gt index)">
+				<if true="{myQueCities[index] != 'DONE'}">
+					<send>/cities {myQueCities[index]}</send>
+				</if>
+				<expr>index = index + 1</expr>
+			</if>
+		</while>
+		<wait anim="while"/>
+		<send>/cities {myQueCities[LENGTH(myCities) - 1]}</send>
+	</que>
+	<que name="que_0" loop="no">
+		<var name="set">6</var>
+		<expr>set = 0</expr>
+		<print>set before anim: {set}</print>
+		<debugger scope="que"/>
+		<anim name="sinemania" loop="normal" duration="2s" fadeout="0s">
+				<print>inside anim: {set}</print>
+   			<if true="{set}">
+					<print>inside if: {set}</print>
+				</if>
+  	</anim>
+		<wait countdown="2s"/>
+		<expr>set = 1</expr>
+		<print>set after anim: {set}</print>
+		<fade name="sinemania"/>
+	</que>
+	<que loop="no" name="startKeepLooping">
+		<wait countdown="5s"></wait>
+		<play name="keepLooping"/>
+	</que>
+	<que loop="normal" name="keepLooping">
+		<wait countdown="1s"></wait>
+		<print>keepLooping keeps looping</print>
+		<wait countdown="1s"></wait>
+		<print>keepLooping keeps looping</print>
+		<wait countdown="1s"></wait>
+		<print>keepLooping keeps looping</print>
+		<wait countdown="1s"></wait>
+		<print>keepLooping keeps looping</print>
+	</que>
+</script>

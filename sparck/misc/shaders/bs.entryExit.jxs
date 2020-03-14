@@ -1,0 +1,33 @@
+<jittershader name="depth">
+	<description>
+	shader to capture depth and linearize values (0-1)
+	</description>
+
+	<language name="glsl" version="1.0">
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+varying vec4 position;
+
+void main (void){
+	position = gl_Vertex;
+   	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec4 position;
+
+void main (void){
+	gl_FragColor = vec4((position.x + 1.0) / 2.0, (position.y + 1.0) / 2.0, (position.z + 1.0) / 2.0, 1.0);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

@@ -1,0 +1,37 @@
+{
+	"digest": "Renders a Volume",
+	"description" : {
+        "desc1" : "This node is highly experimental and thus subject to change."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Volume" : "",
+		"VolumeShader" : ""
+  	}
+,
+	"NodeReference": {
+        "no help" : {
+            "digest" : "",
+            "descript" : "because of the volatile situation of the volume nodes there is no documentation until theses nodes are finalized"
+        }
+  	}
+, 
+	"PropertyReference" : {
+         "no help" : {
+            "digest" : "",
+            "descript" : "because of the volatile situation of the volume nodes there is no documentation until theses nodes are finalized"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "Use at your own risk. Your project might brake with future versions of SPARCK"
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,49 @@
+{
+	"digest": "Creates a LookAt transformation",
+	"description" : {
+        "desc1" : "The LookAt transformation takes two transformation nodes: One where to look-from, and one where to look-at."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TfmNode" : "",
+ 		"TfmNodeMerge" : "",
+ 		"TfmNodeInfo" : "",
+ 		"TfmMirror" : ""
+  	}
+,
+	"NodeReference": {
+        "look from" : {
+            "digest" : "",
+            "descript" : "from where to look"
+        },
+        "look at" : {
+            "digest" : "",
+            "descript" : "where to look at"
+        },
+        "orientation" : {
+            "digest" : "",
+            "descript" : "axis orientation"
+        },
+        "direction" : {
+            "digest" : "",
+            "descript" : "look from look-from to look-at or from look-at to look-from "
+        },
+        "transformation pass" : {
+            "digest" : "",
+            "descript" : "select transfromation pass"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

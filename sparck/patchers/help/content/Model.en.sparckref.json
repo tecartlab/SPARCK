@@ -1,0 +1,183 @@
+{
+	"digest": "Read and draw various 3D model formats",
+	"description" : {
+        "desc1" : "Reads and draws a variety of 3D model formats such as OBJ and Collada (see complete list under notes)",
+        "desc2" : "Only tesselated polygons are drawn and surfaces that are not tesselated are converted before drawing",
+        "desc3" : "the model node is primarily used for drawing models, while its sister-node 'Canvas' should be used for virtual projections."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Canvas" : "",
+        "SceneCapture" : "",
+ 		"TfmNode" : "",
+ 		"Material" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "drag n' drop",
+            "descript" : "select the model file to draw. the file needs to be located inside the ~/_assets/_model folder. you can also drag'n drop file, which will be copied into the _model folder and autmatically selected."
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "normalize" : {
+            "digest" : "",
+            "descript" : "normalizes the model"
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "link to Shader Node"
+        },
+        "material" : {
+            "digest" : "",
+            "descript" : "link to Material Node"
+        },
+        "defaut texture" : {
+            "digest" : "",
+            "descript" : "default texture"
+        },
+        "texture map" : {
+            "digest" : "",
+            "descript" : "generates texture map"
+        },
+        "materialmode" : {
+            "digest" : "",
+            "descript" : "choose material mode"
+        },
+        "autmaterial" : {
+            "digest" : "",
+            "descript" : "can improove rendering result"
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "object color"
+        },
+        "diffuse" : {
+            "digest" : "",
+            "descript" : "diffuse color"
+        },
+        "specular" : {
+            "digest" : "",
+            "descript" : "specular color"
+        },
+        "ambient" : {
+            "digest" : "",
+            "descript" : "ambient color"
+        },
+        "emission" : {
+            "digest" : "",
+            "descript" : "emission color"
+        },
+        "lighting" : {
+            "digest" : "",
+            "descript" : "lets the model react to light sources"
+        },
+        "shadowcaster" : {
+            "digest" : "",
+            "descript" : "lets the model cast shadows"
+        },
+        "depth" : {
+            "digest" : "",
+            "descript" : "depth buffering"
+        },
+        "layer" : {
+            "digest" : "",
+            "descript" : "depth layer (works best with depth-buffering off)"
+        },
+        "smooth" : {
+            "digest" : "",
+            "descript" : "smooth rendering"
+        },
+        "angle" : {
+            "digest" : "",
+            "descript" : "edge angle for smooth rendering"
+        },
+        "blend" : {
+            "digest" : "",
+            "descript" : "enables blendmode"
+        },
+        "blendmode" : {
+            "digest" : "",
+            "descript" : "choose blendmode: \n\t<li>alphablend \n\t<li>add \n\t<li>multiply \n\t<li>screen \n\t<li>exclusion \n\t<li>colorblend \n\t<li>coloradd \n\t<li>alphaadd"
+        },
+        "displaylist" : {
+            "digest" : "",
+            "descript" : "enables displaylist - can speed up drawing"
+        },
+        "cachemode" : {
+            "digest" : "",
+            "descript" : "choose cachemode: \n\t<li>vertexarray \n\t<li>displaylist \n\t<li>vertexbuffer \n\t<li>immediate"
+        },
+        "cullface" : {
+            "digest" : "",
+            "descript" : "choose cullface: \n\t<li>0=Off \n\t<li>1=Back \n\t<li>2=Front"
+        },
+        "drawgroup" : {
+            "digest" : "",
+            "descript" : "if the model has drawgroups, choose."
+        },
+        "polymode" : {
+            "digest" : "draw..",
+            "descript" : "\n\t<li>polygons - only faces\n\t<li>lines - only lines \n\t<li>points - only vertices"
+        },
+        "antialias" : {
+            "digest" : "",
+            "descript" : "use antialias"
+        },
+        "axes" : {
+            "digest" : "",
+            "descript" : "show axes of the models origin"
+        },
+        "nodeaxes" : {
+            "digest" : "",
+            "descript" : "if modesl has nodes, show axes of the nodes"
+        },
+        "matrixouput" : {
+            "digest" : "",
+            "descript" : "ouputs the faces as a jitter matrix on the dumpout outlet"
+        },
+        "fileWatch" : {
+            "digest" : "",
+            "descript" : "watches the model file. when it changes, it will be autmatically reloaded"
+        },
+        "publish transformation" : {
+            "digest" : "",
+            "descript" : "publishes this mode transformation as a transformation node"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "List of supported file types:",
+        "note2" : "\t<li>Wavefront Object Model File - .obj is the prefered file format. SPARCK likes it.",
+        "note3" : "\n\t<li>3D GameStudio Model File - .mdl \n\t<li>3ds Max 3DS Model File - .3ds \n\t<li>3ds Max ASE Model File - .ase \n\t<li>3D GameStudio Terrain File - .hmp \n\t<li>AC3D Model File - .ac \n\t<li>AutoCAD DXF Model File - .dxf \n\t<li>Biovision BVH Motion Capture File - .bvh \n\t<li>BlitzBasic 3D Model File - .b3d \n\t<li>CharacterStudio Motion Capture File - .csm \n\t<li>Collada Model File - .dae \n\t<li>Direct X Model File - .x \n\t<li>Doom 3 Model File - .md5 \n\t<li>Irrlicht Mesh File - .irrmesh \n\t<li>Irrlicht Scene File - .irr \n\t<li>Izware Nendo Model File - .ndo \n\t<li>LightWave Model File - .lwo \n\t<li>Milkshape 3D Model File - .ms3d \n\t<li>Modo Model File - .lxo \n\t<li>Neutral File Format File - .nff \n\t<li>Object File Format File - .off \n\t<li>Ogre3D XML Model File - .mesh.xml \n\t<li>PovRAY Raw Model File - .raw \n\t<li>Quake I Mesh File - .mdl \n\t<li>Quake II Mesh File - .md2 \n\t<li>Quake III Mesh File - .md3 \n\t<li>Quake III BSP File - .pk3 \n\t<li>Quick3D Q3D Model File - .q3d \n\t<li>Quick3D Q3S Model File - .q3s \n\t<li>Return to Castle Wolfenstein Model File - .mdc \n\t<li>Sense8 WorldToolKit File - .nff \n\t<li>Stanford Polygon Library Model File - .ply \n\t<li>Stereolithography Model File - .stl \n\t<li>Terragen Terrain File - .ter \n\t<li>TrueSpace COB Model File - .cob \n\t<li>TrueSpace SCB Model File - .scb \n\t<li>Valve SMD Model File - .smd \n\t<li>Valve VTA Model File - .vta"
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,48 @@
+{
+	"digest": "Adjusts Brightness, Contrast and Saturation",
+	"description" : {
+        "desc1" : "Can be also used as a texture render pass, for two textures."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TextureOP" : "",
+ 		"TextureColorMap" : "",
+ 		"TextureZoom" : ""
+  	}
+,
+	"NodeReference": {
+        "brightness" : {
+            "digest" : "",
+            "descript" : "brightness amount"
+        },
+        "contrast" : {
+            "digest" : "",
+            "descript" : "contrast amount"
+        },
+        "saturation" : {
+            "digest" : "",
+            "descript" : "saturation amount"
+        },
+        "alpha" : {
+            "digest" : "",
+            "descript" : "alpha amount"
+        },
+        "average luma" : {
+            "digest" : "",
+            "descript" : "average luma amount"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

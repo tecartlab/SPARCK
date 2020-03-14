@@ -1,0 +1,68 @@
+{
+	"digest": "Zooms into or out of textures",
+	"description" : {
+        "desc1" : "Can be also used as a texture render pass, for two textures."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TextureOP" : "",
+ 		"TextureColorMap" : "",
+ 		"TextureBlur" : ""
+  	}
+,
+	"NodeReference": {
+        "srcdim" : {
+            "digest" : "x scale",
+            "descript" : "source dimension x scale"
+        },
+        "srcdim" : {
+            "digest" : "y scale",
+            "descript" : "source dimension y scale"
+        },
+        "srcdim" : {
+            "digest" : "x pos",
+            "descript" : "source dimension x position"
+        },
+        "srcdim" : {
+            "digest" : "y pos",
+            "descript" : "source dimension y position"
+        },
+        "destdim" : {
+            "digest" : "x scale",
+            "descript" : "destination dimension x scale"
+        },
+        "srcdim" : {
+            "digest" : "y scale",
+            "descript" : "destination dimension y scale"
+        },
+        "srcdim" : {
+            "digest" : "x pos",
+            "descript" : "destination dimension x position"
+        },
+        "srcdim" : {
+            "digest" : "y pos",
+            "descript" : "destination dimension y position"
+        },
+        "interpolate" : {
+            "digest" : "",
+            "descript" : "use interpolation on output texture"
+        },
+        "enable" : {
+            "digest" : "",
+            "descript" : "use this node as texture render pass"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<!-- MIT License (c) Martin Froehlich 2012-2020 -->
+<!-- definition of simple elements -->
+<xs:element name="timer" type="xs:string"/>
+
+<!-- definition of attributes -->
+<xs:attribute name="name">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+      		<xs:whiteSpace value="replace"/>
+           	<xs:pattern value="[a-zA-Z0-9_.]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+<xs:attribute name="loop">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+           	<xs:pattern value="no|normal|palindrome"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+<xs:attribute name="timing">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+           	<xs:pattern value="rel|abs"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+<xs:attribute name="local">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+           	<xs:pattern value="on|off"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+<xs:attribute name="complex">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+           	<xs:pattern value="and|or|not"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+<xs:attribute name="scope">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+           	<xs:pattern value="script|que|local"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:attribute>
+
+<xs:attribute name="fadeto" type="xs:string"/>
+<xs:attribute name="duration" type="xs:string"/>
+<xs:attribute name="fadeout" type="xs:string" default="0s"/>
+<xs:attribute name="timer" type="xs:string"/>
+<xs:attribute name="hourglass" type="xs:string"/>
+<xs:attribute name="watch" type="xs:string"/>
+<xs:attribute name="trigger" type="xs:string"/>
+<xs:attribute name="countdown" type="xs:string"/>
+<xs:attribute name="anim" type="xs:string"/>
+<xs:attribute name="faded" type="xs:string"/>
+<xs:attribute name="ramp" type="xs:string"/>
+<xs:attribute name="remote" type="xs:string"/>
+<xs:attribute name="while" type="xs:string"/>
+<xs:attribute name="until" type="xs:string"/>
+<xs:attribute name="true" type="xs:string"/>
+<xs:attribute name="false" type="xs:string"/>
+<xs:attribute name="condition" type="xs:string"/>
+<xs:attribute name="init" type="xs:string"/>
+<xs:attribute name="next" type="xs:string"/>
+<xs:attribute name="sendto" type="xs:string" default="default"/>
+
+<xs:element name="send" type="xs:string"/>
+<xs:element name="print" type="xs:string"/>
+<xs:element name="out" type="xs:string"/>
+<xs:element name="trigger" type="xs:string"/>
+<xs:element name="expr" type="xs:string"/>
+
+<xs:element name="osc">
+	<xs:complexType mixed="true">
+		<xs:attribute ref="sendto"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="var">
+	<xs:complexType mixed="true">
+		<xs:attribute ref="name" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="debugger">
+	<xs:complexType>
+		<xs:attribute ref="name"/>
+		<xs:attribute ref="scope"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="stop">
+	<xs:complexType>
+		<xs:attribute ref="name"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="shutdown">
+	<xs:complexType>
+		<xs:attribute ref="name"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="pause">
+	<xs:complexType>
+		<xs:attribute ref="name"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="resume">
+	<xs:complexType>
+		<xs:attribute ref="name"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="play">
+	<xs:complexType>
+		<xs:attribute ref="name" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="track">
+	<xs:complexType mixed="true">
+		<xs:attribute ref="name" use="required"/>
+		<xs:attribute ref="fadeto"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="keys">
+	<xs:complexType mixed="true">
+		<xs:attribute ref="timing"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="wait">
+	<xs:complexType mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="wait"/>
+		</xs:choice>
+		<xs:attribute ref="complex"/>
+		<xs:attribute ref="timer"/>
+		<xs:attribute ref="watch"/>
+		<xs:attribute ref="hourglass"/>
+		<xs:attribute ref="trigger"/>
+		<xs:attribute ref="countdown"/>
+		<xs:attribute ref="anim"/>
+		<xs:attribute ref="faded"/>
+		<xs:attribute ref="ramp"/>
+		<xs:attribute ref="while"/>
+		<xs:attribute ref="until"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="fade">
+	<xs:complexType>
+		<xs:attribute ref="name"/>
+		<xs:attribute ref="fadeout"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="else">
+	<xs:complexType mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="if"/>
+			<xs:element ref="osc"/>
+			<xs:element ref="print"/>
+			<xs:element ref="out"/>
+			<xs:element ref="send"/>
+			<xs:element ref="trigger"/>
+			<xs:element ref="expr"/>
+			<xs:element ref="debugger"/>
+      		<xs:element ref="fade"/>
+      		<xs:element ref="stop"/>
+     		<xs:element ref="shutdown"/>
+     		<xs:element ref="play"/>
+    		<xs:element ref="pause"/>
+   			<xs:element ref="resume"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="if">
+	<xs:complexType mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="if"/>
+			<xs:element ref="print"/>
+			<xs:element ref="out"/>
+			<xs:element ref="send"/>
+			<xs:element ref="osc"/>
+			<xs:element ref="trigger"/>
+			<xs:element ref="expr"/>
+			<xs:element ref="anim"/>
+			<xs:element ref="while"/>
+			<xs:element ref="debugger"/>
+  	   		<xs:element ref="fade"/>
+      		<xs:element ref="stop"/>
+  	   		<xs:element ref="shutdown"/>
+  	   		<xs:element ref="play"/>
+  	  		<xs:element ref="pause"/>
+   			<xs:element ref="resume"/>
+			<xs:element ref="else" maxOccurs="1"/>
+		</xs:choice>
+	 	<xs:attribute ref="true"/>
+	 	<xs:attribute ref="false"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="while">
+	<xs:complexType mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="if"/>
+			<xs:element ref="print"/>
+			<xs:element ref="out"/>
+			<xs:element ref="send"/>
+			<xs:element ref="osc"/>
+			<xs:element ref="trigger"/>
+			<xs:element ref="expr"/>
+			<xs:element ref="debugger"/>
+   			<xs:element ref="fade"/>
+    		<xs:element ref="stop"/>
+   			<xs:element ref="shutdown"/>
+    		<xs:element ref="play"/>
+    		<xs:element ref="pause"/>
+   			<xs:element ref="resume"/>
+		</xs:choice>
+	 	<xs:attribute ref="condition" use="required"/>
+	 	<xs:attribute ref="name"/>
+	 	<xs:attribute ref="init"/>
+	 	<xs:attribute ref="next"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="anim">
+	<xs:complexType mixed="true">
+		<xs:sequence>
+			<xs:element ref="keys" minOccurs="0" maxOccurs="1"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="track"/>
+				<xs:element ref="print"/>
+				<xs:element ref="out"/>
+				<xs:element ref="send"/>
+				<xs:element ref="osc"/>
+				<xs:element ref="trigger"/>
+				<xs:element ref="expr"/>
+				<xs:element ref="if"/>
+				<xs:element ref="debugger"/>
+			</xs:choice>
+		</xs:sequence>
+	 	<xs:attribute ref="name" use="required"/>
+	 	<xs:attribute ref="loop" use="required"/>
+	 	<xs:attribute ref="duration" use="required"/>
+	 	<xs:attribute ref="fadeout"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="que">
+	<xs:complexType mixed="true">
+		<xs:sequence>
+			<xs:element ref="var" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="print"/>
+				<xs:element ref="out"/>
+				<xs:element ref="send"/>
+				<xs:element ref="osc"/>
+				<xs:element ref="trigger"/>
+	      		<xs:element ref="wait"/>
+	      		<xs:element ref="anim"/>
+	      		<xs:element ref="timer"/>
+	      		<xs:element ref="fade"/>
+	      		<xs:element ref="stop"/>
+ 	    		<xs:element ref="shutdown"/>
+ 	    		<xs:element ref="play"/>
+ 		   		<xs:element ref="pause"/>
+ 	  			<xs:element ref="resume"/>
+ 	 			<xs:element ref="expr"/>
+ 	 			<xs:element ref="if"/>
+ 	 			<xs:element ref="while"/>
+				<xs:element ref="debugger"/>
+			</xs:choice>
+		</xs:sequence>
+	 	<xs:attribute ref="name" use="required"/>
+	 	<xs:attribute ref="loop" use="required"/>
+  	</xs:complexType>
+</xs:element>
+
+<xs:element name="script">
+	<xs:complexType mixed="true">
+		<xs:sequence>
+			<xs:element ref="var" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="stop" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="play" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="que" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>

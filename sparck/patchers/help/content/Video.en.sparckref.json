@@ -1,0 +1,115 @@
+{
+	"digest": "Load and playback videos",
+	"description" : {
+        "desc1" : "Video node can playback a variety of video codecs. Most prominently Mov, Avi, Mpg Mpg4 and Hap",
+        "desc2" : "Please notice: \nIf you want to use the HAP codec running on the GPU, place the video inside the ~/_assets/_videos/_hap folder (recommended). Otherwise the HAP codec will run on the CPU (slower)."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "HAP-Codec" : "https://github.com/Vidvox/hap/"
+    }
+,
+	"seealso": {
+ 		"Texture" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "",
+            "descript" : "load and playback file"
+        },
+        "dispose" : {
+            "digest" : "",
+            "descript" : "dispose the loaded file"
+        },
+        "start" : {
+            "digest" : "",
+            "descript" : "start the video file"
+        },
+        "stop" : {
+            "digest" : "",
+            "descript" : "stop the video file"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "loop" : {
+            "digest" : "",
+            "descript" : "loop mode"
+        },
+        "render pass" : {
+            "digest" : "",
+            "descript" : "select render pass"
+        },
+        "rate" : {
+            "digest" : "",
+            "descript" : "playback rate (default = 1)"
+        },
+        "autostart" : {
+            "digest" : "",
+            "descript" : "autostart the video after loading it"
+        },
+        "volume" : {
+            "digest" : "",
+            "descript" : "if the video has a audio track, adjust it here."
+        },
+        "unique" : {
+            "digest" : "",
+            "descript" : "unique"
+        },
+        "frame" : {
+            "digest" : "",
+            "descript" : "choose framenumber"
+        },
+        "interp" : {
+            "digest" : "",
+            "descript" : "interpolate"
+        },
+        "cache_size" : {
+            "digest" : "",
+            "descript" : "sets the cache size for the video engine. Reverse playback stutters may be the result of insufficient cache_size. Care should be taken when adjusting the cache_size, if the frame cache exceeds the available memory, the application may crash."
+        },
+        "colormode" : {
+            "digest" : "",
+            "descript" : "colormode"
+        },
+        "loopreport" : {
+            "digest" : "",
+            "descript" : "reports the end of a loop"
+        },
+        "frame endtrigger" : {
+            "digest" : "",
+            "descript" : "sets the trigger in number of frames before the video has reached its end"
+        },
+        "time endtrigger" : {
+            "digest" : "",
+            "descript" : "sets the trigger in milliseconds before the video has reached its end"
+        },
+        "framereport" : {
+            "digest" : "",
+            "descript" : "reports framenumber and drives the playbar. CAREFULL!! the playbar is resource hungry."
+        },
+        "timereport" : {
+            "digest" : "",
+            "descript" : "reports time in milliseconds."
+        },
+        "filewatch" : {
+            "digest" : "",
+            "descript" : "reloads automatically file if file changes."
+        }
+    }
+,
+	"Notes" : {
+        "note0" : "Currently only the follwing codecs are supported: \n\t<li>Hap \n\t<li>Hap alpha \n\t<li>Hap Q \n \nHap Q alpha is NOT supported for playing on the GPU.",
+        "messages" : "You can send the follwoing OSC-messages to the node \n\t/sparck/node/<nodename> start \n\t/sparck/node/<nodename> stop \n\t/sparck/node/<nodename> pause \n\t/sparck/node/<nodename> dispose",
+         "note1" : "Some info about HAP: Visit the Hap Github page (link on top) for more information. No additional installations are needed for playback, however in order to convert files to Hap codec, additional platform specific installs are necessary.",
+        "note2" : "Mac users can use the AVF Batch Converter application to convert existing files to use the Hap codec. The mac file format container must be Quicktime MOV.",
+        "note3" : "Windows users wishing to convert files should install the Renderheads DirectShow codec and use a compatible software such as Adobe Media Encoder. The Windows file format container must be AVI."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

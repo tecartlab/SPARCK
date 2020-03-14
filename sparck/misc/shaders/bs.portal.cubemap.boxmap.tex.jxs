@@ -1,0 +1,147 @@
+<jittershader name="sar.edge.jxs">
+	<description>Spatial Augmented Reality Projection System - Shader</description>
+	<param name="mode" type="int" default="0" />
+
+	<param name="world_mtx" type="mat4" state="WORLD_MATRIX" />
+	<param name="rot_matrix" type="mat4" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
+	<param name="cam0_pos" type="vec3" default="0. 0. 0." />
+
+	<param name="collada_factor" type="mat4" default="1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1." />
+
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<param name="tex2" type="int" default="2" />
+	<param name="tex3" type="int" default="3" />
+	<param name="tex4" type="int" default="4" />
+	<param name="tex5" type="int" default="5" />
+
+	<language name="glsl" version="1.2">
+		<bind param="mode" program="vp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<bind param="tex2" program="fp" />
+		<bind param="tex3" program="fp" />
+		<bind param="tex4" program="fp" />
+		<bind param="tex5" program="fp" />
+		<bind param="rot_matrix" program="fp" />
+		<bind param="world_mtx" program="vp" />
+		<bind param="collada_factor" program="vp" />
+		<bind param="cam0_pos" program="fp" />
+
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+#version 120
+
+uniform vec3 cam0_pos;
+uniform mat4 rot_matrix;
+uniform mat4 world_mtx;
+uniform mat4 collada_factor;
+
+varying vec3 normal;	// surface normal
+varying vec3 worldPos;	// vertex world position
+
+mat4 corrected_model_matrix =  world_mtx * collada_factor;
+
+void main(void)
+{
+	// perform standard transform on vertex (general approach)
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+
+	gl_TexCoord[0]  = gl_TextureMatrix[0] * gl_MultiTexCoord0;
+
+	normal = normalize(mat3(corrected_model_matrix) * gl_Normal);
+	worldPos = vec3(corrected_model_matrix * gl_Vertex);
+}
+
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+uniform int mode;
+
+// samplers
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+uniform sampler2DRect tex2;
+uniform sampler2DRect tex3;
+uniform sampler2DRect tex4;
+uniform sampler2DRect tex5;
+
+uniform vec3 cam0_pos;
+uniform mat4 rot_matrix;
+
+varying vec3 normal;	// surface normal
+varying vec3 worldPos;	// vertex world position
+
+// entry point
+void main()
+{
+	vec4 vl = vec4(worldPos -  cam0_pos, 1);
+	vec3 viewline = (rot_matrix * vl).xyz;
+	vec3 vl_abs = abs(viewline);
+
+	vec4 texcoord0;
+
+	vec4 color;
+
+	if(vl_abs.x > vl_abs.y && vl_abs.x > vl_abs.z){
+		if(viewline.x >= 0.0){ //RIGHT
+			texcoord0 = vec4(
+						(viewline.z / vl_abs.x) * 0.5 + 0.5,
+						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
+			color = texture2DRect(tex2, (gl_TextureMatrix[0] * texcoord0).st);
+		}else{ //LEFT
+			texcoord0 = vec4(
+						-(viewline.z / vl_abs.x) * 0.5 + 0.5,
+						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
+			color = texture2DRect(tex0, (gl_TextureMatrix[0] * texcoord0).st);
+		}
+	} else if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
+		if(viewline.y >= 0.0){ //TOP
+			texcoord0 = vec4(
+						(viewline.x / vl_abs.y) * 0.5 + 0.5,
+						(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
+			color = texture2DRect(tex4, (gl_TextureMatrix[0] * texcoord0).st);
+		}else{
+			texcoord0 = vec4( //BOTTOM
+						(viewline.x / vl_abs.y) * 0.5 + 0.5,
+						-(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
+			color = texture2DRect(tex5, (gl_TextureMatrix[0] * texcoord0).st);
+		}
+	} else if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
+		if(viewline.z >= 0.0){
+			texcoord0 = vec4( //BACK
+						-(viewline.x / vl_abs.z) * 0.5 + 0.5,
+						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
+			color = texture2DRect(tex3, (gl_TextureMatrix[0] * texcoord0).st);
+		}else{
+			texcoord0 = vec4( //FRONT
+						(viewline.x / vl_abs.z) * 0.5 + 0.5,
+						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
+			color = texture2DRect(tex1, (gl_TextureMatrix[0] * texcoord0).st);
+		}
+	}
+
+	gl_FragColor = color;
+
+	if(mode == 1){
+		if(vl_abs.x > vl_abs.y && vl_abs.x > vl_abs.z){
+			gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+		} else if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
+			gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+		} else if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
+			gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
+		}
+	}
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

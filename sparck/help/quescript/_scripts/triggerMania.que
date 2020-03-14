@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<script>
+	<que name="START" loop="no">
+		<!-- define first variables inside the que-domain for use inside a command domain -->
+		<var name="tg1">0</var>
+		<var name="direction">1</var>
+		<var name="whileLoopRunning">0</var>
+		<print>tg1 = {tg1}</print>
+		<while name="whileLoop" init="{::whilevar = 0}" condition="{whileLoopRunning = (whilevar ge 0)}" next="{whilevar = (whilevar + direction)}">
+			<if true="{whilevar == 0}">
+ 				<expr>{:ifCommandDomain = 'onlyInsideHere'}</expr>
+
+				<print>running inside while 'whileLoop' indefinitly until trigger 'step1' has been called</print>
+				<debugger scope="local"/>
+
+				<!--  OBSERVE:
+					Running the debugger command here will show you the global-, que-domain and the
+					nested structure of the two command-domains of 'while' and 'if'
+				-->
+			</if>
+			<send>/triggerMania whileVar {whilevar}</send>
+		</while>
+		<wait trigger="step1"/>
+ 		<expr>{direction = -1}</expr>
+
+   		<!--   OBSERVE:
+   		         setting the variable 'direction' will alter the 'step' result inside the the while loop above.
+   		         it will stop as soon as the 'whilevar' variable has reached -1
+   		-->
+
+		<anim name="sinemania" loop="normal" duration="5s" fadeout="5s">
+   			<track name="f1" fadeto="{f1 + (2 * PI)}">0 {2 * PI}</track>
+   			<track name="f2" fadeto="0">1 1</track>
+    		<if true="{TRUE}">
+ 					<expr>{::fade = if(f2 == 1, if(fade lt 1, (fade + 0.01) * 1.05, if(fade==NULL, 0, fade)), f2)}</expr>
+
+ 				<!--  HOW THIS WORKS
+
+ 				<expr>{fade... introduces a new variable called 'fade' and since no variable of the same name exists inside
+ 				the que- and (anim)-command-domain, it creates it for this (if)-node. Because it is created inside
+ 				this (if)-node, it will not collide with the other 'fade' variables of the other (if)-nodes inside this
+ 				animation.
+
+ 				fade is used to fadein and fadeout the values. for fading in it uses a simple multiplication:
+
+ 				    (fade + 0.01) * 1.05
+
+ 				for fading out it uses the track-variable 'f2'. 'f2' is always one during the normal operation of animation,
+ 				but will fade to 0.05 once fadeout of the animation starts.
+
+ 				so lets see what happens when the expression is called the first time:
+
+ 				    fade = if(f2 == 1, ...
+
+ 				this if condition is true, so the inner part will be executed:
+
+ 				    if(fade lt 1, (fade + 0.01) * 1.05, fade)
+
+ 				lets look at it in more detail:
+
+ 				    if(fade lt 1,...
+
+ 				this if-condition is false, so
+
+				   , fade)
+
+				is returned.
+
+ 				now this if-condition is true, so it returns 0.05
+
+ 				and fade is set to 0.05.
+
+ 				now during the next iteration, the inner part will execute differently:
+
+ 				    if(fade lt 1,...
+
+ 				is now true, so
+
+ 				    (fade + 0.01) * 1.05
+
+ 				will be returned.
+
+ 				and fade is set to ( 0.05 +0.01 )* 1.05.
+
+ 				and this goes on until fade has reached gt 1.
+ 				You can vary the speed this happens through the factor.
+
+ 				once fadeout starts, the if-condition
+
+ 				    fade = if(f2 == 1, ...
+
+ 				is false, and thus f2 is returned and
+
+ 				    fade is set to the value of f2.
+
+ 				and this goes on until fade has reached 0.
+
+  				beware: conditions like gt and lt have to be used, because the usual characters are reserved for
+ 				the xml-tags.
+
+ 				-->
+ 					<send>/triggerMania cmd0 {(0.5 - cos(f1) / 2) * 100 * fade}</send>
+					<send>/triggerMania cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100 * fade}</send>
+	    		<send>/triggerMania cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100 * fade}</send>
+	    		<send>/triggerMania cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100 * fade}</send>
+    			<send>/triggerMania cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100 * fade}</send>
+   			</if>
+	 			<if true="{tg1}">
+  				<expr>{::fade = if(f2 == 1, if(fade lt 1, (fade + 0.01) * 1.05, if(fade==NULL, 0, fade)), f2)}</expr>
+ 	    		<send>/triggerMania cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100 * fade}</send>
+    			<send>/triggerMania cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100 * fade}</send>
+    			<send>/triggerMania cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100 * fade}</send>
+    			<send>/triggerMania cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100 * fade}</send>
+    			<send>/triggerMania cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100 * fade}</send>
+			</if>
+  	</anim>
+		<wait trigger="tg1"/>
+		<expr>{tg1 = 1}</expr>
+		<print>tg1 is {tg1}</print>
+
+		<!--  OBSERVE: Setting here the variable 'tg1' will have an impact to the currently still
+				running above animation
+		-->
+
+		<!-- we wait for the trigger 'fadeout' -->
+ 		<wait trigger="fadeout"/>
+		<!-- and then we execute the fadeout of the anim "sinemania" -->
+		<fade name="sinemania"/>
+
+		<!-- we continue once sinemania has faded and whileLoopRunning is true  -->
+		<wait complex="and">
+			<wait faded="sinemania"/>
+			<wait while="{whileLoopRunning}"/>
+		</wait>
+
+		<!--  OBSERVE:
+					Because a while-animation has no fadeout function, it will stop as soon as the que has
+					reached its end. since we want to let while finish its iterative process, we use
+					the above query to test if the 'whileLoop' is still running.
+		-->
+
+		<debugger scope="que"/>
+
+		<!--  OBSERVE:
+					Running the debugger command here will show you only the global and que-domain
+					variables
+		-->
+	</que>
+</script>

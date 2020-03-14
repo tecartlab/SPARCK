@@ -1,0 +1,44 @@
+{
+	"digest": "Stitches multiple texture into one",
+	"description" : {
+        "desc1" : "Can be used for multiple single textures and CubeMaps."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"BoxMapProjection" : "",
+ 		"BoxMapCapture" : "",
+ 		"Texture" : ""
+  	}
+,
+	"NodeReference": {
+        "width" : {
+            "digest" : "",
+            "descript" : "width of final texture"
+        },
+        "height" : {
+            "digest" : "",
+            "descript" : "height of final texture"
+        },
+        "size" : {
+            "digest" : "",
+            "descript" : "number of textures to stitch"
+        },
+        "render pass" : {
+            "digest" : "",
+            "descript" : "render pass"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

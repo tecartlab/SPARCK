@@ -1,0 +1,37 @@
+{
+	"digest": "creates subnode outlets",
+	"description" : {
+	   "desc1" : "this node makes is possible to patch out of its containing subnode"
+	}
+,
+	"links" : {
+		"Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+		"subnode" : "",
+		"sub-inlet" : ""
+  	}
+,
+	"NodeReference": {
+	   "Numberbox" : {
+           "digest" : "",
+           "descript" : "set the number of outlets"
+       }
+  	}
+, 
+	"PropertyReference" : {
+	   "PropertyOne" : {
+           "digest" : "TEXT HERE",
+           "descript" : "and more text here."
+       }
+	}
+,
+	"Notes" : {
+	   "note1" : "only one node of this kind is allowed per subpatch"
+	}
+,
+	"Feedback" : {
+	   "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+	   "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

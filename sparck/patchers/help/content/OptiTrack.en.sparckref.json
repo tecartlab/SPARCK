@@ -1,0 +1,62 @@
+{
+	"digest": "Connect to OptiTrack",
+	"description" : {
+        "desc1" : "Optitrack is a commercialy available optical tracking system.",
+        "desc2" : "In order to use it with SPARCK, you need the NatNet2Osc App."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Optitrack" : "http://www.optitrack.com/",
+        "NatNet2Osc" : "https://github.com/tecartlab/app_NatNet2OSC/releases"
+    }
+,
+	"seealso": {
+ 		"TfmNode" : "",
+ 		"HeadRoom" : "",
+ 		"TurnTable" : ""
+  	}
+,
+	"NodeReference": {
+        "body" : {
+            "digest" : "",
+            "descript" : "Optitracks body ID"
+        },
+        "body tag" : {
+            "digest" : "",
+            "descript" : "the name of the transformation node for the use inside SPARCK"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z - the optitrack space is rotated in its x-axis, the default value for x-rotation is 90."
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale in x y z"
+        },
+        "port" : {
+            "digest" : "",
+            "descript" : "listening port, port where the NatNet2Osc-app send the osc stream."
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "Optitrack streams its data in its own format called NatNet. The NatNet2Osc application listens to the Optitrack application and transforms the data into the OpenSoundControl protocol and passes it on to SPARCK."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

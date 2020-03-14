@@ -1,0 +1,40 @@
+{
+	"digest": "Blurs Textures",
+	"description" : {
+        "desc1" : "Blur Textures"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TextureOP" : "",
+ 		"TextureColorMap" : "",
+ 		"TextureZoom" : ""
+  	}
+,
+	"NodeReference": {
+        "blur" : {
+            "digest" : "",
+            "descript" : "blur amount"
+        },
+        "iterations" : {
+            "digest" : "",
+            "descript" : "how many times the blur operation is applied (higher number gives better results but is more resource intensive)"
+        },
+        "base" : {
+            "digest" : "",
+            "descript" : "base (each iteration increases the blur, the base controlls how much more the amount is increased for each iteration)"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

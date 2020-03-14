@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<script>
+	<var name="global1">NULL</var>
+	<que name="que_1" loop="no">
+		<timer/><!-- timer starts the internal timer -->
+		<if true="{global1 == NULL}">
+			<print>global1 is {global1}</print>
+			<expr>{global1 = if(global1==NULL, 5, global1)}</expr>
+			<print>global1 is {global1}</print>
+		</if>
+		<osc>/test/address message {global1}</osc>
+		<if true="{global1 lt 50}">
+			<print>/queOne global1 is {global1}</print>
+			<else>
+				<print>/queOne global1 is {global1}</print>
+			</else>
+		</if>
+		<while name="while" condition="{whilevar lt 10}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<print>inside while below 1: {whilevar}</print>
+				<debugger scope="local"/>
+				<else>
+					<print>/test/address inside while above 1 {whilevar}</print>
+				</else>
+			</if>
+		</while>
+		<wait anim="while"/>
+  		<anim name="color" loop="palindrome" duration="1s" fadeout="2s">
+   			<track name="f1">{f1} {PI * 2}</track>
+    		<track name="f2">1.0 0.5</track>
+    		<track name="f3" fadeto="{global1}">0.0 0.5</track>
+    		<send>/queOne color {sin(color.f1)} {f1} {global1} {f3} {$SEC} {$TIMER}</send>
+			<if true="{global1 > 50}">
+				<print>/condition global1 is {global1 * $TIMER}</print>
+				<if true="{$TIMER > 5000}">
+					<print>TIMER {$TIMER}</print>
+				</if>
+			</if>
+  		</anim>
+		<wait timer="{global1 * 1000}"/>
+		<fade name="color" fadeout="4s"/>
+		<send>/queOne message timer {'passed[' + global1 + ']'} with {color.f1}</send>
+		<wait until="{global1 > 95}"/>
+		<expr>{global1 = (global1 - 10)}</expr>
+		<play name="que_2"/>
+		<send>/queOne message var command passed = {global1}</send>
+    	<anim name="slider" loop="no" duration="10s" fadeout="5s">
+    		<keys timing="abs">4s</keys>
+   			<track name="f1" fadeto="0.">0 100 128</track>
+    		<send>/queOne slider {f1}</send>
+  		</anim>
+    	<wait anim="slider"/>
+		<send>/queOne message slider ramp finished</send>
+		<send>/queOne enable 0</send>
+	</que>
+	<que name="que_2" loop="no">
+		<timer/><!-- timer starts the internal timer -->
+		<send>/queTwo enable 1</send>
+  		<anim name="color" loop="palindrome" duration="1s" fadeout="2s">
+   			<track name="f1">{f1} {PI * 2}</track>
+    		<track name="f2">1.0 0.5</track>
+    		<track name="f3">0.0 0.5</track>
+    		<send>/queTwo color {f1} {f2} {f3}</send>
+  		</anim>
+		<wait timer="3s"/>
+		<fade name="color" fadeout="4s"/>
+		<send>/queTwo message timer passed</send>
+    	<anim name="slider" loop="no" duration="10s" fadeout="5s">
+    		<keys timing="abs">4s</keys>
+   			<track name="f1" fadeto="0.">0 100 128</track>
+    		<send>/queTwo slider {f1}</send>
+  		</anim>
+    	<wait anim="slider"/>
+		<send>/queTwo message slider ramp finished</send>
+		<send>/queTwo enable 0</send>
+	</que>
+	<que name="que_3" loop="no">
+		<send>/queThree enable 1</send>
+		<shutdown name="que_1"/>
+		<trigger>triggername other</trigger>
+  		<wait countdown="5s"/>
+		<send>/queThree enable 0</send>
+	</que>
+	<que name="waitQue" loop="no">
+  		<print>waitQue: Started</print>
+		<timer/>
+		<wait timer="3s"/>
+		<print>waitQue: timer passed</print>
+		<wait trigger="triggername other"/>
+		<print>waitQue: trigger passed</print>
+  		<wait countdown="1s"/>
+		<print>waitQue: countdown passed</print>
+		<wait hourglass="1m"/>
+		<print>waitQue: hourglass passed</print>
+    	<wait watch="1h:02m"/>
+		<print>waitQue: watch passed</print>
+  		<wait complex="and">
+			<wait trigger="triggername"/>
+	 		<wait complex="or">>
+	  			<wait hourglass="1m"/>
+		  		<wait timer="0m:10s"/>
+  			</wait>
+	 	</wait>
+  		<print>waitQue: passed wait-condition</print>
+  		<print>waitQue: Stopped</print>
+	</que>
+</script>

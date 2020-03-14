@@ -1,0 +1,42 @@
+{
+	"digest": "Load textures",
+	"description" : {
+        "desc1" : "Texture node can load a variety of image files: TIFF, GIF, JPEG, PNG"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"Video" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "(drag'n drop)",
+            "descript" : "load image file"
+        },
+        "default" : {
+            "digest" : "",
+            "descript" : "default texture if no texture is loaded"
+        },
+        "render pass" : {
+            "digest" : "",
+            "descript" : "render pass"
+        },
+        "flip" : {
+            "digest" : "",
+            "descript" : "flips texture"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

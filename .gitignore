@@ -1,0 +1,8 @@
+.bundle
+.DS_Store
+c_externals/sysbuild/
+*.opensdf
+*.sdf
+*.db
+exporting/WIN/
+build/WIN/build

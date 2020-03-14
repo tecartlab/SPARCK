@@ -1,0 +1,79 @@
+{
+	"digest": "Camera 3D space",
+	"description" : {
+        "desc1" : "Stereo Camera in 3D space.",
+        "desc2" : "SceneCamera represents the virtual camera chassis, while SceneCapture represents the virtual film: For capturing the textures SceneCapture is needed."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "SceneCapture" : "",
+ 		"BoxMapCamera" : "",
+ 		"TfmNode" : ""
+  	}
+,
+	"NodeReference": {
+        "3DViewer" : {
+            "digest" : "",
+            "descript" : "show Camera icon on 3DViewer"
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "stereo" : {
+            "digest" : "",
+            "descript" : "set stereo mode."
+        },
+        "ratio" : {
+            "digest" : "",
+            "descript" : "render image ratio."
+        },
+        "fov" : {
+            "digest" : "",
+            "descript" : "field of view [deg]"
+        },
+        "near" : {
+            "digest" : "",
+            "descript" : "near frustum clip"
+        },
+        "far" : {
+            "digest" : "",
+            "descript" : "far frustum clip"
+        },
+        "spread" : {
+            "digest" : "(only stereo mode)",
+            "descript" : "sets spread between two eyes"
+        },
+        "rotation" : {
+            "digest" : "(only stereo mode)",
+            "descript" : "sets rotation between two eyes"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

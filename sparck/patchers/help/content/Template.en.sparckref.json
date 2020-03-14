@@ -1,0 +1,43 @@
+{
+	"digest": "Help Template",
+	"description" : {
+        "desc1" : "line 1 of description",
+        "desc2" : "line 2 of description",
+        "desc3" : "line 3 of description"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Viewport" : "",
+		"Monitor" : ""
+  	}
+,
+	"NodeReference": {
+        "AttributeOne" : {
+            "digest" : "TEXT HERE",
+            "descript" : "and more text here"
+        },
+        "AttributeTwo" : {
+            "digest" : "TEXT HERE",
+            "descript" : "and more text here"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "PropertyOne" : {
+            "digest" : "TEXT HERE",
+            "descript" : "and more text here."
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "text here"
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"digest": "Screen Space Ambient Oclusion",
+	"description" : {
+        "desc1" : "Adds ambient oclusion to texture."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"SceneCamera" : "",
+ 		"SceneCapture" : "",
+ 		"Texture" : ""
+  	}
+,
+	"NodeReference": {
+        "camera" : {
+            "digest" : "",
+            "descript" : "choose camera. Usually the same from where this texture is captured from"
+        },
+        "power" : {
+            "digest" : "",
+            "descript" : "power"
+        },
+        "radius" : {
+            "digest" : "",
+            "descript" : "radius"
+        },
+        "kernel size" : {
+            "digest" : "",
+            "descript" : "kernel size"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

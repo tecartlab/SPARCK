@@ -1,0 +1,77 @@
+{
+	"digest": "RayMarching GLSL Shader",
+	"description" : {
+        "desc1" : "Loads and applies Raymarching GLSL shaders in 3D space. Shaders of the likes you can find on ShaderToy.org"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "ShaderToy" : "https://www.shadertoy.com/"
+    }
+,
+	"seealso": {
+ 		"BoxMapCamera" : "",
+ 		"BoxMapCapture" : "",
+ 		"Texture" : ""
+  	}
+,
+	"NodeReference": {
+        "shader" : {
+            "digest" : "(drag'n drop)",
+            "descript" : "shader file. Needs to be in the MaxJitter format for GLSL shaders"
+        },
+        "camera" : {
+            "digest" : "",
+            "descript" : "BoxMapCamera node. From here are the rays cast outward."
+        },
+        "edit" : {
+            "digest" : "",
+            "descript" : "open shader with chosen editor"
+        }
+  	}
+,
+	"PropertyReference": {
+        "reference" : {
+            "digest" : "",
+            "descript" : "..."
+        },
+        "position" : {
+            "digest" : "",
+            "descript" : "local translations"
+        },
+        "rotation" : {
+            "digest" : "",
+            "descript" : "local rotation"
+        },
+        "scale" : {
+            "digest" : "",
+            "descript" : "local scale"
+        },
+        "use time" : {
+            "digest" : "",
+            "descript" : "use time"
+        },
+        "speed" : {
+            "digest" : "",
+            "descript" : "set speed"
+        },
+        "editor" : {
+            "digest" : "",
+            "descript" : "custom editor"
+        },
+        "filewatch" : {
+            "digest" : "",
+            "descript" : "use filewatch"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "Unfortunately it is not a simple copy-paste process to transform a ShaderToy-shader into a RayMarching-node shader. While 95% of the code can usually be reused, the shader needs to be embedded inside a Max-Jitter style GLSL shader file, plus some adjustments need to be made in order make a shader to work in a 3d context.",
+        "note2" : "Check out the SparckExamples for a selection of about 25 of my favourite shadertoy shaders which I already translated for this node."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

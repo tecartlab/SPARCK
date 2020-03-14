@@ -1,0 +1,63 @@
+{
+	"digest": "BoxMapCamera",
+	"description" : {
+        "desc1" : "BoxMapCamera creates rig for a BoxMapCapture Node",
+        "desc2" : "BoxMapCamera represents the virtual camera chassis, while the BoxMapCapture represents the virtual film: For capturing the textures the BoxMapCapture is needed.",
+        "desc3" : "A BoxMap is similar to an OpenGL-CubeMap, but instead consists of a list of 6 unique textures, each representing the view of one box side. The term BoxMap is used in order to make sure it is not confused with a CubeMap."	
+    }
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "BoxMapCapture" : "",
+ 		"TfmNode" : ""
+  	}
+,
+	"NodeReference": {
+        "3DViewer" : {
+            "digest" : "",
+            "descript" : "show Camera icon on 3DViewer"
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "near" : {
+            "digest" : "",
+            "descript" : "near frustum clip"
+        },
+        "far" : {
+            "digest" : "",
+            "descript" : "far frustum clip"
+        },
+        "direction" : {
+            "digest" : "",
+            "descript" : "sets which of the 6 Box-sides need to rendered"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

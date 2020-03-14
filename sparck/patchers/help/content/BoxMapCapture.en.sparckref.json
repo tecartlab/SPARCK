@@ -1,0 +1,56 @@
+{
+	"digest": "Captures the view from a BoxMapCamera",
+	"description" : {
+        "desc1" : "The BoxMapCapture Node is needed to render the view from a BoxMapCamera.",
+        "desc2" : "While BoxMapCamera represents the virtual camera chassis, the BoxMapCapture represents the virtual film: For capturing the textures the BoxMapCapture is needed.",
+        "desc3" : "A BoxMap is similar to an OpenGL-CubeMap, but instead consists of a list of 6 unique textures, each representing the view of one box side. The term BoxMap is used in order to make sure it is not confused with a CubeMap."
+    }
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "BoxMapCamera" : "",
+        "BoxMapProjection" : ""
+  	}
+,
+	"NodeReference": {
+        "Camera" : {
+            "digest" : "",
+            "descript" : "select the node from where to render."
+        }, 
+        "target" : {
+            "digest" : "",
+            "descript" : "render context. \n<li>'stage' is for normal openGL \n<li>'shady' is for rendering with shadows"
+        },
+       "RenderGroup" : {
+            "digest" : "",
+            "descript" : "render group to draw. Model/Canvas/MeshWarp/Grid have an equivalent in which you can choose which group to draw to."
+        },
+        "pass" : {
+            "digest" : "",
+            "descript" : "Renderpass. This defines when in a frame-pass (see reference) this Capure node does the rendering. A manual renderpass will only be executed right after loading a project or when pressing the 'manual renderpass button' in the main menu."
+        },
+        "dim" : {
+            "digest" : "",
+            "descript" : "sets the texture size of this render pass. Try using sizes like 256x256, 512x512, 1024x1024, 2048x2048."
+        },
+        "bg color" : {
+            "digest" : "",
+            "descript" : "the background color"
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "Applies this shader to all objects rendered in this renderpass."
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

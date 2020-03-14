@@ -1,0 +1,160 @@
+{
+	"digest": "Draw various basic 3D shapes",
+	"description" : {
+        "desc1" : "the shape node is primarily used for sketching with basic shapes, while its sister-nodes 'Model' and 'Canvas' allow to load custom models."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Canvas" : "",
+        "Model" : "",
+        "SceneCapture" : "",
+ 		"TfmNode" : "",
+ 		"Material" : ""
+  	}
+,
+	"NodeReference": {
+        "shape" : {
+            "digest" : "",
+            "descript" : "select the shape to draw \n\t<li> sphere \n\t<li> torus \n\t<li> cylinder \n\t<li> opencylinder \n\t<li> cube \n\t<li> opencube \n\t<li> plane \n\t<li> circle \n\t<li> cone \n\t<li> capsule"
+        },
+        "dimX" : {
+            "digest" : "",
+            "descript" : "shape grid dimension X"
+        },
+        "dimY" : {
+            "digest" : "",
+            "descript" : "shape grid dimension Y"
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "link to Shader Node"
+        },
+        "material" : {
+            "digest" : "",
+            "descript" : "link to Material Node"
+        },
+        "defaut texture" : {
+            "digest" : "",
+            "descript" : "default texture"
+        },
+        "texture map" : {
+            "digest" : "",
+            "descript" : "generates texture map"
+        },
+        "autmaterial" : {
+            "digest" : "",
+            "descript" : "can improove rendering result"
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "object color"
+        },
+        "diffuse" : {
+            "digest" : "",
+            "descript" : "diffuse color"
+        },
+        "specular" : {
+            "digest" : "",
+            "descript" : "specular color"
+        },
+        "ambient" : {
+            "digest" : "",
+            "descript" : "ambient color"
+        },
+        "emission" : {
+            "digest" : "",
+            "descript" : "emission color"
+        },
+        "lighting" : {
+            "digest" : "",
+            "descript" : "lets the model react to light sources"
+        },
+        "shadowcaster" : {
+            "digest" : "",
+            "descript" : "lets the model cast shadows"
+        },
+        "depth" : {
+            "digest" : "",
+            "descript" : "depth buffering"
+        },
+        "layer" : {
+            "digest" : "",
+            "descript" : "depth layer (works best with depth-buffering off)"
+        },
+        "smooth" : {
+            "digest" : "",
+            "descript" : "smooth rendering"
+        },
+        "angle" : {
+            "digest" : "",
+            "descript" : "edge angle for smooth rendering"
+        },
+        "blend" : {
+            "digest" : "",
+            "descript" : "enables blendmode"
+        },
+        "blendmode" : {
+            "digest" : "",
+            "descript" : "choose blendmode: \n\t<li>alphablend \n\t<li>add \n\t<li>multiply \n\t<li>screen \n\t<li>exclusion \n\t<li>colorblend \n\t<li>coloradd \n\t<li>alphaadd"
+        },
+        "displaylist" : {
+            "digest" : "",
+            "descript" : "enables displaylist - can speed up drawing"
+        },
+        "cachemode" : {
+            "digest" : "",
+            "descript" : "choose cachemode: \n\t<li>vertexarray \n\t<li>displaylist \n\t<li>vertexbuffer \n\t<li>immediate"
+        },
+        "cullface" : {
+            "digest" : "",
+            "descript" : "choose cullface: \n\t<li>0=Off \n\t<li>1=Back \n\t<li>2=Front"
+        },
+        "polymode" : {
+            "digest" : "draw..",
+            "descript" : "\n\t<li>polygons - only faces\n\t<li>lines - only lines \n\t<li>points - only vertices"
+        },
+        "axes" : {
+            "digest" : "",
+            "descript" : "show axes of the models origin"
+        },
+        "radius" : {
+            "digest" : "torus only",
+            "descript" : "sets the radius of the torus"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : ""
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

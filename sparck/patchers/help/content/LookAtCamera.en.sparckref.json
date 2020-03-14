@@ -1,0 +1,95 @@
+{
+	"digest": "Camera with special frustum control",
+	"description" : {
+        "desc1" : "Camera in 3D space with buildin lookat functionality. The node  will orient the camera in such a way, that the near-clip plane will lie on the lookat plane. To be used to create controlled cuts through objects or cave-like VR experiences",
+        "desc2" : "LookAtCamera represents the virtual camera chassis, while SceneCapture represents the virtual film: For capturing the textures SceneCapture is needed."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "SceneCapture" : "",
+ 		"BoxMapCamera" : "",
+ 		"TfmNode" : "",
+ 		"TfmLookat" : ""
+  	}
+,
+	"NodeReference": {
+        "offstage" : {
+            "digest" : "",
+            "descript" : "show Camera icon on 3DViewer"
+        },
+        "mode" : {
+            "digest" : "",
+            "descript" : "frustum calculation mode"
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "cutplane" : {
+            "digest" : "",
+            "descript" : "cutplane transformaion node"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "transform" : {
+            "digest" : "",
+            "descript" : "select transformation pass"
+        },"position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "orientation" : {
+            "digest" : "",
+            "descript" : "local lookat plane orientation"
+        },
+        "plane up vector" : {
+            "digest" : "",
+            "descript" : "local lookat plane up vector"
+        },
+        "view ratio" : {
+            "digest" : "",
+            "descript" : "ratio"
+        },
+        "fov" : {
+            "digest" : "",
+            "descript" : "field of view"
+        },
+        "near" : {
+            "digest" : "",
+            "descript" : "near frustum clip"
+        },
+        "far" : {
+            "digest" : "",
+            "descript" : "far frustum clip"
+        },
+        "adapt" : {
+            "digest" : "",
+            "descript" : "automatically adapt frustum to distance from lookat plane"
+        },
+        "adapt ratio" : {
+            "digest" : "",
+            "descript" : "adjust the adaptation"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

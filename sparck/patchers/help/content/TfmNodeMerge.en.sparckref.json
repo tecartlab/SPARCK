@@ -1,0 +1,53 @@
+{
+	"digest": "Transformation Merge Node",
+	"description" : {
+        "desc1" : "The node merges different transformational parts of two differen transformation nodes into one."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TfmNode" : "",
+ 		"TfmNodeInfo" : "",
+ 		"TfmLookAt" : "",
+ 		"TfmMirror" : ""
+  	}
+,
+	"NodeReference": {
+        "parentA" : {
+            "digest" : "",
+            "descript" : "parent A transformation node"
+        },
+        "parentB" : {
+            "digest" : "",
+            "descript" : "parent B transformation node"
+        },
+        "pos" : {
+            "digest" : "",
+            "descript" : "select the translational part from one of the parents"
+        },
+        "rot" : {
+            "digest" : "",
+            "descript" : "select the rotation from one of the parents"
+        },
+        "scale" : {
+            "digest" : "",
+            "descript" : "select the scale part from one of the parents"
+        },
+        "transformation pass" : {
+            "digest" : "",
+            "descript" : "transformation pass"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

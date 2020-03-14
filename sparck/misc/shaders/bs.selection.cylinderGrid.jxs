@@ -1,0 +1,59 @@
+<jittershader name="depth">
+	<description>
+	shader to capture depth and linearize values (0-1)
+	</description>
+
+	<param name="far_clip" type="float" default="100.0" />
+	<param name="world_mat" type="mat4" state="WORLD_MATRIX" />
+
+	<language name="glsl" version="1.0">
+		<bind param="far_clip" program="fp" />
+
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+varying vec4 position;
+//uniform mat4 world_mat;
+
+void main (void){
+	position = gl_Vertex;
+   	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec4 position;
+uniform float far_clip;
+
+void main (void){
+	/*
+	float height = mod(position.z, 0.5) * 2.;
+	float height2 = mod(position.z, 1.)/0.5;
+	float angle = mod(atan(position.x / position.y) / 3.14159 * 180., 15.) / 15.;
+	float angle2 = mod(atan(position.x / position.y) / 3.14159 * 180., 30.) / 60.;
+	gl_FragColor = vec4(height, angle, height2 + angle2, 1.0);
+	*/
+	float height = mod(position.z, 1.5) * 2.0;
+	float red = (height < 1.0)? 0.5: 0.;
+	float green = (height > 1.0 && height < 2.0)? 0.5: 0.;
+	float blue = (height > 2.0 && height < 3.0)? 0.5: 0.;
+
+	float angle = mod(atan(position.x / position.y) / 3.14159 * 180., 45.) / 15.;
+	red = (angle < 1.0)? red + 0.5: red;
+	green = (angle > 1.0 && angle < 2.0)? green + 0.5: green;
+	blue = (angle > 2.0 && angle < 3.0)? blue + 0.5: blue;
+
+
+	gl_FragColor = vec4(red, green, blue, 1.0);
+
+}
+]]>
+		</program>
+	</language>
+</jittershader>

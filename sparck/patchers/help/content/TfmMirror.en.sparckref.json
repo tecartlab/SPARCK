@@ -1,0 +1,50 @@
+{
+	"digest": "Creates a Mirror transformation",
+	"description" : {
+        "desc1" : "The Mirror transformation takes two transformation nodes: One where to set the mirror, and a second one to be mirrored.",
+        "desc2" : "the mirrored transformation can also be a Beamer or a Camera -  in this case the node becomes a mirrored Beamer or Camera node and can be used by a Capture node."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TfmNode" : "",
+ 		"TfmLookAt" : "",
+ 		"Beamer" : "",
+ 		"SceneCamera" : ""
+  	}
+,
+	"NodeReference": {
+        "Mirror" : {
+            "digest" : "",
+            "descript" : "mirror node"
+        },
+        "Mirrored" : {
+            "digest" : "",
+            "descript" : "mirrored node - can also be a Beamer or Camera node"
+        },
+        "transform" : {
+            "digest" : "",
+            "descript" : "the kind of mirror transformation"
+        },
+        "direction" : {
+            "digest" : "",
+            "descript" : "set which two axis become the mirror plane"
+        },
+        "transformation pass" : {
+            "digest" : "",
+            "descript" : "select transfromation pass"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

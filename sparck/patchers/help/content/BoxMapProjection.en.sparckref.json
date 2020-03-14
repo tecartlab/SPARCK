@@ -1,0 +1,44 @@
+{
+	"digest": "Projects BoxMap textures",
+	"description" : {
+        "desc1" : "Projects BoxMap textures outwards from the location of the BoxMapCamera",
+        "desc2" : "A BoxMap is similar to an OpenGL-CubeMap, but instead consists of a list of 6 unique textures, each representing the view of one box side. The term BoxMap is used in order to make sure it is not confused with a CubeMap.",
+        "desc3" : "This is a shader and can be applied to any model node."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "BoxMapCamera" : "",
+        "BoxMapCapture" : ""
+  	}
+,
+	"NodeReference": {
+        "camera" : {
+            "digest" : "",
+            "descript" : "select BoxMapCamera Node"
+        },
+        "texture" : {
+            "digest" : "",
+            "descript" : "the type of texture received: \n\t<li>boxmap (list) \n\t<li>single (stitched)"
+        },
+        "to stage" : {
+            "digest" : "",
+            "descript" : "the way the textures are displayed: \n\t<li>texture uses the actual textures (list) \n\t<li>colored uses RGB colors"
+        },
+        "collada" : {
+            "digest" : "",
+            "descript" : "select if the node that applies this shader is using a collada file. This corrects a default rotation by the collada importer."
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"digest": "Merge stereo textures into one anaglyph texture",
+	"description" : {
+        "desc1" : "The TextureAnaglyph node takes two input textures, usually a stereo pair, and merges them into a anaglyph texture",
+        "desc2" : "The TextureAnaglyph node can be either applied as a shader to a 3d object or a ViewPort node, or used as an explicit texture renderpass to create the anaglyph texture."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"SceneCamera" : "",
+ 		"SceneCapture" : "",
+ 		"ViewPort" : ""
+  	}
+,
+	"NodeReference": {
+        "contrast" : {
+            "digest" : "",
+            "descript" : "contrast between left and right"
+        },
+        "deghost" : {
+            "digest" : "",
+            "descript" : "deghosting value"
+        },
+        "stereo" : {
+            "digest" : "",
+            "descript" : "stereo texture spread"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "none"
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

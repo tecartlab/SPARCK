@@ -1,0 +1,32 @@
+{
+	"digest": "Sends Spout textures",
+	"description" : {
+        "desc1" : "Sends Spout textures (Windows only - see SyphonSend for OSX) for further processing outside SPARCK. Technically it creates a Spout Server with its node name."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Spout" : "http://spout.zeal.co/",
+        "TCPSpout" : "http://techlife.sg/TCPSpout/"
+    }
+,
+	"seealso": {
+        "SpoutReceive" : ""
+  	}
+,
+	"NodeReference": {
+        "flip" : {
+            "digest" : "",
+            "descript" : "flip texture in x / y axis before sending"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

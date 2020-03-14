@@ -1,0 +1,80 @@
+{
+	"digest": "Connect to the TurnTable",
+	"description" : {
+        "desc1" : "The Turntable MK1 is a custom build turntable based on a stepper motor, laser cutted plexi and an arduino controller. The design of the table and the arduino code is opensource."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "TurnTable" : "https://github.com/tecartlab/tablez"
+    }
+,
+	"seealso": {
+ 		"TfmNode" : "",
+ 		"HeadRoom" : "",
+ 		"OptiTrack" : ""
+  	}
+,
+	"NodeReference": {
+        "turntable version" : {
+            "digest" : "",
+            "descript" : "select the version of the turntable to connect to."
+        },
+        "open" : {
+            "digest" : "",
+            "descript" : "opens the editor for the script. Better don't touch."
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "Stage" : {
+            "digest" : "",
+            "descript" : "displays the visualization of the turntable in the 3DViewer"
+        },
+        "serial port" : {
+            "digest" : "",
+            "descript" : "choose the serial port where the turntable is attached to"
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "offset" : {
+            "digest" : "",
+            "descript" : "rotational offset"
+        },
+        "pots" : {
+            "digest" : "",
+            "descript" : "which potentiometers are attached"
+        },
+        "speed" : {
+            "digest" : "",
+            "descript" : "rotational speed"
+        },
+        "use" : {
+            "digest" : "",
+            "descript" : "select the means of setting the speed"
+        },
+        "axes" : {
+            "digest" : "",
+            "descript" : "shows axes"
+        },
+        "verbose" : {
+            "digest" : "",
+            "descript" : "verbose"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

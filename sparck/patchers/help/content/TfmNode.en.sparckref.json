@@ -1,0 +1,46 @@
+{
+	"digest": "Transformation Node",
+	"description" : {
+        "desc1" : "The Transformation Node represents a transformation (position, rotation and scale) in 3D space. It can be connected to almost all nodes that have a representation in 3D space.",
+        "desc2" : "It can also be used to establish parent-child relationships in a hirarchical transformation structure, where child nodes are transformed relative to their parents"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TfmNodeMerge" : "",
+ 		"TfmNodeInfo" : "",
+ 		"TfmLookAt" : "",
+ 		"TfmMirror" : ""
+  	}
+,
+	"NodeReference": {
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

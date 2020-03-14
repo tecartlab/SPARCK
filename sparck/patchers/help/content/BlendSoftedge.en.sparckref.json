@@ -1,0 +1,56 @@
+{
+	"digest": "Blends Softedges",
+	"description" : {
+        "desc1" : "Blends color textures with softedge textures"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+        "SpatialSoftegde" : "",
+        "Beamer" : "",
+        "ViewPort" : "",
+        "Canvas" : ""
+  	}
+,
+	"NodeReference": {
+        "power" : {
+            "digest" : "",
+            "descript" : "blend power"
+        },
+        "luminance" : {
+            "digest" : "",
+            "descript" : "blend luminance"
+        },
+        "enable" : {
+            "digest" : "",
+            "descript" : "enable texture shader pass. the outlet that appears below will output the resulting texture."
+        }
+  	}
+,
+	"PropertyReference": {
+        "gamma" : {
+            "digest" : "",
+            "descript" : "gamma correction"
+        },
+        "ouput" : {
+            "digest" : "",
+            "descript" : "output mode: \n\t<li>result shows the final blend \n\t<li>texture one shows the color texture \n\t<li>texture two shows the blend texture"
+        },
+        "gradient" : {
+            "digest" : "",
+            "descript" : "custom gradient curve"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "this node can be used as a shader of as a texture shader pass."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

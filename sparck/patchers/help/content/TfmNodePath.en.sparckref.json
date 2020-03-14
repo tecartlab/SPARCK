@@ -1,0 +1,81 @@
+{
+	"digest": "Loads animation paths",
+	"description" : {
+        "desc1" : "This node allows to load animation paths exported from blender.",
+        "desc2" : "The file is created inside Blender with the LedStrip-Exporter script."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Blender" : "http://blender.org",
+        "Export-Script" : "https://github.com/tecartlab/blender.script.io_export_ledstrip"
+     }
+,
+	"seealso": {
+        "TfmNode" : "",
+		"QueScript" : ""
+  	}
+,
+	"NodeReference": {
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "file" : {
+            "digest" : "",
+            "descript" : "animation path file"
+        },
+        "segment" : {
+            "digest" : "",
+            "descript" : "segment inside pathfile"
+        },
+        "playbar" : {
+            "digest" : "",
+            "descript" : "relative position on path. Best animated with QueScript"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "display color"
+        },
+        "layer" : {
+            "digest" : "",
+            "descript" : "depth layer"
+        },
+        "closeSegment" : {
+            "digest" : "",
+            "descript" : "force closing the segement if it has a gap between the first and the last vertice"
+        },
+        "fileWatch" : {
+            "digest" : "",
+            "descript" : "reload animation path file if it was changes"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "This node is definitly a work in progress..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,40 @@
+<jittershader name="depth">
+	<description>
+	shader to capture depth and linearize values (0-1)
+	</description>
+
+	<param name="intensityVol" type="int" default="2" />
+	<language name="glsl" version="1.0">
+
+		<bind param="intensityVol" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+varying vec4 position;
+
+void main (void){
+	position = gl_Vertex;
+	gl_Position = ftransform();
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+uniform sampler3D intensityVol; //3DTexture containing brightness
+
+varying vec4 position;
+
+void main (void){
+	vec4 color = texture3D(intensityVol, vec3((position + 1.) / 2. * gl_TextureMatrix[0]));
+
+	gl_FragColor = color;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

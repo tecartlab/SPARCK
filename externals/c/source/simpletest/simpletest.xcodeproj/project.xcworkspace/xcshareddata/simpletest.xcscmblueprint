@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "654028455241B03C60AB8F50A46D0A02F24EAC81",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "654028455241B03C60AB8F50A46D0A02F24EAC81" : 9223372036854775807,
+    "20DC6287C6D318433B681296E0BF364C4882CD47" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9E6FE34C-5D88-4FEA-8CD0-7C76495A988F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "654028455241B03C60AB8F50A46D0A02F24EAC81" : "app_sparck\/",
+    "20DC6287C6D318433B681296E0BF364C4882CD47" : "max-sdk\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "simpletest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "c_externals\/source\/simpletest\/simpletest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Cycling74\/max-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "20DC6287C6D318433B681296E0BF364C4882CD47"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/maybites\/app_sparck.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "654028455241B03C60AB8F50A46D0A02F24EAC81"
+    }
+  ]
+}

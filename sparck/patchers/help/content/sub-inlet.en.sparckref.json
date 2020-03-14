@@ -1,0 +1,38 @@
+{
+	"digest": "creates subnode inlets",
+	"description" : {
+	   "desc1" : "this node makes is possible to patch into its containing subnode",
+	   "desc2" : "Use its blue connector to connect to the properties-connector of the other nodes in the subpatcher. this allows to switch the connected nodes on/off with the subpatcher's switch."
+	}
+,
+	"links" : {
+		"Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+		"subnode" : "",
+		"sub-outlet" : ""
+  	}
+,
+	"NodeReference": {
+	   "Numberbox" : {
+           "digest" : "",
+           "descript" : "set the number of inlets"
+       }
+  	}
+, 
+	"PropertyReference" : {
+	   "PropertyOne" : {
+           "digest" : "TEXT HERE",
+           "descript" : "and more text here."
+       }
+	}
+,
+	"Notes" : {
+	   "note1" : "only one node of this kind is allowed per subpatch"
+	}
+,
+	"Feedback" : {
+	   "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+	   "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,40 @@
+<jittershader name="depth">
+	<description>
+	shader to capture depth and linearize values (0-1)
+	</description>
+
+	<param name="far_clip" type="float" state="FAR_CLIP"/>
+
+	<language name="glsl" version="1.0">
+		<bind param="far_clip" program="fp" />
+
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+varying vec4 position;
+
+void main (void){
+	position = gl_ModelViewMatrix * gl_Vertex;
+   	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec4 position;
+uniform float far_clip;
+
+void main (void){
+	float depth = length(position.xyz) / far_clip;
+//	gl_FragColor = vec4(depth, depth, depth, 1.0);
+	gl_FragColor = vec4(far_clip / 90., 0, 0, 1);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

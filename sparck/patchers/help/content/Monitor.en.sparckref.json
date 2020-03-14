@@ -1,0 +1,38 @@
+{
+	"digest": "Quick view of texture",
+	"description" : {
+        "desc1" : "It displays the attached texture",
+        "desc3" : "This node should only be used for debugging purposes. It is very resource hungry and can affect the performance of your patch"
+	}
+,
+	"links" : {
+		"Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+		"ViewPort" : "",
+		"Window" : ""
+  	}
+,
+	"NodeReference": {
+	   "Name" : {
+           "digest" : "",
+           "descript" : "give it a more meaning full name."
+       }
+  	}
+, 
+	"PropertyReference" : {
+	   "PropertyOne" : {
+           "digest" : "TEXT HERE",
+           "descript" : "and more text here."
+       }
+	}
+,
+	"Notes" : {
+	   "note1" : "It is really very resource hungry. For a more permament texture inspection your are adviced to use a Window-ViewPort - pair."
+	}
+,
+	"Feedback" : {
+	   "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+	   "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

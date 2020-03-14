@@ -1,0 +1,17 @@
+How to create Node and Property images:
+
+Node:
+
+1. Make screenshot of node in locked patcher and enabled
+2. Rename to <NodeName>_n
+3. open in preview and scale to 220 width
+4. save and drop it into this folder
+
+Property:
+
+1. Enable node and open property
+2. cmd-shift-4 and then press spacebar and select propertywindow
+2. Rename to <NodeName>_p
+3. open in preview and crop it
+4. scale it to 220 with
+5. save and drop it into this folder

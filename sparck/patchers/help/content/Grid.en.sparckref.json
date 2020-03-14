@@ -1,0 +1,61 @@
+{
+	"digest": "Draws a custom grid in 3D space",
+	"description" : {
+        "desc1" : "A helper to get oriented in 3D space"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Beamer" : "",
+ 		"TfmNode" : ""
+  	}
+,
+	"NodeReference": {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "gridsize" : {
+            "digest" : "",
+            "descript" : "grid slice size."
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "layer" : {
+            "digest" : "",
+            "descript" : "depth layer"
+        },
+        "publish transformation" : {
+            "digest" : "",
+            "descript" : "publishes this mode transformation as a transformation node"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

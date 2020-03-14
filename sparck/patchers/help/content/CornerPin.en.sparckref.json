@@ -1,0 +1,86 @@
+{
+	"digest": "Map textures to a window",
+	"description" : {
+        "desc1" : "Provides controls for mapping textures to an output window by repositioning the image corners.",
+        "desc2" : "It is the most simple and easy to use mapping nodes at SPARCK's disposal"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "MeashWarp" : "",
+        "ViewPort" : ""
+  	}
+,
+	"NodeReference": {
+        "edit" : {
+            "digest" : "",
+            "descript" : "sets the focus of the editor window to this node"
+        },
+        "reset" : {
+            "digest" : "",
+            "descript" : "resets the corner pins to their default positions"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "render to" : {
+            "digest" : "",
+            "descript" : "Select the ViewPort node to directly render to."
+        },
+        "defaut texture" : {
+            "digest" : "",
+            "descript" : "default texture"
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "object color"
+        },
+        "corner radius" : {
+            "digest" : "",
+            "descript" : "size of the handles"
+        },
+        "drawcorners" : {
+            "digest" : "",
+            "descript" : "draws to handles in the final rendering"
+        },
+        "layer" : {
+            "digest" : "",
+            "descript" : "depth layer (works best with depth-buffering off)"
+        },
+        "smooth" : {
+            "digest" : "",
+            "descript" : "smooth rendering"
+        },
+        "blend" : {
+            "digest" : "",
+            "descript" : "enables blendmode"
+        },
+        "blendmode" : {
+            "digest" : "",
+            "descript" : "choose blendmode: \n\t<li>alphablend \n\t<li>add \n\t<li>multiply \n\t<li>screen \n\t<li>exclusion \n\t<li>colorblend \n\t<li>coloradd \n\t<li>alphaadd"
+        },
+        "interpolate" : {
+            "digest" : "",
+            "descript" : "use interpolation"
+        },
+        "preserve aspect" : {
+            "digest" : "",
+            "descript" : "preserve aspect ratio"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,71 @@
+{
+	"digest": "Apply unary or binary operators",
+	"description" : {
+        "desc1" : "The TextureOP node applies either a binary operator to two input textures, or a unary operator to the left input texture"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TextureBlur" : "",
+ 		"TextureColorMap" : "",
+ 		"TextureZoom" : ""
+  	}
+,
+	"NodeReference": {
+        "mode" : {
+            "digest" : "",
+            "descript" : "operation mode (see details down below)"
+        },
+        "in1scale" : {
+            "digest" : "",
+            "descript" : "scale scalar for texture left"
+        },
+        "in2scale" : {
+            "digest" : "",
+            "descript" : "scale scalar for texture right"
+        },
+        "in1offset" : {
+            "digest" : "",
+            "descript" : "offset scalar for texture left"
+        },
+        "in2offset" : {
+            "digest" : "",
+            "descript" : "offset scalar for texture right"
+        },
+        "outScale" : {
+            "digest" : "",
+            "descript" : "output scalar"
+        },
+        "outScale" : {
+            "digest" : "",
+            "descript" : "output offset"
+        },
+        "enable" : {
+            "digest" : "",
+            "descript" : "use node for a texture effect render pass"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "Arithmetic Operators:",
+        "mult" : "<li>\t mult = multiplication",
+        "div" : "<li>\t div = division",
+        "add" : "<li>\t add = addition",
+        "sub" : "<li>\t sub = subtraction",
+        "mod" : "<li>\t mod = modulo",
+        "min" : "<li>\t min = minimum",
+        "max" : "<li>\t max = maximum",
+        "abs" : "<li>\t abs = absolute value",
+        "avg" : "<li>\t avg = average",
+        "absdiff" : "<li>\t absdiff = absolute value of difference",
+        "end" : "... and others..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

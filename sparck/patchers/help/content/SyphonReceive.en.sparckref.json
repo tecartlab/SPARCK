@@ -1,0 +1,45 @@
+{
+	"digest": "Receives Syphon textures",
+	"description" : {
+        "desc1" : "Receives Syphon textures (OSX only - see SpoutReceive for Windows) for further processing inside SPARCK"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Syphon" : "http://www.syphon.v002.info",
+        "TCPSyphon" : "http://techlife.sg/TCPSyphon/", 
+        "Syphoner" : "http://www.sigmasix.ch/syphoner/"
+    }
+,
+	"seealso": {
+        "SyphonSend" : ""
+  	}
+,
+	"NodeReference": {
+        "server name" : {
+            "digest" : "",
+            "descript" : "select syphon server"
+        },
+        "app name" : {
+            "digest" : "",
+            "descript" : "select syphon app"
+        },
+        "flip" : {
+            "digest" : "",
+            "descript" : "flip recieved texture in x / y axis"
+        },
+        "render pass" : {
+            "digest" : "",
+            "descript" : "render pass in which this node passes on the received texture."
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "Syphon textures arrive at SPARCK asynchronously. It only check for a new texture at the end of each frame-pass. On the chosen render-pass the texture is passed on for further processing."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

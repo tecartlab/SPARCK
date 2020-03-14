@@ -1,0 +1,115 @@
+{
+	"digest": "Generates Spatial Softedge",
+	"description" : {
+        "desc1" : "This shader is spatialy aware and is used for multi projector installation where the use of softedge is necessary.",
+        "desc2" : "It is mainly used for Spatial Augmented Reality installations where there is the need for the creation of dynamic softedges."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+        "BlendSoftedge" : "",
+ 		"SceneCapture" : ""
+  	}
+,
+	"NodeReference": {
+        "shader" : {
+            "digest" : "",
+            "descript" : "the shader type: \n\t<li>'projection.angle.fast' is used for \n\t\t realtime softedge in spatial augmented \n\t\t reality installations \n\t<li>'projection.angle.pro' used for realtime \n\t\t softedge in spatial augmented reality \n\t\t installations \nthe other choices creates masks for further use with the BlendSoftedge node: \n\t<li>'mask.angle.pro' calculates the softedge \n\t\t only from angles \n\t<li>'mask.angle.fast' calculates the softedge \n\t\t only from angles \n\t<li>'mask.multiblend' uses both coverage and \n\t\t angle information"
+        },
+        "BeamX" : {
+            "digest" : "",
+            "descript" : "Select the Beamer or Capture node to make the spatial calculations"
+        },
+        "Cam 0" : {
+            "digest" : "",
+            "descript" : "Select the Camera from where to project."
+        },
+        "uv texture" : {
+            "digest" : "",
+            "descript" : "supporting texture."
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "stage mode" : {
+            "digest" : "",
+            "descript" : "display mode of the model on which this shader is applied onto. \n\t<li>textured shows the projected texture \n\t<li>colored shows the different Beamer colors \n\t<li>overlap shows the overlaps of beamers \n\t<li>maps shows the differnt Beamer weights \n\t<li>BeamerX shows the coverage of BeamerX"
+        },
+        "bg color" : {
+            "digest" : "",
+            "descript" : "surface color of uncovered areas"
+        },
+        "projection" : {
+            "digest" : "",
+            "descript" : "front or backside of a surface"
+        },
+        "spread" : {
+            "digest" : "",
+            "descript" : "spread factor will increase the differentiation between overlapping projections"
+        },
+        "blend bg" : {
+            "digest" : "",
+            "descript" : "enables blending with the background "
+        },
+        "angle" : {
+            "digest" : "",
+            "descript" : "angle differentiation: 'viewray' will differentiate based on the angle between the surface normal and the viewray, 'direction' will differentiate based on the angle between the surface normal and the camera direction"
+        },
+        "distance" : {
+            "digest" : "",
+            "descript" : "use distance as an additional differentiator. It will show its influence when the spread is increased. (0 = no influence)"
+        },
+        "limit" : {
+            "digest" : "",
+            "descript" : "angle limit (how much of the visible surface area is considered, 0 = no limit)"
+        },
+        "falloff" : {
+            "digest" : "",
+            "descript" : "angle-limit falloff (defines the size of the angle blend transition at the angle limit)  {/sparck/node ::<nodename>::property::angleFalloff <float>} "
+        },
+        "details" : {
+            "digest" : "",
+            "descript" : "use detail settings"
+        },
+        "bevel size" : {
+            "digest" : "",
+            "descript" : "bevel size"
+        },
+        "rounded bevel" : {
+            "digest" : "",
+            "descript" : "use rounded bevel"
+        },
+        "blend power" : {
+            "digest" : "",
+            "descript" : "blend power - softegde parameter"
+        },
+        "luminance" : {
+            "digest" : "",
+            "descript" : "luminance - softegde parameter"
+        },
+        "gradient curve" : {
+            "digest" : "",
+            "descript" : "adjusts the softedge curve"
+        },
+        "collada" : {
+            "digest" : "",
+            "descript" : "select if the node that applies this shader is using a collada file. This corrects a default rotation by the collada importer."
+        },
+        "interpol. corr." : {
+            "digest" : "",
+            "descript" : "interpolation correction. if strange artefacts start to appear, raise the value until the artefacts disappear. (how much of the overlapping areas are considered / 1=full spread)"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

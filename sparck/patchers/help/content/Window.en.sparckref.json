@@ -1,0 +1,63 @@
+{
+	"digest": "Creates a video output window",
+	"description" : {
+	   "desc1" : "Used to display the rendered result to an output device like a screen or projector.",
+	   "desc2" : "The window node can slice its frame into (so called) viewports, arranged in rows and columns. Each slice (viewport) can be addressed with a ViewPort-node.",
+	   "desc3" : "With the display-setup tool you can easily define the windows output size and postion relative to the desktop display."
+	}
+,
+	"links" : {
+		"Video" : "http://tecartlab.com"}
+,
+	"seealso": {
+		"ViewPort" : "",
+		"Monitor" : ""
+  	}
+,
+	"NodeReference": {
+	   "desktop" : {
+           "digest" : "",
+           "descript" : "switch between the desktop position and the designated output position"
+       },
+	   "display..." : {
+           "digest" : "",
+           "descript" : "opens the display-setup tool to define the output position of this window."
+       },
+	   "slice into" : {
+           "digest" : "",
+           "descript" : "slice the frame into the designated amount of rows (max 2) and columns (max 12)"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "border" : {
+            "digest" : "",
+            "descript" : "when selected the windows borders are shown when positioned on the desktop."
+        },
+        "floating" : {
+            "digest" : "",
+            "descript" : "window will always stay on the foreground"
+        },
+        "esc" : {
+            "digest" : "",
+            "descript" : "when pressing 'esc' the Window will display mode will switch between desktop and output position."
+       },
+        "sync" : {
+            "digest" : "",
+            "descript" : "tries to sync the output framerate with the displays update frequency"
+       },
+        "interact" : {
+            "digest" : "",
+            "descript" : "exposes an internal transformation node for direct 3d handling similar to the 3DViewer. The transformation node needs to be attached to a Camera-node, and its Capture-node renders out to this Window."
+       }
+	}
+,
+	"Notes" : {
+	   "note1" : "close this help window if you dont need it. it actually blocks one of the four in SPARCK available windows..."
+	}
+,
+	"Feedback" : {
+	   "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+	   "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,91 @@
+{
+	"digest": "Displays a texture inside the slice of a Window",
+	"description" : {
+	   "desc1" : "In its most basic mode it takes a texture and displays it in its designated slice of the connected Window",
+	   "desc2" : "More advanced usage includes the use of custom meshes or the result of a MeshWarp node (also a mesh) and/or using a second texture and applying a shader"
+	}
+,
+	"links" : {
+		"Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+		"Window" : "",
+		"Monitor" : "",
+		"MeshWarp" : "",
+		"CornerPin" : ""
+  	}
+,
+	"NodeReference": {
+	   "window" : {
+           "digest" : "",
+           "descript" : "select the Window-node"
+       },
+	   "slice" : {
+           "digest" : "",
+           "descript" : "select the slice inside the Window for output"
+       }
+  	}
+, 
+	"PropertyReference" : {
+	   "Reset" : {
+           "digest" : "",
+           "descript" : "Resets the node to ist default state"
+       },
+	   "viewport mesh" : {
+           "digest" : "",
+           "descript" : "choose the type of mesh. \n\t<li>'default' is a simple mesh \n\t<li>'warp' links to a MeshWarp-node \n\t<li>'file' loads custom mesh \n\t<li>'none' no mesh at all"
+       },
+	   "fx shader" : {
+           "digest" : "",
+           "descript" : "choose a shader to be applied to the viewport mesh"
+       },
+	   "transform" : {
+           "digest" : "",
+           "descript" : "the way the mesh is displayed inside the ViewPort's slice"
+       },
+	   "position" : {
+           "digest" : "",
+           "descript" : "move the mesh in x and y axis"
+       },
+	   "rotation" : {
+           "digest" : "",
+           "descript" : "rotate the mesh in z axis"
+       },
+	   "scale" : {
+           "digest" : "",
+           "descript" : "scale the mesh in x and y axis"
+       },
+	   "blend" : {
+           "digest" : "",
+           "descript" : "use the textures alphachannel for blending"
+       },
+	   "depth" : {
+           "digest" : "",
+           "descript" : "use depth layering"
+       },
+	   "show mesh" : {
+           "digest" : "",
+           "descript" : "show only the face-lines"
+       },
+	   "object color" : {
+           "digest" : "only available with 'show mesh'",
+           "descript" : "choose the meshes color"
+       },
+	   "filewatch" : {
+           "digest" : "",
+           "descript" : "if using a loaded custom mesh, load the mesh once the file was changed."
+       }
+	}
+,
+	"Notes" : {
+	   "note1" : "Inside ViewPort the last renderpass is executed before the result is sent to the output devices like a projector, display or VR-goggles. Since it performative sensible to reduce the number of renderpasses, ViewPort has all these features to do different corrections in one go, like a warp and a colorcorrection at the same time.",
+	   "note2" : "Notes on viewport - mesh:",
+	   "note3" : "\t<li>when using a custom file, use the wavefront-obj format.",
+	   "note4" : "\t<li>using no mesh makes only sense when working with CornerPin or MeshWarp nodes"
+	}
+,
+	"Feedback" : {
+	   "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+	   "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

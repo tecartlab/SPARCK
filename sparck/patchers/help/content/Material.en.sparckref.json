@@ -1,0 +1,133 @@
+{
+	"digest": "Generate materials for 3D objects",
+	"description" : {
+        "desc1" : "Produces shaders for high quality rendering that automatically adapt to texture inputs and the number of active lights."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Model" : "",
+		"Light" : ""
+  	}
+,
+	"NodeReference": {
+        "Material file" : {
+            "digest" : "",
+            "descript" : "load a material file (needs to be in the MaxMSP-Jitter Material format)"
+        },
+        "E" : {
+            "digest" : "",
+            "descript" : "refresh properties from material editor"
+       },
+        "R" : {
+            "digest" : "",
+            "descript" : "open material editor"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "diffuse model" : {
+            "digest" : "",
+            "descript" : "Diffuse shading model: \n\t<li>'lambert' (Lambertian diffuse shading)\n\t<li>'oren_nayer' (Oren-Nayer diffuse shading)\n\t<li>'toon' (Toon diffuse shading) \n\t<li>'minnaert' (Minnaert diffuse shading)"
+        },
+        "diffuse size" : {
+            "digest" : "",
+            "descript" : "Diffuse toon component size. Only valid when the diffuse shading model is toon."
+        },
+        "diffuse smooth" : {
+            "digest" : "",
+            "descript" : "Diffuse toon component smoothness. Only valid when the diffuse shading model is toon."
+        },
+        "diffuse darkness" : {
+            "digest" : "",
+            "descript" : "Material darkness. Only valid when the diffuse shading model is minnaert."
+        },
+        "specular model" : {
+            "digest" : "",
+            "descript" : "Specular shading model : \n\t<li>'blinn' (Blinn specular shading) \n\t<li>'phong' (Phong specular shading)\n\t<li>'toon' (Toon specular shading)\n\t<li>'ward' (Ward specular shading)\n\t<li>'cook_torrance' (Cook-Torrance specular shading)"
+        },
+        "specular size" : {
+            "digest" : "",
+            "descript" : "Specular toon component size. Only valid when the specular shading model is toon."
+        },
+        "specular smooth" : {
+            "digest" : "",
+            "descript" : "Specular toon component smoothness. Only valid when the specular shading model is toon."
+        },
+        "fog" : {
+            "digest" : "",
+            "descript" : "Fog type: \n\t<li>'none' (No fog) \n\t<li>'linear' (Linear fog)\n\t<li>'exp' (Exponential fog) \n\t<li>'exp2' (Squared exponential fog)"
+        },
+        "fog density" : {
+            "digest" : "",
+            "descript" : "density"
+        },
+        "fog range" : {
+            "digest" : "",
+            "descript" : "range"
+        },
+        "fog color" : {
+            "digest" : "",
+            "descript" : "fog color"
+        },
+        "diffuse" : {
+            "digest" : "",
+            "descript" : "diffuse color"
+        },
+        "specular" : {
+            "digest" : "",
+            "descript" : "specular color"
+        },
+        "ambient" : {
+            "digest" : "",
+            "descript" : "ambient color"
+        },
+        "emission" : {
+            "digest" : "",
+            "descript" : "emission color"
+        },
+        "lighting" : {
+            "digest" : "",
+            "descript" : "lets the model react to light sources"
+        },
+        "shadowcaster" : {
+            "digest" : "",
+            "descript" : "lets the model cast shadows"
+        },
+        "smooth" : {
+            "digest" : "",
+            "descript" : "smooth rendering"
+        },
+        "shininess" : {
+            "digest" : "",
+            "descript" : "shininess"
+        },
+        "shadow eps" : {
+            "digest" : "",
+            "descript" : "Shadow epsilon (eps) modifies the shape of shadows, and corrects self-shadowing error (default = 0.2). This value is used when the bound object is a shadow-receiver."
+        },
+        "shadow radius" : {
+            "digest" : "",
+            "descript" : "Adjust shadow blur radius (default = 0.3). This value is used when the bound object is a shadow-receiver."
+        },
+        "shadow hard" : {
+            "digest" : "",
+            "descript" : "Adjust shadow hardness (default = 0.7). This value is used when the bound object is a shadow-receiver."
+        },
+        "shadow soft" : {
+            "digest" : "",
+            "descript" : "Adjust shadow softness (default = 0.3). Overwrites shadow_radius and shadow_hard properties. This value is used when the bound object is a shadow-receiver."
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "text here"
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

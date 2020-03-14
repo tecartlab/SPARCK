@@ -1,0 +1,71 @@
+{
+	"digest": "Connect to the HeadRoom Application",
+	"description" : {
+        "desc1" : "The HeadRoom Application uses a Kinect (first generation) to track people resp. their heads in space. It is very easy to setup and calibrate and directly plugs into SPARCK with the help of this node.",
+        "desc2" : "The resulting transformation is usally used to control Cameras for Virtual Reality or Spatial Augmented Reality installations"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "HeadRoom" : "https://github.com/tecartlab/HeadRoom"
+    }
+,
+	"seealso": {
+ 		"TfmNode" : ""
+  	}
+,
+	"NodeReference": {
+         "onstage" : {
+            "digest" : "",
+            "descript" : "draws the incomming data to the 3dViewer."
+        },
+        "update" : {
+            "digest" : "",
+            "descript" : "refreshes a connection the HeadRoom Application"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "publish" : {
+            "digest" : "",
+            "descript" : "select which transformation data should be available to SPARCKS transformation system."
+        },
+        "broadcast" : {
+            "digest" : "",
+            "descript" : "HeadRoom's broadcast port. HeadRoom will send every second a OSC-broadcast-announcement to the broadcast address (of the newtork the machine resides in) to this port."
+        },
+        "listening" : {
+            "digest" : "",
+            "descript" : "the port this node is listening to. Once the node receives a broadcast announcement from the HeadRoom application, it will send it this port number back and HeadRoom will start streaming to this port."
+        },
+       "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "(local transformation)",
+            "descript" : "scale x y z"
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "objects color"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

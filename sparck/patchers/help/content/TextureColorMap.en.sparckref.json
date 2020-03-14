@@ -1,0 +1,59 @@
+{
+	"digest": "Load and playback videos",
+	"description" : {
+       "desc1" : "Can be also used as a texture render pass, for two textures."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+ 		"TextureOP" : "",
+ 		"TextureBlur" : "",
+ 		"TextureZoom" : ""
+  	}
+,
+	"NodeReference": {
+        "factor" : {
+            "digest" : "",
+            "descript" : "factor"
+        },
+        "map dim" : {
+            "digest" : "",
+            "descript" : "color map dimension"
+        },
+        "interpolate" : {
+            "digest" : "",
+            "descript" : "use interpolation on the output texture"
+        },
+        "enable" : {
+            "digest" : "",
+            "descript" : "use this node as a texture render pass node."
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "red" : {
+            "digest" : "",
+            "descript" : "color map for red channel"
+        },
+        "green" : {
+            "digest" : "",
+            "descript" : "color map for green channel"
+        },
+        "blue" : {
+            "digest" : "",
+            "descript" : "color map for blue channel"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

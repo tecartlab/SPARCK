@@ -1,0 +1,121 @@
+<jittershader name="bs.projector.jxs">
+	<description>Spatial Augmented Reality Projection System - Shader</description>
+	<param name="mode" type="float" default="0" />
+
+	<param name="vp_matrix" type="mat4" default="0.5 0. 0. 0. 0. 0.5 0. 0. 0. 0. 0.5 0. 0.5 0.5 0.5 0." />
+
+	<param name="cam0_pos" type="vec3" default="0. 0. 0." />
+	<param name="cam0_v_matrix" type="mat4" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
+	<param name="cam0_p_matrix" type="mat4" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
+
+	<param name="collada_factor" type="mat4" default="1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1." />
+	<param name="world_matrix" type="mat4" state="WORLD_MATRIX" />
+
+	<param name="offColor" type="vec4" default="0. 0. 0. 1." />
+
+	<param name="tex0" type="int" default="0" />
+
+	<language name="glsl" version="1.2">
+		<bind param="tex0" program="fp" />
+
+		<bind param="world_matrix" program="vp" />
+		<bind param="collada_factor" program="vp" />
+
+		<bind param="offColor" program="fp" />
+
+		<bind param="cam0_pos" program="fp" />
+		<bind param="cam0_v_matrix" program="vp" />
+		<bind param="cam0_p_matrix" program="vp" />
+
+		<bind param="vp_matrix" program="vp" />
+		<bind param="mode" program="fp" />
+
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+#version 120
+
+uniform mat4 world_matrix;
+uniform mat4 collada_factor;
+
+uniform mat4 cam0_v_matrix;
+uniform mat4 cam0_p_matrix;
+
+uniform mat4 vp_matrix;
+
+varying vec2 texcoord0;
+varying vec4 texUv0;
+
+varying vec3 normal;	// surface normal
+varying vec3 worldPos;	// vertex world position
+
+mat4 screen_m_matrix = world_matrix * collada_factor;
+
+mat4 mvp0_matrix = cam0_p_matrix * cam0_v_matrix * screen_m_matrix;
+
+void main(void)
+{
+	// perform standard transform on vertex (general approach)
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+
+	// calculate the UV-coordinate for camera 0
+	vec4 clip0 = vec4(mvp0_matrix * gl_Vertex);
+	vec4 device0 = vec4(clip0.x / clip0.w, clip0.y / clip0.w, clip0.z / clip0.w, 1.);
+	vec4 screen0 = vp_matrix * device0;
+	texUv0 = vec4(screen0.x, screen0.y, 0., 1.);
+
+	// apply the UV to texturcoordinate for cam0
+	texcoord0 = vec2(gl_TextureMatrix[0] * texUv0);
+
+	//normal = gl_NormalMatrix * gl_Normal;
+	normal = normalize(mat3(screen_m_matrix) * gl_Normal);
+	worldPos = vec3(screen_m_matrix * gl_Vertex);
+}
+
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+uniform float mode;
+
+// samplers
+uniform sampler2DRect tex0;
+
+uniform vec3 cam0_pos;
+
+uniform vec4 offColor; 	// off color
+
+varying vec2 texcoord0; // texcoords
+varying vec4 texUv0; 	// texUVcoords
+varying vec3 normal;	// surface normal
+varying vec3 worldPos;	// vertex world position
+
+// entry point
+void main()
+{
+
+	vec3 viewline = cam0_pos - worldPos;
+
+	float visible = dot(normal, viewline) * mode;
+
+	if(visible >= 0.){
+		//gl_FragColor = vec4( visible, 0.0, 0.0, 1.0);
+		if(0. <= texUv0.x && texUv0.x <= 1.0 && 0. <= texUv0.y && texUv0.y <= 1.0 ){
+			gl_FragColor = texture2DRect(tex0, texcoord0);
+		} else {
+			gl_FragColor = offColor;
+		}
+	} else {
+		gl_FragColor = offColor;
+	}
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

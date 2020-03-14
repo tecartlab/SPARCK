@@ -1,0 +1,86 @@
+{
+	"digest": "Use Oculus Rift to visit SPARCKS 3D space",
+	"description" : {
+        "desc1" : "Easy and simple way to get a true stereoscopic VR experience with SPARCK",
+        "desc2" : "Check out the notes for a description on how to setup.",
+        "desc3" : "Works on Windows only."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Oculus Home" : "http://www.oculus.com/en-us/setup/",
+        "source" : "https://github.com/worldmaking/Max_Worldmaking_Package"
+    }    
+,
+	"seealso": {
+        "SceneCapture" : ""
+  	}
+,
+	"NodeReference": {
+        "3DViewer" : {
+            "digest" : "",
+            "descript" : "draw an avatar of the Oculus to the 3DViewer"
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        },
+        "info" : {
+            "digest" : "",
+            "descript" : "printout device info the console"
+       },
+        "performance" : {
+            "digest" : "",
+            "descript" : "toggle performance infos inside the headset"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "tracking space" : {
+            "digest" : "",
+            "descript" : "tracking space"
+        },"position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "link to Shader Node"
+        },
+        "near" : {
+            "digest" : "",
+            "descript" : "near frustum"
+        },
+        "far" : {
+            "digest" : "",
+            "descript" : "far frustum"
+        },
+        "publish transformation" : {
+            "digest" : "hands",
+            "descript" : "publishes hand tracking as a transformation node if the hand tracking device is available"
+        },
+        "transformation space" : {
+            "digest" : "head and hands",
+            "descript" : "chose the transformation space for publishing."
+        },
+        "mirror" : {
+            "digest" : "",
+            "descript" : "shows the same image on the outlet as seen inside the goggles."
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "In order to use the oculus rift you need to have Oculus Home installed. (see link on top)",
+        "note2" : "Creating a virtual reality world requires high-performance computer graphics -- with the current generation of consumer head-mounted displays, it requires the equivalent of two HD or better resolution screens rendering at 90 frames per second. At present the recommended PC requirements to cover both the Rift and the Vive are:",
+        "note3" : "\n\t<li>GPU: NVIDIA GTX 970 / AMD R9 290 equivalent or greater \n\t<li>Video Output: HDMI 1.4 or DisplayPort 1.2 or newer \n\t<li>CPU: Intel i5-4590 / AMD FX 8350 equivalent or greater \n\t<li>Memory: 8GB+ RAM \n\t<li>USB: 3x USB 3.0 ports plus 1x USB 2.0 port \n\t<li>OS: Windows 7 SP1 64 bit or newer (No OSX support at present)"
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

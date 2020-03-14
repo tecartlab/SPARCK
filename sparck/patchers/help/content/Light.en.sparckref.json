@@ -1,0 +1,104 @@
+{
+	"digest": "Place a light source in a 3D scene",
+	"description" : {
+        "desc1" : "Contains the properties needed to define a light source in OpenGL. These include light type (directional, point and spot), light color, attenuation, and spot angle and falloff. ",
+        "desc2" : "In addition a position (for point and spot) and orientation (for directional and spot) can be defined for a virtual light in 3D space."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Model" : "",
+		"Material" : "",
+		"TfmNode" : "",
+		"SceneCapture" : ""
+  	}
+,
+	"NodeReference": {
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "position" : {
+            "digest" : "(local transformation)",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "(local transformation)",
+            "descript" : "rotation x y z"
+        },
+        "shadows" : {
+            "digest" : "",
+            "descript" : "Enable shadow casting from this light"
+        },
+        "shadowquality" : {
+            "digest" : "",
+            "descript" : "Shadow texture quality. Setting this value affects the dim and type of the internal shadow target: \n\t<li>'lo' (type=float16, dim=512) \n\t<li>'med-lo' (type=float16, dim=1024) \n\t<li>'med' (type=float32, dim=1024) \n\t<li>'med-hi' (type=float32, dim=2048) \n\t<li>'hi' (type=float32, dim=4096 )"
+        },
+        "shadowblur" : {
+            "digest" : "",
+            "descript" : "Shadow blur amount (default = 0.2). Indicates the width of a gaussian blur performed on the shadow output texture."
+        },
+        "shadowrange" : {
+            "digest" : "",
+            "descript" : "Shadow range value (default = 50.0). For directional lights, this represents the the maximum distance a shadow-caster can be from shadow-receiver. For spot/point lights the maximum range a light will affect other objects. Setting this as low as possible in the scene generally gives better shadow results."
+        },
+        "type" : {
+            "digest" : "",
+            "descript" : "Light type: \n\t<li>'point' \n\t<li>'directional' \n\t<li>'spot'"
+        },
+        "spot angle" : {
+            "digest" : "",
+            "descript" : "Defines the cone angle for spot type lights"
+        },
+        "atten const" : {
+            "digest" : "",
+            "descript" : "The constant factor in the attenuation formula: 1.0 means never attenuate, 0.0 is complete attenuation. The attenuation parameters determine how the light source diminishes with distance."
+        },
+        "atten linear" : {
+            "digest" : "",
+            "descript" : "The linear factor in the attenuation formula: 1 means attenuate evenly over the distance. The attenuation parameters determine how the light source diminishes with distance."
+        },
+        "atten quad" : {
+            "digest" : "",
+            "descript" : "The quadratic factor in the attenuation formula: adds a curvature to the attenuation formula. The attenuation parameters determine how the light source diminishes with distance."
+        },
+        "fall off" : {
+            "digest" : "",
+            "descript" : "Defines the rate of falloff of the light from the center, to the edges of the cone. Only applies to spot type lights."
+        },
+        "diffuse" : {
+            "digest" : "",
+            "descript" : "diffuse color"
+        },
+        "specular" : {
+            "digest" : "",
+            "descript" : "specular color"
+        },
+        "ambient" : {
+            "digest" : "",
+            "descript" : "ambient color"
+        },
+        "publish transformation" : {
+            "digest" : "",
+            "descript" : "published this light as a transformation node"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "Multiple jit.gl.light objects can be added to a scene, up to a maximum that is specific to your graphics card. The actual appearance of 3D objects is a combination of the material properties of that object, and the color values of the Loght objects in the scene. The possible color values are ambient, diffuse and specular. For more information, see chapter 5 of the OpenGl Redbook."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

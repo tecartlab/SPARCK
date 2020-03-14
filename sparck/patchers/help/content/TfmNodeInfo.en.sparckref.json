@@ -1,0 +1,79 @@
+{
+	"digest": "Informs about transformations",
+	"description" : {
+        "desc1" : "This node allows to get info about a transformation hierarchy."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "TfmNode" : "",
+		"TfmMirror" : "",
+		"TfmLookAt" : "",
+		"OscMessage" : ""
+  	}
+,
+	"NodeReference": {
+        "parent" : {
+            "digest" : "",
+            "descript" : "parent transformation node"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "draw position" : {
+            "digest" : "",
+            "descript" : "draws the position of the node"
+        },
+        "draw rotation" : {
+            "digest" : "",
+            "descript" : "draws the rotation of the node"
+        },
+        "draw parent link" : {
+            "digest" : "",
+            "descript" : "draws the link to the parent node"
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "display color"
+        },
+        "dump1" : {
+            "digest" : "worldpos, worldquat, worldscale",
+            "descript" : "sends this infos to the 'dump' outlet"
+        },
+        "dump2" : {
+            "digest" : "parentpos, parentquat, parentscale",
+            "descript" : "sends this infos to the 'dump' outlet"
+        },
+        "dump3" : {
+            "digest" : "local pos, quat, scale",
+            "descript" : "sends this infos to the 'dump' outlet"
+        },
+        "dump4" : {
+            "digest" : "worldtransformation matrix",
+            "descript" : "sends this infos to the 'dump' outlet"
+        },
+        "dump5" : {
+            "digest" : "inverse worldtransformation matrix",
+            "descript" : "sends this infos to the 'dump' outlet"
+        },
+        "low freq dump" : {
+            "digest" : "",
+            "descript" : "uses the low frequency metro (can be set inside preferences)"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "This node is definitly a work in progress..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

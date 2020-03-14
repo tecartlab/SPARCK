@@ -1,0 +1,39 @@
+{
+	"digest": "Loads a Cubemap file",
+	"description" : {
+        "desc1" : "Loads images files and transforms them into cubemaps.",
+        "desc2" : "Cubemaps are used by the SkyBox and Material nodes."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "SkyBox" : "",
+        "Material" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "",
+            "descript" : "loads the file from ~_assets/_textures/_cubemaps"
+        },
+        "render" : {
+            "digest" : "",
+            "descript" : "select the renderpass"
+       },
+        "filewatch" : {
+            "digest" : "",
+            "descript" : "loads automaticaly a changed image file"
+       }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

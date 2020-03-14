@@ -1,0 +1,246 @@
+<jittershader name="bs.portal.aug.dual.jxs">
+	<description>Spatial Augmented Reality Projection System - Shader</description>
+	<param name="mode" type="int" default="0" />
+	<param name="stage_mode" type="int" default="0" />
+
+	<param name="viewport_matrix" type="mat4" default="0.5 0. 0. 0. 0. 0.5 0. 0. 0. 0. 0.5 0. 0.5 0.5 0.5 0." />
+
+	<param name="beamer_enable" type="int" default="0 0 0 0 0 0" />
+	<param name="beamer_pos" type="vec3" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
+	<param name="beamer_color" type="vec4" default="0. 0. 1. 1. 0. 1. 0. 1. 1. 1. 0. 1. 0. 1. 1. 1. 1. 0. 1. 1. 0.5 0.5 1. 1." />
+	<param name="beamer_vp_matrix" type="mat4" />
+
+	<param name="beamer_factor" type="float" default="1. 1. 1. 1. 1. 1." />
+
+	<param name="collada_factor" type="mat4" default="1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1." />
+	<param name="world_matrix" type="mat4" state="WORLD_MATRIX" />
+
+	<param name="blend_angle" type="float" default="0.1" />
+	<param name="visible_angle" type="float" default="0.01" />
+	<!-- param name="visible_blend" type="float" default="0.01" -->
+
+	<param name="gradient" type="float" default="0. 0.024453 0.048907 0.07336 0.097813 0.122267 0.14672 0.171173 0.195627 0.22008 0.244533 0.268987 0.29344 0.31509 0.329438 0.343786 0.358133 0.372481 0.386829 0.401176 0.415524 0.429871 0.441664 0.449133 0.456602 0.464072 0.471541 0.47901 0.48648 0.493949 0.501418 0.508887 0.514397 0.519075 0.523754 0.528432 0.533111 0.53779 0.542468 0.547147 0.551825 0.556504 0.561149 0.563628 0.566107 0.568586 0.571065 0.573544 0.576023 0.578502 0.580981 0.58346 0.585939 0.588418 0.596003 0.604785 0.613568 0.622351 0.631133 0.639916 0.648698 0.657481 0.666263 0.675046 0.683828 0.692611 0.701393 0.710176 0.718958 0.727741 0.736524 0.745306 0.754089 0.762871 0.771654 0.780436 0.789219 0.798001 0.806784 0.815567 0.824349 0.833132 0.841914 0.850697 0.859479 0.868262 0.877044 0.885827 0.894609 0.903392 0.912175 0.920957 0.92974 0.938522 0.947305 0.956087 0.96487 0.973652 0.982435 0.991217 1." />
+
+	<language name="glsl" version="1.2">
+		<bind param="mode" program="vp" />
+		<bind param="stage_mode" program="fp" />
+
+		<bind param="world_matrix" program="vp" />
+		<bind param="collada_factor" program="vp" />
+
+		<bind param="beamer_factor" program="fp" />
+		<bind param="beamer_enable" program="fp" />
+		<bind param="beamer_color" program="fp" />
+		<bind param="beamer_vp_matrix" program="fp" />
+		<bind param="beamer_pos" program="fp" />
+
+		<bind param="blend_angle" program="fp" />
+		<bind param="visible_angle" program="fp" />
+		<bind param="viewport_matrix" program="vp" />
+
+		<bind param="gradient" program="fp" />
+
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+#version 120
+
+uniform mat4 world_matrix;
+uniform mat4 collada_factor;
+
+uniform mat4 viewport_matrix;
+uniform mat4 beamer_vp_matrix[6];
+
+varying vec3 normal;	// surface normal
+varying vec3 worldPos;	// vertex world position
+
+varying vec4 beamer_uv[6];	// beamer uv position
+
+mat4 screen_m_matrix = world_matrix * collada_factor;
+
+mat4 mvp0_matrix = beamer_vp_matrix[0] * screen_m_matrix;
+mat4 mvp1_matrix = beamer_vp_matrix[1] * screen_m_matrix;
+mat4 mvp2_matrix = beamer_vp_matrix[2] * screen_m_matrix;
+mat4 mvp3_matrix = beamer_vp_matrix[3] * screen_m_matrix;
+mat4 mvp4_matrix = beamer_vp_matrix[4] * screen_m_matrix;
+mat4 mvp5_matrix = beamer_vp_matrix[5] * screen_m_matrix;
+
+void main(void)
+{
+
+	// perform standard transform on vertex (general approach)
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+
+	vec4 clip, device, screen;
+
+	// calculate the UV-coordinate for beamer 0
+	clip = vec4(mvp0_matrix * gl_Vertex);
+	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
+	screen = viewport_matrix * device;
+	beamer_uv[0] = vec4(screen.x, screen.y, 0., 1.);
+
+	// calculate the UV-coordinate for beamer 0
+	clip = vec4(mvp1_matrix * gl_Vertex);
+	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
+	screen = viewport_matrix * device;
+	beamer_uv[1] = vec4(screen.x, screen.y, 0., 1.);
+
+	// calculate the UV-coordinate for beamer 0
+	clip = vec4(mvp2_matrix * gl_Vertex);
+	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
+	screen = viewport_matrix * device;
+	beamer_uv[2] = vec4(screen.x, screen.y, 0., 1.);
+
+	// calculate the UV-coordinate for beamer 0
+	clip = vec4(mvp3_matrix * gl_Vertex);
+	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
+	screen = viewport_matrix * device;
+	beamer_uv[3] = vec4(screen.x, screen.y, 0., 1.);
+
+	// calculate the UV-coordinate for beamer 0
+	clip = vec4(mvp4_matrix * gl_Vertex);
+	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
+	screen = viewport_matrix * device;
+	beamer_uv[4] = vec4(screen.x, screen.y, 0., 1.);
+
+	// calculate the UV-coordinate for beamer 0
+	clip = vec4(mvp5_matrix * gl_Vertex);
+	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
+	screen = viewport_matrix * device;
+	beamer_uv[5] = vec4(screen.x, screen.y, 0., 1.);
+
+	normal = normalize(mat3(screen_m_matrix) * gl_Normal);
+	worldPos = vec3(screen_m_matrix * gl_Vertex);
+}
+
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+#version 120
+#extension GL_ARB_texture_rectangle : enable
+
+uniform float gradient[101];
+
+uniform int mode;
+uniform int stage_mode;
+
+uniform float visible_angle;
+uniform float blend_angle;
+
+uniform int beamer_enable[6];
+uniform float beamer_factor[6];
+uniform vec3 beamer_pos[6];
+uniform vec4 beamer_color[6];
+
+varying vec3 normal;	// surface normal
+varying vec3 worldPos;	// vertex world position
+
+varying vec4 beamer_uv[6];	// beamer uv position
+
+
+const float PI = 3.1415926535897932384626433832795;
+const float PI_HALF = PI / 2.0;
+const vec4 WHITE = vec4( 1.0, 1.0, 1.0, 1.0);
+const vec4 BLACK = vec4( 0.0, 0.0, 0.0, 1.0);
+
+float angleblend(float _angle){
+	// calculate alpha blend channel
+	return 1. -  pow((1. - _angle), blend_angle);
+}
+
+// entry point
+void main()
+{
+	float vp[6];
+	float ang[6];
+	float vpSorted[6];
+	int   indexSort[6];
+
+	vec2 col;
+	float curve, visible, angle;
+    int i, j;
+
+    //Calculating the factor of importance for each beamer
+	for( i = 0; i < 6; i++){
+		col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * beamer_factor[i];
+		// calculate the angle between the surface normal and the projected beam.
+		// if it is below half pi it is visible, otherwise occluded from the projector
+		ang[i] = 1.0 - smoothstep(0, PI_HALF - visible_angle, (acos(dot(normal, normalize(beamer_pos[i]- worldPos)))));
+		visible = (beamer_enable[i] == 1)? angleblend(ang[i]): 0.;
+		curve = (beamer_enable[i] == 1)?clamp(min(col.x,col.y), 0., 1.):0;
+		curve = visible * curve;
+		// create an s-shaped curve from the linear curve
+		vp[i] = (curve < 0.5)?pow(2. * curve, 2) / 2.: 1. - pow(2. * (1. - curve), 2) / 2.;
+		vpSorted[i] = 0;
+		indexSort[i] = i;
+	}
+
+	//Sorting the viewport values
+	int idxmax;
+
+    for(i = 5; i > 0; --i){
+    	for(j = 0; j < i; j++){
+	    	idxmax = (vp[indexSort[j]] > vp[indexSort[j+1]])? indexSort[j]: indexSort[j + 1];
+    		indexSort[j + 1] = indexSort[j] + indexSort[j + 1] - idxmax;
+    		indexSort[j] = idxmax;
+    	}
+    }
+
+	//calc the factor for each of the three possible beams
+	float firstRange = 1.0 / vp[indexSort[0]] * vp[indexSort[1]];
+	float secondRange = 1.0 / vp[indexSort[0]] * vp[indexSort[2]];
+	float thirdRange = 1.0 / vp[indexSort[0]] * vp[indexSort[3]];
+
+	float sumRange = 1.0 + firstRange + secondRange + thirdRange;
+
+	//The sum of the following factors are equals 1.0
+	vpSorted[indexSort[0]] = 1.0 / sumRange;
+	vpSorted[indexSort[1]] = vpSorted[indexSort[0]] * firstRange;
+	vpSorted[indexSort[2]] = vpSorted[indexSort[0]] * secondRange;
+	vpSorted[indexSort[3]] = vpSorted[indexSort[0]] * thirdRange;
+
+	// calculate the color mode
+	if(mode == 0){
+		if(stage_mode == 0){
+			// create the colormix with up to 4 beamers
+			gl_FragColor =  beamer_color[indexSort[0]] * vpSorted[indexSort[0]] +
+							beamer_color[indexSort[1]] * vpSorted[indexSort[1]] +
+							beamer_color[indexSort[2]] * vpSorted[indexSort[2]] +
+							beamer_color[indexSort[3]] * vpSorted[indexSort[3]];
+		} else if(stage_mode == 1){
+			// colorcode the surfaces that are covered by multiple beamers.
+			gl_FragColor =  beamer_color[indexSort[0]] * ang[indexSort[0]] +
+							beamer_color[indexSort[1]] * ang[indexSort[1]] +
+							beamer_color[indexSort[2]] * ang[indexSort[2]] +
+							beamer_color[indexSort[3]] * ang[indexSort[3]];
+		} else if(stage_mode > 1){
+			int idx = stage_mode - 2;
+			vec4 calcfrag = (idx == indexSort[0])? WHITE * vpSorted[idx]:BLACK;
+			calcfrag = (idx == indexSort[1])? WHITE * vpSorted[idx]:calcfrag;
+			calcfrag = (idx == indexSort[2])? WHITE * vpSorted[idx]:calcfrag;
+			calcfrag = (idx == indexSort[3])? WHITE * vpSorted[idx]:calcfrag;
+			gl_FragColor = calcfrag;
+		}
+	}else if(mode > 0){
+			//it takes up to 4 beamer into the mix
+			int idx = mode - 1;
+			float gradientCorrected = gradient[int(vpSorted[idx] * 100.)];
+			vec4 calcfrag = (idx == indexSort[0])? WHITE * gradientCorrected:BLACK;
+			calcfrag = (idx == indexSort[1])? WHITE  * gradientCorrected:calcfrag;
+			calcfrag = (idx == indexSort[2])? WHITE * gradientCorrected:calcfrag;
+			calcfrag = (idx == indexSort[3])? WHITE * gradientCorrected:calcfrag;
+
+			gl_FragColor = calcfrag;
+	}
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

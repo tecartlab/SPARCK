@@ -1,0 +1,65 @@
+{
+	"digest": "Load / draw mask",
+	"description" : {
+        "desc1" : "Loads and saves texures. The modification of textures is only black and white. The main purpose is the use for mask in combination with Texture-Effect-Nodes.",
+        "desc2" : "The saved texture will be a PNG."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "HAP-Codec" : "https://github.com/Vidvox/hap/"
+    }
+,
+	"seealso": {
+ 		"Texture" : "",
+        "TextureOP" : "",
+        "BlendSoftedge" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "",
+            "descript" : "load image (TIFF. GIF, JPEG, PNG)"
+        },
+        "render pass" : {
+            "digest" : "",
+            "descript" : "render pass. default is a manual render pass since the loaded texture needs only passed on once because of its static nature."
+        },
+        "texture setup" : {
+            "digest" : "",
+            "descript" : "Internally the texture is handled as a 1-channel bw-texture. the texture setup defines how the black/white values are set for a 4-channel ARGB texture. \n\t<li>dddd will set all channels to the bw-values. \n\t<li>dwww will only set the Alpha-channel to the bw-value, while the RGB-channels will be set to white (1.0) \n\t<li>wddd will set the Alpha-channel to white and the RGB-channels to the bw-value."
+        },
+        "edit" : {
+            "digest" : "",
+            "descript" : "sets the focus of the editor window to this node"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "preset dims" : {
+            "digest" : "",
+            "descript" : "preset dimensions. used to populate dimX and dimY."
+        },
+        "dimX" : {
+            "digest" : "",
+            "descript" : "width of image"
+        },
+        "dimY" : {
+            "digest" : "",
+            "descript" : "height of image"
+        },
+        "filewatch" : {
+            "digest" : "",
+            "descript" : "reloads texture automatically if file changes."
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "After a modification of the texture with the editor, the file needs to be saved, otherwise the changes get lost."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

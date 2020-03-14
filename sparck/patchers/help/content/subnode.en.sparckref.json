@@ -1,0 +1,38 @@
+{
+	"digest": "creates a subnode",
+	"description" : {
+	   "desc1" : "subnodes create child-workspaces and help to get more structure into a project.",
+	   "desc2" : "Use sub-inlets and sub-outlets to connect your different project parts with patching cords"
+	}
+,
+	"links" : {
+		"Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+		"sub-inlet" : "",
+		"sub-outlet" : ""
+  	}
+,
+	"NodeReference": {
+	   "Name" : {
+           "digest" : "",
+           "descript" : "give the node a meaningfull name that represents its containing functionality"
+       }
+  	}
+, 
+	"PropertyReference" : {
+	   "PropertyOne" : {
+           "digest" : "TEXT HERE",
+           "descript" : "and more text here."
+       }
+	}
+,
+	"Notes" : {
+	   "note1" : "the main switch's state will not be stored in the project. It is merely there for easy switching on and off nodes that are contained by the subnode."
+	}
+,
+	"Feedback" : {
+	   "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+	   "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

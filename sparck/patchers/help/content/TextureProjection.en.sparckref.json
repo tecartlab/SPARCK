@@ -1,0 +1,98 @@
+{
+	"digest": "Projects textures",
+	"description" : {
+        "desc1" : "Projects textures outwards from the location of the Camera",
+        "desc2" : "This is a shader and can be applied to any model node."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"
+    }
+,
+	"seealso": {
+        "SceneCamera" : "",
+        "SceneCapture" : ""
+  	}
+,
+	"NodeReference": {
+        "Shader" : {
+            "digest" : "",
+            "descript" : "choose between the different projection types. \n\t<li>'multiblend' is the sophisticated mode \n\t\t that allows up to 6 projections \n\t\t and complex blending \n\t<li>'addition' adds up all projected textures \n\t<li>'single' is for a single texure"
+        }
+        ,"Beam X" : {
+            "digest" : "",
+            "descript" : "select the camera"
+        }
+  	}
+,
+	"PropertyReference" : {
+        "stage mode" : {
+            "digest" : "",
+            "descript" : "display mode of the model on which this shader is applied onto. \n\t<li>'Textured' shows the projected texture(s) \n\t<li>'Colored' shows the projections in colors \n\t<li>'Overlap' shows the amount of overlap \n\t<li>'Map' shows the differentiation \n\t<li>'BeamX' shows projection X"
+        },
+        "bg color" : {
+            "digest" : "",
+            "descript" : "color if no projected texture reaches the surface"
+        },
+        "projection" : {
+            "digest" : "",
+            "descript" : "Onto which face of the model this texture is projected: \n\t<li>'back' \n\t<li>'both sides' \n\t<li>'front'"
+        },
+        "spread" : {
+            "digest" : "",
+            "descript" : "spread factor will increase the differentiation between overlapping projections (1 = full spread)"
+        },
+        "blend bg" : {
+            "digest" : "",
+            "descript" : "enables blending with the background"
+        },
+        "angle" : {
+            "digest" : "",
+            "descript" : "angle differentiation: \n\t<li>'viewray' will differentiate based on the \n\t\t angle between the surface normal and \n\t\t the viewray, \n\t<li>'direction' will differentiate based on \n\t\t the angle between the surface normal \n\t\t and the camera direction."
+        },
+        "distance" : {
+            "digest" : "",
+            "descript" : "use distance as an additional differentiator. It will show its influence when the spread is increased. (0 = no influence)"
+        },
+        "limit" : {
+            "digest" : "",
+            "descript" : "angle limit, how much of the visible surface area is considered (0 = no limit) "
+        },
+        "falloff" : {
+            "digest" : "",
+            "descript" : "size of falloff gradient at the angle limit"
+        },
+        "bevel" : {
+            "digest" : "",
+            "descript" : "bevel size. it creates a gradient falloff defined by the frustum cone of the camera"
+        },
+        "rounded" : {
+            "digest" : "",
+            "descript" : "use rounded bevel"
+        },
+        "curve" : {
+            "digest" : "",
+            "descript" : "bevel gradient shape"
+        },
+        "use detail settings" : {
+            "digest" : "",
+            "descript" : "opens the individual settings for each camera (Beamer A - F)"
+        },
+        "interpolation correction" : {
+            "digest" : "",
+            "descript" : "interpolation correction. if strange artefacts start to appear, raise the value until the artefacts disappear. the artefacts are a result of interpolation errors between the vertex and fragment shader and occur close to the local x-y plane of the camera. increasing the subdivisions of the model can help, too"
+        },
+        "collada" : {
+            "digest" : "",
+            "descript" : "select if the node that applies this shader is using a collada file. This corrects a default rotation by the collada importer."
+        }
+    }
+,	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"author" : "tecartlab.com",
+	"authors" : [ "Martin Froehlich" ],
+	"description" : "SPatial Augmented Reality Kit allows to integrate you max patch with all the powerfull mapping abstraction SPARCK offers.",
+	"displayname" : "",
+	"extends" : "",
+	"extensible" : 0,
+	"homepatcher" : "SPARCK overview.maxpat",
+	"max_version_max" : "none",
+	"max_version_min" : "8.1.2",
+	"name" : "SPARCK",
+	"os" : 	{
+		"macintosh" : 		{
+			"platform" : [ "x64" ],
+			"min_version" : "none"
+		}
+,
+		"windows" : 		{
+			"platform" : [ "x64" ],
+			"min_version" : "none"
+		}
+
+	}
+,
+	"package_extra" : 	{
+		"reverse_domain" : "com.tecarlab",
+		"copyright" : "Copyright (c) 2020 TECARTLAB"
+	}
+,
+	"tags" : ["framework", "interactive", "mapping", "augmented reality"],
+	"version" : "1.0.0",
+	"website" : "https://tecartlab.com",
+	"filelist" : 	{
+		"examples" : [],
+		"externals" : [],
+		"patchers" : [],
+		"help" : ["QueScript.maxhelp", "bs.help.QueScript.maxpat", "bs.file.select.maxhelp"],
+		"docs" : [],
+		"code" : [],
+		"extras" : [ "SPARCK overview.maxpat" ]
+	}
+
+}

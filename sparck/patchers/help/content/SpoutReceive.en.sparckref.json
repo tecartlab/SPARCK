@@ -1,0 +1,44 @@
+{
+	"digest": "Receives Spout textures",
+	"description" : {
+        "desc1" : "Receives Spout textures (Windows only - see SyphonReceive for OSX) for further processing inside SPARCK"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Spout" : "http://spout.zeal.co/",
+        "TCPSpout" : "http://techlife.sg/TCPSpout/"
+    }
+,
+	"seealso": {
+        "SpoutSender" : ""
+  	}
+,
+	"NodeReference": {
+        "server name" : {
+            "digest" : "",
+            "descript" : "select spout server"
+        },
+        "texture dim" : {
+            "digest" : "",
+            "descript" : "resizes the received texture to this dimensions"
+        },
+        "flip" : {
+            "digest" : "",
+            "descript" : "flip recieved texture in x / y axis"
+        },
+        "render pass" : {
+            "digest" : "",
+            "descript" : "render pass in which this node passes on the received texture."
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "Spout textures arrive at SPARCK asynchronously. SPARCK checks for a new texture at the end of each frame-pass. On the chosen render-pass the texture is passed on for further processing."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

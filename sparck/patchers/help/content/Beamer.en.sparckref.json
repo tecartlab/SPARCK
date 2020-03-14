@@ -1,0 +1,147 @@
+{
+	"digest": "The virtual representation of a projector",
+	"description" : {
+        "desc1" : "A Beamer represents a real world project inside SPARCK's 3D space",
+        "desc2" : "It usually gets its transformation RIG from a calibration process"
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "Calibrator" : "",
+        "SceneCapture" : "",
+        "TfmMirror" : "",
+        "TfmLookAt" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "",
+            "descript" : "select the transformation RIG. The file needs to be located inside the ~/_assets/_projectors folder. This file is created with the help of a Calibrator node."
+        },
+        "RIG" : {
+            "digest" : "",
+            "descript" : "opens the transformation rig"
+       }
+  	}
+, 
+	"PropertyReference" : {
+        "stage" : {
+            "digest" : "",
+            "descript" : "render context. \n<li>'stage' is for normal openGL \n<li>'shady' is for rendering with shadows"
+        },
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "set the render group to draw. Model/Canvas/MeshWarp/Grid have an equivalent in which you can choose which group to draw to."
+        },
+        "erase color" : {
+            "digest" : "",
+            "descript" : "the background color"
+        },
+        "stereo" : {
+            "digest" : "",
+            "descript" : "creates two renderpasses for each stereo texture"
+        },
+        "E" : {
+            "digest" : "",
+            "descript" : "export the transformation matrix, projection matrix, world translation and world quaternion of the used transfom RIG."
+        },
+        "identify beamer" : {
+            "digest" : "",
+            "descript" : "use the RIG-color as backgroud color"
+        },
+        "set texture dimensions" : {
+            "digest" : "",
+            "descript" : "sets the texture size of this render pass"
+        }
+    }
+, 
+	"RIGReference" : {
+        "Model" : {
+            "digest" : "",
+            "descript" : "Calibration model. Needs to be of type Wavefront OBJ."
+        },
+        "Calibration" : {
+            "digest" : "",
+            "descript" : "The calibration settings. If you want to keep your calibration targets you need to save them here."
+        },
+        "color" : {
+            "digest" : "",
+            "descript" : "identifies the Beamer/Calibrator in the 3DViewer"
+        },
+        "near clip" : {
+            "digest" : "[m]",
+            "descript" : "near frustum clipping"
+        },
+        "far clip" : {
+            "digest" : "[m]",
+            "descript" : "far frustum clipping"
+        },
+        "distance" : {
+            "digest" : "[m]",
+            "descript" : "distance of projector from the origin target"
+        },
+        "polar" : {
+            "digest" : "[deg]",
+            "descript" : "polar angle. When used by the Calibrator - node, this setting can be modified with <alt>-mouse drag inside the editor window."
+        },
+        "azimuth" : {
+            "digest" : "[deg]",
+            "descript" : "azimuth angle. When used by the Calibrator - node, this setting can be modified with <alt>-mouse drag inside the editor window."
+        },
+        "tilt" : {
+            "digest" : "[deg]",
+            "descript" : "tilt angle."
+        },
+        "width" : {
+            "digest" : "[m]",
+            "descript" : "projection width at origin target. When used by the Calibrator - node, this setting can be modified with <ctrl>-mouse drag inside the editor window."
+        },
+        "height" : {
+            "digest" : "[m]",
+            "descript" : "projection height at origin target. When used by the Calibrator - node, this setting can be modified with <ctrl>-mouse drag inside the editor window."
+        },
+        "reset" : {
+            "digest" : "",
+            "descript" : "resets autgenerated values"
+        },
+        "position" : {
+            "digest" : "Calibration / Canvas model",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "Calibration / Canvas model",
+            "descript" : "rotation x y z"
+        },
+        "scale" : {
+            "digest" : "Calibration / Canvas model",
+            "descript" : "scale"
+        },
+        "position" : {
+            "digest" : "Stage offset",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "Stage offset",
+            "descript" : "rotation x y z"
+        },
+        "position" : {
+            "digest" : "Stage",
+            "descript" : "position x y z"
+        },
+        "rotation" : {
+            "digest" : "Stage",
+            "descript" : "rotation x y z"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,102 @@
+{
+	"digest": "Execute Que Scripts",
+	"description" : {
+        "desc1" : "Que Script is SPARCK own super powerfull scripting language.",
+        "desc2" : "You find a nice introduction following the link 'Reference' below.",
+        "desc3" : "The implementation of QueScript inside SPARCK follows certain idiosyncracies that are described down below."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Reference" : "https://github.com/maybites/Lib_QueScript/wiki/QueScript",
+        "Editor" : "https://atom.io/packages/atom_quescript_package"
+    }
+,
+	"seealso": {
+ 		"OscSend" : ""
+  	}
+,
+	"NodeReference": {
+        "file" : {
+            "digest" : "",
+            "descript" : "load and execute que script"
+        },
+        "edit" : {
+            "digest" : "",
+            "descript" : "edit the loaded file. You can set your prefered editor inside properties."
+        },
+        "play que" : {
+            "digest" : "",
+            "descript" : "lists all ques inside the script and allows you to manually execute the chosen one."
+        },
+        "show progress bar" : {
+            "digest" : "",
+            "descript" : "shows how each que is progressing"
+        },
+        "pause / play" : {
+            "digest" : "",
+            "descript" : "pauses / plays the execution"
+        },
+        "stop" : {
+            "digest" : "",
+            "descript" : "stops the execution"
+        }
+  	}
+, 
+	"PropertyReference" : {
+        "update mode" : {
+            "digest" : "",
+            "descript" : "there are two modes to choose: \n\t<li>automatic will update the script with each frame-pass. \n\t<li>custom will allow you to set your own update frequency."
+        },
+        "frequency" : {
+            "digest" : "",
+            "descript" : "custom update frequency"
+        },
+        "osc node" : {
+            "digest" : "",
+            "descript" : "Que script can create OSC messages, but needs an OscSend node to send them to."
+        },
+        "autostart" : {
+            "digest" : "",
+            "descript" : "autostart the script after loading it. It will execute the first <que> inside the script."
+        },
+        "Editor" : {
+            "digest" : "",
+            "descript" : "select your prefered editor or add your own."
+        },
+        "debug" : {
+            "digest" : "",
+            "descript" : "will output debug information to the console"
+        },
+        "fileWatch" : {
+            "digest" : "",
+            "descript" : "reloads the script file if it has changed by an external editor. Usually a good idea while you are editing."
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "WueScript-commands like <send>, <print>, <osc>, <out>, <trigger> are dealt with in the following way:",
+        "send" : "<send> will send the message to the internal dispatcher. It is the only way to control SPARCK parameters. an example would be: \n\t<send>/sparck/node ::QueScript::property::autostart 1</send>",
+        "print" : "<print> will send the message to the console. an example would be: \n\t<print>script passed this point...</print>",
+        "osc" : "<osc> will send the message to the linked OscSend node you set in the properties. an example would be: \n\t<osc>/my/custom/oscmessage parameter 34</osc>",
+        "out" : "<out> will send the message out of the 'out' outled of the node. an example would be: \n\t<out>slowly drained creativity</out>",
+        "trigger" : "<trigger> will send a trigger message out of the 'trigger' outled of the node. an example would be: \n\t<trigger>completely drained creativity</trigger>",
+        "note2" : "\nThe QueScriptNode can also be remotely controlled via OSC.",
+        "que" : "Que-commands like 'play', 'pause', 'resume' and 'stop' are sent to the node in the following OSC-format:",
+        "que play" : "\t<li>/sparck/node/Your_QueScript_NodeName play <que-name>",
+        "que pause" : "\t<li>/sparck/node/Your_QueScript_NodeName pause <que-name>",
+        "que resume" : "\t<li>/sparck/node/Your_QueScript_NodeName resume <que-name>",
+        "que stop" : "\t<li>/sparck/node/Your_QueScript_NodeName stop <que-name>",
+        "note3" : "Variables can be sent to the QueScript. They will belong to the <script> scope (as mentioned in the reference) and are sent to the node in the following OSC-format:",
+        "var-set" : "\t<li>/sparck/node/Your_QueScript_NodeName var <var-name> <var-value> (<var-values>)",
+        "var-inforeset" : "All variables sent to the Node this way can be cleared with the reset command:",
+        "var-reset" : "\t<li>/sparck/node/Your_QueScript_NodeName reset",
+        "note4" : "Trigger messages can be sent to the QueScript. They are sent to all currently running que's and are sent to the node in the following OSC-format:",
+        "trigger-msg" : "\t<li>/sparck/node/Your_QueScript_NodeName trigger <trigger-value> (<trigger-value2> <trigger-value3> ...)"
+    }
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<script>
+	<que name="START" loop="no">
+		<timer/><!-- timer starts the internal timer -->
+		<print>Performance Test Started</print>
+		<play name="que0"/>
+		<play name="que1"/>
+		<wait timer="10s"/>
+		<print>Performance Test 10s</print>
+		<play name="que2"/>
+		<play name="que3"/>
+		<wait timer="20s"/>
+		<print>Performance Test 20s</print>
+		<play name="que4"/>
+		<play name="que5"/>
+		<wait timer="30s"/>
+		<print>Performance Test 30s</print>
+		<play name="que6"/>
+		<play name="que7"/>
+		<wait timer="40s"/>
+		<print>Performance Test 40s</print>
+		<play name="que8"/>
+		<play name="que9"/>
+		<wait timer="50s"/>
+		<print>Performance Test 50s</print>
+		<wait timer="1m:1s"/>
+		<print>Performance Test Finished</print>
+		<stop/>
+	</que>
+	<que name="que0" loop="no">
+		<var name="queNumber">0</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<debugger scope="local"/>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que1" loop="no">
+		<var name="queNumber">1</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que2" loop="no">
+		<var name="queNumber">2</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que3" loop="no">
+		<var name="queNumber">3</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que4" loop="no">
+		<var name="queNumber">4</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que5" loop="no">
+		<var name="queNumber">5</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que6" loop="no">
+		<var name="queNumber">6</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que7" loop="no">
+		<var name="queNumber">7</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que8" loop="no">
+		<var name="queNumber">8</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+	<que name="que9" loop="no">
+		<var name="queNumber">9</var><!-- creates a variable 'queNumber' inside the que-domain -->
+		<timer/><!-- timer starts the internal timer -->
+		<while name="while" condition="{$TIMER lt (60 * 1000)}" init="{:whilevar = 0}" next="{whilevar = (whilevar + 1)}">
+			<if true="{whilevar lt 1}">
+				<send>{'/testbed' + queNumber} while below 1: {whilevar}</send>
+				<else>
+					<send>{'/testbed' + queNumber} while above 1: {whilevar}</send>
+				</else>
+			</if>
+		</while>
+  		<anim name="color" loop="normal" duration="5s" fadeout="2s">
+			<track name="f1">0 {2 * PI}</track>
+			<send>{'/testbed' + queNumber} cmd0 {(0.5 - cos(f1) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd1 {(0.5 - cos(f1 + (2 * PI * 0.1)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd2 {(0.5 - cos(f1 + (2 * PI * 0.2)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd3 {(0.5 - cos(f1 + (2 * PI * 0.3)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd4 {(0.5 - cos(f1 + (2 * PI * 0.4)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd5 {(0.5 - cos(f1 + (2 * PI * 0.5)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd6 {(0.5 - cos(f1 + (2 * PI * 0.6)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd7 {(0.5 - cos(f1 + (2 * PI * 0.7)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd8 {(0.5 - cos(f1 + (2 * PI * 0.8)) / 2) * 100}</send>
+			<send>{'/testbed' + queNumber} cmd9 {(0.5 - cos(f1 + (2 * PI * 0.9)) / 2) * 100}</send>
+  		</anim>
+		<wait timer="1m"/>
+	</que>
+</script>

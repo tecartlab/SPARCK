@@ -1,0 +1,32 @@
+{
+	"digest": "Sends Syphon textures",
+	"description" : {
+        "desc1" : "Sends Syphon textures (OSX only - see SpoutSend for Windows) for further processing outside SPARCK. Technically it creates a Syphon Server with its node name. The App name will be SPARCK."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials",
+        "Syphon" : "http://www.syphon.v002.info",
+        "TCPSyphon" : "http://techlife.sg/TCPSyphon/"
+    }
+,
+	"seealso": {
+        "SyphonReceive" : ""
+  	}
+,
+	"NodeReference": {
+        "flip" : {
+            "digest" : "",
+            "descript" : "flip texture in x / y axis before sending"
+        }
+  	}
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

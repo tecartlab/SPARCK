@@ -1,0 +1,80 @@
+{
+	"digest": "Captures the view from a Scene Camera",
+	"description" : {
+        "desc1" : "The SceneCapture node is needed to render the view from a SceneCamera.",
+        "desc2" : "It also can be used to render the view from a Beamer or the transformed view by a TfmMirror-node",
+        "desc2" : "While SceneCamera represents the virtual camera chassis, SceneCapture represents the virtual film: For capturing the textures SceneCapture is needed."
+	}
+,
+	"links" : {
+        "Video" : "http://tecartlab.com/tutorials"}
+,
+	"seealso": {
+        "SceneCamera" : "",
+        "Beamer" : "",
+        "TfmMirror" : ""
+  	}
+,
+	"NodeReference": {
+        "Camera" : {
+            "digest" : "",
+            "descript" : "select the node from where to render."
+        },
+        "type" : {
+            "digest" : "(set by the Camera selection)",
+            "descript" : "can be one of the following: \n\t<li>off \n\t<li>camera capture \n\t<li>beamer capture \n\t<li>beamer mirror \n\t<li>special capture \n\t<li>special mirror"
+        },
+        "stereo" : {
+            "digest" : "(set by the Camera selection)",
+            "descript" : "shows if the linked camera is stereo. If it is stereo, the Capture-node will have two texture outlets."
+        } 
+  	}
+, 
+	"PropertyReference" : {
+        "stage" : {
+            "digest" : "",
+            "descript" : "render context. \n<li>'stage' is for normal openGL \n<li>'shady' is for rendering with shadows"
+        },
+        "RenderGroup" : {
+            "digest" : "",
+            "descript" : "render group to draw. Model/Canvas/MeshWarp/Grid have an equivalent in which you can choose which group to draw to."
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "Applies this shader to all objects rendered in this renderpass."
+        },
+        "dim" : {
+            "digest" : "",
+            "descript" : "sets the texture size of this render pass. Beware: If used in conjunction with a Camera, the Camera will set the aspect ratio. Dim will only define the resolution of the rendered texture."
+        },
+        "beamer adapt" : {
+            "digest" : "",
+            "descript" : "Use the Beamer-nodes texture dimensions. Can only be set if this Capture-node is linked to a Beamer."
+        },
+        "beamer avatar" : {
+            "digest" : "",
+            "descript" : "Draw a beamer icon inside the 3DViewer. Can only be set if this Capture-node is linked to a TfmMirror-node that itself is linked to a Beamer-node."
+        },
+        "erase color" : {
+            "digest" : "",
+            "descript" : "the background color"
+        },
+        "pass" : {
+            "digest" : "",
+            "descript" : "Renderpass. This defines when in a frame-pass (see reference) this Capure node does the rendering. A manual renderpass will only be executed right after loading a project or when pressing the 'manual renderpass button' in the main menu."
+        },
+        "flip image" : {
+            "digest" : "",
+            "descript" : "flips the rendered image"
+        }
+    }
+,
+	"Notes" : {
+        "note1" : "..."
+	}
+,
+	"Feedback" : {
+        "feedback1" : "Documentations take a lot of time and effort. Unfortunately both are scarce ressources.",
+        "feedback2" : "If you would like to have more info about this node please drop a note. It helps to set priorities according to the user needs..."
+	}
+}

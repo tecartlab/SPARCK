@@ -1,0 +1,1 @@
+xcrun altool --notarization-history 0 -u 'concept@maybites.ch' -p "@keychain:AD_PASSWORD"

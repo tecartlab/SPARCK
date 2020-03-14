@@ -1,0 +1,92 @@
+<jittershader name="edgeblend">
+	<description>
+	generates gradient alpha for edge-blending
+	</description>
+	<param name="blend_power" type="float" default="1." />
+	<param name="blend_luminance" type="float" default="1." />
+	<param name="gamma" type="vec3" default="2.2 2.2 2.2" />
+	<param name="gradient" type="float" default="0. 0.024453 0.048907 0.07336 0.097813 0.122267 0.14672 0.171173 0.195627 0.22008 0.244533 0.268987 0.29344 0.31509 0.329438 0.343786 0.358133 0.372481 0.386829 0.401176 0.415524 0.429871 0.441664 0.449133 0.456602 0.464072 0.471541 0.47901 0.48648 0.493949 0.501418 0.508887 0.514397 0.519075 0.523754 0.528432 0.533111 0.53779 0.542468 0.547147 0.551825 0.556504 0.561149 0.563628 0.566107 0.568586 0.571065 0.573544 0.576023 0.578502 0.580981 0.58346 0.585939 0.588418 0.596003 0.604785 0.613568 0.622351 0.631133 0.639916 0.648698 0.657481 0.666263 0.675046 0.683828 0.692611 0.701393 0.710176 0.718958 0.727741 0.736524 0.745306 0.754089 0.762871 0.771654 0.780436 0.789219 0.798001 0.806784 0.815567 0.824349 0.833132 0.841914 0.850697 0.859479 0.868262 0.877044 0.885827 0.894609 0.903392 0.912175 0.920957 0.92974 0.938522 0.947305 0.956087 0.96487 0.973652 0.982435 0.991217 1." />
+
+	<param name="setupmode" type="int" default="0" />
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="blend_power" program="fp" />
+		<bind param="blend_luminance" program="fp" />
+		<bind param="gradient" program="fp" />
+		<bind param="gamma" program="fp" />
+
+		<bind param="setupmode" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// MIT License
+// Martin Froehlich for tecartlab.com
+// Copyright 2020 - tecartlab.com
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+varying vec2 texdim0;
+
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+//wipe state
+uniform float gradient[101];
+uniform float blend_power;
+uniform float blend_luminance;
+uniform vec3 gamma;
+
+uniform int setupmode;
+
+//blending function
+// for 0 <= x <= 0.5 : f(x) = blendluminance (2 x)^blendpower
+// for 0.5 < x <= 1 : f(x) = 1- (1- blendluminance) (2(1-x))^blendpower
+
+float softedgeblend(float _factor){
+	// calculate alpha blend channel
+	return (_factor < 0.5)?
+			blend_luminance * pow((2. * _factor), blend_power):
+			1. - (1. - blend_luminance) * pow(2. * (1. - _factor), blend_power);
+}
+
+// f(x) = 1- (1-0.2)(2(1-x))^2
+void main()
+{
+	vec4 v0 = texture2DRect(tex0, texcoord0);
+	vec4 v1 = texture2DRect(tex1, texcoord1);
+
+	// first apply the custom gradient
+	float alph = gradient[int(v1.r * 100.)];
+
+	// calculate soft edge
+	float alphaBlend = softedgeblend(alph);
+
+	// calculate gamma correction
+	//vec3 gammaCorr = v0.rgb;
+	//if(alphaBlend != 1.0){
+	//	gammaCorr += v0.rgb * (1.- pow(vec3(alphaBlend), 1. / gamma));
+	//}
+
+	vec3 gammaCorr = v0.rgb + v0.rgb * (1.- pow(vec3(alphaBlend), 1. / gamma));
+
+	vec4 wiped = vec4(gammaCorr, alphaBlend * v0.a);
+
+	// output texture
+	if(setupmode == 0){
+		gl_FragColor = wiped;
+	} else if(setupmode == 1){
+		gl_FragColor = v0;
+ 	} else if(setupmode == 2){
+		gl_FragColor = v1;
+	}
+}
+]]>
+		</program>
+	</language>
+</jittershader>
