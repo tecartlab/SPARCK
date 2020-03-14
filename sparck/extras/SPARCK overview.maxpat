@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -12,7 +12,7 @@
 		"classnamespace" : "box",
 		"rect" : [ 177.0, 285.0, 944.0, 523.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -58,10 +58,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.0, 245.0, 150.0, 355.0 ],
+					"patching_rect" : [ 176.0, 245.0, 153.0, 355.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 14,
-					"presentation_rect" : [ 343.0, 219.0, 484.0, 208.0 ],
+					"presentation_rect" : [ 343.0, 219.0, 488.0, 208.0 ],
 					"text" : "Instructions:\n\n1. Open new patcher.\n2. right mouse click > context menu > paste from > sparck > 0_APP > APP.maxpat\n3. drag the dropped abstractions into the upper left corner of the patch\n4. resize the patch\n5. save the patch into its own folder. This important since additional folders will be created\n6. close the patch\n7. reopen the patch.\n\nNow you can patch away. \n\nopen the workspace subpatch and add new SPARCK abstractions via the contect menu > paste from > sparck > etc..\n"
 				}
 
@@ -88,7 +88,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 244.0, 329.0, 150.0, 127.0 ],
+					"patching_rect" : [ 244.0, 329.0, 152.0, 127.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 4,
 					"presentation_rect" : [ 343.0, 147.0, 424.0, 60.0 ],
