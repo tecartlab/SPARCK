@@ -7,19 +7,8 @@
  		</description>
         <property name="project.name" value="Lib_Sparck"/>
  		<property name="main.class.name" value="CamSolver"/>
- 		<property name="licences" value="${maybites.sparck.licences}"/>
  		<property name="jar.name" value="sparck.jar"/>
- 		<property name="obf.jar.name" value="obf.sparck.jar"/>
- 		<property name="export.dir" value="${maybites.sparck.export.dir}/lib"/>
-
- 		<path id="library-classpath">
- 			<pathelement location="${maybites.core.jar}" />
- 			<pathelement location="${maybites.mxj.jar}" />
- 			<pathelement location="${maybites.jaythreedee.jar}" />
- 			<pathelement location="${maxmsp.max.jar}" />
- 			<pathelement location="${maxmsp.jitter.jar}" />
- 			<pathelement location="${toxiclipscore.library.path}" />
- 		</path>
+ 		<property name="export.dir" value="${PROJECT_LOC}/../../../sparck/java-classes/lib"/>
 
  		<!--
  	 	 		==================================================================
@@ -31,7 +20,6 @@
  		<property name="project.jar.build.dir" value="bin" />
 
 		<property name="target.jar.path" value="${project.jar.build.dir}/${jar.name}" />
-		<property name="obfuscated.jar.path" value="${project.jar.build.dir}/${obf.jar.name}" />
 
  		<!-- load the javadoc properties -->
  		<property file="${project.javadoc.dir}/building.properties" />
@@ -49,13 +37,6 @@
 				  <file file="${target.jar.path}"/>
 				</resources>
 			 </copy>
-
-			<!-- jar to export dir -->
- 			<!--
- 				<antcall target="jar.obfuscate" / >
-				<copy file="${obfuscated.jar.path}" todir="${export.dir}"/>
-				<delete file="${obfuscated.jar.path}"/>
-			-->
 
  		</target>
 

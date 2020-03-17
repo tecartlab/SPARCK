@@ -4,25 +4,15 @@ SPatial Augmented Reality Contruction Kit.
 
 Also includes QueScript.
 
-## Installation
-
 There are three flavors of SPARCK:
 
 * The standalone app.
 * Running the app inside Max8. You need [Max8](https://cycling74.com/downloads/) and the SPARCK package, but there is no need for a Max8 license.
 * The SPARCK package for creating [Max](https://cycling74.com/downloads/) patches based on SPARCK nodes. This allows to use the full power of Max8 in combination with SPARCK. This requires a [Max8 license](https://cycling74.com/shop).
 
-### Download
+## Installation
 
-#### Standalone APP
-get the latest [Release](https://github.com/tecartlab/SPARCK/Releases) for your operating system.
-
-#### Max Package
-get the latest [SPARCK package](https://github.com/tecartlab/SPARCK/Releases) for [Max](https://cycling74.com/downloads/). This package also includes the QueScript abstraction.
-
-find out more about [Max packages](https://docs.cycling74.com/max8/vignettes/package_manager)
-
-IMPORTANT: Some of Sparck's java externals/dependencies are compiled with Java13. A consequence is you need to hava Java13 installed on your machine, which also means you need [MXJ](https://github.com/tecartlab/max-mxj) max package installed, which overrides Max8 internal mxj package that can only deal with Java 8.
+read the [instructions](https://github.com/tecartlab/SPARCK/wiki/Installation) on how to install the different flavors of SPARCK.
 
 ## Usage
 
@@ -30,7 +20,7 @@ see [tecartlab.com](http://tecartlab.com) for more information.
 
 ## Building
 
-see the [wiki](https://github.com/tecartlab/SPARCK/wiki) for instructions on how to build SPARCK.
+read the [instructions](https://github.com/tecartlab/SPARCK/wiki/Building) on how to build SPARCK.
 
 ## Credits
 

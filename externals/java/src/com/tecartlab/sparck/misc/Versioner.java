@@ -50,12 +50,12 @@ public class Versioner extends MaxObject{
 	// WHEN REGISTERING FOR LICENSE YOU MUST CHANGE
 	// THE SERVERFILE <SERVER_RELEASE_DB>/build/current.txt
 	// to the build number you require
-	public static final int BUILD_NUMBER = 25;
-	public static final String VERSION = "1.0.0";
+	public static final int BUILD_NUMBER = 26;
+	public static final String VERSION = "1.1.0";
 
 	public static final String BUILD_YEAR 	= "2020";
-	public static final String BUILD_MONTH 	= "02";
-	public static final String BUILD_DAY 	= "01";
+	public static final String BUILD_MONTH 	= "03";
+	public static final String BUILD_DAY 	= "15";
 	public static final String BUILD_DATE = BUILD_YEAR + "-" +BUILD_MONTH + "-" + BUILD_DAY;
 
 	// set the releaseDB server folder name to get all the settings
