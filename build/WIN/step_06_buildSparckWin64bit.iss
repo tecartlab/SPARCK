@@ -2,16 +2,18 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "SPARCK"
-#define MyAppVersion "0.5.0.1"
+#define MyAppVersion "1.1.0.26"
 #define MyAppPublisher "tecartlab"
+#define MyAppCopyright "tecartlab.com"
 #define MyAppURL "http://tecartlab.com/"
 #define MyAppExeName "SPARCK.exe"
+#define MyInstallerName "SPARCK_1.1.0_(b26)_WIN"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{0375D067-1B04-42C6-B5A6-7D123CB9C2D1}
+AppId=54D810BB-010E-429D-9254-4166A6DE3388
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -22,23 +24,23 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-OutputBaseFilename=SparckInstaller
+OutputBaseFilename={#MyInstallerName}
 Compression=lzma
 SolidCompression=yes
-LicenseFile=C:\Users\maybites\Arbeiten\01_projekte\150816_SPARCK\01_dev\app_sparck\build\Bundle\EndUserLicenseAgreement.rtf
+LicenseFile=..\Bundle\EndUserLicenseAgreement.rtf
 ChangesAssociations=True
-OutputDir=C:\Users\maybites\Arbeiten\01_projekte\150816_SPARCK\05_building\04_packing\WIN
-VersionInfoCompany=tecartlab
-VersionInfoCopyright=tecartlab.com
+OutputDir=build
+VersionInfoCompany={#MyAppPublisher}
+VersionInfoCopyright={#MyAppCopyright}
 VersionInfoProductName=Sparck
 TerminalServicesAware=False
-VersionInfoProductTextVersion=Beta 0.5.0.1
+VersionInfoProductTextVersion={#MyAppVersion}
 Uninstallable=yes
 UninstallFilesDir={win}\Installer
-VersionInfoVersion=0.5.0.1
-VersionInfoProductVersion=0.5.0.1
+VersionInfoVersion={#MyAppVersion}
+VersionInfoProductVersion={#MyAppVersion}
 ArchitecturesInstallIn64BitMode=x64
-SetupIconFile=C:\Users\maybites\Arbeiten\01_projekte\150816_SPARCK\01_dev\app_sparck\build\Bundle\SPARCK.ico
+SetupIconFile=..\Bundle\SPARCK.ico
 UninstallDisplayName=SparckUninstaller
 
 [Registry]

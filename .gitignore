@@ -6,3 +6,4 @@ c_externals/sysbuild/
 *.db
 exporting/WIN/
 build/WIN/build
+build/WIN/step_02_maxScriptForExport.txt

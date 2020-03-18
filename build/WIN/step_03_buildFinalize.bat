@@ -5,9 +5,8 @@ xcopy /s "C:\Program Files\Java\jdk-13.0.2" %~dp0\build\SPARCK\jre
 rmdir /s /q %~dp0\build\SPARCK\jre\jmods
 rmdir /s /q %~dp0\build\SPARCK\jre\include
 rmdir /s /q %~dp0\build\SPARCK\jre\legal
-del /s /q /f /a:h %~dp0\build\SPARCK\jre\lib\ct.sym
-del /s /q /f /a:h %~dp0\build\SPARCK\jre\lib\src.zip
-except java.* del %~dp0\build\SPARCK\jre\bin /Q
+del %~dp0\build\SPARCK\jre\lib\ct.sym
+del %~dp0\build\SPARCK\jre\lib\src.zip
 
 REM Remove unused files...
 rmdir /s /q %~dp0\build\SPARCK\resources\support\CEF
@@ -21,13 +20,14 @@ rmdir /s /q %~dp0\build\SPARCK\resources\packages\max-mxj\source
 rmdir /s /q %~dp0\build\SPARCK\resources\packages\max-mxj\sysbuild
 rmdir /s /q %~dp0\build\SPARCK\resources\packages\max-mxj\testing
 rmdir /s /q %~dp0\build\SPARCK\resources\packages\max-mxj\.git
-del /s /q /f /a:h %~dp0\build\SPARCK\resources\packages\max-mxj\.*
+del %~dp0\build\SPARCK\resources\packages\max-mxj\*.*
 
 REM Change menu...
 xcopy %~dp0..\Bundle\maxinterface.json %~dp0\build\SPARCK\resources\interfaces\maxinterface.json
 
 REM Add Java Lib...
 xcopy %~dp0..\..\sparck\java-classes\lib %~dp0\build\SPARCK\resources\java-classes\lib
+rmdir /s /q %~dp0\build\SPARCK\resources\java-classes\lib\opencv
 
 REM Set Java Initialization...
 xcopy %~dp0\Bundle\max.java.config.txt %~dp0\build\SPARCK\resources\java-classes
