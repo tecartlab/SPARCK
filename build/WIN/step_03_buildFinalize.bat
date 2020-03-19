@@ -28,6 +28,7 @@ xcopy %~dp0..\Bundle\maxinterface.json %~dp0\build\SPARCK\resources\interfaces\m
 REM Add Java Lib...
 xcopy %~dp0..\..\sparck\java-classes\lib %~dp0\build\SPARCK\resources\java-classes\lib
 rmdir /s /q %~dp0\build\SPARCK\resources\java-classes\lib\opencv
+del %~dp0\build\SPARCK\resources\java-classes\lib\*.dylib
 
 REM Set Java Initialization...
 xcopy %~dp0\Bundle\max.java.config.txt %~dp0\build\SPARCK\resources\java-classes

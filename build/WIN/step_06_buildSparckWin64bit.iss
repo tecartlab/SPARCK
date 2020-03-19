@@ -7,7 +7,7 @@
 #define MyAppCopyright "tecartlab.com"
 #define MyAppURL "http://tecartlab.com/"
 #define MyAppExeName "SPARCK.exe"
-#define MyInstallerName "SPARCK_1.1.0_(b26)_WIN"
+#define MyInstallerName "SPARCK_1.1.0_b26_WIN"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
