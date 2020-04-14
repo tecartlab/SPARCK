@@ -7,3 +7,4 @@ c_externals/sysbuild/
 exporting/WIN/
 build/WIN/build
 build/WIN/step_02_maxScriptForExport.txt
+build/OSX
