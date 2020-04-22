@@ -1,4 +1,4 @@
-<jittershader name="bs.portal.tex.proj.multi.direction.6-beam.jxs">
+<jittershader name="bs.portal.spatial.se.bake.mask.6.jxs">
 	<description>SPARCK - multi projection - Shader</description>
 	<param name="tex0" type="int" default="0" />
 	<param name="tex1" type="int" default="1" />
@@ -11,45 +11,6 @@
 	<param name="tex8" type="int" default="8" />
 
 	<param name="mode" type="int" default="0" />
-	<param name="stage_mode" type="int" default="0" />
-	<param name="projection_mode" type="float" default="0" />
-
-	<param name="beamer_enable" type="float" default="1. 1. 1. 1. 1. 1." />
-	<param name="beamer_count" type="int" default="0" />
-
-	<param name="beamer_color" type="vec4" default="1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1." />
-	<param name="offColor" type="vec4" default="0. 0. 0. 1." />
-
-	<param name="beamer_pos" type="vec3" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
-	<param name="beamer_dir" type="vec3" default="0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1." />
-	<param name="beamer_up" type="vec3" default="1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0." />
-
-	<param name="beamer_m_matrix" type="mat4" default="1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1." />
-	<param name="beamer_v_matrix" type="mat4" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
-	<param name="beamer_p_matrix" type="mat4" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
-	<param name="world_matrix" type="mat4" state="WORLD_MATRIX" />
-	<param name="viewport_matrix" type="mat4" default="0.5 0. 0. 0. 0. 0.5 0. 0. 0. 0. 0.5 0. 0.5 0.5 0.5 0." />
-
-	<param name="bevel_size" type="float" default="0. 0. 0. 0. 0. 0." />
-	<param name="bevel_curve" type="float" default="1. 1. 1. 1. 1. 1." />
-	<param name="bevel_round" type="int" default="0 0 0 0 0 0" />
-
-	<param name="angle_mode" type="float" default="0.0" />
-
-	<param name="angle_limit" type="float" default="0. 0. 0. 0. 0. 0." />
-	<param name="angle_falloff" type="float" default="0.3 0.3 0.3 0.3 0.3 0.3" />
-	<param name="angle_limit_low" type="float" default="0. 0. 0. 0. 0. 0." />
-	<param name="angle_limit_high" type="float" default="0.2 0.2 0.2 0.2 0.2 0.2" />
-
-	<param name="far_clip" type="float" default="0. 0. 0. 0. 0. 0." />
-
-	<param name="blend_spread" type="float" default="1.0" />
-	<param name="back_blend" type="float" default="1." />
-	<param name="distance_influence" type="float" default="1." />
-
-	<param name="interpolation_correction" type="float" default="0.1" />
-
-	<param name="collada_factor" type="mat4" default="1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1." />
 
 	<language name="glsl" version="1.2">
 		<bind param="tex0" program="fp" />
@@ -62,14 +23,7 @@
 		<bind param="tex7" program="fp" />
 		<bind param="tex8" program="fp" />
 
-		<bind param="beamer_count" program="fp" />
-		<bind param="beamer_color" program="fp" />
-
-		<bind param="projection_mode" program="fp" />
-		<bind param="stage_mode" program="fp" />
 		<bind param="mode" program="fp" />
-
-		<bind param="offColor" program="fp" />
 
 		<program name="vp" type="vertex">
 <![CDATA[
@@ -104,8 +58,6 @@ void main(void)
 
 varying vec2 texcoord2;
 
-uniform float projection_mode;
-uniform int stage_mode;
 uniform int mode;
 
 // samplers
@@ -119,29 +71,11 @@ uniform sampler2DRect tex6;
 uniform sampler2DRect tex7;
 uniform sampler2DRect tex8;
 
-uniform int beamer_count;
-
-uniform vec4 beamer_color[6];
-
-uniform vec4 offColor; 	// off color
-
-// constants
-
-const float PI = 3.1415926535897932384626433832795;
-const float PI_HALF = PI / 2.0;
-const vec4 WHITE = vec4( 1.0, 1.0, 1.0, 1.0);
-const vec4 BLACK = vec4( 0.0, 0.0, 0.0, 1.0);
-
-vec4 alphablend(vec4 src, vec4 dst){
-	float outA = src.a + dst.a * (1.0 - src.a);
-	return vec4((src.rgb * src.a + dst.rgb * dst.a * (1.0 - src.a))/outA, outA);
-}
-
 // entry point
 void main()
 {
 
-    vec4 color[7];
+  vec4 color[7];
 	color[0] = texture2DRect(tex2, texcoord2);
 	color[1] = texture2DRect(tex3, texcoord2);
 	color[2] = texture2DRect(tex4, texcoord2);
@@ -150,7 +84,7 @@ void main()
 	color[5] = texture2DRect(tex7, texcoord2);
 	color[6] = texture2DRect(tex8, texcoord2);
 
-    gl_FragColor = color[mode];
+  gl_FragColor = color[mode];
 }
 
 ]]>
