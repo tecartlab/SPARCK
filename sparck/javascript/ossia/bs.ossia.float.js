@@ -32,6 +32,11 @@ function done(){
     outlet(0, "get", "clip");
 }
 
+function list(_list){
+	//post("list function: " + _list + "\n");
+}
+
+
 function type(_type){
     myType = _type;
 }

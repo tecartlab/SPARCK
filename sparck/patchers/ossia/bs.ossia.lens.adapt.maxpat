@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 203.0, 323.0, 482.0, 480.0 ],
+		"rect" : [ 203.0, 323.0, 489.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -47,17 +47,17 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 13.805542000000116, 95.403809000000024, 42.0, 17.0 ],
+					"patching_rect" : [ 130.805542000000116, 76.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 102.0, 0.0, 50.0, 17.0 ],
-					"text" : "angle",
+					"text" : "factor",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/angle" ],
+					"args" : [ "#1", "#2/factor" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -71,7 +71,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 132.73077400000011, 76.5, 50.0, 17.0 ],
+					"patching_rect" : [ 179.73077400000011, 76.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 150.0, 0.0, 50.0, 17.0 ],
 					"viewvisibility" : 1
@@ -80,7 +80,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/ratio" ],
+					"args" : [ "#1", "#2/enable" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -89,11 +89,11 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.float.maxpat",
+					"name" : "bs.ossia.toggle.maxpat",
 					"numinlets" : 1,
-					"numoutlets" : 3,
+					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 68.805542000000059, 76.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 50.0, 0.0, 50.0, 17.0 ],
@@ -113,29 +113,15 @@
 					"patching_rect" : [ 12.805542000000116, 76.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 50.0, 17.0 ],
-					"text" : "ratio",
+					"text" : "adapt",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
 
 			}
  ],
-		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-14", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
-					"source" : [ "obj-7", 1 ]
-				}
-
-			}
- ],
+		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.float.maxpat",
+				"name" : "bs.ossia.toggle.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -149,11 +135,22 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.floatui.mxo",
-				"type" : "iLaX"
+				"name" : "bs.ossia.float.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "icst.button.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "icst.floatui.mxo",
 				"type" : "iLaX"
 			}
  ],

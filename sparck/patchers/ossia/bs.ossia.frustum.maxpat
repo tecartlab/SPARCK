@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,83 +37,53 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
-					"hint" : "",
+					"comment" : "",
+					"id" : "obj-10",
+					"index" : 0,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 214.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "",
 					"id" : "obj-9",
-					"maxclass" : "comment",
+					"index" : 0,
+					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 13.805542000000116, 160.403809000000024, 42.0, 17.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 102.0, 34.0, 50.0, 17.0 ],
-					"text" : "far",
-					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
+					"patching_rect" : [ 152.73077400000011, 214.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
-					"hint" : "",
+					"comment" : "",
 					"id" : "obj-8",
-					"maxclass" : "comment",
+					"index" : 0,
+					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 13.805542000000116, 139.403809000000024, 42.0, 17.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 34.0, 50.0, 17.0 ],
-					"text" : "near",
-					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
+					"patching_rect" : [ 74.0, 214.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/far" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-6",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.float.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 368.805542000000059, 53.403809000000024, 50.0, 17.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 34.0, 50.0, 17.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#1", "#2/near" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
+					"comment" : "",
 					"id" : "obj-5",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.float.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 309.805542000000059, 53.403809000000024, 50.0, 17.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 34.0, 50.0, 17.0 ],
-					"viewvisibility" : 1
+					"index" : 0,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 68.805542000000059, 10.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -126,9 +96,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 13.805542000000116, 117.403809000000024, 42.0, 17.0 ],
+					"patching_rect" : [ 13.805542000000116, 141.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 102.0, 17.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 102.0, 18.0, 50.0, 17.0 ],
 					"text" : "bottom",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -143,9 +113,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 13.805542000000116, 91.403809000000024, 42.0, 17.0 ],
+					"patching_rect" : [ 13.805542000000116, 115.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 17.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 18.0, 50.0, 17.0 ],
 					"text" : "top",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -167,9 +137,9 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 251.805542000000059, 53.403809000000024, 50.0, 17.0 ],
+					"patching_rect" : [ 251.805542000000059, 77.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 17.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 150.0, 18.0, 50.0, 17.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -183,23 +153,11 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 13.805542000000116, 72.403809000000024, 42.0, 17.0 ],
+					"patching_rect" : [ 13.805542000000116, 96.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 102.0, 0.0, 50.0, 17.0 ],
 					"text" : "right",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 12.805542000000116, 15.0, 115.0, 22.0 ],
-					"text" : "bs.ossia.desc #1 #2"
 				}
 
 			}
@@ -219,7 +177,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 132.73077400000011, 53.5, 50.0, 17.0 ],
+					"patching_rect" : [ 132.73077400000011, 77.5, 50.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 150.0, 0.0, 50.0, 17.0 ],
 					"viewvisibility" : 1
@@ -242,9 +200,9 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 193.805542000000059, 53.403809000000024, 50.0, 17.0 ],
+					"patching_rect" : [ 193.805542000000059, 77.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 17.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 50.0, 18.0, 50.0, 17.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -265,7 +223,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 68.805542000000059, 53.403809000000024, 50.0, 17.0 ],
+					"patching_rect" : [ 68.805542000000059, 77.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 50.0, 0.0, 50.0, 17.0 ],
 					"viewvisibility" : 1
@@ -281,7 +239,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 12.805542000000116, 53.403809000000024, 42.0, 17.0 ],
+					"patching_rect" : [ 12.805542000000116, 77.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 50.0, 17.0 ],
 					"text" : "left",
@@ -306,22 +264,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
+					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-2", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"source" : [ "obj-5", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-6", 1 ]
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -345,13 +296,6 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.desc.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{

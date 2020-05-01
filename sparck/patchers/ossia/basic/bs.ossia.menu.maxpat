@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 632.0, 79.0, 845.0, 530.0 ],
+		"rect" : [ 561.0, 79.0, 845.0, 530.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,20 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 395.0, 334.0, 48.0, 22.0 ],
+					"text" : "pipe 20"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 					"id" : "obj-21",
@@ -273,7 +286,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 324.771240234375, 424.5, 124.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.ossia.float",
+						"filename" : "bs.ossia.float.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -369,15 +382,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-1", 6 ]
+					"destination" : [ "obj-18", 0 ],
+					"source" : [ "obj-1", 4 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"source" : [ "obj-1", 4 ]
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-1", 6 ]
 				}
 
 			}
@@ -441,6 +454,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"source" : [ "obj-18", 0 ]
 				}
 
 			}
