@@ -141,7 +141,7 @@ function dim(){
 	// ignore
 }
 
-function spread(sprd){
+function stereo_spread(sprd){
 	sensorBoxSketch.scale = new Array(Math.pow(1 + sprd, 2), 1., 1.);
 }
 

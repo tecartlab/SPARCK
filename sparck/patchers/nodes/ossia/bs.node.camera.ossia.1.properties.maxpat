@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 663.0, 377.0 ],
+		"rect" : [ 34.0, 79.0, 663.0, 451.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,73 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "tfm/parent", "@text", "parent" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-8",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.msg.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 248.0, 142.0, 201.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 45.0, 210.0, 21.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ "#1", "icon/render", "icon" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-7",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.icon.render.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 248.0, 114.0, 201.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 26.0, 210.0, 18.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ "#1", "lens/stereo" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-6",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.lens.stereo.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 248.0, 384.0, 206.0, 38.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 237.0, 210.0, 38.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "lens" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -50,12 +117,13 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.lens.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 212.0, 211.0, 101.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 248.0, 287.0, 206.0, 80.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 119.0, 210.0, 80.0 ],
+					"presentation_rect" : [ 0.0, 160.0, 210.0, 75.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -109,12 +177,13 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.transform.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 105.0, 211.0, 101.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 248.0, 175.0, 211.0, 101.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 26.0, 210.0, 91.0 ],
+					"presentation_rect" : [ 0.0, 67.0, 210.0, 91.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -153,9 +222,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 210.0, 205.0 ],
+					"patching_rect" : [ 0.0, 0.0, 210.0, 289.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 205.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 210.0, 289.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}
@@ -176,25 +245,46 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-6", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-9", 1 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.transform.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
+				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.vector3f_xyz.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
+				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.float.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -207,64 +297,99 @@
 			}
 , 			{
 				"name" : "bs.ossia.desc.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.vector3f_set_xyz.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
+				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.lens.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/camera",
+				"patcherrelativepath" : "../../ossia/camera",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.frustum.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/camera",
+				"patcherrelativepath" : "../../ossia/camera",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.fov.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/camera",
+				"patcherrelativepath" : "../../ossia/camera",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.menu.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.lens.adapt.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/camera",
+				"patcherrelativepath" : "../../ossia/camera",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.toggle.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.culling.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/camera",
+				"patcherrelativepath" : "../../ossia/camera",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.lens.stereo.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/camera",
+				"patcherrelativepath" : "../../ossia/camera",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.icon.render.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/render",
+				"patcherrelativepath" : "../../ossia/render",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.button.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../../ossia/basic",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.msg.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../../ossia/basic",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.button.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -324,7 +449,7 @@
 				"multi" : 0
 			}
  ],
-		"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ]
 	}
 
 }
