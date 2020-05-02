@@ -950,7 +950,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 385.0, 163.802612000000011, 62.0, 22.0 ],
-									"text" : "route uniq"
+									"text" : "route nodeid"
 								}
 
 							}
@@ -2398,7 +2398,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 47.0, 53.0, 122.0, 22.0 ],
-													"text" : "route uniq enableEdit"
+													"text" : "route nodeid enableEdit"
 												}
 
 											}
@@ -2698,7 +2698,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 249.0, 88.302612000000011, 289.0, 22.0 ],
-									"text" : "route uniq enable stereomode"
+									"text" : "route nodeid enable stereomode"
 								}
 
 							}

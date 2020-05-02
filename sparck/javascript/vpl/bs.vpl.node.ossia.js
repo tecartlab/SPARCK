@@ -1,10 +1,32 @@
+/* MIT License
+ *
+ * Copyright (c) 2012-2020 tecartlab.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * @author maybites
+ *
+ */
+
 /*
 
 Javascript Node - Workhorse for VPL (Visual Programming Language)
-
-by Maybites.ch
-
-(c) 2013 Maybites CC-BY-NC
 
 */
 
@@ -61,6 +83,7 @@ var vpl_properties;
 var vpl_NodeSpacePatcher;
 var vpl_linked = true;
 
+var showProperties = 0;
 var showHelp = null;
 
 var appGlobal = new Global("bs::app::global");
@@ -84,7 +107,7 @@ function dpost(_message){
 function done(){
     dpost("done\n");
 	// initialize automatically only if the parent patch wastn created by vpl
-	if(myNodeInit == false && myNodeSpace == undefined){
+	if(myNodeInit == false && myNodeName == undefined && myNodeSpace == undefined){
 		vpl_linked = false;
 		init();
  	}
@@ -92,17 +115,17 @@ function done(){
 
 function init(){
 //	myNodeVarName = getKeyValuefromDB(myNodeName, "_conn.id");
-	//post("init\n");
+	dpost("init node..("+myNodeName+") \n");
 	initNodeSpace();
-	initNode();	
+	initNode();
 	initNodeBox();
 	initConnections();
-	
- 	//post("nodebox initialized: " + myNodeName + ". sending nextlevel\n");
+
+ 	dpost("nodebox initialized: " + myNodeName + ". sending nextlevel\n");
 	outlet(0, "initnextlevel", "nodespace", getKeyValuefromDB(myNodeName, "_nodespace") + "::" + getKeyValuefromDB(myNodeName, "_nodespace.idx"), getKeyValuefromDB(myNodeName, "_level") + 1);
 	outlet(0, "done");
 	myNodeInit = true;
-	
+
     if(vpl_NodeSpacePatcher != null){
         vpl_NodeSpacePatcher.message("script", "bringtofront", vpl_nodeBox.varname);
     }
@@ -124,10 +147,10 @@ function initNodeSpace(){
 }
 
 function initNode(){
-	//Find  all the important objects in this patcher 
+	//Find  all the important objects in this patcher
 	// and initialize them.
 	if(vpl_nodePatcher == null){
-		// tries to find a text object with the name "vpl_titleEdit" 
+		// tries to find a text object with the name "vpl_titleEdit"
 		if(this.patcher.getnamed("vpl_titleEdit") != null){
 			vpl_titleEdit = this.patcher.getnamed("vpl_titleEdit");
 			//post(" has vpl_titleEdit...\n");
@@ -150,21 +173,21 @@ function initNode(){
 		}
 		var client = this.patcher.box;
 		while (client) {
-			// tries to find a node enable object "enable" 
+			// tries to find a node enable object "enable"
 			if(client.patcher.getnamed("enable") != null){
 				vpl_nodeEnable = client.patcher.getnamed("enable");
 			}
-				
-			// tries to find a canvas object with the name "vpl_canvas" 
+
+			// tries to find a canvas object with the name "vpl_canvas"
 			if(client.patcher.getnamed("vpl_canvas") != null){
 				vpl_nodeCanvas = client.patcher.getnamed("vpl_canvas");
 			 	//post(" has vpl_canvas... \n");
 			}
-			
+
 			if(client.patcher.getnamed("vpl_ThisNodePatcher") != null){
 				vpl_nodePatcher = client.patcher;
 				break;
-			} else { 
+			} else {
 				client = client.patcher.box;
 			}
 		}
@@ -173,9 +196,9 @@ function initNode(){
 
 function initNodeBox(){
     dpost("initNodeBox()\n");
-	//Find  all the important objects in this patcher 
+	//Find  all the important objects in this patcher
 	// and initialize them.
-	
+
 	// calculates this vpl_nodeBox size
 	if(vpl_nodeCanvas != null){
  		myNodeBoxSize = vpl_nodeCanvas.rect;
@@ -245,7 +268,7 @@ function initNodeBox(){
 	}else{
 		post(" found no canvas \n");
 	}
-	
+
 	if(myNodeBoxSize != null){
         dpost("myNodeBoxSize is not null...\n");
 		var objects = vpl_nodePatcher.firstobject;
@@ -269,7 +292,7 @@ function initNodeBox(){
 					//post(" found subpatcher: " + subpat.box.varname + "\n");
 				}
 			}
-			
+
 			// find all vpl_canvas object in this node to set their colors.
  			if(objects.varname.indexOf("vpl_canvas") == 0){
                 dpost("found more vpl_canvases...\n");
@@ -294,19 +317,19 @@ function initNodeBox(){
 							if(windowBar != null){
 								// store it
 								vpl_windowBar.push(windowBar);
-								//post("vpl_windowBar\n")	
+								//post("vpl_windowBar\n")
 							}
 						}
 						sobj = sobj.nextobject;
 					}
 				}
-				
+
 			}
-			
+
 			objects = objects.nextobject;
 		}
 	}
-	
+
 }
 
 function initConnections(){
@@ -346,10 +369,10 @@ function initIOlets(a) {
 			//a.message("bgcolor", .5, .5, .5, 1.);
 //			a.message("fgcolor", .5, .5, .5, 1.);
 		}
-		
+
 		localThisPatch.message("script", "sendbox", a.varname, "size", myIOLetButtonSize, myIOLetButtonSize);
 	}
-		
+
 	return true;
 }
 
@@ -392,7 +415,7 @@ function refresh(){
 
 function exportlevel(exportspace, level){
 	outlet(0, "exportlevel", exportspace + "::" + myNodeVarName,level + 1);
-}	
+}
 
 function nodespace(wrksp){
 	myNodeSpace = wrksp;
@@ -400,12 +423,13 @@ function nodespace(wrksp){
 
 // called by the unique script
 function title(newtitle){
+	dpost("set title " + newtitle + " -> nodeid =  " + myNodeID + "\n");
 	myNodeTitle = newtitle;
     myNodeAddress = "sparck:/node/" + newtitle;
 	storeKeyValueInDB(myNodeName, "_title", newtitle);
 	myNodeVarName = newtitle;
     // the sequence of the following messages matter:
-    //    we first need to set the title 
+    //    we first need to set the title
     //         used by: vpl.node.property.logic
     messnamed("bs::app::node::property::" + myNodeID, "titleChange", myNodeTitle);
     messnamed("bs::app::node::property::" + myNodeID, "addressChange", myNodeAddress);
@@ -430,7 +454,7 @@ function msg_int(val){
 }
 
 function enable(_enable){
-	if(myNodeEnable != _enable){		
+	if(myNodeEnable != _enable){
 		myNodeEnable = _enable;
 		myNodeSelected = 0;
 		setGUIColors();
@@ -447,7 +471,7 @@ function logo(_logo){
 	//vpl_nodeEnable.message("read", "bs.node.logo." + _logo + ".png");
 }
 
-// this function is called by 
+// this function is called by
 // bs.app.output.stageview.window/objectPicker/pickAndSelect
 function pickselect(_openProperties){
 	select(1);
@@ -482,7 +506,7 @@ function select(_select){
 			if(appGlobal.selectedNode[1] == myNodeName)
 				appGlobal.selectedNode = "undefined";
 		}
-	
+
 		myNodeSelected = _select;
 		//if(debug){
 		//	post("bs.vpl.node.select(): " + myNodeName + " selected: " + _select + "\n");
@@ -511,16 +535,16 @@ function dragselected(_nodename, _diffX, _diffY){
 function drag(diffX, diffY){
 	if(vpl_nodeBox != null){
 		applydrag(diffX, diffY);
-	
+
 		// if this node is part of multiple selected nodes,
 		//  then it will send all other selected nodes a drag-message
 		/*
 		if(myNodeSelected == 1){
 			messnamed(myNodeSpace + "::vpl::nodespace", "dragselected", myNodeName, diffX, diffY);
-		}		
+		}
 		*/
 	}
-}	
+}
 
 var myNodeIsCollapsed = 0;
 
@@ -535,11 +559,11 @@ function collapse(_collapsed){
 //			post("node rect  " +myBoxRect + "\n");
 			vpl_nodeBox.rect = myBoxRect;
 			//storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
-		}   
+		}
     }
 }
 
-        
+
 // called by one of the drag functions
 function applydrag(diffX, diffY){
 	var myBoxRect = vpl_nodeBox.rect;
@@ -550,7 +574,7 @@ function applydrag(diffX, diffY){
 	vpl_nodeBox.rect = myBoxRect;
 	storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
 //	vpl_NodeSpacePatcher.message("front"); <- slows down patch rendering
-}	
+}
 
 function openworkspace(){
 	//outlet(3, "_control", "openproperties");
@@ -569,7 +593,7 @@ function properties(val){
     myNodeProperties = val;
  }
 
-// called when the node is removed by the user or a new project is loaded, 
+// called when the node is removed by the user or a new project is loaded,
 // but NOT when the application is quited -> this is important, because window-node would
 // create a message sent to the window.context which causes a crash...
 function dispose(){
@@ -577,21 +601,21 @@ function dispose(){
 	dpost("dispose function called\n");
     enable(0); // sends enable 0 messages...
 	outlet(3, "dispose");
-    
+
     if(vpl_nodePatcher != 0){
-        // calls the parent patcher to dispose this node. 
+        // calls the parent patcher to dispose this node.
         // it will eventually call the notifydeleted function as well.
 		vpl_nodePatcher.message("dispose");
     }
-}	
+}
 
 //Called when the parent node was deleted
-function notifydeleted(){	
+function notifydeleted(){
 	dpost("notifydeleted function called\n");
 // 	cpost("ABOUT to got deleted\n");
 	deletenodeFromDB(myNodeName);
-	
-	// call all nodes inside the same nodespace and tell them 
+
+	// call all nodes inside the same nodespace and tell them
 	// to remove connections to this node from the database
 	messnamed(myNodeSpace + "::vpl::nodespace", "removeConnection", myNodeName);
 // 	cpost(myNodeName + " got deleted\n");
@@ -605,11 +629,11 @@ function notifydeleted(){
 function setGUIColors(){
 	//post("setGUIColors()\n");
 	initNode();
-    
+
 	var workingcolor = myNodeColorOn;
 	if(myNodeEnable == 0)
 		workingcolor = myNodeColorOff;
-		
+
 	// sets the color pf all vpl_canvas objects within the node
 	if(vpl_canvas instanceof Array){
         //post("canvas is array: "+vpl_canvas.length+"\n");
@@ -622,11 +646,11 @@ function setGUIColors(){
 			if(vpl_canvas[i].understands("bgfillcolor")){
                 //post("bgfillcolor\n");
 				vpl_canvas[i].message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-            } 
+            }
 			if(vpl_canvas[i].understands("bgcolor")){
                 //post("bgcolor\n");
 				vpl_canvas[i].message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-            } 
+            }
 		}
 	}else{
 //		vpl_canvas.message("bordercolor", 0., 0., 0., 1.);
@@ -637,17 +661,17 @@ function setGUIColors(){
 		if(vpl_canvas[i].understands("bgfillcolor")){
             //post("bgfillcolor\n");
 			vpl_canvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-        } 
+        }
 		if(vpl_canvas[i].understands("bgcolor")){
             //post("bgcolor\n");
 			vpl_canvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
         }
 	}
-	
+
 	if(vpl_nodeEnable != null){
 //		vpl_nodeEnable.message("bordercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
 	}
-	
+
 	// setting the title bar
 	workingcolor = (myNodeSelected == 1)? myNodeColorSelected:myNodeColorUnSelected;
 	if(vpl_titleBar != null)
@@ -663,17 +687,17 @@ function connection(outaddress, outid, outtype, inid, intype, inmaxcon){
  	//post("Connection attmpt: outaddress " + outaddress + " | outid " + outid + " \n");
 	var newConn = new Connection(outaddress, outid, outtype, inid, intype, inmaxcon);
 	if(compareTypes(outtype, intype)){ // if the types are compatible
-		var removedConnection = false;				
+		var removedConnection = false;
 		// if there are more than one connections allowed...
-		if(inmaxcon > 1){ 
+		if(inmaxcon > 1){
 			// ..see if there is already an identical connection..
 			for(var i = 0; i < connections.length; i++){
-				if(connections[i].inid == newConn.inid && 
-					connections[i].outaddress == newConn.outaddress && 
+				if(connections[i].inid == newConn.inid &&
+					connections[i].outaddress == newConn.outaddress &&
 					connections[i].outid == newConn.outid){
 					// ..and this connection already exists, then delete
 					// this connection.
-					
+
 					removeBoxConnection(connections[i]);
 					connections[i] = null;
 					removedConnection = true;
@@ -696,7 +720,7 @@ function connection(outaddress, outid, outtype, inid, intype, inmaxcon){
 				for(var i = 0; i < connections.length; i++){
 					if(connections[i].inid == newConn.inid){
 						// remove the old nodebox connections
-						removeBoxConnection(connections[i]);					
+						removeBoxConnection(connections[i]);
 						// new connection replaces the old connection
 						connections[i] = newConn;
 						// create the nodebox connections
@@ -775,7 +799,7 @@ function refreshConnections(){
 	for(var i = 0; i < connections.length; i++){
 		storeConnectionInDB(i, connections[i]);
 	}
-}	
+}
 
 function storeConnectionInDB(index, conn){
 	storeKeyValueInDB(myNodeName, "_connection_" + index, new Array(conn.outaddress, conn.outid, conn.outtype, conn.inid, conn.intype, conn.inmaxcon));
@@ -854,8 +878,8 @@ function compareTypes(outtype, intype){
 	}
 	return false;
 }
-		
-			
+
+
 /********************
 DATABASE Functions
 *********************/
@@ -948,4 +972,4 @@ function deletenodeFromDB(){
 		typeDB.remove(myNodeName);
 		myBaseDB.set(getNodeType(myNodeName),typeDB);
 	}
-}	
+}

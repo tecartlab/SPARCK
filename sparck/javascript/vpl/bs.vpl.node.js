@@ -58,12 +58,6 @@ var myNodeInit = false;
 var myNodeTitleYPos = 11;
 var myNodeTitleIconSize = 13;
 var myNodeID = "unset";
-var myUniq = "uq0";
-
-// patcher arguments
-if (jsarguments.length > 1){
-    myUniq = "uq" + jsarguments[1];
-}
 
 var myColorTable = new Dict("vpl::colortable");
 var myType2Color = new Dict("vpl::type2color");
@@ -387,7 +381,6 @@ function nodeid(_nodeid){
 	myNodeID = _nodeid;
 	outlet(2, "_control", "nodeid", _nodeid);
 	outlet(2, "nodeid", _nodeid);
-    outlet(2, "uniq", myUniq);
 }
 
 // called be the property icon
@@ -416,7 +409,7 @@ function nodespace(wrksp){
 
 // called by the unique script
 function title(newtitle){
-	dpost("set title " + newtitle + " -> uniq =  " + myUniq + "\n");
+	dpost("set title " + newtitle + " -> nodeid =  " + myNodeID + "\n");
 	myNodeTitle = newtitle;
 	storeKeyValueInDB(myNodeName, "_title", newtitle);
 	myNodeVarName = newtitle;

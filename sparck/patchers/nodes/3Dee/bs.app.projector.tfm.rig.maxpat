@@ -2611,7 +2611,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 603.25, 283.5, 62.0, 22.0 ],
-									"text" : "route uniq"
+									"text" : "route nodeid"
 								}
 
 							}
@@ -2720,7 +2720,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 225.444518996094075, 206.6923828125, 62.0, 22.0 ],
-									"text" : "route uniq"
+									"text" : "route nodeid"
 								}
 
 							}

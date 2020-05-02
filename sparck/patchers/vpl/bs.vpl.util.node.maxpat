@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 238.0, 728.0, 518.0 ],
+		"rect" : [ 488.0, 374.0, 728.0, 518.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -497,7 +497,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 15.481491, 55.000121999999998, 58.0, 22.0 ],
 					"text" : "autopattr",
-					"varname" : "u313000560"
+					"varname" : "u976049158"
 				}
 
 			}
@@ -1159,14 +1159,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"order" : 0,
-									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-4", 1 ]
 								}
@@ -1175,7 +1167,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"order" : 1,
 									"source" : [ "obj-4", 0 ]
 								}
 

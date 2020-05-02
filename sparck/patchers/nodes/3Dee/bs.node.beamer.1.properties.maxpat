@@ -150,7 +150,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 50.0, 98.0, 62.0, 22.0 ],
-									"text" : "route uniq"
+									"text" : "route nodeid"
 								}
 
 							}
@@ -532,7 +532,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 502.0, 22.0704345703125, 149.0, 22.0 ],
-					"text" : "routepass uniq enable title"
+					"text" : "routepass nodeid enable title"
 				}
 
 			}

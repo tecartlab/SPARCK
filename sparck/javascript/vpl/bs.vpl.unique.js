@@ -31,7 +31,7 @@ inlets = 1;
 outlets = 3;
 
 var myTitle = "undefined";
-var myID = null;
+var myNodeID = null;
 var myWorkspaceObject = null;
 
 var uniqueTable = new Dict("bs.vpl.unique.title");
@@ -39,14 +39,14 @@ var uniqueTable = new Dict("bs.vpl.unique.title");
 var vpl_edit;
 var vpl_titleEdit;
 
-var myID = null;
+var myNodeID = null;
 var setupdone = false;
 
 var isInEditMode = -1; // this value has to be -1 at the beginning
 
 // patcher arguments
 if (jsarguments.length > 1){
-    myID = "nodeid_" + jsarguments[1];
+    myNodeID = "id_" + jsarguments[1];
 }
 
 function loadbang(){
@@ -73,13 +73,8 @@ function init(){
 		setup();
 }
 
-// called when node was created within app.
-function nodename(_val){
-	myID = _val;
-}
-
 function setup(){
-	//post("myID: " + myID + "\n");
+	//post("myNodeID: " + myNodeID + "\n");
 
 	// searching the node-box in order to be able to set the title as varname
 	var owner = this.patcher.box;
@@ -96,7 +91,7 @@ function setup(){
 	// change the myTitle to a undef so the setTitle function can do its thing
 	myTitle = "undef";
 
-	outlet(0, "nodeid", myID);
+	outlet(0, "nodeid", myNodeID);
 	setTitle(varName);
 	setupdone = true;
 }
@@ -133,7 +128,7 @@ function setTitle(_newTitle){
 
 
 			// store the new name in the global list
-			uniqueTable.set(myID, myTitle);
+			uniqueTable.set(myNodeID, myTitle);
 
 			//change the scripting name of the node
 			if(myWorkspaceObject != null)
@@ -183,7 +178,7 @@ function isUniqueValue(_val){
 		ids = new Array(ids);
 	if(ids != null){
 		for(var i = 0; i < ids.length; i++){
-			if(ids[i].indexOf(myID) == -1 || (ids[i].indexOf(myID) != -1 && ids[i].length != myID.length)){
+			if(ids[i].indexOf(myNodeID) == -1 || (ids[i].indexOf(myNodeID) != -1 && ids[i].length != myNodeID.length)){
 				var _title = uniqueTable.get(ids[i]);
 				if(_title.indexOf(_val) != -1 && _title.length == _val.length)
 					return false;
@@ -196,8 +191,8 @@ function isUniqueValue(_val){
 //Called when the parent node was deleted
 function notifydeleted(){
 	//post("Unique to got deleted....\n");
-	if(myID != null && uniqueTable.contains(myID)){
-		uniqueTable.remove(myID);
-		//post(myID + "...Unique deleted\n");
+	if(myNodeID != null && uniqueTable.contains(myNodeID)){
+		uniqueTable.remove(myNodeID);
+		//post(myNodeID + "...Unique deleted\n");
     }
 }

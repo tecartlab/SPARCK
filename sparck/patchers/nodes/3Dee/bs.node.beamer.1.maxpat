@@ -201,7 +201,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 50.0, 100.0, 62.0, 22.0 ],
-									"text" : "route uniq"
+									"text" : "route nodeid"
 								}
 
 							}

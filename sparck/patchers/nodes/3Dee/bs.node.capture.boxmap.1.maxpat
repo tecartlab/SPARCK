@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"globalpatchername" : "BoxMapCapture",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -121,7 +122,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_gl_texture", "", "" ],
-					"patching_rect" : [ 357.05096435546875, 347.0, 89.622833251953125, 54.0 ],
+					"patching_rect" : [ 357.05096435546875, 347.0, 89.622833251953125, 53.0 ],
 					"text" : "jit.gl.node sparck @adapt 0 @capture 1 @enable 0"
 				}
 
@@ -138,7 +139,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -171,6 +172,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-2",
@@ -442,7 +444,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -475,6 +477,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-37",
@@ -798,7 +801,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -831,6 +834,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -1096,7 +1100,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 177.997039794921875, 311.5, 140.888824462890625, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 17.357162475585938, 31.0, 160.642837524414063, 20.623739242553711 ],
+					"presentation_rect" : [ 17.357162475585938, 31.0, 160.642837524414062, 20.623739242553711 ],
 					"varname" : "renderGroup",
 					"viewvisibility" : 1
 				}
@@ -1116,7 +1120,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1149,6 +1153,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-8",
@@ -1168,7 +1173,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 231.0, 468.0, 74.0, 34.0 ],
+									"patching_rect" : [ 231.0, 468.0, 74.0, 33.0 ],
 									"text" : "rendergroup\nsettings"
 								}
 
@@ -1214,7 +1219,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 479.75, 468.0, 38.0, 34.0 ],
+									"patching_rect" : [ 479.75, 468.0, 38.0, 33.0 ],
 									"text" : "used list"
 								}
 
@@ -1226,7 +1231,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 422.75, 468.0, 38.0, 34.0 ],
+									"patching_rect" : [ 422.75, 468.0, 38.0, 33.0 ],
 									"text" : "full list"
 								}
 
@@ -1341,7 +1346,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1065.800048828125, 462.0, 49.0, 34.0 ],
+									"patching_rect" : [ 1065.800048828125, 462.0, 49.0, 33.0 ],
 									"text" : "camTop"
 								}
 
@@ -1429,7 +1434,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1462,6 +1467,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-23",
@@ -1505,7 +1511,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 205.614288330078125, 579.0, 38.0, 34.0 ],
+													"patching_rect" : [ 205.614288330078125, 579.0, 38.0, 33.0 ],
 													"text" : "used list"
 												}
 
@@ -1517,7 +1523,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 148.614288330078125, 579.0, 38.0, 34.0 ],
+													"patching_rect" : [ 148.614288330078125, 579.0, 38.0, 33.0 ],
 													"text" : "full list"
 												}
 
@@ -1552,7 +1558,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 106.614288330078125, 214.0, 168.0, 34.0 ],
+													"patching_rect" : [ 106.614288330078125, 214.0, 168.0, 33.0 ],
 													"text" : "enable_cam, renderMode, dim"
 												}
 
@@ -1574,8 +1580,8 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 57.0, 82.0, 31.0, 20.0 ],
-													"text" : "uniq"
+													"patching_rect" : [ 57.0, 82.0, 45.0, 20.0 ],
+													"text" : "nodeid"
 												}
 
 											}
@@ -1653,7 +1659,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 721.79998779296875, 579.0, 49.0, 34.0 ],
+													"patching_rect" : [ 721.79998779296875, 579.0, 49.0, 33.0 ],
 													"text" : "camTop"
 												}
 
@@ -1706,7 +1712,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1739,6 +1745,7 @@
 														"tags" : "",
 														"style" : "",
 														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-67",
@@ -1751,7 +1758,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 1,
-																			"revision" : 2,
+																			"revision" : 4,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -1784,6 +1791,7 @@
 																		"tags" : "",
 																		"style" : "",
 																		"subpatcher_template" : "",
+																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
 																					"id" : "obj-1",
@@ -2123,7 +2131,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 1,
-																			"revision" : 2,
+																			"revision" : 4,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -2156,6 +2164,7 @@
 																		"tags" : "",
 																		"style" : "",
 																		"subpatcher_template" : "",
+																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
 																					"id" : "obj-12",
@@ -2313,7 +2322,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 1,
-																							"revision" : 2,
+																							"revision" : 4,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -2346,6 +2355,7 @@
 																						"tags" : "",
 																						"style" : "",
 																						"subpatcher_template" : "",
+																						"assistshowspatchername" : 0,
 																						"boxes" : [ 																							{
 																								"box" : 																								{
 																									"id" : "obj-29",
@@ -4172,7 +4182,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4205,6 +4215,7 @@
 														"tags" : "",
 														"style" : "",
 														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"comment" : "",
@@ -4329,7 +4340,7 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 1057.199951171875, 449.0, 49.0, 34.0 ],
+																	"patching_rect" : [ 1057.199951171875, 449.0, 49.0, 33.0 ],
 																	"text" : "camTop"
 																}
 
@@ -4381,7 +4392,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 1,
-																			"revision" : 2,
+																			"revision" : 4,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4414,6 +4425,7 @@
 																		"tags" : "",
 																		"style" : "",
 																		"subpatcher_template" : "",
+																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
 																					"id" : "obj-45",
@@ -4683,7 +4695,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 380.0, 126.0, 126.0, 22.0 ],
-																	"text" : "nodeid_2371"
+																	"text" : "2254"
 																}
 
 															}
@@ -5928,8 +5940,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 55.5, 75.0, 101.0, 22.0 ],
-									"text" : "route enable uniq"
+									"patching_rect" : [ 55.5, 75.0, 115.0, 22.0 ],
+									"text" : "route enable nodeid"
 								}
 
 							}
@@ -5947,7 +5959,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5980,6 +5992,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-7",
@@ -7256,7 +7269,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u042009504"
+					"varname" : "u699011008"
 				}
 
 			}
@@ -7891,147 +7904,147 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.vpl.util.nodelogic.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.unique.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.msg.receive.select.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/msg",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
 				"patcherrelativepath" : "../../msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.msg.receive.selector.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/msg",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
 				"patcherrelativepath" : "../../../javascript/msg",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.send.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/rendergroup",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/rendergroup",
 				"patcherrelativepath" : "../../rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
 				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "LayerCell_inv.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "LayerCell.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.capture.boxmap.1.properties.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/nodes/3Dee",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/3Dee",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.windows.pops.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.windows.pops.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/gui",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/gui",
 				"patcherrelativepath" : "../../../javascript/gui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.win.reactive.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.toggle.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.util.color.values.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.mxe64",
-				"type" : "mx64"
+				"name" : "bs.msg.receive.selector.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

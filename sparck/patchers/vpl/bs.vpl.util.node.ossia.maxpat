@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 399.0, 206.0, 708.0, 518.0 ],
+		"rect" : [ 34.0, 127.0, 708.0, 518.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -821,7 +821,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u687008884"
+					"varname" : "u886009101"
 				}
 
 			}
@@ -1177,7 +1177,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 251.444457999999997, 213.666626000000008, 146.5, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.vpl.node.title",
+						"filename" : "bs.vpl.node.title.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -1203,7 +1203,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 152.0, 496.0, 718.0, 340.0 ],
+						"rect" : [ 530.0, 518.0, 718.0, 340.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1998,6 +1998,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"order" : 0,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-4", 2 ]
 								}
@@ -2014,7 +2022,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -2030,7 +2038,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-4", 0 ]
 								}
 

@@ -11,10 +11,6 @@ var myNodeId = undefined;
 var myNodeName = undefined;
 var myWorkspaceObject = undefined;
 
-if (jsarguments.length > 1){
-    myNodeId = "id_" + jsarguments[1];
-}
-
 var uniqueTable = new Dict("bs.vpl.unique.title");
 
 var vpl_edit;
@@ -51,6 +47,11 @@ function loadbang(){
 		vpl_titleEdit = this.patcher.getnamed("vpl_titleEdit");
 		//post(" has vpl_titleEdit...\n");
 	}
+}
+
+
+function nodeid(_nodeid){
+	myNodeId = _nodeid;
 }
 
 // is called when the node has finished loading. 

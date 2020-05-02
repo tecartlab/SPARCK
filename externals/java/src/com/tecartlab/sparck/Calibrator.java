@@ -144,9 +144,9 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 	 * sets via the nodeid the relevant tracker, object and camproperties
 	 * @param _uniq
 	 */
-	public void uniq(String _uniq){
-		settrackername(_uniq + ".Tracker");
-		setobjectname(_uniq + ".Obj.Editor");
+	public void nodeid(String _nodeid){
+		settrackername(_nodeid + ".Tracker");
+		setobjectname(_nodeid + ".Obj.Editor");
 	}
 
 	/**
