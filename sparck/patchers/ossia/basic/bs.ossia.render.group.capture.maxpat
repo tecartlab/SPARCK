@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 91.0, 373.0, 893.0, 564.0 ],
+		"rect" : [ 294.0, 192.0, 283.0, 564.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1364,8 +1364,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 689.27783203125, 192.5, 201.0, 35.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 689.27783203125, 192.5, 201.0, 36.0 ],
 					"text" : "1 1 1 1 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0"
 				}
 
@@ -1392,7 +1391,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 583.52783203125, 154.5704345703125, 64.22216796875, 35.0 ],
+					"patching_rect" : [ 583.52783203125, 154.5704345703125, 64.22216796875, 36.0 ],
 					"text" : "getrow 0, getrow 1"
 				}
 
@@ -1464,7 +1463,7 @@
 			}
 , 			{
 				"box" : 				{
-					"cellpict" : "RenderGroupCell_capture.png",
+					"cellpict" : "RenderGroupCell_capture_B.png",
 					"columns" : 5,
 					"hint" : "render group two {/sparck/node ::<nodename>::property::renderGroup::groupTwo <row, col, val>}",
 					"horizontalspacing" : 1,
@@ -1514,8 +1513,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 680.27783203125, 131.5, 201.0, 35.0 ],
-					"text" : "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+					"patching_rect" : [ 680.27783203125, 131.5, 201.0, 36.0 ],
+					"text" : "1 1 1 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0"
 				}
 
 			}
@@ -1603,7 +1602,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 497.77783203125, 154.5704345703125, 60.0, 35.0 ],
+					"patching_rect" : [ 497.77783203125, 154.5704345703125, 61.0, 36.0 ],
 					"text" : "getrow 0, getrow 1"
 				}
 
@@ -1745,7 +1744,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 90.777832000000004, 115.429564999999997, 178.0, 102.0 ],
+									"patching_rect" : [ 90.777832000000004, 115.429564999999997, 178.0, 105.0 ],
 									"text" : "1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384 32768 65536 131072 262144 524288 1048576 2097152 4194304 8388608 16777216 33554432 67108864 134217728 268435456"
 								}
 
@@ -1772,7 +1771,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "list" ],
 									"patching_rect" : [ 22.777832, 12.0, 25.0, 25.0 ]
 								}
 
@@ -1927,7 +1926,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 412.27783203125, 153.78521728515625, 62.0, 35.0 ],
+					"patching_rect" : [ 412.27783203125, 153.78521728515625, 62.0, 36.0 ],
 					"text" : "getrow 0, getrow 1"
 				}
 
@@ -2411,21 +2410,28 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
 				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RenderGroupCell_capture.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.button.mxo",
-				"type" : "iLaX"
+				"name" : "RenderGroupCell_capture_B.png",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"patcherrelativepath" : "../../../media",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icst.button.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0
