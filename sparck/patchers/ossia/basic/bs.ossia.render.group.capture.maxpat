@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 294.0, 192.0, 283.0, 564.0 ],
+		"rect" : [ 294.0, 192.0, 1056.0, 564.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,6 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-31",
@@ -50,7 +49,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -83,7 +82,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-30",
@@ -96,7 +94,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 4,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -129,7 +127,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-5",
@@ -493,7 +490,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 4,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -526,7 +523,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-5",
@@ -878,7 +874,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 4,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -911,7 +907,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-16",
@@ -1430,18 +1425,19 @@
 					"maxclass" : "icst.button",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"on_up_bg_color" : [ 0.992249846458435, 0.612819194793701, 0.057630449533463, 1.0 ],
+					"off_down_bg_color" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"on_up_bg_color" : [ 0.176470588235294, 0.76078431372549, 1.0, 1.0 ],
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 321.27783203125, 206.21478271484375, 36.0, 32.5704345703125 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 22.0, 20.0, 19.0 ]
+					"presentation_rect" : [ 50.0, 0.0, 20.0, 19.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"cellpict" : "RenderGroupCell_capture.png",
+					"cellpict" : "RenderGroupCell_capture_B.png",
 					"columns" : 5,
 					"hint" : "render group two {/sparck/node ::<nodename>::property::renderGroup::groupTwo <row, col, val>}",
 					"horizontalspacing" : 1,
@@ -1454,9 +1450,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 583.52783203125, 207.0, 74.5, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 22.0, 50.0, 20.0 ],
+					"presentation_rect" : [ 150.0, 0.0, 50.0, 20.0 ],
 					"rows" : 2,
 					"varname" : "groupTwo[5]",
+					"verticalmargin" : 0,
 					"verticalspacing" : 1
 				}
 
@@ -1464,28 +1461,6 @@
 , 			{
 				"box" : 				{
 					"cellpict" : "RenderGroupCell_capture_B.png",
-					"columns" : 5,
-					"hint" : "render group two {/sparck/node ::<nodename>::property::renderGroup::groupTwo <row, col, val>}",
-					"horizontalspacing" : 1,
-					"id" : "obj-54",
-					"invisiblebkgnd" : 1,
-					"maxclass" : "matrixctrl",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "list", "list" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 497.77783203125, 207.0, 77.5, 31.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 100.0, 22.0, 50.0, 20.0 ],
-					"rows" : 2,
-					"varname" : "groupTwo[3]",
-					"verticalspacing" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"cellpict" : "RenderGroupCell_capture.png",
 					"columns" : 3,
 					"hint" : "render group two {/sparck/node ::<nodename>::property::renderGroup::groupTwo <row, col, val>}",
 					"horizontalspacing" : 1,
@@ -1498,9 +1473,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 412.27783203125, 206.21478271484375, 44.5, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 70.0, 22.0, 30.0, 20.0 ],
+					"presentation_rect" : [ 70.0, 0.0, 30.0, 20.0 ],
 					"rows" : 2,
 					"varname" : "groupTwo[6]",
+					"verticalmargin" : 0,
 					"verticalspacing" : 1
 				}
 
@@ -1514,7 +1490,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 680.27783203125, 131.5, 201.0, 36.0 ],
-					"text" : "1 1 1 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0"
+					"text" : "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
 				}
 
 			}
@@ -1633,7 +1609,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1666,8 +1642,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -2082,6 +2056,41 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "live.line",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 141.5, 282.0, 5.0, 100.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 101.0, 21.0, 48.0, 6.5 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"cellpict" : "RenderGroupCell_capture_B.png",
+					"columns" : 5,
+					"hint" : "render group two {/sparck/node ::<nodename>::property::renderGroup::groupTwo <row, col, val>}",
+					"horizontalspacing" : 1,
+					"id" : "obj-54",
+					"invisiblebkgnd" : 1,
+					"maxclass" : "matrixctrl",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "list", "list" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 497.77783203125, 207.0, 77.5, 31.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 100.0, 0.0, 50.0, 20.0 ],
+					"rows" : 2,
+					"varname" : "groupTwo[3]",
+					"verticalmargin" : 0,
+					"verticalspacing" : 1
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -2409,24 +2418,15 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
-				"patcherrelativepath" : "../../../javascript/misc",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "RenderGroupCell_capture.png",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"patcherrelativepath" : "../../../media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "RenderGroupCell_capture_B.png",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.rendergroup.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
