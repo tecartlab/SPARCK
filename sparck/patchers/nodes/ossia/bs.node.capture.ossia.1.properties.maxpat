@@ -201,9 +201,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 210.0, 24.0 ],
+					"patching_rect" : [ 0.0, 0.0, 210.0, 66.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 24.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 210.0, 66.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_collapsed"
 				}

@@ -40,27 +40,53 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-36",
-					"maxclass" : "newobj",
+					"id" : "obj-44",
+					"items" : [ "properties", ",", "rename", ",", "collapse", ",", "help", ",", "------", ",", "delete" ],
+					"maxclass" : "umenu",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 134.0, 231.333252000000016, 100.0, 22.0 ],
-					"text" : "prepend collapse"
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 578.75, 29.734161376953125, 22.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 202.0, 11.0, 22.0, 22.0 ],
+					"style" : "default"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-34",
-					"maxclass" : "toggle",
+					"id" : "obj-40",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 584.25, 229.833251999999987, 69.0, 22.0 ],
+					"text" : "collapse $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ "@filename", "bs.node.gui.button.collapse.svg", "@size", 13, 13, "@hint", "toggle collapse" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hint" : "",
+					"id" : "obj-31",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.gui.svg.toggle.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 134.0, 201.0, 24.0, 24.0 ],
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 584.25, 133.999878000000024, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 22.0, 21.0, 14.0, 14.0 ]
+					"presentation_rect" : [ 169.0, 13.0, 13.0, 13.0 ],
+					"viewvisibility" : 1
 				}
 
 			}
@@ -163,7 +189,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 497.25, 133.999878000000024, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 154.0, 13.0, 13.0, 13.0 ],
+					"presentation_rect" : [ 139.0, 13.0, 13.0, 13.0 ],
 					"varname" : "vpl_edit",
 					"viewvisibility" : 1
 				}
@@ -738,7 +764,7 @@
 ,
 					"patching_rect" : [ 450.25, 133.999878000000024, 17.055541999999999, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 169.0, 13.0, 13.0, 13.0 ],
+					"presentation_rect" : [ 154.0, 13.0, 13.0, 13.0 ],
 					"varname" : "vpl_help",
 					"viewvisibility" : 1
 				}
@@ -821,7 +847,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u886009101"
+					"varname" : "u023006327"
 				}
 
 			}
@@ -1177,7 +1203,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 251.444457999999997, 213.666626000000008, 146.5, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.vpl.node.title.js",
+						"filename" : "bs.vpl.node.title",
 						"parameter_enable" : 0
 					}
 ,
@@ -2237,7 +2263,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 284.888915999999995, 125.666626000000008, 102.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 21.0, 11.0, 146.0, 16.0 ],
+					"presentation_rect" : [ 21.0, 11.0, 136.0, 16.0 ],
 					"rounded" : 4.0,
 					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"varname" : "vpl_titleEdit",
@@ -2452,6 +2478,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-40", 0 ],
+					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-9", 2 ],
 					"source" : [ "obj-32", 0 ]
 				}
@@ -2459,22 +2492,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-36", 0 ],
-					"source" : [ "obj-34", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-35", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-37", 0 ],
-					"source" : [ "obj-36", 0 ]
 				}
 
 			}
@@ -2535,6 +2554,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"midpoints" : [ 593.75, 319.583252000000016, 175.5, 319.583252000000016 ],
+					"source" : [ "obj-40", 0 ]
 				}
 
 			}
@@ -2638,6 +2665,13 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../media",
 				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.toggle.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"patcherrelativepath" : "../gui",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
