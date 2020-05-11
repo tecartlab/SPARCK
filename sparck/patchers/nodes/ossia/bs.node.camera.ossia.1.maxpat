@@ -3413,7 +3413,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "nodeid", "#0", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@logo", "power", "@properties", "bs.node.camera.ossia.1.properties", "@help", "SceneCamera" ],
+					"args" : [ "#0", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@logo", "power", "@properties", "bs.node.camera.ossia.1.properties", "@help", "SceneCamera" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -3802,6 +3802,13 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.toggle.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"patcherrelativepath" : "../../gui",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{

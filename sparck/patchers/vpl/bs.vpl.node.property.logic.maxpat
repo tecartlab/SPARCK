@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 619.0, 378.0, 686.0, 456.0 ],
+		"rect" : [ 646.0, 374.0, 252.0, 456.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -91,10 +91,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 444.0, 63.5, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 176.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 169.0, 4.0, 14.0, 14.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -115,10 +115,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 374.0, 63.5, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 160.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 153.0, 4.0, 14.0, 14.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -142,7 +142,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 409.0, 63.5, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 192.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 185.0, 4.0, 14.0, 14.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -166,7 +166,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 612.0, 94.0, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 144.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 137.0, 4.0, 14.0, 14.0 ],
 					"varname" : "vpl_properties",
 					"viewvisibility" : 1
 				}
@@ -453,7 +453,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 313.0, 21.0, 25.0, 25.0 ]
 								}
 
@@ -930,7 +930,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 224.0, 59.000000000000014, 116.444457999999997, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 25.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 25.0 ],
 					"proportion" : 0.427536,
 					"varname" : "vpl_windowBar"
 				}

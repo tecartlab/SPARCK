@@ -34,7 +34,7 @@ function debugger(_val){
 
 function dpost(_message){
     if(debug){
-        post("node.title - " + myNodeId + ": " + _message + " \n");
+        post("Node " + myNodeId + " / title: " + _message + " \n");
     }
 }
 
@@ -201,9 +201,11 @@ function isUniqueValue(_val){
 
 //Called when the parent node was deleted
 function notifydeleted(){
-	dpost("Unique to got deleted....\n");
+	dpost("Unique key ("+myNodeId+") to got deleted....\n");
 	if(myNodeId != null && uniqueTable.contains(myNodeId)){
+		dpost("Unique keys " +uniqueTable.getkeys() + "\n");
+		dpost("get value " +uniqueTable.get(myNodeId) + "\n");
 		uniqueTable.remove(myNodeId);
-		//dpost(myNodeId + "...Unique deleted\n");
+		dpost(myNodeId + "...Unique deleted\n");
     }
 }

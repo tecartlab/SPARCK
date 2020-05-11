@@ -7,6 +7,8 @@ var BOTTOMBORDERDIST = 5;
 var TOPBORDERDIST = 23;
 var SNAPDISTANCE = BOTTOMBORDERDIST + 5;
 
+var WINDOWBARSIZE = 22;
+
 // set up inlets/outlets/assist strings
 inlets = 1;
 outlets = 4;
@@ -114,7 +116,7 @@ function done(){
                         //post("myPropertyCanvas.rect: " + myPropertyCanvas.rect + "\n");
                         //post("mySize: " + mySize + "\n");
                         //myClientProperties.message("presentation_rect", 0, 0, theSize[0], theSize[1]);
-                        outlet(0, "script", "sendbox", "vpl_properties", "presentation_rect", 0, 0, mySize[0], mySize[1]);
+                        outlet(0, "script", "sendbox", "vpl_properties", "presentation_rect", 0, WINDOWBARSIZE, mySize[0], mySize[1]);
                         //myClientProperties.presentation_rect = new Array(0,0,theSize[0], theSize[1]);
                     }else {
                         post("this shouldnt happen: loaded property patcher doesn't contain a 'vpl_canvas_full'!!\n");
@@ -122,7 +124,7 @@ function done(){
                     // then we are looking for the collapsed size of the properties
                     myPropertyCanvas = myproperty.getnamed("vpl_canvas_collapsed");
                     if(myPropertyCanvas != null){                    
-                        myCollapsedHeight = myPropertyCanvas.rect[3];
+                        myCollapsedHeight = myPropertyCanvas.rect[3] + WINDOWBARSIZE;
                         //post("myCollapsedHeight: " + myCollapsedHeight + "\n");
                     } else {
                         post("this shouldnt happen: loaded property patcher doesn't contain a 'vpl_canvas_collapsed'!!\n");

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 663.0, 451.0 ],
+		"rect" : [ 67.0, 415.0, 663.0, 451.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -55,7 +55,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 142.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 45.0, 210.0, 21.0 ],
+					"presentation_rect" : [ 0.0, 24.0, 200.0, 21.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -77,7 +77,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 114.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 26.0, 210.0, 18.0 ],
+					"presentation_rect" : [ 0.0, 5.0, 200.0, 18.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -100,7 +100,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 384.0, 206.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 237.0, 210.0, 38.0 ],
+					"presentation_rect" : [ 0.0, 216.0, 200.0, 38.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -123,7 +123,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 287.0, 206.0, 80.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 160.0, 210.0, 75.0 ],
+					"presentation_rect" : [ 0.0, 139.0, 200.0, 75.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -183,7 +183,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 175.0, 211.0, 101.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 67.0, 210.0, 91.0 ],
+					"presentation_rect" : [ 0.0, 46.0, 200.0, 91.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -201,9 +201,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 210.0, 66.0 ],
+					"patching_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 66.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_collapsed"
 				}
@@ -222,9 +222,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 210.0, 289.0 ],
+					"patching_rect" : [ 0.0, 0.0, 202.0, 289.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 289.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 289.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}

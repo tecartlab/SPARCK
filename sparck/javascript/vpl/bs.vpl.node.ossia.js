@@ -100,17 +100,20 @@ function debugger(_val){
 
 function dpost(_message){
     if(debug){
-        post(myNodeTitle + ": " + _message + " \n");
+        post("Node " + myNodeTitle + "/" +myNodeID + ": " + _message + " \n");
     }
 }
 
 function done(){
-    dpost("done\n");
+    dpost("execute done...\n");
 	// initialize automatically only if the parent patch wastn created by vpl
 	if(myNodeInit == false && myNodeName == undefined && myNodeSpace == undefined){
 		vpl_linked = false;
 		init();
- 	}
+ 	} else {
+        dpost("is created via vpl. myNodeInit = "+myNodeInit+" | myNodeName = "+myNodeName+" | myNodeSpace = "+myNodeSpace+" \n");
+    }
+    dpost("...done\n");
 }
 
 function init(){
@@ -130,6 +133,7 @@ function init(){
         vpl_NodeSpacePatcher.message("script", "bringtofront", vpl_nodeBox.varname);
     }
 	return true;
+	dpost("...init("+myNodeName+") done\n");
 }
 
 
@@ -181,7 +185,7 @@ function initNode(){
 			// tries to find a canvas object with the name "vpl_canvas"
 			if(client.patcher.getnamed("vpl_canvas") != null){
 				vpl_nodeCanvas = client.patcher.getnamed("vpl_canvas");
-			 	//post(" has vpl_canvas... \n");
+			 	dpost(" has vpl_canvas... \n");
 			}
 
 			if(client.patcher.getnamed("vpl_ThisNodePatcher") != null){
@@ -383,17 +387,18 @@ function initIOlets(a) {
 // called on creation. it is a unique id, loaded from the project and needed to access the nodeDB
 function nodename(_ndname){
     myNodeName = _ndname;
- }
+    dpost("my myNodeName is set: '" + myNodeName + "'\n");
+}
 
 // called on creation. it is the node unique id, which does not change during the lifetime
 // nodeid is currently only used by properties
 function nodeid(_nodeid){
-    dpost("my nodeis is set:" + _nodeid + "\n");
     myNodeID = _nodeid;
+    myNodeTitle = _nodeid;
+    dpost("My nodeid is set: '" + _nodeid + "'\n");
 	outlet(3, "_control", "nodeid", _nodeid);
 	outlet(3, "nodeid", _nodeid);
- 	outlet(3, "_control", "nodename", myNodeName);
-	outlet(3, "nodename", myNodeName);
+
 }
 
 // called by the property icon
@@ -423,7 +428,7 @@ function nodespace(wrksp){
 
 // called by the unique script
 function title(newtitle){
-	dpost("set title " + newtitle + " -> nodeid =  " + myNodeID + "\n");
+	dpost("set new title " + newtitle + " -> nodeid =  " + myNodeID + "\n");
 	myNodeTitle = newtitle;
     myNodeAddress = "sparck:/node/" + newtitle;
 	storeKeyValueInDB(myNodeName, "_title", newtitle);
@@ -627,7 +632,7 @@ function notifydeleted(){
  **********************/
 
 function setGUIColors(){
-	//post("setGUIColors()\n");
+	dpost("setGUIColors()\n");
 	initNode();
 
 	var workingcolor = myNodeColorOn;
@@ -636,7 +641,7 @@ function setGUIColors(){
 
 	// sets the color pf all vpl_canvas objects within the node
 	if(vpl_canvas instanceof Array){
-        //post("canvas is array: "+vpl_canvas.length+"\n");
+        dpost("canvas is array: "+vpl_canvas.length+"\n");
 		for(var i = 0; i < vpl_canvas.length; i++){
 //			vpl_canvas[i].message("bordercolor", 0., 0., 0., 1.);
 //			vpl_canvas[i].message("borderoncolor", 1., 1., 1., 1.);

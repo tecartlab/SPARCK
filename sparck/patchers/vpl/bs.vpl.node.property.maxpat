@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 244.0, 131.0, 562.0, 352.0 ],
+		"rect" : [ 435.0, 425.0, 562.0, 352.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,17 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 327.0, 199.903809000000024, 32.0, 22.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
@@ -81,7 +92,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 233.0, 133.903808999999995, 210.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 22.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -142,9 +153,9 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 214.0, 168.903808999999995 ],
+					"patching_rect" : [ 0.0, 21.0, 200.0, 138.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 159.0 ],
+					"presentation_rect" : [ 0.0, 21.0, 200.0, 138.0 ],
 					"varname" : "vpl_properties",
 					"viewvisibility" : 1
 				}
@@ -162,9 +173,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 210.0, 159.0 ],
+					"patching_rect" : [ 0.0, 0.0, 200.0, 159.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 159.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 159.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas"
 				}
@@ -180,7 +191,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"order" : 0,
+					"source" : [ "obj-132", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
+					"order" : 1,
 					"source" : [ "obj-132", 0 ]
 				}
 
