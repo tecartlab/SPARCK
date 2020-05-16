@@ -3413,7 +3413,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@logo", "power", "@properties", "bs.node.camera.ossia.1.properties", "@help", "SceneCamera" ],
+					"args" : [ "#0", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@logo", "power", "@properties", "bs.node.camera.ossia.1.properties", "@help", "SceneCamera", "@setCollapseSize", 30 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -3427,7 +3427,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 2.074097, 69.894713999999993, 182.925903000000005, 37.0 ],
+					"patching_rect" : [ 2.074097, 69.894713999999993, 197.925903000000005, 39.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 200.0, 29.0 ],
 					"varname" : "vpl_nodelogic",
@@ -3561,7 +3561,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
-					"midpoints" : [ 175.5, 123.894714000000022, 196.0, 123.894714000000022, 196.0, 122.0, 461.361205999999981, 122.0 ],
+					"midpoints" : [ 190.499999999999972, 123.894714000000022, 196.0, 123.894714000000022, 196.0, 122.0, 461.361205999999981, 122.0 ],
 					"order" : 0,
 					"source" : [ "obj-24", 3 ]
 				}
@@ -3791,13 +3791,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.node.logo.power.png",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
@@ -3805,10 +3798,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.gui.svg.toggle.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
-				"type" : "JSON",
+				"name" : "bs.node.gui.button.menu.png",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"patcherrelativepath" : "../../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
@@ -3823,6 +3816,13 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
 				"patcherrelativepath" : "../../../javascript/msg",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.button.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"patcherrelativepath" : "../../gui",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{

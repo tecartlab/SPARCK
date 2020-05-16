@@ -58,6 +58,7 @@ var myNodeColorUnSelected = new Array(0.0, 0.0, 0.0, 0.8);
 var myNodeEnable = null;
 var myNodeSelected = 0;
 var myNodeIsCollapsed = 0;
+var myNodeCollapsedSize = 0;
 var myNodeInit = false;
 var myNodeTitleYPos = 11;
 var myNodeTitleIconSize = 13;
@@ -76,16 +77,13 @@ var vpl_nodeCanvas;
 var vpl_canvas = new Array();
 var vpl_windowBar = new Array();
 var vpl_nodeEnable;
-var vpl_edit;
 var vpl_titleEdit;
 var vpl_titleBar;
-var vpl_help;
-var vpl_properties;
 var vpl_NodeSpacePatcher;
 var vpl_linked = true;
 
 var showProperties = 0;
-var showHelp = null;
+var myNodeHelp = undefined;
 
 var appGlobal = new Global("bs::app::global");
 
@@ -140,14 +138,21 @@ function init(){
 
 // repopulates the menu items
 function initMenu(){
-	outlet(4, "icons", "vpl_menu", "clear");
-	outlet(4, "icons", "vpl_menu", "append", "properties");
-	outlet(4, "icons", "vpl_menu", "append", "help");
-	outlet(4, "icons", "vpl_menu", "append", "rename");
-	outlet(4, "icons", "vpl_menu", "append", "collapse");
-	outlet(4, "icons", "vpl_menu", "append", "---");
-	outlet(4, "icons", "vpl_menu", "append", "duplicate");
-	outlet(4, "icons", "vpl_menu", "append", "delete");
+	outlet(4, "vpl_menu", "clear");
+	outlet(4, "vpl_menu", "append", "properties");
+	outlet(4, "vpl_menu", "append", "help");
+	outlet(4, "vpl_menu", "append", "rename");
+	outlet(4, "vpl_menu", "append", "collapse");
+	outlet(4, "vpl_menu", "append", "---");
+	outlet(4, "vpl_menu", "append", "duplicate");
+	outlet(4, "vpl_menu", "append", "delete");
+
+	outlet(4, "vpl_menu", "enableitem", 0, 0);
+	outlet(4, "vpl_menu", "enableitem", 1, 0);
+	if(myNodeCollapsedSize == 0){
+		outlet(4, "vpl_menu", "enableitem", 3, 0);
+	}
+		
 }
 
 
@@ -176,18 +181,6 @@ function initNode(){
 		if(this.patcher.getnamed("vpl_titleBar") != null){
 			vpl_titleBar = this.patcher.getnamed("vpl_titleBar");
 			//post(" has vpl_titleBar...\n");
-		}
-		if(this.patcher.getnamed("vpl_edit") != null){
-			vpl_edit = this.patcher.getnamed("vpl_edit");
-			//post(" has vpl_edit...\n");
-		}
-		if(this.patcher.getnamed("vpl_help") != null){
-			vpl_help = this.patcher.getnamed("vpl_help");
-			//post(" has vpl_help... \n");
-		}
-		if(this.patcher.getnamed("vpl_properties") != null){
-			vpl_properties = this.patcher.getnamed("vpl_properties");
-			//post(" has vpl_dispose... \n");
 		}
 		var client = this.patcher.box;
 		while (client) {
@@ -234,43 +227,15 @@ function initNodeBox(){
 			vpl_titleBar.message("presentation_rect", 0, 4., myNodeBoxSize[2], 31.);
 			//post(" to vpl_titleBar panel: " + vpl_titleBar.rect + " \n");
 		}
-		//adjust the title field length
-		if(vpl_titleEdit != null){
-			//var displayBox = vpl_titleEdit.rect;
-			//displayBox[2] = myNodeBoxSize[2] - 60;
-			//displayBox[3] = displayBox[3] - displayBox[1];
-			//post(" found title textfiled: " + vpl_titleEdit.rect + " \n");
-			vpl_titleEdit.message("presentation_rect", 21, myNodeTitleYPos,   myNodeBoxSize[2] - 47, 16.);
-			vpl_titleEdit.message("border", 0.);
-			vpl_titleEdit.message("ignoreclick", 1.);
+		if(myNodeHelp != undefined){
+			outlet(4, "vpl_menu", "enableitem", 1, 1);
+		} else {
+			outlet(4, "vpl_menu", "enableitem", 1, 0);
 		}
-		if(vpl_edit != null){
-			this.patcher.message("script", "sendbox", "vpl_edit", "presentation_rect", myNodeBoxSize[2] - 46, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
-			//vpl_edit.message("presentation_rect", myNodeBoxSize[2] - 58, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
-			this.patcher.message("script", "sendbox", "vpl_edit", "hidden", 0);
-			//vpl_edit.message("hidden", 0);
-		}
-		if(vpl_help != null){
-			this.patcher.message("script", "sendbox", "vpl_help", "presentation_rect", myNodeBoxSize[2] - 31, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
-			//vpl_help.message("presentation_rect", myNodeBoxSize[2] - 44, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
-//			post(" showHelp = " + showHelp + " \n");
-			if(showHelp != null){
-				outlet(4, "icons", "vpl_menu", "enableitem", 1, 1);
-				outlet(4, "icons", "vpl_help", "link", showHelp);
-			} else {
-				outlet(4, "icons", "vpl_menu", "enableitem", 1, 0);
-				//vpl_help.message("ignoreclick", 1);
-			}
-		}
-		if(vpl_properties != null){
-			this.patcher.message("script", "sendbox", "vpl_properties", "presentation_rect", myNodeBoxSize[2] - 16, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
-			//vpl_properties.message("presentation_rect", myNodeBoxSize[2] - 30, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
-			//post("init myNodeProperties" + myNodeProperties + "\n");
-			if(myNodeProperties != undefined){
-				outlet(4, "icons", "vpl_menu", "enableitem", 0, 1);
-			} else {
-				outlet(4, "icons", "vpl_menu", "enableitem", 0, 0);
-			}
+		if(myNodeProperties != undefined){
+			outlet(4, "vpl_menu", "enableitem", 0, 1);
+		} else {
+			outlet(4, "vpl_menu", "enableitem", 0, 0);
 		}
 	}else{
 		post(" found no canvas \n");
@@ -566,10 +531,12 @@ function menu(_func){
 		;
 	} else if(_func == "delete"){
 		;
+	} else if(_func == "help"){
+		outlet(2, "load", "bs.help.node." + myNodeHelp + ".maxpat");
 	}
 }
 
-
+// called by the menu
 function collapse(_collapsed){
     myNodeIsCollapsed = _collapsed;
 	if(vpl_nodeCanvas != null){
@@ -577,15 +544,18 @@ function collapse(_collapsed){
 		//dpost("node size  " + myNodeBoxSize[2] + ", " + myNodeBoxSize[3] + "\n");
 		if(vpl_nodeBox != null && vpl_nodeBox.varname == myNodeVarName){
             var myBoxRect = vpl_nodeBox.rect;
-			myBoxRect[3] = myBoxRect[1] + ((myNodeIsCollapsed == 1)? 40:myNodeBoxSize[3] + myIOLetButtonSize / 2);
+			myBoxRect[3] = myBoxRect[1] + ((myNodeIsCollapsed == 1)? myNodeCollapsedSize:myNodeBoxSize[3] + myIOLetButtonSize / 2);
 //			post("node rect  " +myBoxRect + "\n");
 			vpl_nodeBox.rect = myBoxRect;
 			//storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
-			outlet(4, "icons", "vpl_menu", "setitem", 3, (myNodeIsCollapsed == 1)?"expand":"collapse");
+			outlet(4, "vpl_menu", "setitem", 3, (myNodeIsCollapsed == 1)?"expand":"collapse");
 		}
     }
 }
 
+function setCollapseSize(_size){
+	myNodeCollapsedSize = _size;
+}
 
 // called by one of the drag functions
 function applydrag(diffX, diffY){
@@ -607,8 +577,8 @@ function openworkspace(){
 }
 
 function help(val){
-	showHelp = val;
-    vpl_titleBar.message("hint", "NodeType: " + showHelp);
+	myNodeHelp = val;
+    vpl_titleBar.message("hint", "NodeType: " + myNodeHelp);
 }
 
 function properties(val){
