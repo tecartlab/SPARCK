@@ -57,6 +57,7 @@ var myNodeColorSelected = new Array(0.0, 0.0, 0.0, 0.3);
 var myNodeColorUnSelected = new Array(0.0, 0.0, 0.0, 0.8);
 var myNodeEnable = null;
 var myNodeSelected = 0;
+var myNodeIsCollapsed = 0;
 var myNodeInit = false;
 var myNodeTitleYPos = 11;
 var myNodeTitleIconSize = 13;
@@ -119,6 +120,7 @@ function done(){
 function init(){
 //	myNodeVarName = getKeyValuefromDB(myNodeName, "_conn.id");
 	dpost("init node..("+myNodeName+") \n");
+	initMenu();
 	initNodeSpace();
 	initNode();
 	initNodeBox();
@@ -134,6 +136,18 @@ function init(){
     }
 	return true;
 	dpost("...init("+myNodeName+") done\n");
+}
+
+// repopulates the menu items
+function initMenu(){
+	outlet(4, "icons", "vpl_menu", "clear");
+	outlet(4, "icons", "vpl_menu", "append", "properties");
+	outlet(4, "icons", "vpl_menu", "append", "help");
+	outlet(4, "icons", "vpl_menu", "append", "rename");
+	outlet(4, "icons", "vpl_menu", "append", "collapse");
+	outlet(4, "icons", "vpl_menu", "append", "---");
+	outlet(4, "icons", "vpl_menu", "append", "duplicate");
+	outlet(4, "icons", "vpl_menu", "append", "delete");
 }
 
 
@@ -226,7 +240,7 @@ function initNodeBox(){
 			//displayBox[2] = myNodeBoxSize[2] - 60;
 			//displayBox[3] = displayBox[3] - displayBox[1];
 			//post(" found title textfiled: " + vpl_titleEdit.rect + " \n");
-			vpl_titleEdit.message("presentation_rect", 21, myNodeTitleYPos,   myNodeBoxSize[2] - 65, 16.);
+			vpl_titleEdit.message("presentation_rect", 21, myNodeTitleYPos,   myNodeBoxSize[2] - 47, 16.);
 			vpl_titleEdit.message("border", 0.);
 			vpl_titleEdit.message("ignoreclick", 1.);
 		}
@@ -241,16 +255,11 @@ function initNodeBox(){
 			//vpl_help.message("presentation_rect", myNodeBoxSize[2] - 44, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
 //			post(" showHelp = " + showHelp + " \n");
 			if(showHelp != null){
-				outlet(4, "icons", "vpl_help", "icon", "active", 1);
+				outlet(4, "icons", "vpl_menu", "enableitem", 1, 1);
 				outlet(4, "icons", "vpl_help", "link", showHelp);
-				//vpl_help.message("ignoreclick", 0);
-				this.patcher.message("script", "sendbox", "vpl_help", "hint", "info");
-				//vpl_help.message("hint", "info");
 			} else {
-				outlet(4, "icons", "vpl_help", "icon", "active", 0);
+				outlet(4, "icons", "vpl_menu", "enableitem", 1, 0);
 				//vpl_help.message("ignoreclick", 1);
-				this.patcher.message("script", "sendbox", "vpl_help", "hint", "");
-				//vpl_help.message("hint", "");
 			}
 		}
 		if(vpl_properties != null){
@@ -258,15 +267,9 @@ function initNodeBox(){
 			//vpl_properties.message("presentation_rect", myNodeBoxSize[2] - 30, myNodeTitleYPos, myNodeTitleIconSize, myNodeTitleIconSize);
 			//post("init myNodeProperties" + myNodeProperties + "\n");
 			if(myNodeProperties != undefined){
-				outlet(4, "icons", "vpl_properties", "active", 1);
-				//vpl_properties.message("ignoreclick", 0);
-				this.patcher.message("script", "sendbox", "vpl_properties", "hint", "Properties");
-				//vpl_properties.message("hint", "Properties");
+				outlet(4, "icons", "vpl_menu", "enableitem", 0, 1);
 			} else {
-				outlet(4, "icons", "vpl_properties", "active", 0);
-				//vpl_properties.message("ignoreclick", 1);
-				this.patcher.message("script", "sendbox", "vpl_properties", "hint", "");
-				//vpl_properties.message("hint", "");
+				outlet(4, "icons", "vpl_menu", "enableitem", 0, 0);
 			}
 		}
 	}else{
@@ -401,7 +404,7 @@ function nodeid(_nodeid){
 
 }
 
-// called by the property icon
+// called by the menu
 function openproperties(){
     //post("openproperties: myNodeTitle = " + myNodeTitle + " | myNodeID = " + myNodeID + " \n");
     //appGlobal.currentnodetitle = myNodeTitle;
@@ -551,7 +554,21 @@ function drag(diffX, diffY){
 	}
 }
 
-var myNodeIsCollapsed = 0;
+// called by the menu
+function menu(_func){
+	if(_func == "properties"){
+		openproperties();
+	} else if(_func == "collapse"){
+		collapse(1);
+	} else if(_func == "expand"){
+		collapse(0);
+	} else if(_func == "duplicate"){
+		;
+	} else if(_func == "delete"){
+		;
+	}
+}
+
 
 function collapse(_collapsed){
     myNodeIsCollapsed = _collapsed;
@@ -564,6 +581,7 @@ function collapse(_collapsed){
 //			post("node rect  " +myBoxRect + "\n");
 			vpl_nodeBox.rect = myBoxRect;
 			//storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
+			outlet(4, "icons", "vpl_menu", "setitem", 3, (myNodeIsCollapsed == 1)?"expand":"collapse");
 		}
     }
 }

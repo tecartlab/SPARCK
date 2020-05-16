@@ -160,6 +160,11 @@ function escapeRegExp(_text) {
 //    return res.replace(/[[]/g, '_'); // replace [ with _
 }
 
+
+function rename(){
+	edit(1);
+}
+
 // this method is called when the user attempts to edit the node title.
 function edit(_enable){
 	//post("set edit to : " + _enable + "\n"); 
