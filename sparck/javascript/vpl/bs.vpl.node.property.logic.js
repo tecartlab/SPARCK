@@ -199,7 +199,6 @@ function address(_address){
 
 function nodeid(_nodeId){
     myNodeId = _nodeId;
-    outlet(2, "send", "bs::app::node::" + _nodeId);
 }
 
 function enable(_enable){
@@ -692,9 +691,8 @@ function locating(_val){
 // title was clicket
 function locate(){
 	// brings the nodespace to the front inside which the node is placed
-	//messnamed(myNodeID + "::vpl::connection", "openworkspace");
-	outlet(2, "openworkspace");
-	outlet(2, "select", 1);
+	messnamed("bs::app::node::" + myNodeId, "openworkspace");
+	messnamed("bs::app::node::" + myNodeId, "select", 1);
 }
 
 // shows the close button (default = 1)
