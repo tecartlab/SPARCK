@@ -40,12 +40,24 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 295.0, 12.0, 72.0, 22.0 ],
+					"text" : "patcherargs"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 212.5, 114.0, 215.0, 22.0 ],
+					"patching_rect" : [ 212.5, 131.0, 215.0, 22.0 ],
 					"text" : "script sendbox vpl_properties name $1"
 				}
 
@@ -57,7 +69,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 212.5, 44.0, 115.0, 22.0 ],
+					"patching_rect" : [ 212.5, 61.0, 115.0, 22.0 ],
 					"text" : "route name address"
 				}
 
@@ -81,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 260.5, 77.0, 283.0, 22.0 ],
+					"patching_rect" : [ 260.5, 94.0, 283.0, 22.0 ],
 					"text" : "script sendbox vpl_properties args $1 @address $2"
 				}
 
@@ -95,7 +107,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 212.5, 158.903809000000024, 69.0, 22.0 ],
+					"patching_rect" : [ 212.5, 175.903809000000024, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -114,7 +126,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 1.0, 0.0, 200.0, 500.0 ],
+					"patching_rect" : [ 0.0, 0.0, 200.0, 500.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 200.0, 500.0 ],
 					"varname" : "vpl_properties",
@@ -124,6 +136,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-2", 1 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-3", 0 ]
