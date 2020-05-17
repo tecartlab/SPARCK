@@ -49,6 +49,7 @@ var myNodeID = undefined; // fixed ID, based on a random but unique number
 var myNodeTitle = undefined; // user set node title
 var myNodeAddress = undefined; // ossia node address, set through the title
 var myNodeProperties = undefined;
+var myNodeBody = undefined;
 var myNodeVarName = undefined;
 var myNodeSpace = undefined;
 var myNodeColorOn = new Array(1.0, 0.65, 0.0, 1.);
@@ -57,8 +58,8 @@ var myNodeColorSelected = new Array(0.0, 0.0, 0.0, 0.3);
 var myNodeColorUnSelected = new Array(0.0, 0.0, 0.0, 0.8);
 var myNodeEnable = null;
 var myNodeSelected = 0;
-var myNodeIsCollapsed = 0;
-var myNodeCollapsedSize = 0;
+var myNodeIsExpanded = 0;
+var myNodeExpandSize = 0;
 var myNodeInit = false;
 var myNodeTitleYPos = 11;
 var myNodeTitleIconSize = 13;
@@ -142,14 +143,14 @@ function initMenu(){
 	outlet(4, "vpl_menu", "append", "properties");
 	outlet(4, "vpl_menu", "append", "help");
 	outlet(4, "vpl_menu", "append", "rename");
-	outlet(4, "vpl_menu", "append", "collapse");
+	outlet(4, "vpl_menu", "append", "expand");
 	outlet(4, "vpl_menu", "append", "---");
 	outlet(4, "vpl_menu", "append", "duplicate");
 	outlet(4, "vpl_menu", "append", "delete");
 
 	outlet(4, "vpl_menu", "enableitem", 0, 0);
 	outlet(4, "vpl_menu", "enableitem", 1, 0);
-	if(myNodeCollapsedSize == 0){
+	if(myNodeExpandSize == 0){
 		outlet(4, "vpl_menu", "enableitem", 3, 0);
 	}
 		
@@ -404,8 +405,8 @@ function title(newtitle){
     // the sequence of the following messages matter:
     //    we first need to set the title
     //         used by: vpl.node.property.logic
-    messnamed("bs::app::node::property::" + myNodeID, "titleChange", myNodeTitle);
-    messnamed("bs::app::node::property::" + myNodeID, "addressChange", myNodeAddress);
+    messnamed(myNodeID + "::property", "title", myNodeTitle);
+    messnamed(myNodeID + "::property", "address", myNodeAddress);
 	outlet(3, "setmsgtitle", newtitle);
 	outlet(3, "title", newtitle);
 	outlet(3, "address", myNodeAddress);
@@ -436,12 +437,6 @@ function enable(_enable){
 		// for good measure, set the toogle
 		outlet(1, "set", _enable);
 	}
-}
-
-// sets the type of node
-function logo(_logo){
-//	nrou, "logo", "read", "bs.node.logo." + _logo + ".png");
-	//vpl_nodeEnable.message("read", "bs.node.logo." + _logo + ".png");
 }
 
 // this function is called by
@@ -524,9 +519,9 @@ function menu(_func){
 	if(_func == "properties"){
 		openproperties();
 	} else if(_func == "collapse"){
-		collapse(1);
-	} else if(_func == "expand"){
 		collapse(0);
+	} else if(_func == "expand"){
+		collapse(1);
 	} else if(_func == "duplicate"){
 		;
 	} else if(_func == "delete"){
@@ -538,23 +533,23 @@ function menu(_func){
 
 // called by the menu
 function collapse(_collapsed){
-    myNodeIsCollapsed = _collapsed;
+    myNodeIsExpanded = _collapsed;
 	if(vpl_nodeCanvas != null){
  		myNodeBoxSize = vpl_nodeCanvas.rect;
 		//dpost("node size  " + myNodeBoxSize[2] + ", " + myNodeBoxSize[3] + "\n");
 		if(vpl_nodeBox != null && vpl_nodeBox.varname == myNodeVarName){
             var myBoxRect = vpl_nodeBox.rect;
-			myBoxRect[3] = myBoxRect[1] + ((myNodeIsCollapsed == 1)? myNodeCollapsedSize:myNodeBoxSize[3] + myIOLetButtonSize / 2);
+			myBoxRect[3] = myBoxRect[1] + ((myNodeIsExpanded == 1)? myNodeExpandSize + myNodeBoxSize[3] + myIOLetButtonSize / 2:myNodeBoxSize[3] + myIOLetButtonSize / 2);
 //			post("node rect  " +myBoxRect + "\n");
 			vpl_nodeBox.rect = myBoxRect;
 			//storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
-			outlet(4, "vpl_menu", "setitem", 3, (myNodeIsCollapsed == 1)?"expand":"collapse");
+			outlet(4, "vpl_menu", "setitem", 3, (myNodeIsExpanded == 0)?"expand":"collapse");
 		}
     }
 }
 
-function setCollapseSize(_size){
-	myNodeCollapsedSize = _size;
+function enableExpandTo(_size){
+	myNodeExpandSize = _size;
 }
 
 // called by one of the drag functions
@@ -582,9 +577,10 @@ function help(val){
 }
 
 function properties(val){
-	//post("set myNodeProperties" + myNodeProperties + "\n");
-    myNodeProperties = val;
- }
+    myNodeProperties = val + ".props";
+    myNodeBody = val + ".pbody";
+	dpost("set myNodeProperties = " + myNodeProperties + "\n");
+}
 
 // called when the node is removed by the user or a new project is loaded,
 // but NOT when the application is quited -> this is important, because window-node would

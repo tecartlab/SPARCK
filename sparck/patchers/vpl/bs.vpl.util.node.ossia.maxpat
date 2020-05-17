@@ -1163,7 +1163,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 650.0, 526.0, 440.0, 340.0 ],
+										"rect" : [ 281.0, 423.0, 440.0, 340.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1195,12 +1195,26 @@
 												"box" : 												{
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 11.0, 67.0, 87.0, 22.0 ],
+													"text" : "r #1::nodelogic"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
 													"id" : "obj-13",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 234.0, 131.0, 167.0, 22.0 ],
+													"patching_rect" : [ 234.0, 113.0, 167.0, 22.0 ],
 													"text" : "sprintf set %s::vpl::connection"
 												}
 
@@ -1209,39 +1223,11 @@
 												"box" : 												{
 													"id" : "obj-12",
 													"maxclass" : "newobj",
-													"numinlets" : 3,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 176.0, 63.0, 135.0, 22.0 ],
-													"text" : "route nodeid nodename"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-7",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 176.0, 99.666626000000008, 162.0, 22.0 ],
-													"text" : "sprintf set bs::app::node::%s"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-9",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 176.0, 131.0, 19.0, 22.0 ],
-													"text" : "r"
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 234.0, 67.0, 96.0, 22.0 ],
+													"text" : "route nodename"
 												}
 
 											}
@@ -1252,7 +1238,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 129.666626000000008, 109.0, 22.0 ],
+													"patching_rect" : [ 58.0, 155.666626000000008, 109.0, 22.0 ],
 													"text" : "r bs::app::allnodes"
 												}
 
@@ -1264,7 +1250,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 31.5, 99.666626000000008, 115.0, 22.0 ],
+													"patching_rect" : [ 39.5, 125.666626000000008, 115.0, 22.0 ],
 													"text" : "r bs::app::debugger"
 												}
 
@@ -1312,7 +1298,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 18.0, 68.666626000000008, 117.0, 22.0 ],
+													"patching_rect" : [ 26.0, 94.666626000000008, 117.0, 22.0 ],
 													"text" : "r #5::vpl::nodespace"
 												}
 
@@ -1338,7 +1324,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 176.0, 21.0, 30.0, 30.0 ]
+													"patching_rect" : [ 234.0, 25.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1369,13 +1355,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-13", 0 ],
-													"source" : [ "obj-12", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-7", 0 ],
 													"source" : [ "obj-12", 0 ]
 												}
 
@@ -1404,14 +1383,14 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
-													"source" : [ "obj-5", 0 ]
+													"source" : [ "obj-3", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-9", 0 ],
-													"source" : [ "obj-7", 0 ]
+													"destination" : [ "obj-6", 0 ],
+													"source" : [ "obj-5", 0 ]
 												}
 
 											}
@@ -1419,13 +1398,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-8", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-6", 0 ],
-													"source" : [ "obj-9", 0 ]
 												}
 
 											}
@@ -1514,8 +1486,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 404.277802000000008, 102.0, 77.0, 22.0 ],
-									"text" : "nodeid #1_id"
+									"patching_rect" : [ 404.277802000000008, 102.0, 61.0, 22.0 ],
+									"text" : "nodeid #1"
 								}
 
 							}

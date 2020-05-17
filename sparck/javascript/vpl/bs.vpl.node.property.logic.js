@@ -9,6 +9,11 @@ var SNAPDISTANCE = BOTTOMBORDERDIST + 5;
 
 var WINDOWBARSIZE = 22;
 
+var OUTLET_THISPATCHER = 1;
+var OUTLET_OSSIA = 0;
+var OUTLET_MENU = 3;
+
+
 // set up inlets/outlets/assist strings
 inlets = 1;
 outlets = 4;
@@ -116,7 +121,7 @@ function done(){
                         //post("myPropertyCanvas.rect: " + myPropertyCanvas.rect + "\n");
                         //post("mySize: " + mySize + "\n");
                         //myClientProperties.message("presentation_rect", 0, 0, theSize[0], theSize[1]);
-                        outlet(0, "script", "sendbox", "vpl_properties", "presentation_rect", 0, WINDOWBARSIZE, mySize[0], mySize[1]);
+                        outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "presentation_rect", 0, WINDOWBARSIZE, mySize[0], mySize[1]);
                         //myClientProperties.presentation_rect = new Array(0,0,theSize[0], theSize[1]);
                     }else {
                         post("this shouldnt happen: loaded property patcher doesn't contain a 'vpl_canvas_full'!!\n");
@@ -141,7 +146,6 @@ function done(){
 		}
         
 		isDone = true;
-        //outlet(1, "address", appGlobal.currentnode);
         //window(1);
 		//post("pops: size = " + mySize + "\n");
 		//post("pops:done( " + desktop_rect + " )\n");
@@ -150,14 +154,10 @@ function done(){
 	}
 }
 
-// called by node.logic of this properties parent node
-function titleChange(_newtitle){
-	dpost("received title change= " + _newtitle + "\n");
-    title(_newtitle);
-}
-
 // sets the title
+// called by node.logic of this properties parent node
 function title(_title){
+	dpost("received title change= " + _title + "\n");
 	//post("pops:title() = " + _title + "\n");
     
 	if(myID != null){
@@ -183,18 +183,15 @@ function title(_title){
 		myWindowTitle = myWindowTitle;
 //		myWindowTitle = myWindowTitle + " (" + myType + ")";
 	
-	outlet(0, "title", myWindowTitle);
-	outlet(3, "title", myWindowTitle);
+	outlet(OUTLET_THISPATCHER, "title", myWindowTitle);
+	outlet(OUTLET_MENU, "title", myWindowTitle);
 }
 
 // called by node.logic of this properties parent node
-function addressChange(_newAddress){
-	dpost("received address change= " + _newAddress + "\n");
-    address(_newAddress);
-}
-
 function address(_address){
-    outlet(0, "script", "sendbox", "vpl_properties", "args", myID, "@address", _address);    
+	dpost("received address = " + _address + "\n");
+    outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "args", myID, "@address", _address);    
+    outlet(OUTLET_OSSIA, "address", _address + "/enable");
 }
 
 function nodeid(_nodeId){
@@ -546,18 +543,18 @@ function updateWindow(){
 	if(myWindow != null){
 		//post("bs.gui.windows.pops/updateWindow() title: " + myWindowTitle + " | myWindow != null\n");
 		if(myRect != null & mySize != null){			
-			outlet(0, "window", "size", myRect);
-			outlet(0, "window", "exec");
-			outlet(0, "window", "size", myRect); // bug fix repetition
-			outlet(0, "window", "exec");
+			outlet(OUTLET_THISPATCHER, "window", "size", myRect);
+			outlet(OUTLET_THISPATCHER, "window", "exec");
+			outlet(OUTLET_THISPATCHER, "window", "size", myRect); // bug fix repetition
+			outlet(OUTLET_THISPATCHER, "window", "exec");
 		}
 		if(myVisibility){
-			outlet(0, "front");
+			outlet(OUTLET_THISPATCHER, "front");
             //post("bs.gui.windows.pops/updateWindow() title: " + myWindowTitle + " | myVisibility\n");
 //			post("winpops:updateWindow() myWindowIsInit = " + myWindowIsInit + "\n");
 			myWindowIsInit = true;
 		}else{
-			outlet(0, "wclose");
+			outlet(OUTLET_THISPATCHER, "wclose");
 		}
 	}
 }		
@@ -672,11 +669,6 @@ function type(_type){
 	myType = _type;
 }
 
-// sets the type of node
-function logo(_logo){
-	//outlet(3, "logo", "read", "bs.node.logo." + _logo + ".png");
-}
-
 //set if the window is managed by the windows manager and saves its data
 // inside the windows db.
 function managed(_val){
@@ -685,14 +677,14 @@ function managed(_val){
 
 //set if the loacate button is active or not (default is active)
 function locating(_val){
-	outlet(3, "locating", "active", _val);
+	outlet(OUTLET_MENU, "locating", "active", _val);
 }
 	
 // title was clicket
 function locate(){
 	// brings the nodespace to the front inside which the node is placed
-	messnamed("bs::app::node::" + myNodeId, "openworkspace");
-	messnamed("bs::app::node::" + myNodeId, "select", 1);
+	messnamed(myNodeId + "::nodelogic", "openworkspace");
+	messnamed(myNodeId + "::nodelogic", "select", 1);
 }
 
 // shows the close button (default = 1)
@@ -750,10 +742,10 @@ function collapse(_collapse){
 
 function updateGUI(){
 	//post("pops:updateGUI()\n");
-	outlet(3, "collapse", "set", (mySizeIsCollapsed == true)?1: 0);
-	outlet(3, "collapse", "active", 1 - (myWinIsCollabsable == true && myPin == 1)?0: 1);
-//	outlet(3, "close", "hidden", 1 - (myWinIsCloseable == true && myPin == 1)?1: 0);
-	outlet(3, "pin", "set", myPin);
+	outlet(OUTLET_MENU, "collapse", "set", (mySizeIsCollapsed == true)?1: 0);
+	outlet(OUTLET_MENU, "collapse", "active", 1 - (myWinIsCollabsable == true && myPin == 1)?0: 1);
+//	outlet(OUTLET_MENU, "close", "hidden", 1 - (myWinIsCloseable == true && myPin == 1)?1: 0);
+	outlet(OUTLET_MENU, "pin", "set", myPin);
 }
 
 function notifydeleted(){
@@ -775,25 +767,25 @@ function anything(){
 function window(enable){
 	//post("pops:enable_flags() " + enable + "\n");
 	if(enable == 1 && !myFlagsAreEnabled){
-		outlet(0, "window", "flags", myFlagClose);
-		outlet(0, "window", "flags", myFlagZoom);
-		outlet(0, "window", "flags", myFlagMinimize);
-		outlet(0, "window", "flags", myFlagGrow);
-		outlet(0, "window", "flags", myFlagFloat);
-		outlet(0, "window", "flags", myFlagTitle);
-		outlet(0, "window", "flags", myFlagMenu);
-		outlet(0, "window", "exec");
+		outlet(OUTLET_THISPATCHER, "window", "flags", myFlagClose);
+		outlet(OUTLET_THISPATCHER, "window", "flags", myFlagZoom);
+		outlet(OUTLET_THISPATCHER, "window", "flags", myFlagMinimize);
+		outlet(OUTLET_THISPATCHER, "window", "flags", myFlagGrow);
+		outlet(OUTLET_THISPATCHER, "window", "flags", myFlagFloat);
+		outlet(OUTLET_THISPATCHER, "window", "flags", myFlagTitle);
+		outlet(OUTLET_THISPATCHER, "window", "flags", myFlagMenu);
+		outlet(OUTLET_THISPATCHER, "window", "exec");
 		updateWindow();
 	}
 	if(enable == 0 && myFlagsAreEnabled){
-		outlet(0, "window", "flags", "close");
-		outlet(0, "window", "flags", "zoom");
-		outlet(0, "window", "flags", "minimize");
-		outlet(0, "window", "flags", "grow");
-		outlet(0, "window", "flags", "nofloat");
-		outlet(0, "window", "flags", "title");
-		outlet(0, "window", "flags", "menu");
-		outlet(0, "window", "exec");
+		outlet(OUTLET_THISPATCHER, "window", "flags", "close");
+		outlet(OUTLET_THISPATCHER, "window", "flags", "zoom");
+		outlet(OUTLET_THISPATCHER, "window", "flags", "minimize");
+		outlet(OUTLET_THISPATCHER, "window", "flags", "grow");
+		outlet(OUTLET_THISPATCHER, "window", "flags", "nofloat");
+		outlet(OUTLET_THISPATCHER, "window", "flags", "title");
+		outlet(OUTLET_THISPATCHER, "window", "flags", "menu");
+		outlet(OUTLET_THISPATCHER, "window", "exec");
 	}
 	myFlagsAreEnabled = (enable == 1)? true: false;
 }

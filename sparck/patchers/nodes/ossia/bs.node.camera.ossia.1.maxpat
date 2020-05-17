@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 368.0, 153.0, 464.0, 670.0 ],
+		"rect" : [ 585.0, 206.0, 464.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -3413,7 +3413,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@logo", "power", "@properties", "bs.node.camera.ossia.1.properties", "@help", "SceneCamera", "@setCollapseSize", 30 ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@properties", "bs.node.camera.ossia.1", "@help", "SceneCamera", "@enableExpandTo", 30 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -3447,7 +3447,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 4.0, 200.0, 176.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 4.0, 200.0, 176.0 ],
+					"presentation_rect" : [ 0.0, 4.0, 200.0, 52.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas"
 				}
