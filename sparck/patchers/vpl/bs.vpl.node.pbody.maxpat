@@ -81,8 +81,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 260.5, 77.0, 266.0, 22.0 ],
-					"text" : "script sendbox vpl_properties args @address $1"
+					"patching_rect" : [ 260.5, 77.0, 283.0, 22.0 ],
+					"text" : "script sendbox vpl_properties args $1 @address $2"
 				}
 
 			}
@@ -103,7 +103,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@test", "t" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -112,8 +111,7 @@
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.vpl.node.pbody.empty.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1.0, 0.0, 200.0, 500.0 ],
@@ -161,14 +159,7 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "bs.vpl.node.pbody.empty.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
+		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",

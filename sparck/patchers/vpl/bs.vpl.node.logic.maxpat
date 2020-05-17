@@ -1868,11 +1868,11 @@
 					"outlettype" : [ "", "", "", "", "" ],
 					"patching_rect" : [ 185.0, 361.333252000000016, 189.888915999999995, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.vpl.node.ossia.js",
+						"filename" : "bs.vpl.node.logic.js",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js bs.vpl.node.ossia.js"
+					"text" : "js bs.vpl.node.logic.js"
 				}
 
 			}
@@ -2271,7 +2271,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.vpl.node.ossia.js",
+				"name" : "bs.vpl.node.logic.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../javascript/vpl",
 				"type" : "TEXT",

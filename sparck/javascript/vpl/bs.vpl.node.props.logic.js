@@ -35,7 +35,7 @@ var myWindowDict = null;
 var myStoreDBName = null;
 var myStoreDict = null;
 
-var myID = null;
+var myNodeTitle = null;
 var myNodeId = null;
 //var myStoreName = null;
 
@@ -92,7 +92,7 @@ function debugger(_val){
 
 function dpost(_message){
     if(debug){
-        post("node.property->" + myID + ": " + _message + " \n");
+        post("node.property->" + myNodeTitle + ": " + _message + " \n");
     }
 }
 
@@ -160,12 +160,12 @@ function title(_title){
 	dpost("received title change= " + _title + "\n");
 	//post("pops:title() = " + _title + "\n");
     
-	if(myID != null){
+	if(myNodeTitle != null){
 		clearMyWindowDict();
 	}
-	myID = _title;
+	myNodeTitle = _title;
 	
-	myWindowDBName = "bs_gui_win_" + myID;
+	myWindowDBName = "bs_gui_win_" + myNodeTitle;
 	if(myPrefix != null)
  		myWindowDBName += "_" + myPrefix;
 	if(myType != null)
@@ -190,7 +190,7 @@ function title(_title){
 // called by node.logic of this properties parent node
 function address(_address){
 	dpost("received address = " + _address + "\n");
-    outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "args", myID, "@address", _address);    
+    outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "args", myNodeTitle, "@address", _address);    
     outlet(OUTLET_OSSIA, "address", _address + "/enable");
 }
 

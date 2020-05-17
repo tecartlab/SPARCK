@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 56.0, 287.0, 895.0, 539.0 ],
+		"rect" : [ 44.0, 211.0, 895.0, 539.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -807,7 +807,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 373.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-									"text" : "anim u372000609"
+									"text" : "anim u851011634"
 								}
 
 							}
@@ -903,7 +903,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 186.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-									"text" : "anim u252000637"
+									"text" : "anim u932002851"
 								}
 
 							}
@@ -964,7 +964,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 551.273192999999992, 281.197387999999989, 105.0, 22.0 ],
-									"text" : "anim u526000665"
+									"text" : "anim u438000694"
 								}
 
 							}
@@ -3707,7 +3707,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
+									"outlettype" : [ "int", "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -6607,7 +6607,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u362001086"
+									"varname" : "u250008995"
 								}
 
 							}
@@ -7500,6 +7500,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-27",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 3,
@@ -7803,7 +7804,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 698.4884033203125, 472.4559326171875, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 101.199999999999989, 71.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 113.199999999999989, 75.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[4/6]",
 					"viewvisibility" : 1
 				}
@@ -7892,7 +7893,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "tfm/paren", "@types", "camera", "@out15", "ortho", "@outoff15", "ortho", 0, "@out14", "p_matrix_right", "@out13", "p_matrix_left", "@out12", "p_matrix", "@out11", "anim_tree_node", "@out10", "stereomode", "@outoff10", "stereomode", 0, "@out9", "cam_params", "@outoff9", "cam_params", 0, "@out8", "frustum_right", "frustum", "@out7", "frustum_left", "frustum", "@out6", "frustum", "@out5", "color", "@outoff5", "color", 1.0, 0.65, 0.0, 1.0, "@out4", "dim", "@outoff4", "dim", 0, "@out3", "anim_right", "anim", "@outoff3", "anim", "@out2", "anim_left", "anim", "@outoff2", "anim", "@out1", "anim", "@outoff1", "anim", "@offname", "<none>", "@fontsize", 9, "@presentation_size", 120, 10, "@text", "camera", "@description", "camera transformation" ],
+					"args" : [ "tfm/paren", "@types", "camera", "@out15", "ortho", "@outoff15", "ortho", 0, "@out14", "p_matrix_right", "@out13", "p_matrix_left", "@out12", "p_matrix", "@out11", "anim_tree_node", "@out10", "stereomode", "@outoff10", "stereomode", 0, "@out9", "cam_params", "@outoff9", "cam_params", 0, "@out8", "frustum_right", "frustum", "@out7", "frustum_left", "frustum", "@out6", "frustum", "@out5", "color", "@outoff5", "color", 1.0, 0.65, 0.0, 1.0, "@out4", "dim", "@outoff4", "dim", 0, "@out3", "anim_right", "anim", "@outoff3", "anim", "@out2", "anim_left", "anim", "@outoff2", "anim", "@out1", "anim", "@outoff1", "anim", "@offname", "<none>", "@text", "camera", "@description", "camera transformation" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -7926,7 +7927,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 113.642241999999996, 10.0, 59.5, 22.0 ],
 					"text" : "autopattr",
-					"varname" : "u866001087"
+					"varname" : "u417008991"
 				}
 
 			}
@@ -7949,7 +7950,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 453.622833000000014, 472.455933000000016, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 36.399999999999999, 71.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 40.399999999999999, 75.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[2/6]",
 					"viewvisibility" : 1
 				}
@@ -7969,7 +7970,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "nodeid", "#0", "#1", "#2", "#3", "#4", "title", "SceneCapture", "@logo", "power", "@properties", "bs.node.capture.ossia.1.properties", "@help", "SceneCapture" ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SceneCapture", "@properties", "bs.node.capture.ossia.1", "@help", "SceneCapture" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -7978,7 +7979,7 @@
 					"id" : "obj-24",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.vpl.util.node.ossia.maxpat",
+					"name" : "bs.vpl.node.logic.maxpat",
 					"numinlets" : 4,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
@@ -8530,14 +8531,14 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.vpl.util.node.ossia.maxpat",
+				"name" : "bs.vpl.node.logic.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.node.ossia.js",
+				"name" : "bs.vpl.node.logic.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
@@ -8551,14 +8552,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
-				"type" : "JSON",
+				"name" : "bs.node.logo.power.png",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"patcherrelativepath" : "../../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.logo.power.png",
+				"name" : "bs.node.gui.button.menu.png",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
@@ -8590,6 +8591,13 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
 				"patcherrelativepath" : "../../../javascript/msg",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.button.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"patcherrelativepath" : "../../gui",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{

@@ -46,8 +46,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 334.5, 100.0, 80.0, 22.0 ],
-					"text" : "r #1::property"
+					"patching_rect" : [ 334.5, 100.0, 66.0, 22.0 ],
+					"text" : "r #1::props"
 				}
 
 			}
@@ -235,7 +235,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.node.property.logic.js",
+				"name" : "bs.vpl.node.props.logic.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../javascript/vpl",
 				"type" : "TEXT",
