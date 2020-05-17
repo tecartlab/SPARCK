@@ -87,7 +87,7 @@
 					"id" : "obj-132",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.vpl.node.property.logic.maxpat",
+					"name" : "bs.vpl.node.props.logic.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
@@ -228,7 +228,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.vpl.node.property.logic.maxpat",
+				"name" : "bs.vpl.node.props.logic.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

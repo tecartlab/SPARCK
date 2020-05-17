@@ -377,7 +377,7 @@ function openproperties(){
     //appGlobal.currentnodeid = myNodeID;
     //appGlobal.currentproperties = myNodeProperties;
     if(myNodeProperties != undefined && myNodeProperties != 1){
-        outlet(2, "shroud", "bs.vpl.node.property", myNodeID, myNodeTitle, myNodeAddress, myNodeProperties);
+        outlet(2, "shroud", "bs.vpl.node.props", myNodeID, myNodeTitle, myNodeAddress, myNodeProperties);
     }
 }
 

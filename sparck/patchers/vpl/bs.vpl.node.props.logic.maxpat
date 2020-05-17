@@ -653,7 +653,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 540.0, 102.5, 53.0, 35.0 ],
+					"patching_rect" : [ 540.0, 102.5, 56.0, 35.0 ],
 					"text" : "prepend close"
 				}
 
@@ -697,7 +697,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 480.0, 102.5, 54.0, 35.0 ],
+					"patching_rect" : [ 480.0, 102.5, 56.0, 35.0 ],
 					"text" : "prepend pin"
 				}
 
@@ -739,13 +739,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 170.0, 219.0, 258.000000000000057, 22.0 ],
+					"patching_rect" : [ 170.0, 219.0, 258.000000000000114, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.vpl.node.property.logic.js",
+						"filename" : "bs.vpl.node.props.logic.js",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js bs.vpl.node.property.logic.js"
+					"text" : "js bs.vpl.node.props.logic.js"
 				}
 
 			}
@@ -1026,7 +1026,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.vpl.node.property.logic.js",
+				"name" : "bs.vpl.node.props.logic.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../javascript/vpl",
 				"type" : "TEXT",
