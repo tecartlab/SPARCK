@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 419.0, 196.0, 451.0, 670.0 ],
+		"rect" : [ 419.0, 196.0, 837.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -2486,8 +2486,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 471.715331999999989, 4.070434999999975, 112.0, 102.0 ],
-													"text" : "ossia.parameter lens/stereo/spread @type float @default 1. @description \"stereo spread\" @priority 1"
+													"patching_rect" : [ 471.715331999999989, 4.070434999999975, 121.0, 102.0 ],
+													"text" : "ossia.parameter lens/stereo/spread @type float @default 1. @description \"stereo spread\" @priority 1 @range -10. 10."
 												}
 
 											}
@@ -2495,13 +2495,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-5",
-													"linecount" : 7,
+													"linecount" : 6,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 595.732665999999995, 4.070434999999975, 117.0, 102.0 ],
-													"text" : "ossia.parameter lens/stereo/rotation @type float @default 1. @description \"stereo rotation\" @priority 1"
+													"patching_rect" : [ 595.732665999999995, 4.070434999999975, 140.0, 89.0 ],
+													"text" : "ossia.parameter lens/stereo/rotation @type float @default 1. @description \"stereo rotation\" @priority 1 @range -10. 10."
 												}
 
 											}
