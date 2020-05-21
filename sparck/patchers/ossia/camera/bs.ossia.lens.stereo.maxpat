@@ -115,6 +115,7 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
+					"hidden" : 1,
 					"hint" : "",
 					"id" : "obj-2",
 					"maxclass" : "comment",
@@ -136,6 +137,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
@@ -155,6 +157,7 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
+					"hidden" : 1,
 					"hint" : "",
 					"id" : "obj-1",
 					"maxclass" : "comment",
@@ -176,6 +179,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-14",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",

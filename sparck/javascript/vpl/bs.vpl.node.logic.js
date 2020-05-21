@@ -30,13 +30,23 @@ Javascript Node - Workhorse for VPL (Visual Programming Language)
 
 */
 
+include("node.classes.js");
+
 // set up inlets/outlets/assist strings
 inlets = 1;
 outlets = 5;
 
+var myColorTable = new Dict("vpl::colortable");
+var myType2Color = new Dict("vpl::type2color");
+var myBaseDB 	 = new Dict("vpl::db");
+
+var uniqueTable = new Dict("bs.vpl.unique.title");
+
 var myIOLetButtonSize = 8;
 var myIOLetButtonShift = -2;
 var myIOLetButtonOffset = -2;
+
+var myIOlets = new NODE.IOlets(myIOLetButtonOffset, myIOLetButtonSize, myIOLetButtonShift, myType2Color, myColorTable);
 
 //autowatch = 1;
 
@@ -63,12 +73,6 @@ var myNodeExpandSize = 0;
 var myNodeInit = false;
 var myNodeTitleYPos = 11;
 var myNodeTitleIconSize = 13;
-
-var myColorTable = new Dict("vpl::colortable");
-var myType2Color = new Dict("vpl::type2color");
-var myBaseDB 	 = new Dict("vpl::db");
-
-var uniqueTable = new Dict("bs.vpl.unique.title");
 
 var connections = new Array();
 
@@ -123,6 +127,7 @@ function init(){
 	initNodeSpace();
 	initNode();
 	initNodeBox();
+    initIOlets();
 	initConnections();
 
  	dpost("nodebox initialized: " + myNodeName + ". sending nextlevel\n");
@@ -246,26 +251,6 @@ function initNodeBox(){
         dpost("myNodeBoxSize is not null...\n");
 		var objects = vpl_nodePatcher.firstobject;
 		while(objects != null){
-			// find all bpatcher with the script name inlet and outlet and set
-			// their postion according to their ids
- 			if(objects.varname.indexOf("vpl_inlet") == 0){
-				var xpos = getIOLetXPos(objects);
-				vpl_nodePatcher.message("script", "sendbox", objects.varname, "presentation_rect", xpos + myIOLetButtonOffset, 0., myIOLetButtonSize, myIOLetButtonSize);
-				var subpat = objects.subpatcher();
-				if(subpat != null){
-					subpat.apply(initIOlets);
-					//post(" found subpatcher: " + subpat + "\n");
-				}
-			}else if(objects.varname.indexOf("vpl_outlet") == 0){
-				var xpos = getIOLetXPos(objects);
-				vpl_nodePatcher.message("script", "sendbox", objects.varname, "presentation_rect", xpos + myIOLetButtonOffset, myNodeBoxSize[3] + myNodeBoxSize[1] - myIOLetButtonSize + myIOLetButtonShift, myIOLetButtonSize, myIOLetButtonSize);
-				var subpat = objects.subpatcher();
-				if(subpat != null){
-					subpat.apply(initIOlets);
-					//post(" found subpatcher: " + subpat.box.varname + "\n");
-				}
-			}
-
 			// find all vpl_canvas object in this node to set their colors.
  			if(objects.varname.indexOf("vpl_canvas") == 0){
                 dpost("found more vpl_canvases...\n");
@@ -319,34 +304,8 @@ function initConnections(){
 	}
 }
 
-function initIOlets(a) {
-	//find all buttons with the script name inlet and outlet and set
-	// their colors according to their type
-	if(a.maxclass.indexOf("led") != -1){
-		var localThisPatch = a.patcher;
-//		post("found button: ->|" + a.varname + "|<- \n");
-		var types = a.varname;
-		var color = getColor(types);
-		//post(" setting colors for buttons: " + a.varname + " for types " + types + "\n");
-		if(color != null){
-			//post("found color: " + color + "\n");
-			var colormsg = myColorTable.get(color);
-			//post("found message: " + colormsg + "\n");
-			a.message("oncolor", colormsg[2] * 0.5, colormsg[3] * 0.5, colormsg[4] * 0.5, colormsg[5]);
-			a.message("offcolor", colormsg[2], colormsg[3], colormsg[4], colormsg[5]);
-			//a.message("bgcolor", colormsg[2], colormsg[3], colormsg[4], colormsg[5]);
-//			a.message(colormsg[1], colormsg[2], colormsg[3], colormsg[4], colormsg[5]);
-		}else{
-			a.message("oncolor", .25, .25, .25, 1.);
-			a.message("offcolor", .5, .5, .5, 1.);
-			//a.message("bgcolor", .5, .5, .5, 1.);
-//			a.message("fgcolor", .5, .5, .5, 1.);
-		}
-
-		localThisPatch.message("script", "sendbox", a.varname, "size", myIOLetButtonSize, myIOLetButtonSize);
-	}
-
-	return true;
+function initIOlets() {
+    myIOlets.init(vpl_nodePatcher, myNodeBoxSize, myNodeExpandSize);
 }
 
 /**********************
@@ -534,7 +493,7 @@ function menu(_func){
 
 // called by the menu
 function expand(_expand){
-	post("expand  ");
+	//post("expand  ");
     myNodeIsExpanded = _expand;
 	if(vpl_nodeCanvas != null){
  		myNodeBoxSize = vpl_nodeCanvas.rect;
@@ -543,6 +502,7 @@ function expand(_expand){
             var myBoxRect = vpl_nodeBox.rect;
 			myBoxRect[3] = myBoxRect[1] + ((myNodeIsExpanded == 1)? myNodeExpandSize + myNodeBoxSize[3] + myIOLetButtonSize / 2:myNodeBoxSize[3] + myIOLetButtonSize / 2);
 			vpl_nodeBox.rect = myBoxRect;
+            myIOlets.expand(myNodeIsExpanded);
 			//storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
 			outlet(4, "vpl_menu", "setitem", 3, (myNodeIsExpanded == 0)?"expand":"collapse");
 		}
@@ -613,6 +573,7 @@ function notifydeleted(){
 	// to remove connections to this node from the database
 	messnamed(myNodeSpace + "::vpl::nodespace", "removeConnection", myNodeName);
 // 	cpost(myNodeName + " got deleted\n");
+    myIOlets.freepeer();
 }
 
 
@@ -652,11 +613,11 @@ function setGUIColors(){
 //		vpl_canvas.message("bgovercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
 //		vpl_canvas.message("bgoncolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
 //		vpl_canvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-		if(vpl_canvas[i].understands("bgfillcolor")){
+		if(vpl_canvas.understands("bgfillcolor")){
             //post("bgfillcolor\n");
 			vpl_canvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
         }
-		if(vpl_canvas[i].understands("bgcolor")){
+		if(vpl_canvas.understands("bgcolor")){
             //post("bgcolor\n");
 			vpl_canvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
         }
@@ -822,16 +783,6 @@ function Connection(outaddress, outid, outtype, inid, intype, inmaxcon){
  Utility functions
  *******************/
 
-function getIOLetXPos(a){
-	var indexes = bracketEnclosure(a).split("/");
-	var index = indexes[0];
-	var total = indexes[1]; //9.5
-	//post("inlet position index: " + index + "/total: " + total + "\n");
-	var dividable = myNodeBoxSize[2] - 18; //3.5 = xpos for index 1
-	var steps = dividable / (total - 1);
-	return 10 + (index - 1) * steps - myIOLetButtonSize/2;
-}
-
 function getColor(types){
 	var typeArray = types.split("_");
 	if(typeArray.length > 0){
@@ -850,10 +801,6 @@ function getColorID(types){
 		colorid = colormsg[0];
 	}
 	return colorid;
-}
-
-function bracketEnclosure(a){
-	return a.varname.substring(a.varname.indexOf("[") + 1, a.varname.indexOf("]"));
 }
 
 function compareTypes(outtype, intype){
