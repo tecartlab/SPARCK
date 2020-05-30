@@ -38,7 +38,6 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"enabletransparentbgwithtitlebar" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
 					"args" : [ "#1", "lens/stereo" ],
@@ -57,7 +56,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 120.0, 206.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 38.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 36.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -112,9 +111,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 289.0 ],
+					"patching_rect" : [ 0.0, 0.0, 202.0, 43.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 289.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 36.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}

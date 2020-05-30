@@ -36,11 +36,22 @@ include("node.classes.js");
 inlets = 1;
 outlets = 5;
 
+var OUTLET_THISPATCHER = 0;
+var OUTLET_ENABLE = 1;
+var OUTLET_PCONTROL = 2;
+var OUTLET_DUMP = 3;
+var OUTLET_MENUL = 4;
+
 var myColorTable = new Dict("vpl::colortable");
 var myType2Color = new Dict("vpl::type2color");
 var myBaseDB 	 = new Dict("vpl::db");
 
 var uniqueTable = new Dict("bs.vpl.unique.title");
+
+var myDefaultSize = new Array(200, 32);
+var myExpandedSize = new Array(200, 32);
+var myCanvasOffset = 4;
+var myPBodyOffset = 38;
 
 var myIOLetButtonSize = 8;
 var myIOLetButtonShift = -2;
@@ -52,7 +63,6 @@ var myIOlets = new NODE.IOlets(myIOLetButtonOffset, myIOLetButtonSize, myIOLetBu
 
 var undefined = "undefined";
 
-var myNodeBoxSize;
 var myNodeDBPath;
 var myNodeName = undefined; // fixed name, only initialize inside APP
 var myNodeID = undefined; // fixed ID, based on a random but unique number
@@ -69,7 +79,7 @@ var myNodeColorUnSelected = new Array(0.0, 0.0, 0.0, 0.8);
 var myNodeEnable = null;
 var myNodeSelected = 0;
 var myNodeIsExpanded = 0;
-var myNodeExpandSize = 0;
+var myNodeEnableExpand = 0;
 var myNodeInit = false;
 var myNodeTitleYPos = 11;
 var myNodeTitleIconSize = 13;
@@ -78,13 +88,13 @@ var connections = new Array();
 
 var vpl_nodeBox;
 var vpl_nodePatcher;
+var vpl_nodeLogicPatcher;
+var vpl_nodeSpacePatcher;
 var vpl_nodeCanvas;
-var vpl_canvas = new Array();
-var vpl_windowBar = new Array();
 var vpl_nodeEnable;
 var vpl_titleEdit;
 var vpl_titleBar;
-var vpl_NodeSpacePatcher;
+var vpl_body;
 var vpl_linked = true;
 
 var showProperties = 0;
@@ -135,8 +145,8 @@ function init(){
 	outlet(0, "done");
 	myNodeInit = true;
 
-    if(vpl_NodeSpacePatcher != null){
-        vpl_NodeSpacePatcher.message("script", "bringtofront", vpl_nodeBox.varname);
+    if(vpl_nodeSpacePatcher != null){
+        vpl_nodeSpacePatcher.message("script", "bringtofront", vpl_nodeBox.varname);
     }
 	return true;
 	dpost("...init("+myNodeName+") done\n");
@@ -155,7 +165,7 @@ function initMenu(){
 
 	outlet(4, "vpl_menu", "enableitem", 0, 0);
 	outlet(4, "vpl_menu", "enableitem", 1, 0);
-	if(myNodeExpandSize == 0){
+	if(myNodeEnableExpand == 0){
 		outlet(4, "vpl_menu", "enableitem", 3, 0);
 	}
 		
@@ -169,7 +179,7 @@ function initNodeSpace(){
 		if(owner != null){
 			vpl_nodeBox = owner.patcher.box;
 			if(vpl_nodeBox != null){
-				vpl_NodeSpacePatcher = vpl_nodeBox.patcher;
+				vpl_nodeSpacePatcher = vpl_nodeBox.patcher;
 			}
 		}
 	}
@@ -179,6 +189,12 @@ function initNode(){
 	//Find  all the important objects in this patcher
 	// and initialize them.
 	if(vpl_nodePatcher == null){
+        
+		// tries to find a bpatcher object with the name "vpl_body"
+		if(this.patcher.getnamed("vpl_body") != null){
+			vpl_body = this.patcher.getnamed("vpl_body");
+			//post(" has vpl_titleEdit...\n");
+		}
 		// tries to find a text object with the name "vpl_titleEdit"
 		if(this.patcher.getnamed("vpl_titleEdit") != null){
 			vpl_titleEdit = this.patcher.getnamed("vpl_titleEdit");
@@ -188,19 +204,19 @@ function initNode(){
 			vpl_titleBar = this.patcher.getnamed("vpl_titleBar");
 			//post(" has vpl_titleBar...\n");
 		}
+        // tries to find a canvas object with the name "vpl_canvas"
+        if(this.patcher.getnamed("vpl_canvas") != null){
+            vpl_nodeCanvas = this.patcher.getnamed("vpl_canvas");
+            dpost(" has vpl_canvas... \n");
+        }
+        // tries to find a thispather object with the name "vpl_ThisNodeLogicPatcher"
+        if(this.patcher.getnamed("vpl_ThisNodeLogicPatcher") != null){
+            vpl_nodeLogicPatcher = this.patcher.getnamed("vpl_ThisNodeLogicPatcher");
+            dpost(" has vpl_nodeLogicPatcher... \n");
+        }
+        
 		var client = this.patcher.box;
 		while (client) {
-			// tries to find a node enable object "enable"
-			if(client.patcher.getnamed("enable") != null){
-				vpl_nodeEnable = client.patcher.getnamed("enable");
-			}
-
-			// tries to find a canvas object with the name "vpl_canvas"
-			if(client.patcher.getnamed("vpl_canvas") != null){
-				vpl_nodeCanvas = client.patcher.getnamed("vpl_canvas");
-			 	dpost(" has vpl_canvas... \n");
-			}
-
 			if(client.patcher.getnamed("vpl_ThisNodePatcher") != null){
 				vpl_nodePatcher = client.patcher;
 				break;
@@ -218,19 +234,10 @@ function initNodeBox(){
 
 	// calculates this vpl_nodeBox size
 	if(vpl_nodeCanvas != null){
- 		myNodeBoxSize = vpl_nodeCanvas.rect;
-		//dpost("node size  " + myNodeBoxSize[2] + ", " + myNodeBoxSize[3] + "\n");
-		if(vpl_nodeBox != null && vpl_nodeBox.varname == myNodeVarName){
- 			var myBoxRect = vpl_nodeBox.rect;
-			myBoxRect[2] = myBoxRect[0] + myNodeBoxSize[2];
-			myBoxRect[3] = myBoxRect[1] +  myNodeBoxSize[3] + myIOLetButtonSize / 2;
-//			post("node rect  " +myBoxRect + "\n");
-			vpl_nodeBox.rect = myBoxRect;
-			storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
-		}
+        setNodeRect(1);
 		if(vpl_titleBar != null){
 			//post(" set vpl_titleBar panel: " + vpl_titleBar.rect + " ... \n");
-			vpl_titleBar.message("presentation_rect", 0, 4., myNodeBoxSize[2], 31.);
+			vpl_titleBar.message("presentation_rect", 0, 4., myDefaultSize[0], 28);
 			//post(" to vpl_titleBar panel: " + vpl_titleBar.rect + " \n");
 		}
 		if(myNodeHelp != undefined){
@@ -246,48 +253,6 @@ function initNodeBox(){
 	}else{
 		post(" found no canvas \n");
 	}
-
-	if(myNodeBoxSize != null){
-        dpost("myNodeBoxSize is not null...\n");
-		var objects = vpl_nodePatcher.firstobject;
-		while(objects != null){
-			// find all vpl_canvas object in this node to set their colors.
- 			if(objects.varname.indexOf("vpl_canvas") == 0){
-                dpost("found more vpl_canvases...\n");
-				vpl_canvas.push(objects);
-			}
-			// try and find subwindows
-			var subpat = objects.subpatcher();
-			if(subpat != null){
-				var subcanv = subpat.getnamed("vpl_canvas");
-				if(subcanv != null){
-					// it found a property window (indicated by the existence
-					// of a vpl_canvas object
-					vpl_canvas.push(subcanv);
-					// now try to find the bs.gui.windows.pops
-					var sobj = subpat.firstobject;
-					while(sobj != null){
-						// step through all the objects
-						var poppat = sobj.subpatcher();
-						if(poppat != null){
-							// if there is one with vpl_windowBar
-							var windowBar = poppat.getnamed("vpl_windowBar");
-							if(windowBar != null){
-								// store it
-								vpl_windowBar.push(windowBar);
-								//post("vpl_windowBar\n")
-							}
-						}
-						sobj = sobj.nextobject;
-					}
-				}
-
-			}
-
-			objects = objects.nextobject;
-		}
-	}
-
 }
 
 function initConnections(){
@@ -305,12 +270,30 @@ function initConnections(){
 }
 
 function initIOlets() {
-    myIOlets.init(vpl_nodePatcher, myNodeBoxSize, myNodeExpandSize);
+    myIOlets.init(vpl_nodePatcher, myDefaultSize);
 }
 
 /**********************
   Call Functions
  **********************/
+
+/* Sets the node size, the node logic size and the canvas size, depending on beeing expanded or not.
+ * 
+ */
+function setNodeRect(_store){
+    var currentSize = (myNodeIsExpanded)?myExpandedSize:myDefaultSize;
+    if(vpl_nodeBox != null && vpl_nodeBox.varname == myNodeVarName){
+        var myBoxRect = vpl_nodeBox.rect;
+        myBoxRect[2] = myBoxRect[0] + currentSize[0];
+        myBoxRect[3] = myBoxRect[1] + currentSize[1] + myIOLetButtonSize / 2;
+        vpl_nodeBox.rect = myBoxRect;
+        if(_store == 1){
+            storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
+        }
+    }
+    vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_canvas", "presentation_size", currentSize[0], currentSize[1] - myCanvasOffset);
+    vpl_nodePatcher.message("script", "sendbox", "vpl_nodelogic", "size", currentSize[0], currentSize[1]);
+}
 
 // called on creation. it is a unique id, loaded from the project and needed to access the nodeDB
 function nodename(_ndname){
@@ -392,7 +375,6 @@ function enable(_enable){
 		myNodeEnable = _enable;
 		myNodeSelected = 0;
 		setGUIColors();
-		outlet(3, "_control", "enable", _enable);
 		outlet(3, "enable", _enable);
 		// for good measure, set the toogle
 		outlet(1, "set", _enable);
@@ -420,7 +402,9 @@ function select(_select){
 //		cpost("... selected has appGlobal.selectedNode = "+appGlobal.selectedNode+"... (" + myNodeName + ")\n");
 		//post("got selected: " + myNodeTitle + ": " + _select + " \n");
 		if(_select){
-			vpl_NodeSpacePatcher.message("script", "bringtofront", vpl_nodeBox.varname);
+            if(vpl_nodeSpacePatcher != null){
+        		vpl_nodeSpacePatcher.message("script", "bringtofront", vpl_nodeBox.varname);
+            }
 			if(appGlobal.selectedNode[1] != myNodeName){
 //				cpost("... deselect = "+appGlobal.selectedNode[1]+" by (" + myNodeName + ")\n");
 				// if anther node was selected, send a deselect message to that node
@@ -479,9 +463,13 @@ function menu(_func){
 	if(_func == "properties"){
 		openproperties();
 	} else if(_func == "collapse"){
-		expand(0);
+        myNodeIsExpanded = false;
+		expand();
+        outlet(4, "vpl_menu", "setitem", 3, "expand");
 	} else if(_func == "expand"){
-		expand(1);
+        myNodeIsExpanded = true;
+		expand();
+        outlet(4, "vpl_menu", "setitem", 3, "collapse");
 	} else if(_func == "duplicate"){
 		;
 	} else if(_func == "delete"){
@@ -491,30 +479,27 @@ function menu(_func){
 	}
 }
 
-// called by the menu
-function expand(_expand){
+// called by menu()
+function expand(){
 	//post("expand  ");
-    myNodeIsExpanded = _expand;
-	if(vpl_nodeCanvas != null){
- 		myNodeBoxSize = vpl_nodeCanvas.rect;
-		//dpost("node size  " + myNodeBoxSize[2] + ", " + myNodeBoxSize[3] + "\n");
-		if(vpl_nodeBox != null && vpl_nodeBox.varname == myNodeVarName){
-            var myBoxRect = vpl_nodeBox.rect;
-			myBoxRect[3] = myBoxRect[1] + ((myNodeIsExpanded == 1)? myNodeExpandSize + myNodeBoxSize[3] + myIOLetButtonSize / 2:myNodeBoxSize[3] + myIOLetButtonSize / 2);
-			vpl_nodeBox.rect = myBoxRect;
-            myIOlets.expand(myNodeIsExpanded);
-			//storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
-			outlet(4, "vpl_menu", "setitem", 3, (myNodeIsExpanded == 0)?"expand":"collapse");
-		}
-		if(myNodeIsExpanded){
-			//post("sent  " +myNodePBody + " to '" + myNodeID + "::pbody" +"' \n");
-			messnamed(myNodeID + "::pbody", "name", myNodePBody);
-		}
+    setNodeRect(0);
+    myIOlets.expand(myNodeIsExpanded, myExpandedSize);
+    if(myNodeIsExpanded){
+        //post("sent  " +myNodePBody + " to '" + myNodeID + "::pbody" +"' \n");
+        messnamed(myNodeID + "::pbody", "name", myNodePBody);
     }
+    //vpl_body.message("hidden", !myNodeIsExpanded);
 }
 
-function enableExpandTo(_size){
-	myNodeExpandSize = _size;
+// called by the attributes of the node logic
+function enable_expand(_enable){
+	myNodeEnableExpand = _enable;
+}
+
+// this function is called by the vpl_body once a body is loaded and the size of the body is evaluated
+function expanded_size(_size){
+    myExpandedSize[1] = myPBodyOffset + _size + myCanvasOffset;
+    expand();
 }
 
 // called by one of the drag functions
@@ -526,7 +511,7 @@ function applydrag(diffX, diffY){
 	myBoxRect[3] += diffY;
 	vpl_nodeBox.rect = myBoxRect;
 	storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
-//	vpl_NodeSpacePatcher.message("front"); <- slows down patch rendering
+//	vpl_nodeSpacePatcher.message("front"); <- slows down patch rendering
 }
 
 function openworkspace(){
@@ -589,39 +574,20 @@ function setGUIColors(){
 	if(myNodeEnable == 0)
 		workingcolor = myNodeColorOff;
 
-	// sets the color pf all vpl_canvas objects within the node
-	if(vpl_canvas instanceof Array){
-        dpost("canvas is array: "+vpl_canvas.length+"\n");
-		for(var i = 0; i < vpl_canvas.length; i++){
-//			vpl_canvas[i].message("bordercolor", 0., 0., 0., 1.);
-//			vpl_canvas[i].message("borderoncolor", 1., 1., 1., 1.);
-//			vpl_canvas[i].message("bgovercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
-//			vpl_canvas[i].message("bgoncolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-//			vpl_canvas[i].message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-			if(vpl_canvas[i].understands("bgfillcolor")){
-                //post("bgfillcolor\n");
-				vpl_canvas[i].message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-            }
-			if(vpl_canvas[i].understands("bgcolor")){
-                //post("bgcolor\n");
-				vpl_canvas[i].message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-            }
-		}
-	}else{
-//		vpl_canvas.message("bordercolor", 0., 0., 0., 1.);
-//		vpl_canvas.message("borderoncolor", 1., 1., 1., 1.);
-//		vpl_canvas.message("bgovercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
-//		vpl_canvas.message("bgoncolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-//		vpl_canvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-		if(vpl_canvas.understands("bgfillcolor")){
-            //post("bgfillcolor\n");
-			vpl_canvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-        }
-		if(vpl_canvas.understands("bgcolor")){
-            //post("bgcolor\n");
-			vpl_canvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-        }
-	}
+//  vpl_nodeCanvas.message("bordercolor", 0., 0., 0., 1.);
+//	vpl_nodeCanvas.message("borderoncolor", 1., 1., 1., 1.);
+//	vpl_nodeCanvas.message("bgovercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
+//	vpl_nodeCanvas.message("bgoncolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+//	vpl_nodeCanvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+    
+    if(vpl_nodeCanvas.understands("bgfillcolor")){
+        //post("bgfillcolor\n");
+        vpl_nodeCanvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+    }
+    if(vpl_nodeCanvas.understands("bgcolor")){
+        //post("bgcolor\n");
+        vpl_nodeCanvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+    }
 
 	if(vpl_nodeEnable != null){
 //		vpl_nodeEnable.message("bordercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
@@ -763,11 +729,11 @@ function storeConnectionInDB(index, conn){
 function makeBoxConnection(conn){
 	//post("makeBoxConnection");
 	//post(" : " + getKeyValuefromDB(conn.outaddress, "_title") + " | " + conn.outid + " | " + vpl_nodeBox.varname + " | " + conn.inid + " | " + getColorID(conn.intype) + "\n")
-	vpl_NodeSpacePatcher.message("script", "connectcolor", getKeyValuefromDB(conn.outaddress, "_title"), conn.outid-1, vpl_nodeBox.varname, conn.inid-1, getColorID(conn.intype));
+	vpl_nodeSpacePatcher.message("script", "connectcolor", getKeyValuefromDB(conn.outaddress, "_title"), conn.outid-1, vpl_nodeBox.varname, conn.inid-1, getColorID(conn.intype));
 }
 
 function removeBoxConnection(conn){
-	vpl_NodeSpacePatcher.disconnect(vpl_NodeSpacePatcher.getnamed(getKeyValuefromDB(conn.outaddress, "_title")), conn.outid-1, vpl_nodeBox, conn.inid-1);
+	vpl_nodeSpacePatcher.disconnect(vpl_nodeSpacePatcher.getnamed(getKeyValuefromDB(conn.outaddress, "_title")), conn.outid-1, vpl_nodeBox, conn.inid-1);
 }
 
 function Connection(outaddress, outid, outtype, inid, intype, inmaxcon){

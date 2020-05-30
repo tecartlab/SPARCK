@@ -39,7 +39,7 @@ NODE.IOlets = function ( _offset, _size, _shift, _myType2Color, _myColorTable ) 
     
     this.posCollapsed = 0;
     this.posExpanded = 0;
-    this.myNodeBoxSize = [0, 0, 200, 20];
+    this.myDefaultSize = [200, 30];
     this.myNodePatcher = null;
 };
 
@@ -48,13 +48,13 @@ NODE.IOlets.prototype = {
 	constructor: NODE.IOlets,
 
     /* _vpl_nodePatcher: instance to the patcher that contains the IOlets
-     * myNodeBoxSize: size of the nodebox
+     * myDefaultSize: size of the nodebox
      */
-	init: function ( _vpl_nodePatcher, _myNodeBoxSize, _expansion ) {
-        this.myNodeBoxSize = _myNodeBoxSize;
+	init: function ( _vpl_nodePatcher, _myDefaultSize) {
+        this.myDefaultSize = _myDefaultSize;
         this.myNodePatcher = _vpl_nodePatcher;
-        this.posCollapsed = this.myNodeBoxSize[3] + this.myNodeBoxSize[1] - this.myButtonSize + this.myButtonShift;
-        this.posExpanded = this.posCollapsed + _expansion;
+        this.posCollapsed = this.myDefaultSize[1] - this.myButtonSize/2 + this.myButtonShift;
+        this.posExpanded = this.myDefaultSize[1] - this.myButtonSize/2 + this.myButtonShift;
 
         //post("init iolets..\n")
         var objects = this.myNodePatcher.firstobject;
@@ -62,8 +62,8 @@ NODE.IOlets.prototype = {
 			// find all bpatcher with the script name inlet and outlet and set
 			// their postion according to their ids
  			if(objects.varname.indexOf("vpl_inlet") == 0){
-                //post("_myNodeBoxSize: " + _myNodeBoxSize + "\n");
-				var xpos = this.getIOLetXPos(objects, this.myNodeBoxSize);
+                //post("_myDefaultSize: " + _myDefaultSize + "\n");
+				var xpos = this.getIOLetXPos(objects, this.myDefaultSize);
                 this.Inlets.push(objects.varname);
                 this.InletsPos.push(xpos);
                 //post("xpos: " + xpos + "\n");
@@ -74,7 +74,7 @@ NODE.IOlets.prototype = {
 					//post(" found subpatcher: " + subpat + "\n");
 				}
 			}else if(objects.varname.indexOf("vpl_outlet") == 0){
-				var xpos = this.getIOLetXPos(objects, this.myNodeBoxSize);
+				var xpos = this.getIOLetXPos(objects, this.myDefaultSize);
                 this.Outlets.push(objects.varname);
                 this.OutletsPos.push(xpos);
  				this.myNodePatcher.message("script", "sendbox", objects.varname, "presentation_rect", xpos + this.myButtonOffset, this.posCollapsed, this.myButtonSize, this.myButtonSize);
@@ -88,7 +88,8 @@ NODE.IOlets.prototype = {
         }
 	},
 
-    expand: function ( _expanded ) {
+    expand: function ( _expanded , _myExpandedSize) {
+        this.posExpanded = _myExpandedSize[1] - this.myButtonSize/2 + this.myButtonShift;
         for(var i = 0; i < this.Outlets.length; i++){
             this.myNodePatcher.message("script", "sendbox", this.Outlets[i], "presentation_rect", this.OutletsPos[i] + this.myButtonOffset, this.getPosition(_expanded), this.myButtonSize, this.myButtonSize);
         }
@@ -98,12 +99,12 @@ NODE.IOlets.prototype = {
         return (_expanded == 1)?this.posExpanded:this.posCollapsed;
 	},
 
-    getIOLetXPos: function(_a, _myNodeBoxSize){
+    getIOLetXPos: function(_a, _myDefaultSize){
         var indexes = this.bracketEnclosure(_a).split("/");
         var index = indexes[0];
         var total = indexes[1]; //9.5
         //post("inlet position index: " + index + "/total: " + total + "\n");
-        var dividable = _myNodeBoxSize[2] - 18; //3.5 = xpos for index 1
+        var dividable = _myDefaultSize[0] - 18; //3.5 = xpos for index 1
         //post("dividable: " + dividable + "\n");
         var steps = dividable / (total - 1);
         return 10 + (index - 1) * steps - this.myButtonSize/2;
