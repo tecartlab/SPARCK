@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 419.0, 196.0, 451.0, 670.0 ],
+		"rect" : [ 707.0, 136.0, 364.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -58,30 +58,8 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 841.755370999999968, 551.0, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 186.0, 50.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 186.0, 24.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[2/2]",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#0_id" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-2",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.vpl.node.pbody.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 18.999985000000009, 412.0, 169.0, 128.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 57.0, 200.0, 37.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -2486,8 +2464,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 471.715331999999989, 4.070434999999975, 112.0, 102.0 ],
-													"text" : "ossia.parameter lens/stereo/spread @type float @default 1. @description \"stereo spread\" @priority 1"
+													"patching_rect" : [ 471.715331999999989, 4.070434999999975, 121.0, 102.0 ],
+													"text" : "ossia.parameter lens/stereo/spread @type float @default 1. @description \"stereo spread\" @priority 1 @range -10. 10."
 												}
 
 											}
@@ -2495,13 +2473,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-5",
-													"linecount" : 7,
+													"linecount" : 6,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 595.732665999999995, 4.070434999999975, 117.0, 102.0 ],
-													"text" : "ossia.parameter lens/stereo/rotation @type float @default 1. @description \"stereo rotation\" @priority 1"
+													"patching_rect" : [ 595.732665999999995, 4.070434999999975, 140.0, 89.0 ],
+													"text" : "ossia.parameter lens/stereo/rotation @type float @default 1. @description \"stereo rotation\" @priority 1 @range -10. 10."
 												}
 
 											}
@@ -3412,8 +3390,6 @@
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
 					"patching_rect" : [ 481.361205999999981, 273.289306972656277, 178.305602999999962, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 30.0, 200.0, 20.0 ],
 					"varname" : "parentTransformation",
 					"viewvisibility" : 1
 				}
@@ -3435,7 +3411,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@properties", "bs.node.camera.ossia.1", "@help", "SceneCamera", "@enableExpandTo", 37 ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@properties", "bs.node.camera.ossia.1", "@help", "SceneCamera", "@enable_expand", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -3449,29 +3425,11 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 2.074097, 69.894713999999993, 197.925903000000005, 39.0 ],
+					"patching_rect" : [ 2.074097, 69.894713999999993, 200.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 29.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 30.0 ],
 					"varname" : "vpl_nodelogic",
 					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 270.0,
-					"bgcolor" : [ 0.7, 0.7, 0.7, 0.8 ],
-					"bordercolor" : [ 0.701961, 0.701961, 0.701961, 0.8 ],
-					"id" : "obj-29",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 4.0, 200.0, 176.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 4.0, 200.0, 52.0 ],
-					"proportion" : 0.39,
-					"varname" : "vpl_canvas"
 				}
 
 			}
@@ -3583,7 +3541,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
-					"midpoints" : [ 190.499999999999972, 123.894714000000022, 196.0, 123.894714000000022, 196.0, 122.0, 461.361205999999981, 122.0 ],
+					"midpoints" : [ 192.574096999999995, 123.894714000000022, 196.0, 123.894714000000022, 196.0, 122.0, 461.361205999999981, 122.0 ],
 					"order" : 0,
 					"source" : [ "obj-24", 3 ]
 				}
@@ -3827,6 +3785,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"patcherrelativepath" : "../../../javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "bs.ossia.msg.select.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
 				"patcherrelativepath" : "../../msg",
@@ -3887,13 +3859,6 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
 				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{

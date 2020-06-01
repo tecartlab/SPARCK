@@ -52,3 +52,4 @@ folder <replacePath>sparck/javascript/msg
 folder <replacePath>sparck/javascript/nodes
 folder <replacePath>sparck/javascript/obsolete
 folder <replacePath>sparck/javascript/vpl
+folder <replacePath>sparck/javascript/vpl/classes
