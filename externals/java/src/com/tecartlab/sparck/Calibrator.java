@@ -404,21 +404,21 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 				//virtualCamera.viewport = new Viewport(tracker.getCameraHandler().getViewport());
 				//String context = tracker.getCameraHandler().getContext();
 				//calibObject.addContext(context);
-			}
-			if(calibObject.isLoaded() && modelObject.isOperational()){
-				calibObject.link(modelObject);
-				try{
-					calibObject.update(virtualCamera);
-				} catch (NoSuchElementException e){
-					// there are cases where this exception is thrown from inside the 
-					// generation of the delaunay code. no clue why.
-					// maybe if the warp vertices are too close together.
-					// there is only one quick and dirty remedy, 
-					// which is not sure it will fix all cases:
-					calibObject.adjustWarpToTarget();
-					calibObject.update(virtualCamera);
+				if(calibObject.isLoaded() && modelObject.isOperational()){
+					calibObject.link(modelObject);
+					try{
+						calibObject.update(virtualCamera);
+					} catch (NoSuchElementException e){
+						// there are cases where this exception is thrown from inside the 
+						// generation of the delaunay code. no clue why.
+						// maybe if the warp vertices are too close together.
+						// there is only one quick and dirty remedy, 
+						// which is not sure it will fix all cases:
+						calibObject.adjustWarpToTarget();
+						calibObject.update(virtualCamera);
+					}
+					calibObject.draw();
 				}
-				calibObject.draw();
 			}
 		}
 	}
