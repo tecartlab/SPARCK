@@ -157,7 +157,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 0.0, 21.0, 200.0, 138.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 21.0, 200.0, 138.0 ],
+					"presentation_rect" : [ 0.0, 23.0, 200.0, 136.0 ],
 					"varname" : "vpl_properties",
 					"viewvisibility" : 1
 				}

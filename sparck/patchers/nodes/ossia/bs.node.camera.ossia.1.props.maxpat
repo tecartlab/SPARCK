@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 67.0, 415.0, 663.0, 451.0 ],
+		"rect" : [ 155.0, 184.0, 663.0, 451.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -222,9 +222,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 289.0 ],
+					"patching_rect" : [ 0.0, 0.0, 202.0, 259.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 289.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 259.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}

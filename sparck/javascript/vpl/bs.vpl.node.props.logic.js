@@ -117,7 +117,7 @@ function done(){
                     // first we are looking for the full size of the properties
                     var myPropertyCanvas = myproperty.getnamed("vpl_canvas_full");
                     if(myPropertyCanvas != null){                    
-                        mySize = new Array(myPropertyCanvas.rect[2], myPropertyCanvas.rect[3]);
+                        mySize = new Array(myPropertyCanvas.rect[2], myPropertyCanvas.rect[3] + WINDOWBARSIZE);
                         //post("myPropertyCanvas.rect: " + myPropertyCanvas.rect + "\n");
                         //post("mySize: " + mySize + "\n");
                         //myClientProperties.message("presentation_rect", 0, 0, theSize[0], theSize[1]);
