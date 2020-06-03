@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 707.0, 136.0, 364.0, 670.0 ],
+		"rect" : [ 707.0, 136.0, 648.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -58,7 +58,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 841.755370999999968, 551.0, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 186.0, 24.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 186.0, 26.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[2/2]",
 					"viewvisibility" : 1
 				}
@@ -73,8 +73,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 231.222198486328125, 323.85064697265625, 119.0, 76.0 ],
-					"text" : "ossia.parameter icon/render/enable @type bool @default 0 @description \"enable render of camera icon in 3dviewer\" @priority 1"
+					"patching_rect" : [ 231.222198486328125, 323.85064697265625, 120.0, 76.0 ],
+					"text" : "ossia.parameter gizmo/render/enable @type bool @default 0 @description \"enable render of camera icon in 3dviewer\" @priority 1"
 				}
 
 			}
@@ -2464,7 +2464,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 471.715331999999989, 4.070434999999975, 121.0, 102.0 ],
+													"patching_rect" : [ 471.715331999999989, 4.070434999999975, 124.0, 102.0 ],
 													"text" : "ossia.parameter lens/stereo/spread @type float @default 1. @description \"stereo spread\" @priority 1 @range -10. 10."
 												}
 
@@ -3425,9 +3425,9 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 2.074097, 69.894713999999993, 200.0, 30.0 ],
+					"patching_rect" : [ 2.074097, 69.894713999999993, 200.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 30.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 32.0 ],
 					"varname" : "vpl_nodelogic",
 					"viewvisibility" : 1
 				}
@@ -3771,13 +3771,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../../media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.node.gui.button.menu.png",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
@@ -3796,6 +3789,13 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.node.logo.power.png",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"patcherrelativepath" : "../../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{

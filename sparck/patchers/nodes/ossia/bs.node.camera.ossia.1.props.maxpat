@@ -62,7 +62,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "icon/render", "icon" ],
+					"args" : [ "#1", "gizmo/render", "gizmo" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -71,7 +71,7 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.icon.render.maxpat",
+					"name" : "bs.ossia.gizmo.render.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -366,7 +366,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.icon.render.maxpat",
+				"name" : "bs.ossia.gizmo.render.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/render",
 				"patcherrelativepath" : "../../ossia/render",
 				"type" : "JSON",

@@ -40,23 +40,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/stereo" ],
+					"args" : [ "#1", "tfm/parent", "@text", "parent" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-6",
+					"id" : "obj-8",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.lens.stereo.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 3,
+					"name" : "bs.ossia.msg.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 120.0, 206.0, 38.0 ],
+					"patching_rect" : [ 248.0, 142.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 36.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 21.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -113,7 +112,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 0.0, 202.0, 43.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 36.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 21.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}
@@ -136,14 +135,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.lens.stereo.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/camera",
-				"patcherrelativepath" : "../../ossia/camera",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.toggle.maxpat",
+				"name" : "bs.ossia.msg.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
 				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
@@ -157,9 +149,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.float.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
+				"name" : "bs.gui.svg.button.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -169,14 +161,6 @@
 			}
 , 			{
 				"name" : "ossia.remote.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "icst.button.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "icst.floatui.mxo",
 				"type" : "iLaX"
 			}
  ],
