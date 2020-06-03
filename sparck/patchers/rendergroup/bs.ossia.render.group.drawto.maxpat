@@ -12,7 +12,7 @@
 		"classnamespace" : "box",
 		"rect" : [ 250.0, 101.0, 875.0, 736.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 1,
+		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -42,13 +42,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-113",
-					"linecount" : 5,
+					"linecount" : 4,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 674.277831999999989, 96.5704345703125, 173.0, 76.0 ],
-					"text" : "ossia.parameter /render/group @type list @default 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 @description \"render group for capturing\""
+					"patching_rect" : [ 674.277831999999989, 96.5704345703125, 190.0, 62.0 ],
+					"text" : "ossia.parameter #1 @type list @default 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 @description #2"
 				}
 
 			}

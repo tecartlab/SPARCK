@@ -92,7 +92,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 249.416666666666686, 285.0, 53.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "collapse"
 								}
 
@@ -149,13 +148,13 @@
 								"box" : 								{
 									"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 									"id" : "obj-18",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 154.333333333333314, 185.0, 163.0, 49.0 ],
-									"text" : "ossia.parameter expand @type bool @range 0 1 @default 0. @critical 1"
+									"patching_rect" : [ 154.333333333333314, 185.0, 198.0, 35.0 ],
+									"text" : "ossia.parameter expand @type bool @range 0 1 @default 0."
 								}
 
 							}

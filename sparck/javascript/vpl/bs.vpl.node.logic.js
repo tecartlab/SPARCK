@@ -460,28 +460,29 @@ function drag(diffX, diffY){
 
 // called by the menu
 function menu(_func){
-	if(_func == "properties"){
-		openproperties();
-	} else if(_func == "collapse"){
-        myNodeIsExpanded = false;
-		expand();
-        outlet(4, "vpl_menu", "setitem", 3, "expand");
-	} else if(_func == "expand"){
-        myNodeIsExpanded = true;
-		expand();
-        outlet(4, "vpl_menu", "setitem", 3, "collapse");
-	} else if(_func == "duplicate"){
-		;
-	} else if(_func == "delete"){
-		;
-	} else if(_func == "help"){
-		outlet(2, "load", "bs.help.node." + myNodeHelp + ".maxpat");
+	if(myNodeInit){		
+		if(_func == "properties"){
+			openproperties();
+		} else if(_func == "collapse"){
+        	myNodeIsExpanded = false;
+			expand();
+        	outlet(4, "vpl_menu", "setitem", 3, "expand");
+		} else if(_func == "expand"){
+        	myNodeIsExpanded = true;
+			expand();
+        	outlet(4, "vpl_menu", "setitem", 3, "collapse");
+		} else if(_func == "duplicate"){
+			;
+		} else if(_func == "delete"){
+			;
+		} else if(_func == "help"){
+			outlet(2, "load", "bs.help.node." + myNodeHelp + ".maxpat");
+		}
 	}
 }
 
 // called by menu()
 function expand(){
-	//post("expand  ");
     setNodeRect(0);
     myIOlets.expand(myNodeIsExpanded, myExpandedSize);
     if(myNodeIsExpanded){
