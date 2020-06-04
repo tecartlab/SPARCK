@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 575.0, 92.0, 368.0, 305.0 ],
+		"rect" : [ 563.0, 509.0, 368.0, 305.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,8 +40,11 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"bordercolor" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
 					"borderstyle" : 5,
 					"focusborderstyle" : 4,
+					"focusfgcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ],
 					"focusfontstyle" : 1,
 					"fontface" : 0,
 					"id" : "obj-2",
@@ -53,7 +56,9 @@
 					"patching_rect" : [ 81.5, 136.0, 49.0, 16.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 49.0, 16.0 ],
-					"textalignment" : 0
+					"pviewfontsize" : 9.0,
+					"textalignment" : 0,
+					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ]
 				}
 
 			}
@@ -271,7 +276,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.float.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

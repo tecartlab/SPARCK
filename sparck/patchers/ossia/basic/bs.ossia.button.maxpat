@@ -77,7 +77,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 85.5, 185.0, 50.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 50.0, 16.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 49.0, 16.0 ],
 					"pviewfontsize" : 9.0,
 					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ],
 					"usedisplaytext" : 1

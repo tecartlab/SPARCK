@@ -53,6 +53,17 @@ function description(_desc){
     outlet(1, "hint", _desc + myUnit + " | {osc: /node/" + myNodeTitle + "/" + myParamAddress + " <"+myType+">}");
 }
 
+function priority(_clip){
+}
+
+function default(_val){
+    post("default: " + _val + "\n");
+}
+
+function rate(_val){
+    post("rate : " + _val + "\n");
+}
+
 function clip(_clip){
     //post("clip("+_clip+"): " + "sparck:/node/" + myNodeTitle + "/" + myParamAddress + " \n")
     myClip = _clip;

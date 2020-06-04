@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 707.0, 136.0, 648.0, 670.0 ],
+		"rect" : [ 431.0, 136.0, 924.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -40,6 +40,32 @@
 		"assistshowspatchername" : 0,
 		"globalpatchername" : "SceneCamera",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 706.953529500000059, 216.894713999999993, 64.0, 20.0 ],
+					"text" : "prepend dim"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
+					"id" : "obj-2",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 706.953529500000059, 151.0, 159.0, 53.0 ],
+					"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"args" : [ "#2", "#4", 2, "type", "@hint", "camera intrinsics [p_patrix, frustum]" ],
 					"bgmode" : 0,
@@ -840,7 +866,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 554.0, 127.0, 640.0, 480.0 ],
+						"rect" : [ 554.0, 127.0, 655.0, 376.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1346,7 +1372,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 1409.305542000000059, 372.070434999999975, 128.0, 76.0 ],
-									"text" : "ossia.parameter tfm/local/scale/z @type float @default 1. @description \"local scale z\" @priority 1"
+									"text" : "ossia.parameter tfm/local/scaleZ @type float @default 1. @description \"local scale z\" @priority 1"
 								}
 
 							}
@@ -1359,8 +1385,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 1247.805542000000059, 372.070434999999975, 147.0, 76.0 ],
-									"text" : "ossia.parameter tfm/local/scale/y @type float @default 1. @description \"local scale y\" @priority 1"
+									"patching_rect" : [ 1247.805542000000059, 372.070434999999975, 156.0, 76.0 ],
+									"text" : "ossia.parameter tfm/local/scaleY @type float @default 1. @description \"local scale y\" @priority 1"
 								}
 
 							}
@@ -1399,8 +1425,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 1086.305542000000059, 372.070434999999975, 146.0, 76.0 ],
-									"text" : "ossia.parameter tfm/local/scale/x @type float @default 1. @description \"local scale x\" @priority 1"
+									"patching_rect" : [ 1086.305542000000059, 372.070434999999975, 152.694457999999941, 76.0 ],
+									"text" : "ossia.parameter tfm/local/scaleX @type float @default 1. @description \"local scale x\" @priority 1"
 								}
 
 							}
@@ -1449,8 +1475,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 898.305542000000059, 372.070434999999975, 151.0, 89.0 ],
-									"text" : "ossia.parameter tfm/local/rotation/z @type float @default 0. @description \"local rotation z [deg]\" @priority 1"
+									"patching_rect" : [ 898.305542000000059, 372.070434999999975, 122.0, 89.0 ],
+									"text" : "ossia.parameter tfm/local/rotZ @type float @default 0. @description \"local rotation z [deg]\" @priority 1"
 								}
 
 							}
@@ -1463,8 +1489,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 757.805542000000059, 372.070434999999975, 128.0, 89.0 ],
-									"text" : "ossia.parameter tfm/local/rotation/y @type float @default 0. @description \"local rotation y [deg]\" @priority 1"
+									"patching_rect" : [ 757.805542000000059, 372.070434999999975, 138.0, 89.0 ],
+									"text" : "ossia.parameter tfm/local/rotY @type float @default 0. @description \"local rotation y [deg]\" @priority 1"
 								}
 
 							}
@@ -1489,8 +1515,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 617.305542000000059, 296.0, 439.0, 35.0 ],
-									"text" : "ossia.parameter tfm/local/rotation @type vec3f @default 0. 0. 0. @unit orientation.euler @description \"local rotation x y z\""
+									"patching_rect" : [ 617.305542000000059, 296.0, 442.0, 35.0 ],
+									"text" : "ossia.parameter tfm/local/rot @type vec3f @default 0. 0. 0. @unit orientation.euler @description \"local rotation x y z\""
 								}
 
 							}
@@ -1503,8 +1529,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 617.305542000000059, 372.070434999999975, 128.0, 89.0 ],
-									"text" : "ossia.parameter tfm/local/rotation/x @type float @default 0. @description \"local rotation x [deg]\" @priority 1"
+									"patching_rect" : [ 617.305542000000059, 372.070434999999975, 138.0, 89.0 ],
+									"text" : "ossia.parameter tfm/local/rotX @type float @default 0. @description \"local rotation x [deg]\" @priority 1"
 								}
 
 							}
@@ -1553,8 +1579,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 434.305542000000116, 372.070434999999975, 128.0, 89.0 ],
-									"text" : "ossia.parameter tfm/local/position/z @unit distance.m @type float @default 0. @description \"local position z\" @priority 1"
+									"patching_rect" : [ 434.305542000000116, 372.070434999999975, 135.999999999999943, 89.0 ],
+									"text" : "ossia.parameter tfm/local/posZ @unit distance.m @type float @default 0. @description \"local position z\" @priority 1"
 								}
 
 							}
@@ -1567,8 +1593,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 302.805542000000059, 372.070434999999975, 128.0, 89.0 ],
-									"text" : "ossia.parameter tfm/local/position/y @unit distance.m @type float @default 0. @description \"local position y\" @priority 1"
+									"patching_rect" : [ 302.805542000000059, 372.070434999999975, 127.0, 89.0 ],
+									"text" : "ossia.parameter tfm/local/posY @unit distance.m @type float @default 0. @description \"local position y\" @priority 1"
 								}
 
 							}
@@ -1593,8 +1619,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 171.305542000000059, 296.0, 391.0, 35.0 ],
-									"text" : "ossia.parameter tfm/local/position @type vec3f @default 0. 0. 0. @unit position.cart3D @description \"local position x y z\""
+									"patching_rect" : [ 171.305542000000059, 296.0, 417.0, 35.0 ],
+									"text" : "ossia.parameter tfm/local/pos @type vec3f @default 0. 0. 0. @unit position.cart3D @description \"local position x y z\""
 								}
 
 							}
@@ -1607,8 +1633,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 171.305542000000059, 372.070434999999975, 128.0, 89.0 ],
-									"text" : "ossia.parameter tfm/local/position/x @unit distance.m @type float @default 0. @description \"local position x\" @priority 1"
+									"patching_rect" : [ 171.305542000000059, 372.070434999999975, 127.0, 89.0 ],
+									"text" : "ossia.parameter tfm/local/posX @unit distance.m @type float @default 0. @description \"local position x\" @priority 1"
 								}
 
 							}
@@ -3533,6 +3559,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-21", 0 ]
 				}
@@ -3642,6 +3675,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-24", 2 ],
 					"source" : [ "obj-39", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-78", 1 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}

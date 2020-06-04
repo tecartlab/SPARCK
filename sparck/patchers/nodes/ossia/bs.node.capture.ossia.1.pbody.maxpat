@@ -40,6 +40,28 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "render", "capture" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-7",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.render.group.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 248.0, 116.0, 201.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 1.0, 200.0, 23.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "internal" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -55,7 +77,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 173.0, 205.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 21.0, 205.0, 18.0 ],
+					"presentation_rect" : [ 0.0, 44.0, 205.0, 18.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -77,7 +99,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 142.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 21.0 ],
+					"presentation_rect" : [ 0.0, 24.0, 200.0, 21.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -132,9 +154,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 43.0 ],
+					"patching_rect" : [ 0.0, 0.0, 202.0, 64.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 43.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 64.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}
@@ -182,6 +204,20 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/capture",
 				"patcherrelativepath" : "../../ossia/capture",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.render.group.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/render",
+				"patcherrelativepath" : "../../ossia/render",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "RenderGroupCell_capture_B.png",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"patcherrelativepath" : "../../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{

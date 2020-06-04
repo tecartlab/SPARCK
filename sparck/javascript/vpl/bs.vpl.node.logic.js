@@ -51,7 +51,7 @@ var uniqueTable = new Dict("bs.vpl.unique.title");
 var myDefaultSize = new Array(200, 32);
 var myExpandedSize = new Array(200, 32);
 var myCanvasOffset = 4;
-var myPBodyOffset = 38;
+var myPBodyOffset = 34;
 
 var myIOLetButtonSize = 8;
 var myIOLetButtonShift = -2;
@@ -292,6 +292,7 @@ function setNodeRect(_store){
         }
     }
     vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_canvas", "presentation_size", currentSize[0], currentSize[1] - myCanvasOffset);
+    vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_body", "hidden", (myNodeIsExpanded)?0: 1);
     vpl_nodePatcher.message("script", "sendbox", "vpl_nodelogic", "size", currentSize[0], currentSize[1]);
 }
 

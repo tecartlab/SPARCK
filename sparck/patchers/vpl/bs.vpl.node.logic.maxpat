@@ -520,7 +520,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 8.481491, 290.333252000000016, 227.0, 53.666747999999984 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 38.0, 200.0, 60.0 ],
+					"presentation_rect" : [ 0.0, 34.0, 200.0, 60.0 ],
 					"varname" : "vpl_body",
 					"viewvisibility" : 1
 				}

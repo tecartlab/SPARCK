@@ -40,37 +40,31 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"bordersize" : 6.0,
-					"borderstyle" : 5,
-					"fontface" : 0,
-					"hint" : "inherited stereomode",
-					"iconbackground" : 3,
-					"iconbglinewidth" : 1.0,
-					"iconsize" : 14.0,
-					"iconstyle" : 2,
-					"id" : "obj-4",
+					"allowdrag" : 0,
+					"arrow" : 0,
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"bgfillcolor_color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+					"bgfillcolor_color2" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "color",
+					"fontsize" : 9.0,
+					"hint" : "inherited camera type",
+					"id" : "obj-1",
 					"ignoreclick" : 1,
-					"maxclass" : "icst.button",
+					"items" : [ "mono", ",", "stereo" ],
+					"maxclass" : "umenu",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"off_down_bg_color" : [ 1.0, 0.8, 0.0, 0.0 ],
-					"off_down_fg_color" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
-					"off_down_textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"off_up_bg_color" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.0 ],
-					"off_up_fg_color" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
-					"off_up_textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ],
-					"on_bordersize" : 15.0,
-					"on_borderstyle" : 5,
-					"on_down_bg_color" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"on_down_fg_color" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
-					"on_up_bg_color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 0.0 ],
-					"on_up_fg_color" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
-					"outlettype" : [ "", "" ],
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 231.73077400000011, 63.903809000000024, 16.0, 16.0 ],
+					"parameter_mappable" : 0,
+					"patching_rect" : [ 231.73077400000011, 62.403809000000024, 100.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 184.0, 0.0, 16.0, 16.0 ],
-					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ]
+					"presentation_rect" : [ 160.0, -1.0, 40.0, 19.0 ],
+					"textcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 
 			}
@@ -151,7 +145,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -166,10 +160,6 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "ossia.remote.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "icst.button.mxo",
 				"type" : "iLaX"
 			}
  ],
