@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 94.0, 277.0, 885.0, 539.0 ],
+		"rect" : [ 215.0, 266.0, 885.0, 539.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -328,7 +328,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 892.0, 343.0 ],
+										"rect" : [ 183.0, 97.0, 892.0, 343.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -363,7 +363,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 37.150879000000032, 108.0, 88.0, 22.0 ],
+													"patching_rect" : [ 37.150879000000032, 122.052734999999984, 88.0, 22.0 ],
 													"text" : "erase_color $1"
 												}
 
@@ -372,13 +372,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-112",
-													"linecount" : 4,
+													"linecount" : 5,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 37.150879000000032, 35.0, 162.0, 62.0 ],
-													"text" : "ossia.parameter render/erase_color @type rgba @default 0. 0. 0. 1. @description \"erase color\""
+													"patching_rect" : [ 37.150879000000032, 35.0, 173.849120999999968, 76.0 ],
+													"text" : "ossia.parameter render/background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
 												}
 
 											}
@@ -4744,8 +4744,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 137.953529500000059, 18.5, 493.0, 35.0 ],
-													"text" : "ossia.parameter render/texture/dim/inherit @type bool @default false @description \"inherit the texture dimension from parent\" @priority 1"
+													"patching_rect" : [ 137.953529500000059, 18.5, 494.0, 35.0 ],
+													"text" : "ossia.parameter render/texture/dim/inherit @type bool @default 1 @description \"inherit the texture dimension from parent\" @priority 1"
 												}
 
 											}
@@ -5083,7 +5083,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 373.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u511001909"
+													"text" : "anim u318006921"
 												}
 
 											}
@@ -5179,7 +5179,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 186.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u771001937"
+													"text" : "anim u645006931"
 												}
 
 											}
@@ -5240,7 +5240,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 551.273192999999992, 281.197387999999989, 105.0, 22.0 ],
-													"text" : "anim u941001965"
+													"text" : "anim u868007450"
 												}
 
 											}
@@ -7107,7 +7107,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 9.277791333333312, 188.1973876953125, 167.0, 20.0 ],
+					"patching_rect" : [ 9.277791333333312, 183.1973876953125, 167.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

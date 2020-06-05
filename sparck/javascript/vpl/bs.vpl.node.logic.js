@@ -559,6 +559,7 @@ function notifydeleted(){
 	// call all nodes inside the same nodespace and tell them
 	// to remove connections to this node from the database
 	messnamed(myNodeSpace + "::vpl::nodespace", "removeConnection", myNodeName);
+    messnamed(myNodeID + "::props", "close");
 // 	cpost(myNodeName + " got deleted\n");
     myIOlets.freepeer();
 }

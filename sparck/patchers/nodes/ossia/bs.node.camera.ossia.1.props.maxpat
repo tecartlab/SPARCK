@@ -54,7 +54,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 263.0, 399.0, 206.0, 38.0 ],
+					"patching_rect" : [ 245.5, 378.0, 208.5, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 215.0, 200.0, 18.0 ],
 					"viewvisibility" : 1
@@ -121,7 +121,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 384.0, 206.0, 38.0 ],
+					"patching_rect" : [ 248.0, 411.0, 206.0, 38.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 233.0, 200.0, 38.0 ],
 					"viewvisibility" : 1
@@ -256,6 +256,13 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-10", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-2", 1 ]
 				}
@@ -270,7 +277,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-5", 1 ]
 				}
 
@@ -427,6 +434,13 @@
 				"name" : "bs.ossia.vec2i.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
 				"patcherrelativepath" : "../../ossia/basic",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "2int.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic/util",
+				"patcherrelativepath" : "../../ossia/basic/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}

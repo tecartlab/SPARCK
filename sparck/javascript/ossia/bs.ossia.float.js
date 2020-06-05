@@ -39,6 +39,7 @@ function list(_list){
 
 function type(_type){
     myType = _type;
+	post("myType " + myType + "\n");
 }
 
 function unit(_unit){
@@ -57,11 +58,11 @@ function priority(_clip){
 }
 
 function default(_val){
-    post("default: " + _val + "\n");
+    //post("default: " + _val + "\n");
 }
 
 function rate(_val){
-    post("rate : " + _val + "\n");
+    //post("rate : " + _val + "\n");
 }
 
 function clip(_clip){
