@@ -39,7 +39,6 @@ function list(_list){
 
 function type(_type){
     myType = _type;
-	post("myType " + myType + "\n");
 }
 
 function unit(_unit){

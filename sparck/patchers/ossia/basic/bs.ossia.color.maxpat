@@ -40,13 +40,25 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-14",
+					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 112.5, 124.5, 122.0, 22.0 ],
-					"text" : "substitute set bgcolor"
+					"patching_rect" : [ 88.5, 94.0, 55.0, 22.0 ],
+					"text" : "route set"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 112.5, 130.0, 95.0, 22.0 ],
+					"text" : "prepend bgcolor"
 				}
 
 			}
@@ -59,7 +71,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 112.5, 158.5, 100.0, 16.0 ],
+					"patching_rect" : [ 112.5, 164.0, 100.0, 16.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 200.0, 20.0 ],
 					"text" : ""
@@ -176,7 +188,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 88.5, 79.0, 77.0, 22.0 ],
+					"patching_rect" : [ 88.5, 65.0, 77.0, 22.0 ],
 					"text" : "ossia.remote"
 				}
 
@@ -247,14 +259,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
-					"order" : 0,
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-26", 2 ]
 				}
@@ -262,8 +266,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-26", 0 ]
 				}
 
@@ -277,8 +280,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"order" : 0,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 1,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
-					"midpoints" : [ 98.0, 244.903809000000024, 68.999999999999943, 244.903809000000024, 68.999999999999943, 57.5, 98.0, 57.5 ],
+					"midpoints" : [ 98.0, 228.903809000000024, 68.999999999999943, 228.903809000000024, 68.999999999999943, 52.5, 98.0, 52.5 ],
 					"order" : 1,
 					"source" : [ "obj-7", 0 ]
 				}
