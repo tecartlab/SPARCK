@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 346.0, 484.0, 562.0, 352.0 ],
+		"rect" : [ -27.0, 541.0, 562.0, 352.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -157,7 +157,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 0.0, 21.0, 200.0, 138.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 23.0, 200.0, 136.0 ],
+					"presentation_rect" : [ 0.0, 25.0, 200.0, 134.0 ],
 					"varname" : "vpl_properties",
 					"viewvisibility" : 1
 				}

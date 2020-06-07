@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 155.0, 184.0, 663.0, 451.0 ],
+		"rect" : [ 56.0, 336.0, 720.0, 451.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,28 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "gizmo", "gizmo" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-11",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.param.rendergroup.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 248.0, 114.0, 201.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 19.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "render/texture" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -56,7 +78,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 245.5, 378.0, 208.5, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 215.0, 200.0, 18.0 ],
+					"presentation_rect" : [ 0.0, 220.0, 200.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -78,29 +100,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 142.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 24.0, 200.0, 21.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#1", "gizmo/render", "gizmo" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-7",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.gizmo.render.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 114.0, 201.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 5.0, 200.0, 18.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 200.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -123,7 +123,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 411.0, 206.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 233.0, 200.0, 38.0 ],
+					"presentation_rect" : [ 0.0, 240.0, 200.0, 39.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -146,7 +146,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 287.0, 206.0, 80.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 139.0, 200.0, 75.0 ],
+					"presentation_rect" : [ 0.0, 140.0, 200.0, 79.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -206,7 +206,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 175.0, 211.0, 101.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 46.0, 200.0, 91.0 ],
+					"presentation_rect" : [ 0.0, 40.0, 200.0, 99.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -226,7 +226,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 40.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_collapsed"
 				}
@@ -245,9 +245,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 275.0 ],
+					"patching_rect" : [ 0.0, 0.0, 202.0, 283.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 275.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 202.0, 283.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}
@@ -396,20 +396,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.gizmo.render.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/render",
-				"patcherrelativepath" : "../../ossia/render",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.ossia.msg.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
 				"patcherrelativepath" : "../../ossia/basic",
@@ -442,6 +428,20 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic/util",
 				"patcherrelativepath" : "../../ossia/basic/util",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.param.rendergroup.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
+				"patcherrelativepath" : "../../ossia/parameter",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "RenderGroupCell_capture_C.png",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"patcherrelativepath" : "../../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -122,7 +122,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 132.999999999999943, 205.0, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 102.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 100.0, 1.0, 50.0, 17.0 ],
 					"text" : "factor",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -146,7 +146,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 181.925231999999937, 205.0, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 150.0, 0.0, 50.0, 19.0 ],
 					"varname" : "factor",
 					"viewvisibility" : 1
 				}
@@ -170,7 +170,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 68.805542000000059, 76.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 50.0, 0.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -186,7 +186,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 12.805542000000116, 76.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
 					"text" : "adapt",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}

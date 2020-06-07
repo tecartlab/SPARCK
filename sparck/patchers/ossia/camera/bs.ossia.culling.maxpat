@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -98,7 +98,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 125.805542000000116, 77.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 102.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 100.0, 1.0, 50.0, 17.0 ],
 					"text" : "far",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -115,7 +115,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 13.805542000000116, 77.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
 					"text" : "near",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -139,7 +139,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 177.805542000000059, 77.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 150.0, 0.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -162,7 +162,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 61.805542000000059, 77.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 50.0, 0.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -192,15 +192,15 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.float.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.float.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

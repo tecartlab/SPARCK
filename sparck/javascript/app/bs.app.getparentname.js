@@ -31,7 +31,7 @@ outlets = 1;
 
 function load(){
 	var parentlevel = 0;
-	var owner = this.patcher.box;
+	var owner = this.patcher.box.patcher.box;
 	if (owner) {
 //		post("owner : " + owner.varname + " level : " + parentlevel+"\n");
 		if(owner.patcher.name.indexOf("APP") != 0){
@@ -44,7 +44,7 @@ function load(){
 
 function save(){
 	var parentlevel = 0;
-	var owner = this.patcher.box;
+	var owner = this.patcher.box.patcher.box;
 	if (owner) {
 //		post("owner : " + owner.varname + " level : " + parentlevel+"\n");
 		if(owner.patcher.name.indexOf("APP") != 0){

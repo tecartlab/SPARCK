@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 67.0, 415.0, 663.0, 451.0 ],
+		"rect" : [ 20.0, 385.0, 663.0, 451.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -49,20 +49,20 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.render.group.maxpat",
-					"numinlets" : 0,
+					"name" : "bs.ossia.param.rendergroup.maxpat",
+					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 116.0, 201.0, 22.0 ],
+					"patching_rect" : [ 248.0, 118.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 200.0, 23.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "internal" ],
+					"args" : [ "#1", "inherit" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -73,11 +73,12 @@
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.capture.info.maxpat",
 					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 248.0, 173.0, 205.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 44.0, 205.0, 18.0 ],
+					"presentation_rect" : [ 0.0, 40.0, 200.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -99,7 +100,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 142.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 24.0, 200.0, 21.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 200.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -207,14 +208,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.render.group.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/render",
-				"patcherrelativepath" : "../../ossia/render",
+				"name" : "bs.ossia.param.rendergroup.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
+				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "RenderGroupCell_capture_B.png",
+				"name" : "RenderGroupCell_capture_C.png",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",

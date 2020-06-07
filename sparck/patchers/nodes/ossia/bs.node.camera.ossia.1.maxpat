@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,6 +40,20 @@
 		"assistshowspatchername" : 0,
 		"globalpatchername" : "SceneCamera",
 		"boxes" : [ 			{
+				"box" : 				{
+					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
+					"id" : "obj-5",
+					"linecount" : 3,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "int", "" ],
+					"patching_rect" : [ 39.222198486328125, 411.850646999999981, 171.0, 42.0 ],
+					"text" : "bs.ossia.render.group.drawto gizmo/renderGroup \"enable render of camera gizmo\""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
@@ -92,20 +106,6 @@
 			}
 , 			{
 				"box" : 				{
-					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
-					"id" : "obj-3",
-					"linecount" : 6,
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 231.222198486328125, 323.85064697265625, 120.0, 76.0 ],
-					"text" : "ossia.parameter gizmo/render/enable @type bool @default 0 @description \"enable render of camera icon in 3dviewer\" @priority 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-19",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -116,7 +116,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -819,7 +819,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.222198486328125, 383.85064697265625, 155.0, 20.0 ],
+					"patching_rect" : [ 39.222198486328125, 376.850646999999981, 155.0, 20.0 ],
 					"text" : "ossia.model node/StereoCamera"
 				}
 
@@ -831,7 +831,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 231.222198486328125, 483.0, 78.0, 20.0 ],
+					"patching_rect" : [ 39.083190972656212, 495.0, 78.0, 20.0 ],
 					"text" : "prepend enable"
 				}
 
@@ -843,7 +843,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 231.222198486328125, 452.85064697265625, 74.0, 20.0 ],
+					"patching_rect" : [ 39.083190972656212, 464.85064697265625, 74.0, 20.0 ],
 					"text" : "route 3dviewer"
 				}
 
@@ -860,7 +860,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1195,18 +1195,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 231.222198486328125, 419.85064697265625, 112.0, 20.0 ],
-					"text" : "bs.rendergroup.tostage"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-27",
 					"linecount" : 2,
 					"maxclass" : "newobj",
@@ -1242,13 +1230,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 53.0, 150.0, 1278.0, 667.0 ],
+						"rect" : [ 35.0, 548.0, 1278.0, 667.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1291,26 +1279,14 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 95.0, 8.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 95.0, 38.0, 904.0, 22.0 ],
-									"text" : "ossia.parameter tfm/local/matrix @type list @default 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. @description \"local transformation matrix\" @mute 1 @mode set @priority 3"
+									"patching_rect" : [ 95.0, 38.0, 787.0, 22.0 ],
+									"text" : "ossia.parameter tfm/local/matrix @type list @default 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. @description \"local transformation matrix\" @priority 3"
 								}
 
 							}
@@ -1380,12 +1356,12 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-68",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 1247.805542000000059, 372.070434999999975, 156.0, 76.0 ],
+									"patching_rect" : [ 1247.805542000000059, 372.070434999999975, 160.0, 62.0 ],
 									"text" : "ossia.parameter tfm/local/scaleY @type float @default 1. @description \"local scale y\" @priority 1"
 								}
 
@@ -1772,13 +1748,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
-									"source" : [ "obj-12", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-13", 0 ]
 								}
@@ -2154,7 +2123,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 312.471405000000004, 567.0, 91.0, 20.0 ],
+					"patching_rect" : [ 290.471405000000004, 567.0, 91.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.draw.camera",
 						"parameter_enable" : 0
@@ -2226,7 +2195,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2411,7 +2380,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3574,7 +3543,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
-					"midpoints" : [ 192.574096999999995, 123.894714000000022, 196.0, 123.894714000000022, 196.0, 122.0, 461.361205999999981, 122.0 ],
+					"midpoints" : [ 192.574096999999995, 120.039398015624997, 461.361205999999981, 120.039398015624997 ],
 					"order" : 0,
 					"source" : [ "obj-24", 3 ]
 				}
@@ -3592,36 +3561,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-78", 1 ],
 					"source" : [ "obj-25", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
-					"order" : 0,
-					"source" : [ "obj-26", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
-					"order" : 1,
-					"source" : [ "obj-26", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -3689,6 +3628,29 @@
 				"patchline" : 				{
 					"destination" : [ "obj-24", 3 ],
 					"source" : [ "obj-44", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"order" : 0,
+					"source" : [ "obj-5", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"order" : 1,
+					"source" : [ "obj-5", 3 ]
 				}
 
 			}
@@ -3888,20 +3850,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.rendergroup.tostage.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/rendergroup",
-				"patcherrelativepath" : "../../rendergroup",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
-				"patcherrelativepath" : "../../../javascript/misc",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
@@ -3913,6 +3861,20 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.render.group.drawto.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/rendergroup",
+				"patcherrelativepath" : "../../rendergroup",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.rendergroup.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
+				"patcherrelativepath" : "../../../javascript/misc",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

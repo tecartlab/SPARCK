@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -127,6 +127,7 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
+					"hidden" : 1,
 					"hint" : "",
 					"id" : "obj-2",
 					"maxclass" : "comment",
@@ -134,7 +135,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 31.805542000000116, 150.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 100.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 100.0, 1.0, 50.0, 17.0 ],
 					"text" : "rotation",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -158,7 +159,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 80.73077400000011, 150.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 150.0, 0.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -167,6 +168,7 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
+					"hidden" : 1,
 					"hint" : "",
 					"id" : "obj-1",
 					"maxclass" : "comment",
@@ -174,7 +176,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 180.805542000000116, 150.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 100.0, 18.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 100.0, 21.0, 50.0, 17.0 ],
 					"text" : "spread",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -198,7 +200,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 229.73077400000011, 150.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 18.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 150.0, 20.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -221,7 +223,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 75.805542000000116, 58.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 50.0, 0.0, 50.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -237,7 +239,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 31.805542000000116, 58.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
 					"text" : "stereo",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,19 +40,31 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 117.0, 9.0, 72.0, 22.0 ],
+					"text" : "patcherargs"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 48.0, 14.0, 96.0, 22.0 ],
+					"patching_rect" : [ 1.805542000000116, 9.0, 96.0, 22.0 ],
 					"text" : "loadmess set #3"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/color", "@size", 150, 16 ],
+					"args" : [ "#1", "#2/color" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -62,13 +74,13 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.color.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "list" ],
 					"patching_rect" : [ 45.805542000000116, 49.403809000000024, 57.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 150.0, 17.0 ],
+					"presentation_rect" : [ 50.0, 0.0, 150.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -84,7 +96,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1.805542000000116, 49.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
 					"text" : "#3",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -95,6 +107,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-77", 0 ],
 					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 1 ],
+					"source" : [ "obj-2", 1 ]
 				}
 
 			}

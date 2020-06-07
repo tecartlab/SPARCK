@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -152,7 +152,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 162.666666666666686, 150.0, 49.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 49.0, 16.0 ],
+					"presentation_rect" : [ 50.0, 0.0, 49.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"textalignment" : 0,
 					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ]
@@ -201,7 +201,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 89.0, 150.0, 49.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 49.0, 16.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 49.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"textalignment" : 0,
 					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ]

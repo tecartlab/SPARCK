@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 550.0, 48.0, 821.0, 622.0 ],
+		"rect" : [ 550.0, 48.0, 384.0, 622.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"enabletransparentbgwithtitlebar" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -155,7 +157,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -188,6 +190,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bgmode" : 0,
@@ -246,7 +249,7 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 204.083373999999992, 12.0, 59.5, 22.0 ],
 									"text" : "autopattr",
-									"varname" : "u249011058"
+									"varname" : "u376006534"
 								}
 
 							}
@@ -533,7 +536,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -566,6 +569,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -1349,7 +1353,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 349.083373999999992, 332.5, 59.5, 22.0 ],
 					"text" : "autopattr",
-					"varname" : "u943011059"
+					"varname" : "u298006535"
 				}
 
 			}

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -129,7 +129,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 340.73077400000011, 111.5, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 18.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 150.0, 20.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -152,7 +152,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 244.805542000000059, 111.5, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 100.0, 18.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 100.0, 20.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -175,7 +175,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 167.805542000000059, 111.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 18.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 50.0, 20.0, 50.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -216,7 +216,7 @@
 					"patching_rect" : [ 24.000000000000057, 84.5, 60.0, 16.0 ],
 					"precision" : 4,
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 49.0, 17.0 ],
+					"presentation_rect" : [ 50.0, 0.0, 49.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"resetboxsize" : 0.0,
 					"textalignment" : 0,
@@ -237,7 +237,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 111.805542000000116, 111.403809000000024, 41.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ -0.0, 0.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
 					"text" : "#3",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -313,7 +313,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"order" : 0,
+					"order" : 2,
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -336,7 +336,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
-					"order" : 2,
+					"order" : 0,
 					"source" : [ "obj-31", 0 ]
 				}
 
