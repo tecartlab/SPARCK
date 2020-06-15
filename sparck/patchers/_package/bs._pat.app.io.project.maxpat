@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 550.0, 198.0, 523.0, 534.0 ],
+		"rect" : [ 208.0, 318.0, 523.0, 534.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,7 +42,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-11",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -201,7 +201,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 117.888915999999995, 232.789429000000013, 363.0, 62.0 ],
-									"text" : "write MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_package/_settings/_project/_bs._pat.ossia.app.1/ossia.json"
+									"text" : "write MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/ossia.json"
 								}
 
 							}
@@ -346,7 +346,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 41.333373999999999, 166.789429000000013, 351.000000000000057, 62.0 ],
-									"text" : "read MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_package/_settings/_project/_bs._pat.ossia.app.1/ossia.json"
+									"text" : "read MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/ossia.json"
 								}
 
 							}
@@ -748,7 +748,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-8",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -815,8 +815,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 174.5, 185.0, 91.0, 22.0 ],
-					"text" : "s bs::app::save"
+					"patching_rect" : [ 174.5, 185.0, 105.0, 22.0 ],
+					"text" : "s bs::project::save"
 				}
 
 			}
@@ -914,7 +914,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-18",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1025,7 +1025,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 117.888915999999995, 232.789429000000013, 363.0, 62.0 ],
-									"text" : "writexml MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_package/_settings/_project/_bs._pat.ossia.app.1/settings.xml"
+									"text" : "writexml MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/settings.xml"
 								}
 
 							}
@@ -1212,7 +1212,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 41.333373999999999, 166.789429000000013, 351.095184000000017, 62.0 ],
-									"text" : "read MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_package/_settings/_project/_bs._pat.ossia.app.1/settings.xml"
+									"text" : "read MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/settings.xml"
 								}
 
 							}
@@ -1635,7 +1635,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 126.666656000000003, 272.0, 283.0, 76.0 ],
-									"text" : "export MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_package/_settings/_project/_bs._pat.ossia.app.1/windows.json"
+									"text" : "export MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/windows.json"
 								}
 
 							}
@@ -1650,7 +1650,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 193.0, 246.0, 76.0 ],
-									"text" : "import MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_package/_settings/_project/_bs._pat.ossia.app.1/windows.json"
+									"text" : "import MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/windows.json"
 								}
 
 							}
@@ -1851,7 +1851,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-28",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -2026,30 +2026,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
-				"patcherrelativepath" : "../msg",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.send.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
-				"patcherrelativepath" : "../../javascript/misc",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.msg.receive.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "bs.msg.send.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
