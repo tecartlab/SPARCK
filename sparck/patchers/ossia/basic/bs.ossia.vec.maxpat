@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -174,7 +174,7 @@
 					"cellbgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"cellbordercolor" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
 					"celllocks" : [ 1, 1 ],
-					"celltypes" : [ 0, 0 ],
+					"celltypes" : [ 0.0, 0.0 ],
 					"cellwidth" : [ 49.0, 49.0 ],
 					"clickedresetbgcolor" : [ 0.909804, 0.909804, 0.909804, 0.74902 ],
 					"clickedresetfgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],

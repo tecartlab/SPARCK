@@ -45,14 +45,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2.0, 8.0, 96.0, 22.0 ],
+					"patching_rect" : [ 48.0, 14.0, 96.0, 22.0 ],
 					"text" : "loadmess set #3"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2", "@size", 19, 19 ],
+					"args" : [ "#1", "#2", "@size", 49, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -61,14 +61,14 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.toggle.maxpat",
+					"name" : "bs.ossia.float.maxpat",
 					"numinlets" : 1,
-					"numoutlets" : 1,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
+					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 45.805542000000116, 49.403809000000024, 57.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 19.0, 19.0 ],
+					"presentation_rect" : [ 50.0, 0.0, 150.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -100,7 +100,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.toggle.maxpat",
+				"name" : "bs.ossia.float.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
 				"patcherrelativepath" : "../basic",
 				"type" : "JSON",
@@ -114,11 +114,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.remote.mxo",
+				"name" : "icst.floatui.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "icst.button.mxo",
+				"name" : "ossia.remote.mxo",
 				"type" : "iLaX"
 			}
  ],
