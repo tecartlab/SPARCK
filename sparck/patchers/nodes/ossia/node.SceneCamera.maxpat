@@ -3406,7 +3406,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@properties", "bs.node.camera.ossia.1", "@help", "SceneCamera", "@enable_expand", 1 ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SceneCamera", "@enable_properties", 1, "@help", "SceneCamera", "@enable_body", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "u440004892",
+		"globalpatchername" : "Grid",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-7",
@@ -3020,7 +3020,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "Grid", "@properties", "bs.node.grid.ossia.1", "@help", "Grid", "@enable_expand", 1 ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "Grid", "@enable_properties", 1, "@help", "Grid", "@enable_body", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -3208,48 +3208,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.grid.ossia.1.pbody.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/ossia",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.msg.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.float.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.param.rendergroup.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
-				"patcherrelativepath" : "../../ossia/parameter",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "RenderGroupCell_capture_C.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../../media",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.vpl.node.pbody.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
@@ -3306,16 +3264,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.view.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "ossia.remote.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "icst.button.mxo",
-				"type" : "iLaX"
+				"name" : "bs.gui.svg.button.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"patcherrelativepath" : "../../gui",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ossia.parameter.mxo",

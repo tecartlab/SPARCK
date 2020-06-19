@@ -68,8 +68,6 @@ var myNodeName = undefined; // fixed name, only initialize inside APP
 var myNodeID = undefined; // fixed ID, based on a random but unique number
 var myNodeTitle = undefined; // user set node title
 var myNodeAddress = undefined; // ossia node address, set through the title
-var myNodeProps = undefined;
-var myNodePBody = undefined;
 var myNodeVarName = undefined;
 var myNodeSpace = undefined;
 var myNodeColorOn = new Array(1.0, 0.65, 0.0, 1.);
@@ -78,8 +76,17 @@ var myNodeColorSelected = new Array(0.0, 0.0, 0.0, 0.3);
 var myNodeColorUnSelected = new Array(0.0, 0.0, 0.0, 0.8);
 var myNodeEnable = null;
 var myNodeSelected = 0;
+
+var myNodeEnableProperties = 0;
+var myNodeProps = undefined;
+
+var myNodeEnableBody = 0;
+var myNodePBody = undefined;
 var myNodeIsExpanded = 0;
-var myNodeEnableExpand = 0;
+
+var myNodeEnableHelp = 0;
+var myNodeHelp = undefined;
+
 var myNodeInit = false;
 var myNodeTitleYPos = 11;
 var myNodeTitleIconSize = 13;
@@ -96,9 +103,6 @@ var vpl_titleEdit;
 var vpl_titleBar;
 var vpl_body;
 var vpl_linked = true;
-
-var showProperties = 0;
-var myNodeHelp = undefined;
 
 var appGlobal = new Global("bs::app::global");
 
@@ -163,21 +167,25 @@ function initMenu(){
 	outlet(4, "vpl_menu", "append", "duplicate");
 	outlet(4, "vpl_menu", "append", "delete");
 
-	outlet(4, "vpl_menu", "enableitem", 0, 0);
-	outlet(4, "vpl_menu", "enableitem", 1, 0);
-	if(myNodeEnableExpand == 0){
-		outlet(4, "vpl_menu", "enableitem", 3, 0);
-	}
-		
+	outlet(4, "vpl_menu", "enableitem", 0, myNodeEnableProperties);
+	outlet(4, "vpl_menu", "enableitem", 1, myNodeEnableHelp);
+    outlet(4, "vpl_menu", "enableitem", 3, myNodeEnableBody);		
 }
 
-
+/* recursively gets the the parents patcher information
+*/
 function initNodeSpace(){
 	var owner = this.patcher.box;
 	if(owner != null){
 		owner = this.patcher.box;
 		if(owner != null){
-			vpl_nodeBox = owner.patcher.box;
+            // get the node abstraction file name 
+            var nodepath = owner.patcher.filepath;
+            var name = nodepath.substring(nodepath.lastIndexOf("/") + 1, nodepath.lastIndexOf("."));
+            myNodeProps = name + ".p";
+            myNodePBody = name + ".pbody";
+            
+            vpl_nodeBox = owner.patcher.box;
 			if(vpl_nodeBox != null){
 				vpl_nodeSpacePatcher = vpl_nodeBox.patcher;
 			}
@@ -240,16 +248,6 @@ function initNodeBox(){
 			vpl_titleBar.message("presentation_rect", 0, 4., myDefaultSize[0], 28);
 			//post(" to vpl_titleBar panel: " + vpl_titleBar.rect + " \n");
 		}
-		if(myNodeHelp != undefined){
-			outlet(4, "vpl_menu", "enableitem", 1, 1);
-		} else {
-			outlet(4, "vpl_menu", "enableitem", 1, 0);
-		}
-		if(myNodeProps != undefined){
-			outlet(4, "vpl_menu", "enableitem", 0, 1);
-		} else {
-			outlet(4, "vpl_menu", "enableitem", 0, 0);
-		}
 	}else{
 		post(" found no canvas \n");
 	}
@@ -271,6 +269,26 @@ function initConnections(){
 
 function initIOlets() {
     myIOlets.init(vpl_nodePatcher, myDefaultSize);
+}
+
+/**********************
+  Attribute Functions
+ **********************/
+
+function enable_body(_enable){
+	myNodeEnableBody = _enable;
+	dpost("enable body = " + myNodeEnableBody + "\n");
+}
+
+function enable_properties(_enable){
+    myNodeEnableProperties = _enable;
+	dpost("enable properties = " + myNodeEnableProperties + "\n");
+}
+
+function help(val){
+    myNodeEnableHelp = 1;
+	myNodeHelp = val;
+    vpl_titleBar.message("hint", "NodeType: " + myNodeHelp);
 }
 
 /**********************
@@ -315,11 +333,7 @@ function nodeid(_nodeid){
 
 // called by the menu
 function openproperties(){
-    //post("openproperties: myNodeTitle = " + myNodeTitle + " | myNodeID = " + myNodeID + " \n");
-    //appGlobal.currentnodetitle = myNodeTitle;
-    //appGlobal.currentnodeid = myNodeID;
-    //appGlobal.currentproperties = myNodeProps;
-    if(myNodeProps != undefined && myNodeProps != 1){
+    if(myNodeEnableProperties){
         outlet(2, "shroud", "bs.vpl.node.props", myNodeID, myNodeTitle, myNodeAddress, myNodeProps);
     }
 }
@@ -493,11 +507,6 @@ function expand(){
     //vpl_body.message("hidden", !myNodeIsExpanded);
 }
 
-// called by the attributes of the node logic
-function enable_expand(_enable){
-	myNodeEnableExpand = _enable;
-}
-
 // this function is called by the vpl_body once a body is loaded and the size of the body is evaluated
 function expanded_size(_size){
     myExpandedSize[1] = myPBodyOffset + _size + myCanvasOffset;
@@ -521,17 +530,6 @@ function openworkspace(){
 	if(vpl_nodeBox.patcher != null){
 		vpl_nodeBox.patcher.message("front");
     }
-}
-
-function help(val){
-	myNodeHelp = val;
-    vpl_titleBar.message("hint", "NodeType: " + myNodeHelp);
-}
-
-function properties(val){
-    myNodeProps = val + ".props";
-    myNodePBody = val + ".pbody";
-	dpost("set myNodeProps = " + myNodeProps + "\n");
 }
 
 // called when the node is removed by the user or a new project is loaded,

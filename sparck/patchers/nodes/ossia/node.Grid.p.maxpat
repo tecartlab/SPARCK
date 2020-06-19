@@ -102,7 +102,7 @@
 					"id" : "obj-16",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.toggle.maxpat",
+					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -124,7 +124,7 @@
 					"id" : "obj-12",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.int.maxpat",
+					"name" : "bs.ossia.remote.int.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
@@ -147,7 +147,7 @@
 					"id" : "obj-11",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.toggle.maxpat",
+					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -191,7 +191,7 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.rendergroup.maxpat",
+					"name" : "bs.ossia.remote.rendergroup.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -213,7 +213,7 @@
 					"id" : "obj-6",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.vecXf.maxpat",
+					"name" : "bs.ossia.remote.vecXf.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
@@ -342,7 +342,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.param.vecXf.maxpat",
+				"name" : "bs.ossia.remote.vecXf.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",
@@ -370,7 +370,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.param.rendergroup.maxpat",
+				"name" : "bs.ossia.remote.rendergroup.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",
@@ -398,7 +398,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.param.toggle.maxpat",
+				"name" : "bs.ossia.remote.toggle.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",
@@ -412,7 +412,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.param.int.maxpat",
+				"name" : "bs.ossia.remote.int.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",

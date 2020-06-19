@@ -137,7 +137,7 @@
 					"id" : "obj-18",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.toggle.maxpat",
+					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -159,7 +159,7 @@
 					"id" : "obj-16",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.toggle.maxpat",
+					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -217,7 +217,7 @@
 					"id" : "obj-14",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.rendergroup.maxpat",
+					"name" : "bs.ossia.remote.rendergroup.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -263,7 +263,7 @@
 					"id" : "obj-12",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.toggle.maxpat",
+					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -285,7 +285,7 @@
 					"id" : "obj-11",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.toggle.maxpat",
+					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -307,7 +307,7 @@
 					"id" : "obj-5",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.color.maxpat",
+					"name" : "bs.ossia.remote.color.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -351,7 +351,7 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.rendergroup.maxpat",
+					"name" : "bs.ossia.remote.rendergroup.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -530,7 +530,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.param.rendergroup.maxpat",
+				"name" : "bs.ossia.remote.rendergroup.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",
@@ -558,7 +558,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.param.color.maxpat",
+				"name" : "bs.ossia.remote.color.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",
@@ -572,7 +572,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.param.toggle.maxpat",
+				"name" : "bs.ossia.remote.toggle.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",

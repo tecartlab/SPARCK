@@ -49,7 +49,7 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.rendergroup.maxpat",
+					"name" : "bs.ossia.remote.rendergroup.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -178,7 +178,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.param.rendergroup.maxpat",
+				"name" : "bs.ossia.remote.rendergroup.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../ossia/parameter",
 				"type" : "JSON",

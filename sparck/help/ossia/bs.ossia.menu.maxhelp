@@ -796,7 +796,7 @@
 					"id" : "obj-99",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.param.menu.maxpat",
+					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
@@ -960,7 +960,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.param.menu.maxpat",
+				"name" : "bs.ossia.remote.menu.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
 				"patcherrelativepath" : "../../patchers/ossia/parameter",
 				"type" : "JSON",
