@@ -76,29 +76,23 @@ function optics(_mode){
 	switch (_mode){
 		case 'fov_perspective':
 			optics_mode = 0;
+			ortho_mode = 0;
 			break;
  		case 'fov_orthografic':
 			optics_mode = 1;
+			ortho_mode = 1;
 			break;
  		case 'frustum_perspective':
 			optics_mode = 2;
+			ortho_mode = 0;
 			break;
  		case 'frustum_orthografic':
 			optics_mode = 3;
-			break;
-		default:
-			optics_mode = _mode;
+			ortho_mode = 1;
 			break;
 	}
 	
-	optics_mode = _mode;
-	ortho_mode = (_mode == 0 || _mode == 2)?0:1;
     update();
-}
-
-function ortho(_mode){
-    ortho_mode = _mode;
-	refresh();
 }
 
 function adapt(state){
@@ -178,6 +172,7 @@ function fov(){
 
 function update(){
 	// calcFov(){
+	//post("update " + optics_mode + " \n");
 	if(optics_mode == 0){ // fov perspective
 		ratio = ratio_orig;
 		if(adapt_state == 1 && adapt_reference > 0 && adapt_dist > 0){
@@ -199,7 +194,7 @@ function update(){
 		left = right * -1.;
 		top = a;
 		bottom = a * -1.;
-	} if(optics_mode == 2){  // fov orthogonal
+	} if(optics_mode == 1){  // fov orthogonal
 		ratio = ratio_orig;
 		if(adapt_state == 1 && adapt_reference > 0 && adapt_dist > 0){
 			far = far_orig - adapt_reference + adapt_dist;
@@ -218,7 +213,7 @@ function update(){
 		left = right * -1.;
 		top = a;
 		bottom = a * -1.;
-	} else if(optics_mode == 1 || optics_mode == 3){ //frustum perspective/othogonal
+	} else if(optics_mode == 2 || optics_mode == 3){ //frustum perspective/othogonal
 		right 	= right_orig;
 		left 	= left_orig;
 		top 	= top_orig;

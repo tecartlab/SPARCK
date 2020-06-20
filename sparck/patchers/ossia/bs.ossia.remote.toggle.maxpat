@@ -107,7 +107,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.float.js",
+				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -115,13 +115,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 341.0, 110.0, 124.0, 22.0 ],
+					"patching_rect" : [ 341.0, 110.0, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.ossia.float",
+						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js bs.ossia.float #1 #2"
+					"text" : "js bs.ossia.remote.js #1 #2"
 				}
 
 			}
@@ -300,7 +300,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.float.js",
+				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",

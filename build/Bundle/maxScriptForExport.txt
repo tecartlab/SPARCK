@@ -4,6 +4,8 @@ include <replacePath>sparck/misc/bs.vpl.colortable.json
 folder <replacePath>sparck/media
 folder <replacePath>sparck/media/_help
 folder <replacePath>sparck/media/_help/_nodes
+folder <replacePath>sparck/patchers/_obsolete
+folder <replacePath>sparck/patchers/_obsolete/file
 folder <replacePath>sparck/patchers/_deprecated
 folder <replacePath>sparck/patchers/_standalone
 folder <replacePath>sparck/patchers/_standalone/infos
@@ -11,7 +13,6 @@ folder <replacePath>sparck/patchers/_standalone/infos/request
 folder <replacePath>sparck/patchers/_standalone/infos/request/error
 folder <replacePath>sparck/patchers/app
 folder <replacePath>sparck/patchers/draw
-folder <replacePath>sparck/patchers/file
 folder <replacePath>sparck/patchers/gui
 folder <replacePath>sparck/patchers/help
 folder <replacePath>sparck/patchers/help/general
@@ -19,7 +20,7 @@ folder <replacePath>sparck/patchers/help/nodes
 folder <replacePath>sparck/patchers/help/util
 folder <replacePath>sparck/patchers/help/content
 folder <replacePath>sparck/patchers/info
-folder <replacePath>sparck/patchers/msg
+folder <replacePath>sparck/patchers/nodes/ossia
 folder <replacePath>sparck/patchers/nodes/2Dee
 folder <replacePath>sparck/patchers/nodes/3Dee
 folder <replacePath>sparck/patchers/nodes/effects
@@ -31,7 +32,16 @@ folder <replacePath>sparck/patchers/nodes/script
 folder <replacePath>sparck/patchers/nodes/transform
 folder <replacePath>sparck/patchers/nodes/volume
 folder <replacePath>sparck/patchers/nodes/_onlyOSX
-folder <replacePath>sparck/patchers/rendergroup
+folder <replacePath>sparck/patchers/ossia
+folder <replacePath>sparck/patchers/ossia/basic
+folder <replacePath>sparck/patchers/ossia/custom
+folder <replacePath>sparck/patchers/ossia/custom/camera
+folder <replacePath>sparck/patchers/ossia/custom/capture
+folder <replacePath>sparck/patchers/ossia/file
+folder <replacePath>sparck/patchers/ossia/menu
+folder <replacePath>sparck/patchers/ossia/msg
+folder <replacePath>sparck/patchers/ossia/rendergroup
+folder <replacePath>sparck/patchers/ossia/transform
 folder <replacePath>sparck/patchers/utils
 folder <replacePath>sparck/patchers/vpl
 folder <replacePath>sparck/patchers/xternals

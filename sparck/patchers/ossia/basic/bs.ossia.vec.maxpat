@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 258.0, 185.0, 427.0, 302.0 ],
+		"rect" : [ 421.0, 558.0, 427.0, 302.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -93,13 +93,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 316.0, 130.0, 124.0, 22.0 ],
+					"patching_rect" : [ 316.0, 130.0, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.ossia.float",
+						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js bs.ossia.float #1 #2"
+					"text" : "js bs.ossia.remote.js #1 #2"
 				}
 
 			}
@@ -205,7 +205,7 @@
 					"patching_rect" : [ 136.5, 169.0, 125.5, 19.0 ],
 					"prefixtext" : "oops",
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 203.0, 16.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 200.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"resetbgcolor" : [ 0.623529, 0.623529, 0.623529, 0.501961 ],
 					"resetboxsize" : 15.0,
@@ -330,7 +330,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.float.js",
+				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",

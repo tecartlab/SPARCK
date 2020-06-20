@@ -1016,7 +1016,7 @@
 													"presentation" : 1,
 													"presentation_linecount" : 11,
 													"presentation_rect" : [ 47.41668701171875, 21.0, 100.0, 156.0 ],
-													"text" : "bs.ossia.render.group.capture render/renderGroup \"capture everything from the selected render groups\" @drawto @drawto #0_id.left #0_id.right",
+													"text" : "bs.ossia.parameter.rendergroup.capture render/renderGroup \"capture everything from the selected render groups\" @drawto @drawto #0_id.left #0_id.right",
 													"varname" : "renderGroup"
 												}
 
@@ -1467,7 +1467,7 @@
 																	"id" : "obj-108",
 																	"lockeddragscroll" : 0,
 																	"maxclass" : "bpatcher",
-																	"name" : "bs.ossia.msg.select.maxpat",
+																	"name" : "bs.ossia.parameter.msg.maxpat",
 																	"numinlets" : 1,
 																	"numoutlets" : 17,
 																	"offset" : [ 0.0, 0.0 ],
@@ -2441,7 +2441,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "int", "" ],
 													"patching_rect" : [ 51.0, 307.0, 591.0, 22.0 ],
-													"text" : "bs.ossia.render.group.drawto gizmo/renderGroup \"render group to draw camera gizmo if parent is type mirror\""
+													"text" : "bs.ossia.parameter.rendergroup.drawto gizmo/renderGroup \"render group to draw camera gizmo if parent is type mirror\""
 												}
 
 											}
@@ -7295,7 +7295,7 @@
 					"id" : "obj-6",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.msg.select.maxpat",
+					"name" : "bs.ossia.parameter.msg.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 17,
 					"offset" : [ 0.0, 0.0 ],
@@ -7846,7 +7846,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.msg.select.maxpat",
+				"name" : "bs.ossia.parameter.msg.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
 				"patcherrelativepath" : "../../msg",
 				"type" : "JSON",
@@ -7888,7 +7888,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.render.group.drawto.maxpat",
+				"name" : "bs.ossia.parameter.rendergroup.drawto.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/rendergroup",
 				"patcherrelativepath" : "../../rendergroup",
 				"type" : "JSON",
@@ -7902,7 +7902,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.render.group.capture.maxpat",
+				"name" : "bs.ossia.parameter.rendergroup.capture.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/rendergroup",
 				"patcherrelativepath" : "../../rendergroup",
 				"type" : "JSON",

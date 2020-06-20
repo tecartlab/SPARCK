@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 563.0, 509.0, 368.0, 305.0 ],
+		"rect" : [ 276.0, 439.0, 368.0, 305.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 18.0, 136.0, 55.0, 22.0 ],
+					"patching_rect" : [ 10.0, 169.0, 55.0, 22.0 ],
 					"text" : "route set"
 				}
 
@@ -65,7 +65,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 81.5, 136.0, 49.0, 16.0 ],
+					"patching_rect" : [ 81.5, 169.0, 49.0, 16.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 49.0, 16.0 ],
 					"pviewfontsize" : 9.0,
@@ -81,7 +81,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 186.0, 124.0, 54.0, 22.0 ],
+					"patching_rect" : [ 186.0, 157.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -93,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 138.5, 40.0, 91.0, 22.0 ],
+					"patching_rect" : [ 138.5, 73.0, 91.0, 22.0 ],
 					"text" : "routepass done"
 				}
 
@@ -117,13 +117,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 186.0, 87.0, 124.0, 22.0 ],
+					"patching_rect" : [ 186.0, 120.0, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.ossia.float",
+						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js bs.ossia.float #1 #2"
+					"text" : "js bs.ossia.remote.js #1 #2"
 				}
 
 			}
@@ -135,7 +135,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 166.0, 184.5, 30.0, 30.0 ]
+					"patching_rect" : [ 166.0, 217.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -147,7 +147,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 124.0, 184.5, 30.0, 30.0 ]
+					"patching_rect" : [ 124.0, 217.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -159,7 +159,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 81.5, 184.5, 30.0, 30.0 ]
+					"patching_rect" : [ 81.5, 217.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -184,7 +184,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 81.5, 87.0, 77.0, 22.0 ],
+					"patching_rect" : [ 81.5, 120.0, 77.0, 22.0 ],
 					"text" : "ossia.remote"
 				}
 
@@ -214,7 +214,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
-					"midpoints" : [ 91.0, 170.903809000000024, 65.499999999999943, 170.903809000000024, 65.499999999999943, 76.5, 91.0, 76.5 ],
+					"midpoints" : [ 91.0, 203.903809000000024, 70.499999999999943, 203.903809000000024, 70.499999999999943, 109.5, 91.0, 109.5 ],
 					"order" : 1,
 					"source" : [ "obj-2", 0 ]
 				}
@@ -302,7 +302,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.float.js",
+				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
