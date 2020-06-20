@@ -5,16 +5,23 @@ setinletassist(0,"input from ossia.remote 3rd outlet");
 setoutletassist(0,"output to ossia.remote 1st inlet");
 setoutletassist(1,"output to float");
 
+var useclip = 1;
+declareattribute("useclip", null, "setuseclip");
+
 var myNodeTitle = undefined;
 var myParamAddress = undefined;
 
 var myClip = "free";
 var myUnit = "";
-var myType = "float";
+var myType = "floa	t";
 // patcher arguments
 if (jsarguments.length > 2){
     myNodeTitle = jsarguments[1];
     myParamAddress = jsarguments[2];
+}
+
+function setuseclip(_clip){
+	useclip = _clip;
 }
 
 function loadbang(){
@@ -71,33 +78,37 @@ function clip(_clip){
 }
 
 function min(_min){
-    if(myClip == "free"){
-        // do nothing
-    } else if(myClip == "low"){
-        // only set min
-        outlet(1, "minimum", _min);
-        outlet(1, "usemin", 1);        
-    } else if(myClip == "hight"){
-        // only set max
-    } else {
-        outlet(1, "minimum", _min);
-        outlet(1, "usemin", 1);        
-    }
+	if(useclip){
+    	if(myClip == "free"){
+        	// do nothing
+    	} else if(myClip == "low"){
+        	// only set min
+        	outlet(1, "minimum", _min);
+        	outlet(1, "usemin", 1);        
+    	} else if(myClip == "hight"){
+        	// only set max
+    	} else {
+        	outlet(1, "minimum", _min);
+        	outlet(1, "usemin", 1);        
+    	}
+	}
 }
 
 function max(_max){
-    if(myClip == "free"){
-        // do nothing
-    } else if(myClip == "low"){
-        // only set min
-    } else if(myClip == "hight"){
-        // only set max
-        outlet(1, "maximum", _max);
-        outlet(1, "usemax", 1);        
-    } else {
-        outlet(1, "maximum", _max);
-        outlet(1, "usemax", 1);        
-    }
+	if(useclip){
+    	if(myClip == "free"){
+        	// do nothing
+    	} else if(myClip == "low"){
+        	// only set min
+    	} else if(myClip == "hight"){
+        	// only set max
+        	outlet(1, "maximum", _max);
+        	outlet(1, "usemax", 1);        
+    	} else {
+        	outlet(1, "maximum", _max);
+        	outlet(1, "usemax", 1);        
+    	}
+	}
 }
 
 function address(){

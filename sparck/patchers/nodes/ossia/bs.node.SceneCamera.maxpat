@@ -86,8 +86,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 581.052245999999968, 396.105285999999978, 159.0, 53.0 ],
-					"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
+					"patching_rect" : [ 581.052245999999968, 396.105285999999978, 175.0, 53.0 ],
+					"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @min 0 0 @clip low @description \"texture dimension\""
 				}
 
 			}
@@ -163,6 +163,18 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-30",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 843.916626000000178, 257.0, 48.0, 22.0 ],
+									"text" : "max $1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-29",
 									"maxclass" : "message",
@@ -347,7 +359,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 338.611084000000119, 437.0, 77.0, 22.0 ],
+									"patching_rect" : [ 338.611084000000119, 449.0, 77.0, 22.0 ],
 									"text" : "fov_angle $1"
 								}
 
@@ -359,7 +371,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 230.611084000000119, 437.0, 71.0, 22.0 ],
+									"patching_rect" : [ 214.611084000000119, 437.0, 71.0, 22.0 ],
 									"text" : "fov_ratio $1"
 								}
 
@@ -452,13 +464,13 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-8",
-									"linecount" : 7,
+									"linecount" : 8,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 338.611084000000119, 320.070434999999975, 110.0, 102.0 ],
-									"text" : "ossia.parameter lens/fov/angle @type float @default 45. @min 0. @description \"fov angle\" @priority 1"
+									"patching_rect" : [ 338.611084000000119, 320.070434999999975, 115.0, 116.0 ],
+									"text" : "ossia.parameter lens/fov/angle @type float @default 45. @range 0.01 179.9 @clip both @description \"fov angle\" @priority 1"
 								}
 
 							}
@@ -471,8 +483,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 230.611084000000119, 320.070434999999975, 106.0, 102.0 ],
-									"text" : "ossia.parameter lens/fov/ratio @type float @default 1. @min 0. @description \"aspect ratio\" @priority 1"
+									"patching_rect" : [ 214.611084000000119, 320.070434999999975, 118.0, 102.0 ],
+									"text" : "ossia.parameter lens/fov/ratio @type float @default 1. @min 0.1 @clip low @description \"aspect ratio\" @priority 1"
 								}
 
 							}
@@ -480,13 +492,13 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-6",
-									"linecount" : 8,
+									"linecount" : 7,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 776.069397000000322, 128.070434999999975, 106.0, 116.0 ],
-									"text" : "ossia.parameter lens/culling/far @type float @default 100. @min 0.000001 @description \"culling far\" @priority 1"
+									"patching_rect" : [ 776.069397000000322, 128.070434999999975, 127.0, 102.0 ],
+									"text" : "ossia.parameter lens/culling/far @type float @default 100. @min 0.000001 @clip low @description \"culling far\" @priority 1"
 								}
 
 							}
@@ -499,8 +511,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 654.611084000000119, 128.070434999999975, 105.0, 116.0 ],
-									"text" : "ossia.parameter lens/culling/near @type float @default 0.05 @min 0. @description \"culling near\" @priority 1"
+									"patching_rect" : [ 654.611084000000119, 128.070434999999975, 117.0, 116.0 ],
+									"text" : "ossia.parameter lens/culling/near @type float @default 0.05 @min 0.001 @clip both @description \"culling near\" @priority 1"
 								}
 
 							}
@@ -719,6 +731,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-30", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-32", 0 ]
 								}
@@ -757,6 +776,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
+									"order" : 1,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-30", 0 ],
+									"order" : 0,
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -1629,13 +1657,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-8",
-													"linecount" : 6,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 456.715331999999989, 4.070434999999975, 136.0, 89.0 ],
-													"text" : "ossia.parameter lens/stereo/spread @type float @default 1. @description \"stereo spread\" @priority 1 @range -1. 1."
+													"patching_rect" : [ 241.715331999999989, 14.070434999999975, 336.0, 49.0 ],
+													"text" : "ossia.parameter lens/stereo/spread @type float @default 0.1 @description \"stereo spread\" @priority 1 @range 0. 1. @clip both"
 												}
 
 											}
@@ -1643,13 +1671,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-5",
-													"linecount" : 6,
+													"linecount" : 7,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 595.732665999999995, 4.070434999999975, 140.0, 89.0 ],
-													"text" : "ossia.parameter lens/stereo/rotation @type float @default 1. @description \"stereo rotation\" @priority 1 @range -10. 10."
+													"patching_rect" : [ 595.732665999999995, 4.070434999999975, 152.0, 102.0 ],
+													"text" : "ossia.parameter lens/stereo/rotation @type float @default 0. @description \"stereo rotation\" @priority 1 @range -10. 10. @clip both"
 												}
 
 											}
