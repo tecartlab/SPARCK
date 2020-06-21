@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -88,14 +88,15 @@
 			}
 , 			{
 				"box" : 				{
+					"embedstate" : [ [ "useclip", 1 ] ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 186.0, 87.0, 124.0, 22.0 ],
+					"patching_rect" : [ 186.0, 87.0, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.ossia.remote",
+						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -189,7 +190,7 @@
 					"patching_rect" : [ 81.5, 136.903809000000024, 60.0, 16.0 ],
 					"precision" : 4,
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 49.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 59.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"resetboxsize" : 0.0,
 					"textalignment" : 0,

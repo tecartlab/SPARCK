@@ -71,7 +71,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 142.5, 211.0, 101.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 40.0, 200.0, 99.0 ],
+					"presentation_rect" : [ 0.0, 40.0, 242.0, 99.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -108,7 +108,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 327.0, 72.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 200.0, 100.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 200.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -131,7 +131,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 301.0, 72.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 180.0, 100.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 180.0, 121.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -153,7 +153,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 280.0, 72.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 160.0, 100.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 160.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -175,7 +175,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 118.5, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 20.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -197,7 +197,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 376.0, 79.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -220,7 +220,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 253.0, 206.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 140.0, 150.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 140.0, 182.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -277,7 +277,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 39.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 39.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_collapsed"
 				}
@@ -296,9 +296,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 224.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 224.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 224.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 224.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}

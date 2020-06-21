@@ -115,6 +115,10 @@ function address(){
     //ignore
 }
 
+function invisible(){
+    //ignore
+}
+
 function range(_rangeMin, _rangeMax){
     //post("range("+_rangeMin+","+_rangeMax+"): " + "sparck:/node/" + myNodeTitle + "/" + myParamAddress + " \n")
     // ignore

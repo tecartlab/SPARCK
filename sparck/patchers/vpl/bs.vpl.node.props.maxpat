@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -27.0, 541.0, 562.0, 352.0 ],
+		"rect" : [ 208.0, 323.0, 562.0, 352.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 334.5, 100.0, 66.0, 22.0 ],
+					"patching_rect" : [ 364.5, 108.0, 66.0, 22.0 ],
 					"text" : "r #1::props"
 				}
 
@@ -58,7 +58,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 334.5, 11.605652000000006, 58.0, 22.0 ],
+					"patching_rect" : [ 364.5, 19.605652000000006, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -71,7 +71,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 334.5, 44.605652000000006, 167.0, 35.0 ],
+					"patching_rect" : [ 364.5, 52.605652000000006, 167.0, 35.0 ],
 					"text" : "window 1, nodeid #1, title #2, address #3, openproperties"
 				}
 
@@ -92,9 +92,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 233.0, 145.903808999999995, 210.0, 35.0 ],
+					"patching_rect" : [ 263.0, 153.903808999999995, 210.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 22.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 240.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -109,7 +109,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 233.0, 44.605652000000006, 98.0, 22.0 ],
+					"patching_rect" : [ 263.0, 52.605652000000006, 98.0, 22.0 ],
 					"text" : "prepend window"
 				}
 
@@ -135,7 +135,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 233.0, 199.903809000000024, 69.0, 22.0 ],
+					"patching_rect" : [ 263.0, 207.903809000000024, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -155,9 +155,9 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 21.0, 200.0, 138.0 ],
+					"patching_rect" : [ 0.0, 21.0, 240.0, 138.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 25.0, 200.0, 134.0 ],
+					"presentation_rect" : [ 0.0, 25.0, 240.0, 134.0 ],
 					"varname" : "vpl_properties",
 					"viewvisibility" : 1
 				}
@@ -175,9 +175,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 200.0, 159.0 ],
+					"patching_rect" : [ 0.0, 0.0, 240.0, 159.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 159.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 240.0, 159.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas"
 				}

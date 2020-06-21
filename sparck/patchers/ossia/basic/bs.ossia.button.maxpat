@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,19 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"comment" : "",
+					"id" : "obj-7",
+					"index" : 0,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 174.5, 6.5, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
@@ -115,7 +128,7 @@
 					"numinlets" : 7,
 					"numoutlets" : 7,
 					"outlettype" : [ "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 138.5, 40.0, 375.0, 22.0 ],
+					"patching_rect" : [ 138.5, 50.0, 375.0, 22.0 ],
 					"text" : "routepass usedisplaytext ondisplaytext offdisplaytext mode size done"
 				}
 
@@ -134,14 +147,15 @@
 			}
 , 			{
 				"box" : 				{
+					"embedstate" : [ [ "useclip", 1 ] ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 435.166666666666686, 130.0, 124.0, 22.0 ],
+					"patching_rect" : [ 435.166666666666686, 130.0, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.ossia.remote",
+						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -323,6 +337,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}

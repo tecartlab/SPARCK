@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 458.0, 395.0, 861.0, 414.0 ],
+		"rect" : [ 458.0, 395.0, 398.0, 414.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -110,7 +110,7 @@
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 600.0, 57.166626000000008, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 169.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 209.0, 4.0, 14.0, 14.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -134,7 +134,7 @@
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 480.0, 57.166626000000008, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 153.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 193.0, 4.0, 14.0, 14.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -158,7 +158,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 540.0, 57.166626000000008, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 185.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 225.0, 4.0, 14.0, 14.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -182,7 +182,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 660.0, 57.166626000000008, 19.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 137.0, 4.0, 14.0, 14.0 ],
+					"presentation_rect" : [ 177.0, 4.0, 14.0, 14.0 ],
 					"varname" : "vpl_properties",
 					"viewvisibility" : 1
 				}
@@ -209,7 +209,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 720.0, 108.833252000000016, 102.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 21.0, 3.0, 118.0, 16.0 ],
+					"presentation_rect" : [ 21.0, 3.0, 158.0, 16.0 ],
 					"rounded" : 4.0,
 					"tabmode" : 0,
 					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -288,7 +288,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -776,7 +776,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 480.0, 185.0, 116.444457999999997, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 25.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 25.0 ],
 					"proportion" : 0.427536,
 					"varname" : "vpl_windowBar"
 				}

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -111,7 +111,7 @@
 					"parameter_mappable" : 0,
 					"patching_rect" : [ 249.73077400000011, 62.403809000000024, 100.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 160.0, 0.0, 40.0, 19.0 ],
+					"presentation_rect" : [ 180.0, 0.0, 60.0, 19.0 ],
 					"textcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 
@@ -167,7 +167,7 @@
 					"parameter_mappable" : 0,
 					"patching_rect" : [ 102.73077400000011, 62.403809000000024, 100.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 110.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 0.0, 120.0, 19.0 ],
 					"textcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 

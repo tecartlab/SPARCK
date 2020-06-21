@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -346,7 +346,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -520,7 +520,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 8.481491, 290.333252000000016, 227.0, 53.666747999999984 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 34.0, 200.0, 60.0 ],
+					"presentation_rect" : [ 0.0, 34.0, 240.0, 60.0 ],
 					"varname" : "vpl_body",
 					"viewvisibility" : 1
 				}
@@ -538,7 +538,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 576.25, 88.499877999999981, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 175.0, 7.0, 20.0, 20.0 ]
+					"presentation_rect" : [ 155.0, 7.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -561,7 +561,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 542.75, 88.499877999999981, 22.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 176.0, 6.0, 20.0, 22.0 ],
+					"presentation_rect" : [ 155.0, 6.0, 20.0, 22.0 ],
 					"style" : "default",
 					"textcolor" : [ 0.152941176470588, 0.682352941176471, 0.988235294117647, 0.0 ]
 				}
@@ -615,7 +615,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1013,7 +1013,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1297,7 +1297,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1531,7 +1531,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1577,7 +1577,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 4,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2392,7 +2392,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 375.888915999999995, 127.666626000000008, 102.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 21.0, 11.0, 154.0, 16.0 ],
+					"presentation_rect" : [ 21.0, 11.0, 134.0, 16.0 ],
 					"rounded" : 4.0,
 					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"varname" : "vpl_titleEdit",
@@ -2413,7 +2413,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 15.481491, 77.833374000000006, 75.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 4.0, 200.0, 28.0 ],
+					"presentation_rect" : [ 0.0, 4.0, 180.0, 28.0 ],
 					"rounded" : 8.0,
 					"text" : "",
 					"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
@@ -2438,7 +2438,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 15.481491, 43.0, 75.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 4.0, 200.0, 28.0 ],
+					"presentation_rect" : [ 0.0, 4.0, 240.0, 28.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas"
 				}

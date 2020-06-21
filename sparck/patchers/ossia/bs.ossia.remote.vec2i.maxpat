@@ -129,7 +129,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 110.0, 150.403809000000024, 165.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 100.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 0.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -145,7 +145,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.805542000000116, 150.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 60.0, 17.0 ],
 					"text" : "#3",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}

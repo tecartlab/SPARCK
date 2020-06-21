@@ -48,8 +48,8 @@ var myBaseDB 	 = new Dict("vpl::db");
 
 var uniqueTable = new Dict("bs.vpl.unique.title");
 
-var myDefaultSize = new Array(200, 32);
-var myExpandedSize = new Array(200, 32);
+var myDefaultSize = new Array(180, 32);
+var myExpandedSize = new Array(240, 32);
 var myCanvasOffset = 4;
 var myPBodyOffset = 34;
 
@@ -499,7 +499,7 @@ function menu(_func){
 // called by menu()
 function expand(){
     setNodeRect(0);
-    myIOlets.expand(myNodeIsExpanded, myExpandedSize);
+    myIOlets.expand(myNodeIsExpanded, myExpandedSize, myDefaultSize);
     if(myNodeIsExpanded){
         //post("sent  " +myNodePBody + " to '" + myNodeID + "::pbody" +"' \n");
         messnamed(myNodeID + "::pbody", "name", myNodePBody);

@@ -55,7 +55,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 114.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -100,7 +100,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 142.0, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 20.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -123,7 +123,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 411.0, 206.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 240.0, 200.0, 39.0 ],
+					"presentation_rect" : [ 0.0, 240.0, 242.0, 39.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -146,7 +146,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 287.0, 206.0, 80.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 140.0, 200.0, 79.0 ],
+					"presentation_rect" : [ 0.0, 140.0, 242.0, 79.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -206,7 +206,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 175.0, 211.0, 101.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 40.0, 200.0, 99.0 ],
+					"presentation_rect" : [ 0.0, 40.0, 242.0, 99.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -226,7 +226,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 40.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 40.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_collapsed"
 				}
@@ -245,9 +245,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 283.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 283.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 283.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 283.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_full"
 				}

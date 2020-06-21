@@ -88,6 +88,7 @@
 			}
 , 			{
 				"box" : 				{
+					"embedstate" : [ [ "useclip", 1 ] ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -175,7 +176,7 @@
 					"cellbordercolor" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
 					"celllocks" : [ 1, 1 ],
 					"celltypes" : [ 0.0, 0.0 ],
-					"cellwidth" : [ 49.0, 49.0 ],
+					"cellwidth" : [ 59.0, 59.0 ],
 					"clickedresetbgcolor" : [ 0.909804, 0.909804, 0.909804, 0.74902 ],
 					"clickedresetfgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"defaults" : [ 0.0, 0.0 ],
@@ -205,7 +206,7 @@
 					"patching_rect" : [ 136.5, 169.0, 125.5, 19.0 ],
 					"prefixtext" : "oops",
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 240.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"resetbgcolor" : [ 0.623529, 0.623529, 0.623529, 0.501961 ],
 					"resetboxsize" : 15.0,

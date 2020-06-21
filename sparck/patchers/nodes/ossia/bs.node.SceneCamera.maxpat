@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 431.0, 136.0, 924.0, 670.0 ],
+		"rect" : [ 431.0, 136.0, 461.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -2625,7 +2625,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 2.074097, 69.894713999999993, 200.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 32.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 240.0, 32.0 ],
 					"varname" : "vpl_nodelogic",
 					"viewvisibility" : 1
 				}

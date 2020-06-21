@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 61.0, 212.0, 902.0, 320.0 ],
+		"rect" : [ 399.0, 482.0, 787.0, 320.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -43,6 +43,7 @@
 					"angle" : 270.0,
 					"grad1" : [ 0.301961, 0.301961, 0.301961, 0.2 ],
 					"grad2" : [ 0.301961, 0.301961, 0.301961, 0.2 ],
+					"hidden" : 1,
 					"id" : "obj-8",
 					"maxclass" : "panel",
 					"mode" : 1,
@@ -50,7 +51,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 371.250000031250011, 126.5, 38.750000031250011, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 70.0, 10.0, 30.0, 9.0 ],
+					"presentation_rect" : [ 80.0, 10.0, 40.0, 9.0 ],
 					"proportion" : 0.5,
 					"rounded" : 0
 				}
@@ -61,6 +62,7 @@
 					"angle" : 270.0,
 					"grad1" : [ 0.301961, 0.301961, 0.301961, 0.2 ],
 					"grad2" : [ 0.301961, 0.301961, 0.301961, 0.2 ],
+					"hidden" : 1,
 					"id" : "obj-7",
 					"maxclass" : "panel",
 					"mode" : 1,
@@ -68,7 +70,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 414.250000031250011, 126.5, 23.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 10.0, 49.0, 9.0 ],
+					"presentation_rect" : [ 180.0, 10.0, 59.0, 9.0 ],
 					"proportion" : 0.5,
 					"rounded" : 0
 				}
@@ -79,6 +81,7 @@
 					"angle" : 270.0,
 					"grad1" : [ 0.301961, 0.301961, 0.301961, 0.2 ],
 					"grad2" : [ 0.301961, 0.301961, 0.301961, 0.2 ],
+					"hidden" : 1,
 					"id" : "obj-5",
 					"maxclass" : "panel",
 					"mode" : 1,
@@ -86,7 +89,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 340.750000031250011, 126.5, 24.5, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 100.0, 0.0, 49.0, 9.0 ],
+					"presentation_rect" : [ 120.0, 1.0, 59.0, 9.0 ],
 					"proportion" : 0.5,
 					"rounded" : 0
 				}
@@ -128,7 +131,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 32.805542000000116, 47.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 60.0, 17.0 ],
 					"text" : "#3",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
@@ -172,12 +175,13 @@
 			}
 , 			{
 				"box" : 				{
+					"embedstate" : [ [ "useclip", 1 ] ],
 					"id" : "obj-19",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 645.166666666666742, 134.0, 222.0, 22.0 ],
+					"patching_rect" : [ 645.166666666666742, 134.0, 225.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
@@ -738,7 +742,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
 													"patching_rect" : [ 120.0, 251.0, 41.0, 22.0 ],
-													"text" : "sel 12"
+													"text" : "sel 15"
 												}
 
 											}
@@ -797,8 +801,8 @@
 													"numinlets" : 5,
 													"numoutlets" : 4,
 													"outlettype" : [ "int", "", "", "int" ],
-													"patching_rect" : [ 50.0, 169.0, 148.0, 22.0 ],
-													"text" : "counter 12"
+													"patching_rect" : [ 50.0, 169.0, 65.0, 22.0 ],
+													"text" : "counter 15"
 												}
 
 											}
@@ -1202,7 +1206,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 52.77783203125, 151.9295654296875, 36.0, 32.5704345703125 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 19.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 0.0, 20.0, 19.0 ],
 					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ]
 				}
 
@@ -1210,7 +1214,8 @@
 , 			{
 				"box" : 				{
 					"cellpict" : "RenderGroupCell_capture_C.png",
-					"columns" : 13,
+					"columns" : 16,
+					"hidden" : 1,
 					"hint" : "",
 					"horizontalspacing" : 1,
 					"id" : "obj-47",
@@ -1222,9 +1227,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 300.631958031250008, 162.5, 101.618042000000003, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 70.0, 0.0, 130.0, 20.0 ],
+					"presentation_rect" : [ 80.0, 0.0, 160.0, 20.0 ],
 					"rows" : 2,
-					"varname" : "groupTwo[6]",
 					"verticalmargin" : 0,
 					"verticalspacing" : 1
 				}
@@ -1411,14 +1415,14 @@
 		"dependency_cache" : [ 			{
 				"name" : "RenderGroupCell_capture_C.png",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../media",
+				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

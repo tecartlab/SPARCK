@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 96.0, 289.0, 562.0, 535.0 ],
+		"rect" : [ 110.0, 322.0, 562.0, 535.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 212.499999999999943, 58.0, 146.0, 22.0 ],
+					"patching_rect" : [ 261.499999999999943, 50.0, 146.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.vpl.node.pbody.js",
 						"parameter_enable" : 0
@@ -62,7 +62,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 295.0, 12.0, 72.0, 22.0 ],
+					"patching_rect" : [ 344.0, 4.0, 72.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -74,7 +74,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 212.5, 12.0, 69.0, 22.0 ],
+					"patching_rect" : [ 261.5, 4.0, 69.0, 22.0 ],
 					"text" : "r #1::pbody"
 				}
 
@@ -88,7 +88,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 212.499999999999943, 99.903809000000024, 69.0, 22.0 ],
+					"patching_rect" : [ 261.499999999999943, 91.903809000000024, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -107,9 +107,9 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 202.0, 100.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 100.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 202.0, 100.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 100.0 ],
 					"varname" : "vpl_properties",
 					"viewvisibility" : 1
 				}

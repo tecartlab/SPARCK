@@ -117,7 +117,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 147.805542000000116, 271.0, 202.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 60.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 60.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -140,7 +140,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 28.805542000000116, 205.0, 202.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 40.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 40.0, 240.0, 19.0 ],
 					"varname" : "adapt",
 					"viewvisibility" : 1
 				}
@@ -438,7 +438,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/optics", "lens", "@items", "fov_perspective", "fov_orthografic", "frustum_perspective", "frustum_orthografic", "@type", "string", "@size", 150, 18 ],
+					"args" : [ "#1", "#2/optics", "lens", "@items", "fov_perspective", "fov_orthografic", "frustum_perspective", "frustum_orthografic", "@type", "string", "@size", 180, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -454,7 +454,7 @@
 					"outlettype" : [ "int", "", "" ],
 					"patching_rect" : [ 147.805542000000116, 42.974243000000001, 208.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -477,7 +477,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 28.805542000000116, 167.0, 202.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 20.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 240.0, 19.0 ],
 					"varname" : "fov",
 					"viewvisibility" : 1
 				}

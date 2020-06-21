@@ -274,8 +274,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 326.6356201171875, 230.0, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
-					"text" : "text",
+					"presentation_rect" : [ 0.0, 1.0, 60.0, 17.0 ],
+					"text" : "#3",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
 
@@ -299,7 +299,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 297.6356201171875, 22.0, 24.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 19.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 0.0, 19.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -330,6 +330,7 @@
 			}
 , 			{
 				"box" : 				{
+					"embedstate" : [ [ "useclip", 1 ] ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -445,7 +446,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 45.271240234375, 218.0, 164.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 68.0, 0.0, 132.0, 19.0 ]
+					"presentation_rect" : [ 78.0, 0.0, 162.0, 19.0 ]
 				}
 
 			}

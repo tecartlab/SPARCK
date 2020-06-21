@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -103,16 +103,16 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 80.73077400000011, 150.403809000000024, 165.0, 18.0 ],
+					"patching_rect" : [ 84.73077400000011, 150.403809000000024, 165.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 20.0, 100.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 20.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/dim/inherit", "@ondisplaytext", "inherit", "@offdisplaytext", "custom", "@size", 99, 19 ],
+					"args" : [ "#1", "#2/dim/inherit", "@ondisplaytext", "inherit", "@offdisplaytext", "custom", "@size", 119, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -126,9 +126,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 75.805542000000116, 63.403809000000024, 102.0, 22.0 ],
+					"patching_rect" : [ 79.805542000000116, 63.403809000000024, 102.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 50.0, 0.0, 100.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 0.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -184,28 +184,28 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.button.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../basic",
+				"patcherrelativepath" : "../../basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
+				"patcherrelativepath" : "../../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.vec2i.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../basic",
+				"patcherrelativepath" : "../../basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "2int.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic/util",
-				"patcherrelativepath" : "../basic/util",
+				"patcherrelativepath" : "../../basic/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
