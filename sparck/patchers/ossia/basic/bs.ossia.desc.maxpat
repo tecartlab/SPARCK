@@ -40,18 +40,6 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 267.0, 56.0, 111.0, 22.0 ],
-					"text" : "loadmess useclip 0"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -100,18 +88,19 @@
 			}
 , 			{
 				"box" : 				{
+					"embedstate" : [ [ "useclip", 0 ] ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 129.0, 119.0, 157.0, 22.0 ],
+					"patching_rect" : [ 129.0, 119.0, 154.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js bs.ossia.remote.js #1 #2  "
+					"text" : "js bs.ossia.remote.js #1 #2 "
 				}
 
 			}
@@ -187,13 +176,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-3", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"source" : [ "obj-6", 0 ]
 				}
 
 			}

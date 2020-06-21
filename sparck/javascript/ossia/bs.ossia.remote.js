@@ -6,7 +6,7 @@ setoutletassist(0,"output to ossia.remote 1st inlet");
 setoutletassist(1,"output to float");
 
 var useclip = 1;
-declareattribute("useclip", null, "setuseclip");
+declareattribute("useclip", null, "setuseclip", 1);
 
 var myNodeTitle = undefined;
 var myParamAddress = undefined;
