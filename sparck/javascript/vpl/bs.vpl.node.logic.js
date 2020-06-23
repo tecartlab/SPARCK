@@ -64,6 +64,7 @@ var myIOlets = new NODE.IOlets(myIOLetButtonOffset, myIOLetButtonSize, myIOLetBu
 var undefined = "undefined";
 
 var myNodeDBPath;
+var myNodeFileName = undefined;
 var myNodeName = undefined; // fixed name, only initialize inside APP
 var myNodeID = undefined; // fixed ID, based on a random but unique number
 var myNodeTitle = undefined; // user set node title
@@ -78,10 +79,10 @@ var myNodeEnable = null;
 var myNodeSelected = 0;
 
 var myNodeEnableProperties = 0;
-var myNodeProps = undefined;
+var myNodePropsFileName = undefined;
 
 var myNodeEnableBody = 0;
-var myNodePBody = undefined;
+var myNodePBodyFileName = undefined;
 var myNodeIsExpanded = 0;
 
 var myNodeEnableHelp = 0;
@@ -122,6 +123,26 @@ function dpost(_message){
     }
 }
 
+/**********************
+  Attribute Functions
+ **********************/
+
+function enable_body(_enable){
+	myNodeEnableBody = _enable;
+	dpost("enable body = " + myNodeEnableBody + "\n");
+}
+
+function enable_properties(_enable){
+    myNodeEnableProperties = _enable;
+	dpost("enable properties = " + myNodeEnableProperties + "\n");
+}
+
+function help(val){
+    myNodeEnableHelp = 1;
+	myNodeHelp = val;
+    vpl_titleBar.message("hint", "NodeType: " + myNodeHelp);
+}
+
 function done(){
     dpost("execute done...\n");
 	// initialize automatically only if the parent patch wastn created by vpl
@@ -133,6 +154,11 @@ function done(){
     }
     dpost("...done\n");
 }
+
+/**********************
+  Init Functions
+ **********************/
+
 
 function init(){
 //	myNodeVarName = getKeyValuefromDB(myNodeName, "_conn.id");
@@ -179,11 +205,15 @@ function initNodeSpace(){
 	if(owner != null){
 		owner = this.patcher.box;
 		if(owner != null){
-            // get the node abstraction file name 
+            // get the node abstraction file names 
             var nodepath = owner.patcher.filepath;
-            var name = nodepath.substring(nodepath.lastIndexOf("/") + 1, nodepath.lastIndexOf("."));
-            myNodeProps = name + ".p";
-            myNodePBody = name + ".pbody";
+            myNodeFileName = nodepath.substring(nodepath.lastIndexOf("/") + 1, nodepath.lastIndexOf("."));
+            if(myNodeEnableBody == 1){
+                myNodePBodyFileName = myNodeFileName + ".p";
+            } else if (myNodeEnableBody == 2){
+                myNodePBodyFileName = myNodeFileName + ".pbody";
+            }
+            myNodePropsFileName = myNodeFileName + ".p";
             
             vpl_nodeBox = owner.patcher.box;
 			if(vpl_nodeBox != null){
@@ -272,26 +302,6 @@ function initIOlets() {
 }
 
 /**********************
-  Attribute Functions
- **********************/
-
-function enable_body(_enable){
-	myNodeEnableBody = _enable;
-	dpost("enable body = " + myNodeEnableBody + "\n");
-}
-
-function enable_properties(_enable){
-    myNodeEnableProperties = _enable;
-	dpost("enable properties = " + myNodeEnableProperties + "\n");
-}
-
-function help(val){
-    myNodeEnableHelp = 1;
-	myNodeHelp = val;
-    vpl_titleBar.message("hint", "NodeType: " + myNodeHelp);
-}
-
-/**********************
   Call Functions
  **********************/
 
@@ -333,8 +343,9 @@ function nodeid(_nodeid){
 
 // called by the menu
 function openproperties(){
+    //post("openproperties" +  myNodeID + " " + myNodeTitle + " " + myNodeAddress + " " + myNodePropsFileName + "\n");
     if(myNodeEnableProperties){
-        outlet(2, "shroud", "bs.vpl.node.props", myNodeID, myNodeTitle, myNodeAddress, myNodeProps);
+        outlet(2, "shroud", "bs.vpl.node.props", myNodeID, myNodeTitle, myNodeAddress, myNodePropsFileName);
     }
 }
 
@@ -368,7 +379,6 @@ function title(newtitle){
 	outlet(3, "setmsgtitle", newtitle);
 	outlet(3, "title", newtitle);
 	outlet(3, "address", myNodeAddress);
-	outlet(3, "_control", "title", newtitle);
 }
 
 function color(red, green, blue, alpha){
@@ -501,8 +511,8 @@ function expand(){
     setNodeRect(0);
     myIOlets.expand(myNodeIsExpanded, myExpandedSize, myDefaultSize);
     if(myNodeIsExpanded){
-        //post("sent  " +myNodePBody + " to '" + myNodeID + "::pbody" +"' \n");
-        messnamed(myNodeID + "::pbody", "name", myNodePBody);
+        //post("sent  " +myNodePBodyFileName + " to '" + myNodeID + "::pbody" +"' \n");
+        messnamed(myNodeID + "::pbody", "name", myNodePBodyFileName);
     }
     //vpl_body.message("hidden", !myNodeIsExpanded);
 }

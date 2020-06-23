@@ -42,6 +42,8 @@ if (jsarguments.length > 1){
 
 var myNodeTitle = null;
 var myBodyName = null;
+var myUnfoldedSize = null;
+var myFoldedSize = null;
 
 var appGlobal = new Global("bs::app::global");
 
@@ -70,13 +72,20 @@ function getSize(){
         var myproperty = myClientProperties.subpatcher();
         if(myproperty != null){
             // first we are looking for the full size of the properties
-            var myPropertyCanvas = myproperty.getnamed("vpl_canvas_full");
-            if(myPropertyCanvas != null){                    
-                outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "size", myPropertyCanvas.rect[2], myPropertyCanvas.rect[3]);                
-                messnamed(myNodeID + "::nodelogic", "expanded_size", myPropertyCanvas.rect[3], myPropertyCanvas.rect[3]);
+            var myPropertyCanvasUnfolded = myproperty.getnamed("vpl_canvas_unfolded");
+            var myPropertyCanvasFolded = myproperty.getnamed("vpl_canvas_folded");
+            if(myPropertyCanvasUnfolded != null && myPropertyCanvasFolded != null){                    
+                outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "size", myPropertyCanvasUnfolded.rect[2], myPropertyCanvasUnfolded.rect[3]);               
+                
+                myFoldedSize =  new Array(myPropertyCanvasFolded.rect[2], myPropertyCanvasFolded.rect[3]);
+                myUnfoldedSize =  new Array(myPropertyCanvasUnfolded.rect[2], myPropertyCanvasUnfolded.rect[3]);
+ 
+                messnamed(myNodeID + "::nodelogic", "expanded_size", myUnfoldedSize);
                 if(this.patcher.box.patcher != null){
-                    this.patcher.box.patcher.getnamed("vpl_ThisNodeLogicPatcher").message("script", "sendbox", "vpl_body", "size", myPropertyCanvas.rect[2], myPropertyCanvas.rect[3]);
+                    this.patcher.box.patcher.getnamed("vpl_ThisNodeLogicPatcher").message("script", "sendbox", "vpl_body", "size", myUnfoldedSize);
                 }
+            } else {
+                error("This shouldnt happen, pbody is missing 'vpl_canvas_unfolded' or 'vpl_canvas_folded'")
             }
         }
     }

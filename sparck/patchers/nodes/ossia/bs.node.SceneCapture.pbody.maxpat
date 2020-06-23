@@ -40,6 +40,27 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"angle" : 270.0,
+					"border" : 2,
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.8 ],
+					"grad1" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"grad2" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"hidden" : 1,
+					"id" : "obj-5",
+					"maxclass" : "panel",
+					"mode" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 0.0, 0.0, 242.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 20.0 ],
+					"proportion" : 0.39,
+					"varname" : "vpl_canvas_folded"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "render", "capture" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -159,7 +180,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 242.0, 64.0 ],
 					"proportion" : 0.39,
-					"varname" : "vpl_canvas_full"
+					"varname" : "vpl_canvas_unfolded"
 				}
 
 			}

@@ -38,8 +38,84 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Grid",
+		"globalpatchername" : "Grid_1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"args" : [ "#2", "#4", 3, "properties", -1, "@hint", "properties" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hint" : "",
+					"id" : "obj-4",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.vpl.util.inlet.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 524.222197999999935, 25.0, 44.0, 31.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 34.0, 30.0, 10.0, 10.0 ],
+					"varname" : "vpl_inlet[3/3]",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "",
+					"id" : "obj-5",
+					"index" : 0,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 494.0, 25.0, 25.0, 25.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ "#2", "#4", 2, "properties", -1, "@hint", "properties" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hint" : "",
+					"id" : "obj-2",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.vpl.util.inlet.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 352.222197999999992, 25.0, 44.0, 31.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 19.0, 15.0, 10.0, 10.0 ],
+					"varname" : "vpl_inlet[2/3]",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"comment" : "",
+					"id" : "obj-3",
+					"index" : 0,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 322.0, 25.0, 25.0, 25.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
@@ -2173,7 +2249,7 @@
 					"patching_rect" : [ 211.222197999999992, 25.0, 44.0, 31.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 0.0, 10.0, 10.0 ],
-					"varname" : "vpl_inlet[1/2]",
+					"varname" : "vpl_inlet[1/3]",
 					"viewvisibility" : 1
 				}
 
@@ -2207,9 +2283,9 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 0.0, 69.0, 200.0, 32.0 ],
+					"patching_rect" : [ 0.0, 69.0, 180.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 240.0, 32.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 180.0, 32.0 ],
 					"varname" : "vpl_nodelogic",
 					"viewvisibility" : 1
 				}

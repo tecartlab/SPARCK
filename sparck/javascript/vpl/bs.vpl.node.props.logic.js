@@ -49,6 +49,10 @@ var myRect = null;
 var mySize = null;
 var mySizeCollapsed = null;
 var myCollapsedHeight = 45;
+
+var myFoldedSize = null;
+var myUnfoldedSize = null;
+
 var myWinIsCollabsable = true;
 var myWinIsCloseable = true;
 var myWinIsActive = false;
@@ -115,24 +119,26 @@ function done(){
                 var myproperty = myClientProperties.subpatcher();
                 if(myproperty != null){
                     // first we are looking for the full size of the properties
-                    var myPropertyCanvas = myproperty.getnamed("vpl_canvas_full");
+                    var myPropertyCanvas = myproperty.getnamed("vpl_canvas_unfolded");
                     if(myPropertyCanvas != null){                    
                         mySize = new Array(myPropertyCanvas.rect[2], myPropertyCanvas.rect[3] + WINDOWBARSIZE);
+                        myUnfoldedSize =  new Array(myPropertyCanvas.rect[2], myPropertyCanvas.rect[3]);
                         //post("myPropertyCanvas.rect: " + myPropertyCanvas.rect + "\n");
                         //post("mySize: " + mySize + "\n");
                         //myClientProperties.message("presentation_rect", 0, 0, theSize[0], theSize[1]);
                         outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "presentation_rect", 0, WINDOWBARSIZE, mySize[0], mySize[1]);
                         //myClientProperties.presentation_rect = new Array(0,0,theSize[0], theSize[1]);
                     }else {
-                        post("this shouldnt happen: loaded property patcher doesn't contain a 'vpl_canvas_full'!!\n");
+                        post("this shouldnt happen: loaded property patcher doesn't contain a 'vpl_canvas_unfolded'!!\n");
                     }
                     // then we are looking for the collapsed size of the properties
-                    myPropertyCanvas = myproperty.getnamed("vpl_canvas_collapsed");
+                    myPropertyCanvas = myproperty.getnamed("vpl_canvas_folded");
                     if(myPropertyCanvas != null){                    
+                        myFoldedSize =  new Array(myPropertyCanvas.rect[2], myPropertyCanvas.rect[3]);
                         myCollapsedHeight = myPropertyCanvas.rect[3] + WINDOWBARSIZE;
                         //post("myCollapsedHeight: " + myCollapsedHeight + "\n");
                     } else {
-                        post("this shouldnt happen: loaded property patcher doesn't contain a 'vpl_canvas_collapsed'!!\n");
+                        post("this shouldnt happen: loaded property patcher doesn't contain a 'vpl_canvas_folded'!!\n");
                     }
                 } 
 			} 

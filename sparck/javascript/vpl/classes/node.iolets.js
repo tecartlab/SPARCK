@@ -92,6 +92,10 @@ NODE.IOlets.prototype = {
             var xpos = this.getIOLetXPos(this.Outlets[i], (_expanded)?_myExpandedSize[0]: _myDefaultSize[0]);
             this.myNodePatcher.message("script", "sendbox", this.Outlets[i], "presentation_rect", xpos + this.myButtonOffset, this.getPosition(_expanded), this.myButtonSize, this.myButtonSize);
         }
+        for(var i = 0; i < this.Inlets.length; i++){
+            var xpos = this.getIOLetXPos(this.Inlets[i], (_expanded)?_myExpandedSize[0]: _myDefaultSize[0]);
+            this.myNodePatcher.message("script", "sendbox", this.Inlets[i], "presentation_rect", xpos + this.myButtonOffset, 0., this.myButtonSize, this.myButtonSize);
+        }
 	},
 
     getPosition: function ( _expanded ) {

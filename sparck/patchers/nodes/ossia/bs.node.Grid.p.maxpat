@@ -279,7 +279,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 242.0, 39.0 ],
 					"proportion" : 0.39,
-					"varname" : "vpl_canvas_collapsed"
+					"varname" : "vpl_canvas_folded"
 				}
 
 			}
@@ -300,7 +300,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 242.0, 224.0 ],
 					"proportion" : 0.39,
-					"varname" : "vpl_canvas_full"
+					"varname" : "vpl_canvas_unfolded"
 				}
 
 			}
