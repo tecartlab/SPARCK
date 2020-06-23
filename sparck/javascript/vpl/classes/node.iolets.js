@@ -33,12 +33,8 @@ NODE.IOlets = function ( _offset, _size, _shift, _myType2Color, _myColorTable ) 
     this.myColorTable = _myColorTable;
     
 	this.Inlets = [];
-	this.InletsPos = [];
 	this.Outlets = [];
     
-    this.posCollapsed = 0;
-    this.posExpanded = 0;
-    this.myDefaultSize = [200, 30];
     this.myNodePatcher = null;
 };
 
@@ -49,11 +45,8 @@ NODE.IOlets.prototype = {
     /* _vpl_nodePatcher: instance to the patcher that contains the IOlets
      * myDefaultSize: size of the nodebox
      */
-	init: function ( _vpl_nodePatcher, _myDefaultSize) {
-        this.myDefaultSize = _myDefaultSize;
+	init: function ( _vpl_nodePatcher, _myDefaultSize, _offset) {
         this.myNodePatcher = _vpl_nodePatcher;
-        this.posCollapsed = this.myDefaultSize[1] - this.myButtonSize/2 + this.myButtonShift;
-        this.posExpanded = this.myDefaultSize[1] - this.myButtonSize/2 + this.myButtonShift;
 
         //post("init iolets..\n")
         var objects = this.myNodePatcher.firstobject;
@@ -62,20 +55,14 @@ NODE.IOlets.prototype = {
 			// their postion according to their ids
  			if(objects.varname.indexOf("vpl_inlet") == 0){
                 //post("_myDefaultSize: " + _myDefaultSize + "\n");
-				var xpos = this.getIOLetXPos(objects.varname, this.myDefaultSize[0]);
                 this.Inlets.push(objects.varname);
-                this.InletsPos.push(xpos);
-                //post("xpos: " + xpos + "\n");
-				this.myNodePatcher.message("script", "sendbox", objects.varname, "presentation_rect", xpos + this.myButtonOffset, 0., this.myButtonSize, this.myButtonSize);
 				var subpat = objects.subpatcher();
 				if(subpat != null){
 					subpat.apply(this.setColor);
 					//post(" found subpatcher: " + subpat + "\n");
 				}
 			}else if(objects.varname.indexOf("vpl_outlet") == 0){
-				var xpos = this.getIOLetXPos(objects.varname, this.myDefaultSize[0]);
                 this.Outlets.push(objects.varname);
- 				this.myNodePatcher.message("script", "sendbox", objects.varname, "presentation_rect", xpos + this.myButtonOffset, this.posCollapsed, this.myButtonSize, this.myButtonSize);
 				var subpat = objects.subpatcher();
 				if(subpat != null){
 					subpat.apply(this.setColor);
@@ -84,22 +71,19 @@ NODE.IOlets.prototype = {
 			}
             objects = objects.nextobject;
         }
+        expand(_myDefaultSize, _offset);
 	},
 
-    expand: function ( _expanded , _myExpandedSize, _myDefaultSize) {
-        this.posExpanded = _myExpandedSize[1] - this.myButtonSize/2 + this.myButtonShift;
+    expand: function ( _size, _offset) {
+        var posExpanded = _size[1] - this.myButtonSize/2 + this.myButtonShift + _offset;
         for(var i = 0; i < this.Outlets.length; i++){
-            var xpos = this.getIOLetXPos(this.Outlets[i], (_expanded)?_myExpandedSize[0]: _myDefaultSize[0]);
-            this.myNodePatcher.message("script", "sendbox", this.Outlets[i], "presentation_rect", xpos + this.myButtonOffset, this.getPosition(_expanded), this.myButtonSize, this.myButtonSize);
+            var xpos = this.getIOLetXPos(this.Outlets[i], _size[0]);
+            this.myNodePatcher.message("script", "sendbox", this.Outlets[i], "presentation_rect", xpos + this.myButtonOffset, posExpanded, this.myButtonSize, this.myButtonSize);
         }
         for(var i = 0; i < this.Inlets.length; i++){
-            var xpos = this.getIOLetXPos(this.Inlets[i], (_expanded)?_myExpandedSize[0]: _myDefaultSize[0]);
+            var xpos = this.getIOLetXPos(this.Inlets[i], _size[0]);
             this.myNodePatcher.message("script", "sendbox", this.Inlets[i], "presentation_rect", xpos + this.myButtonOffset, 0., this.myButtonSize, this.myButtonSize);
         }
-	},
-
-    getPosition: function ( _expanded ) {
-        return (_expanded == 1)?this.posExpanded:this.posCollapsed;
 	},
 
     getIOLetXPos: function(_a, _width){

@@ -80,10 +80,7 @@ function getSize(){
                 myFoldedSize =  new Array(myPropertyCanvasFolded.rect[2], myPropertyCanvasFolded.rect[3]);
                 myUnfoldedSize =  new Array(myPropertyCanvasUnfolded.rect[2], myPropertyCanvasUnfolded.rect[3]);
  
-                messnamed(myNodeID + "::nodelogic", "expanded_size", myUnfoldedSize);
-                if(this.patcher.box.patcher != null){
-                    this.patcher.box.patcher.getnamed("vpl_ThisNodeLogicPatcher").message("script", "sendbox", "vpl_body", "size", myUnfoldedSize);
-                }
+                messnamed(myNodeID + "::nodelogic", "expanded_size", myFoldedSize, myUnfoldedSize);
             } else {
                 error("This shouldnt happen, pbody is missing 'vpl_canvas_unfolded' or 'vpl_canvas_folded'")
             }

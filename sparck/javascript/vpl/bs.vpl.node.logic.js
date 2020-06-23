@@ -48,14 +48,17 @@ var myBaseDB 	 = new Dict("vpl::db");
 
 var uniqueTable = new Dict("bs.vpl.unique.title");
 
-var myDefaultSize = new Array(180, 32);
-var myExpandedSize = new Array(240, 32);
-var myCanvasOffset = 4;
-var myPBodyOffset = 34;
-
 var myIOLetButtonSize = 8;
 var myIOLetButtonShift = -2;
 var myIOLetButtonOffset = -2;
+
+var myTitleBarHeight = 28;      // size of title bar
+var myPBodyOffset = 2;          // distance of pbody bpatcher from top
+var myCanvasLowerSpacing = 4;   // additional space for canvas at the bottom of pbody
+var myNodeLowerSpacing = 4;     // additional space for node at the bottom of canvas
+var myDefaultSize = new Array(180, 0);
+var myExpandedMode = 0; // 0 = default, 1 = folded, 2 = unfolded
+var myNodeSizes = new Array(myDefaultSize, myDefaultSize, myDefaultSize); // there are 3 sizes, one for each ExpandedModes
 
 var myIOlets = new NODE.IOlets(myIOLetButtonOffset, myIOLetButtonSize, myIOLetButtonShift, myType2Color, myColorTable);
 
@@ -83,7 +86,6 @@ var myNodePropsFileName = undefined;
 
 var myNodeEnableBody = 0;
 var myNodePBodyFileName = undefined;
-var myNodeIsExpanded = 0;
 
 var myNodeEnableHelp = 0;
 var myNodeHelp = undefined;
@@ -189,6 +191,7 @@ function initMenu(){
 	outlet(4, "vpl_menu", "append", "help");
 	outlet(4, "vpl_menu", "append", "rename");
 	outlet(4, "vpl_menu", "append", "expand");
+	outlet(4, "vpl_menu", "append", "fold");
 	outlet(4, "vpl_menu", "append", "---");
 	outlet(4, "vpl_menu", "append", "duplicate");
 	outlet(4, "vpl_menu", "append", "delete");
@@ -196,6 +199,7 @@ function initMenu(){
 	outlet(4, "vpl_menu", "enableitem", 0, myNodeEnableProperties);
 	outlet(4, "vpl_menu", "enableitem", 1, myNodeEnableHelp);
     outlet(4, "vpl_menu", "enableitem", 3, myNodeEnableBody);		
+    outlet(4, "vpl_menu", "enableitem", 4, myNodeEnableBody);		
 }
 
 /* recursively gets the the parents patcher information
@@ -218,7 +222,9 @@ function initNodeSpace(){
             vpl_nodeBox = owner.patcher.box;
 			if(vpl_nodeBox != null){
 				vpl_nodeSpacePatcher = vpl_nodeBox.patcher;
-			}
+			} else {
+                post("didnt find nodespacepatcher\n");
+            }
 		}
 	}
 }
@@ -298,30 +304,90 @@ function initConnections(){
 }
 
 function initIOlets() {
-    myIOlets.init(vpl_nodePatcher, myDefaultSize);
+    myIOlets.init(vpl_nodePatcher, myDefaultSize, myIOLetButtonSize/2 + myTitleBarHeight);
 }
 
 /**********************
   Call Functions
  **********************/
 
+// called by the menu
+function menu(_func){
+	if(myNodeInit){		
+		if(_func == "properties"){
+			openproperties();
+		} else if(_func == "collapse"){
+        	myExpandedMode = 0;
+			expand();
+        	outlet(4, "vpl_menu", "setitem", 3, "expand");
+        	outlet(4, "vpl_menu", "setitem", 4, "fold");
+		} else if(_func == "expand" || _func == "unfold"){
+        	myExpandedMode = 2;
+			expand();
+        	outlet(4, "vpl_menu", "setitem", 3, "collapse");
+        	outlet(4, "vpl_menu", "setitem", 4, "fold");
+        } else if(_func == "fold"){
+        	myExpandedMode = 1;
+			expand();
+        	outlet(4, "vpl_menu", "setitem", 3, "collapse");
+        	outlet(4, "vpl_menu", "setitem", 4, "unfold");
+		} else if(_func == "duplicate"){
+			;
+		} else if(_func == "delete"){
+			;
+		} else if(_func == "help"){
+			outlet(2, "load", "bs.help.node." + myNodeHelp + ".maxpat");
+		}
+	}
+}
+
+// called by menu()
+function expand(){
+    setNodeRect(0);
+    if(myExpandedMode > 0){
+        //post("sent  " +myNodePBodyFileName + " to '" + myNodeID + "::pbody" +"' \n");
+        messnamed(myNodeID + "::pbody", "name", myNodePBodyFileName);
+        myIOlets.expand(myNodeSizes[myExpandedMode], myIOLetButtonSize/2 + myTitleBarHeight + myPBodyOffset + myCanvasLowerSpacing);
+    } else {
+        myIOlets.expand(myNodeSizes[myExpandedMode], myIOLetButtonSize/2 + myTitleBarHeight);
+    }
+    //vpl_body.message("hidden", !myExpandedMode);
+}
+
 /* Sets the node size, the node logic size and the canvas size, depending on beeing expanded or not.
  * 
  */
 function setNodeRect(_store){
-    var currentSize = (myNodeIsExpanded)?myExpandedSize:myDefaultSize;
+    var currentSize = myNodeSizes[myExpandedMode];
     if(vpl_nodeBox != null && vpl_nodeBox.varname == myNodeVarName){
         var myBoxRect = vpl_nodeBox.rect;
         myBoxRect[2] = myBoxRect[0] + currentSize[0];
-        myBoxRect[3] = myBoxRect[1] + currentSize[1] + myIOLetButtonSize / 2;
+        if (myExpandedMode == 0) {
+            myBoxRect[3] = myBoxRect[1] + currentSize[1] + myIOLetButtonSize + myTitleBarHeight;
+            vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_canvas", "presentation_size", currentSize[0], currentSize[1] + myTitleBarHeight);
+            vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_body", "hidden", 1);
+            vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_body", "size", currentSize[0], currentSize[1]);
+            vpl_nodePatcher.message("script", "sendbox", "vpl_nodelogic", "size", currentSize[0], currentSize[1] + myIOLetButtonSize/2 + myTitleBarHeight);
+        } else {
+            myBoxRect[3] = myBoxRect[1] + currentSize[1] + myIOLetButtonSize + myTitleBarHeight + myPBodyOffset + 2 * myCanvasLowerSpacing;
+            vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_canvas", "presentation_size", currentSize[0], currentSize[1] + myTitleBarHeight + myPBodyOffset + myCanvasLowerSpacing);
+            vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_body", "hidden", 0);
+            vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_body", "size", currentSize[0], currentSize[1]);
+            vpl_nodePatcher.message("script", "sendbox", "vpl_nodelogic", "size", currentSize[0], currentSize[1] + myIOLetButtonSize/2 + myTitleBarHeight + myPBodyOffset + myCanvasLowerSpacing);
+        }
         vpl_nodeBox.rect = myBoxRect;
         if(_store == 1){
             storeKeyValueInDB(myNodeName, "_rect", myBoxRect);
         }
     }
-    vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_canvas", "presentation_size", currentSize[0], currentSize[1] - myCanvasOffset);
-    vpl_nodeLogicPatcher.message("script", "sendbox", "vpl_body", "hidden", (myNodeIsExpanded)?0: 1);
-    vpl_nodePatcher.message("script", "sendbox", "vpl_nodelogic", "size", currentSize[0], currentSize[1]);
+}
+
+// this function is called by the vpl_body once a body is loaded and the size of the body is evaluated
+function expanded_size(_foldedSizeX, _foldedSizeY, _unfoldedSizeX, _unfoldedSizeY){
+    //post("expanded_size " + _foldedSizeX + " | " + _foldedSizeY + " | " + _unfoldedSizeX + " | " + _unfoldedSizeY + "\n");
+    myNodeSizes[1] = new Array(_foldedSizeX, _foldedSizeY);
+    myNodeSizes[2] = new Array(_unfoldedSizeX, _unfoldedSizeY);
+    expand();
 }
 
 // called on creation. it is a unique id, loaded from the project and needed to access the nodeDB
@@ -336,9 +402,7 @@ function nodeid(_nodeid){
     myNodeID = _nodeid;
     myNodeTitle = _nodeid;
     dpost("My nodeid is set: '" + _nodeid + "'\n");
-	outlet(3, "_control", "nodeid", _nodeid);
 	outlet(3, "nodeid", _nodeid);
-
 }
 
 // called by the menu
@@ -418,7 +482,7 @@ function pickselect(_openProperties){
 // is also called by bs.app.output.stageview.window/objectPicker/pickAndSelect
 // if no node is picked and this node was selected last.
 function select(_select){
-//	cpost("got selected ("+_select+")... (" + myNodeName + ")\n");
+    //post("got selected ("+_select+")... (" + myNodeName + ")\n");
 	if(vpl_linked){
 //		cpost("... selected is linked... (" + myNodeName + ")\n");
         if(appGlobal.selectedNode == null){
@@ -481,46 +545,6 @@ function drag(diffX, diffY){
 		}
 		*/
 	}
-}
-
-// called by the menu
-function menu(_func){
-	if(myNodeInit){		
-		if(_func == "properties"){
-			openproperties();
-		} else if(_func == "collapse"){
-        	myNodeIsExpanded = false;
-			expand();
-        	outlet(4, "vpl_menu", "setitem", 3, "expand");
-		} else if(_func == "expand"){
-        	myNodeIsExpanded = true;
-			expand();
-        	outlet(4, "vpl_menu", "setitem", 3, "collapse");
-		} else if(_func == "duplicate"){
-			;
-		} else if(_func == "delete"){
-			;
-		} else if(_func == "help"){
-			outlet(2, "load", "bs.help.node." + myNodeHelp + ".maxpat");
-		}
-	}
-}
-
-// called by menu()
-function expand(){
-    setNodeRect(0);
-    myIOlets.expand(myNodeIsExpanded, myExpandedSize, myDefaultSize);
-    if(myNodeIsExpanded){
-        //post("sent  " +myNodePBodyFileName + " to '" + myNodeID + "::pbody" +"' \n");
-        messnamed(myNodeID + "::pbody", "name", myNodePBodyFileName);
-    }
-    //vpl_body.message("hidden", !myNodeIsExpanded);
-}
-
-// this function is called by the vpl_body once a body is loaded and the size of the body is evaluated
-function expanded_size(_size){
-    myExpandedSize[1] = myPBodyOffset + _size + myCanvasOffset;
-    expand();
 }
 
 // called by one of the drag functions
