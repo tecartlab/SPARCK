@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 104.0, 408.0, 285.0, 395.0 ],
+		"rect" : [ 71.0, 502.0, 458.0, 395.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -53,7 +53,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 278.0, 353.0, 72.0, 17.0 ],
+					"patching_rect" : [ 345.0, 346.0, 83.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 80.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -75,7 +75,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 263.0, 338.0, 72.0, 17.0 ],
+					"patching_rect" : [ 345.0, 323.0, 83.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 80.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -84,7 +84,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "internal/export", "export", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "export..", ".", "@size", 59, 19, "@mode", 1 ],
+					"args" : [ "#1", "export", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "export..", ".", "@size", 59, 19, "@hint", "Save current window content to ~/_export/_textures/<nodename>.png" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -93,21 +93,20 @@
 					"id" : "obj-14",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.button.maxpat",
-					"numinlets" : 2,
-					"numoutlets" : 1,
+					"name" : "bs.ossia.remote.impulse.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 101.0, 188.0, 200.0, 19.0 ],
+					"patching_rect" : [ 252.0, 209.0, 200.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 180.0, 140.0, 60.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 160.0, 60.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "internal/reset", "reset", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "reset...", "@size", 59, 19, "@mode", 1 ],
+					"args" : [ "#1", "reset", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "reset...", "@size", 59, 19, "@mode", 1, "@hint", "reset to default window position" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -116,12 +115,11 @@
 					"id" : "obj-10",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.button.maxpat",
-					"numinlets" : 2,
-					"numoutlets" : 1,
+					"name" : "bs.ossia.remote.impulse.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 86.0, 173.0, 200.0, 19.0 ],
+					"patching_rect" : [ 252.0, 188.0, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 180.0, 160.0, 60.0, 19.0 ],
 					"viewvisibility" : 1
@@ -144,9 +142,9 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 277.0, 263.5, 204.0, 19.0 ],
+					"patching_rect" : [ 242.0, 302.0, 204.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 100.0, 242.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 120.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -167,31 +165,32 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 262.0, 248.5, 204.0, 19.0 ],
+					"patching_rect" : [ 248.0, 278.5, 204.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 120.0, 242.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 140.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "internal/opendisplay", "display", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "settings...", "@size", 59, 19, "@mode", 1 ],
+					"args" : [ "#1", "displaySelection", "@text", "display", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "settings...", "@size", 179, 19, "@mode", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hint" : "open display settings",
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.button.maxpat",
+					"name" : "bs.ossia.remote.impulse.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 71.0, 158.0, 200.0, 19.0 ],
+					"patching_rect" : [ 252.0, 166.0, 200.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 0.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 100.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -211,7 +210,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 56.0, 143.0, 200.0, 19.0 ],
+					"patching_rect" : [ 244.0, 146.0, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
@@ -234,7 +233,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "" ],
-					"patching_rect" : [ 263.0, 127.0, 208.0, 17.0 ],
+					"patching_rect" : [ 248.0, 124.0, 208.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 20.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
@@ -256,7 +255,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 346.0, 72.0, 17.0 ],
+					"patching_rect" : [ 248.0, 346.0, 83.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 60.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -278,7 +277,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 323.0, 72.0, 17.0 ],
+					"patching_rect" : [ 248.0, 323.0, 83.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 60.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -301,7 +300,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "" ],
-					"patching_rect" : [ 248.0, 112.0, 208.0, 17.0 ],
+					"patching_rect" : [ 248.0, 103.0, 208.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 20.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
@@ -323,7 +322,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 257.0, 72.0, 17.0 ],
+					"patching_rect" : [ 248.0, 257.0, 87.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 40.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -345,7 +344,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 236.0, 72.0, 17.0 ],
+					"patching_rect" : [ 248.0, 236.0, 87.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 40.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -402,7 +401,7 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 242.0, 39.0 ],
 					"proportion" : 0.39,
@@ -486,6 +485,13 @@
 				"name" : "bs.ossia.button.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
 				"patcherrelativepath" : "../../ossia/basic",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.impulse.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}

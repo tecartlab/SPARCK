@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Grid_1",
+		"globalpatchername" : "Grid",
 		"boxes" : [ 			{
 				"box" : 				{
 					"args" : [ "#2", "#4", 3, "properties", -1, "@hint", "properties" ],
@@ -58,7 +58,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 524.222197999999935, 25.0, 44.0, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 34.0, 30.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 166.0, 0.0, 10.0, 10.0 ],
 					"varname" : "vpl_inlet[3/3]",
 					"viewvisibility" : 1
 				}
@@ -96,7 +96,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 352.222197999999992, 25.0, 44.0, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 19.0, 15.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 85.0, 0.0, 10.0, 10.0 ],
 					"varname" : "vpl_inlet[2/3]",
 					"viewvisibility" : 1
 				}
@@ -582,14 +582,17 @@
 , 			{
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
+					"frozen_object_attributes" : 					{
+						"description" : "Gridsize XY"
+					}
+,
 					"id" : "obj-21",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 364.880981499999848, 157.5, 192.0, 31.0 ],
-					"text" : "ossia.parameter gridsize @type vec2f @default 0.05 0.05 @description gridsize"
+					"patching_rect" : [ 364.880981499999848, 157.5, 263.0, 20.0 ],
+					"text" : "ossia.parameter gridsize @type vec2f @default 0.05 0.05"
 				}
 
 			}
