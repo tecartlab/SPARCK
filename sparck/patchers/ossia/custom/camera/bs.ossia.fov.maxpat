@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 203.0, 323.0, 482.0, 480.0 ],
+		"rect" : [ 552.0, 251.0, 482.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -89,24 +89,7 @@
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
-					"hint" : "",
-					"id" : "obj-1",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 13.805542000000116, 95.403809000000024, 42.0, 17.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 1.0, 50.0, 17.0 ],
-					"text" : "angle",
-					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#1", "#2/angle" ],
+					"args" : [ "#1", "#2/angle", "@text", "angle" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -115,21 +98,21 @@
 					"id" : "obj-14",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.float.maxpat",
-					"numinlets" : 1,
+					"name" : "bs.ossia.remote.float.maxpat",
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 132.73077400000011, 76.5, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 180.0, 0.0, 60.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 0.0, 122.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/ratio" ],
+					"args" : [ "#1", "#2/ratio", "@text", "ratio" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -138,32 +121,15 @@
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.float.maxpat",
-					"numinlets" : 1,
+					"name" : "bs.ossia.remote.float.maxpat",
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 68.805542000000059, 76.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 60.0, 0.0, 60.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
-					"hint" : "",
-					"id" : "obj-77",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 12.805542000000116, 76.403809000000024, 42.0, 17.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
-					"text" : "ratio",
-					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
 
 			}
@@ -191,9 +157,9 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.float.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../basic",
+				"name" : "bs.ossia.remote.float.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../..",
 				"type" : "JSON",
 				"implicit" : 1
 			}

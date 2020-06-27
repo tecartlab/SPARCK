@@ -55,7 +55,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "tfm", "local transformations:" ],
+					"args" : [ "#1", "tfm", "@text", "local transformations:" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -65,7 +65,7 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.tfm.local.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
@@ -93,7 +93,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "tfm/publish", "publish" ],
+					"args" : [ "#1", "tfm/publish", "@text", "publish" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -103,10 +103,11 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numinlets" : 3,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 327.0, 72.0, 17.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 248.0, 346.0, 206.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 200.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -115,7 +116,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "render/layer", "layer" ],
+					"args" : [ "#1", "render/layer", "@text", "layer" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -125,11 +126,11 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.int.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 301.0, 72.0, 17.0 ],
+					"patching_rect" : [ 248.0, 312.0, 206.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 180.0, 121.0, 19.0 ],
 					"viewvisibility" : 1
@@ -138,7 +139,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "render/showaxis", "showaxis" ],
+					"args" : [ "#1", "render/showaxis", "@text", "showaxis" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -148,10 +149,11 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numinlets" : 3,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 280.0, 72.0, 17.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 248.0, 280.0, 206.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 160.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -160,7 +162,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "tfm/parent", "parent" ],
+					"args" : [ "#1", "tfm/parent", "@text", "parent", "@size", 179, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -170,10 +172,11 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.msg.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numinlets" : 3,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 118.5, 201.0, 22.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 248.0, 113.5, 201.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 20.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
@@ -182,7 +185,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "render", "drawto" ],
+					"args" : [ "#1", "render", "@text", "drawto" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -192,9 +195,10 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.rendergroup.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numinlets" : 3,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 376.0, 79.0, 201.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 240.0, 19.0 ],
@@ -204,7 +208,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "gridsize", "gridsize", "@numcells", 2 ],
+					"args" : [ "#1", "gridsize", "@text", "gridsize", "@numcells", 2 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -214,7 +218,7 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.vecf.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
@@ -233,7 +237,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.0, 79.0, 64.0, 22.0 ],
+					"patching_rect" : [ 301.0, 63.0, 64.0, 22.0 ],
 					"text" : "ossia.view"
 				}
 
@@ -245,7 +249,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 301.0, 50.0, 107.0, 22.0 ],
+					"patching_rect" : [ 301.0, 34.0, 107.0, 22.0 ],
 					"text" : "routepass address"
 				}
 
@@ -257,7 +261,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 248.0, 21.0, 72.0, 22.0 ],
+					"patching_rect" : [ 248.0, 5.0, 72.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -275,9 +279,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 202.0, 47.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 40.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 39.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 40.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_folded"
 				}
@@ -307,7 +311,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-9", 1 ],
 					"source" : [ "obj-12", 1 ]
 				}
 
@@ -328,14 +332,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
+					"destination" : [ "obj-12", 1 ],
 					"source" : [ "obj-6", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
+					"destination" : [ "obj-6", 1 ],
 					"source" : [ "obj-9", 1 ]
 				}
 
@@ -349,24 +353,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.vec.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.desc.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -405,23 +395,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.toggle.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.ossia.remote.int.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
 				"patcherrelativepath" : "../../ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.int.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -440,9 +416,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.float.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
+				"name" : "bs.ossia.remote.float.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -450,6 +426,13 @@
 				"name" : "bs.ossia.remote.vec3f.XYZ.set.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
 				"patcherrelativepath" : "../../ossia/transforms",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.desc.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
+				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
