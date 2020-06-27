@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 295.0, 296.0, 720.0, 516.0 ],
+		"rect" : [ 41.0, 222.0, 792.0, 606.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,27 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "lens/adapt/usable", "@is", 0, 1 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-5",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.remote.toggle.maxpat",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 499.25, 192.153809000000024, 115.5, 19.5 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "lens/stereo/spread", "@text", "spread", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -54,7 +75,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.5, 478.25, 115.5, 19.5 ],
+					"patching_rect" : [ 499.5, 515.25, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 300.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -77,7 +98,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.5, 451.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.5, 488.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 280.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -100,7 +121,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.5, 425.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.5, 462.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 280.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -123,7 +144,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.5, 228.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.0, 255.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 200.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -132,7 +153,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/adapt/enable", "@text", "adapt", "@is", 0, 1 ],
+					"args" : [ "#1", "lens/adapt/enable", "@text", "adapt", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -146,7 +167,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.5, 191.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.0, 225.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 200.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -155,7 +176,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/frustum/far", "@text", "far" ],
+					"args" : [ "#1", "lens/culling/far", "@text", "far" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -169,7 +190,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.5, 285.5, 115.5, 19.5 ],
+					"patching_rect" : [ 499.5, 322.5, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 220.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -178,7 +199,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/frustum/near", "@text", "near" ],
+					"args" : [ "#1", "lens/culling/near", "@text", "near" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -192,7 +213,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.5, 256.5, 115.5, 19.5 ],
+					"patching_rect" : [ 499.5, 293.5, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 220.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -201,7 +222,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/frustum/bottom", "@text", "bottom", "@is", 2, 3 ],
+					"args" : [ "#1", "lens/frustum/bottom", "@text", "bottom", "@is", 2, 3 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -215,7 +236,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.25, 393.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.25, 430.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 260.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -224,7 +245,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/frustum/top", "@text", "top", "@is", 2, 3 ],
+					"args" : [ "#1", "lens/frustum/top", "@text", "top", "@is", 2, 3 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -238,7 +259,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.25, 367.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.25, 404.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 260.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -247,7 +268,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/frustum/right", "@text", "right", "@is", 2, 3 ],
+					"args" : [ "#1", "lens/frustum/right", "@text", "right", "@is", 2, 3 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -261,7 +282,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.25, 341.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.25, 378.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 240.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -270,7 +291,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/frustum/left", "@text", "left", "@is", 2, 3 ],
+					"args" : [ "#1", "lens/frustum/left", "@text", "left", "@is", 2, 3 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -284,7 +305,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 499.25, 317.903809000000024, 115.5, 19.5 ],
+					"patching_rect" : [ 499.25, 354.903809000000024, 115.5, 19.5 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 240.0, 119.0, 19.0 ],
 					"viewvisibility" : 1
@@ -293,7 +314,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/angle", "@text", "angle", "@is", 0, 1 ],
+					"args" : [ "#1", "lens/fov/angle", "@text", "angle", "@is", 0, 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -316,7 +337,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/optics/ratio", "@text", "ratio", "@is", 0, 1 ],
+					"args" : [ "#1", "lens/fov/ratio", "@text", "ratio", "@is", 0, 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -353,7 +374,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 499.5, 101.0, 208.0, 22.0 ],
+					"patching_rect" : [ 488.5, 92.0, 208.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 160.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
@@ -555,7 +576,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 1 ],
+					"destination" : [ "obj-5", 1 ],
 					"source" : [ "obj-14", 1 ]
 				}
 
@@ -663,7 +684,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 1 ],
-					"midpoints" : [ 557.25, 507.75, 264.375, 507.75, 264.375, 164.0, 383.5, 164.0 ],
+					"midpoints" : [ 557.25, 554.75, 264.375, 554.75, 264.375, 164.0, 383.5, 164.0 ],
 					"source" : [ "obj-25", 1 ]
 				}
 
@@ -677,6 +698,27 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-21", 2 ],
+					"source" : [ "obj-5", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 1 ],
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 2 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
 					"source" : [ "obj-7", 2 ]
 				}
@@ -685,7 +727,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 2 ],
-					"order" : 0,
+					"order" : 6,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -693,7 +735,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 2 ],
-					"order" : 1,
+					"order" : 5,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -701,7 +743,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 2 ],
-					"order" : 2,
+					"order" : 4,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -717,7 +759,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 2 ],
-					"order" : 4,
+					"order" : 2,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -725,15 +767,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 2 ],
-					"order" : 5,
+					"order" : 1,
 					"source" : [ "obj-7", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 2 ],
-					"order" : 6,
+					"destination" : [ "obj-5", 2 ],
+					"order" : 0,
 					"source" : [ "obj-7", 0 ]
 				}
 
