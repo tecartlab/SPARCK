@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 390.0, 142.0, 947.0, 320.0 ],
+		"rect" : [ 390.0, 142.0, 631.0, 320.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -591,7 +591,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "visibility override",
 					"id" : "obj-13",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -615,7 +615,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "colorlist",
+					"comment" : "grouplist",
 					"id" : "obj-9",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -653,7 +653,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "boolean list",
+					"comment" : "grouplist",
 					"id" : "obj-1",
 					"index" : 0,
 					"maxclass" : "inlet",

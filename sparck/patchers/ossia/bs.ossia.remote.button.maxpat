@@ -40,13 +40,13 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "visibility override",
 					"id" : "obj-13",
 					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 566.0, 341.0, 30.0, 30.0 ]
+					"patching_rect" : [ 568.0, 350.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -206,9 +206,9 @@
 					"embedstate" : [ [ "useclip", 1 ] ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
+					"numinlets" : 3,
+					"numoutlets" : 6,
+					"outlettype" : [ "", "", "", "", "", "" ],
 					"patching_rect" : [ 295.972208666666802, 175.903809000000024, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.ossia.remote.js",
@@ -258,6 +258,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-2", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-20", 4 ]
 				}
 
 			}

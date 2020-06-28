@@ -9,7 +9,7 @@ setoutletassist(0,"output to ossia.remote 1st inlet");
 setoutletassist(1,"output to gui object");
 setoutletassist(2,"output to text object");
 setoutletassist(3,"output to interaction");
-setoutletassist(4,"output to dump");
+setoutletassist(4,"output to visibility override");
 setoutletassist(5,"dump");
 
 var IN_ARGS = 0;

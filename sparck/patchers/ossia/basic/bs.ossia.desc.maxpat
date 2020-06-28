@@ -12,7 +12,7 @@
 		"classnamespace" : "box",
 		"rect" : [ 551.0, 509.0, 474.0, 235.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 1,
+		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -64,18 +64,6 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "value",
-					"id" : "obj-2",
-					"index" : 0,
-					"maxclass" : "outlet",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 24.5, 176.5, 30.0, 30.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -103,9 +91,9 @@
 					"embedstate" : [ [ "useclip", 0 ] ],
 					"id" : "obj-20",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
+					"numinlets" : 3,
+					"numoutlets" : 6,
+					"outlettype" : [ "", "", "", "", "", "" ],
 					"patching_rect" : [ 129.0, 119.0, 154.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.ossia.remote.js",
@@ -167,13 +155,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-21", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-26", 0 ]
 				}
 
 			}

@@ -460,7 +460,7 @@
 					"onfontstyle" : 1,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 104.0, 183.5, 49.0, 19.0 ],
+					"patching_rect" : [ 104.0, 182.0, 49.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 59.0, 19.0 ],
 					"pviewfontsize" : 9.0,

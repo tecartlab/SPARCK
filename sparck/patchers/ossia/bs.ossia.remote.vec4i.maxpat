@@ -45,7 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 375.5, 247.0, 67.0, 22.0 ],
+					"patching_rect" : [ 316.5, 217.0, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -274,7 +274,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 301.5, 153.0, 93.0, 22.0 ],
+					"patching_rect" : [ 242.5, 151.0, 93.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -295,7 +295,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 491.375, 22.0, 30.0, 30.0 ]
+					"patching_rect" : [ 432.375, 20.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -308,7 +308,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 422.9375, 22.0, 30.0, 30.0 ]
+					"patching_rect" : [ 363.9375, 20.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -319,20 +319,20 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 301.5, 30.0, 72.0, 22.0 ],
+					"patching_rect" : [ 242.5, 28.0, 72.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "visibility override",
 					"id" : "obj-10",
 					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 464.0, 237.0, 30.0, 30.0 ]
+					"patching_rect" : [ 405.0, 235.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -344,7 +344,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 232.0, 243.0, 30.0, 30.0 ]
+					"patching_rect" : [ 152.0, 241.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -356,7 +356,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 110.0, 237.0, 30.0, 30.0 ]
+					"patching_rect" : [ 90.5, 241.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -369,7 +369,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 110.0, 22.0, 30.0, 30.0 ]
+					"patching_rect" : [ 32.0, 20.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -383,7 +383,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 407.300000000000011, 190.403809000000024, 42.0, 17.0 ],
+					"patching_rect" : [ 350.25, 188.403809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 1.0, 60.0, 17.0 ],
 					"text" : "#3",
@@ -406,23 +406,11 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 141.5, 190.403809000000024, 200.0, 19.0 ],
+					"patching_rect" : [ 61.5, 188.403809000000024, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 240.0, 19.0 ],
 					"varname" : "list",
 					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 67.5, 157.403809000000024, 55.0, 22.0 ],
-					"text" : "route set"
 				}
 
 			}
@@ -433,7 +421,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 141.5, 63.403809000000024, 54.0, 22.0 ],
+					"patching_rect" : [ 73.0, 66.403809000000024, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -446,7 +434,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 6,
 					"outlettype" : [ "", "", "", "", "", "" ],
-					"patching_rect" : [ 354.5, 113.403809000000024, 155.875, 22.0 ],
+					"patching_rect" : [ 295.5, 111.403809000000024, 155.875, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.ossia.remote.js",
 						"parameter_enable" : 0
@@ -464,7 +452,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 141.5, 100.403809000000024, 77.0, 22.0 ],
+					"patching_rect" : [ 61.5, 98.403809000000024, 77.0, 22.0 ],
 					"text" : "ossia.remote"
 				}
 
@@ -549,16 +537,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"order" : 1,
-					"source" : [ "obj-26", 0 ]
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-26", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"order" : 0,
+					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-26", 0 ]
 				}
 
@@ -573,16 +559,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
-					"midpoints" : [ 151.0, 225.307618000000048, 132.999999999999943, 225.307618000000048, 132.999999999999943, 90.903809000000024, 151.0, 90.903809000000024 ],
-					"order" : 0,
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"order" : 1,
+					"midpoints" : [ 71.0, 223.307618000000048, 52.999999999999943, 223.307618000000048, 52.999999999999943, 88.903809000000024, 71.0, 88.903809000000024 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -591,13 +568,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-6", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"source" : [ "obj-7", 0 ]
 				}
 
 			}

@@ -66,7 +66,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "visibility override",
 					"id" : "obj-25",
 					"index" : 0,
 					"maxclass" : "outlet",

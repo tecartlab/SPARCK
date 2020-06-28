@@ -176,7 +176,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 113.5, 201.0, 22.0 ],
+					"patching_rect" : [ 248.0, 107.5, 201.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 20.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
@@ -312,6 +312,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 1 ],
+					"midpoints" : [ 351.0, 343.0, 483.25, 343.0, 483.25, 131.5, 353.5, 131.5 ],
 					"source" : [ "obj-12", 1 ]
 				}
 
@@ -426,13 +427,6 @@
 				"name" : "bs.ossia.remote.vec3f.XYZ.set.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
 				"patcherrelativepath" : "../../ossia/transforms",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.desc.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/basic",
-				"patcherrelativepath" : "../../ossia/basic",
 				"type" : "JSON",
 				"implicit" : 1
 			}
