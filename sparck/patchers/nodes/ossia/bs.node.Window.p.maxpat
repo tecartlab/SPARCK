@@ -231,7 +231,7 @@
 					"id" : "obj-5",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.menu.maxpat",
+					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
@@ -300,7 +300,7 @@
 					"id" : "obj-13",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.menu.maxpat",
+					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
@@ -483,7 +483,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.remote.menu.maxpat",
+				"name" : "bs.ossia.remote.select.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/menu",
 				"patcherrelativepath" : "../../ossia/menu",
 				"type" : "JSON",

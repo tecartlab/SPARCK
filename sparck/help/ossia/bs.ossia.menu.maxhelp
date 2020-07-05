@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 199.0, 914.0, 667.0 ],
+		"rect" : [ 45.0, 168.0, 914.0, 667.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,16 +37,89 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-11",
+					"id" : "obj-22",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 327.0, 187.0, 128.0, 60.0 ],
+					"text" : "@clip both\nwill enforce the value has to be one from range "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 174.0, 148.0, 52.0, 22.0 ],
-					"presentation_linecount" : 3,
-					"text" : "gestrum"
+					"patching_rect" : [ 39.0, 144.0, 31.0, 22.0 ],
+					"text" : "Uno"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 292.0, 42.0, 150.0, 74.0 ],
+					"text" : "enableitem (for each item a 0. or 1. to indicate it should be selectable, all together without spaces. e.g. 0.0.0.1.1.1.0.0.)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 39.0, 14.0, 31.0, 22.0 ],
+					"text" : "One"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 267.0, 14.0, 131.0, 22.0 ],
+					"text" : "enableitem 0.0.1.0.0.0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 39.0, 110.0, 50.0, 22.0 ],
+					"text" : "Two"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"linecount" : 3,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 39.0, 46.5, 247.0, 49.0 ],
+					"text" : "bs.ossia.parameter.menu menu @default Zero @description \"lens type\" @range Zero Uno Due Tre <separator> One Two Three"
 				}
 
 			}
@@ -57,7 +130,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 134.0, 148.0, 29.5, 22.0 ],
+					"patching_rect" : [ 76.75, 144.0, 29.5, 22.0 ],
 					"text" : "fov"
 				}
 
@@ -70,7 +143,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 134.0, 275.0, 50.0, 22.0 ]
+					"patching_rect" : [ 41.5, 275.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -81,7 +154,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 663.0, 306.0, 237.0, 114.0 ],
+					"patching_rect" : [ 696.0, 306.0, 237.0, 114.0 ],
 					"text" : "my_model \nmenuint\n@type int\n@text lens \n@hint \"load model file\" \n@size 150 19 \n@items fov fristum gestrum guntrum fov_ortho frustum_ortho"
 				}
 
@@ -94,7 +167,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 449.0, 348.0, 50.0, 22.0 ]
+					"patching_rect" : [ 482.0, 348.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -105,7 +178,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 540.5, 348.0, 110.0, 22.0 ],
+					"patching_rect" : [ 573.5, 348.0, 110.0, 22.0 ],
 					"text" : "fov"
 				}
 
@@ -122,11 +195,11 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int", "", "" ],
-					"patching_rect" : [ 449.0, 310.0, 202.0, 21.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 482.0, 310.0, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -138,8 +211,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 53.0, 334.0, 100.0, 22.0 ],
-					"text" : "0"
+					"patching_rect" : [ 41.5, 334.0, 100.0, 22.0 ],
+					"text" : "1"
 				}
 
 			}
@@ -151,20 +224,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 134.0, 301.0, 195.0, 22.0 ],
+					"patching_rect" : [ 41.5, 301.0, 195.0, 22.0 ],
 					"text" : "ossia.parameter menuint @type int"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 460.0, 80.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -175,7 +236,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 669.0, 42.0, 185.0, 74.0 ],
+					"patching_rect" : [ 702.0, 42.0, 185.0, 74.0 ],
 					"text" : "my_model \nmenu \n@text lens \n@size 150 19\n@hint \"load model file\""
 				}
 
@@ -187,8 +248,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 551.5, 80.0, 110.0, 22.0 ],
-					"text" : "fov_ortho"
+					"patching_rect" : [ 489.5, 81.0, 110.0, 22.0 ],
+					"text" : "Two"
 				}
 
 			}
@@ -204,11 +265,11 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int", "", "" ],
-					"patching_rect" : [ 460.0, 42.0, 202.0, 21.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 482.0, 42.0, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -220,8 +281,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 76.0, 233.0, 77.0, 22.0 ],
-					"text" : "fov"
+					"patching_rect" : [ 39.0, 251.0, 77.0, 22.0 ],
+					"text" : "Tre"
 				}
 
 			}
@@ -229,13 +290,13 @@
 				"box" : 				{
 					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 					"id" : "obj-15",
-					"linecount" : 2,
+					"linecount" : 4,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 134.0, 187.0, 203.0, 35.0 ],
-					"text" : "ossia.parameter menustring @type string @description \"lense string\""
+					"patching_rect" : [ 39.0, 179.0, 281.0, 62.0 ],
+					"text" : "ossia.parameter menustring @type string @description \"lens string\" @default One @range Zero Uno Due Tre <separator> One Two Three @tags enableitem_1.1.1.1.0.0.0.0. @clip both"
 				}
 
 			}
@@ -246,20 +307,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 663.0, 183.0, 237.0, 114.0 ],
+					"patching_rect" : [ 696.0, 183.0, 237.0, 114.0 ],
 					"text" : "my_model \nmenustring \n@type string\n@text lens \n@hint \"load model file\" \n@size 150 19 \n@items fov fristum gestrum guntrum fov_ortho frustum_ortho"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-23",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 449.0, 225.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -270,14 +319,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 540.5, 225.0, 110.0, 22.0 ],
-					"text" : "fov"
+					"patching_rect" : [ 482.0, 229.0, 110.0, 22.0 ],
+					"text" : "Tre"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "my_model", "menustring", "@type", "string", "@text", "lens", "@hint", "load model file", "@size", 150, 19, "@items", "fov", "fristum", "gestrum", "guntrum", "fov_ortho", "frustum_ortho" ],
+					"args" : [ "my_model", "menustring", "@type", "string", "@text", "lens", "@hint", "load model file", "@size", 150, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -287,36 +336,12 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int", "", "" ],
-					"patching_rect" : [ 449.0, 187.0, 202.0, 21.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 482.0, 187.0, 218.0, 22.0 ],
 					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-20",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 50.0, 81.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 143.041686999999996, 81.0, 112.041686999999996, 22.0 ],
-					"text" : "fov"
 				}
 
 			}
@@ -359,8 +384,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -393,6 +418,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-3",
@@ -774,43 +800,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-2",
-					"linecount" : 9,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 266.0, 43.0, 160.0, 127.0 ],
-					"text" : "menu \n@text lens \n@hint \"lens type\" \n@default fov \n@description \"lens type\" \n@size 150 19\n@items fov fristum gestrum guntrum fov_ortho frustum_ortho"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "menu", "@text", "lens", "@hint", "lens type", "@default", "fov", "@description", "lens type", "@size", 150, 19, "@items", "fov", "frastum", "gestrum", "guntrum", "fov_ortho", "frustum_ortho" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"hint" : "",
-					"id" : "obj-99",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.parameter.menu.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 3,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int", "", "" ],
-					"patching_rect" : [ 50.0, 43.0, 205.083373999999992, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 36.0, 34.0, 145.0, 21.0 ],
-					"varname" : "model",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-28",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -841,15 +830,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"source" : [ "obj-11", 0 ]
+					"destination" : [ "obj-27", 1 ],
+					"source" : [ "obj-15", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-27", 1 ],
-					"source" : [ "obj-15", 0 ]
+					"destination" : [ "obj-3", 1 ],
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -862,15 +851,22 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
-					"source" : [ "obj-25", 0 ]
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 1 ],
-					"source" : [ "obj-25", 1 ]
+					"source" : [ "obj-25", 0 ]
 				}
 
 			}
@@ -878,6 +874,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 1 ],
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -912,13 +915,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
-					"source" : [ "obj-5", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -944,32 +940,11 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-16", 1 ],
-					"source" : [ "obj-99", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"source" : [ "obj-99", 0 ]
-				}
-
-			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.ossia.parameter.menu.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/parameter",
-				"patcherrelativepath" : "../../patchers/ossia/parameter",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.ossia.remote.menu.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../patchers/ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/menu",
+				"patcherrelativepath" : "../../patchers/ossia/menu",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -981,8 +956,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
+				"name" : "bs.ossia.parameter.menu.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/menu",
+				"patcherrelativepath" : "../../patchers/ossia/menu",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ossia.device.mxo",
@@ -990,6 +968,10 @@
 			}
 , 			{
 				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.parameter.mxo",
 				"type" : "iLaX"
 			}
  ],

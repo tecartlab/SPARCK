@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 282.0, 173.0, 929.0, 619.0 ],
+		"rect" : [ 99.0, 247.0, 929.0, 619.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -47,28 +47,6 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 476.0, 109.0, 53.0, 20.0 ],
 					"text" : "print reset"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-20",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 476.0, 451.0, 59.0, 20.0 ],
-					"text" : "print export"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 640.0, 459.0, 62.0, 20.0 ],
-					"text" : "print display"
 				}
 
 			}
@@ -188,7 +166,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 242.625, 190.333373999999992, 112.0, 89.0 ],
+									"patching_rect" : [ 242.625, 190.333373999999992, 115.0, 89.0 ],
 									"text" : "ossia.parameter interact @type bool @default 0 @description tpublishes an interactive camera"
 								}
 
@@ -197,12 +175,12 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-33",
-									"linecount" : 11,
+									"linecount" : 10,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 170.097381999999925, 17.025878999999975, 136.0, 156.0 ],
+									"patching_rect" : [ 170.097381999999925, 17.025878999999975, 138.0, 143.0 ],
 									"text" : "ossia.parameter antialias @type bool @default 0 @description \"takes the vertical sync frequency of the use antialias. This has only an effect if you are using NOT the default mesh inside the linked ViewPort Nodes\""
 								}
 
@@ -211,12 +189,12 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-31",
-									"linecount" : 11,
+									"linecount" : 10,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 15.833313000000061, 17.025878999999975, 132.999999999999943, 156.0 ],
+									"patching_rect" : [ 15.833313000000061, 17.025878999999975, 136.0, 143.0 ],
 									"text" : "ossia.parameter vsync @type bool @default 0 @description \"takes the vertical sync frequency of the output device this window is displayed on and synchronizes it with the main metro. Only one window should use this feature \""
 								}
 
@@ -230,7 +208,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 341.125, 17.025878999999975, 96.0, 129.0 ],
+									"patching_rect" : [ 341.125, 17.025878999999975, 98.0, 129.0 ],
 									"text" : "ossia.parameter desktop/floating @type bool @default 0 @description \"window is floating when in position mode desktop\""
 								}
 
@@ -2594,7 +2572,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.5, 288.0, 113.0, 35.0 ],
-									"text" : "to_texture u264010957"
+									"text" : "to_texture u518002404"
 								}
 
 							}
@@ -2613,13 +2591,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-14",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 178.5, 391.0, 835.0, 35.0 ],
-									"text" : "exportimage MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_export/_textures/Window.png png"
+									"text" : "exportimage /_export/_textures/Window.png png"
 								}
 
 							}
@@ -3106,16 +3083,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"order" : 0,
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-92", 0 ],
-					"order" : 1,
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -3352,16 +3320,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"order" : 1,
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"order" : 0,
 					"source" : [ "obj-6", 0 ]
 				}
 
