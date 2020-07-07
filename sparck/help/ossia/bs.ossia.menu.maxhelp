@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 45.0, 168.0, 914.0, 667.0 ],
+		"rect" : [ 45.0, 168.0, 1078.0, 667.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,37 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-21",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 327.0, 125.0, 204.0, 47.0 ],
+					"text" : "using <seperator> as an element inside @range will render a sparator line inside the menu."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 331.0, 179.0, 230.0, 60.0 ],
+					"text" : "enableitem can also directly written into the @tags attribute, where all spaces need to replaced with '_', e.g. enableitem_0_0_0_1_1_1_0_0"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-22",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 327.0, 187.0, 128.0, 60.0 ],
-					"text" : "@clip both\nwill enforce the value has to be one from range "
+					"patching_rect" : [ 327.0, 251.0, 225.0, 60.0 ],
+					"text" : "@clip both\n\nwill enforce the value has to be one from @range "
 				}
 
 			}
@@ -69,8 +93,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 292.0, 42.0, 150.0, 74.0 ],
-					"text" : "enableitem (for each item a 0. or 1. to indicate it should be selectable, all together without spaces. e.g. 0.0.0.1.1.1.0.0.)"
+					"patching_rect" : [ 327.0, 43.0, 209.0, 74.0 ],
+					"text" : "enableitem and a list with numbers (0 or 1) where each item correspondes to a element inside @range to indicate if it should be selectable, e.g. enableitem 0 0 0 1 1 1 0 0"
 				}
 
 			}
@@ -93,8 +117,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 267.0, 14.0, 131.0, 22.0 ],
-					"text" : "enableitem 0.0.1.0.0.0."
+					"patching_rect" : [ 267.0, 14.0, 127.0, 22.0 ],
+					"text" : "enableitem 0 0 1 0 0 0"
 				}
 
 			}
@@ -106,7 +130,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 39.0, 110.0, 50.0, 22.0 ],
-					"text" : "Two"
+					"text" : "Zero"
 				}
 
 			}
@@ -154,7 +178,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 696.0, 306.0, 237.0, 114.0 ],
+					"patching_rect" : [ 838.0, 310.5, 237.0, 114.0 ],
 					"text" : "my_model \nmenuint\n@type int\n@text lens \n@hint \"load model file\" \n@size 150 19 \n@items fov fristum gestrum guntrum fov_ortho frustum_ortho"
 				}
 
@@ -167,7 +191,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 482.0, 348.0, 50.0, 22.0 ]
+					"patching_rect" : [ 624.0, 352.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -178,7 +202,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 573.5, 348.0, 110.0, 22.0 ],
+					"patching_rect" : [ 715.5, 352.5, 110.0, 22.0 ],
 					"text" : "fov"
 				}
 
@@ -199,7 +223,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 482.0, 310.0, 218.0, 22.0 ],
+					"patching_rect" : [ 624.0, 314.5, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -236,7 +260,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 702.0, 42.0, 185.0, 74.0 ],
+					"patching_rect" : [ 844.0, 46.5, 185.0, 74.0 ],
 					"text" : "my_model \nmenu \n@text lens \n@size 150 19\n@hint \"load model file\""
 				}
 
@@ -248,8 +272,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 489.5, 81.0, 110.0, 22.0 ],
-					"text" : "Two"
+					"patching_rect" : [ 631.5, 85.5, 110.0, 22.0 ],
+					"text" : "Zero"
 				}
 
 			}
@@ -269,7 +293,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 482.0, 42.0, 218.0, 22.0 ],
+					"patching_rect" : [ 624.0, 46.5, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -282,7 +306,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 39.0, 251.0, 77.0, 22.0 ],
-					"text" : "Tre"
+					"text" : "One"
 				}
 
 			}
@@ -295,8 +319,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 39.0, 179.0, 281.0, 62.0 ],
-					"text" : "ossia.parameter menustring @type string @description \"lens string\" @default One @range Zero Uno Due Tre <separator> One Two Three @tags enableitem_1.1.1.1.0.0.0.0. @clip both"
+					"patching_rect" : [ 39.0, 179.0, 284.0, 62.0 ],
+					"text" : "ossia.parameter menustring @type string @description \"lens string\" @default One @range Zero Uno Due Tre <separator> One Two Three @tags enableitem_1_1_1_1_0_0_0_0 @clip both"
 				}
 
 			}
@@ -307,7 +331,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 696.0, 183.0, 237.0, 114.0 ],
+					"patching_rect" : [ 838.0, 187.5, 237.0, 114.0 ],
 					"text" : "my_model \nmenustring \n@type string\n@text lens \n@hint \"load model file\" \n@size 150 19 \n@items fov fristum gestrum guntrum fov_ortho frustum_ortho"
 				}
 
@@ -319,8 +343,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 482.0, 229.0, 110.0, 22.0 ],
-					"text" : "Tre"
+					"patching_rect" : [ 624.0, 233.5, 110.0, 22.0 ],
+					"text" : "One"
 				}
 
 			}
@@ -340,7 +364,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 482.0, 187.0, 218.0, 22.0 ],
+					"patching_rect" : [ 624.0, 191.5, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
