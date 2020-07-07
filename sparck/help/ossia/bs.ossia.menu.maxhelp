@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 45.0, 168.0, 1078.0, 667.0 ],
+		"rect" : [ 49.0, 129.0, 1004.0, 667.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,60 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-37",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 502.0, 333.5, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 76.75, 14.0, 33.0, 22.0 ],
+					"text" : "Zero"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 690.0, 116.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 153.0, 110.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-21",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 327.0, 125.0, 204.0, 47.0 ],
+					"patching_rect" : [ 327.0, 125.0, 205.0, 47.0 ],
 					"text" : "using <seperator> as an element inside @range will render a sparator line inside the menu."
 				}
 
@@ -64,12 +112,13 @@
 			}
 , 			{
 				"box" : 				{
+					"hint" : "custom hint",
 					"id" : "obj-22",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 327.0, 251.0, 225.0, 60.0 ],
+					"patching_rect" : [ 327.0, 251.0, 227.0, 60.0 ],
 					"text" : "@clip both\n\nwill enforce the value has to be one from @range "
 				}
 
@@ -93,7 +142,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 327.0, 43.0, 209.0, 74.0 ],
+					"patching_rect" : [ 327.0, 43.0, 211.0, 74.0 ],
 					"text" : "enableitem and a list with numbers (0 or 1) where each item correspondes to a element inside @range to indicate if it should be selectable, e.g. enableitem 0 0 0 1 1 1 0 0"
 				}
 
@@ -130,7 +179,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 39.0, 110.0, 50.0, 22.0 ],
-					"text" : "Zero"
+					"text" : "Tre"
 				}
 
 			}
@@ -140,8 +189,8 @@
 					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "int", "" ],
 					"patching_rect" : [ 39.0, 46.5, 247.0, 49.0 ],
 					"text" : "bs.ossia.parameter.menu menu @default Zero @description \"lens type\" @range Zero Uno Due Tre <separator> One Two Three"
 				}
@@ -191,7 +240,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 624.0, 352.5, 50.0, 22.0 ]
+					"patching_rect" : [ 690.333333333333371, 398.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -202,8 +251,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 715.5, 352.5, 110.0, 22.0 ],
-					"text" : "fov"
+					"patching_rect" : [ 630.333333333333485, 356.5, 110.0, 22.0 ],
+					"text" : "0"
 				}
 
 			}
@@ -220,9 +269,9 @@
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
-					"numoutlets" : 3,
+					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "", "int", "", "" ],
 					"patching_rect" : [ 624.0, 314.5, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
@@ -236,7 +285,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 41.5, 334.0, 100.0, 22.0 ],
-					"text" : "1"
+					"text" : "0"
 				}
 
 			}
@@ -272,14 +321,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 631.5, 85.5, 110.0, 22.0 ],
-					"text" : "Zero"
+					"patching_rect" : [ 624.0, 85.5, 110.0, 22.0 ],
+					"text" : "Tre"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "my_model", "menu", "@text", "lens", "@hint", "load model file", "@size", 150, 19 ],
+					"args" : [ "my_model", "menu", "@text", "lens", "@size", 150, 19, "@hint", "load model file" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -290,9 +339,9 @@
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
-					"numoutlets" : 3,
+					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "", "int", "", "" ],
 					"patching_rect" : [ 624.0, 46.5, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
@@ -361,9 +410,9 @@
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
-					"numoutlets" : 3,
+					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "", "int", "", "" ],
 					"patching_rect" : [ 624.0, 191.5, 218.0, 22.0 ],
 					"viewvisibility" : 1
 				}
@@ -903,6 +952,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-3", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-13", 1 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -918,14 +981,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-34", 0 ],
-					"source" : [ "obj-36", 0 ]
+					"source" : [ "obj-36", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-35", 1 ],
-					"source" : [ "obj-36", 1 ]
+					"source" : [ "obj-36", 0 ]
 				}
 
 			}
@@ -940,6 +1003,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
 					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-5", 1 ]
 				}
 
 			}
