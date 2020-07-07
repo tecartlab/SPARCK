@@ -3481,7 +3481,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 570.0, 148.0, 765.0, 635.0 ],
+										"rect" : [ 378.0, 178.0, 765.0, 635.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3650,7 +3650,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 559.285714285714221, 427.5, 185.0, 49.0 ],
-													"text" : "ossia.parameter #1 @type string @critical 1 @priority 2 @default select...."
+													"text" : "ossia.parameter #1 @type string @critical 1 @priority 1 @default select...."
 												}
 
 											}

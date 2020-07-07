@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 514.0, 117.0, 798.0, 480.0 ],
+		"rect" : [ 514.0, 117.0, 627.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,32 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
+					"id" : "obj-15",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 500.0, 353.18408203125, 284.0, 62.0 ],
+					"presentation_linecount" : 4,
+					"text" : "ossia.parameter menustring @type string @description \"lens string\" @default One @range Zero Uno Due Tre <separator> One Two Three @tags enableitem_1_1_1_1_0_0_0_0 @clip both"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 500.0, 420.18408203125, 135.0, 22.0 ],
+					"text" : "bs.ossia.menu.maxhelp"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"args" : [ "modelfile", "@pathstyle", "native", "@pathtype", "boot", "@cmdRead", "read", "@cmdSaveAs", "saveAs", "@cmdSave", "save", "@fileExtension", "obj", "@relativePath", "_assets/_models", "@depth", 3, "@types", "J3dm", "J3ds", "Jac", "Jase", "Jb3d", "Jbvh", "Jcob", "Jcsm", "Jdae", "Jdxf", "Jhmp", "Jirm", "Jirr", "Jlwo", "Jlxo", "Jmd2", "Jmd3", "Jmd5", "Jmdc", "Jmdl", "Jmsd", "Jndo", "Jnff", "Jobj", "Joff", "Jogr", "Jpk3", "Jply", "Jq3d", "Jq3s", "Jraw", "Js8w", "Jscb", "Jsmd", "Jstl", "Jter", "Jvta", "Jxmd", "@readonly", 0, "@presentation_size", 124, 20, "@fontsize", 9, "@description", "read model file (or drag n' drop -> stored in ~/_assets/_models)", "@text", "model file", "@hint", "model file hint" ],
 					"bgmode" : 0,
@@ -69,7 +95,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 500.222198486328125, 290.0, 155.0, 22.0 ],
+					"patching_rect" : [ 500.0, 292.18408203125, 155.0, 22.0 ],
 					"text" : "bs.ossia.file.select.maxhelp"
 				}
 
@@ -84,7 +110,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 15.627685499999984, 156.184082031249943, 173.849120999999968, 76.0 ],
-					"presentation_linecount" : 5,
 					"text" : "ossia.parameter render/background/color @type rgba @default 0. 0. 0. 1. @description \"render background color\""
 				}
 
@@ -120,10 +145,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 500.222198486328125, 119.850646999999981, 222.0, 62.0 ],
+					"patching_rect" : [ 500.222198486328125, 119.850646999999981, 225.0, 62.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 10,
-					"presentation_rect" : [ 152.41668701171875, 126.0, 112.0, 143.0 ],
+					"presentation_rect" : [ 152.41668701171875, 126.0, 115.0, 143.0 ],
 					"text" : "bs.ossia.parameter.rendergroup.capture render/renderGroup \"capture everything from the selected render groups\" @drawto @drawto #0_id.left #0_id.right",
 					"varname" : "renderGroup"
 				}
@@ -139,7 +164,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 236.052245999999968, 215.184082031249943, 185.0, 76.0 ],
-					"presentation_linecount" : 6,
 					"text" : "ossia.parameter inherit/stereomode @type int @default 0 @description \"stereomode. inherits value from parent camera\" @invisible 1"
 				}
 
@@ -166,7 +190,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 23.052245999999968, 313.18408203125, 159.0, 129.0 ],
-					"presentation_linecount" : 9,
 					"text" : "ossia.parameter lens/optics @type string @default fov_perspective @range fov_perspective fov_orthografic frustum_perspective frustum_orthografic @description \"lens type\" @priority 1"
 				}
 
@@ -180,8 +203,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 15.627685499999984, 60.850646999999981, 173.849120999999968, 76.0 ],
-					"presentation_linecount" : 6,
+					"patching_rect" : [ 15.627685499999984, 60.850646999999981, 174.0, 76.0 ],
 					"text" : "ossia.parameter lens/adapt/usable @invisible 1 @type bool @default 0 @description \"adapt enable\" @priority 1"
 				}
 
@@ -196,7 +218,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 236.052245999999968, 136.070434999999975, 185.0, 62.0 ],
-					"presentation_linecount" : 7,
 					"text" : "ossia.parameter lens/frustum/bottom @type float @default -0.05 @description \"frustum bottom\" @priority 1"
 				}
 
@@ -211,7 +232,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 236.052245999999968, 60.850646999999981, 185.0, 62.0 ],
-					"presentation_linecount" : 4,
 					"text" : "ossia.parameter render/texture/dim/size @type vec2f @default 1920 1080 @description \"texture dimension\""
 				}
 
@@ -345,6 +365,27 @@
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.menu.maxhelp",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/help/ossia",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.menu.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/menu",
+				"patcherrelativepath" : "../../patchers/ossia/menu",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.parameter.menu.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/menu",
+				"patcherrelativepath" : "../../patchers/ossia/menu",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
