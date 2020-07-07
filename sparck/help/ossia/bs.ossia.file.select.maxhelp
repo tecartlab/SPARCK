@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 117.0, 895.0, 693.0 ],
+		"rect" : [ 81.0, 79.0, 895.0, 741.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 332.0, 104.0, 50.0, 49.0 ],
+					"text" : "07/LedStrip_3.obj"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"linecount" : 20,
 					"maxclass" : "comment",
@@ -52,7 +65,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "node", "modelfile", "file", "@hint", "load model file" ],
+					"args" : [ "node", "modelfile", "@text", "file", "@size", 179, 19, "@hint", "load model file" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -62,10 +75,11 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.file.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numinlets" : 3,
+					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 299.0, 42.0, 202.0, 21.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 299.0, 42.0, 240.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -79,7 +93,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 50.0, 77.0, 190.0, 89.0 ],
-					"text" : "read /Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/_testing/debugging/NewCalibration/_assets/_models/Beamer_1.obj"
+					"text" : "read /Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_assets/_models/07/LedStrip_3.obj"
 				}
 
 			}
@@ -583,6 +597,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 1 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}

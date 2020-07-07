@@ -242,6 +242,10 @@ function rate(_val){
     //post("rate : " + _val + "\n");
 }
 
+function tags(_tags){
+	//
+}
+
 function clip(_clip){
     //post("clip("+_clip+"): " + "sparck:/node/" + myNodeTitle + "/" + myParamAddress + " \n")
     myClip = _clip;
