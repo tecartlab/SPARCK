@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 462.5, 44.0, 69.0, 22.0 ],
+					"text" : "prepend uc"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -483,7 +495,7 @@
 				"box" : 				{
 					"comment" : "value to test for visibility condition",
 					"id" : "obj-6",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -496,7 +508,7 @@
 				"box" : 				{
 					"comment" : "interaction",
 					"id" : "obj-7",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -509,7 +521,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-5",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -521,7 +533,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -533,7 +545,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -545,7 +557,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -572,7 +584,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 336.0, 180.5, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 180.0, 20.0, 60.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 20.0, 60.0, 19.0 ],
 					"varname" : "posZ",
 					"viewvisibility" : 1
 				}
@@ -596,7 +608,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 240.074767999999949, 180.5, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 20.0, 60.0, 19.0 ],
+					"presentation_rect" : [ 60.0, 20.0, 60.0, 19.0 ],
 					"varname" : "posY",
 					"viewvisibility" : 1
 				}
@@ -620,7 +632,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 163.074767999999949, 180.403809000000024, 50.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 60.0, 20.0, 60.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 60.0, 19.0 ],
 					"varname" : "posX",
 					"viewvisibility" : 1
 				}
@@ -662,7 +674,7 @@
 					"patching_rect" : [ 23.000000000000057, 135.0, 60.0, 16.0 ],
 					"precision" : 4,
 					"presentation" : 1,
-					"presentation_rect" : [ 60.0, 0.0, 59.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 59.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"resetboxsize" : 0.0,
 					"textalignment" : 0,
@@ -677,6 +689,7 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
+					"hidden" : 1,
 					"hint" : "",
 					"id" : "obj-78",
 					"maxclass" : "comment",
@@ -692,6 +705,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 2 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"source" : [ "obj-10", 2 ]
@@ -855,7 +875,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 2 ],
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -875,6 +895,30 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "bs.ossia.remote.float.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "..",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icst.floatui.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{

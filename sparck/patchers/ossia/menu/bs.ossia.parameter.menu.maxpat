@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 27.0, 57.0, 94.0, 22.0 ],
+					"text" : "prepend symbol"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -531,7 +543,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "enableitem (for each item a 0. or 1. to indicat it should be selectable, all together without spaces. e.g. 0.0.0.1.1.1.0.0.)",
+					"comment" : "arguments",
 					"id" : "obj-5",
 					"index" : 0,
 					"maxclass" : "inlet",
@@ -659,6 +671,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"order" : 0,
 					"source" : [ "obj-2", 0 ]
@@ -689,7 +708,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
+					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
 

@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 472.305542000000059, 43.0, 69.0, 22.0 ],
+					"text" : "prepend uc"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "value to test for visibility condition",
 					"id" : "obj-9",
 					"index" : 0,
@@ -291,6 +303,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-20", 2 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -391,7 +410,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-20", 2 ],
+					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-9", 0 ]
 				}
 

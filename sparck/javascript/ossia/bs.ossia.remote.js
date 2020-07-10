@@ -47,6 +47,7 @@ var myCond_GTEQ = null;
 
 var myVisibility = true; // can be changed by the evaluation of the condition
 var myVisOverride = true; // visibility can also be overwritten by a message
+var myInvisibility = false; // the invisibility attribute set via parameter
 
 // patcher arguments
 if (jsarguments.length > 2){
@@ -79,7 +80,7 @@ function is(){
 
 function isnot(){
 	myCond_ISNOT = arrayfromargs(arguments);
-	myVisibility = false;
+	myVisibility = true;
 }
 
 function lt(_lt){
@@ -114,6 +115,7 @@ function done(){
     outlet(OUT_REMOTE, "get", "unit");
     outlet(OUT_REMOTE, "get", "description");
     outlet(OUT_REMOTE, "get", "clip");
+    outlet(OUT_REMOTE, "get", "invisible");
 
 	setVisibility();
 }
@@ -139,19 +141,24 @@ function anything(){
 	} else if(inlet == IN_INTER){
 		//post("IN_INTER message " + arrayfromargs(messagename,arguments) + " " + myVisibility + "\n");
 		// if it is an interaction message, send it to the GUI if visible
-		if(myVisibility && myVisOverride){
+		if(myVisibility && myVisOverride && !myInvisibility){
 			outlet(OUT_GUI, arrayfromargs(messagename,arguments));
 		} else { // or else pass it on
 			outlet(OUT_INTER, arrayfromargs(messagename,arguments));
 		}
-	} else if(inlet == IN_COND){
+	} 
+}
+
+function uc(){
+	//post("uc = " + arrayfromargs(arguments)  + "\n");
+	if(inlet == IN_COND){
 		// it is a condition
-		if(messagename == VISIBILITY_OVERRIDE){
-			myVisOverride = (arrayfromargs(arguments)[0] == 1)? true: false;
-			//post("myVisOverride = " + myVisOverride  + "\n");
+		args = arrayfromargs(arguments);
+		if(args[0] == VISIBILITY_OVERRIDE){
+			myVisOverride = (args[1] == 1)? true: false;
 			setVisibility();
 		} else {
-			updateCondition(messagename);
+			updateCondition(args[0]);
 		}
 	}
 }
@@ -166,6 +173,7 @@ function updateCondition(_cond){
 		}
 	} 
 	else if(myCond_ISNOT != null){
+		//post("myCond_ISNOT = " + myCond_ISNOT + "\n");
 		if(Array.isArray(myCond_ISNOT)){
 			myVisibility = (myCond_ISNOT.indexOf(_cond) == -1)?true: false;
 		} else {
@@ -192,7 +200,9 @@ function updateCondition(_cond){
 
 function setVisibility(){
 	//post("setVisibility " + myVisibility + "\n");
-	if(myVisibility && myVisOverride){	
+	
+	//post("myInvisibility " + myInvisibility + "\n");
+	if(myVisibility && myVisOverride && !myInvisibility){	
 		outlet(OUT_GUI, "hidden", 0);
 		if(myText == null){
 			outlet(OUT_TEXT, "hidden", 1);
@@ -233,6 +243,7 @@ function description(_desc){
 
 function priority(_clip){
 }
+
 
 function default(_val){
     //post("default: " + _val + "\n");
@@ -290,8 +301,10 @@ function address(){
     //ignore
 }
 
-function invisible(){
-    //ignore
+function invisible(_val){
+	myInvisibility = (_val == 1)?true:false;
+	setVisibility();
+//	post("myInvisibility (" + myParamAddress +")= " + myInvisibility + "\n");
 }
 
 function range(_rangeMin, _rangeMax){

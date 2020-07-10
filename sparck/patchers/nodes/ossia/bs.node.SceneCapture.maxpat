@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 215.0, 266.0, 885.0, 539.0 ],
+		"rect" : [ 157.0, 133.0, 885.0, 539.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -140,8 +140,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 64.302353000000039, 116.263549999999952, 155.0, 89.0 ],
-													"text" : "ossia.parameter inherit/stereomode @type int @default 0 @description \"stereomode. inherits value from parent camera\" @invisible 1"
+													"patching_rect" : [ 30.302353000000039, 116.263549999999952, 178.0, 89.0 ],
+													"text" : "ossia.parameter inherit/camera/stereomode @type int @default 0 @description \"stereomode. inherits value from parent camera\" @invisible 1"
 												}
 
 											}
@@ -153,7 +153,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 64.302353000000039, 249.052733999999987, 30.0, 30.0 ]
+													"patching_rect" : [ 30.302353000000039, 249.052733999999987, 30.0, 30.0 ]
 												}
 
 											}
@@ -166,7 +166,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 64.302353000000039, 39.0, 30.0, 30.0 ]
+													"patching_rect" : [ 30.302353000000039, 39.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -211,13 +211,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-83",
-													"linecount" : 5,
+													"linecount" : 6,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 244.302353000000039, 116.263549999999952, 160.0, 76.0 ],
-													"text" : "ossia.parameter inherit/type @type int @default 0 @description \"camera type. inherits value from parent camera\" @invisible 1"
+													"patching_rect" : [ 244.302353000000039, 116.263549999999952, 168.697646999999961, 89.0 ],
+													"text" : "ossia.parameter inherit/camera/type @type int @default 0 @description \"camera type. inherits value from parent camera\" @invisible 1"
 												}
 
 											}
@@ -5084,7 +5084,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 373.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u038002792"
+													"text" : "anim u035009573"
 												}
 
 											}
@@ -5180,7 +5180,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 186.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u528002751"
+													"text" : "anim u431009545"
 												}
 
 											}
@@ -5241,7 +5241,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 551.273192999999992, 281.197387999999989, 105.0, 22.0 ],
-													"text" : "anim u081002759"
+													"text" : "anim u215009517"
 												}
 
 											}
