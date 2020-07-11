@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 217.0, 79.0, 831.0, 454.0 ],
+		"rect" : [ 201.0, 192.0, 898.0, 333.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -437,6 +437,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 616.222045999999978, 99.5, 84.0, 22.0 ],
+									"text" : "prepend setall"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -506,7 +518,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 616.222045999999978, 48.850646999999981, 165.0, 62.0 ],
+									"patching_rect" : [ 616.222045999999978, 32.850647000000002, 165.0, 62.0 ],
 									"text" : "ossia.parameter mesh/wireframe/color @type rgba @default 1. 1. 1. 1. @description \"mesh color\""
 								}
 
@@ -528,7 +540,7 @@
 									"numoutlets" : 17,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 333.933777000000021, 20.850646999999981, 206.5, 23.0 ],
+									"patching_rect" : [ 333.933777000000021, 48.850646999999981, 206.5, 23.0 ],
 									"varname" : "shader",
 									"viewvisibility" : 1
 								}
@@ -677,7 +689,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 616.222045999999978, 163.140869000000009, 110.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 168.140869000000009, 110.0, 22.0 ],
 									"text" : "pack s f f f f"
 								}
 
@@ -689,7 +701,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "float", "float", "float", "float" ],
-									"patching_rect" : [ 616.222045999999978, 123.0, 110.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 128.0, 110.0, 22.0 ],
 									"text" : "unpack s f f f f"
 								}
 
@@ -860,7 +872,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
+									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-112", 0 ]
 								}
 
@@ -869,6 +881,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-29", 1 ],
 									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-14", 0 ]
 								}
 
 							}
@@ -1397,8 +1416,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 805.860961999999972, 131.5, 169.0, 89.0 ],
-									"text" : "ossia.parameter render/blend/enable @type bool @default 10@description \"Use alpha channel to blend with black background\""
+									"patching_rect" : [ 805.860961999999972, 131.5, 160.0, 89.0 ],
+									"text" : "ossia.parameter render/blend/enable @type bool @default 0 @description \"Use alpha channel to blend with black background\""
 								}
 
 							}
@@ -2453,7 +2472,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 2 ],
-					"midpoints" : [ 609.5, 272.0, 849.0, 272.0, 849.0, 134.0, 867.5, 134.0 ],
+					"midpoints" : [ 609.5, 272.0, 887.0, 272.0, 887.0, 134.0, 867.5, 134.0 ],
 					"source" : [ "obj-21", 2 ]
 				}
 

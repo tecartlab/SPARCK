@@ -40,6 +40,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "mesh/filewatch", "@size", 19, 19, "@is", "file" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-25",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.remote.toggle.maxpat",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 468.0, 212.0, 87.0, 18.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 220.0, 60.0, 22.0, 19.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "mesh/render", "@text", "mesh", "@usedisplaytext", 1, "@ondisplaytext", "render wireframe", "@offdisplaytext", "render flat", "@size", 179, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -56,7 +79,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 454.0, 200.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 240.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 260.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -79,7 +102,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 252.0, 485.0, 200.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 260.0, 242.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 280.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -102,7 +125,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 355.0, 428.0, 87.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 220.0, 87.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 240.0, 87.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -125,7 +148,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 428.0, 87.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 220.0, 87.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 240.0, 87.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -148,7 +171,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 318.0, 242.0, 99.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 120.0, 242.0, 99.0 ],
+					"presentation_rect" : [ 0.0, 140.0, 242.0, 99.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -183,30 +206,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 252.0, 236.0, 212.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 60.0, 240.0, 19.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#1", "mesh/filewatch", "@size", 19, 19, "@is", "file" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-25",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.toggle.maxpat",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 468.0, 212.0, 87.0, 18.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 220.0, 60.0, 22.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 80.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -229,7 +229,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 252.0, 261.0, 212.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 80.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 100.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -334,7 +334,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 252.0, 511.0, 200.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 180.0, 280.0, 62.0, 19.0 ],
+					"presentation_rect" : [ 180.0, 300.0, 62.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -357,7 +357,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 252.0, 288.0, 200.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 100.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 120.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -481,7 +481,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 0.0, 242.0, 304.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 304.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 327.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_unfolded"
 				}
@@ -652,13 +652,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.remote.toggle.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.ossia.remote.tfm.local.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
 				"patcherrelativepath" : "../../ossia/transforms",
@@ -683,6 +676,13 @@
 				"name" : "bs.ossia.remote.vec3f.XYZ.set.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
 				"patcherrelativepath" : "../../ossia/transforms",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.toggle.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
