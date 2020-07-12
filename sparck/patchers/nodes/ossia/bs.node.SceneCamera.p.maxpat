@@ -429,7 +429,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "tfm/parent", "@text", "parent", "@size", 179, 19 ],
+					"args" : [ "#1", "tfm/parent", "@text", "parent", "@size", 159, 19, "@menutype", "message" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -438,11 +438,11 @@
 					"id" : "obj-8",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.msg.maxpat",
+					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
-					"numoutlets" : 3,
+					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "", "int", "", "" ],
 					"patching_rect" : [ 278.0, 135.653809000000024, 201.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 20.0, 242.0, 19.0 ],
@@ -727,7 +727,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 2 ],
-					"order" : 0,
+					"order" : 6,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -735,7 +735,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 2 ],
-					"order" : 1,
+					"order" : 5,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -743,7 +743,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 2 ],
-					"order" : 2,
+					"order" : 4,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -759,7 +759,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 2 ],
-					"order" : 4,
+					"order" : 2,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -767,7 +767,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 2 ],
-					"order" : 5,
+					"order" : 1,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -775,7 +775,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 2 ],
-					"order" : 6,
+					"order" : 0,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -824,9 +824,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.remote.msg.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/msg",
-				"patcherrelativepath" : "../../ossia/msg",
+				"name" : "bs.ossia.remote.menu.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}

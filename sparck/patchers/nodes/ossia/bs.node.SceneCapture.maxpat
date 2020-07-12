@@ -358,13 +358,13 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-114",
-													"maxclass" : "message",
-													"numinlets" : 2,
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 37.150879000000032, 122.052734999999984, 88.0, 22.0 ],
-													"text" : "erase_color $1"
+													"patching_rect" : [ 37.150879000000032, 118.166015000000016, 119.0, 22.0 ],
+													"text" : "prepend erase_color"
 												}
 
 											}
@@ -487,6 +487,13 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-122", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-52", 0 ],
 													"source" : [ "obj-106", 0 ]
 												}
@@ -494,15 +501,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-114", 0 ],
+													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-112", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-122", 0 ],
-													"source" : [ "obj-114", 0 ]
 												}
 
 											}
@@ -2903,8 +2903,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 610.106505999999968, 40.263549999999952, 115.0, 89.0 ],
-													"text" : "ossia.parameter frustum/flip/vertical @type bool @default false @description \"flip frustom verticaly\""
+													"patching_rect" : [ 610.106505999999968, 40.263549999999952, 109.0, 89.0 ],
+													"text" : "ossia.parameter frustum/flip/vertical @type bool @default false @description \"flip frustum verticaly\""
 												}
 
 											}
@@ -2917,8 +2917,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 478.106505999999968, 40.263549999999952, 115.0, 89.0 ],
-													"text" : "ossia.parameter frustum/flip/horizontal @type bool @default false @description \"flip frustom horizontaly\""
+													"patching_rect" : [ 478.106505999999968, 40.263549999999952, 125.0, 89.0 ],
+													"text" : "ossia.parameter frustum/flip/horizontal @type bool @default false @description \"flip frustum horizontaly\""
 												}
 
 											}
@@ -5084,7 +5084,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 373.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u035009573"
+													"text" : "anim u827007296"
 												}
 
 											}
@@ -5180,7 +5180,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 186.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u431009545"
+													"text" : "anim u056007318"
 												}
 
 											}
@@ -5241,7 +5241,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 551.273192999999992, 281.197387999999989, 105.0, 22.0 ],
-													"text" : "anim u215009517"
+													"text" : "anim u504007354"
 												}
 
 											}
@@ -7854,9 +7854,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
-				"patcherrelativepath" : "../../../javascript/msg",
+				"name" : "bs.ossia.parameter.msg.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

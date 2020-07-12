@@ -323,21 +323,21 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-27",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 24.0, 1402.0, 172.0, 33.0 ],
+					"patching_rect" : [ 24.0, 1411.0, 172.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 539.0, 421.0, 172.0, 33.0 ],
-					"text" : "@size 149 19 (width - height)\n@hint \"hint over the text\""
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 539.0, 421.0, 172.0, 47.0 ],
+					"text" : "@menutype file\n@size 149 19 (width - height)\n@hint \"hint over the text\""
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "address/file", "@text", "set file", "@size", 149, 19, "@hint", "descr of file" ],
+					"args" : [ "#1", "address/file", "@text", "set file", "@size", 149, 19, "@hint", "descr of file", "@menutype", "file" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -346,12 +346,12 @@
 					"id" : "obj-26",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.file.maxpat",
+					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
-					"numoutlets" : 3,
+					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 24.0, 1381.0, 224.0, 19.0 ],
+					"outlettype" : [ "", "int", "", "" ],
+					"patching_rect" : [ 24.0, 1390.0, 231.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 539.0, 400.0, 243.0, 19.0 ],
 					"viewvisibility" : 1
@@ -361,21 +361,21 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-25",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 24.0, 1241.0, 150.0, 33.0 ],
+					"patching_rect" : [ 24.0, 1237.0, 150.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 539.0, 309.5, 150.0, 33.0 ],
-					"text" : "@hint \"hint over the text\"\n@size 149 19"
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 539.0, 309.5, 150.0, 47.0 ],
+					"text" : "@menutype default\n@hint \"hint over the text\"\n@size 149 19"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "address/menu", "@text", "menu", "@size", 149, 19 ],
+					"args" : [ "#1", "address/menu", "@text", "menu", "@size", 149, 19, "@menutype", "default" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -389,7 +389,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 24.0, 1214.5, 212.0, 19.0 ],
+					"patching_rect" : [ 24.0, 1212.5, 212.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 539.0, 288.5, 243.0, 19.0 ],
 					"viewvisibility" : 1
@@ -399,21 +399,21 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-22",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 24.0, 1325.0, 172.0, 33.0 ],
+					"patching_rect" : [ 24.0, 1325.0, 172.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 539.0, 250.5, 172.0, 33.0 ],
-					"text" : "@size 149 19 (width - height)\n@hint \"hint over the text\""
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 539.0, 250.5, 172.0, 47.0 ],
+					"text" : "@menutype message\n@size 149 19 (width - height)\n@hint \"hint over the text\""
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "address/message", "@text", "message", "@size", 149, 19, "@hint", "select a selection" ],
+					"args" : [ "#1", "address/message", "@text", "message", "@size", 149, 19, "@hint", "select a selection", "@menutype", "message" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -422,12 +422,12 @@
 					"id" : "obj-21",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.msg.maxpat",
+					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
-					"numoutlets" : 3,
+					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 24.0, 1301.0, 212.0, 19.0 ],
+					"outlettype" : [ "", "int", "", "" ],
+					"patching_rect" : [ 24.0, 1301.0, 231.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 539.0, 234.0, 243.0, 19.0 ],
 					"viewvisibility" : 1
@@ -808,7 +808,7 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 9.5, 1209.574676499999896, 272.0, 76.850647000000208 ],
+					"patching_rect" : [ 9.5, 1207.574676499999896, 272.0, 76.850647000000208 ],
 					"proportion" : 0.5
 				}
 
@@ -823,7 +823,7 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 9.5, 1289.574676499999896, 272.0, 76.850647000000208 ],
+					"patching_rect" : [ 9.5, 1289.574676499999896, 272.0, 87.850647000000208 ],
 					"proportion" : 0.5
 				}
 
@@ -838,7 +838,7 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 9.5, 1370.574676499999896, 272.0, 76.850647000000208 ],
+					"patching_rect" : [ 9.5, 1379.574676499999896, 272.5, 82.925323500000104 ],
 					"proportion" : 0.5
 				}
 
@@ -1015,9 +1015,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.remote.msg.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/msg",
-				"patcherrelativepath" : "../../patchers/ossia/msg",
+				"name" : "bs.ossia.remote.menu.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../../patchers/ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1025,20 +1025,6 @@
 				"name" : "bs.gui.svg.button.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
 				"patcherrelativepath" : "../../patchers/gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.menu.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/menu",
-				"patcherrelativepath" : "../../patchers/ossia/menu",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.file.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/file",
-				"patcherrelativepath" : "../../patchers/ossia/file",
 				"type" : "JSON",
 				"implicit" : 1
 			}
