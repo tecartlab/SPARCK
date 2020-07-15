@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 458.0, 395.0, 398.0, 414.0 ],
+		"rect" : [ 159.0, 415.0, 398.0, 414.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -212,7 +212,6 @@
 					"presentation_rect" : [ 21.0, 3.0, 158.0, 16.0 ],
 					"rounded" : 4.0,
 					"tabmode" : 0,
-					"text" : "Beamer",
 					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"varname" : "vpl_titleEdit",
 					"wordwrap" : 0
@@ -712,7 +711,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 38.0, 63.666626000000008, 74.0, 22.0 ],
+					"patching_rect" : [ 70.0, 63.666626000000008, 74.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -773,7 +772,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"midpoints" : [ 47.5, 366.5, 25.5, 366.5, 25.5, 191.0, 179.5, 191.0 ],
+					"midpoints" : [ 47.5, 366.5, 25.5, 366.5, 25.5, 194.0, 179.5, 194.0 ],
 					"source" : [ "obj-10", 0 ]
 				}
 

@@ -167,12 +167,11 @@ function done(){
 function title(_title){
 	dpost("received title change= " + _title + "\n");
 	//post("pops:title() = " + _title + "\n");
-    
+   
 	if(myNodeTitle != null){
 		clearMyWindowDict();
 	}
 	myNodeTitle = _title;
-	
 	myWindowDBName = "bs_gui_win_" + myNodeTitle;
 	if(myPrefix != null)
  		myWindowDBName += "_" + myPrefix;
@@ -183,14 +182,13 @@ function title(_title){
 
 	//post("title() myStoreDBName = " + myStoreDBName + "\n");
 
-	refresh();
-
 	myWindowTitle = "";
 	myWindowTitle = _title;
-	if(myType != null)
+	if(myType != null){
 		myWindowTitle = myWindowTitle;
 //		myWindowTitle = myWindowTitle + " (" + myType + ")";
-	
+	}
+
 	outlet(OUTLET_THISPATCHER, "title", myWindowTitle);
 	outlet(OUTLET_MENU, "title", myWindowTitle);
 }
@@ -315,8 +313,9 @@ function loadMyWindowDict(){
 
 function saveMyWindowDict(){
 	if(useWindowManagement){
-		if(myWindowDict == null)
+		if(myWindowDict == null){
 			myWindowDict = new Dict(myWindowDBName);
+		}
 
 		//post("winpops: saveMyWindowDict(): " + myWindowDBName + " \n");
 			
@@ -326,10 +325,11 @@ function saveMyWindowDict(){
 		myWindowDict.set("_type", myType);
 		myWindowDict.set("_slotsize", myCollapsedHeight);
 
-		if(myEstateDB.contains(myWindowDBName))
+		if(myEstateDB.contains(myWindowDBName)){
 			myEstateDB.replace(myWindowDBName, myWindowDict);
-		else
+		} else {
 			myEstateDB.set(myWindowDBName, myWindowDict);
+		}
 	}
 //	post("winpops: saveMyWindowDict(): done \n");
 }
