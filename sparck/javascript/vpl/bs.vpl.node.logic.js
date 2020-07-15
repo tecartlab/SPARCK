@@ -78,7 +78,7 @@ var myNodeColorOn = new Array(1.0, 0.65, 0.0, 1.);
 var myNodeColorOff = new Array(0.7, 0.7, 0.7, 0.8);
 var myNodeColorSelected = new Array(0.0, 0.0, 0.0, 0.3);
 var myNodeColorUnSelected = new Array(0.0, 0.0, 0.0, 0.8);
-var myNodeEnable = null;
+var myNodeEnable = 0;
 var myNodeSelected = 0;
 
 var myNodeEnableProperties = 0;
@@ -142,7 +142,6 @@ function enable_properties(_enable){
 function help(val){
     myNodeEnableHelp = 1;
 	myNodeHelp = val;
-    vpl_titleBar.message("hint", "NodeType: " + myNodeHelp);
 }
 
 function done(){
@@ -246,6 +245,7 @@ function initNode(){
 		}
 		if(this.patcher.getnamed("vpl_titleBar") != null){
 			vpl_titleBar = this.patcher.getnamed("vpl_titleBar");
+			vpl_titleBar.message("hint", "NodeType: " + myNodeHelp);
 			//post(" has vpl_titleBar...\n");
 		}
         // tries to find a canvas object with the name "vpl_canvas"
@@ -402,7 +402,7 @@ function nodeid(_nodeid){
     myNodeID = _nodeid;
     myNodeTitle = _nodeid;
     dpost("My nodeid is set: '" + _nodeid + "'\n");
-	outlet(3, "nodeid", _nodeid);
+	outlet(OUTLET_DUMP, "nodeid", _nodeid);
 }
 
 // called by the menu
@@ -440,9 +440,9 @@ function title(newtitle){
     messnamed(myNodeID + "::props", "title", myNodeTitle);
     messnamed(myNodeID + "::props", "address", myNodeAddress);
     messnamed(myNodeID + "::pbody", "address", myNodeTitle, myNodeAddress);
-	outlet(3, "setmsgtitle", newtitle);
-	outlet(3, "title", newtitle);
-	outlet(3, "address", myNodeAddress);
+	outlet(OUTLET_DUMP, "setmsgtitle", newtitle);
+	outlet(OUTLET_DUMP, "title", newtitle);
+	outlet(OUTLET_DUMP, "address", myNodeAddress);
 }
 
 function color(red, green, blue, alpha){
@@ -464,7 +464,7 @@ function enable(_enable){
 		myNodeEnable = _enable;
 		myNodeSelected = 0;
 		setGUIColors();
-		outlet(3, "enable", _enable);
+		outlet(OUTLET_DUMP, "enable", _enable);
 		// for good measure, set the toogle
 		outlet(1, "set", _enable);
 	}
@@ -560,7 +560,6 @@ function applydrag(diffX, diffY){
 }
 
 function openworkspace(){
-	//outlet(3, "_control", "openproperties");
 	if(vpl_nodeBox.patcher != null){
 		vpl_nodeBox.patcher.message("front");
     }
@@ -573,7 +572,7 @@ function dispose(){
 //	initNode();
 	dpost("dispose function called\n");
     enable(0); // sends enable 0 messages...
-	outlet(3, "dispose");
+	outlet(OUTLET_DUMP, "dispose");
 
     if(vpl_nodePatcher != 0){
         // calls the parent patcher to dispose this node.

@@ -57,6 +57,7 @@ public class Jay3DeeModel extends MaxObject {
 			setmodelname(args[0].toString());
 		}
 		declareAttribute("file", "getfilepath", "read");
+		declareAttribute("modelname", null, "setmodelname");
 	}
 
 	public void setmodelname(String _modelname){

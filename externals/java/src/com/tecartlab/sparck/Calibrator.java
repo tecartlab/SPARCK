@@ -116,6 +116,7 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 
 		declareIO(1,3);
 		declareAttribute("objectname", null, "setobjectname");
+		declareAttribute("trackername", null, "settrackername");
 		this.setOutletAssist(OUTLET_SKETCH, "sketch draw data");
 		isEnabled = false;
 	}
@@ -145,8 +146,8 @@ public class Calibrator extends MaxObject implements ProjProps.Listener{
 	 * @param _uniq
 	 */
 	public void nodeid(String _nodeid){
-		settrackername(_nodeid + ".Tracker");
-		setobjectname(_nodeid + ".Obj.Editor");
+		settrackername(_nodeid + ".tracker");
+		setobjectname(_nodeid + ".obj.editor");
 	}
 
 	/**

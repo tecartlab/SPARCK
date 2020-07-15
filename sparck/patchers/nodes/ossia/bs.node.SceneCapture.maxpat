@@ -1008,15 +1008,15 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-82",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 0,
 													"patching_rect" : [ 32.0, 442.166014570312541, 417.6666259765625, 35.0 ],
 													"presentation" : 1,
-													"presentation_linecount" : 12,
+													"presentation_linecount" : 11,
 													"presentation_rect" : [ 47.41668701171875, 21.0, 100.0, 156.0 ],
-													"text" : "bs.ossia.parameter.rendergroup.capture render/renderGroup \"capture everything from the selected render groups\" @drawto @drawto #0_id.left #0_id.right",
+													"text" : "bs.ossia.parameter.rendergroup.capture render/renderGroup \"capture everything from the selected render groups\" @drawto #0_id.left #0_id.right",
 													"varname" : "renderGroup"
 												}
 
@@ -5084,7 +5084,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 373.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u827007296"
+													"text" : "anim u114011842"
 												}
 
 											}
@@ -5180,7 +5180,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 186.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u056007318"
+													"text" : "anim u589008412"
 												}
 
 											}
@@ -5241,7 +5241,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 551.273192999999992, 281.197387999999989, 105.0, 22.0 ],
-													"text" : "anim u504007354"
+													"text" : "anim u894009391"
 												}
 
 											}

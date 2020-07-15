@@ -112,7 +112,9 @@ function done(){
 			myClientCanvas = this.patcher.box.patcher.getnamed("vpl_canvas");
 			if(myClientCanvas != null){
  				mySize = new Array(myClientCanvas.rect[2], myClientCanvas.rect[3]);	
-            }
+            } else {
+				post("cant find myClientCanvas\n");
+			}
 
             var myClientProperties = this.patcher.box.patcher.getnamed("vpl_properties");
             if(myClientProperties != null){

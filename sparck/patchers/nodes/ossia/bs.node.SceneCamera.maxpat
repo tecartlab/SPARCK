@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 431.0, 136.0, 461.0, 670.0 ],
+		"rect" : [ 295.0, 136.0, 939.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -110,7 +110,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 784.921996999999919, 544.254638999999997, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 186.0, 26.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 166.0, 26.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[2/2]",
 					"viewvisibility" : 1
 				}
@@ -3021,9 +3021,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
-				"patcherrelativepath" : "../../../javascript/msg",
+				"name" : "bs.ossia.parameter.msg.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
