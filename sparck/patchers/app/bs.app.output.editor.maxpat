@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 83.0, 259.0, 752.0, 413.0 ],
+		"rect" : [ 80.0, 405.0, 752.0, 413.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-28",
@@ -94,17 +95,6 @@
 					"outlettype" : [ "", "", "", "", "" ],
 					"patching_rect" : [ 385.435181, 335.0, 162.0, 20.0 ],
 					"text" : "bs.app.contexter bs::app::rc::editor"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-24",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 207.0, 317.5, 87.0, 20.0 ],
-					"text" : "print enableEditor"
 				}
 
 			}
@@ -305,7 +295,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -338,6 +328,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-11",
@@ -499,14 +490,14 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 147.333373999999992, 28.0, 58.0, 22.0 ],
 									"restore" : 									{
-										"lowerRightX" : [ 0 ],
+										"lowerRightX" : [ 1 ],
 										"lowerRightY" : [ 1 ],
 										"upperLeftX" : [ 0 ],
 										"upperLeftY" : [ 0 ]
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u320005301"
+									"varname" : "u682017227"
 								}
 
 							}
@@ -846,15 +837,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"order" : 1,
-					"source" : [ "obj-36", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"order" : 0,
 					"source" : [ "obj-36", 0 ]
 				}
 

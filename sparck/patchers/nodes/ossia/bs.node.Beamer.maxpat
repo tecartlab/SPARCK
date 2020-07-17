@@ -73,7 +73,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 76.0, 135.0, 1042.0, 542.0 ],
+						"rect" : [ 122.0, 192.0, 1171.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -103,13 +103,14 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-4",
+									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
+									"id" : "obj-25",
 									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 274.123320291883715, 116.0, 97.0, 22.0 ],
-									"text" : "r #0_id::calibrate"
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 220.290518986762322, 249.5, 467.0, 22.0 ],
+									"text" : "ossia.parameter calibrate @type bool @default false @description \"enable calibration\""
 								}
 
 							}
@@ -216,7 +217,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 304.190127884982644, 168.000000000000028, 30.0, 30.0 ]
+									"patching_rect" : [ 220.345610330946215, 146.000000000000028, 30.0, 30.0 ]
 								}
 
 							}
@@ -329,8 +330,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 748.290518986762322, 166.5, 445.0, 22.0 ],
-									"text" : "ossia.parameter identify @type bool @default false @description \"dentify beamer\""
+									"patching_rect" : [ 748.290518986762322, 166.5, 448.0, 22.0 ],
+									"text" : "ossia.parameter identify @type bool @default false @description \"identify beamer\""
 								}
 
 							}
@@ -456,7 +457,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 435.123320291883715, 384.0, 124.0, 22.0 ],
+									"patching_rect" : [ 454.123320291883715, 368.0, 124.0, 22.0 ],
 									"text" : "drawto #0.left #0.right"
 								}
 
@@ -469,7 +470,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 0,
-									"patching_rect" : [ 435.123320291883715, 430.4295654296875, 244.0, 62.0 ],
+									"patching_rect" : [ 454.123320291883715, 414.4295654296875, 244.0, 62.0 ],
 									"text" : "bs.ossia.parameter.rendergroup.capture render/renderGroup \"capture everything from the selected render groups\" @drawto #0.left #0.right",
 									"varname" : "renderGroup[1]"
 								}
@@ -482,7 +483,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 348.690127884982644, 235.5, 29.5, 22.0 ],
+									"patching_rect" : [ 264.845610330946215, 213.5, 29.5, 22.0 ],
 									"text" : "1"
 								}
 
@@ -494,7 +495,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 304.190127884982644, 235.5, 29.5, 22.0 ],
+									"patching_rect" : [ 220.345610330946215, 213.5, 29.5, 22.0 ],
 									"text" : "0"
 								}
 
@@ -503,11 +504,11 @@
 								"box" : 								{
 									"id" : "obj-22",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 304.190127884982644, 208.5, 108.0, 22.0 ],
-									"text" : "route wclose focus"
+									"numinlets" : 4,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 220.345610330946215, 186.5, 152.500000000000057, 22.0 ],
+									"text" : "route wclose focus save"
 								}
 
 							}
@@ -532,7 +533,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 567.123320291883715, 384.0, 45.0, 22.0 ],
+									"patching_rect" : [ 633.123320291883715, 368.0, 45.0, 22.0 ],
 									"text" : "drawto"
 								}
 
@@ -544,7 +545,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 435.123320291883715, 337.0, 56.0, 22.0 ],
+									"patching_rect" : [ 454.123320291883715, 321.0, 56.0, 22.0 ],
 									"text" : "route 0 1"
 								}
 
@@ -911,8 +912,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
+									"destination" : [ "obj-25", 0 ],
 									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
@@ -927,6 +935,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-99", 0 ],
+									"midpoints" : [ 318.845610330946272, 228.5, 477.490057421766551, 228.5, 477.490057421766551, 28.5, 190.623320291883715, 28.5 ],
+									"source" : [ "obj-22", 2 ]
 								}
 
 							}
@@ -951,6 +967,24 @@
 									"destination" : [ "obj-27", 0 ],
 									"order" : 1,
 									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"midpoints" : [ 229.790518986762322, 298.967102000000011, 283.595610330946215, 298.967102000000011 ],
+									"order" : 1,
+									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-32", 0 ],
+									"midpoints" : [ 229.790518986762322, 291.5, 463.623320291883715, 291.5 ],
+									"order" : 0,
+									"source" : [ "obj-25", 0 ]
 								}
 
 							}
@@ -1016,24 +1050,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-76", 0 ],
 									"source" : [ "obj-36", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"midpoints" : [ 283.623320291883715, 228.967102000000011, 283.595610330946215, 228.967102000000011 ],
-									"order" : 1,
-									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-32", 0 ],
-									"midpoints" : [ 283.623320291883715, 161.5, 444.623320291883715, 161.5 ],
-									"order" : 0,
-									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -1149,7 +1165,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 265.333313000000089, 157.065795999999921, 487.250414486762224, 20.0 ],
+					"patching_rect" : [ 265.333313000000089, 161.065795999999921, 487.250414486762224, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1222,7 +1238,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 114.0, 341.0, 1179.0, 594.0 ],
+						"rect" : [ 91.0, 235.0, 1179.0, 594.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1257,7 +1273,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 714.694376627604129, 393.5, 19.0, 22.0 ],
+									"patching_rect" : [ 689.694376627604129, 393.5, 19.0, 22.0 ],
 									"text" : "t l"
 								}
 
@@ -1304,7 +1320,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 714.5277099609375, 535.0, 293.0, 20.0 ],
+									"patching_rect" : [ 689.5277099609375, 535.0, 293.0, 20.0 ],
 									"text" : "object used on 3dviewer, editor and main render pass"
 								}
 
@@ -1409,7 +1425,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 714.694376627604129, 476.5, 182.821045039062483, 49.0 ],
+									"patching_rect" : [ 689.694376627604129, 476.5, 182.821045039062483, 49.0 ],
 									"text" : "Jay3DeeObject @setobjectname #0.obj.editor @modelname #0.model"
 								}
 
@@ -1530,11 +1546,11 @@
 								"box" : 								{
 									"id" : "obj-8",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 585.0, 131.868407999999988, 150.0, 22.0 ],
-									"text" : "routepass dim erase_color"
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 585.0, 131.868407999999988, 84.0, 22.0 ],
+									"text" : "routepass dim"
 								}
 
 							}
@@ -3178,6 +3194,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"order" : 0,
+									"source" : [ "obj-8", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"order" : 1,
 									"source" : [ "obj-8", 1 ]
@@ -3189,14 +3213,6 @@
 									"destination" : [ "obj-4", 0 ],
 									"order" : 0,
 									"source" : [ "obj-8", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"order" : 0,
-									"source" : [ "obj-8", 1 ]
 								}
 
 							}
@@ -4458,13 +4474,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
-				"patcherrelativepath" : "../../_obsolete",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.util.dialog.saveas.slim.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
@@ -4503,6 +4512,13 @@
 				"name" : "bs.pattrstore.file.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/pattrstore",
 				"patcherrelativepath" : "../../pattrstore",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.msg.receive.key.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}

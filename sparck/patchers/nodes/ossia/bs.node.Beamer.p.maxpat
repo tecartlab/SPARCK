@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 391.0, 356.0, 531.0, 544.0 ],
+		"rect" : [ 391.0, 356.0, 643.0, 544.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,22 +40,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "calibrate" ],
+					"args" : [ "#1", "calibrate", "@usedisplaytext", 1, "@ondisplaytext", "exit calibration", "@offdisplaytext", "calibrate", "@size", 239, 19, "@gt", 3 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-19",
+					"id" : "obj-6",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.beamer.calibration.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 3,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 248.0, 199.0, 246.0, 24.0 ],
+					"patching_rect" : [ 253.0, 209.0, 257.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 60.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 1.0, 60.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -354,9 +354,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 80.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 60.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 80.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 60.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_folded"
 				}
@@ -393,8 +393,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-6", 2 ],
+					"order" : 0,
 					"source" : [ "obj-26", 1 ]
 				}
 
@@ -402,7 +402,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 2 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-26", 1 ]
 				}
 
@@ -489,6 +489,13 @@
 				"name" : "bs.ossia.beamer.calibration.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/custom/beamer",
 				"patcherrelativepath" : "../../ossia/custom/beamer",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.button.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
