@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 371.0, 145.0, 646.0, 445.0 ],
+		"rect" : [ 81.0, 427.0, 667.0, 425.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,19 +39,8 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"enabletransparentbgwithtitlebar" : 1,
+		"title" : "#2",
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-2",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 364.5, 108.0, 94.0, 22.0 ],
-					"text" : "r #1::props"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
@@ -70,8 +59,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 364.5, 52.605652000000006, 256.0, 22.0 ],
-					"text" : "nodeid #1, title #2, address #3, openproperties"
+					"patching_rect" : [ 364.5, 52.605652000000006, 355.0, 22.0 ],
+					"text" : "nodeid #1, title #2, address #3, color #5 #6 #7 #8, openproperties"
 				}
 
 			}
@@ -142,7 +131,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "Capture", "@address", "sparck:/node/Capture" ],
+					"args" : [ "#2", "@address", "#3" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -194,13 +183,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-132", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-132", 0 ],
-					"source" : [ "obj-2", 0 ]
 				}
 
 			}

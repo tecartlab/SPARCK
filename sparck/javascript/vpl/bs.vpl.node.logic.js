@@ -37,7 +37,7 @@ inlets = 1;
 outlets = 5;
 
 var OUTLET_THISPATCHER = 0;
-var OUTLET_ENABLE = 1;
+var OUTLET_OSSIA = 1;
 var OUTLET_PCONTROL = 2;
 var OUTLET_DUMP = 3;
 var OUTLET_MENUL = 4;
@@ -74,10 +74,12 @@ var myNodeTitle = undefined; // user set node title
 var myNodeAddress = undefined; // ossia node address, set through the title
 var myNodeVarName = undefined;
 var myNodeSpace = undefined;
+var myDefaultColor = new Array(1.0, 0.65, 0.0, 1.);
 var myNodeColorOn = new Array(1.0, 0.65, 0.0, 1.);
 var myNodeColorOff = new Array(0.7, 0.7, 0.7, 0.8);
 var myNodeColorSelected = new Array(0.0, 0.0, 0.0, 0.3);
 var myNodeColorUnSelected = new Array(0.0, 0.0, 0.0, 0.8);
+
 var myNodeEnable = 0;
 var myNodeSelected = 0;
 
@@ -179,8 +181,9 @@ function init(){
     if(vpl_nodeSpacePatcher != null){
         vpl_nodeSpacePatcher.message("script", "bringtofront", vpl_nodeBox.varname);
     }
-	return true;
+
 	dpost("...init("+myNodeName+") done\n");
+	return true;
 }
 
 // repopulates the menu items
@@ -409,7 +412,8 @@ function nodeid(_nodeid){
 function openproperties(){
     //post("openproperties" +  myNodeID + " " + myNodeTitle + " " + myNodeAddress + " " + myNodePropsFileName + "\n");
     if(myNodeEnableProperties){
-        outlet(2, "shroud", "bs.vpl.node.props", myNodeID, myNodeTitle, myNodeAddress, myNodePropsFileName);
+		//post("color " + colr + " \n");
+        outlet(2, "shroud", "bs.vpl.node.props", myNodeID, myNodeTitle, myNodeAddress, myNodePropsFileName, myNodeColorOn);
     }
 }
 
@@ -445,12 +449,21 @@ function title(newtitle){
 	outlet(OUTLET_DUMP, "address", myNodeAddress);
 }
 
-function color(red, green, blue, alpha){
-	myNodeColorOn[0] = red;
-	myNodeColorOn[1] = green;
-	myNodeColorOn[2] = blue;
-	myNodeColorOn[3] = alpha;
+function color(){
+	args = arrayfromargs(arguments);
+	if(args.length > 0){
+		myNodeColorOn[0] = args[0];
+		myNodeColorOn[1] = args[1];
+		myNodeColorOn[2] = args[2];
+		myNodeColorOn[3] = args[3];
+	} else {
+		myNodeColorOn[0] = myDefaultColor[0];
+		myNodeColorOn[1] = myDefaultColor[1];
+		myNodeColorOn[2] = myDefaultColor[2];
+		myNodeColorOn[3] = myDefaultColor[3];
+	}
 	setGUIColors();
+	messnamed(myNodeID + "::props", "color", myNodeColorOn);
 }
 
 function msg_int(val){
@@ -466,7 +479,7 @@ function enable(_enable){
 		setGUIColors();
 		outlet(OUTLET_DUMP, "enable", _enable);
 		// for good measure, set the toogle
-		outlet(1, "set", _enable);
+		outlet(OUTLET_OSSIA, "enable", "set", _enable);
 	}
 }
 
@@ -602,36 +615,30 @@ function notifydeleted(){
 
 function setGUIColors(){
 	dpost("setGUIColors()\n");
-	initNode();
+	if(myNodeInit){
+		var workingcolor = myNodeColorOn;
+		if(myNodeEnable == 0)
+			workingcolor = myNodeColorOff;
+   
+    	if(vpl_nodeCanvas.understands("bgfillcolor")){
+        	//post("bgfillcolor\n");
+        	vpl_nodeCanvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+    	}
+    	if(vpl_nodeCanvas.understands("bgcolor")){
+        	//post("bgcolor\n");
+        	vpl_nodeCanvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+    	}
 
-	var workingcolor = myNodeColorOn;
-	if(myNodeEnable == 0)
-		workingcolor = myNodeColorOff;
+		if(vpl_nodeEnable != null){
+		//	vpl_nodeEnable.message("bordercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
+		}
 
-//  vpl_nodeCanvas.message("bordercolor", 0., 0., 0., 1.);
-//	vpl_nodeCanvas.message("borderoncolor", 1., 1., 1., 1.);
-//	vpl_nodeCanvas.message("bgovercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
-//	vpl_nodeCanvas.message("bgoncolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-//	vpl_nodeCanvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-    
-    if(vpl_nodeCanvas.understands("bgfillcolor")){
-        //post("bgfillcolor\n");
-        vpl_nodeCanvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-    }
-    if(vpl_nodeCanvas.understands("bgcolor")){
-        //post("bgcolor\n");
-        vpl_nodeCanvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-    }
-
-	if(vpl_nodeEnable != null){
-//		vpl_nodeEnable.message("bordercolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]- 0.05 );
+		// setting the title bar
+		workingcolor = (myNodeSelected == 1)? myNodeColorSelected:myNodeColorUnSelected;
+		if(vpl_titleBar != null){
+			vpl_titleBar.message("bgcolor", workingcolor);
+		}
 	}
-
-	// setting the title bar
-	workingcolor = (myNodeSelected == 1)? myNodeColorSelected:myNodeColorUnSelected;
-	if(vpl_titleBar != null)
-		vpl_titleBar.message("bgcolor", workingcolor);
-
 }
 
 /**********************

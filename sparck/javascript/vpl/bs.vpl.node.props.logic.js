@@ -37,6 +37,7 @@ var myStoreDict = null;
 
 var myNodeTitle = null;
 var myNodeId = null;
+var myNodeIsEnabled = false;
 //var myStoreName = null;
 
 var myWindow = null;
@@ -204,19 +205,35 @@ function nodeid(_nodeId){
     myNodeId = _nodeId;
 }
 
-function enable(_enable){
+function color(){
+	args = arrayfromargs(arguments);
+	myNodeColorOn[0] = args[0];
+	myNodeColorOn[1] = args[1];
+	myNodeColorOn[2] = args[2];
+	myNodeColorOn[3] = args[3];
+	applyColor();
+}
+
+function applyColor(){
     var workingcolor = myNodeColorOn;
-	if(_enable == 0)
+	if(myNodeIsEnabled == 0)
 		workingcolor = myNodeColorOff;
 
-    if(myClientCanvas.understands("bgfillcolor")){
-        //post("bgfillcolor\n");
-        myClientCanvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-    } 
-    if(myClientCanvas.understands("bgcolor")){
-        //post("bgcolor\n");
-        myClientCanvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
-    } 
+	if(myClientCanvas != null){
+    	if(myClientCanvas.understands("bgfillcolor")){
+        	//post("bgfillcolor\n");
+        	myClientCanvas.message("bgfillcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+    	} 
+    	if(myClientCanvas.understands("bgcolor")){
+        	//post("bgcolor\n");
+        	myClientCanvas.message("bgcolor", workingcolor[0], workingcolor[1], workingcolor[2], workingcolor[3]);
+    	} 
+	}
+}
+
+function enable(_enable){
+	myNodeIsEnabled = _enable;
+	applyColor();
 }
 
 /*******************
