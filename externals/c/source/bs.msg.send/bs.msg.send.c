@@ -471,7 +471,7 @@ void bs_msg_send_update_attributes(t_bs_msg_send *x){
         // we only create the dictionary once there is a address
         x->dictionary = dictobj_findregistered_retain(x->s_myAddress);
         if(!x->dictionary){
-            //-post("created dictionary: '%s'", x->s_myAddress->s_name);
+            //cpost("created dictionary: '%s'", x->s_myAddress->s_name);
             x->dictionary = dictionary_new();
             dictobj_register(x->dictionary, &x->s_myAddress);
             //cpost(" making dict: create new dict: '%s'", x->s_myAddress->s_name);

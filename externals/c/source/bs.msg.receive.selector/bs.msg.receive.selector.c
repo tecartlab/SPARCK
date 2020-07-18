@@ -305,6 +305,7 @@ void bs_msg_receiveselector_outputCurrentValue(t_bs_msg_receiveselector *x){
     for (long i = 0; i < x->s_msgnum - 1; i++){ // we skip the wormhole (x->s_msgnum - 1)
         m = x->s_messages + i;
         if (m->s_msgAddress && m->s_msgAddress != ps_nothing) {
+            //-post("found valid address = '%s'", m->s_msgAddress->s_name);
 
             // get the conduit object
             t_object *conduit = object_findregistered(ps_conduit, m->s_msgAddress);
@@ -312,6 +313,7 @@ void bs_msg_receiveselector_outputCurrentValue(t_bs_msg_receiveselector *x){
             // if successfull...
             if (conduit) {
 
+                //-post("  found conduit = '%s'", m->s_msgAddress->s_name);
                 // get the current value
                 t_atomarray *aa = object_method(conduit,gensym("getatomarray"));
 
@@ -319,12 +321,14 @@ void bs_msg_receiveselector_outputCurrentValue(t_bs_msg_receiveselector *x){
                     bs_msg_receiveselector_output(x, m, aa);
                 }
             } else {
-                // if there is no conduit, we check if
-                if(x->enabled_remote == 0 || x->enabled_local == 0 || x->s_myTitle == ps_msg_offtitle){
-                    // in this case we get away settin the atom array to NULL
-                    bs_msg_receiveselector_output(x, m, NULL);
-                }
+                //-post("  found NO conduit = '%s'", m->s_msgAddress->s_name);
+                // if there is a valid message but no conduit, this means the sender is not sending this
+                //   value, therefore want to have the outoff message,
+                //   and in this case we get away settin the atom array to NULL
+                bs_msg_receiveselector_output(x, m, NULL);
             }
+        } else {
+            //-post("found INvalid address");
         }
     }
 }
@@ -333,8 +337,8 @@ void bs_msg_receiveselector_outputCurrentValue(t_bs_msg_receiveselector *x){
  general method to output the values
  **********************************************************/
 void bs_msg_receiveselector_output(t_bs_msg_receiveselector *x, t_message *m, t_atomarray *aa){
-    //-post("bs_msg_receiveselector_output: ouput = '%s'", m->s_msgAddress->s_name);
-    if(x->enabled_remote == 0 || x->enabled_local == 0 || x->s_myTitle == ps_msg_offtitle){
+    //post("bs_msg_receiveselector_output: ouput = '%s'", m->s_msgAddress->s_name);
+    if(x->enabled_remote == 0 || x->enabled_local == 0 || x->s_myTitle == ps_msg_offtitle || aa == NULL){
         if(m->s_myOutOff){
             if(A_SYM == atom_gettype(m->s_myOutOff->av)){
                 // it is a symbol
