@@ -370,7 +370,7 @@ void bs_msg_send_makeMessageAddress(t_symbol *message, t_symbol *address, t_symb
     sets the attributes
  ***********************************************************/
 void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *av){
-    post("set attribute: '%s'", s->s_name);
+    //-post("set attribute: '%s'", s->s_name);
     if(s == ps_attr_title || s == ps_attr_setTitleMsg){
         if(ac == 1){
             x->s_myTitle = atom_getsym(&av[0]);
@@ -675,7 +675,7 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
         long i, j;
 
         for (i=0; i < argc; i++) {
-            post("argument type :%s", argv[i].a_w.w_sym->s_name);
+            //post("argument type :%s", argv[i].a_w.w_sym->s_name);
             if(argv[i].a_type == A_SYM && argv[i].a_w.w_sym->s_name[0] == '@'){
                 // the attribute name without the '@' at the beginning
 				char* attributeName = sysmem_newptr(strlen(argv[i].a_w.w_sym->s_name));
