@@ -370,7 +370,7 @@ void bs_msg_send_makeMessageAddress(t_symbol *message, t_symbol *address, t_symb
     sets the attributes
  ***********************************************************/
 void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *av){
-    //post("set attribute: '%s'", s->s_name);
+    post("set attribute: '%s'", s->s_name);
     if(s == ps_attr_title || s == ps_attr_setTitleMsg){
         if(ac == 1){
             x->s_myTitle = atom_getsym(&av[0]);
@@ -391,14 +391,14 @@ void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *
             object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, s->s_name);
         }
     } else if(s == ps_attr_unique){
-        if(x->unique != 0){
+        if(x->unique == -1){
             if(ac == 1){
                 x->unique = (long) atom_getlong(&av[0]);
             } else {
                 object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, s->s_name);
             }
         } else {
-            object_error((t_object *)x, "once unique is set to 0, it can't be reversed");
+            object_error((t_object *)x, "'unique' can only be set during initialization");
         }
     } else if(s == ps_attr_enable){
         if(ac == 1){
@@ -662,7 +662,7 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
         x->m_proxy_inlet2 = proxy_new((t_object *)x, 2, &x->m_in);
         x->m_proxy_inlet1 = proxy_new((t_object *)x, 1, &x->m_in);
 
-        x->unique = 1;
+        x->unique = -1;
         x->enabled = 1;
 
         x->s_myID = symbol_unique();
@@ -675,7 +675,7 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
         long i, j;
 
         for (i=0; i < argc; i++) {
-            //post("argument type :%s", argv[i].a_w.w_sym->s_name);
+            post("argument type :%s", argv[i].a_w.w_sym->s_name);
             if(argv[i].a_type == A_SYM && argv[i].a_w.w_sym->s_name[0] == '@'){
                 // the attribute name without the '@' at the beginning
 				char* attributeName = sysmem_newptr(strlen(argv[i].a_w.w_sym->s_name));
@@ -718,6 +718,23 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
                 i = exitIndex;
             }
         }
+        
+        // first we see if @unique has been set
+        if(x->unique == -1){
+            // if it hasn't been set we set it to default 1
+            x->unique = 1;
+        }
+        
+        // if this node is not unique, than the id is set to the name
+        if(x->unique == 0){
+            if(x->s_myName){
+                x->s_myID = gensym(x->s_myName->s_name);
+            } else {
+                object_error((t_object *)x, "when using attribute @unique = 0, the attribute @title needs to be an argument");
+                return NULL;
+            }
+        }
+
         // if the title has not yet been set, we use the id to setup everything, so all
         // messages that arrive until the title is set, will be stored.
         if(x->s_myTitle == x->s_myID){
@@ -726,16 +743,6 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
             // the dictionary needs to be updated aftre the attributes
             bs_msg_send_update_dictionary(x);
         }
-
-        // if this node is not unique, than the id is set to the name
-        if(x->unique == 0){
-            if(x->s_myName){
-                x->s_myID = gensym(x->s_myName->s_name);
-            } else {
-                object_error((t_object *)x, "when using attribute @unique = 0, the attribute @title needs to be an argument");
-            }
-        }
-
 
         // initialize new hashtable
         x->s_myMessages = (t_hashtab *)hashtab_new(0);

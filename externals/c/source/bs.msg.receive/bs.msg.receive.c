@@ -263,14 +263,28 @@ void _bs_msg_receive_outputCurrentValue(t__bs_msg_receive *x){
 void _bs_msg_receive_output(t__bs_msg_receive *x, t_atomarray *aa){
     if(x->enabled == 0){
         if(x->s_myOutOff){
-            //-post("_bs_msg_receive_output: %s / %s", x->s_msgAddress->s_name, atom_getsym(x->s_myOutOff->av)->s_name);
-            outlet_anything(x->out, NULL, x->s_myOutOff->ac, x->s_myOutOff->av);
-            //outlet_anything(x->out, atom_getsym(x->s_myOutOff->av), x->s_myOutOff->ac - 1, x->s_myOutOff->av + 1);
+            if(A_SYM == atom_gettype(x->s_myOutOff->av)){
+                //cpost("_bs_msg_receive_output: it is a symbol");
+                // it is a symbol
+                //cpost("_bs_msg_receive_output: %s / %s", x->s_msgAddress->s_name, atom_getsym(x->s_myOutOff->av)->s_name);
+                if(x->s_myOutOff->ac > 1){
+                    outlet_anything(x->out, atom_getsym(x->s_myOutOff->av), x->s_myOutOff->ac - 1, x->s_myOutOff->av + 1);
+                } else {
+                    outlet_anything(x->out, atom_getsym(x->s_myOutOff->av), 0, NIL);
+                }
+            } else {
+                //cpost("_bs_msg_receive_output: it is not a symbol");
+                //cpost("_bs_msg_receive_output: ouputoff-list: %ld", x->s_myOutOff->ac);
+                // if the first item of the list is not a symbol..
+                outlet_list(x->out, 0L, x->s_myOutOff->ac, x->s_myOutOff->av);
+            }
+        } else {
+            //-post("there is no outoff defined");
         }
     } else {
         if(x->s_myReplace){
             if(x->s_myReplace == ps_attr_val_replace_drop){
-                //-post("replace empty %ld", aa->ac - 1);
+                //cpost("replace empty %ld", aa->ac - 1);
                 if(A_SYM != atom_gettype(aa->av + 1)){
                     // if the first item of the list is not a symbol..
                     outlet_list(x->out, NULL, aa->ac - 1, aa->av + 1);
@@ -282,7 +296,6 @@ void _bs_msg_receive_output(t__bs_msg_receive *x, t_atomarray *aa){
                     }
                 }
             } else {
-                //-post("replace %s", x->s_myReplace->s_name);
                 outlet_anything(x->out, x->s_myReplace, aa->ac - 1, aa->av + 1);
             }
         } else {
