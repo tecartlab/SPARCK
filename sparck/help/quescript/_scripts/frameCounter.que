@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<script>
+	<var name="myCities">ARRAY('Zuerich','Vienna', 'Berlin', 'London', 'Madrid', 'Casablanca', 'DONE')</var>
+	<var name="index">0</var>
+	<stop/>
+	<play name="MainLoop"/>
+	<que name="MainLoop" loop="normal">
+		<expr>index = index + 1</expr>
+		<print>mycurrent index is {index%4}</print>
+	</que>
+</script>

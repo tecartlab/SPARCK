@@ -100,6 +100,12 @@ void bs_msg_send_float(t_bs_msg_send *x, double f);
 void bs_msg_send_anything(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *av);
 
 //private functions
+bool bs_msg_send_attr_title_set(t_bs_msg_send *x, long ac, t_atom *av);
+bool bs_msg_send_attr_appendix_set(t_bs_msg_send *x, long ac, t_atom *av);
+bool bs_msg_send_attr_unique_set(t_bs_msg_send *x, long ac, t_atom *av);
+bool bs_msg_send_attr_enable_set(t_bs_msg_send *x, long ac, t_atom *av);
+bool bs_msg_send_attr_types_set(t_bs_msg_send *x, long ac, t_atom *av);
+
 void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *av);
 void bs_msg_send_update_attributes(t_bs_msg_send *x);
 void bs_msg_send_update_dictionary(t_bs_msg_send *x);
@@ -160,6 +166,9 @@ void ext_main(void *r)
 	class_addmethod(c, (method)bs_msg_send_assist,			"assist",		A_CANT, 0);
 	class_addmethod(c, (method)bs_msg_send_notify,			"notify",		A_CANT, 0);
 
+    /*
+     We don't define any attributes, because we want to be able to receive attribute names as messages.
+     */
 
 	class_register(CLASS_BOX, c);
 	bs_msg_send_class = c;
@@ -366,44 +375,74 @@ void bs_msg_send_makeMessageAddress(t_symbol *message, t_symbol *address, t_symb
     sysmem_freeptr(s_myAddress);
 }
 
+bool bs_msg_send_attr_title_set(t_bs_msg_send *x, long ac, t_atom *av){
+    if(ac == 1){
+         x->s_myTitle = atom_getsym(&av[0]);
+         return true;
+    }
+    object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, ps_attr_title->s_name);
+    return false;
+}
+
+bool bs_msg_send_attr_appendix_set(t_bs_msg_send *x, long ac, t_atom *av){
+    if(ac == 1){
+         x->s_myAppendix = atom_getsym(&av[0]);
+         return true;
+    }
+    object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, ps_attr_appendix->s_name);
+    return false;
+}
+
+bool bs_msg_send_attr_unique_set(t_bs_msg_send *x, long ac, t_atom *av){
+    if(ac == 1){
+        x->unique = (long) atom_getlong(&av[0]);
+        return true;
+    }
+    object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, ps_attr_unique->s_name);
+    return false;
+}
+
+bool bs_msg_send_attr_enable_set(t_bs_msg_send *x, long ac, t_atom *av){
+    if(ac == 1){
+        x->enabled = (long) atom_getlong(&av[0]);
+        return true;
+    }
+    object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, ps_attr_enable->s_name);
+    return false;
+}
+
+bool bs_msg_send_attr_types_set(t_bs_msg_send *x, long ac, t_atom *av){
+    if(ac > 0 && ac <= MAX_NUM_ITEMS){
+        long i;
+        for(i=0; i < ac; i++){
+            x->s_myTypes[i] = atom_getsym(&av[i]);
+        }
+        x->numTypes = ac;
+        return true;
+    }
+    object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, ps_attr_types->s_name);
+    return false;
+}
+
 /**********************************************************
     sets the attributes
  ***********************************************************/
 void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *av){
     //-post("set attribute: '%s'", s->s_name);
     if(s == ps_attr_title || s == ps_attr_setTitleMsg){
-        if(ac == 1){
-            x->s_myTitle = atom_getsym(&av[0]);
-            //post("value of title: '%s'", x->s_myTitle->s_name);
-
-            bs_msg_send_update_attributes(x);
-
-       } else {
-            object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, s->s_name);
-        }
-    } else if(s == ps_attr_appendix){
-        if(ac == 1){
-            x->s_myAppendix = atom_getsym(&av[0]);
-
-            bs_msg_send_update_attributes(x);
-
-        } else {
-            object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, s->s_name);
-        }
-    } else if(s == ps_attr_unique){
-        if(x->unique == -1){
-            if(ac == 1){
-                x->unique = (long) atom_getlong(&av[0]);
-            } else {
-                object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, s->s_name);
+        if(x->unique == 1){
+            if(bs_msg_send_attr_title_set(x, ac, av)){
+                bs_msg_send_update_attributes(x);
             }
         } else {
-            object_error((t_object *)x, "'unique' can only be set during initialization");
+            object_error((t_object *)x, "title can only be set when @unique = 1 (default)");
         }
+    } else if(s == ps_attr_appendix){
+        object_error((t_object *)x, "@appendix can only be set during initialization");
+    } else if(s == ps_attr_unique){
+        object_error((t_object *)x, "@unique can only be set during initialization");
     } else if(s == ps_attr_enable){
-        if(ac == 1){
-            x->enabled = (long) atom_getlong(&av[0]);
-
+        if(bs_msg_send_attr_enable_set(x, ac, av)){
             // the dictionary needs to be updated before the status conduit is updated
             bs_msg_send_update_dictionary(x);
 
@@ -412,18 +451,10 @@ void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *
                 //post("sending notification on enable...");
                 object_notify(x->s_myStatusConduit, ps_skey_enable, x->enabled);
             }
-
-        } else {
-            object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, s->s_name);
         }
     } else if(s == ps_attr_types){
-        if(ac > 0 && ac <= MAX_NUM_ITEMS){
-            long i;
-            for(i=0; i < ac; i++){
-                x->s_myTypes[i] = atom_getsym(&av[i]);
-            }
-            x->numTypes = ac;
-
+        if(bs_msg_send_attr_types_set(x, ac, av)){
+            // the dictionary needs to be updated before the status conduit is updated
             bs_msg_send_update_dictionary(x);
 
             // send a status message to subscribed objects about the change: we send again an enable
@@ -432,8 +463,6 @@ void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *
                 //post("sending notification on enable...");
                 object_notify(x->s_myStatusConduit, ps_skey_enable, x->enabled);
             }
-        } else {
-            object_error((t_object *)x, "invalid number of values (%i) for attribute '%s'", ac, s->s_name);
         }
     } else {
         object_error((t_object *)x, "unknown attribute '%s'", s->s_name);
@@ -662,7 +691,7 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
         x->m_proxy_inlet2 = proxy_new((t_object *)x, 2, &x->m_in);
         x->m_proxy_inlet1 = proxy_new((t_object *)x, 1, &x->m_in);
 
-        x->unique = -1;
+        x->unique = 1;
         x->enabled = 1;
 
         x->s_myID = symbol_unique();
@@ -710,7 +739,17 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
                     // copy the relevant atoms into the atom array
                     sysmem_copyptr(&argv[i], newargv, sizeof(t_atom) * count);
                     // send the whole package to the set_attibute function
-                    bs_msg_send_set_attributes(x, news, newargc, newargv);
+                    if(news == ps_attr_title){
+                        bs_msg_send_attr_title_set(x, newargc, newargv);
+                    } else if(news == ps_attr_appendix){
+                        bs_msg_send_attr_appendix_set(x, newargc, newargv);
+                    } else if(news == ps_attr_unique){
+                        bs_msg_send_attr_unique_set(x, newargc, newargv);
+                    } else if(news == ps_attr_enable){
+                        bs_msg_send_attr_enable_set(x, newargc, newargv);
+                    } else if(news == ps_attr_types){
+                        bs_msg_send_attr_types_set(x, newargc, newargv);
+                    }
                 }
                 // free the memory.
                 sysmem_freeptr(newargv);
@@ -719,30 +758,18 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
             }
         }
         
-        // first we see if @unique has been set
-        if(x->unique == -1){
-            // if it hasn't been set we set it to default 1
-            x->unique = 1;
-        }
-        
         // if this node is not unique, than the id is set to the name
         if(x->unique == 0){
-            if(x->s_myName){
-                x->s_myID = gensym(x->s_myName->s_name);
-            } else {
+            if(x->s_myTitle == x->s_myID){
                 object_error((t_object *)x, "when using attribute @unique = 0, the attribute @title needs to be an argument");
                 return NULL;
             }
         }
-
-        // if the title has not yet been set, we use the id to setup everything, so all
-        // messages that arrive until the title is set, will be stored.
-        if(x->s_myTitle == x->s_myID){
-            bs_msg_send_update_attributes(x);
-
-            // the dictionary needs to be updated aftre the attributes
-            bs_msg_send_update_dictionary(x);
-        }
+ 
+        // now its time to update the attributes
+        bs_msg_send_update_attributes(x);
+        // the dictionary needs to be updated aftre the attributes
+        bs_msg_send_update_dictionary(x);
 
         // initialize new hashtable
         x->s_myMessages = (t_hashtab *)hashtab_new(0);
@@ -761,11 +788,10 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
             // We need to set the ID of this conduit to 'NULL' to make sure the subscriber
             // doesnt try to subscribe to the status conduit again and again and....
             x->s_myStatusConduit = object_findregistered(ps_conduit, globalMsgAddress);
-            // tell the conduit that we are using it
-            object_method(x->s_myStatusConduit, gensym("retain"));
-        } else {
-            ///-post("found old status conduit: '%s'", globalMsgAddress->s_name);
         }
+         
+        // finally tell the conduit that we are using it
+        object_method(x->s_myStatusConduit, gensym("retain"));
     }
     //post("created object done: '%s'", x->s_myTitle);
 

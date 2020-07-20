@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 4,
+			"minor" : 1,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 403.0, 79.0, 993.0, 776.0 ],
+		"rect" : [ 208.0, 79.0, 993.0, 776.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,20 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 837.166595000000029, 329.0, 71.0, 22.0 ],
+					"text" : "types dump"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-62",
 					"maxclass" : "message",
@@ -178,7 +191,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 32.5, 708.0, 320.166655999999989, 22.0 ]
+					"patching_rect" : [ 32.5, 708.0, 320.166655999999989, 22.0 ],
+					"text" : "0"
 				}
 
 			}
@@ -359,7 +373,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1062.5, 532.5, 190.0, 22.0 ],
-					"text" : "unknown"
+					"text" : "dump test"
 				}
 
 			}
@@ -438,7 +452,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1020.8125, 472.5, 150.125, 22.0 ],
-					"text" : "test"
+					"text" : "dink::dog"
 				}
 
 			}
@@ -490,7 +504,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 995.0, 499.5, 214.5, 22.0 ],
-					"text" : "dictionary msg::test"
+					"text" : "dictionary msg::dink::dog"
 				}
 
 			}
@@ -1015,6 +1029,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-12", 3 ],
 					"source" : [ "obj-23", 0 ]
 				}
@@ -1307,8 +1328,8 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.msg.receive.select.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
-				"patcherrelativepath" : "../patchers/msg",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../patchers/_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
