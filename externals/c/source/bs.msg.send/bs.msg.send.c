@@ -66,6 +66,7 @@ typedef struct _bs_msg_send
     t_hashtab                   *s_myMessages;  //                           <message>
     // message address                               msg::<title><appendix>::<message>
 
+    bool                        addressHasChanged;
     long                        numTypes;
     t_symbol                    *s_myTypes[MAX_NUM_ITEMS];
 
@@ -100,6 +101,8 @@ void bs_msg_send_float(t_bs_msg_send *x, double f);
 void bs_msg_send_anything(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *av);
 
 //private functions
+bool bs_msg_send_make_unique_address(t_bs_msg_send *x, t_symbol *title, t_symbol *appendix);
+
 bool bs_msg_send_attr_title_set(t_bs_msg_send *x, long ac, t_atom *av);
 bool bs_msg_send_attr_appendix_set(t_bs_msg_send *x, long ac, t_atom *av);
 bool bs_msg_send_attr_unique_set(t_bs_msg_send *x, long ac, t_atom *av);
@@ -375,6 +378,48 @@ void bs_msg_send_makeMessageAddress(t_symbol *message, t_symbol *address, t_symb
     sysmem_freeptr(s_myAddress);
 }
 
+bool bs_msg_send_make_unique_address(t_bs_msg_send *x, t_symbol* myTitle, t_symbol* myAppendix){
+    t_symbol *oldAddress = x->s_myAddress;
+
+    bool valid = false;
+    char* msgName;
+    msgName = sysmem_newptr(strlen(myTitle->s_name)+1+strlen(myAppendix->s_name));
+    strcpy(msgName, myTitle->s_name); /* copy name into the new var */
+    strcat(msgName, myAppendix->s_name); /* add the appendix */
+    //x->s_myName = gensym(msgName);
+ 
+    char* msgAddress;
+    const char* prepend = "msg::";
+    msgAddress = sysmem_newptr(strlen(msgName)+1+strlen(prepend));
+    strcpy(msgAddress, prepend);
+    strcat(msgAddress, msgName);
+    
+    
+    t_dictionary* dictionary = dictobj_findregistered_retain(gensym(msgAddress));
+    if(!dictionary || x->unique == 0 || x->s_myTitle->s_name == myTitle->s_name){
+        //-post("address unoccupied: %s", msgAddress);
+        // we apply these values if the address is unique or @unique = 0.
+        x->s_myName = gensym(msgName);
+        x->s_myAddress = gensym(msgAddress);
+        if(oldAddress != x->s_myAddress){
+            x->addressHasChanged = true;
+        };
+        valid = true;
+    } else {
+        if(x->unique != 0){
+            //_post("address occupied: %s", msgAddress);
+        }
+    }
+    if (dictionary){
+        dictobj_release(dictionary);
+    }
+    
+    sysmem_freeptr(msgAddress);
+    sysmem_freeptr(msgName);
+
+    return valid;
+}
+
 bool bs_msg_send_attr_title_set(t_bs_msg_send *x, long ac, t_atom *av){
     if(ac == 1){
          x->s_myTitle = atom_getsym(&av[0]);
@@ -431,8 +476,12 @@ void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *
     //-post("set attribute: '%s'", s->s_name);
     if(s == ps_attr_title || s == ps_attr_setTitleMsg){
         if(x->unique == 1){
-            if(bs_msg_send_attr_title_set(x, ac, av)){
-                bs_msg_send_update_attributes(x);
+            if(ac == 1 && bs_msg_send_make_unique_address(x, atom_getsym(&av[0]), x->s_myAppendix)){
+                if(bs_msg_send_attr_title_set(x, ac, av)){
+                    bs_msg_send_update_attributes(x);
+                }
+            } else {
+                 object_error((t_object *)x, "title+appendix is not unique. value not accepted");
             }
         } else {
             object_error((t_object *)x, "title can only be set when @unique = 1 (default)");
@@ -477,83 +526,69 @@ void bs_msg_send_set_attributes(t_bs_msg_send *x, t_symbol *s, long ac, t_atom *
 ***********************************************************/
 void bs_msg_send_update_attributes(t_bs_msg_send *x){
     //post("bs_msg_send_update_attributes: ....");
-    t_symbol *oldAddress = x->s_myAddress;
-
-    // we only create the name and address when the title is set
-    char* msgName;
-    msgName = sysmem_newptr(strlen(x->s_myTitle->s_name)+1+strlen(x->s_myAppendix->s_name));
-    strcpy(msgName, x->s_myTitle->s_name); /* copy name into the new var */
-    strcat(msgName, x->s_myAppendix->s_name); /* add the appendix */
-    x->s_myName = gensym(msgName);
-    sysmem_freeptr(msgName);
-
-    char* msgAddress;
-    const char* prepend = "msg::";
-    msgAddress = sysmem_newptr(strlen(x->s_myName->s_name)+1+strlen(prepend));
-    strcpy(msgAddress, prepend);
-    strcat(msgAddress, x->s_myName->s_name);
-    x->s_myAddress = gensym(msgAddress);
-    sysmem_freeptr(msgAddress);
-
-    // manage dictionary
-    if(!x->dictionary){
-        // we only create the dictionary once there is a address
-        x->dictionary = dictobj_findregistered_retain(x->s_myAddress);
+    // if the address has changed
+    if(x->addressHasChanged){
+        // manage dictionary
         if(!x->dictionary){
-            //cpost("created dictionary: '%s'", x->s_myAddress->s_name);
-            x->dictionary = dictionary_new();
-            dictobj_register(x->dictionary, &x->s_myAddress);
-            //cpost(" making dict: create new dict: '%s'", x->s_myAddress->s_name);
-       } else {
-            //cpost(" making dict: it already exist: '%s'", x->s_myAddress->s_name);
-        }
-    } else {
-        if(x->s_myAddress != oldAddress){
+            //-post("create new directory at address: '%s'", x->s_myAddress->s_name);
+            // we only create the dictionary once there is a address
+            x->dictionary = dictobj_findregistered_retain(x->s_myAddress);
+            if(!x->dictionary){
+                //-post("create dictionary: '%s'", x->s_myAddress->s_name);
+                x->dictionary = dictionary_new();
+                dictobj_register(x->dictionary, &x->s_myAddress);
+                //cpost(" making dict: create new dict: '%s'", x->s_myAddress->s_name);
+           } else {
+                //-post(" making dict: it already exist: '%s'", x->s_myAddress->s_name);
+            }
+        } else if (x->unique == 1) {
+            //-post("move directory to new address: '%s'", x->s_myAddress->s_name);
             // reregister the dictionary
-            // dictobj_unregister(x->dictionary);
+            dictobj_unregister(x->dictionary);
             //cpost("set new dict address: '%s'", x->s_myAddress->s_name);
             dictobj_register(x->dictionary, &x->s_myAddress);
         }
-    }
 
-    // the dictionary needs to be updated after the attributes
-    bs_msg_send_update_dictionary(x);
+        // the dictionary needs to be updated after the attributes
+        bs_msg_send_update_dictionary(x);
 
-    // manage wormhole conduit
-    if(!x->s_myWormholeConduit){
-        // create the wormhole conduit
-        t_symbol *globalMsgAddress = NULL;
-        bs_msg_send_makeMessageAddress(ps_conduit_wh, x->s_myAddress, &globalMsgAddress);
-
-        //-post("bs_msg_send_update_attributes: created address for wormhole conduit: '%s'", globalMsgAddress->s_name);
-
-        x->s_myWormholeConduit = object_findregistered(ps_conduit, globalMsgAddress);
+        // manage wormhole conduit
         if(!x->s_myWormholeConduit){
-            object_new(CLASS_NOBOX, ps_conduit, x->s_myID, ps_conduit_wh, x->s_myAddress);
-            x->s_myWormholeConduit = object_findregistered(ps_conduit, globalMsgAddress);
-            // tell the conduit that we are using it
-            object_method(x->s_myWormholeConduit, gensym("retain"));
-        } else {
-            //post("found old wormhole conduit: '%s'", globalMsgAddress->s_name);
-        }
-    }
+            // create the wormhole conduit
+            t_symbol *globalMsgAddress = NULL;
+            bs_msg_send_makeMessageAddress(ps_conduit_wh, x->s_myAddress, &globalMsgAddress);
 
-    // if the address has changed
-    if(oldAddress != NULL && x->s_myAddress != oldAddress){
+            //-post("bs_msg_send_update_attributes: created address for wormhole conduit: '%s'", globalMsgAddress->s_name);
+
+            x->s_myWormholeConduit = object_findregistered(ps_conduit, globalMsgAddress);
+            if(!x->s_myWormholeConduit){
+                object_new(CLASS_NOBOX, ps_conduit, x->s_myID, ps_conduit_wh, x->s_myAddress);
+                x->s_myWormholeConduit = object_findregistered(ps_conduit, globalMsgAddress);
+                // tell the conduit that we are using it
+                object_method(x->s_myWormholeConduit, gensym("retain"));
+            } else {
+                //post("found old wormhole conduit: '%s'", globalMsgAddress->s_name);
+            }
+        }
+
         //post("bs_msg_send_update_attributes: reregister address for conduits from '%s' to '%s'", oldAddress, x->s_myAddress->s_name);
 
-        // reregister all the conduits if address has changed
-        if(hashtab_methodall(x->s_myMessages, gensym("reregister"), x->s_myAddress)!= 0){
-            // there was a serious error:
-            object_error((t_object *)x, "You are trying to rename a bs.msg.send object to an already used name ('%s'). This is NOT allowed since it can generate unmanageable results. Max may crash upon closing this parent patcher.", x->s_myTitle->s_name);
-        }
-        if(object_method(x->s_myWormholeConduit, gensym("reregister"), x->s_myAddress)!=0){
-            // there was a serious error:
-            object_error((t_object *)x, "You are trying to rename a bs.msg.send object to an already used name ('%s'). This is NOT allowed since it will generate unmanageable results. Max may crash upon closing this parent patcher.", x->s_myTitle->s_name);
+        if(x->s_myMessages){
+            // reregister all the conduits if address has changed
+            if(hashtab_methodall(x->s_myMessages, gensym("reregister"), x->s_myAddress)!= 0){
+                // there was a serious error:
+                object_error((t_object *)x, "This error should not happen: You are trying to rename a bs.msg.send object to an already used name ('%s'). This is NOT allowed since it can generate unmanageable results. Max may crash upon closing this parent patcher.", x->s_myTitle->s_name);
+            }
+            if(object_method(x->s_myWormholeConduit, gensym("reregister"), x->s_myAddress)!= 0){
+                // there was a serious error:
+                object_error((t_object *)x, "This error should not happen: You are trying to rename a bs.msg.send object to an already used name ('%s'). This is NOT allowed since it will generate unmanageable results. Max may crash upon closing this parent patcher.", x->s_myTitle->s_name);
+            }
         }
 
         // send a status message to subscribed objects about the change:
         object_notify(x->s_myStatusConduit, ps_skey_title, x->s_myName);
+        
+        x->addressHasChanged = false;
     }
 }
 
@@ -693,13 +728,15 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
 
         x->unique = 1;
         x->enabled = 1;
-
+        x->addressHasChanged = false;
+        
         x->s_myID = symbol_unique();
         x->s_myTitle = x->s_myID;
         x->s_myAppendix = ps_nothing;
         x->s_myName = NULL;
         x->s_myAddress = NULL;
-
+        x->s_myMessages = NULL;
+        
         // Parse the box attributes
         long i, j;
 
@@ -766,6 +803,15 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
             }
         }
  
+        // create the address, and test if the address is
+        // unique - if not and @unique = 1, then bail.
+        if(!bs_msg_send_make_unique_address(x, x->s_myTitle, x->s_myAppendix)){
+            if(x->unique == 1){
+                object_error((t_object *)x, "when using attribute @unique = 1, the address (= @title + @appendix) needs to be unique");
+                return NULL;
+            }
+        }
+        
         // now its time to update the attributes
         bs_msg_send_update_attributes(x);
         // the dictionary needs to be updated aftre the attributes
@@ -780,7 +826,8 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
         t_symbol *globalMsgAddress = NULL;
         bs_msg_send_makeMessageAddress(ps_conduit_status, x->s_myID, &globalMsgAddress);
 
-        //post("created address for status conduit: '%s'", globalMsgAddress->s_name);
+        //-post("created address for status conduit: '%s'", globalMsgAddress->s_name);
+        
         x->s_myStatusConduit = object_findregistered(ps_conduit, globalMsgAddress);
 
         if(!x->s_myStatusConduit){
