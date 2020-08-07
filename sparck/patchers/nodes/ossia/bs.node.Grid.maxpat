@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 70.0, 256.0, 773.0, 527.0 ],
+		"rect" : [ 45.0, 429.0, 773.0, 527.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -677,11 +677,11 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "int", "" ],
-									"patching_rect" : [ 188.0, 54.0, 220.0, 49.0 ],
+									"patching_rect" : [ 188.0, 54.0, 217.0, 49.0 ],
 									"presentation" : 1,
-									"presentation_linecount" : 8,
-									"presentation_rect" : [ 92.41668701171875, 66.0, 90.0, 102.0 ],
-									"text" : "bs.ossia.parameter.rendergroup.drawto render/renderGroup \"drawto everything to the selected render groups\"",
+									"presentation_linecount" : 10,
+									"presentation_rect" : [ 92.41668701171875, 66.0, 90.0, 143.0 ],
+									"text" : "bs.ossia.parameter.rendergroup.drawto render/renderGroup \"Selection of the rendergroups to render this object\"",
 									"varname" : "renderGroup[1]"
 								}
 
@@ -2509,9 +2509,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
-				"patcherrelativepath" : "../../../javascript/msg",
+				"name" : "bs.ossia.parameter.msg.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
+				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

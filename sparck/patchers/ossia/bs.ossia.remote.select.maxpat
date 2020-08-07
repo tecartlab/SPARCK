@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 305.0, 129.0, 743.0, 525.0 ],
+		"rect" : [ 297.0, 238.0, 743.0, 525.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,24 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 345.771240234375, 404.0, 57.0, 22.0 ],
+					"text" : "tosymbol"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 283.271240234375, 433.0, 60.0, 22.0 ],
+					"patching_rect" : [ 283.271240234375, 457.0, 60.0, 22.0 ],
 					"text" : "zl.change"
 				}
 
@@ -69,7 +81,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 345.771240234375, 433.0, 94.0, 22.0 ],
+					"patching_rect" : [ 345.771240234375, 457.0, 94.0, 22.0 ],
 					"text" : "prepend symbol"
 				}
 
@@ -105,7 +117,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 345.771240234375, 405.0, 60.0, 22.0 ],
+					"patching_rect" : [ 345.771240234375, 431.0, 60.0, 22.0 ],
 					"text" : "zl.change"
 				}
 
@@ -204,7 +216,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 221.771240234375, 462.0, 143.0, 22.0 ],
+					"patching_rect" : [ 221.771240234375, 486.0, 143.0, 22.0 ],
 					"text" : "switch 2 2"
 				}
 
@@ -417,8 +429,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
-					"midpoints" : [ 231.271240234375, 504.5, 202.6356201171875, 504.5, 202.6356201171875, 235.5, 292.771240234375, 235.5 ],
+					"midpoints" : [ 231.271240234375, 516.5, 202.6356201171875, 516.5, 202.6356201171875, 235.5, 292.771240234375, 235.5 ],
 					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -538,6 +557,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"order" : 1,
+					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"order" : 1,
 					"source" : [ "obj-4", 0 ]
@@ -549,14 +576,6 @@
 					"destination" : [ "obj-2", 0 ],
 					"order" : 0,
 					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"order" : 1,
-					"source" : [ "obj-4", 1 ]
 				}
 
 			}
@@ -637,7 +656,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
+				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

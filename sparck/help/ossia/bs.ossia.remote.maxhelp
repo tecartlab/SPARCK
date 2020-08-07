@@ -49,7 +49,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 4,
 					"presentation_rect" : [ 569.0, 339.5, 150.0, 60.0 ],
-					"text" : "@items <list of items>\n@hint \"hint over the text\"\n@type string\n@size 149 19"
+					"text" : "@items <list of items>\n@hint \"hint over the text\"\n@type int\n@size 149 19"
 				}
 
 			}
@@ -1030,8 +1030,8 @@
 			}
 , 			{
 				"name" : "bs.ossia.remote.select.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/menu",
-				"patcherrelativepath" : "../../patchers/ossia/menu",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
+				"patcherrelativepath" : "../../patchers/ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 595.0, 83.0, 545.0, 234.0 ],
+		"rect" : [ 595.0, 83.0, 267.0, 234.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -378,7 +378,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 266.132351814236131, 144.0, 42.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 50.0, 17.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 60.0, 17.0 ],
 					"text" : "#3",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}

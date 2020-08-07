@@ -776,7 +776,7 @@ void *bs_msg_send_new(t_symbol *s, long argc, t_atom *argv)
                     // copy the relevant atoms into the atom array
                     sysmem_copyptr(&argv[i], newargv, sizeof(t_atom) * count);
                     // send the whole package to the set_attibute function
-                    if(news == ps_attr_title){
+                    if(news == ps_attr_title || news == ps_attr_setTitleMsg){
                         bs_msg_send_attr_title_set(x, newargc, newargv);
                     } else if(news == ps_attr_appendix){
                         bs_msg_send_attr_appendix_set(x, newargc, newargv);

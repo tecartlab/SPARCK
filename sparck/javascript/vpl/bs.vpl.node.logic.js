@@ -72,6 +72,7 @@ var myNodeName = undefined; // fixed name, only initialize inside APP
 var myNodeID = undefined; // fixed ID, based on a random but unique number
 var myNodeTitle = undefined; // user set node title
 var myNodeAddress = undefined; // ossia node address, set through the title
+var myNodeOssiaModel = undefined; // ossia model address, set through the title
 var myNodeVarName = undefined;
 var myNodeSpace = undefined;
 var myDefaultColor = new Array(1.0, 0.65, 0.0, 1.);
@@ -435,7 +436,8 @@ function nodespace(wrksp){
 function title(newtitle){
 	dpost("set new title " + newtitle + " -> nodeid =  " + myNodeID + "\n");
 	myNodeTitle = newtitle;
-    myNodeAddress = "sparck:/node/" + newtitle;
+	myNodeOssiaModel = "node/" + newtitle;
+    myNodeAddress = "sparck:/" + myNodeOssiaModel;
 	storeKeyValueInDB(myNodeName, "_title", newtitle);
 	myNodeVarName = newtitle;
     // the sequence of the following messages matter:
@@ -446,7 +448,7 @@ function title(newtitle){
     messnamed(myNodeID + "::pbody", "address", myNodeTitle, myNodeAddress);
 	outlet(OUTLET_DUMP, "setmsgtitle", newtitle);
 	outlet(OUTLET_DUMP, "title", newtitle);
-	outlet(OUTLET_DUMP, "address", myNodeAddress);
+	outlet(OUTLET_DUMP, "address", myNodeOssiaModel);
 }
 
 function color(){

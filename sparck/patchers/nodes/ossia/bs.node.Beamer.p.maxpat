@@ -354,9 +354,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 60.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 80.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 60.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 80.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_folded"
 				}
