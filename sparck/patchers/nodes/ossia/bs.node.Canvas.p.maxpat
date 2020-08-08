@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "bake/dim", "@text", "bake dim", "@type", "string", "@size", 59, 19, "@items", 128, 256, 512, 1024, 2048 ],
+					"args" : [ "#1", "bake/dim", "@text", "bake dim", "@type", "string", "@size", 59, 19, "@items", 128, 256, 512, 1024 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
