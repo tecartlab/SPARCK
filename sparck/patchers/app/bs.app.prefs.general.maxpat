@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 4,
+			"minor" : 1,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 227.0, 236.0, 675.0, 556.0 ],
+		"rect" : [ 115.0, 244.0, 675.0, 556.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,56 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-37",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 184.638733000000002, 479.0, 125.0, 49.0 ],
+					"text" : ";\rmax setmirrortoconsole $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"clickedimage" : 1,
+					"hint" : "streams the messages to the console to the system console (The system console is available on the Mac using Console.app, or on Windows using the DbgView program - free download from Microsoft).",
+					"id" : "obj-33",
+					"maxclass" : "pictctrl",
+					"mode" : 1,
+					"name" : "bs.node.logo.default.png",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 184.638733000000002, 440.0, 23.0, 23.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 477.5, 136.570067999999992, 19.0, 19.0 ],
+					"varname" : "enableStreamingToSysConsole"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Courier New",
+					"fontsize" : 12.0,
+					"id" : "obj-35",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 15.722106999999994, 440.0, 167.0, 34.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 182.222106999999994, 136.570067999999992, 292.0, 20.0 ],
+					"text" : "stream sparck console to system console"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-34",
 					"maxclass" : "message",
@@ -205,7 +254,7 @@
 , 			{
 				"box" : 				{
 					"clickedimage" : 1,
-					"hint" : "save all nodes on autosave. while autosave will create its own project that doesn't interfere with the project you are currently working on, this setting will actually save the nodes files without beeing able to roll back.",
+					"hint" : "streams the messages to specified udp port on the local machine.",
 					"id" : "obj-20",
 					"maxclass" : "pictctrl",
 					"mode" : 1,
@@ -230,10 +279,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 154.222106999999994, 285.0, 160.0, 34.0 ],
+					"patching_rect" : [ 154.222106999999994, 285.0, 167.0, 34.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 307.222106999999994, 110.570067999999992, 167.0, 20.0 ],
-					"text" : "stream console via udp"
+					"presentation_rect" : [ 257.222106999999994, 110.570067999999992, 217.0, 20.0 ],
+					"text" : "stream sparck console via udp"
 				}
 
 			}
@@ -319,8 +368,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.083373999999992, 184.894713999999993, 226.0, 86.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 6,
-					"presentation_rect" : [ 8.5, 57.0, 282.0, 74.0 ],
+					"presentation_linecount" : 8,
+					"presentation_rect" : [ 8.5, 57.0, 177.0, 97.0 ],
 					"text" : "how to recover: \nautosave creates a sparck-project inside the <project>/_settings folder. simply move the file to the <project> folder and load it. don't forget to save it again under a new name."
 				}
 
@@ -568,13 +617,14 @@
 						"autosaveall" : [ 0 ],
 						"debugLevel" : [ 4 ],
 						"enableStreamingConsole" : [ 0 ],
+						"enableStreamingToSysConsole" : [ 1 ],
 						"jsdebug" : [ 0 ],
 						"lowfrequencyRefreshRate" : [ 0 ],
 						"streamingConsolePort" : [ 11111 ]
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u642000347"
+					"varname" : "u335000603"
 				}
 
 			}
@@ -823,6 +873,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-31", 0 ],
 					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"source" : [ "obj-33", 0 ]
 				}
 
 			}
