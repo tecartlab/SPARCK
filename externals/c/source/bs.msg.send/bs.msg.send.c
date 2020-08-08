@@ -667,15 +667,31 @@ void bs_msg_send_notify(t_bs_msg_send *x, t_symbol *s, t_symbol *msg, void *send
     }
 }
 
-void bs_msg_send_assist(t_bs_msg_send *x, void *b, long m, long a, char *s)
+void bs_msg_send_assist(t_bs_msg_send *x, void *b, long io, long index, char *s)
 {
-    if (m == ASSIST_INLET) { // inlet
-        sprintf(s, "Messages for inlet %ld", m);
-    }
-    else {	// outlets, of which we have none...
-        sprintf(s, "I am outlet %ld", a);
+    switch (io) {
+        case 1:
+            switch (index) {
+                case 0:
+                    strncpy_zero(s, "For Settings messages", 512);
+                    break;
+                case 1:
+                    strncpy_zero(s, "Data messages", 512);
+                    break;
+                case 2:
+                    strncpy_zero(s, "not used", 512);
+                    break;
+                case 3:
+                    strncpy_zero(s, "Wormhole messages", 512);
+                    break;
+            }
+            break;
+        case 2:
+            strncpy_zero(s, "This is a description of the outlet", 512);
+            break;
     }
 }
+
 
 void bs_msg_send_free(t_bs_msg_send *x)
 {
