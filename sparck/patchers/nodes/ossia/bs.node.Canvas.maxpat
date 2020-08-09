@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 81.0, 177.0, 963.0, 580.0 ],
+		"rect" : [ 82.0, 258.0, 963.0, 580.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -1459,7 +1459,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 51.0, 144.0, 1027.0, 638.0 ],
+						"rect" : [ 379.0, 193.0, 1027.0, 638.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1488,6 +1488,30 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 411.0, 407.0, 111.0, 22.0 ],
+									"text" : "draw_mode tri_grid"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 67.0, 407.0, 120.0, 22.0 ],
+									"text" : "draw_mode triangles"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "newobj",
@@ -1545,7 +1569,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 585.000000000000114, 335.999999999999943, 530.0, 35.0 ],
+									"patching_rect" : [ 585.000000000000114, 311.999999999999943, 530.0, 35.0 ],
 									"text" : "ossia.parameter mesh/torus/radius @type float @default 0. @min 0. @description \"internal radius of torus\""
 								}
 
@@ -1557,7 +1581,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 494.000000000000114, 339.0, 75.0, 22.0 ],
+									"patching_rect" : [ 494.000000000000114, 315.0, 75.0, 22.0 ],
 									"text" : "prepend dim"
 								}
 
@@ -1571,7 +1595,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 494.000000000000114, 293.9295654296875, 529.0, 35.0 ],
+									"patching_rect" : [ 494.000000000000114, 269.9295654296875, 529.0, 35.0 ],
 									"text" : "ossia.parameter mesh/dim @type vec2f @default 20 20 @min 0 0 @description \"The dimensions of the mesh grid (if it is not a file)\""
 								}
 
@@ -1583,7 +1607,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 390.0, 339.0, 89.0, 22.0 ],
+									"patching_rect" : [ 390.0, 315.0, 89.0, 22.0 ],
 									"text" : "prepend shape"
 								}
 
@@ -1619,7 +1643,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 46.0, 367.999999999999943, 38.0, 22.0 ],
+									"patching_rect" : [ 46.0, 339.999999999999943, 38.0, 22.0 ],
 									"text" : "zl.reg"
 								}
 
@@ -1671,7 +1695,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 585.000000000000114, 379.29180908203125, 112.0, 22.0 ],
+									"patching_rect" : [ 585.000000000000114, 355.29180908203125, 112.0, 22.0 ],
 									"text" : "prepend rad_minor"
 								}
 
@@ -1681,10 +1705,10 @@
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 390.0, 400.0, 29.5, 22.0 ],
-									"text" : "t b l"
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "", "bang" ],
+									"patching_rect" : [ 390.0, 376.0, 40.0, 22.0 ],
+									"text" : "t b l b"
 								}
 
 							}
@@ -1736,10 +1760,10 @@
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 46.0, 404.0, 29.5, 22.0 ],
-									"text" : "t b l"
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "", "bang" ],
+									"patching_rect" : [ 46.0, 376.0, 40.0, 22.0 ],
+									"text" : "t b l b"
 								}
 
 							}
@@ -1778,7 +1802,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
 									"patching_rect" : [ 46.0, 441.0, 108.0, 62.0 ],
-									"text" : "jit.gl.model sparck @automatic 1 @color 1 1 1 1 @matrixoutput 1"
+									"text" : "jit.gl.model sparck @automatic 0 @color 1 1 1 1 @matrixoutput 1"
 								}
 
 							}
@@ -1867,6 +1891,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 2 ],
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-148", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -1916,6 +1947,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 1 ],
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"source" : [ "obj-3", 0 ]
 								}
@@ -1939,6 +1977,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-5", 2 ]
 								}
 
 							}
@@ -1990,6 +2035,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-109", 0 ],
 									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-8", 2 ]
 								}
 
 							}
