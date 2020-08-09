@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 138.0, 100.0, 1129.0, 736.0 ],
+		"rect" : [ 138.0, 100.0, 714.0, 736.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,7 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 674.277831999999989, 119.5704345703125, 449.722168000000011, 35.0 ],
+					"patching_rect" : [ 674.277831999999989, 119.5704345703125, 452.0, 35.0 ],
 					"text" : "ossia.parameter #1 @type list @default 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 @description #2"
 				}
 
@@ -154,27 +154,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"id" : "obj-18",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 463.0, 197.0, 191.0, 22.0 ],
-					"text" : "set bs::app::render::scene::update"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
 					"id" : "obj-13",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 463.0, 289.0, 19.0, 22.0 ],
-					"text" : "r"
+					"patching_rect" : [ 463.0, 197.0, 179.0, 22.0 ],
+					"text" : "r bs::app::render::scene::update"
 				}
 
 			}
@@ -470,7 +456,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 229.5, 107.570435000000003, 46.0, 22.0 ],
+					"patching_rect" : [ 49.722168000000011, 108.570435000000003, 46.0, 22.0 ],
 					"text" : "sel 0 1"
 				}
 
@@ -512,7 +498,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 229.5, 59.5704345703125, 75.0, 22.0 ],
+					"patching_rect" : [ 49.722168000000011, 68.5704345703125, 75.0, 22.0 ],
 					"text" : "route enable"
 				}
 
@@ -589,14 +575,14 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "switch",
+					"comment" : "enable receiving settings and direct messages. Needed when the rendererd object should be able to react to render information (like stereoinfo)",
 					"id" : "obj-9",
 					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 229.5, 24.570435, 25.0, 25.0 ]
+					"patching_rect" : [ 49.722168000000011, 25.570435, 25.0, 25.0 ]
 				}
 
 			}
@@ -851,13 +837,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-19", 0 ]
 				}
@@ -993,16 +972,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"order" : 0,
-					"source" : [ "obj-39", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-37", 0 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-39", 1 ]
 				}
 
@@ -1010,7 +981,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-38", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-39", 1 ]
 				}
 
@@ -1039,14 +1010,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-116", 0 ],
-					"order" : 1,
-					"source" : [ "obj-41", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
 					"order" : 0,
 					"source" : [ "obj-41", 0 ]
 				}
@@ -1055,7 +1018,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-41", 0 ]
 				}
 

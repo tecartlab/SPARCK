@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 114.0, 45.0, 1029.0, 855.0 ],
+		"rect" : [ 0.0, 63.0, 1029.0, 855.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -256,7 +256,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u276029248"
+									"varname" : "u173006210"
 								}
 
 							}
@@ -2500,7 +2500,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u257029249"
+									"varname" : "u503006485"
 								}
 
 							}
@@ -5245,7 +5245,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u513009307"
+									"varname" : "u018006973"
 								}
 
 							}
@@ -6090,7 +6090,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u692029160"
+									"varname" : "u700007047"
 								}
 
 							}
@@ -6905,7 +6905,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 258.833312999999976, 274.631591695312522, 127.0, 23.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 805, 45, 1440, 451 ],
+						"client_rect" : [ 4, 45, 401, 280 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 583, 69, 1034, 197 ]
@@ -6927,7 +6927,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 529.714285714285438, 31.0, 59.5, 22.0 ],
 					"text" : "autopattr",
-					"varname" : "u787029247"
+					"varname" : "u996005423"
 				}
 
 			}
@@ -7272,7 +7272,7 @@
 									}
 ,
 									"text" : "autopattr",
-									"varname" : "u826029203"
+									"varname" : "u188007342"
 								}
 
 							}

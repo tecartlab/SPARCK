@@ -114,13 +114,10 @@ function drawto(_context){
     frustumLeftSketch.drawto = _context;
     frustumRightSketch.drawto = _context;
     sensorBoxSketch.drawto = _context;
+	bang();
 }
 
 function enable(_enable){
-	if(updateDraw){
-		updateDraw = false;
-		draw();
-	}
 	if(isSetup){
 		frustumLeftSketch.enable = _enable;
 		if(stereoMode == 1){
@@ -128,6 +125,7 @@ function enable(_enable){
 		}
 		sensorBoxSketch.enable = _enable;
 	}
+	bang();
 }
 
 function stereomode(s){
