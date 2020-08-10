@@ -270,7 +270,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "smoooth/angle", "@text", "angle", "@is", 1 ],
+					"args" : [ "#1", "smooth/angle", "@text", "angle", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,

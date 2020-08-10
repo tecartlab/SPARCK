@@ -57,9 +57,9 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 204.0, 155.0, 1134.0, 613.0 ],
+						"rect" : [ 204.0, 155.0, 1209.0, 613.0 ],
 						"bglocked" : 0,
-						"openinpresentation" : 1,
+						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
@@ -86,6 +86,18 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 19.0, 175.0, 29.5, 22.0 ],
+									"text" : "- 1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "newobj",
@@ -135,13 +147,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-6",
-													"linecount" : 4,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 644.200032333333525, 173.0, 209.0, 62.0 ],
-													"text" : "ossia.parameter blend/bevel/curve @type float @default 0. @range -1. 1. @description \"bevel gradient curve\""
+													"patching_rect" : [ 644.200032333333525, 173.0, 236.0, 49.0 ],
+													"text" : "ossia.parameter blend/bevel/curve @type float @default 0. @range -1. 1. @clip both @description \"bevel gradient curve\""
 												}
 
 											}
@@ -168,8 +180,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 354.004608000000133, 107.0, 499.0, 35.0 ],
-													"text" : "ossia.parameter blend/bevel/size @type float @default 0. @range 0. 1. @description \"bevel size\""
+													"patching_rect" : [ 354.004608000000133, 107.0, 523.0, 35.0 ],
+													"text" : "ossia.parameter blend/bevel/size @type float @default 0. @range 0. 1. @clip both @description \"bevel size\""
 												}
 
 											}
@@ -182,8 +194,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 201.04109633333357, 62.0, 651.963511666666591, 35.0 ],
-													"text" : "ossia.parameter blend/angle/falloff @type float @default 0. @range 0. 0.5 @description \"angle-limit falloff (defines the size of the angle blend transition at the angle limit)\""
+													"patching_rect" : [ 201.04109633333357, 62.0, 678.0, 35.0 ],
+													"text" : "ossia.parameter blend/angle/falloff @type float @default 0. @range 0. 0.5 @clip both @description \"angle-limit falloff (defines the size of the angle blend transition at the angle limit)\""
 												}
 
 											}
@@ -196,8 +208,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 58.0, 17.0, 739.0, 35.0 ],
-													"text" : "ossia.parameter blend/angle/limit @type float @default 0. @range 0. 1. @description \"angle limit (how much of the visible surface area is considered, 0 = no limit) \""
+													"patching_rect" : [ 58.0, 17.0, 799.0, 35.0 ],
+													"text" : "ossia.parameter blend/angle/limit @type float @default 0. @range 0. 1. @clip both @description \"angle limit (how much of the visible surface area is considered, 0 = no limit) \""
 												}
 
 											}
@@ -856,8 +868,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 19.0, 241.307616999999993, 754.0, 22.0 ],
-									"text" : "ossia.parameter distance @type float @default 0. @range 0. 1. @description \"use distance as an additional differentiator. (0 = no influence)\""
+									"patching_rect" : [ 19.0, 241.307616999999993, 814.0, 22.0 ],
+									"text" : "ossia.parameter distance @type float @default 0. @range 0. 1. @clip both @description \"use distance as an additional differentiator. (0 = no influence)\""
 								}
 
 							}
@@ -870,8 +882,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 403.310485999999855, 85.5, 919.0, 35.0 ],
-									"text" : "ossia.parameter blend/interpolation @type float @default 0. @range 0. 1. @description \"interpolation correction. if strange artefacts start to appear, raise the value until the artefacts disappear. (how much of the overlapping areas are considered / 1=full spread)\""
+									"patching_rect" : [ 403.310485999999855, 85.5, 761.0, 35.0 ],
+									"text" : "ossia.parameter blend/interpolation @type float @default 0. @range 0. 1. @clip both @description \"interpolation correction. if strange artefacts start to appear, raise the value until the artefacts disappear. (how much of the overlapping areas are considered / 1=full spread)\""
 								}
 
 							}
@@ -897,8 +909,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 203.844726499999979, 355.43890399999998, 913.0, 35.0 ],
-									"text" : "ossia.parameter angleMode @default 0 @description \"angle differentiation: 'viewray' = 0 will differentiate based on the angle between the surface normal and the viewray, 'direction' = 1 will differentiate based on the angle between the surface normal and the camera direction - ideal for flat surfaces\" @default 0 @range 0 1 @clip both"
+									"patching_rect" : [ 203.844726499999979, 355.43890399999998, 921.0, 35.0 ],
+									"text" : "ossia.parameter angleMode @type int @default 0 @range 0 1 @clip both @description \"angle differentiation: 'viewray' = 0 will differentiate based on the angle between the surface normal and the viewray, 'direction' = 1 will differentiate based on the angle between the surface normal and the camera direction - ideal for flat surfaces\""
 								}
 
 							}
@@ -910,8 +922,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 19.0, 145.762878000000001, 841.0, 22.0 ],
-									"text" : "ossia.parameter projectionMode @type int @default 1 @description \"projection mode (-1 = back side, 0 = both sides, 1 = front side)\" @range -1 1 @clip both"
+									"patching_rect" : [ 19.0, 145.762878000000001, 833.0, 22.0 ],
+									"text" : "ossia.parameter projectionMode @type int @default 1 @description \"projection mode (0 = back side, 1 = both sides, 2 = front side)\" @range 0 2 @clip both"
 								}
 
 							}
@@ -937,8 +949,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 139.810485999999855, 31.544739, 962.0, 22.0 ],
-									"text" : "ossia.parameter blend/spread @type float @default 0. @range 0. 1. @description \"spread factor will increase the differentiation between overlapping projections (1 = full spread)\""
+									"patching_rect" : [ 139.810485999999855, 31.544739, 1011.0, 22.0 ],
+									"text" : "ossia.parameter blend/spread @type float @default 0. @range 0. 1. @clip both @description \"spread factor will increase the differentiation between overlapping projections (1 = full spread)\""
 								}
 
 							}
@@ -974,7 +986,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 25.253295999999978, 175.807616999999993, 147.0, 22.0 ],
+									"patching_rect" : [ 19.0, 205.0, 147.0, 22.0 ],
 									"text" : "prepend projection_mode"
 								}
 
@@ -1271,6 +1283,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-82", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
 									"source" : [ "obj-20", 0 ]
 								}
@@ -1334,7 +1353,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-82", 0 ],
+									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
