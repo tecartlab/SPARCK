@@ -213,7 +213,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "render/shader", "@text", "fx-shader", "@size", 179, 19, "@menutype", "message", "@isnot", "none" ],
+					"args" : [ "#1", "render/shader", "@text", "fx-shader", "@size", 159, 19, "@menutype", "message", "@isnot", "none" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -329,7 +329,7 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.impulse.maxpat",
-					"numinlets" : 0,
+					"numinlets" : 3,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 252.0, 511.0, 200.0, 19.0 ],
@@ -505,7 +505,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 2 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-23", 0 ]
 				}
 
@@ -537,7 +537,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-27", 2 ],
-					"order" : 1,
+					"order" : 2,
 					"source" : [ "obj-23", 0 ]
 				}
 
