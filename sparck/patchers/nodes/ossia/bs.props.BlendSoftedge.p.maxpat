@@ -43,7 +43,7 @@
 					"args" : [ "#1", "export", "@text", "texture", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "export", "@size", 59, 19, "@mode", 1, "@hint", "export texture to /_export/_textures", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
-					"clickthrough" : 0,
+					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-10",
