@@ -293,29 +293,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "normalize", "@text", "normalize" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 1,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-26",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.toggle.maxpat",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 348.0, 206.0, 17.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 200.0, 120.0, 19.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"args" : [ "#1", "depth/enable", "@text", "depth" ],
 					"bgmode" : 0,
 					"border" : 0,
