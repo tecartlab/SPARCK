@@ -41,6 +41,30 @@
 		"globalpatchername" : "Window",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 78.208331999999999, 37.0, 42.0, 20.0 ],
+					"text" : "open_b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 34.208331999999999, 37.0, 42.0, 20.0 ],
+					"text" : "open_p"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-21",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -2572,7 +2596,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.5, 288.0, 113.0, 35.0 ],
-									"text" : "to_texture u518002404"
+									"text" : "to_texture u867015550"
 								}
 
 							}
@@ -2832,7 +2856,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.65277900000001, 24.5, 33.0, 20.0 ],
+					"patching_rect" : [ 147.15277900000001, 12.0, 33.0, 20.0 ],
 					"text" : "done"
 				}
 
@@ -2844,7 +2868,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 48.708331999999999, 24.5, 63.0, 20.0 ],
+					"patching_rect" : [ 78.208331999999999, 12.0, 63.0, 20.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -3090,6 +3114,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-48", 1 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-23", 2 ],
 					"source" : [ "obj-19", 0 ]
 				}
@@ -3113,6 +3144,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-48", 1 ],
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
@@ -3278,7 +3316,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-48", 1 ],
-					"midpoints" : [ 351.555511000000024, 198.666626000000008, 230.680534166666689, 198.666626000000008, 230.680534166666689, 54.666626000000008, 70.208330666666654, 54.666626000000008 ],
+					"midpoints" : [ 351.555511000000024, 198.666626000000008, 230.680534166666689, 198.666626000000008, 230.680534166666689, 66.666626000000008, 70.208330666666654, 66.666626000000008 ],
 					"source" : [ "obj-44", 0 ]
 				}
 

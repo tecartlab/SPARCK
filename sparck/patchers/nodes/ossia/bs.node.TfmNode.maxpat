@@ -41,6 +41,30 @@
 		"globalpatchername" : "TfmNode",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 82.370361000000003, 29.0, 42.0, 20.0 ],
+					"text" : "open_b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 38.370361000000003, 29.0, 42.0, 20.0 ],
+					"text" : "open_p"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 					"id" : "obj-29",
 					"maxclass" : "newobj",
@@ -144,7 +168,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 73.249978999999968, 17.5, 63.0, 20.0 ],
+					"patching_rect" : [ 74.249978999999968, 6.5, 63.0, 20.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -158,7 +182,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 146.861085999999972, 17.5, 33.0, 20.0 ],
+					"patching_rect" : [ 147.861085999999972, 6.5, 33.0, 20.0 ],
 					"text" : "done"
 				}
 
@@ -361,6 +385,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-19", 1 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-30", 1 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -405,6 +436,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-19", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 1 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}

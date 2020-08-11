@@ -215,12 +215,14 @@ function initNodeSpace(){
             // get the node abstraction file names 
             var nodepath = owner.patcher.filepath;
             myNodeFileName = nodepath.substring(nodepath.lastIndexOf("/") + 1, nodepath.lastIndexOf("."));
+            
+            var nodeName = myNodeFileName.substring(8, myNodeFileName.length); // cutting away 'bs.node.'
             if(myNodeEnableBody == 1){
-                myNodePBodyFileName = myNodeFileName + ".p";
+                myNodePBodyFileName = "bs.props." + nodeName + ".p";
             } else if (myNodeEnableBody == 2){
-                myNodePBodyFileName = myNodeFileName + ".pbody";
+                myNodePBodyFileName = "bs.props." + nodeName + ".b";
             }
-            myNodePropsFileName = myNodeFileName + ".p";
+            myNodePropsFileName = "bs.props." + nodeName + ".p";
             
             vpl_nodeBox = owner.patcher.box;
 			if(vpl_nodeBox != null){
@@ -415,6 +417,19 @@ function openproperties(){
     if(myNodeEnableProperties){
 		//post("color " + colr + " \n");
         outlet(2, "shroud", "bs.vpl.node.props", myNodeID, myNodeTitle, myNodeAddress, myNodePropsFileName, myNodeColorOn);
+    }
+}
+
+// open property patch (used only during evelopment)
+function open_p(){
+    if(myNodeEnableProperties){
+        outlet(2, "load", myNodePropsFileName);
+    }
+}
+
+function open_b(){
+    if(myNodeEnableBody){
+        outlet(2, "load", myNodePBodyFileName);
     }
 }
 

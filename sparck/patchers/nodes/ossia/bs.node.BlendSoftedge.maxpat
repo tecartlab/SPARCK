@@ -41,6 +41,30 @@
 		"globalpatchername" : "BlendSoftedge",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 62.000000000000014, 26.0, 42.0, 20.0 ],
+					"text" : "open_b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 18.000000000000014, 26.0, 42.0, 20.0 ],
+					"text" : "open_p"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -2314,7 +2338,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 30.888885999999999, 15.640868999999999, 63.0, 20.0 ],
+					"patching_rect" : [ 62.000000000000014, 2.640868999999999, 63.0, 20.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -2328,7 +2352,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 110.592590333333334, 15.640868999999999, 33.0, 20.0 ],
+					"patching_rect" : [ 127.592590333333334, 2.640868999999999, 33.0, 20.0 ],
 					"text" : "done"
 				}
 
@@ -2492,6 +2516,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-27", 2 ],
 					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 1 ],
+					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -2671,6 +2702,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-40", 1 ],
 					"source" : [ "obj-33", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 1 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}

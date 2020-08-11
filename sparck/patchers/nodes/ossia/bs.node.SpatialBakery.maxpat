@@ -41,6 +41,30 @@
 		"globalpatchername" : "SpatialBakery",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 70.370361000000003, 37.0, 42.0, 20.0 ],
+					"text" : "open_b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.370361000000003, 37.0, 42.0, 20.0 ],
+					"text" : "open_p"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-84",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -6903,7 +6927,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 34.499979666666675, 31.0, 63.0, 20.0 ],
+					"patching_rect" : [ 59.900865500000009, 10.070435, 63.0, 20.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -7384,7 +7408,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 106.499979666666675, 31.0, 33.0, 20.0 ],
+					"patching_rect" : [ 131.900865500000009, 10.070435, 33.0, 20.0 ],
 					"text" : "done"
 				}
 
@@ -8147,6 +8171,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-19", 1 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-19", 2 ],
 					"source" : [ "obj-4", 1 ]
 				}
@@ -8242,6 +8273,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-23", 2 ],
 					"source" : [ "obj-84", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 1 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}
