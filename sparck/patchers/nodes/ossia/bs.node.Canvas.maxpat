@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 82.0, 258.0, 610.0, 391.0 ],
+		"rect" : [ 82.0, 258.0, 817.0, 418.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -1303,7 +1303,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 50.0, 96.0, 744.0, 673.0 ],
+										"rect" : [ 50.0, 96.0, 908.0, 673.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1422,7 +1422,7 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 211.0, 69.0, 155.0, 87.0 ],
+																	"patching_rect" : [ 211.0, 69.0, 156.0, 87.0 ],
 																	"text" : "this weird contraption prevents gl3 to crash. it looks as if [jit.gl.node] has a problem when setting the dim value before the node has rendered at least once"
 																}
 
@@ -1698,8 +1698,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "jit_gl_texture", "", "" ],
-													"patching_rect" : [ 178.083602999999755, 528.868469000000005, 554.0, 22.0 ],
-													"text" : "jit.gl.node sparck @erase_color 0. 0. 0. 1. @capture 7 @adapt 0 @dim 1024 1024 @name #0_id.bake"
+													"patching_rect" : [ 178.083602999999755, 528.868469000000005, 557.0, 22.0 ],
+													"text" : "jit.gl.node sparck @erase_color 0. 0. 0. 1. @capture 7 @adapt 0 @dim 1024 1024 @name #0_id.bake "
 												}
 
 											}
