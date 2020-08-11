@@ -479,7 +479,7 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 304.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 327.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 242.0, 327.0 ],
 					"proportion" : 0.39,
@@ -505,7 +505,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 2 ],
-					"order" : 1,
+					"order" : 3,
 					"source" : [ "obj-23", 0 ]
 				}
 
@@ -529,7 +529,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 2 ],
-					"order" : 3,
+					"order" : 2,
 					"source" : [ "obj-23", 0 ]
 				}
 
@@ -537,7 +537,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-27", 2 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-23", 0 ]
 				}
 

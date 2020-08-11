@@ -442,7 +442,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 616.222045999999978, 99.5, 84.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 127.649352999999991, 84.0, 22.0 ],
 									"text" : "prepend setall"
 								}
 
@@ -518,14 +518,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 616.222045999999978, 32.850647000000002, 165.0, 62.0 ],
+									"patching_rect" : [ 616.222045999999978, 61.0, 165.0, 62.0 ],
 									"text" : "ossia.parameter mesh/wireframe/color @type rgba @default 1. 1. 1. 1. @description \"mesh color\""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "render/shader", "@text", "fx-shader", "@types", "texturefx", "@out2", "shader", "@outoff2", "shader", "@out3", "tex1", "><", "@outoff3", "@offname", "<none>", "@description", "effect shader" ],
+									"args" : [ "render/shader", "@text", "fx-shader", "@types", "texturefx", "@out1", "shader", "@outoff1", "shader", "@out2", "tex1", "><", "@outoff2", "@offname", "<none>", "@description", "effect shader" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -540,7 +540,7 @@
 									"numoutlets" : 17,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 333.933777000000021, 48.850646999999981, 206.5, 23.0 ],
+									"patching_rect" : [ 333.933777000000021, 61.0, 206.5, 23.0 ],
 									"varname" : "shader",
 									"viewvisibility" : 1
 								}
@@ -565,7 +565,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 508.527618000000018, 295.640869000000009, 45.0, 22.0 ],
+									"patching_rect" : [ 508.527618000000018, 307.790222000000028, 45.0, 22.0 ],
 									"text" : "shader"
 								}
 
@@ -577,7 +577,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 464.527618000000018, 295.640869000000009, 38.0, 22.0 ],
+									"patching_rect" : [ 464.527618000000018, 307.790222000000028, 38.0, 22.0 ],
 									"text" : "zl.reg"
 								}
 
@@ -589,7 +589,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 523.860961999999972, 173.140869000000009, 37.0, 22.0 ],
+									"patching_rect" : [ 523.860961999999972, 185.290222000000028, 37.0, 22.0 ],
 									"text" : "none"
 								}
 
@@ -601,7 +601,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 325.333327999999995, 173.140869000000009, 115.0, 22.0 ],
+									"patching_rect" : [ 338.333327999999995, 174.140869000000009, 115.0, 22.0 ],
 									"text" : "bs::texture::checker"
 								}
 
@@ -613,7 +613,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 616.222045999999978, 338.0, 81.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 366.149353000000019, 81.0, 22.0 ],
 									"text" : "texture $1 $1"
 								}
 
@@ -627,7 +627,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 418.527618000000018, 128.0, 177.0, 20.0 ],
+									"patching_rect" : [ 418.527618000000018, 140.149353000000019, 177.0, 20.0 ],
 									"text" : "route jit_gl_texture texture disconnect"
 								}
 
@@ -641,7 +641,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 220.0, 123.0, 177.0, 20.0 ],
+									"patching_rect" : [ 233.0, 140.149353000000019, 177.0, 20.0 ],
 									"text" : "route jit_gl_texture texture disconnect"
 								}
 
@@ -677,7 +677,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 383.527618000000018, 295.640869000000009, 54.0, 22.0 ],
+									"patching_rect" : [ 383.527618000000018, 307.790222000000028, 54.0, 22.0 ],
 									"text" : "gate 1 1"
 								}
 
@@ -689,7 +689,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 616.222045999999978, 168.140869000000009, 110.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 196.290222, 110.0, 22.0 ],
 									"text" : "pack s f f f f"
 								}
 
@@ -701,7 +701,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "float", "float", "float", "float" ],
-									"patching_rect" : [ 616.222045999999978, 128.0, 110.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 156.149352999999991, 110.0, 22.0 ],
 									"text" : "unpack s f f f f"
 								}
 
@@ -713,7 +713,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 616.222045999999978, 299.0, 68.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 327.149353000000019, 68.0, 22.0 ],
 									"text" : "unpack s s"
 								}
 
@@ -749,7 +749,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 616.222045999999978, 198.070435000000003, 30.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 226.219787999999994, 30.0, 22.0 ],
 									"text" : "t b l"
 								}
 
@@ -761,7 +761,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 616.222045999999978, 231.0, 55.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 259.149353000000019, 55.0, 22.0 ],
 									"text" : "jit.matrix"
 								}
 
@@ -773,7 +773,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_gl_texture", "" ],
-									"patching_rect" : [ 616.222045999999978, 266.0, 105.0, 22.0 ],
+									"patching_rect" : [ 616.222045999999978, 294.149353000000019, 105.0, 22.0 ],
 									"text" : "jit.gl.texture stage"
 								}
 
@@ -785,7 +785,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 155.652527000000021, 295.640869000000009, 54.0, 22.0 ],
+									"patching_rect" : [ 155.652527000000021, 295.640869000000009, 93.0, 22.0 ],
 									"text" : "gate 1 1"
 								}
 
@@ -799,7 +799,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 220.0, 77.0, 30.0, 30.0 ]
+									"patching_rect" : [ 233.0, 93.149353000000019, 30.0, 30.0 ]
 								}
 
 							}
@@ -812,7 +812,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 418.527618000000018, 77.0, 30.0, 30.0 ]
+									"patching_rect" : [ 418.527618000000018, 89.149353000000019, 30.0, 30.0 ]
 								}
 
 							}
@@ -1416,8 +1416,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 805.860961999999972, 131.5, 160.0, 89.0 ],
-									"text" : "ossia.parameter render/blend/enable @type bool @default 0 @description \"Use alpha channel to blend with black background\""
+									"patching_rect" : [ 805.860961999999972, 131.5, 158.0, 89.0 ],
+									"text" : "ossia.parameter render/blend/enable @type bool @default 1 @description \"Use alpha channel to blend with black background\""
 								}
 
 							}
@@ -1711,7 +1711,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 805.860961999999972, 398.0, 107.0, 22.0 ],
+									"patching_rect" : [ 805.860961999999972, 391.0, 107.0, 22.0 ],
 									"text" : "prepend fileWatch"
 								}
 
@@ -2055,7 +2055,7 @@
 						"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 179.555541999999946, 166.0, 120.166686999999968, 20.0 ],
+					"patching_rect" : [ 179.555541999999946, 166.0, 134.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2064,7 +2064,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "patcher properties",
+					"text" : "p meshes",
 					"varname" : "property"
 				}
 
