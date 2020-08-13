@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 400.0, 91.0, 727.0, 503.0 ],
+		"rect" : [ 400.0, 91.0, 424.0, 503.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -130,7 +130,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 335.0, 540.0, 1050.0, 316.0 ],
+						"rect" : [ 334.0, 540.0, 1050.0, 316.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -165,8 +165,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 121.0, 93.0, 604.0, 22.0 ],
-									"text" : "ignoreclick 1, offdisplaytext \"to calibrate first load/create calibfile\", off_up_bg_color 0.824 0.498 0.498 1., mode 1"
+									"patching_rect" : [ 121.0, 93.0, 607.0, 22.0 ],
+									"text" : "ignoreclick 1, offdisplaytext \"to calibrate: first load/create calibfile\", off_up_bg_color 0.824 0.498 0.498 1., mode 1"
 								}
 
 							}

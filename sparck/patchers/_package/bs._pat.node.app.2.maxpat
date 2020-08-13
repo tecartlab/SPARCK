@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -67,7 +67,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -185,7 +185,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -917,7 +917,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1550,7 +1550,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1621,7 +1621,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1870,7 +1870,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2935,7 +2935,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3837,7 +3837,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4023,7 +4023,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4389,7 +4389,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4513,7 +4513,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5496,13 +5496,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 520.0, 338.0, 640.0, 403.0 ],
+						"rect" : [ 699.0, 316.0, 640.0, 448.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5532,6 +5532,50 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-6",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 59.0, 188.0, 257.0, 35.0 ],
+									"presentation_linecount" : 3,
+									"text" : ";\rmax getglengine bs::system::settings::glengine"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 391.0, 310.0, 101.0, 22.0 ],
+									"text" : "prepend glengine"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 391.0, 279.0, 146.0, 20.0 ],
+									"text" : "r bs::system::settings::glengine"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"comment" : "",
 									"id" : "obj-5",
 									"index" : 1,
@@ -5552,7 +5596,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 282.0, 302.0, 81.0, 22.0 ],
+									"patching_rect" : [ 247.0, 310.0, 81.0, 22.0 ],
 									"text" : "prepend arch"
 								}
 
@@ -5566,7 +5610,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 475.0, 228.0, 129.0, 20.0 ],
+									"patching_rect" : [ 247.0, 279.0, 129.0, 20.0 ],
 									"text" : "r bs::system::settings::arch"
 								}
 
@@ -5581,7 +5625,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.0, 153.0, 215.0, 35.0 ],
+									"patching_rect" : [ 69.0, 146.0, 215.0, 35.0 ],
 									"text" : ";\rmax getarch bs::system::settings::arch"
 								}
 
@@ -5596,7 +5640,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 58.0, 105.0, 265.0, 35.0 ],
+									"patching_rect" : [ 78.0, 105.0, 265.0, 35.0 ],
 									"text" : ";\rmax sendapppath bs::system::settings::apppath"
 								}
 
@@ -5610,7 +5654,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 100.0, 232.0, 163.0, 20.0 ],
+									"patching_rect" : [ 53.0, 240.0, 163.0, 20.0 ],
 									"text" : "r bs::system::settings::desktopsize"
 								}
 
@@ -5624,7 +5668,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 169.0, 302.0, 88.0, 22.0 ],
+									"patching_rect" : [ 106.0, 310.0, 88.0, 22.0 ],
 									"text" : "prepend name"
 								}
 
@@ -5638,7 +5682,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 302.0, 228.0, 135.0, 20.0 ],
+									"patching_rect" : [ 106.0, 274.0, 135.0, 20.0 ],
 									"text" : "r bs::system::settings::name"
 								}
 
@@ -5651,7 +5695,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 4,
 									"numoutlets" : 0,
-									"patching_rect" : [ 28.0, 419.0, 283.0, 22.0 ],
+									"patching_rect" : [ 42.0, 382.0, 283.0, 22.0 ],
 									"text" : "bs.msg.send @title bs::system::settings @unique 0"
 								}
 
@@ -5674,6 +5718,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-4", 1 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
@@ -5690,6 +5741,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 1 ],
 									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -5712,6 +5770,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"order" : 2,
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"order" : 3,
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -5797,7 +5863,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u236009755"
+					"varname" : "u368004698"
 				}
 
 			}
@@ -6364,8 +6430,8 @@
 			}
 , 			{
 				"name" : "bs.rendergroup.send.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/rendergroup",
-				"patcherrelativepath" : "../rendergroup",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -6476,8 +6542,8 @@
 			}
 , 			{
 				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
-				"patcherrelativepath" : "../msg",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}

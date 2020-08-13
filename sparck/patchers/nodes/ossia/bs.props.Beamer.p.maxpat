@@ -62,7 +62,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "calibration/file", "@text", "calibfile", "@size", 179, 19, "@menutype", "file" ],
+					"args" : [ "#1", "calibration/file", "@text", "calibfile", "@size", 159, 19, "@menutype", "file" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -276,7 +276,7 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"patching_rect" : [ 248.0, 138.5, 201.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 20.0, 242.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
