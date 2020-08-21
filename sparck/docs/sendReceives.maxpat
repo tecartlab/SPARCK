@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 68.0, 79.0, 1273.0, 780.0 ],
+		"rect" : [ 68.0, 85.0, 1273.0, 794.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,14 +37,94 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-110",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 322.5, 715.766051999999945, 150.0, 34.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sends always a '-1' and a integer '0' or higher"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-109",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 215.0, 637.031981999999971, 150.0, 20.0 ],
+					"text" : "render bake"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-105",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 213.5, 687.099365000000034, 153.0, 22.0 ],
+					"text" : "s bs::app::rc::manual::bake"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-106",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 213.5, 753.894532000000027, 136.0, 22.0 ],
+					"text" : "s bs::app::rc::post::bake"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-107",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 213.5, 714.766051999999945, 107.0, 22.0 ],
+					"text" : "s bs::app::rc::bake"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-108",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 213.5, 659.031981999999971, 131.0, 22.0 ],
+					"text" : "s bs::app::rc::pre::bake"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-104",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 897.583374000000049, 560.722045999999978, 238.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "send when preferences are finished loaded"
 				}
 
@@ -160,7 +240,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 200.649078000000003, 329.0, 33.0 ],
+					"patching_rect" : [ 901.0, 200.649078000000003, 329.0, 34.0 ],
 					"text" : "the node with this title will recieve this message - \nfor setting properties only!!!"
 				}
 
@@ -380,7 +460,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 692.0, 118.041015999999999, 195.0, 33.0 ],
+					"patching_rect" : [ 692.0, 118.041015999999999, 195.0, 34.0 ],
 					"text" : "opens the reference AND displays the bs.help.%s.maxpat"
 				}
 
@@ -487,7 +567,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 255.0, 350.0, 215.0, 22.0 ],
+					"patching_rect" : [ 225.0, 350.0, 215.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_1::window::dump"
 				}
 
@@ -523,7 +603,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 262.0, 243.874236999999994, 213.0, 22.0 ],
+					"patching_rect" : [ 232.0, 243.874236999999994, 213.0, 22.0 ],
 					"text" : "r bs::app::rc::special::renderer::enable"
 				}
 
@@ -537,7 +617,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 219.874236999999994, 170.0, 22.0 ],
+					"patching_rect" : [ 215.0, 219.874236999999994, 170.0, 22.0 ],
 					"text" : "r bs::app::rc::special::renderer"
 				}
 
@@ -551,7 +631,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 266.874236999999994, 165.0, 22.0 ],
+					"patching_rect" : [ 215.0, 266.874236999999994, 165.0, 22.0 ],
 					"text" : "r bs::app::rc::special::window"
 				}
 
@@ -563,7 +643,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 545.371155000000044, 202.0, 60.0 ],
+					"patching_rect" : [ 215.0, 545.371155000000044, 202.0, 62.0 ],
 					"text" : "slab objects send bangs to this address to make sure the slabs get processed before the next renderpass is executed"
 				}
 
@@ -577,7 +657,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 605.245421999999962, 223.0, 22.0 ],
+					"patching_rect" : [ 215.0, 605.245421999999962, 223.0, 22.0 ],
 					"text" : "r bs::app::rc::stage::renderer::inbetween"
 				}
 
@@ -827,7 +907,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 262.0, 143.0, 201.0, 22.0 ],
+					"patching_rect" : [ 232.0, 143.0, 201.0, 22.0 ],
 					"text" : "s bs::app::rc::viewer::window::dump"
 				}
 
@@ -853,7 +933,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 476.596375000000023, 184.0, 22.0 ],
+					"patching_rect" : [ 215.0, 476.596375000000023, 184.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_4::renderer"
 				}
 
@@ -866,7 +946,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 496.596375000000023, 179.0, 22.0 ],
+					"patching_rect" : [ 215.0, 496.596375000000023, 179.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_4::window"
 				}
 
@@ -892,7 +972,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 429.27179000000001, 184.0, 22.0 ],
+					"patching_rect" : [ 215.0, 429.27179000000001, 184.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_3::renderer"
 				}
 
@@ -905,7 +985,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 449.146027000000004, 179.0, 22.0 ],
+					"patching_rect" : [ 215.0, 449.146027000000004, 179.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_3::window"
 				}
 
@@ -931,7 +1011,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 384.298157000000003, 184.0, 22.0 ],
+					"patching_rect" : [ 215.0, 384.298157000000003, 184.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_2::renderer"
 				}
 
@@ -944,7 +1024,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 401.821472000000028, 179.0, 22.0 ],
+					"patching_rect" : [ 215.0, 401.821472000000028, 179.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_2::window"
 				}
 
@@ -970,7 +1050,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 307.0, 184.0, 22.0 ],
+					"patching_rect" : [ 215.0, 307.0, 184.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_1::renderer"
 				}
 
@@ -983,7 +1063,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 327.0, 179.0, 22.0 ],
+					"patching_rect" : [ 215.0, 327.0, 179.0, 22.0 ],
 					"text" : "s bs::app::rc::Output_1::window"
 				}
 
@@ -997,7 +1077,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 170.874236999999994, 163.0, 22.0 ],
+					"patching_rect" : [ 215.0, 170.874236999999994, 163.0, 22.0 ],
 					"text" : "r bs::app::rc::editor::renderer"
 				}
 
@@ -1011,7 +1091,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 190.874236999999994, 157.0, 22.0 ],
+					"patching_rect" : [ 215.0, 190.874236999999994, 157.0, 22.0 ],
 					"text" : "r bs::app::rc::editor::window"
 				}
 
@@ -1025,7 +1105,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 103.0, 167.0, 22.0 ],
+					"patching_rect" : [ 215.0, 103.0, 167.0, 22.0 ],
 					"text" : "r bs::app::rc::viewer::renderer"
 				}
 
@@ -1039,7 +1119,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 123.0, 162.0, 22.0 ],
+					"patching_rect" : [ 215.0, 123.0, 162.0, 22.0 ],
 					"text" : "r bs::app::rc::viewer::window"
 				}
 
@@ -1052,7 +1132,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 245.0, 13.549697999999999, 150.0, 20.0 ],
+					"patching_rect" : [ 215.0, 13.549697999999999, 150.0, 20.0 ],
 					"text" : "rendering"
 				}
 
@@ -1326,7 +1406,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 66.0, 157.0, 22.0 ],
+					"patching_rect" : [ 215.0, 66.0, 157.0, 22.0 ],
 					"text" : "r bs::app::rc::stage::window"
 				}
 
@@ -1340,7 +1420,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 44.225158999999998, 162.0, 22.0 ],
+					"patching_rect" : [ 215.0, 44.225158999999998, 162.0, 22.0 ],
 					"text" : "r bs::app::rc::stage::renderer"
 				}
 
@@ -1362,6 +1442,15 @@
 						"autogradient" : 0
 					}
 
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "Jamoma_highlighted_orange",
+				"default" : 				{
+					"accentcolor" : [ 1.0, 0.5, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

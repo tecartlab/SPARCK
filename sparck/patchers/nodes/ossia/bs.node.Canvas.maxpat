@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 785.0, 423.0, 817.0, 418.0 ],
+		"rect" : [ 661.0, 484.0, 817.0, 418.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -1312,7 +1312,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 269.555542000000059, 276.184631999999965, 262.22222899999997, 20.0 ],
+					"patching_rect" : [ 269.555542000000059, 280.184631999999965, 262.22222899999997, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1427,7 +1427,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 280.0, 773.0, 503.0 ],
+						"rect" : [ 71.0, 304.0, 773.0, 503.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1524,7 +1524,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 498.0, 177.0, 908.0, 673.0 ],
+										"rect" : [ 280.0, 148.0, 908.0, 673.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1554,6 +1554,109 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
+													"id" : "obj-46",
+													"linecount" : 4,
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 457.25024400000018, 106.5, 486.0, 64.0 ],
+													"text" : "ossia.parameter bake/unique @type bool @default false @description \"Enable unique renderpass for baking textures. If there are multiple canvas that have this enabled, each canvas will bake is textures in subsequent frames. This means on each frame only one of the canvas will bake and this reduce the render load.\""
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-40",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "int" ],
+													"patching_rect" : [ 388.25024400000018, 256.368469000000005, 33.0, 22.0 ],
+													"text" : "== 2"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-41",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 388.25024400000018, 217.368469000000005, 43.0, 22.0 ],
+													"text" : "zl.sum"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-44",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 387.916910666666809, 183.868469000000005, 88.333333333333371, 22.0 ],
+													"text" : "pak 0 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-39",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 178.250244000000009, 369.0, 50.0, 22.0 ],
+													"text" : "route -1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-24",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 429.0, 259.0, 131.0, 22.0 ],
+													"text" : "r bs::bake::uniquebang"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-21",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 429.0, 302.868469000000005, 157.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"filename" : "bs.bake.uniquebang.js",
+														"parameter_enable" : 0
+													}
+,
+													"text" : "js bs.bake.uniquebang.js #0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-14",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 331.250244000000009, 260.868469000000005, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-2",
@@ -1561,7 +1664,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 360.621621621621671, 373.368469000000005, 151.0, 22.0 ],
+													"patching_rect" : [ 360.621621621621671, 406.368469000000005, 151.0, 22.0 ],
 													"text" : "r bs::app::rc::manual::bake"
 												}
 
@@ -1573,7 +1676,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 550.0, 346.0, 29.5, 22.0 ],
+													"patching_rect" : [ 655.0, 352.0, 29.5, 22.0 ],
 													"text" : "t b l"
 												}
 
@@ -1597,7 +1700,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 421.0, 262.868469000000005, 141.0, 22.0 ],
+													"patching_rect" : [ 655.0, 267.868469000000005, 141.0, 22.0 ],
 													"text" : "loadmess set #0_id.bake"
 												}
 
@@ -1609,7 +1712,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 353.0, 296.868469000000005, 87.0, 22.0 ],
+													"patching_rect" : [ 655.0, 314.868469000000005, 87.0, 22.0 ],
 													"text" : "set #0_id.bake"
 												}
 
@@ -1621,7 +1724,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 46.083602999999755, 462.868469000000005, 29.5, 22.0 ],
+													"patching_rect" : [ 46.083602999999755, 495.868469000000005, 29.5, 22.0 ],
 													"text" : "+ 1"
 												}
 
@@ -1634,7 +1737,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 46.083602999999755, 584.868469000000005, 30.0, 30.0 ]
+													"patching_rect" : [ 46.083602999999755, 617.868469000000005, 30.0, 30.0 ]
 												}
 
 											}
@@ -1729,8 +1832,8 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 117.086608999999953, 25.0, 516.0, 35.0 ],
-																	"text" : "ossia.parameter bake/dim @type string @default 128 @range 128 256 512 1024 @description \"bake texture dimension\""
+																	"patching_rect" : [ 117.086608999999953, 25.0, 517.913391000000047, 36.0 ],
+																	"text" : "ossia.parameter bake/dim @type string @default 128 @range 64 128 256 512 1024 2048 4096 @description \"bake texture dimension\""
 																}
 
 															}
@@ -1741,7 +1844,7 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 211.0, 69.0, 159.0, 87.0 ],
+																	"patching_rect" : [ 211.0, 69.0, 159.0, 89.0 ],
 																	"text" : "this weird contraption prevents gl3 to crash. it looks as if [jit.gl.node] has a problem when setting the dim value before the node has rendered at least once"
 																}
 
@@ -1935,7 +2038,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 91.625122000000005, 411.868469000000005, 75.0, 22.0 ],
+													"patching_rect" : [ 91.625122000000005, 444.868469000000005, 75.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -1949,25 +2052,13 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-5",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 331.250244000000123, 262.868469000000005, 35.0, 22.0 ],
-													"text" : "bang"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"comment" : "",
 													"id" : "obj-51",
 													"index" : 2,
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 178.083602999999755, 584.868469000000005, 30.0, 30.0 ]
+													"patching_rect" : [ 178.083602999999755, 617.868469000000005, 30.0, 30.0 ]
 												}
 
 											}
@@ -1980,7 +2071,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "bang" ],
-													"patching_rect" : [ 178.250244000000009, 373.368469000000005, 172.0, 22.0 ],
+													"patching_rect" : [ 178.250244000000009, 406.368469000000005, 172.0, 22.0 ],
 													"text" : "onebang"
 												}
 
@@ -2017,7 +2108,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "jit_gl_texture", "", "" ],
-													"patching_rect" : [ 178.083602999999755, 528.868469000000005, 492.0, 22.0 ],
+													"patching_rect" : [ 178.083602999999755, 561.868469000000005, 492.0, 22.0 ],
 													"text" : "jit.gl.node sparck @erase_color 0. 0. 0. 1.  @adapt 0 @dim 1024 1024 @name #0_id.bake"
 												}
 
@@ -2080,7 +2171,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 225.250244000000066, 158.868469000000005, 155.0, 47.0 ],
+													"patching_rect" : [ 225.250244000000066, 158.868469000000005, 155.0, 48.0 ],
 													"text" : "condition for rendering:\n1. this shader is on\n2. this object is switched on"
 												}
 
@@ -2116,7 +2207,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 178.083602999999755, 456.868469000000005, 61.0, 22.0 ],
+													"patching_rect" : [ 178.083602999999755, 489.868469000000005, 61.0, 22.0 ],
 													"text" : "enable $1"
 												}
 
@@ -2166,7 +2257,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 260.750244000000009, 456.868469000000005, 198.0, 22.0 ],
+													"patching_rect" : [ 260.750244000000009, 489.868469000000005, 198.0, 22.0 ],
 													"text" : "forward bs::app::rc::stage::renderer"
 												}
 
@@ -2180,7 +2271,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "int", "erase", "bang", "int", "mono" ],
-													"patching_rect" : [ 178.250244000000009, 411.868469000000005, 184.0, 20.0 ],
+													"patching_rect" : [ 178.250244000000009, 444.868469000000005, 184.0, 20.0 ],
 													"text" : "t 0 erase b 1 mono"
 												}
 
@@ -2278,7 +2369,14 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-50", 0 ],
+													"destination" : [ "obj-50", 1 ],
+													"source" : [ "obj-14", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-39", 0 ],
 													"source" : [ "obj-15", 0 ]
 												}
 
@@ -2329,6 +2427,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-39", 1 ],
+													"source" : [ "obj-21", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-64", 0 ],
 													"source" : [ "obj-22", 0 ]
 												}
@@ -2336,8 +2441,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-5", 0 ],
-													"midpoints" : [ 101.125122000000005, 442.868469000000005, 79.43768300000005, 442.868469000000005, 79.43768300000005, 251.868469000000005, 340.750244000000123, 251.868469000000005 ],
+													"destination" : [ "obj-14", 0 ],
+													"midpoints" : [ 101.125122000000005, 485.868469000000005, 79.43768300000005, 485.868469000000005, 79.43768300000005, 251.868469000000005, 340.750244000000009, 251.868469000000005 ],
 													"order" : 0,
 													"source" : [ "obj-23", 0 ]
 												}
@@ -2348,6 +2453,13 @@
 													"destination" : [ "obj-64", 0 ],
 													"order" : 1,
 													"source" : [ "obj-23", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-21", 0 ],
+													"source" : [ "obj-24", 0 ]
 												}
 
 											}
@@ -2417,6 +2529,14 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-12", 0 ],
+													"order" : 2,
+													"source" : [ "obj-34", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
 													"order" : 1,
 													"source" : [ "obj-34", 0 ]
 												}
@@ -2424,9 +2544,16 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-5", 0 ],
+													"destination" : [ "obj-44", 0 ],
 													"order" : 0,
 													"source" : [ "obj-34", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-50", 0 ],
+													"source" : [ "obj-39", 0 ]
 												}
 
 											}
@@ -2439,6 +2566,20 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-21", 0 ],
+													"source" : [ "obj-40", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-40", 0 ],
+													"source" : [ "obj-41", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-43", 0 ]
 												}
@@ -2446,15 +2587,22 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-50", 1 ],
+													"destination" : [ "obj-41", 0 ],
+													"source" : [ "obj-44", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
 													"source" : [ "obj-45", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-50", 1 ],
-													"source" : [ "obj-5", 0 ]
+													"destination" : [ "obj-44", 1 ],
+													"source" : [ "obj-46", 0 ]
 												}
 
 											}
@@ -3742,7 +3890,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 48.0, 79.0, 1280.0, 783.0 ],
+						"rect" : [ 48.0, 85.0, 1280.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3867,7 +4015,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 539.570434999999975, 775.0, 49.0 ],
+									"patching_rect" : [ 30.0, 539.570434999999975, 775.0, 50.0 ],
 									"text" : "ossia.parameter texture/mapping @type int @default 0 @range 0 3 @description \"texture mapping (0 = no coordinates are generated., 1 = GL_OBJECT_LINEAR. This applies the texture in a fixed orientation relative to the object., 2 = GL_SPHERE_MAP. This can be used to create a reflection effect., 3 = GL_EYE_LINEAR. This applies the texture in a fixed orientation relative to OpenGL's eye coordinates.)\""
 								}
 
@@ -3933,7 +4081,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 110.0, 236.5, 704.0, 35.0 ],
+									"patching_rect" : [ 110.0, 236.5, 704.0, 36.0 ],
 									"text" : "ossia.parameter depth/enable @type bool @default true @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
@@ -3972,7 +4120,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 531.0, 166.0, 778.0, 35.0 ],
+									"patching_rect" : [ 531.0, 166.0, 778.0, 36.0 ],
 									"text" : "ossia.parameter blend/mode @type string @default alphablend @range alphablend add multiply screen exclusion colorblend coloradd alphaadd @description \"blend type\""
 								}
 
@@ -3986,7 +4134,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 391.201598999999987, 124.40380859375, 432.0, 35.0 ],
+									"patching_rect" : [ 391.201598999999987, 124.40380859375, 432.0, 36.0 ],
 									"text" : "ossia.parameter blend/enable @type bool @default false @description \"enable blending\""
 								}
 
@@ -4000,7 +4148,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 246.201598999999987, 84.903809000000024, 576.0, 35.0 ],
+									"patching_rect" : [ 246.201598999999987, 84.903809000000024, 576.0, 36.0 ],
 									"text" : "ossia.parameter lighting/enable @type bool @default false @description \"lighting can have strange results if no Light node exists.\""
 								}
 
@@ -4880,6 +5028,13 @@
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
+				"patcherrelativepath" : "../../../javascript/misc",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.bake.uniquebang.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
 				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
