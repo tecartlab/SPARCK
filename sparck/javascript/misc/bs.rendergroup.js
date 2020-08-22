@@ -84,11 +84,11 @@ function notifydeleted(){
 function anything()
 {
     var a = arrayfromargs(arguments);
-    //post("receive selector for inlet="+inlet + ": " + messagename + " = " + arguments[0] + "\n");
-	if (inlet==IN_0){
+ 	if (inlet==IN_0){
 		if(messagename.indexOf("group") != -1){
             myGroup = a[0];
-            // set all myContexts
+    		//post("receive group: " + messagename + " = " + myGroup + "\n");
+           // set all myContexts
             for(var i = 0; i < myContexts.length; i++){
                 rendergroups.set(myContexts[i], myGroup);
             }

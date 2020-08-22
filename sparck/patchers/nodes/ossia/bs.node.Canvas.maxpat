@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 661.0, 484.0, 817.0, 418.0 ],
+		"rect" : [ 482.0, 329.0, 817.0, 418.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -75,7 +75,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -232,7 +232,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1421,7 +1421,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1518,7 +1518,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1765,7 +1765,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 6,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3116,13 +3116,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 542.0, 139.0, 1112.0, 584.0 ],
+						"rect" : [ 158.0, 166.0, 1112.0, 584.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3151,6 +3151,20 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 609.0, 357.0, 199.0, 22.0 ],
+									"text" : "r bs::app::rc::pre::transform::update"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -3247,7 +3261,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 17.650879000000032, 286.386352968749975, 173.349120999999968, 62.0 ],
+									"patching_rect" : [ 17.650879000000032, 286.386352968749975, 173.349120999999968, 64.0 ],
 									"text" : "ossia.parameter tfm/publish @type bool @default false @description \"publish transformation\""
 								}
 
@@ -3271,8 +3285,8 @@
 									"numinlets" : 7,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "bang", "" ],
-									"patching_rect" : [ 458.666655999999989, 306.386352968749975, 205.21875, 22.0 ],
-									"text" : "bs.anim.node"
+									"patching_rect" : [ 458.666655999999989, 306.386352968749975, 161.0, 22.0 ],
+									"text" : "bs.anim.node @get getscale"
 								}
 
 							}
@@ -3387,8 +3401,24 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"order" : 0,
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-55", 0 ],
+									"order" : 1,
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"midpoints" : [ 654.385405999999989, 341.008300968750063, 730.31248933333336, 341.008300968750063, 730.31248933333336, 221.386352968749975, 530.239572666666618, 221.386352968749975 ],
+									"midpoints" : [ 610.166655999999989, 341.008300968750063, 730.31248933333336, 341.008300968750063, 730.31248933333336, 221.386352968749975, 530.239572666666618, 221.386352968749975 ],
 									"source" : [ "obj-6", 4 ]
 								}
 
@@ -3489,7 +3519,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 358.333344000000011, 171.5, 109.0, 20.0 ],
+					"patching_rect" : [ 362.125030999999922, 171.7113037109375, 109.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3525,7 +3555,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3884,7 +3914,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4924,168 +4954,168 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.vpl.node.logic.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"patcherrelativepath" : "../../../media",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"patcherrelativepath" : "../../../media",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.anim.node.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/msg",
-				"patcherrelativepath" : "../../ossia/msg",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.tfm.local.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
-				"patcherrelativepath" : "../../ossia/transforms",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.render.pass.reciever.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.rendergroup.drawto.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/rendergroup",
-				"patcherrelativepath" : "../../ossia/rendergroup",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/ossia/rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
-				"patcherrelativepath" : "../../../javascript/misc",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.bake.uniquebang.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
-				"patcherrelativepath" : "../../../javascript/misc",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.file.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/file",
-				"patcherrelativepath" : "../../ossia/file",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/ossia/file",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.dialog.saveas.slim.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.global.keys.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.win.reactive.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.msg.receive.key.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/_obsolete",
-				"patcherrelativepath" : "../../_obsolete",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 8/Packages/sparck/patchers/_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}

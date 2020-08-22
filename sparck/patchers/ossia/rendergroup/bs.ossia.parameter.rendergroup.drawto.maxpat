@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 138.0, 100.0, 714.0, 736.0 ],
+		"rect" : [ 138.0, 100.0, 784.0, 736.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,7 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 674.277831999999989, 119.5704345703125, 452.0, 35.0 ],
+					"patching_rect" : [ 674.277831999999989, 119.5704345703125, 452.0, 36.0 ],
 					"text" : "ossia.parameter #1 @type list @default 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 @description #2"
 				}
 
@@ -71,7 +71,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 589.0, 549.0, 150.0, 74.0 ],
+					"patching_rect" : [ 637.0, 548.0, 150.0, 75.0 ],
 					"text" : "fix for bug: when setting a long list of drawto the object sometimes doesn't register it. so first switch off, then switch on again..."
 				}
 
@@ -83,7 +83,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 499.0, 601.0, 54.0, 22.0 ],
+					"patching_rect" : [ 547.0, 600.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -95,7 +95,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 564.0, 635.0, 61.0, 22.0 ],
+					"patching_rect" : [ 612.0, 634.0, 61.0, 22.0 ],
 					"text" : "drawto off"
 				}
 
@@ -107,7 +107,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "", "bang" ],
-					"patching_rect" : [ 499.0, 568.0, 84.0, 22.0 ],
+					"patching_rect" : [ 547.0, 567.0, 84.0, 22.0 ],
 					"text" : "t b l b"
 				}
 
@@ -119,7 +119,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 499.0, 635.0, 52.0, 22.0 ],
+					"patching_rect" : [ 547.0, 634.0, 52.0, 22.0 ],
 					"text" : "zl.reg"
 				}
 
@@ -219,7 +219,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -951,7 +951,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-57", 0 ],
 					"source" : [ "obj-36", 0 ]
 				}
 
@@ -1139,14 +1139,14 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
 				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.parameter.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0
