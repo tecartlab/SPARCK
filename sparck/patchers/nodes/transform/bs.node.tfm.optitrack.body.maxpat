@@ -611,8 +611,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 80.083374000000006, 457.0, 189.0, 22.0 ],
-					"text" : "combine title : subtitle @triggers 2"
+					"patching_rect" : [ 80.083374000000006, 457.0, 193.0, 22.0 ],
+					"text" : "combine title _ subtitle @triggers 2"
 				}
 
 			}
@@ -872,7 +872,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u918001404"
+					"varname" : "u166000587"
 				}
 
 			}
@@ -1779,6 +1779,7 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.anim.node.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
