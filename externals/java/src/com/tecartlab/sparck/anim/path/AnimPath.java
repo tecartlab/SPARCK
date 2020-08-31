@@ -107,6 +107,10 @@ public class AnimPath extends MaxObject {
 	}
 
 	public void setcontext(String _context){
+		drawto(_context);
+	}
+
+	public void drawto(String _context){
 		context = _context;
 		segmntMngr.setupContext(_context);
 	}
@@ -427,18 +431,18 @@ public class AnimPath extends MaxObject {
 			for(int i = 0; i < GUI_MAX_SEGMENTS; i++){
 				setSegment(i, "segmentmenu", "clear");
 				for(int t = 0; t < modelNames.size(); t++){
-					setSegment(i, "segmentmenu", "hint", "stats: no data available");
 					setSegment(i, "segmentmenu", "insert", "0", modelNames.get(t));
 //					System.out.println("model_segment left = " + modelNames.get(t));
 				}
 				GUISegment sgmnt = gui_segments[i];
 				if(gui_segments[i] != null && !sgmnt.name.equals("off")){
 					setSegment(i, "segmentmenu", "insert", "0", sgmnt.name);
-					setSegment(i, "segmentmenu", "hint", "stats: length = " + getStringVal(sgmnt.getModel().getSegmentLength(), 3) + "m | led count = " + sgmnt.getModel().getSegmentLedCount());
 					setSegment(i, "segmentmenu", "insert", "0", "off");
+					setSegment(i, "segmentmenu", "hint", "stats: length = " + getStringVal(sgmnt.getModel().getSegmentLength(), 3) + "m | led count = " + sgmnt.getModel().getSegmentLedCount());
 					setSegment(i, "segmentname", sgmnt.name);
 				} else {
 					setSegment(i, "segmentmenu", "insert", "0", "off");
+					setSegment(i, "segmentmenu", "hint", "stats: no data available");
 				}
 			}
 
