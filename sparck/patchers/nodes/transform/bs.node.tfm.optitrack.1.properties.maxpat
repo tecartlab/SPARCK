@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 58.0, 81.0, 1345.0, 552.0 ],
+		"rect" : [ 354.0, 234.0, 1466.0, 552.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,148 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1392.19415283203125, 399.640869000000009, 101.0, 22.0 ],
+					"text" : "prepend postfilter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"id" : "obj-46",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1340.69415283203125, 373.806549000000018, 44.0, 17.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 106.75, 161.0, 44.0, 17.0 ],
+					"text" : "postfilter",
+					"textcolor" : [ 0.244130998849869, 0.244130998849869, 0.244130998849869, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"format" : 6,
+					"hint" : "postfilter (0=off, 1=max) {/sparck/node ::<nodename>::property::postfilter <float>} ",
+					"id" : "obj-48",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1392.19415283203125, 371.306548999999961, 50.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 156.75, 160.0, 50.0, 19.0 ],
+					"varname" : "postfilter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-43",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1256.19415283203125, 399.640869000000009, 96.0, 22.0 ],
+					"text" : "prepend prefilter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"id" : "obj-44",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1204.416137660156437, 373.806549000000018, 44.0, 17.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 106.75, 141.0, 44.0, 17.0 ],
+					"text" : "prefilter",
+					"textcolor" : [ 0.244130998849869, 0.244130998849869, 0.244130998849869, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"format" : 6,
+					"hint" : "prefilter (0=off, 1=max) {/sparck/node ::<nodename>::property::prefilter <float>} ",
+					"id" : "obj-45",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1256.19415283203125, 373.806549000000018, 50.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 156.75, 140.0, 50.0, 19.0 ],
+					"varname" : "prefilter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1146.916137660156437, 407.070434999999975, 79.0, 22.0 ],
+					"text" : "prepend leap"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"id" : "obj-29",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1096.69415283203125, 381.043609999999944, 45.0, 17.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 2.75, 140.0, 45.0, 17.0 ],
+					"text" : "leap",
+					"textcolor" : [ 0.244130998849869, 0.244130998849869, 0.244130998849869, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"hint" : "leap = forward prediction [ms] {/sparck/node ::<nodename>::property::leap <int>} ",
+					"id" : "obj-39",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1146.916137660156437, 382.543609999999944, 50.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 54.75, 140.0, 50.0, 19.0 ],
+					"varname" : "leap"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
@@ -47,7 +188,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 913.055541999999946, 98.24652099609375, 48.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.75, 199.0, 48.0, 17.0 ],
+					"presentation_rect" : [ 2.75, 245.0, 48.0, 17.0 ],
 					"text" : "color",
 					"textcolor" : [ 0.244130998849869, 0.244130998849869, 0.244130998849869, 1.0 ]
 				}
@@ -96,7 +237,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 978.47222900390625, 98.24652099609375, 139.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 48.75, 199.0, 157.0, 19.0 ],
+					"presentation_rect" : [ 48.75, 245.0, 157.0, 19.0 ],
 					"varname" : "markerColor",
 					"viewvisibility" : 1
 				}
@@ -112,7 +253,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1168.472168003906063, 258.973174999999969, 45.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.75, 180.0, 45.0, 17.0 ],
+					"presentation_rect" : [ 2.75, 226.0, 45.0, 17.0 ],
 					"text" : "max",
 					"textcolor" : [ 0.244130998849869, 0.244130998849869, 0.244130998849869, 1.0 ]
 				}
@@ -131,7 +272,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1218.69415283203125, 260.473174999999969, 50.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 48.75, 179.0, 50.0, 19.0 ],
+					"presentation_rect" : [ 48.75, 225.0, 50.0, 19.0 ],
 					"varname" : "maxMarker"
 				}
 
@@ -146,7 +287,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1164.416137660156437, 203.30654899999999, 44.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 105.75, 180.0, 44.0, 17.0 ],
+					"presentation_rect" : [ 105.75, 226.0, 44.0, 17.0 ],
 					"text" : "size",
 					"textcolor" : [ 0.244130998849869, 0.244130998849869, 0.244130998849869, 1.0 ]
 				}
@@ -166,7 +307,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1216.19415283203125, 203.30654899999999, 50.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 155.75, 179.0, 50.0, 19.0 ],
+					"presentation_rect" : [ 155.75, 225.0, 50.0, 19.0 ],
 					"varname" : "markerSize"
 				}
 
@@ -181,7 +322,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 906.708312999999976, 171.0, 41.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.75, 159.0, 41.0, 17.0 ],
+					"presentation_rect" : [ 2.75, 205.0, 41.0, 17.0 ],
 					"text" : "markers",
 					"textcolor" : [ 0.244130998849869, 0.244130998849869, 0.244130998849869, 1.0 ]
 				}
@@ -217,7 +358,7 @@
 					"outlettype" : [ "", "", "int", "" ],
 					"patching_rect" : [ 956.3055419921875, 171.0, 212.88861083984375, 20.6666259765625 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 47.75, 158.0, 160.0, 20.0 ],
+					"presentation_rect" : [ 47.75, 204.0, 160.0, 20.0 ],
 					"varname" : "renderGroupForMarker",
 					"viewvisibility" : 1
 				}
@@ -281,7 +422,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 873.055541999999946, 211.30654899999999, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 189.75, 137.0, 17.0, 17.0 ],
+					"presentation_rect" : [ 189.75, 183.0, 17.0, 17.0 ],
 					"varname" : "enableSync"
 				}
 
@@ -296,7 +437,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 807.055541999999946, 211.30654899999999, 59.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 119.75, 137.0, 59.0, 17.0 ],
+					"presentation_rect" : [ 119.75, 183.0, 59.0, 17.0 ],
 					"text" : "enable sync"
 				}
 
@@ -380,7 +521,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -413,6 +554,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-3",
@@ -971,12 +1113,15 @@
 					"patching_rect" : [ 662.0, 43.473174999999998, 59.5, 22.0 ],
 					"restore" : 					{
 						"enableSync" : [ 0 ],
+						"leap" : [ 0 ],
 						"markerSize" : [ 0.014 ],
 						"maxMarker" : [ 20 ],
 						"port" : [ 54321 ],
 						"positionX" : [ 0.0 ],
 						"positionY" : [ 0.0 ],
 						"positionZ" : [ 0.0 ],
+						"postfilter" : [ 0.0 ],
+						"prefilter" : [ 0.0 ],
 						"rotationX" : [ 0.0 ],
 						"rotationY" : [ 0.0 ],
 						"rotationZ" : [ 0.0 ],
@@ -986,7 +1131,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u328005864"
+					"varname" : "u448001701"
 				}
 
 			}
@@ -1219,9 +1364,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 210.0, 223.0 ],
+					"patching_rect" : [ 0.0, 0.0, 210.0, 268.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 210.0, 223.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 210.0, 268.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas"
 				}
@@ -1516,6 +1661,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
 					"order" : 1,
 					"source" : [ "obj-27", 0 ]
 				}
@@ -1580,6 +1732,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"order" : 1,
 					"source" : [ "obj-4", 0 ]
@@ -1638,9 +1797,30 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-43", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"source" : [ "obj-45", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-49", 0 ],
 					"midpoints" : [ 318.0, 375.140869000000009, 303.25, 375.140869000000009, 303.25, 302.140869000000009, 403.5, 302.140869000000009 ],
 					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 0 ],
+					"source" : [ "obj-48", 0 ]
 				}
 
 			}
@@ -1679,6 +1859,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-110", 2 ],
 					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-52", 0 ]
 				}
 
 			}
@@ -1734,98 +1921,98 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.msg.receive.select.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
-				"patcherrelativepath" : "../../msg",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.msg.receive.selector.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/msg",
 				"patcherrelativepath" : "../../../javascript/msg",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.windows.pops.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.windows.pops.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/gui",
 				"patcherrelativepath" : "../../../javascript/gui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.win.reactive.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.toggle.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.anim.node.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.recv.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/rendergroup",
-				"patcherrelativepath" : "../../rendergroup",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "LayerCell.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
 				"patcherrelativepath" : "../../../javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.util.color.values.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.receive.selector.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
