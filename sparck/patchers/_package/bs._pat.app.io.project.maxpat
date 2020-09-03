@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -42,7 +42,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-11",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -64,7 +64,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -195,13 +195,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-15",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 117.888915999999995, 232.789429000000013, 363.0, 62.0 ],
-									"text" : "write MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/ossia.json"
+									"text" : "write D:/05_workshops/20xx_Zmodules/00_Sparck/_settings/_project/_Blimpy_01/ossia.json"
 								}
 
 							}
@@ -340,13 +340,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-75",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 41.333373999999999, 166.789429000000013, 351.000000000000057, 62.0 ],
-									"text" : "read MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/ossia.json"
+									"text" : "read D:/05_workshops/20xx_Zmodules/00_Sparck/_settings/_project/_Blimpy_01/ossia.json"
 								}
 
 							}
@@ -580,7 +580,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -748,7 +748,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-8",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -793,7 +793,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 174.5, 157.0, 16.0, 16.0 ]
+					"patching_rect" : [ 174.5, 151.0, 16.0, 16.0 ]
 				}
 
 			}
@@ -914,7 +914,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-18",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -936,7 +936,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1019,13 +1019,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-15",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 117.888915999999995, 232.789429000000013, 363.0, 62.0 ],
-									"text" : "writexml MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/settings.xml"
+									"text" : "writexml D:/05_workshops/20xx_Zmodules/00_Sparck/_settings/_project/_Blimpy_01/settings.xml"
 								}
 
 							}
@@ -1206,13 +1206,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-75",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 41.333373999999999, 166.789429000000013, 351.095184000000017, 62.0 ],
-									"text" : "read MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/settings.xml"
+									"text" : "read D:/05_workshops/20xx_Zmodules/00_Sparck/_settings/_project/_Blimpy_01/settings.xml"
 								}
 
 							}
@@ -1444,7 +1444,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1629,13 +1629,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-9",
-									"linecount" : 5,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 126.666656000000003, 272.0, 283.0, 76.0 ],
-									"text" : "export MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/windows.json"
+									"text" : "export D:/05_workshops/20xx_Zmodules/00_Sparck/_settings/_project/_Blimpy_01/windows.json"
 								}
 
 							}
@@ -1644,13 +1644,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-7",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 193.0, 246.0, 76.0 ],
-									"text" : "import MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/_settings/_project/_device/windows.json"
+									"text" : "import D:/05_workshops/20xx_Zmodules/00_Sparck/_settings/_project/_Blimpy_01/windows.json"
 								}
 
 							}
@@ -1851,7 +1851,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-28",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -1969,13 +1969,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-34", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-5", 0 ]
 				}
@@ -2026,6 +2019,34 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "bs.msg.receive.key.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../_obsolete",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.send.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
+				"patcherrelativepath" : "../../javascript/misc",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.msg.receive.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
