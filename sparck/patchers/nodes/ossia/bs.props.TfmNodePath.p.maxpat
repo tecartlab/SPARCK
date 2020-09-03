@@ -40,6 +40,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "direction" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 1,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-5",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.remote.toggle.maxpat",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 483.5, 199.0, 32.0, 17.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 200.0, 40.0, 20.0, 19.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "playbar", "@text", "playbar" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -109,7 +132,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "segment", "@text", "segment", "@size", 159, 19, "@menutype", "default" ],
+					"args" : [ "#1", "segment", "@text", "segment", "@size", 139, 19, "@menutype", "default" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -125,7 +148,7 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"patching_rect" : [ 250.0, 184.0, 212.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 40.0, 220.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 40.0, 200.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
