@@ -60,10 +60,10 @@ func (o *object) Handle(inlet int, _ string, data []max.Atom) {
 	case 0:
 		// continue
 	case 1:
-		o.leap = utils.Float(data)
+		o.leap = utils.Float(data[0])
 		return
 	case 2:
-		o.decay = utils.Float(data)
+		o.decay = utils.Float(data[0])
 		return
 	default:
 		max.Error("invalid inlet")
