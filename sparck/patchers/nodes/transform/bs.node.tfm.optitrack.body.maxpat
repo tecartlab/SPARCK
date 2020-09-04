@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 226.0, 368.0, 958.0, 637.0 ],
+		"rect" : [ 226.0, 304.0, 854.0, 701.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 910.0, 205.0, 1112.0, 762.0 ],
+						"rect" : [ 910.0, 205.0, 609.0, 762.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -91,7 +91,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 230.5, 375.0, 55.0, 22.0 ],
+									"patching_rect" : [ 207.749999999999886, 375.0, 55.0, 22.0 ],
 									"text" : "perftrack"
 								}
 
@@ -103,7 +103,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 230.5, 341.0, 55.0, 22.0 ],
+									"patching_rect" : [ 207.749999999999886, 341.0, 55.0, 22.0 ],
 									"text" : "perftrack"
 								}
 
@@ -469,7 +469,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-62", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-54", 0 ]
 								}
 
@@ -1418,7 +1418,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u137000368"
+					"varname" : "u152000368"
 				}
 
 			}
@@ -2340,6 +2340,10 @@
 			}
 , 			{
 				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "perftrack.mxe64",
 				"type" : "mx64"
 			}
  ],
