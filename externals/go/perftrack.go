@@ -66,7 +66,7 @@ func (o *object) Handle(inlet int, _ string, data []max.Atom) {
 		o.decay = utils.Float(data)
 		return
 	default:
-		panic("invalid inlet")
+		max.Error("invalid inlet")
 	}
 
 	// check data
