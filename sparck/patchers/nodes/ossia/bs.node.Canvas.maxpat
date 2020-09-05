@@ -965,13 +965,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-109",
-									"linecount" : 5,
+									"linecount" : 6,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 63.916686999999911, 434.0704345703125, 123.0, 77.0 ],
-									"text" : "jit.gl.model sparck @color 1 1 1 1 @anim #0.anim.model @normalize 0"
+									"patching_rect" : [ 63.916686999999911, 428.0704345703125, 125.0, 91.0 ],
+									"text" : "jit.gl.model sparck @color 1 1 1 1 @anim #0.anim.model @normalize 0 @material_mode 0"
 								}
 
 							}

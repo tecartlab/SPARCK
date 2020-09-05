@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 354.0, 234.0, 1466.0, 552.0 ],
+		"rect" : [ 354.0, 234.0, 417.0, 552.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -164,9 +164,10 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
+					"format" : 6,
 					"hint" : "leap = forward prediction [ms] {/sparck/node ::<nodename>::property::leap <int>} ",
 					"id" : "obj-39",
-					"maxclass" : "number",
+					"maxclass" : "flonum",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -1113,7 +1114,7 @@
 					"patching_rect" : [ 662.0, 43.473174999999998, 59.5, 22.0 ],
 					"restore" : 					{
 						"enableSync" : [ 0 ],
-						"leap" : [ 0 ],
+						"leap" : [ 0.0 ],
 						"markerSize" : [ 0.014 ],
 						"maxMarker" : [ 20 ],
 						"port" : [ 54321 ],
@@ -1131,7 +1132,7 @@
 					}
 ,
 					"text" : "autopattr",
-					"varname" : "u448001701"
+					"varname" : "u697037393"
 				}
 
 			}
