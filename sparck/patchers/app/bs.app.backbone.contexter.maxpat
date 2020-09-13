@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 85.0, 485.0, 739.0, 356.0 ],
+		"rect" : [ 793.0, 603.0, 739.0, 356.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-21",
@@ -49,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -82,6 +83,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-4",
@@ -340,7 +342,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 15.0, 133.0, 22.0 ],
+					"patching_rect" : [ 300.0, 15.0, 232.0, 22.0 ],
 					"text" : "#1 = bs::app::rc::viewer"
 				}
 
@@ -365,7 +367,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 77.5, 94.0, 63.0, 22.0 ],
+					"patching_rect" : [ 77.5, 94.0, 162.0, 22.0 ],
 					"text" : "s #1::pass"
 				}
 
@@ -378,7 +380,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 262.0, 58.0, 115.0, 22.0 ],
+					"patching_rect" : [ 262.0, 58.0, 213.0, 22.0 ],
 					"text" : "s #1::window::dump"
 				}
 
@@ -403,7 +405,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 366.0, 239.0, 117.0, 22.0 ],
+					"patching_rect" : [ 366.0, 239.0, 216.0, 22.0 ],
 					"text" : "bs.util.visibilityFix #1"
 				}
 
@@ -471,7 +473,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 262.0, 94.0, 81.0, 22.0 ],
+					"patching_rect" : [ 262.0, 94.0, 180.0, 22.0 ],
 					"text" : "r #1::renderer"
 				}
 
@@ -497,7 +499,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 366.0, 94.0, 76.0, 22.0 ],
+					"patching_rect" : [ 366.0, 94.0, 175.0, 22.0 ],
 					"text" : "r #1::window"
 				}
 
@@ -657,7 +659,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.util.visibilityFix.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"patcherrelativepath" : "../utils",
 				"type" : "JSON",
 				"implicit" : 1

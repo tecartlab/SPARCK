@@ -190,7 +190,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 242.625, 190.333373999999992, 115.0, 89.0 ],
+									"patching_rect" : [ 242.625, 190.333373999999992, 115.0, 91.0 ],
 									"text" : "ossia.parameter interact @type bool @default 0 @description tpublishes an interactive camera"
 								}
 
@@ -204,7 +204,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 170.097381999999925, 17.025878999999975, 138.0, 143.0 ],
+									"patching_rect" : [ 170.097381999999925, 17.025878999999975, 141.0, 146.0 ],
 									"text" : "ossia.parameter antialias @type bool @default 0 @description \"takes the vertical sync frequency of the use antialias. This has only an effect if you are using NOT the default mesh inside the linked ViewPort Nodes\""
 								}
 
@@ -218,7 +218,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 15.833313000000061, 17.025878999999975, 136.0, 143.0 ],
+									"patching_rect" : [ 15.833313000000061, 17.025878999999975, 139.0, 146.0 ],
 									"text" : "ossia.parameter vsync @type bool @default 0 @description \"takes the vertical sync frequency of the output device this window is displayed on and synchronizes it with the main metro. Only one window should use this feature \""
 								}
 
@@ -232,7 +232,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 341.125, 17.025878999999975, 98.0, 129.0 ],
+									"patching_rect" : [ 341.125, 17.025878999999975, 98.0, 133.0 ],
 									"text" : "ossia.parameter desktop/floating @type bool @default 0 @description \"window is floating when in position mode desktop\""
 								}
 
@@ -246,7 +246,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 444.0, 17.025878999999975, 98.0, 129.0 ],
+									"patching_rect" : [ 444.0, 17.025878999999975, 98.0, 133.0 ],
 									"text" : "ossia.parameter desktop/border @type bool @default 1 @description \"show border of window when in position mode desktop\""
 								}
 
@@ -260,7 +260,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 551.75, 160.025878999999975, 184.0, 76.0 ],
+									"patching_rect" : [ 551.75, 160.025878999999975, 184.0, 77.0 ],
 									"text" : "ossia.parameter position/mode @type bool @default 0 @description \"position mode, select between desktop (0) and output (1)\""
 								}
 
@@ -274,7 +274,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 555.555541999999832, 9.333373999999992, 327.0, 49.0 ],
+									"patching_rect" : [ 555.555541999999832, 9.333373999999992, 327.0, 50.0 ],
 									"text" : "ossia.parameter internal/escape @invisible 1 @type bool @default 1 @description \"enable escape key to set window position to desktop\""
 								}
 
@@ -866,7 +866,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 117.65277900000001, 352.166625999999951, 92.0, 98.0 ],
+					"patching_rect" : [ 117.65277900000001, 352.166625999999951, 92.0, 100.0 ],
 					"text" : "ossia.parameter slice/rows @type int @default 0 @range 0 1 @clip both @description \"slice this window into so many rows\""
 				}
 
@@ -880,7 +880,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 7.041663999999997, 352.166625999999951, 98.999999999999972, 87.0 ],
+					"patching_rect" : [ 7.041663999999997, 352.166625999999951, 98.999999999999972, 89.0 ],
 					"text" : "ossia.parameter slice/columns @type int @default 0 @description \"slice this window into so many columns\""
 				}
 
@@ -988,7 +988,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 107.083373999999992, 152.333373999999992, 357.0, 49.0 ],
+									"patching_rect" : [ 107.083373999999992, 152.333373999999992, 357.0, 50.0 ],
 									"text" : "ossia.parameter position/output @type list @default 100 100 420 340 @description \"window position in output mode, upper left corner and lower right corner\""
 								}
 
@@ -1159,7 +1159,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p storeDesktop",
+					"text" : "p storeOutput",
 					"varname" : "winDesktop[1]"
 				}
 
@@ -1267,7 +1267,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 107.083373999999992, 152.333373999999992, 205.0, 76.0 ],
+									"patching_rect" : [ 107.083373999999992, 152.333373999999992, 205.0, 77.0 ],
 									"text" : "ossia.parameter position/desktop @type list @default 5 725 320 885 @description \"window position in desktop mode, upper left corner and lower right corner\""
 								}
 
@@ -2596,7 +2596,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.5, 288.0, 113.0, 35.0 ],
-									"text" : "to_texture u867015550"
+									"text" : "to_texture u966000520"
 								}
 
 							}
@@ -3401,131 +3401,131 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.display.selection.gate.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.output.unique.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/nodes",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/nodes",
 				"patcherrelativepath" : "../../../javascript/nodes",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.mouse.orbiter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.math.fov.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/math",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/math",
 				"patcherrelativepath" : "../../../javascript/math",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/_obsolete",
 				"patcherrelativepath" : "../../_obsolete",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
 				"patcherrelativepath" : "../../app",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.app.contexter.winrect.abs.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
 				"patcherrelativepath" : "../../app",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.global.keys.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.parameter.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.send.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.receive.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.receive.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.model.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
