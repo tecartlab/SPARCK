@@ -122,7 +122,7 @@ public class Que extends MaxObject implements OutputConnector{
 				values.add(new ExpressionVar(val[i].getString()));
 			else if(val[i].isFloat())
 				values.add(new ExpressionVar(val[i].getFloat()));
-			else if(val[i].isFloat())
+			else if(val[i].isInt())
 				values.add(new ExpressionVar(val[i].getInt()));
 		}
 		queManager.var(val[0].getString(), values);

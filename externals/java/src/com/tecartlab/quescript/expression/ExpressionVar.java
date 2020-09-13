@@ -108,10 +108,12 @@ public class ExpressionVar {
 		params = p;
 		dValue = 0;
 		isNumber = true;
-		isArray = true;
 		isUsedAsVariable = true;
 		if(p.size() > 0){
 			set(p.get(0));
+		}
+		if(p.size() > 1) {
+			isArray = true;
 		}
 	}
 
