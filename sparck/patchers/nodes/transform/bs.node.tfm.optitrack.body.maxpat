@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,13 +50,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 910.0, 205.0, 609.0, 762.0 ],
+						"rect" : [ 910.0, 205.0, 740.0, 762.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -86,24 +86,12 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 207.749999999999886, 375.0, 55.0, 22.0 ],
-									"text" : "perftrack"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
+									"numinlets" : 5,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 207.749999999999886, 341.0, 55.0, 22.0 ],
+									"patching_rect" : [ 207.749999999999886, 360.0, 55.0, 22.0 ],
 									"text" : "perftrack"
 								}
 
@@ -112,11 +100,11 @@
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
-									"numinlets" : 4,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 384.0, 83.0, 154.0, 22.0 ],
-									"text" : "route leap prefilter postfilter"
+									"numinlets" : 5,
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 384.0, 83.0, 193.0, 22.0 ],
+									"text" : "route leap posFilter velFilter debug"
 								}
 
 							}
@@ -213,7 +201,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 207.749999999999886, 302.026825000000031, 206.435343333333719, 22.0 ],
-									"text" : "pack i f f f f f f f"
+									"text" : "pack f f f f f f f f"
 								}
 
 							}
@@ -329,7 +317,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
+									"destination" : [ "obj-62", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -427,6 +415,20 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1", 4 ],
+									"source" : [ "obj-3", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 3 ],
+									"source" : [ "obj-3", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 2 ],
 									"source" : [ "obj-3", 1 ]
 								}
@@ -436,20 +438,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 1 ],
 									"source" : [ "obj-3", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 2 ],
-									"source" : [ "obj-3", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-62", 0 ],
-									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -644,7 +632,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1464,7 +1452,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2334,7 +2322,6 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.anim.node.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
