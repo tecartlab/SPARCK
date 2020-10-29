@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 414.0, 45.0, 447.0, 855.0 ],
+		"rect" : [ 887.0, 45.0, 447.0, 855.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -293,7 +293,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "material/mode", "@text", "mat-mode", "@type", "string", "@size", 159, 19, "@items", "0 = Chosen Material or (File-)Model's colorcomponents are used", "1 = Diffuse: Only (File-)Model-material diffuse colorcomponent is used", "2 = All: All (File-)Model-material colorcomponents are used", "3 = Model: (File-)Model-material is used (including shaders)" ],
+					"args" : [ "#1", "material/mode", "@text", "mat-mode", "@type", "int", "@size", 159, 19, "@items", "0 = Chosen Material or (File-)Model's colorcomponents are used", "1 = Diffuse: Only (File-)Model-material diffuse colorcomponent is used", "2 = All: All (File-)Model-material colorcomponents are used", "3 = Model: (File-)Model-material is used (including shaders)" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -960,7 +960,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-32", 2 ],
-					"order" : 4,
+					"order" : 1,
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -968,14 +968,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-33", 2 ],
-					"order" : 3,
-					"source" : [ "obj-31", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 2 ],
 					"order" : 2,
 					"source" : [ "obj-31", 0 ]
 				}
@@ -983,8 +975,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-34", 2 ],
+					"order" : 3,
+					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-35", 2 ],
-					"order" : 1,
+					"order" : 4,
 					"source" : [ "obj-31", 0 ]
 				}
 
