@@ -994,7 +994,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 315.380972714285747, 465.0, 61.5, 22.0 ],
+									"patching_rect" : [ 331.130972714285747, 465.0, 61.5, 22.0 ],
 									"text" : "join"
 								}
 
@@ -1006,7 +1006,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 277.880972714285747, 405.0, 99.0, 22.0 ],
+									"patching_rect" : [ 277.880972714285747, 405.0, 114.75, 22.0 ],
 									"text" : "zl.slice 1"
 								}
 
@@ -1100,8 +1100,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "" ],
-													"patching_rect" : [ 57.166687000000024, 150.0, 69.0, 22.0 ],
-													"text" : "regexp .+.1"
+													"patching_rect" : [ 57.166687000000024, 150.0, 90.0, 22.0 ],
+													"text" : "regexp .+\\\\.(\\\\d)"
 												}
 
 											}
@@ -1234,8 +1234,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 277.880972714285747, 435.0, 69.0, 22.0 ],
-									"text" : "regexp .+.1"
+									"patching_rect" : [ 277.880972714285747, 435.0, 90.0, 22.0 ],
+									"text" : "regexp .+\\\\.(\\\\d)"
 								}
 
 							}
