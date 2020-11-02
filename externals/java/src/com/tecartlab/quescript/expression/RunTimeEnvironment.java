@@ -221,23 +221,26 @@ public class RunTimeEnvironment {
 			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException{
 				if(parameters.size() == 2 && parameters.get(0).isUsedAsVariable){
 					if(parameters.get(0).isArray){
-						// assigned = assignee
-						// we need to evaluate the array to assigned again, incase the same array
-						// is also part of the evaluation tree inside the assignee
-						parameters.get(0).eval();
-						// this will set the the arrayIndex correctly.
-						int arrayIndex = parameters.get(0).getParam(0).arrayIndex;
-						// if it is an array we dive into the parameter:
-						// 		parameters.get(0) 							        // gets us the assigned var
-						//						 .getParam(0) 				        // gets us the array var
-						//                                   .getParam(arrayIndex)  // gets us the individual entry
-						//
-						return parameters.get(0).getParam(0).getParam(arrayIndex).set(parameters.get(1));
-					} else if(parameters.get(1).isArray){
-						// if we want to assign an array to a variable inside an expr node:
-						return parameters.get(0).copyFrom(parameters.get(1));
+						if(parameters.get(1).isArray){
+							// if we want to assign an array to a variable inside an expr node:
+							return parameters.get(0).copyFrom(parameters.get(1));
+						} else {
+							// assigned = assignee
+							// we need to evaluate the array to assigned again, incase the same array
+							// is also part of the evaluation tree inside the assignee
+							parameters.get(0).eval();
+							// this will set the the arrayIndex correctly.
+							int arrayIndex = parameters.get(0).getParam(0).arrayIndex;
+							// if it is an array we dive into the parameter:
+							// 		parameters.get(0) 							        // gets us the assigned var
+							//						 .getParam(0) 				        // gets us the array var
+							//                                   .getParam(arrayIndex)  // gets us the individual entry
+							//
+							return parameters.get(0).getParam(0).getParam(arrayIndex).set(parameters.get(1));
+						}
+					} else {
+						return parameters.get(0).set(parameters.get(1));
 					}
-					return parameters.get(0).set(parameters.get(1));
 				}	
 				throw new ExpressionException("= can only assign to a variable");
 			}
