@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 360.0, 763.0, 922.0, 367.0 ],
+		"rect" : [ 659.0, 289.0, 922.0, 367.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -78,7 +78,7 @@
 				"box" : 				{
 					"comment" : "dump",
 					"id" : "obj-86",
-					"index" : 5,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -121,8 +121,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -350,7 +350,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 663.0, 181.0, 95.0, 36.0 ],
+					"patching_rect" : [ 663.0, 181.0, 95.0, 35.0 ],
 					"text" : "sprintf send %s::winrect::call"
 				}
 
@@ -420,7 +420,7 @@
 				"box" : 				{
 					"comment" : "value2",
 					"id" : "obj-29",
-					"index" : 4,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -434,7 +434,7 @@
 				"box" : 				{
 					"comment" : "value1",
 					"id" : "obj-28",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -448,7 +448,7 @@
 				"box" : 				{
 					"comment" : "value2",
 					"id" : "obj-27",
-					"index" : 4,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -461,7 +461,7 @@
 				"box" : 				{
 					"comment" : "window",
 					"id" : "obj-23",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -474,7 +474,7 @@
 				"box" : 				{
 					"comment" : "setup, call",
 					"id" : "obj-18",
-					"index" : 5,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -527,7 +527,7 @@
 				"box" : 				{
 					"comment" : "renderer",
 					"id" : "obj-6",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -553,7 +553,7 @@
 				"box" : 				{
 					"comment" : "value1",
 					"id" : "obj-8",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -579,7 +579,7 @@
 				"box" : 				{
 					"comment" : "render pass",
 					"id" : "obj-19",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -591,7 +591,7 @@
 				"box" : 				{
 					"comment" : "window dump",
 					"id" : "obj-17",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -601,19 +601,33 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-3",
+					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 334.0, 158.0, 276.0, 22.0 ],
-					"text" : "bs.app.contexter.winrect.abs bs::app::rc::Output_1",
+					"patching_rect" : [ 334.0, 158.0, 177.0, 22.0 ],
+					"text" : "bs.app.contexter.winrect.abs #1",
 					"varname" : "values"
 				}
 
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-11", 0 ]
@@ -657,7 +671,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"order" : 1,
 					"source" : [ "obj-28", 0 ]
 				}
@@ -673,7 +687,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 1 ],
+					"destination" : [ "obj-1", 1 ],
 					"order" : 0,
 					"source" : [ "obj-29", 0 ]
 				}
@@ -684,20 +698,6 @@
 					"destination" : [ "obj-5", 2 ],
 					"order" : 1,
 					"source" : [ "obj-29", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
-					"source" : [ "obj-3", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -752,7 +752,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-35", 0 ],
+					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -843,6 +843,15 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "bs.app.contexter.winrect.abs.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
