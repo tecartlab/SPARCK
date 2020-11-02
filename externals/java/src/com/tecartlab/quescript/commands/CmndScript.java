@@ -42,6 +42,7 @@ public class CmndScript extends Cmnd{
 	private ArrayList<Cmnd> queChildren;
 	private ArrayList<Cmnd> playChildren;
 	private ArrayList<Cmnd> stopChildren;
+	private ArrayList<Cmnd> varChildren;
 
 	OutputInterface output;
 
@@ -50,6 +51,7 @@ public class CmndScript extends Cmnd{
 		queChildren = new ArrayList<Cmnd>();
 		playChildren = new ArrayList<Cmnd>();
 		stopChildren = new ArrayList<Cmnd>();
+		varChildren = new ArrayList<Cmnd>();
 		super.setCmndName(NODE_NAME);
 	}
 
@@ -58,13 +60,29 @@ public class CmndScript extends Cmnd{
 		queChildren.clear();
 		stopChildren.clear();
 		playChildren.clear();
+		varChildren.clear();
+		
+		ArrayList<Cmnd> importedChildren = new ArrayList<Cmnd>();
+		// check first if there are import nodes
+		for(Cmnd child: this.getChildren()){
+			if(child.cmdName.equals(CmndImport.NODE_NAME)){
+				// in this case get all the Ques and global vars
+				// from the import and add them to the children in here.
+				importedChildren.addAll(((CmndImport)child).getVars());
+				importedChildren.addAll(((CmndImport)child).getQues());
+			}
+		}
+		this.getChildren().addAll(importedChildren);
+		
 		for(Cmnd child: this.getChildren()){
 			if(child.cmdName.equals(CmndQue.NODE_NAME)){
 				queChildren.add(child);
 			} else if(child.cmdName.equals(CmndInternal.NODE_NAME_STOP)){
 				stopChildren.add(child);
-			}else if(child.cmdName.equals(CmndInternal.NODE_NAME_PLAY)){
+			} else if(child.cmdName.equals(CmndInternal.NODE_NAME_PLAY)){
 				playChildren.add(child);
+			} else if(child.cmdName.equals(CmndVar.NODE_NAME)){
+				varChildren.add(child);
 			}
 		}
 	}
@@ -105,6 +123,14 @@ public class CmndScript extends Cmnd{
 	 */
 	public List<Cmnd> getPlays(){
 		return playChildren;
+	}
+
+	/**
+	 * gets all this objects global vars
+	 * @return
+	 */
+	public List<Cmnd> getVars(){
+		return varChildren;
 	}
 
 	/**

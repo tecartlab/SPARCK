@@ -78,16 +78,16 @@ public class QSManager implements OutputInterface{
 	private final String SCRIPT = "script";
 	private final String FRAMEDONE = "framedone";
 
-	private final String PARSING = "parsing";
-	private final String PARSING_OK = "ok";
-	private final String PARSING_ERROR = "error";
+	protected static String PARSING = "parsing";
+	private static String PARSING_OK = "ok";
+	protected static String PARSING_ERROR = "error";
 
 	private static String SCHEMA_FILENAME = "/queListSchema.xsd";
 
 	private ArrayList<CMsgTrigger> triggerQueue;
 	private ArrayList<CMsgTrigger> triggerQueCopy;
 
-	private Validator validator;
+	protected Validator validator;
 
 	private boolean debugMode = false;
 
@@ -287,6 +287,10 @@ public class QSManager implements OutputInterface{
 			Document document = PositionalXMLReader.readXML(is);
 
 			document.getDocumentElement().normalize();
+			
+			// add this info so CmndInput can get the current file path to find its import file
+			document.setUserData("filepath", _filepath, null);
+			document.setUserData("qsmanager", this, null);
 
 			myScript.build(document.getFirstChild());
 

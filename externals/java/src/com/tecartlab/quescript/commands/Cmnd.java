@@ -156,6 +156,8 @@ public abstract class Cmnd{
 						child = new CmndFade(this);
 					else if(childName.equals(CmndKeys.NODE_NAME))
 						child = new CmndKeys(this);
+					else if(childName.equals(CmndImport.NODE_NAME))
+						child = new CmndImport(this);
 					else if(childName.equals(CmndInternal.NODE_NAME_STOP))
 						child = new CmndInternal(this, CmndInternal.NODE_NAME_STOP);
 					else if(childName.equals(CmndInternal.NODE_NAME_PLAY))

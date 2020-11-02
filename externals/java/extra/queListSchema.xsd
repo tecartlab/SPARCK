@@ -77,6 +77,8 @@
 <xs:element name="trigger" type="xs:string"/>
 <xs:element name="expr" type="xs:string"/>
 
+<xs:element name="import" type="xs:string"/>
+
 <xs:element name="osc">
 	<xs:complexType mixed="true">
 		<xs:attribute ref="sendto"/>
@@ -293,6 +295,7 @@
 <xs:element name="script">
 	<xs:complexType mixed="true">
 		<xs:sequence>
+			<xs:element ref="import" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="var" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="stop" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="play" minOccurs="0" maxOccurs="unbounded"/>
