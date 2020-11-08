@@ -61,7 +61,7 @@ public class Que extends MaxObject implements OutputConnector{
 
 		QueMsgFactory.setMsgTypeToMax();
 
-		post("Que Version 0.7.0");
+		post("Que Version 0.8.0");
 	}
 
 	public void loadbang(){
