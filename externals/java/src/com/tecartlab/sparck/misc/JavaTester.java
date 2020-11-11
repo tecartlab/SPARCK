@@ -37,6 +37,7 @@ public class JavaTester extends MaxObject{
 	public void bang(){
 		outlet(0, 1);
 		outlet(1, 0);
+		outlet(2, System.getProperty("java.version"));
 		// checking for updates are done inside the Property
 		/*
 		if(Requestor.checkInternetAccess("tecartlab.com") && !Requestor.isCurrentVersion()){
@@ -45,6 +46,15 @@ public class JavaTester extends MaxObject{
 			outlet(1, 0);
 		}
 		*/
+	}
+	
+	public void version(String _version) {
+		String iV = System.getProperty("java.version");
+		String[] sVA = _version.split("\\.");
+		String[] iVA = iV.split("\\.");
+		outlet(0, (iVA[0].compareTo(sVA[0]) == 0)?1:0 );
+		outlet(1, 0);
+		outlet(2, System.getProperty("java.version"));
 	}
 
 }
