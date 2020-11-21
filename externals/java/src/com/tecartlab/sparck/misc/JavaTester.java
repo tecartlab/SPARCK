@@ -34,9 +34,12 @@ public class JavaTester extends MaxObject{
 		declareOutlets(new int[] { DataTypes.ALL, DataTypes.ALL});
 	}
 
+	public void loadbang() {
+		outlet(1, "bang");
+	}
+	
 	public void bang(){
 		outlet(0, 1);
-		outlet(1, 0);
 		outlet(2, System.getProperty("java.version"));
 		// checking for updates are done inside the Property
 		/*
@@ -55,7 +58,6 @@ public class JavaTester extends MaxObject{
 		int mainVs_installed = Integer.parseInt(iVA[0]);
 		int mainVs_seek = Integer.parseInt(sVA[0]);
 		outlet(0, (mainVs_installed >=  mainVs_seek)?1:0 );
-		outlet(1, 0);
 		outlet(2, System.getProperty("java.version"));
 	}
 
