@@ -35,6 +35,7 @@ public class JavaTester extends MaxObject{
 	}
 
 	public void loadbang() {
+		post("JavaTester loaded..");
 		outlet(1, "bang");
 	}
 	
