@@ -214,7 +214,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@package", "VIDDLL", "@version", "1.2.5" ],
+					"args" : [ "@macintosh", "VIDDLL", "1.2.5", "@windows", "VIDDLL", "1.2.4" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -538,13 +538,13 @@
 , 			{
 				"name" : "BlueButton",
 				"default" : 				{
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
-					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
-					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"fontname" : [ "Courier New" ],
 					"centerjust" : [ 2 ],
-					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontname" : [ "Courier New" ],
+					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
