@@ -52,7 +52,9 @@ public class JavaTester extends MaxObject{
 		String iV = System.getProperty("java.version");
 		String[] sVA = _version.split("\\.");
 		String[] iVA = iV.split("\\.");
-		outlet(0, (iVA[0].compareTo(sVA[0]) == 0)?1:0 );
+		int mainVs_installed = Integer.parseInt(iVA[0]);
+		int mainVs_seek = Integer.parseInt(sVA[0]);
+		outlet(0, (mainVs_installed >=  mainVs_seek)?1:0 );
 		outlet(1, 0);
 		outlet(2, System.getProperty("java.version"));
 	}
