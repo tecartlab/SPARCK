@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -41,13 +41,25 @@
 		"title" : "Dependencies",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 186.0, 467.0, 22.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 68.5, 71.0, 61.0, 22.0 ],
-					"text" : "delay 100"
+					"patching_rect" : [ 68.5, 71.0, 67.0, 22.0 ],
+					"text" : "delay 1000"
 				}
 
 			}
@@ -58,7 +70,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 134.5, 99.0, 34.0, 22.0 ],
+					"patching_rect" : [ 144.5, 99.0, 34.0, 22.0 ],
 					"text" : "sel 1"
 				}
 
@@ -70,7 +82,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 134.5, 71.0, 77.0, 22.0 ],
+					"patching_rect" : [ 144.5, 71.0, 77.0, 22.0 ],
 					"text" : "loadmess #1"
 				}
 
@@ -119,7 +131,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 201.0, 467.0, 33.0, 22.0 ],
+					"patching_rect" : [ 215.0, 467.0, 33.0, 22.0 ],
 					"text" : "front"
 				}
 
@@ -143,10 +155,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 8.0, 527.0, 33.0 ],
+					"patching_rect" : [ 31.0, 8.0, 527.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 11.0, 7.0, 317.0, 33.0 ],
+					"presentation_rect" : [ 11.0, 7.0, 317.0, 34.0 ],
 					"text" : "In order to run SPARCK without issues, \nall the following packages need to be installed"
 				}
 
@@ -171,7 +183,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.5, 431.5, 83.0, 49.0 ],
+					"patching_rect" : [ 18.5, 431.5, 83.0, 50.0 ],
 					"text" : "window flags nomenu, window exec"
 				}
 
@@ -425,15 +437,31 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"order" : 1,
 					"source" : [ "obj-19", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-25", 0 ],
+					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"order" : 0,
+					"source" : [ "obj-19", 1 ]
 				}
 
 			}
@@ -503,17 +531,21 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.dep.packageTest.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/dependency",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.dep.javaTest.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/dependency",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
@@ -538,13 +570,13 @@
 , 			{
 				"name" : "BlueButton",
 				"default" : 				{
-					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
-					"centerjust" : [ 2 ],
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"fontname" : [ "Courier New" ],
+					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
+					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
+					"centerjust" : [ 2 ],
 					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ]
+					"fontname" : [ "Courier New" ],
+					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
