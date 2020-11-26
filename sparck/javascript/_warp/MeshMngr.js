@@ -149,7 +149,7 @@ WARP.MeshMngr.prototype = {
 
     // modify the current mesh with the provided lattice
 	modifyWith: function ( _latticeManager ) {
-        //post("modify mesh with lattice "+this.getCurrentMesh().myCursor_mod.x +"\n");
+        //post("modify mesh with lattice: "+this.getCurrentMesh().myCursor_mod.x +"\n");        
         _latticeManager.modify(this.getCurrentMesh(), this.hasMeshChanged);
     },
 

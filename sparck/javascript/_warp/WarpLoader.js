@@ -232,7 +232,7 @@ WARP.WarpLoader.prototype = {
 			} else if ( ( result = lattice_vertex_pattern.exec( line ) ) !== null ) {
 
 				// ["lv 0.2 0.4 0.0, "0.2", "0.4", "0.0"]
-
+    
 				lattice.lvertices.push(
                     new THREE.Vector3(
 					parseFloat( result[ 1 ] ),

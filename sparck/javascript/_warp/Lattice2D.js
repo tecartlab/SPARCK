@@ -43,6 +43,16 @@ WARP.Lattice2D.prototype = {
 
 	constructor: WARP.Lattice2D,
 
+    reflect: function ( ) {
+        post("dim[0] = " + this.dim[0] + "\n");
+        post("dim[1] = " + this.dim[1] + "\n");
+		for(var i = 0; i < this.dim[0]; i++){
+			for(var j = 0; j < this.dim[1]; j++){
+                post("vertices["+i+"]["+j+"] = " + this.vertices[i][j].x + " | " + this.vertices[i][j].y + " | " + this.vertices[i][j].z + "\n");
+ 			}
+		}
+    },
+
     clone: function ( ) {
         var newClone = new WARP.Lattice2D();
         newClone.dim = [this.dim[0], this.dim[1]];
@@ -91,6 +101,7 @@ WARP.Lattice2D.prototype = {
 	},
 
     load: function ( _dim, _rim, _loadverts ) {
+        //post("loading vertices: _dim[0]: " + _dim[0] + " | _dim[0]: "  + _dim[1] + " | _loadverts.length:" + _loadverts.length + " \n")
         if(_loadverts.length == _dim[0] * _dim[1]){
             this.dim = _dim;
             this.rimL = _rim[0];
@@ -101,16 +112,15 @@ WARP.Lattice2D.prototype = {
             for (var i = 0; i < this.dim[0]; i++) {
                 this.vertices[i] = new Array(this.dim[1]);
                 this.selectedVertices[i] = new Array(this.dim[1]);
-            }
-            for(var i = 0; i < _loadverts.length; i++){
-                var x = Math.floor(i / _dim[0]);
-                var y = i - x * _dim[1];
-                this.vertices[x][y] = _loadverts[i];
-                this.selectedVertices[x][y] = 0;
+                for(var j = 0; j < this.dim[1]; j++){
+                    this.vertices[i][j] = _loadverts[i * this.dim[1] + j];
+                    this.selectedVertices[i][j] = 0;
+                }
             }
         }
         this.hasSelectedVertices = false;
 		this.pickrayindx = new Array(-1, -1);
+        //this.reflect(); // printing out the content
 	},
 
     draw: function ( _lattice_sketch, _drawMode ) {
