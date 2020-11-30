@@ -65,9 +65,9 @@ var myPin = 0;
 var myPrefix = null;
 var	myType = null;
 
-var myBodyName = null;
-
 var myStore = true;
+
+var mouseX 
 
 //Default Flags:
 var myFlagClose = "close";
@@ -101,68 +101,10 @@ function dpost(_message){
     }
 }
 
+
 function loadbang(){
 }
 
-function init(_propertyFloating, _nodeID, _title, _filename, _address){
-    if(_propertyFloating == 1){
-        nodeid(_nodeID);
-        title(_title);
-        address(_address);
-        pFileName(_filename);
-    } else {
-        nodeid(_nodeID);
-    }
-}
-
-// called by init() and node.logic of this properties parent node
-function title(_title){
-	dpost("received title change= " + _title + "\n");
-	//post("pops:title() = " + _title + "\n");
-   
-	if(myNodeTitle != null){
-		clearMyWindowDict();
-	}
-	myNodeTitle = _title;
-	myWindowDBName = "bs_gui_win_" + myNodeTitle;
-	if(myPrefix != null)
- 		myWindowDBName += "_" + myPrefix;
-	if(myType != null)
- 		myWindowDBName += "_" + myType;
-
-	myStoreDBName = myWindowDBName + "_store";
-
-	//post("title() myStoreDBName = " + myStoreDBName + "\n");
-
-	myWindowTitle = "";
-	myWindowTitle = _title;
-	if(myType != null){
-		myWindowTitle = myWindowTitle;
-//		myWindowTitle = myWindowTitle + " (" + myType + ")";
-	}
-
-	outlet(OUTLET_THISPATCHER, "title", myWindowTitle);
-	outlet(OUTLET_MENU, "title", myWindowTitle);
-}
-
-// called by init() and node.logic of this properties parent node
-function address(_address){
-	dpost("received address = " + _address + "\n");
-    outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "args", myNodeTitle, "@address", _address);    
-    outlet(OUTLET_OSSIA, "address", _address + "/enable");
-}
-
-// called by init() and node.logic of this properties parent node
-function pFileName(_name){
-	dpost("loading file = " + _name + "\n");
-    if(myBodyName == null){
-        myBodyName = _name;
-        outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "name", _name);  
-        done();
-    }
-}
-
-// called by pFileName()
 function done(){
  	if(!isDone){
 		if(this.patcher.box != null){
@@ -180,16 +122,13 @@ function done(){
                 var myproperty = myClientProperties.subpatcher();
                 if(myproperty != null){
                     // first we are looking for the full size of the properties
-                    var myPropertyCanvasUnfolded = myproperty.getnamed("vpl_canvas_unfolded");
-                    var myPropertyCanvasFolded = myproperty.getnamed("vpl_canvas_folded");
-                    if(myPropertyCanvasUnfolded != null && myPropertyCanvasFolded != null){                    
-                        mySize = new Array(myPropertyCanvasUnfolded.rect[2], myPropertyCanvasUnfolded.rect[3] + WINDOWBARSIZE);
-                        
-                        myFoldedSize =  new Array(myPropertyCanvasFolded.rect[2], myPropertyCanvasFolded.rect[3]);
-                        myUnfoldedSize =  new Array(myPropertyCanvasUnfolded.rect[2], myPropertyCanvasUnfolded.rect[3]);
+                    var myPropertyCanvas = myproperty.getnamed("vpl_canvas_unfolded");
+                    if(myPropertyCanvas != null){                    
+                        mySize = new Array(myPropertyCanvas.rect[2], myPropertyCanvas.rect[3] + WINDOWBARSIZE);
+                        myUnfoldedSize =  new Array(myPropertyCanvas.rect[2], myPropertyCanvas.rect[3]);
                         //post("myPropertyCanvas.rect: " + myPropertyCanvas.rect + "\n");
-                        dpost("mySize: " + mySize + "\n");
-                        messnamed(myNodeId + "::nodelogic", "expanded_size", myFoldedSize, myUnfoldedSize);
+                        //post("mySize: " + mySize + "\n");
+                        //myClientProperties.message("presentation_rect", 0, 0, theSize[0], theSize[1]);
                         outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "presentation_rect", 0, WINDOWBARSIZE, mySize[0], mySize[1]);
                         //myClientProperties.presentation_rect = new Array(0,0,theSize[0], theSize[1]);
                     }else {
@@ -224,12 +163,48 @@ function done(){
 	}
 }
 
-// called by init()
+// sets the title
+// called by node.logic of this properties parent node
+function title(_title){
+	dpost("received title change= " + _title + "\n");
+	//post("pops:title() = " + _title + "\n");
+   
+	if(myNodeTitle != null){
+		clearMyWindowDict();
+	}
+	myNodeTitle = _title;
+	myWindowDBName = "bs_gui_win_" + myNodeTitle;
+	if(myPrefix != null)
+ 		myWindowDBName += "_" + myPrefix;
+	if(myType != null)
+ 		myWindowDBName += "_" + myType;
+
+	myStoreDBName = myWindowDBName + "_store";
+
+	//post("title() myStoreDBName = " + myStoreDBName + "\n");
+
+	myWindowTitle = "";
+	myWindowTitle = _title;
+	if(myType != null){
+		myWindowTitle = myWindowTitle;
+//		myWindowTitle = myWindowTitle + " (" + myType + ")";
+	}
+
+	outlet(OUTLET_THISPATCHER, "title", myWindowTitle);
+	outlet(OUTLET_MENU, "title", myWindowTitle);
+}
+
+// called by node.logic of this properties parent node
+function address(_address){
+	dpost("received address = " + _address + "\n");
+    outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "args", myNodeTitle, "@address", _address);    
+    outlet(OUTLET_OSSIA, "address", _address + "/enable");
+}
+
 function nodeid(_nodeId){
     myNodeId = _nodeId;
 }
 
-// called by init()
 function color(){
 	args = arrayfromargs(arguments);
 	myNodeColorOn[0] = args[0];
