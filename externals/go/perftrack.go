@@ -10,41 +10,53 @@ import (
 )
 
 type object struct {
-	debug   bool
-	inGeo   *max.Inlet
-	inLeap  *max.Inlet
-	inDecay *max.Inlet
-	outGeo  *max.Outlet
-	leap    float64
-	decay   float64
-	time    float64
-	pos     mgl64.Vec3
-	rot     mgl64.Quat
-	mutex   sync.Mutex
+	debug     bool
+	inGeo     *max.Inlet
+	inLeap    *max.Inlet
+	inFilter1 *max.Inlet
+	inFilter2 *max.Inlet
+	inDebug   *max.Inlet
+	outGeo    *max.Outlet
+	leap      float64
+	filter1   float64
+	filter2   float64
+	time      float64
+	pos       mgl64.Vec3
+	rot       mgl64.Quat
+	posSpeed  mgl64.Vec3
+	rotSpeed  mgl64.Quat
+	mutex     sync.Mutex
 }
 
 func (o *object) Init(obj *max.Object, args []max.Atom) bool {
-	// args: leap, decay
+	// args: leap, filter1, filter2, debug
 
 	// get leap
 	if len(args) > 0 {
 		o.leap = utils.Float(args[0])
 	}
 
-	// get decay
+	// get filter1
 	if len(args) > 1 {
-		o.decay = utils.Float(args[1])
+		o.filter1 = utils.Float(args[1])
+	}
+
+	// get filter1
+	if len(args) > 2 {
+		o.filter2 = utils.Float(args[2])
 	}
 
 	// get debug
-	if len(args) > 2 {
-		o.debug = utils.Int(args[2]) == 1
+	if len(args) > 3 {
+		o.debug = utils.Int(args[3]) == 1
 	}
 
 	// add inlet and outlets
 	o.inGeo = obj.Inlet(max.Any, "t, px, py, pz, rw, rx, ry, rz", true)
-	o.inLeap = obj.Inlet(max.Float, "leap", false)
-	o.inDecay = obj.Inlet(max.Float, "decay", false)
+	o.inLeap = obj.Inlet(max.Any, "leap", false)
+	o.inFilter1 = obj.Inlet(max.Any, "filter1 (input)", false)
+	o.inFilter2 = obj.Inlet(max.Any, "filter2 (speed)", false)
+	o.inDebug = obj.Inlet(max.Any, "debug", false)
 	o.outGeo = obj.Outlet(max.Any, "t, px, py, pz, rw, rx, ry, rz")
 
 	return true
@@ -63,10 +75,17 @@ func (o *object) Handle(inlet int, _ string, data []max.Atom) {
 		o.leap = utils.Float(data[0])
 		return
 	case 2:
-		o.decay = utils.Float(data[0])
+		o.filter1 = utils.Float(data[0])
+		return
+	case 3:
+		o.filter2 = utils.Float(data[0])
+		return
+	case 4:
+		o.debug = utils.Int(data[0]) == 1
 		return
 	default:
 		max.Error("invalid inlet")
+		return
 	}
 
 	// check data
@@ -96,7 +115,7 @@ func (o *object) Handle(inlet int, _ string, data []max.Atom) {
 		max.Pretty("input", time, pos, rot)
 	}
 
-	// set values and return if zero
+	// set initial values and return
 	if o.time == 0 {
 		o.time = time
 		o.pos = pos
@@ -104,32 +123,36 @@ func (o *object) Handle(inlet int, _ string, data []max.Atom) {
 		return
 	}
 
-	/* Smoothing */
+	/* Input Smoothing */
 
-	// apply Lerp-EWMA to position
-	if o.decay > 0 {
-		pos = mgl64.Vec3{
-			utils.Lerp(o.pos.X(), pos.X(), o.decay),
-			utils.Lerp(o.pos.Y(), pos.Y(), o.decay),
-			utils.Lerp(o.pos.Z(), pos.Z(), o.decay),
-		}
+	// smooth position and rotation
+	if o.filter1 > 0 {
+		pos = utils.LerpVec3(o.pos, pos, o.filter1)
+		rot = mgl64.QuatSlerp(o.rot, rot, o.filter1)
 	}
 
-	// apply Slerp-EWMA to rotation
-	if o.decay > 0 {
-		rot = mgl64.QuatSlerp(o.rot, rot, o.decay)
+	/* Speed */
+
+	// get delta
+	delta := time - o.time
+
+	// get position and rotation speed
+	posSpeed := pos.Sub(o.pos).Mul(1 / delta)
+	rotSpeed := rot.Sub(o.rot).Scale(1 / delta)
+
+	/* Speed Smoothing */
+
+	// smooth speeds
+	if o.filter2 > 0 {
+		posSpeed = utils.LerpVec3(o.posSpeed, posSpeed, o.filter2)
+		rotSpeed = mgl64.QuatLerp(o.rotSpeed, rotSpeed, o.filter2)
 	}
 
 	/* Prediction */
 
-	// get differences
-	dTime := time - o.time
-	dPos := pos.Sub(o.pos)
-	dRot := rot.Sub(o.rot)
-
 	// debug
 	if o.debug {
-		max.Pretty("diff", dTime, dPos, dRot)
+		max.Pretty("delta", delta, posSpeed, rotSpeed)
 	}
 
 	// prepare output
@@ -138,21 +161,15 @@ func (o *object) Handle(inlet int, _ string, data []max.Atom) {
 	pRot := rot
 
 	// continue if there is positive time difference
-	if dTime > 0 {
-		// get factor
-		fac := 1.0 / dTime * (dTime + o.leap)
+	if delta > 0 {
+		// predict position and rotation
+		pTime = time + o.leap
+		pPos = pos.Add(posSpeed.Mul(o.leap))
+		pRot = rot.Add(rotSpeed.Scale(o.leap)).Normalize()
 
-		// continue if factor is bigger than one
-		if fac > 1 {
-			// predict position and rotation
-			pTime = o.time + dTime*fac
-			pPos = o.pos.Add(dPos.Mul(fac))
-			pRot = o.rot.Add(dRot.Mul(mgl64.Quat{W: fac}))
-
-			// debug
-			if o.debug {
-				max.Pretty("pred", fac, pTime, pPos, pRot)
-			}
+		// debug
+		if o.debug {
+			max.Pretty("pred", pTime, pPos, pRot)
 		}
 	}
 
@@ -167,14 +184,12 @@ func (o *object) Handle(inlet int, _ string, data []max.Atom) {
 	o.time = time
 	o.pos = pos
 	o.rot = rot
+	o.posSpeed = posSpeed
+	o.rotSpeed = rotSpeed
 }
 
 func (o *object) Free() {}
 
-func init() {
-	max.Register("perftrack", &object{})
-}
-
 func main() {
-	// not called
+	max.Register("perftrack", &object{})
 }
