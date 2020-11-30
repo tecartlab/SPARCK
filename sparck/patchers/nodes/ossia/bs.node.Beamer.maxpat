@@ -1210,8 +1210,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 13.381769824797288, 265.065795999999864, 128.0, 20.0 ],
-					"text" : "ossia.model node/Viewport"
+					"patching_rect" : [ 13.381769824797288, 265.065795999999864, 62.0, 20.0 ],
+					"text" : "ossia.model"
 				}
 
 			}

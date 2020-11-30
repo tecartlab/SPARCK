@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -71,8 +71,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 31.388892999999996, 268.211303999999984, 131.0, 20.0 ],
-					"text" : "ossia.model node/TfmNode"
+					"patching_rect" : [ 117.444426999999962, 263.211303999999984, 62.0, 20.0 ],
+					"text" : "ossia.model"
 				}
 
 			}

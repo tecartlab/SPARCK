@@ -119,8 +119,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 32.333343999999997, 239.833373999999992, 125.0, 20.0 ],
-					"text" : "ossia.model node/Window"
+					"patching_rect" : [ 32.333343999999997, 239.833373999999992, 62.0, 20.0 ],
+					"text" : "ossia.model"
 				}
 
 			}
@@ -2585,7 +2585,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.5, 288.0, 113.0, 35.0 ],
-									"text" : "to_texture u687002275"
+									"text" : "to_texture u533003628"
 								}
 
 							}
@@ -2609,7 +2609,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 178.5, 391.0, 835.0, 35.0 ],
-									"text" : "exportimage MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/_testing/debugging/_export/_textures/Window.png png"
+									"text" : "exportimage /_export/_textures/Window.png png"
 								}
 
 							}
