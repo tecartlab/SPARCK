@@ -38,7 +38,7 @@ import com.tecartlab.utils.dyndist.DynSubscription;
 import com.cycling74.max.*;
 import java.util.*;
 
-public class ModelContainer {
+public class ModelContainer implements CallBackInterface {
 
 	ModelPublisher publisher;
 	ModelData model;

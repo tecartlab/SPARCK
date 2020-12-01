@@ -29,7 +29,7 @@ package com.tecartlab.jay3dee.model;
 
 import com.tecartlab.tools.math.la.*;
 import com.tecartlab.utils.Debug;
-import com.tecartlab.jay3dee.ModelContainer;
+import com.tecartlab.jay3dee.CallBackInterface;
 import com.tecartlab.tools.Utils;
 
 import java.io.BufferedInputStream;
@@ -44,7 +44,6 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipInputStream;
 
@@ -74,13 +73,13 @@ public class ModelData implements Constants{
 	public static String RELATIVE = "relative";
 	public static String ABSOLUTE = "absolute";
 
-	private ModelContainer myContainer;
+	private CallBackInterface myContainer;
 
 
 	/**
 	 * Class Constructor to setup an empty obj model
 	 */
-	public ModelData(ModelContainer _myContainer) {
+	public ModelData(CallBackInterface _myContainer) {
 		myContainer = _myContainer;
 		setup();
 	}
@@ -88,7 +87,7 @@ public class ModelData implements Constants{
 	/**
 	 * Class Constructor, loads the string as an obj from the data directory
 	 */
-	public ModelData(ModelContainer _myContainer, String filename) {
+	public ModelData(CallBackInterface _myContainer, String filename) {
 		this(_myContainer);
 		load(filename);
 	}
@@ -101,7 +100,7 @@ public class ModelData implements Constants{
 	 * TRIANGLES, POINTS, POLYGON, LINES, TRIANGLE_STRIP, QUAD_STRIP, QUADS.<br>
 	 * </br>
 	 */
-	public ModelData(ModelContainer _myContainer, String _fileName, int _shapeMode) {
+	public ModelData(CallBackInterface _myContainer, String _fileName, int _shapeMode) {
 		this(_myContainer, _fileName);
 		shapeMode(_shapeMode);
 	}
@@ -533,7 +532,8 @@ public class ModelData implements Constants{
 				"Vt Size: \t\t" + textureVertices.size() + "\n" +
 				"Vn Size: \t\t" + normalVertices.size() + "\n" +
 				"G  Size: \t\t" + groups.size() + "\n" +
-				"S  Size: \t\t" + getSegmentCount() + "\n");
+				"S  Size: \t\t" + getSegmentCount() + "\n" + 
+				"F  Size: \t\t" + ((segments.size()>0)?segments.get(0).faces.size():0) + "\n");
 	}
 
 	/**

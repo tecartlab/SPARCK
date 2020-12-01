@@ -24,66 +24,51 @@
  *
  */
 
-package com.tecartlab.jay3dee.model;
+import com.cycling74.max.*;
 
-import com.tecartlab.tools.math.la.*;
+import com.tecartlab.jay3dee.*;
+import com.tecartlab.sparck.faceAR.ModelData;
+import com.tecartlab.sparck.faceAR.MaxMeshGenerator;
+/**
+ * @author Martin Fr�hlich
+ *
+ * Max object container for test purposes
+ */
+public class Jay3DeeMeshModelLoader extends MaxObject implements CallBackInterface {
 
-public class Vertice extends Vector3f {
+	FileManager fileManager;
+	ModelData model;
+	MaxMeshGenerator generator;
 
-	protected boolean isSelected;
-	protected boolean isPicked;
-	protected boolean isPickable = true;
+	String file;
 
-	public int index;
-
-	public Vertice(float x, float y, float z){
-		super(x, y, z);
-		isSelected = false;
-		isPicked = false;
-		index = -1;
+	public Jay3DeeMeshModelLoader(Atom args[])
+	{
+		fileManager = new FileManager(10);
+		declareIO(1,1);
+		this.setInletAssist(new String[]{"read path to objfile"});
+		this.setOutletAssist(new String[]{"mesh matrix"});
 	}
 
-	public Vertice(float x, float y){
-		this(x, y, 0);
+	public void notifyDeleted(){
+		if(generator != null)
+			generator.notifyDeleted();
 	}
 
-	public Vertice(Vertice _vert){
-		this(_vert.v_[0], _vert.v_[1], _vert.v_[2]);
-		this.index = _vert.index;
-		this.isPicked = _vert.isPicked;
-		this.isSelected = _vert.isSelected;
+	public void read(String filepath) {
+		file = filepath;
+		
+		if(model == null) {
+			model = new ModelData(this);
+			generator = new MaxMeshGenerator();
+		}
+		model.load(file);
+		generator.initialize(model);
 	}
-
-	public Vertice(){
-		this(0, 0, 0);
-	}
-
-	public int getIndex(){
-		return index;
-	}
-
-	public boolean isSelected(){
-		return isSelected;
-	}
-
-	public boolean isPicked(){
-		return isPicked;
-	}
-
-	public Vector3f worldTransformation(Matrix4x4f matrix){
-		//Vector3f result = new Vector3f(x, y, z);
-		//matrix.transform(result);
-		//return result;
-		return null;
-	}
-
-	public Vertice clone(){
-		Vertice clone = new Vertice();
-		clone.set(x(), y(), z());
-		clone.isPicked = isPicked;
-		clone.isSelected = isSelected;
-		clone.index = index;
-		return clone;
+	
+	public synchronized void dataEvent(String message) {
+		this.outlet(0, "jit_matrix", generator.generateMatrix().getName());
+		this.outlet(1, message);
 	}
 
 }
