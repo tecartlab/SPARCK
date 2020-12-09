@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -82,7 +82,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 690.0, 116.0, 50.0, 22.0 ]
+					"patching_rect" : [ 653.0, 116.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -252,7 +252,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 690.333333333333371, 398.5, 50.0, 22.0 ]
+					"patching_rect" : [ 653.333333333333371, 398.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -263,7 +263,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 630.333333333333485, 356.5, 110.0, 22.0 ],
+					"patching_rect" : [ 593.333333333333485, 356.5, 110.0, 22.0 ],
 					"text" : "0"
 				}
 
@@ -284,7 +284,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 624.0, 314.5, 218.0, 22.0 ],
+					"patching_rect" : [ 587.0, 314.5, 233.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -333,8 +333,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 624.0, 85.5, 110.0, 22.0 ],
-					"text" : "Zero"
+					"patching_rect" : [ 587.0, 85.5, 110.0, 22.0 ]
 				}
 
 			}
@@ -354,7 +353,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 624.0, 46.5, 218.0, 22.0 ],
+					"patching_rect" : [ 587.0, 46.5, 233.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -404,7 +403,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 624.0, 233.5, 110.0, 22.0 ],
+					"patching_rect" : [ 587.0, 233.5, 110.0, 22.0 ],
 					"text" : "One"
 				}
 
@@ -425,7 +424,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 624.0, 191.5, 218.0, 22.0 ],
+					"patching_rect" : [ 587.0, 191.5, 233.0, 22.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -469,8 +468,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
