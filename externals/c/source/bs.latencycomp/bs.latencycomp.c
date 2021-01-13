@@ -141,60 +141,65 @@ void bs_latencycomp_list(t_bs_latencycomp *x, t_symbol *s, short argc, t_atom *a
     float delta = time - x->v_time;
     
     if (delta != 0.0){
- 
-        // get position and rotation speed
-        MTVec3D dPos = mtSubtractVectorVector(pos, x->v_pos);
-        MTVec3D posSpeed = mtMultiplyVectorScalar(dPos, 1. / delta);
         
-        MTQuaternion dRot = mtSubtractMTQuaternionMTQuaternion(&rot, &x->v_rot);
-        MTQuaternion rotSpeed = mtMultMTQuaternionScalar(&dRot, 1. / delta);
-     
-        /* Speed Smoothing */
+        if (x->v_compensation != 0.0) {
+            // get position and rotation speed
+            MTVec3D dPos = mtSubtractVectorVector(pos, x->v_pos);
+            MTVec3D posSpeed = mtMultiplyVectorScalar(dPos, 1. / delta);
+            
+            MTQuaternion dRot = mtSubtractMTQuaternionMTQuaternion(&rot, &x->v_rot);
+            MTQuaternion rotSpeed = mtMultMTQuaternionScalar(&dRot, 1. / delta);
+         
+            /* Speed Smoothing */
 
-        // smooth speeds
-        if (x->v_filter > 0.0) {
-            posSpeed = mtLerpMTVector(x->v_posSpeed, posSpeed, 1.0 - x->v_filter);
-            rotSpeed = mtLerpMTQuaternions(&x->v_rotSpeed, &rotSpeed, 1.0 - x->v_filter);
+            // smooth speeds
+            if (x->v_filter > 0.0) {
+                posSpeed = mtLerpMTVector(x->v_posSpeed, posSpeed, 1.0 - x->v_filter);
+                rotSpeed = mtLerpMTQuaternions(&x->v_rotSpeed, &rotSpeed, 1.0 - x->v_filter);
+            }
+            
+            /* Prediction */
+
+            // prepare output
+            float pTime = time;
+            MTVec3D pPos = pos;
+            MTQuaternion pRot = rot;
+
+            // continue if there is positive time difference
+            if (delta > 0) {
+                // predict position and rotation
+                pTime = time + x->v_compensation;
+                MTVec3D pPosPredict = mtMultiplyVectorScalar(posSpeed, x->v_compensation);
+                pPos = mtAddVectorVector(pos, pPosPredict);
+                MTQuaternion pRotPredict = mtMultMTQuaternionScalar(&rotSpeed, x->v_compensation);
+                pRot = mtAddMTQuaternionMTQuaternion(&rot, &pRotPredict);
+                mtNormMTQuaternion(&pRot);
+
+            }
+
+            // update state
+            x->v_time = time;
+            x->v_pos = pos;
+            x->v_rot = rot;
+            x->v_posSpeed = posSpeed;
+            x->v_rotSpeed = rotSpeed;
+
+            // send output
+
+            atom_setfloat(x->v_outputList,pTime);
+            atom_setfloat(x->v_outputList + 1,pPos.x);
+            atom_setfloat(x->v_outputList + 2,pPos.y);
+            atom_setfloat(x->v_outputList + 3,pPos.z);
+            atom_setfloat(x->v_outputList + 4,pRot.v.x);
+            atom_setfloat(x->v_outputList + 5,pRot.v.y);
+            atom_setfloat(x->v_outputList + 6,pRot.v.z);
+            atom_setfloat(x->v_outputList + 7,pRot.s);
+
+            outlet_list(x->v_outlet, 0L, 8, x->v_outputList);
+            
+        } else {
+            outlet_list(x->v_outlet, 0L, argc, argv);
         }
-        
-        /* Prediction */
-
-        // prepare output
-        float pTime = time;
-        MTVec3D pPos = pos;
-        MTQuaternion pRot = rot;
-
-        // continue if there is positive time difference
-        if (delta > 0) {
-            // predict position and rotation
-            pTime = time + x->v_compensation;
-            MTVec3D pPosPredict = mtMultiplyVectorScalar(posSpeed, x->v_compensation);
-            pPos = mtAddVectorVector(pos, pPosPredict);
-            MTQuaternion pRotPredict = mtMultMTQuaternionScalar(&rotSpeed, x->v_compensation);
-            pRot = mtAddMTQuaternionMTQuaternion(&rot, &pRotPredict);
-            mtNormMTQuaternion(&pRot);
-
-        }
-
-        // update state
-        x->v_time = time;
-        x->v_pos = pos;
-        x->v_rot = rot;
-        x->v_posSpeed = posSpeed;
-        x->v_rotSpeed = rotSpeed;
-
-        // send output
-
-        atom_setfloat(x->v_outputList,pTime);
-        atom_setfloat(x->v_outputList + 1,pPos.x);
-        atom_setfloat(x->v_outputList + 2,pPos.y);
-        atom_setfloat(x->v_outputList + 3,pPos.z);
-        atom_setfloat(x->v_outputList + 4,pRot.v.x);
-        atom_setfloat(x->v_outputList + 5,pRot.v.y);
-        atom_setfloat(x->v_outputList + 6,pRot.v.z);
-        atom_setfloat(x->v_outputList + 7,pRot.s);
-
-        outlet_list(x->v_outlet, 0L, 8, x->v_outputList);
     }
 }
 
