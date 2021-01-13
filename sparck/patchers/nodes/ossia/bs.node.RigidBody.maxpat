@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "RigidBody_1",
+		"globalpatchername" : "RigidBody",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-33",
@@ -1849,7 +1849,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 59.0, 104.0, 866.0, 444.0 ],
+														"rect" : [ 59.0, 104.0, 842.0, 361.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -1879,15 +1879,25 @@
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
-																	"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
-																	"id" : "obj-8",
-																	"linecount" : 2,
+																	"id" : "obj-3",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 334.0, 215.0, 500.0, 35.0 ],
-																	"text" : "ossia.parameter leapDebug @type bool @default false @description \"debug flag for latency compensation\""
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 240.5, 130.0, 79.0, 22.0 ],
+																	"text" : "prepend filter"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-2",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 101.0, 101.0, 131.0, 22.0 ],
+																	"text" : "prepend compensation"
 																}
 
 															}
@@ -1899,7 +1909,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 263.5, 183.0, 545.0, 22.0 ],
+																	"patching_rect" : [ 240.5, 101.0, 545.0, 22.0 ],
 																	"text" : "ossia.parameter velocityFilter @type float @default 0. @description \"velocity filter\" @min 0. @max 1."
 																}
 
@@ -1912,57 +1922,8 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 89.0, 68.351775999999973, 518.0, 22.0 ],
+																	"patching_rect" : [ 101.0, 68.351775999999973, 518.0, 22.0 ],
 																	"text" : "ossia.parameter leap @type int @default 0 @description \"latency compensation\" @unit time.ms"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-2",
-																	"maxclass" : "newobj",
-																	"numinlets" : 2,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "int" ],
-																	"patching_rect" : [ 89.0, 159.5, 29.5, 22.0 ],
-																	"text" : "+ 1"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-3",
-																	"maxclass" : "newobj",
-																	"numinlets" : 2,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "int" ],
-																	"patching_rect" : [ 89.0, 132.5, 29.5, 22.0 ],
-																	"text" : "> 0."
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-13",
-																	"maxclass" : "newobj",
-																	"numinlets" : 2,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 19.0, 195.0, 52.0, 22.0 ],
-																	"text" : "gate 2 1"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"format" : 6,
-																	"id" : "obj-9",
-																	"maxclass" : "flonum",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "bang" ],
-																	"parameter_enable" : 0,
-																	"patching_rect" : [ 120.5, 132.5, 50.0, 22.0 ]
 																}
 
 															}
@@ -1970,11 +1931,11 @@
 																"box" : 																{
 																	"id" : "obj-1",
 																	"maxclass" : "newobj",
-																	"numinlets" : 5,
+																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 52.0, 262.0, 301.0, 22.0 ],
-																	"text" : "perftrack"
+																	"patching_rect" : [ 52.0, 172.0, 92.0, 22.0 ],
+																	"text" : "bs.latencycomp"
 																}
 
 															}
@@ -1999,7 +1960,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 19.0, 342.0, 30.0, 30.0 ]
+																	"patching_rect" : [ 52.0, 268.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -2013,73 +1974,36 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-1", 3 ],
+																	"destination" : [ "obj-3", 0 ],
 																	"source" : [ "obj-11", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-14", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-1", 0 ],
-																	"source" : [ "obj-13", 1 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-19", 0 ],
-																	"source" : [ "obj-13", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-3", 0 ],
-																	"order" : 1,
-																	"source" : [ "obj-14", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-9", 0 ],
-																	"order" : 0,
-																	"source" : [ "obj-14", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-13", 1 ],
 																	"source" : [ "obj-18", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-13", 0 ],
+																	"destination" : [ "obj-1", 0 ],
 																	"source" : [ "obj-2", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-2", 0 ],
+																	"destination" : [ "obj-1", 0 ],
 																	"source" : [ "obj-3", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-1", 4 ],
-																	"source" : [ "obj-8", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-1", 1 ],
-																	"source" : [ "obj-9", 0 ]
 																}
 
 															}
@@ -3781,7 +3705,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "perftrack.mxo",
+				"name" : "bs.latencycomp.mxo",
 				"type" : "iLaX"
 			}
  ],
