@@ -34,8 +34,8 @@ setinletassist(0,"messages");
 var availableRows = 1;
 var availableCols = 1;
 
-var selectedRows = 1;
-var selectedCols = 1;
+var selectedRows = 0;
+var selectedCols = 0;
 
 
 

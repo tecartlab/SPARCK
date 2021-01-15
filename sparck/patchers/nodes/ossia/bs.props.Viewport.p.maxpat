@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -273,7 +273,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "window", "@text", "window", "@size", 159, 19, "@menutype", "message" ],
+					"args" : [ "#1", "window/name", "@text", "window", "@size", 159, 19, "@menutype", "message" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

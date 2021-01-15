@@ -390,12 +390,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-4",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "" ],
-					"patching_rect" : [ 698.0, 147.0, 179.0, 31.0 ],
+					"patching_rect" : [ 698.0, 147.0, 169.0, 42.0 ],
 					"text" : "bs.ossia.parameter.menu window/row @description \"window slice row\""
 				}
 
@@ -408,7 +408,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "" ],
-					"patching_rect" : [ 529.0, 147.0, 163.0, 42.0 ],
+					"patching_rect" : [ 529.0, 147.0, 152.0, 42.0 ],
 					"text" : "bs.ossia.parameter.menu window/column @description \"window slice column\""
 				}
 
@@ -2281,7 +2281,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 502.0, 242.0, 117.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.node.viewport.slice",
+						"filename" : "bs.node.viewport.slice.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -2390,7 +2390,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "window", "@text", "window", "@types", "output", "@out3", "cols", "@out2", "rows", "@out1", "rendercontext", "drawto", "@offname", "<none>", "@description", "select output window" ],
+					"args" : [ "window/name", "@text", "window", "@types", "output", "@out3", "cols", "@out2", "rows", "@out1", "rendercontext", "drawto", "@offname", "<none>", "@description", "select output window" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -2594,7 +2594,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 2 ],
-					"midpoints" : [ 560.5, 283.0, 694.611084000000005, 283.0, 694.611084000000005, 136.5, 682.5, 136.5 ],
+					"midpoints" : [ 560.5, 283.0, 694.611084000000005, 283.0, 694.611084000000005, 136.5, 671.5, 136.5 ],
 					"source" : [ "obj-21", 1 ]
 				}
 
@@ -2609,7 +2609,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 2 ],
-					"midpoints" : [ 609.5, 272.0, 887.0, 272.0, 887.0, 134.0, 867.5, 134.0 ],
+					"midpoints" : [ 609.5, 272.0, 887.0, 272.0, 887.0, 134.0, 857.5, 134.0 ],
 					"source" : [ "obj-21", 2 ]
 				}
 
