@@ -1214,7 +1214,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 312.722228999999913, 126.333373999999992, 86.0, 20.0 ],
+					"patching_rect" : [ 312.722228999999913, 120.333373999999992, 86.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1305,6 +1305,18 @@
 						"assistshowspatchername" : 0,
 						"title" : "ViewPort",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 546.845215000000053, 304.0, 75.0, 22.0 ],
+									"text" : "route enable"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-32",
 									"maxclass" : "message",
@@ -1410,7 +1422,7 @@
 									"numoutlets" : 17,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 505.052245999999968, 299.211303999999984, 206.5, 23.0 ],
+									"patching_rect" : [ 504.845215000000053, 269.711303999999984, 206.5, 23.0 ],
 									"varname" : "shader",
 									"viewvisibility" : 1
 								}
@@ -1808,8 +1820,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-44", 0 ],
-									"source" : [ "obj-108", 2 ]
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-108", 16 ]
 								}
 
 							}
@@ -1824,6 +1836,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-108", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-44", 0 ],
+									"source" : [ "obj-11", 0 ]
 								}
 
 							}
@@ -2281,7 +2300,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 502.0, 242.0, 117.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "bs.node.viewport.slice.js",
+						"filename" : "bs.node.viewport.slice",
 						"parameter_enable" : 0
 					}
 ,
