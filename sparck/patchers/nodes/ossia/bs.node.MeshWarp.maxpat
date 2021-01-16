@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "MeshWarp_1",
+		"globalpatchername" : "MeshWarp",
 		"boxes" : [ 			{
 				"box" : 				{
 					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
@@ -443,7 +443,7 @@
 											}
 , 											{
 												"box" : 												{
-													"args" : [ "render/viewport", "@types", "viewport", "@out1", "name", "drawto", "@outoff1", "drawto", "off", "@offname", "<none>", "@text", "render to", "@description", "render this meshwarp directly to the selected viewport" ],
+													"args" : [ "render/viewport", "@types", "viewport", "@out1", "drawto", "@outoff1", "drawto", "off", "@offname", "<none>", "@text", "render to", "@description", "render this meshwarp directly to the selected viewport" ],
 													"bgmode" : 0,
 													"border" : 0,
 													"clickthrough" : 0,
@@ -1753,8 +1753,8 @@
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -1797,12 +1797,24 @@
 						"title" : "Canvas",
 						"boxes" : [ 							{
 								"box" : 								{
+									"comment" : "",
+									"id" : "obj-2",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 197.757019000000014, 722.570434999999975, 25.0, 25.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-29",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 298.857818500000008, 591.5704345703125, 133.0, 22.0 ],
+									"patching_rect" : [ 41.857818500000008, 370.5704345703125, 133.0, 22.0 ],
 									"text" : "cache_mode displaylist"
 								}
 
@@ -1814,7 +1826,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 298.857818500000008, 561.237060570312451, 43.0, 22.0 ],
+									"patching_rect" : [ 41.857818500000008, 340.237060570312451, 43.0, 22.0 ],
 									"text" : "sel gl2"
 								}
 
@@ -1829,7 +1841,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 298.857818500000008, 530.789978050781201, 286.0, 22.0 ],
+									"patching_rect" : [ 41.857818500000008, 309.789978050781201, 286.0, 22.0 ],
 									"text" : "bs.msg.receive.key bs::system::settings glengine ><"
 								}
 
@@ -1850,7 +1862,7 @@
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-27",
-									"index" : 2,
+									"index" : 3,
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -1866,7 +1878,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 270.857818500000008, 443.737060570312451, 514.0, 22.0 ],
+									"patching_rect" : [ 33.201598999999987, 455.737060570312451, 514.0, 22.0 ],
 									"text" : "ossia.parameter render/showaxis @type bool @default false @description \"render object axes\""
 								}
 
@@ -1880,7 +1892,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 270.857818500000008, 469.5704345703125, 81.0, 22.0 ],
+									"patching_rect" : [ 33.201598999999987, 481.5704345703125, 81.0, 22.0 ],
 									"text" : "prepend axes"
 								}
 
@@ -1892,7 +1904,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 254.757019000000014, 640.333374000000049, 19.0, 22.0 ],
+									"patching_rect" : [ 197.757019000000014, 638.333374000000049, 19.0, 22.0 ],
 									"text" : "t l"
 								}
 
@@ -1906,7 +1918,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 29.65621950000002, 389.570434999999975, 475.201598999999987, 35.0 ],
+									"patching_rect" : [ 353.65621950000002, 381.570434999999975, 475.201598999999987, 35.0 ],
 									"text" : "ossia.parameter transform @type int @default 0 @range 0 2 @description \"transform (0: Off, 1: Orthographic (Aspect preserve), 2: Orthographic (Normalize both axes)\""
 								}
 
@@ -1945,7 +1957,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 21.201598999999987, 188.5, 82.0, 22.0 ],
+									"patching_rect" : [ 572.201598999999987, 347.5, 82.0, 22.0 ],
 									"text" : "prepend color"
 								}
 
@@ -1958,7 +1970,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 21.201598999999987, 157.5, 441.0, 22.0 ],
+									"patching_rect" : [ 572.201598999999987, 316.5, 441.0, 22.0 ],
 									"text" : "ossia.parameter color @type rgba @default 1. 1. 1. 1. @description \"object color\""
 								}
 
@@ -2039,7 +2051,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 29.65621950000002, 434.55291748046875, 107.0, 19.0 ],
+									"patching_rect" : [ 353.65621950000002, 426.55291748046875, 107.0, 19.0 ],
 									"text" : "prepend transform_reset"
 								}
 
@@ -2102,7 +2114,7 @@
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-13",
-									"index" : 1,
+									"index" : 2,
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -2120,7 +2132,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
+									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -2141,7 +2153,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
+									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-139", 0 ]
 								}
 
@@ -2149,6 +2161,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
+									"order" : 0,
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"order" : 1,
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -2176,7 +2197,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
+									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-26", 0 ]
 								}
 
@@ -3612,14 +3633,21 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"source" : [ "obj-30", 0 ]
+					"source" : [ "obj-30", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-30", 1 ]
+					"source" : [ "obj-30", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-47", 0 ],
+					"source" : [ "obj-30", 0 ]
 				}
 
 			}

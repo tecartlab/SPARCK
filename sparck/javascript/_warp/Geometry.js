@@ -421,11 +421,11 @@ WARP.Geometry.prototype = {
         }
   	},
 
-    generateMatrix: function ( _meshMatrix,  _subDiv ) {
+    generateMatrix: function ( _meshMatrix,  _subDiv, _color) {
         _meshMatrix.dim = this.faces.length * 3 * Math.pow(4, _subDiv);
     	for(var j = 0; j < this.faces.length; j++) {
  //           this.faces[j].populate(_meshMatrix, j * 3 , _subDiv, this.vertices_mod, this.uvs_mod, this.normals);
-            this.faces[j].populate(_meshMatrix, j * 3 , _subDiv, this.vertices_mod_lat, this.uvs_mod, this.normals);
+            this.faces[j].populate(_meshMatrix, j * 3 , _subDiv, this.vertices_mod_lat, this.uvs_mod, this.normals, _color);
          }
         return _meshMatrix;
     },

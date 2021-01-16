@@ -44,7 +44,7 @@ WARP.Face3.prototype = {
 
 	constructor: WARP.Face3,
 
-	populate: function ( _meshMatrix, _idx, _subDiv, _vertices, _uvs, _normals ) {
+	populate: function ( _meshMatrix, _idx, _subDiv, _vertices, _uvs, _normals, _color ) {
             var vA = _vertices[this.vertA];
             var vB = _vertices[this.vertB];
             var vC = _vertices[this.vertC];
@@ -59,9 +59,12 @@ WARP.Face3.prototype = {
                 nB = nA;
                 nC = nA;
             }
-            _meshMatrix.setcell(_idx + 0,"val",vA.x, vA.y, vA.z, uA.x, uA.y, nA.x, nA.y, nA.z, 1., 1., 1., 1.);
-            _meshMatrix.setcell(_idx + 1,"val",vB.x, vB.y, vB.z, uB.x, uB.y, nB.x, nB.y, nB.z, 1., 1., 1., 1.);
-            _meshMatrix.setcell(_idx + 2,"val",vC.x, vC.y, vC.z, uC.x, uC.y, nC.x, nC.y, nC.z, 1., 1., 1., 1.);
+            if(_color == null){
+                _color = [1.0, 1.0, 1.0, 1.0];
+            }
+            _meshMatrix.setcell(_idx + 0,"val",vA.x, vA.y, vA.z, uA.x, uA.y, nA.x, nA.y, nA.z, _color[0], _color[1], _color[2], _color[3]);
+            _meshMatrix.setcell(_idx + 1,"val",vB.x, vB.y, vB.z, uB.x, uB.y, nB.x, nB.y, nB.z, _color[0], _color[1], _color[2], _color[3]);
+            _meshMatrix.setcell(_idx + 2,"val",vC.x, vC.y, vC.z, uC.x, uC.y, nC.x, nC.y, nC.z, _color[0], _color[1], _color[2], _color[3]);
             //post("setcell("+_idx +",val,"+vA.x+","+ vA.y+","+ vA.z+"," +uA.x+"," +uA.y+","+ nA.x+","+ nA.y+","+ nA.z+","+ 1.+","+ 1.+","+ 1.+","+ 1.+")\n");
 	},
 

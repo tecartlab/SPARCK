@@ -129,9 +129,9 @@ WARP.MeshMngr.prototype = {
 	},
 
     // returns the mesh matrix from the current mesh which is modified by the lattice
-    generateMatrix: function ( meshMatrix,  _subDiv ) {
+    generateMatrix: function ( meshMatrix,  _subDiv, _color ) {
         //post(" generateMatrix "+this.getCurrentMesh().myCursor_mod +"\n");
-        return this.getCurrentMesh().generateMatrix( meshMatrix,  _subDiv );
+        return this.getCurrentMesh().generateMatrix( meshMatrix,  _subDiv, _color );
     },
 
     load: function ( _newGeometry ) {

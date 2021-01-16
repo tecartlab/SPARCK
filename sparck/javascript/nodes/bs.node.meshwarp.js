@@ -71,6 +71,7 @@ var cameraObj = null;
 var nodeObj = null;
 var meshObj = null;
 var meshMatrix = new JitterMatrix(12, "float32", 10);
+var meshColor = [1.0, 0.0, 1.0, 1.0];
 
 // global Function Key
 var functionKey;
@@ -114,7 +115,7 @@ function init(){
 		calcCameraMatrix();
     	isInit = true;
 
-	    draw();
+	    draw(false);
  	}
 }
 
@@ -457,20 +458,20 @@ function loadobj(objpath){
        		outlet(OUTLET_ERROR, "off");
 		}
     }
-    draw( );
+    draw(false);
 }
 
-function draw( ){
+function draw(_forceRefresh){
     init();
-    if(latticeMngr.hasGeometryChanged() || meshMngr.hasGeometryChanged()){
+    if(latticeMngr.hasGeometryChanged() || meshMngr.hasGeometryChanged() || _forceRefresh){
         meshMngr.modifyWith(latticeMngr); //modifies the current mesh with the lattice
-        meshMatrix = meshMngr.generateMatrix(meshMatrix, 0);
+        meshMatrix = meshMngr.generateMatrix(meshMatrix, 0, meshColor);
         meshObj.jit_matrix(meshMatrix.name);
         meshObj.draw_mode = 'triangles';
         outlet(OUTLET_MESH, "jit_matrix", meshMatrix.name);
         outlet(OUTLET_MESH, "draw_mode", "triangles");
     }
-    if(latticeMngr.hasChanged() || meshMngr.hasChanged() || editModeHasChanged){
+    if(latticeMngr.hasChanged() || meshMngr.hasChanged() || editModeHasChanged || _forceRefresh){
         latticeObj.reset();
         latticeObj.glcolor(0., 1., 0., 1.);
         // draw the unit square
@@ -497,14 +498,21 @@ function applyLattice(){
     latticeMngr.selectAll(); // select all lattice vertices
 	latticeMngr.resetVertice(); // resets the latice to its original shape.
     latticeMngr.selectAll(); // deselect all lattice vertices
-    draw();
+    draw(false);
 }
 
 function createLattice(){
     init();
 	var a = arrayfromargs(arguments);
 	latticeMngr.create(a);
-    draw();
+    draw(false);
+}
+
+
+function color(){
+	init();
+	meshColor = arrayfromargs(arguments);
+	draw(true);
 }
 
 function texture(){
