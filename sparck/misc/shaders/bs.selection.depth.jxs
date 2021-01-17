@@ -31,8 +31,8 @@ uniform float far_clip;
 
 void main (void){
 	float depth = length(position.xyz) / far_clip;
-//	gl_FragColor = vec4(depth, depth, depth, 1.0);
-	gl_FragColor = vec4(far_clip / 90., 0, 0, 1);
+	gl_FragColor = vec4(depth, depth, depth, 1.0);
+	//gl_FragColor = vec4(far_clip / 90., 0, 0, 1);
 }
 ]]>
 		</program>
