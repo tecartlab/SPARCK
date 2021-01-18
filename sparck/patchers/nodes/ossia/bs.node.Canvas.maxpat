@@ -1639,7 +1639,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 80.0, 101.0, 923.0, 503.0 ],
+						"rect" : [ 61.0, 183.0, 923.0, 503.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1923,7 +1923,6 @@
 									}
 ,
 									"patching_rect" : [ 516.083069000000023, 363.631530999999995, 160.916930999999977, 22.0 ],
-									"presentation_linecount" : 3,
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2249,12 +2248,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
-									"linecount" : 10,
+									"linecount" : 11,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 308.083069000000023, 27.5, 469.0, 141.0 ],
-									"text" : "shader @text shader @types portal shader @description shader @offname none \n@out1 shader @outoff1 shader \n@out2 texture @outoff2 texture \n@out3 shader_right shader @outoff3 shader \n@out4 texture_right texture @outoff4 texture \n@out5 stereomode >< @outoff5 0 \n@out6 enable_baking @outoff6 enable_baking 0 \n@out7 shader_baking shader @outoff7 shader \n@out8 capture\n@out9 drawto @outoff9 drawto"
+									"patching_rect" : [ 304.083069000000023, 5.5, 469.0, 154.0 ],
+									"text" : "shader @text shader @types portal shader @description shader @offname none \n@out1 shader @outoff1 shader \n@out2 texture @outoff2 texture \n@out3 shader_right shader @outoff3 shader \n@out4 texture_right texture @outoff4 texture \n@out5 stereomode >< @outoff5 0 \n@out6 shader_baking shader @outoff6 shader \n@out7 capture\n@out8 depth_texture texture @outoff8 texture\n@out9 enable_baking @outoff9 enable_baking 0 \n@out10 depth_drawto drawto @outoff10 drawto"
 								}
 
 							}
@@ -2326,7 +2325,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 590.0, 142.0, 908.0, 673.0 ],
+										"rect" : [ 498.0, 142.0, 908.0, 673.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3460,7 +3459,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "shader", "@text", "shader", "@types", "portal", "shader", "@out1", "shader", "@outoff1", "shader", "@out2", "texture", "@outoff2", "texture", "@out3", "shader_right", "shader", "@outoff3", "shader", "@out4", "texture_right", "texture", "@outoff4", "texture", "@out5", "stereomode", "><", "@outoff5", 0, "@out6", "enable_baking", "@outoff6", "enable_baking", 0, "@out7", "shader_baking", "shader", "@outoff7", "shader", "@out8", "capture", "@out9", "drawto", "@outoff9", "drawto", "@offname", "none", "@description", "shader" ],
+									"args" : [ "shader", "@text", "shader", "@types", "portal", "shader", "@out1", "shader", "@outoff1", "shader", "@out2", "texture", "@outoff2", "texture", "@out3", "shader_right", "shader", "@outoff3", "shader", "@out4", "texture_right", "texture", "@outoff4", "texture", "@out5", "stereomode", "><", "@outoff5", 0, "@out6", "shader_baking", "shader", "@outoff6", "shader", "@out7", "capture", "@out8", "depth_texture", "texture", "@outoff8", "texture", "@out9", "enable_baking", "@outoff9", "enable_baking", 0, "@out10", "depth_drawto", "drawto", "@outoff10", "drawto", "@offname", "none", "@description", "shader" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -3555,7 +3554,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"source" : [ "obj-19", 8 ]
+									"source" : [ "obj-19", 9 ]
 								}
 
 							}
@@ -3610,6 +3609,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 1 ],
+									"source" : [ "obj-19", 8 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-19", 7 ]
 								}
@@ -3624,7 +3630,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 1 ],
+									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-19", 5 ]
 								}
 

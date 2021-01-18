@@ -53,6 +53,15 @@
 	<param name="textureMatrix5" type="mat4" state="TEXTURE5_MATRIX" />
 	<param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
 
+    <param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<param name="tex2" type="int" default="2" />
+	<param name="tex3" type="int" default="3" />
+	<param name="tex4" type="int" default="4" />
+	<param name="tex5" type="int" default="5" />
+	<param name="tex6" type="int" default="6" />
+	<param name="tex7" type="int" default="7" />
+
 	<language name="glsl" version="1.2">
 		<bind param="beamer_count" program="fp" />
 		<bind param="beamer_color" program="fp" />
@@ -79,7 +88,7 @@
 		<bind param="angle_limit_low" program="fp" />
 		<bind param="angle_limit_high" program="fp" />
 
-		<bind param="far_clip" program="fp" />
+		<bind param="far_clip" program="vp" />
 
 		<bind param="offColor" program="fp" />
 
@@ -87,6 +96,15 @@
 		<bind param="collada_factor" program="vp" />
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
+        
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<bind param="tex2" program="fp" />
+		<bind param="tex3" program="fp" />
+		<bind param="tex4" program="fp" />
+		<bind param="tex5" program="fp" />
+		<bind param="tex6" program="fp" />
+		<bind param="tex7" program="fp" />
 
 		<program name="vp" type="vertex" source="bs.portal.spatial.bakery.mask.prebake.6.vs.gl2.glsl" />
 		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.prebake.6.fs.gl2.glsl"/>
@@ -127,8 +145,8 @@
 		<bind param="viewport_matrix" program="vp" />
 
 		<bind param="jit_position" program="vp" />
-	  <bind param="jit_texcoord" program="vp" />
-	  <bind param="jit_normal" program="vp" />
+	    <bind param="jit_texcoord" program="vp" />
+	    <bind param="jit_normal" program="vp" />
 
 		<bind param="textureMatrix0" program="vp" />
 		<bind param="textureMatrix1" program="vp" />
@@ -136,7 +154,7 @@
 		<bind param="textureMatrix3" program="vp" />
 		<bind param="textureMatrix4" program="vp" />
 		<bind param="textureMatrix5" program="vp" />
-	  <bind param="modelViewProjectionMatrix" program="vp" />
+	    <bind param="modelViewProjectionMatrix" program="vp" />
 
 		<program name="vp" type="vertex" source="bs.portal.spatial.se.bake.mask.prebake.6.vs.gl3.glsl" />
 		<program name="fp" type="fragment" source="bs.portal.spatial.se.bake.mask.prebake.6.fs.gl3.glsl"/>

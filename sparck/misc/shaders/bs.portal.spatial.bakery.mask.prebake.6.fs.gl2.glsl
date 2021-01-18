@@ -44,6 +44,8 @@ uniform sampler2DRect tex2;
 uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
+uniform sampler2DRect tex7;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -73,6 +75,8 @@ uniform float interpolation_correction;
 
 varying vec4 beamer_uv[6];		// beamer uv position
 varying vec2 beamer_texcoord[6];// beamer texcoord
+
+varying float depth[6];// beamer distance
 
 varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
@@ -113,9 +117,17 @@ void main()
 		spreadedAngle[i] = 0.0;
 		indexSort[i] = i;
 	}
+    
+    vec4 occDepth[6];
+	occDepth[0] = texture2DRect(tex0, beamer_texcoord[0]);
+	occDepth[1] = texture2DRect(tex1, beamer_texcoord[1]);
+	occDepth[2] = texture2DRect(tex2, beamer_texcoord[2]);
+	occDepth[3] = texture2DRect(tex3, beamer_texcoord[3]);
+	occDepth[4] = texture2DRect(tex4, beamer_texcoord[4]);
+	occDepth[5] = texture2DRect(tex5, beamer_texcoord[5]);
 
     //Calculating the factor of importance for each beamer
-	for( i = 0; i < beamer_count; i++){
+	for( i = 0; i < beamer_count; i++){        
 		// calculate the viewray from the camera to this fragment
 		ray = beamer_pos[i] - worldPos;
 		raynormal = normalize(ray);
@@ -153,8 +165,10 @@ void main()
 		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
 		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
 
-		vcurve[i] = powerCurve * visible;
-		vangle[i] = angle * visible * veepee[i];
+        float depth_diff = (abs(occDepth[i].r - depth[i]) > 0.005)? 0.: 1.0;
+        
+		vcurve[i] = powerCurve * visible * depth_diff;
+		vangle[i] = angle * visible * veepee[i] * depth_diff;
 	}
 
 	//Sorting the viewport values
