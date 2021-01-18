@@ -54,12 +54,12 @@ mat4 mv3_matrix = beamer_v_matrix[3] * screen_m_matrix;
 mat4 mv4_matrix = beamer_v_matrix[4] * screen_m_matrix;
 mat4 mv5_matrix = beamer_v_matrix[5] * screen_m_matrix;
 
-mat4 mvp0_matrix = beamer_p_matrix[0] * beamer_v_matrix[0] * screen_m_matrix;
-mat4 mvp1_matrix = beamer_p_matrix[1] * beamer_v_matrix[1] * screen_m_matrix;
-mat4 mvp2_matrix = beamer_p_matrix[2] * beamer_v_matrix[2] * screen_m_matrix;
-mat4 mvp3_matrix = beamer_p_matrix[3] * beamer_v_matrix[3] * screen_m_matrix;
-mat4 mvp4_matrix = beamer_p_matrix[4] * beamer_v_matrix[4] * screen_m_matrix;
-mat4 mvp5_matrix = beamer_p_matrix[5] * beamer_v_matrix[5] * screen_m_matrix;
+mat4 mvp0_matrix = beamer_p_matrix[0] * mv0_matrix;
+mat4 mvp1_matrix = beamer_p_matrix[1] * mv1_matrix;
+mat4 mvp2_matrix = beamer_p_matrix[2] * mv2_matrix;
+mat4 mvp3_matrix = beamer_p_matrix[3] * mv3_matrix;
+mat4 mvp4_matrix = beamer_p_matrix[4] * mv4_matrix;
+mat4 mvp5_matrix = beamer_p_matrix[5] * mv5_matrix;
 
 void main(void)
 {

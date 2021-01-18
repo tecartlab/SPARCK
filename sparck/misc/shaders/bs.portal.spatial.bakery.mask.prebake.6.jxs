@@ -135,7 +135,7 @@
 		<bind param="angle_limit_low" program="fp" />
 		<bind param="angle_limit_high" program="fp" />
 
-		<bind param="far_clip" program="fp" />
+		<bind param="far_clip" program="vp" />
 
 		<bind param="offColor" program="fp" />
 
@@ -156,7 +156,16 @@
 		<bind param="textureMatrix5" program="vp" />
 	    <bind param="modelViewProjectionMatrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.spatial.se.bake.mask.prebake.6.vs.gl3.glsl" />
-		<program name="fp" type="fragment" source="bs.portal.spatial.se.bake.mask.prebake.6.fs.gl3.glsl"/>
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<bind param="tex2" program="fp" />
+		<bind param="tex3" program="fp" />
+		<bind param="tex4" program="fp" />
+		<bind param="tex5" program="fp" />
+		<bind param="tex6" program="fp" />
+		<bind param="tex7" program="fp" />
+
+		<program name="vp" type="vertex" source="bs.portal.spatial.bakery.mask.prebake.6.vs.gl3.glsl" />
+		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.prebake.6.fs.gl3.glsl"/>
 	</language>
 </jittershader>

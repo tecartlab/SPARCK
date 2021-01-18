@@ -45,12 +45,14 @@ uniform int stage_mode;
 uniform int mode;
 
 // samplers
-uniform sampler2DRect tex0;
-uniform sampler2DRect tex1;
-uniform sampler2DRect tex2;
-uniform sampler2DRect tex3;
-uniform sampler2DRect tex4;
-uniform sampler2DRect tex5;
+uniform samplerJit0 tex0;
+uniform samplerJit1 tex1;
+uniform samplerJit2 tex2;
+uniform samplerJit3 tex3;
+uniform samplerJit4 tex4;
+uniform samplerJit5 tex5;
+uniform samplerJit6 tex6;
+uniform samplerJit7 tex7;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -81,6 +83,7 @@ in jit_PerVertex {
     vec4 jit_texcoord0;
     vec4 beamer_uv[6];
     vec2 beamer_texcoord[6];
+    float depth[6];
     vec3 normal;
     vec3 worldPos;
 } jit_in;
@@ -111,15 +114,23 @@ void main()
 	vec3 	ray, raynormal;
 	vec2 	col;
 	float 	curve, angle, linearCurve, powerCurve, visible;
-  int 	i, j;
+    int 	i, j;
 
-  for( i = 0; i < 6; i++){
+    for( i = 0; i < 6; i++){
 		vcurve[i] = 0.0;
 		vangle[i] = 0.0;
 		veepee[i] = 0.0;
 		spreadedAngle[i] = 0.0;
 		indexSort[i] = i;
 	}
+
+    vec4 occDepth[6];
+	occDepth[0] = texture(tex0, jit_in.beamer_texcoord[0]);
+	occDepth[1] = texture(tex1, jit_in.beamer_texcoord[1]);
+	occDepth[2] = texture(tex2, jit_in.beamer_texcoord[2]);
+	occDepth[3] = texture(tex3, jit_in.beamer_texcoord[3]);
+	occDepth[4] = texture(tex4, jit_in.beamer_texcoord[4]);
+	occDepth[5] = texture(tex5, jit_in.beamer_texcoord[5]);
 
     //Calculating the factor of importance for each beamer
 	for( i = 0; i < beamer_count; i++){
@@ -160,7 +171,10 @@ void main()
 		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
 		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
 
-		vcurve[i] = powerCurve * visible;
+        // calculate depth-difference to detect occlusions
+        float depth_diff = (abs(occDepth[i].r - jit_in.depth[i]) > 0.005)? 0.: 1.0;
+
+		vcurve[i] = powerCurve * visible * depth_diff;
 		vangle[i] = angle * visible * veepee[i];
 	}
 

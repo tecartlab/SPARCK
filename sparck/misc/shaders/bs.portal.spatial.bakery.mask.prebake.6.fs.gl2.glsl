@@ -165,10 +165,11 @@ void main()
 		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
 		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
 
+        // calculate depth-difference to detect occlusions
         float depth_diff = (abs(occDepth[i].r - depth[i]) > 0.005)? 0.: 1.0;
         
 		vcurve[i] = powerCurve * visible * depth_diff;
-		vangle[i] = angle * visible * veepee[i] * depth_diff;
+		vangle[i] = angle * visible * veepee[i];
 	}
 
 	//Sorting the viewport values
