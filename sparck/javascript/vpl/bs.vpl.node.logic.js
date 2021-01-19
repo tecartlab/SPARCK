@@ -463,7 +463,7 @@ function title(newtitle){
     messnamed(myNodeID + "::pbody", "address", myNodeTitle, myNodeAddress);
 	outlet(OUTLET_DUMP, "setmsgtitle", newtitle);
 	outlet(OUTLET_DUMP, "title", newtitle);
-	outlet(OUTLET_DUMP, "address", myNodeOssiaModel);
+	outlet(OUTLET_DUMP, "address", myNodeAddress);
 }
 
 function color(){

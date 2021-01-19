@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 159.0, 415.0, 398.0, 414.0 ],
+		"rect" : [ 82.0, 404.0, 398.0, 414.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -73,7 +73,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 170.0, 281.0, 55.0, 22.0 ],
+					"patching_rect" : [ 170.0, 299.0, 55.0, 22.0 ],
 					"text" : "route set"
 				}
 
@@ -86,8 +86,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 170.0, 250.0, 77.0, 22.0 ],
-					"text" : "ossia.remote"
+					"patching_rect" : [ 170.0, 258.0, 117.0, 22.0 ],
+					"text" : "ossia.remote enable"
 				}
 
 			}
@@ -287,14 +287,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 293.0, 181.0, 424.0, 403.0 ],
+						"rect" : [ 503.0, 173.0, 424.0, 403.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
