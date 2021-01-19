@@ -2,6 +2,7 @@
 	<description>SPARCK - multi projection - Shader</description>
 	<param name="mode" type="int" default="0" />
 	<param name="stage_mode" type="int" default="0" />
+	<param name="occlusion" type="int" default="0" />
 	<param name="projection_mode" type="float" default="0" />
 
 	<param name="beamer_enable" type="float" default="1. 1. 1. 1. 1. 1." />
@@ -79,6 +80,7 @@
 		<bind param="projection_mode" program="fp" />
 		<bind param="stage_mode" program="fp" />
 		<bind param="mode" program="fp" />
+		<bind param="occlusion" program="fp" />
 
 		<bind param="blend_spread" program="fp" />
 		<bind param="back_blend" program="fp" />
@@ -126,6 +128,7 @@
 		<bind param="projection_mode" program="fp" />
 		<bind param="stage_mode" program="fp" />
 		<bind param="mode" program="fp" />
+		<bind param="occlusion" program="fp" />
 
 		<bind param="blend_spread" program="fp" />
 		<bind param="back_blend" program="fp" />

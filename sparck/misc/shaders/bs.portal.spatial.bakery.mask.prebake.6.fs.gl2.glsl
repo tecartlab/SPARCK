@@ -36,6 +36,7 @@ varying vec2 texcoord0;
 uniform float projection_mode;
 uniform int stage_mode;
 uniform int mode;
+uniform int occlusion;
 
 // samplers
 uniform sampler2DRect tex0;
@@ -102,6 +103,7 @@ void main()
 	float 	vangle[6];
 	float 	spreadedAngle[6];
 	float 	veepee[6];
+    float   occDepth[6];
 
 	int   	indexSort[6];
 
@@ -115,16 +117,18 @@ void main()
 		vangle[i] = 0.0;
 		veepee[i] = 0.0;
 		spreadedAngle[i] = 0.0;
+        occDepth[i] = 0.0;
 		indexSort[i] = i;
 	}
     
-    vec4 occDepth[6];
-	occDepth[0] = texture2DRect(tex0, beamer_texcoord[0]);
-	occDepth[1] = texture2DRect(tex1, beamer_texcoord[1]);
-	occDepth[2] = texture2DRect(tex2, beamer_texcoord[2]);
-	occDepth[3] = texture2DRect(tex3, beamer_texcoord[3]);
-	occDepth[4] = texture2DRect(tex4, beamer_texcoord[4]);
-	occDepth[5] = texture2DRect(tex5, beamer_texcoord[5]);
+    if (occlusion == 1){
+        occDepth[0] = texture2DRect(tex0, beamer_texcoord[0]).r;
+        occDepth[1] = texture2DRect(tex1, beamer_texcoord[1]).r;
+        occDepth[2] = texture2DRect(tex2, beamer_texcoord[2]).r;
+        occDepth[3] = texture2DRect(tex3, beamer_texcoord[3]).r;
+        occDepth[4] = texture2DRect(tex4, beamer_texcoord[4]).r;
+        occDepth[5] = texture2DRect(tex5, beamer_texcoord[5]).r;        
+    }
 
     //Calculating the factor of importance for each beamer
 	for( i = 0; i < beamer_count; i++){        
@@ -165,8 +169,8 @@ void main()
 		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
 		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
 
-        // calculate depth-difference to detect occlusions
-        float depth_diff = (abs(occDepth[i].r - depth[i]) > 0.005)? 0.: 1.0;
+        // calculate depth-difference to detect occlusions -> allway 1 if occlusion is disabled
+        float depth_diff = (abs(occDepth[i] - depth[i]) > 0.005)? (1. - occlusion): 1.0;
         
 		vcurve[i] = powerCurve * visible * depth_diff;
 		vangle[i] = angle * visible * veepee[i];
