@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 295.0, 136.0, 939.0, 670.0 ],
+		"rect" : [ 88.0, 135.0, 939.0, 670.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -516,12 +516,12 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-6",
-									"linecount" : 7,
+									"linecount" : 6,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 776.069397000000322, 128.070434999999975, 127.0, 102.0 ],
+									"patching_rect" : [ 776.069397000000322, 128.070434999999975, 130.0, 89.0 ],
 									"text" : "ossia.parameter lens/culling/far @type float @default 100. @min 0.000001 @clip low @description \"culling far\" @priority 1"
 								}
 
@@ -1312,7 +1312,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 200.944457999999997, 612.0, 367.0, 31.0 ],
+					"patching_rect" : [ 191.222198486328125, 612.0, 367.0, 31.0 ],
 					"text" : "jit.gl.gridshape stage @enable 0 @shape cube @scale 0.3 0.3 0.3 @poly_mode 2 2 @dim 8 8 @blend_enable 1 @color 1 1 1 0"
 				}
 

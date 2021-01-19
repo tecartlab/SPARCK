@@ -94,6 +94,7 @@ function enable_cams(){
     top = (cams[4] == 1)?true: false;
     bottom = (cams[5] == 1)?true: false;
     draw();
+	bang();
 }
 
 function color0(){
@@ -121,6 +122,7 @@ function drawto(_context){
     if(cameraSketch != null){
         cameraSketch.drawto = _context;
     }
+	bang();
 }
 
 function notifydeleted(){
@@ -136,6 +138,7 @@ function anim(){
 	if(isSetup){
 		cameraAnimNode.anim = arguments[0];
 	}
+	bang();
 }
 
 function bang(){
@@ -154,6 +157,7 @@ function frustum(left, right, bottom, top, near, far){
 	f_near = near;
 	f_far = far;
 	draw();
+	bang();
 }
 
 function draw(){
