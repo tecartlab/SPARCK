@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Grid",
+		"globalpatchername" : "Grid_1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-9",
@@ -632,17 +632,13 @@
 , 			{
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
-					"frozen_object_attributes" : 					{
-						"description" : "Gridsize XY"
-					}
-,
 					"id" : "obj-21",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 364.880981499999848, 157.5, 263.0, 20.0 ],
-					"text" : "ossia.parameter gridsize @type vec2f @default 0.05 0.05"
+					"patching_rect" : [ 364.880981499999848, 157.5, 252.0, 20.0 ],
+					"text" : "ossia.parameter gridsize @type vec2f @default 0.5 0.5"
 				}
 
 			}
