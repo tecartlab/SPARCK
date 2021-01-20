@@ -4773,7 +4773,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 25.0, 86.0, 1280.0, 783.0 ],
+						"rect" : [ 34.0, 86.0, 1280.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4964,8 +4964,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 110.0, 236.5, 704.0, 35.0 ],
-									"text" : "ossia.parameter depth/enable @type bool @default true @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
+									"patching_rect" : [ 110.0, 236.5, 466.0, 35.0 ],
+									"text" : "ossia.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
 							}
@@ -5012,13 +5012,12 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-9",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 391.201598999999987, 124.40380859375, 432.0, 35.0 ],
-									"text" : "ossia.parameter blend/enable @type bool @default false @description \"enable blending\""
+									"patching_rect" : [ 391.201598999999987, 124.40380859375, 463.0, 22.0 ],
+									"text" : "ossia.parameter blend/enable @type bool @default 1 @description \"enable blending\""
 								}
 
 							}
@@ -5026,13 +5025,12 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-8",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 246.201598999999987, 84.903809000000024, 576.0, 35.0 ],
-									"text" : "ossia.parameter lighting/enable @type bool @default false @description \"lighting can have strange results if no Light node exists.\""
+									"patching_rect" : [ 246.201598999999987, 84.903809000000024, 681.0, 22.0 ],
+									"text" : "ossia.parameter lighting/enable @type bool @default 0 @description \"lighting can have strange results if no Light node exists.\""
 								}
 
 							}

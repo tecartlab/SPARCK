@@ -1006,8 +1006,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 32.754944000000023, 110.833618000000001, 156.0, 62.0 ],
-													"text" : "ossia.parameter spot/angle @type float @default 0.2 @range 0. 180 @clip both @description \"Spot angle\""
+													"patching_rect" : [ 32.754944000000023, 110.833618000000001, 158.0, 62.0 ],
+													"text" : "ossia.parameter spot/angle @type float @default 45. @range 0. 180 @clip both @description \"Spot angle\""
 												}
 
 											}
@@ -1041,13 +1041,13 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-3",
-													"linecount" : 5,
+													"linecount" : 4,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 416.754944000000023, 249.43890399999998, 540.0, 76.0 ],
-													"text" : "ossia.parameter shadow/range @type float @default 50. @min 0. @clip low @description \"Shadow range value (default = 50.0). For directional lights, this represents the the maximum distance a shadow-caster can be from shadow-receiver. For spot/point lights the maximum range a light will affect other objects. Setting this as low as possible in the scene generally gives better shadow results.\""
+													"patching_rect" : [ 416.754944000000023, 249.43890399999998, 598.0, 62.0 ],
+													"text" : "ossia.parameter shadow/range @type float @default 10. @min 0. @clip low @description \"Shadow range value (default = 50.0). For directional lights, this represents the the maximum distance a shadow-caster can be from shadow-receiver. For spot/point lights the maximum range a light will affect other objects. Setting this as low as possible in the scene generally gives better shadow results.\""
 												}
 
 											}

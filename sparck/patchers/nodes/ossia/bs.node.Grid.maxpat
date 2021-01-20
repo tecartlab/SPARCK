@@ -664,7 +664,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 473.0, 151.0, 1022.0, 384.0 ],
+						"rect" : [ 384.0, 151.0, 1022.0, 384.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -696,13 +696,13 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-3",
-									"linecount" : 2,
+									"linecount" : 4,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 721.0, 8.5, 704.0, 36.0 ],
-									"text" : "ossia.parameter depth/enable @type bool @default true @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
+									"patching_rect" : [ 721.0, 7.0, 296.0, 62.0 ],
+									"text" : "ossia.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
 							}
@@ -713,7 +713,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 721.0, 53.140868999999952, 130.0, 22.0 ],
+									"patching_rect" : [ 721.0, 81.0, 130.0, 22.0 ],
 									"text" : "prepend depth_enable"
 								}
 
@@ -739,7 +739,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 419.150879000000032, 12.333373999999992, 283.0, 36.0 ],
+									"patching_rect" : [ 419.150879000000032, 12.333373999999992, 283.0, 35.0 ],
 									"text" : "ossia.parameter depth/layer @type int @default 10 @description \"depth layer\""
 								}
 
@@ -753,10 +753,10 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "int", "" ],
-									"patching_rect" : [ 188.0, 54.0, 218.0, 50.0 ],
+									"patching_rect" : [ 188.0, 54.0, 221.0, 49.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 10,
-									"presentation_rect" : [ 92.41668701171875, 66.0, 90.0, 146.0 ],
+									"presentation_rect" : [ 92.41668701171875, 66.0, 90.0, 143.0 ],
 									"text" : "bs.ossia.parameter.rendergroup.drawto render/renderGroup \"Selection of the rendergroups to render this object\"",
 									"varname" : "renderGroup[1]"
 								}
@@ -790,13 +790,13 @@
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-106",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 490.250015000000019, 88.0, 253.0, 36.0 ],
-									"text" : "ossia.parameter render/showaxis @type bool @default false @description \"draw axis\""
+									"patching_rect" : [ 490.250015000000019, 88.0, 193.000000000000057, 49.0 ],
+									"text" : "ossia.parameter render/showaxis @type bool @default 0 @description \"draw axis\""
 								}
 
 							}

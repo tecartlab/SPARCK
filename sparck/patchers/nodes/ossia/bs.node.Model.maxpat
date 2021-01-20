@@ -38,6 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
+		"globalpatchername" : "Model",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-1",
@@ -3868,7 +3869,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "Canvas", "@enable_properties", 1, "@enable_body", 1, "@help", "Canvas" ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "Model", "@enable_properties", 1, "@enable_body", 1, "@help", "Model" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -3885,7 +3886,7 @@
 					"patching_rect" : [ 0.0, 55.999999999999986, 182.555542000000003, 37.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 180.0, 36.0 ],
-					"varname" : "vpl_nodelogic",
+					"varname" : "Model",
 					"viewvisibility" : 1
 				}
 
