@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 221.0, 283.0, 817.0, 418.0 ],
+		"rect" : [ 160.0, 139.0, 817.0, 418.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -1639,7 +1639,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 56.0, 192.0, 923.0, 503.0 ],
+						"rect" : [ 35.0, 79.0, 923.0, 503.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4048,7 +4048,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 304.083069000000023, 5.5, 469.0, 154.0 ],
-									"text" : "shader @text shader @types portal shader @description shader @offname none \n@out1 shader @outoff1 shader \n@out2 texture @outoff2 texture \n@out3 shader_right shader @outoff3 shader \n@out4 texture_right texture @outoff4 texture \n@out5 stereomode >< @outoff5 0 \n@out6 shader_baking shader @outoff6 shader \n@out7 capture\n@out8 depth_texture texture @outoff8 texture\n@out9 enable_baking @outoff9 enable_baking 0 \n@out10 depth_drawto drawto @outoff10 drawto"
+									"presentation_linecount" : 11,
+									"text" : "shader @text shader @types portal shader @description shader @offname none \n@out1 shader @outoff1 shader \n@out2 texture @outoff2 texture \n@out3 shader_right shader @outoff3 shader \n@out4 texture_right texture @outoff4 texture \n@out5 stereomode >< @outoff5 0 \n@out6 shader_baking shader @outoff6 shader \n@out7 capture\n@out8 texture_4bakingPass texture @outoff8 texture\n@out9 enable_baking @outoff9 enable_baking 0 \n@out10 depth_drawto drawto @outoff10 drawto"
 								}
 
 							}
@@ -4084,8 +4085,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 312.083069000000023, 262.59619140625, 115.0, 22.0 ],
-									"text" : "route shaderUpdate"
+									"patching_rect" : [ 312.083069000000023, 262.59619140625, 140.0, 22.0 ],
+									"text" : "route bakingPassUpdate"
 								}
 
 							}
@@ -5254,7 +5255,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "shader", "@text", "shader", "@types", "portal", "shader", "@out1", "shader", "@outoff1", "shader", "@out2", "texture", "@outoff2", "texture", "@out3", "shader_right", "shader", "@outoff3", "shader", "@out4", "texture_right", "texture", "@outoff4", "texture", "@out5", "stereomode", "><", "@outoff5", 0, "@out6", "shader_baking", "shader", "@outoff6", "shader", "@out7", "capture", "@out8", "depth_texture", "texture", "@outoff8", "texture", "@out9", "enable_baking", "@outoff9", "enable_baking", 0, "@out10", "depth_drawto", "drawto", "@outoff10", "drawto", "@offname", "none", "@description", "shader" ],
+									"args" : [ "shader", "@text", "shader", "@types", "portal", "shader", "@out1", "shader", "@outoff1", "shader", "@out2", "texture", "@outoff2", "texture", "@out3", "shader_right", "shader", "@outoff3", "shader", "@out4", "texture_right", "texture", "@outoff4", "texture", "@out5", "stereomode", "><", "@outoff5", 0, "@out6", "shader_baking", "shader", "@outoff6", "shader", "@out7", "capture", "@out8", "texture_4bakingPass", "texture", "@outoff8", "texture", "@out9", "enable_baking", "@outoff9", "enable_baking", 0, "@out10", "depth_drawto", "drawto", "@outoff10", "drawto", "@offname", "none", "@description", "shader" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
