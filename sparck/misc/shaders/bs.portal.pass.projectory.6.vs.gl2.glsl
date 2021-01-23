@@ -24,9 +24,12 @@
  *
  */
 
-#version 120
+/* Vertex Shader
+ *
+ * default 6 texture projection vertex shader used for texture projections
+ */
 
-varying vec2 texcoord0;
+#version 120
 
 uniform mat4 viewport_matrix;
 uniform mat4 world_matrix;
@@ -64,11 +67,10 @@ mat4 mvp5_matrix = beamer_p_matrix[5] * mv5_matrix;
 void main(void)
 {
     // transform texcoords
-    texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+    //texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
 
-	// perform required transform on vertex
-	// gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
-    gl_Position = vec4(vec2(gl_MultiTexCoord0).xy * 2. - 1., 0., 1.);
+	// transform vertex sapce to worldspace: used for projectory
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
 
 	normal = normalize(mat3(screen_m_matrix) * gl_Normal);
 	worldPos = vec3(screen_m_matrix * gl_Vertex);

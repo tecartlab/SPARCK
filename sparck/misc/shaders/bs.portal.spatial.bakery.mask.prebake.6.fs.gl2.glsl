@@ -31,8 +31,6 @@
 	Multifunctional texture projection shader with full feature set.
 */
 
-varying vec2 texcoord0;
-
 uniform float projection_mode;
 uniform int stage_mode;
 uniform int mode;

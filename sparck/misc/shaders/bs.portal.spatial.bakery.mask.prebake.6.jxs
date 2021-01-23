@@ -108,7 +108,7 @@
 		<bind param="tex6" program="fp" />
 		<bind param="tex7" program="fp" />
 
-		<program name="vp" type="vertex" source="bs.portal.spatial.bakery.mask.prebake.6.vs.gl2.glsl" />
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl2.glsl" />
 		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.prebake.6.fs.gl2.glsl"/>
 	</language>
 	<language name="glsl" version="1.5">
@@ -168,7 +168,7 @@
 		<bind param="tex6" program="fp" />
 		<bind param="tex7" program="fp" />
 
-		<program name="vp" type="vertex" source="bs.portal.spatial.bakery.mask.prebake.6.vs.gl3.glsl" />
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl3.glsl" />
 		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.prebake.6.fs.gl3.glsl"/>
 	</language>
 </jittershader>

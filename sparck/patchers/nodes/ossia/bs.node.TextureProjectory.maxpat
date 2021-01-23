@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 332.0, 410.0, 737.0, 404.0 ],
+		"rect" : [ 294.0, 79.0, 737.0, 404.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -44,8 +44,8 @@
 					"id" : "obj-35",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -87,15 +87,338 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-8",
+									"comment" : "",
+									"id" : "obj-19",
+									"index" : 3,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 209.04412899999997, 229.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 139.044129000000112, 237.0, 272.0, 22.0 ],
-									"text" : "sprintf file bs.portal.texture.projectory.%s.%s.6.jxs"
+									"patching_rect" : [ 48.286254999999983, 153.0, 19.0, 22.0 ],
+									"text" : "t l"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 2,
+											"revision" : 0,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 368.0, 126.0, 732.0, 480.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-9",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "int" ],
+													"patching_rect" : [ 143.985809000000017, 183.0, 29.5, 22.0 ],
+													"text" : "!- 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-7",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 143.985809000000017, 274.0, 282.0, 22.0 ],
+													"text" : "sprintf file bs.portal.texture.projectory.%s.project.jxs"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-2",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.0, 385.499999570312525, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 3,
+													"outlettype" : [ "", "", "" ],
+													"patching_rect" : [ 50.000000000000028, 89.0, 185.971617999999978, 22.0 ],
+													"text" : "route type bake"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-11",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 434.713745000000017, 306.0, 228.0, 22.0 ],
+													"text" : "file bs.portal.texture.projectory.applied.jxs"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-6",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 434.713745000000017, 274.0, 46.0, 22.0 ],
+													"text" : "route 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "int" ],
+													"patching_rect" : [ 133.485809000000017, 124.0, 29.5, 22.0 ],
+													"text" : "t b i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 50.0, 176.499999570312525, 38.0, 22.0 ],
+													"text" : "zl.reg"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 343.0, 289.0, 22.0 ],
+													"text" : "sprintf file bs.portal.texture.projectory.%s.prebake.jxs"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-12",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 143.985809000000017, 234.0, 32.0, 22.0 ],
+													"text" : "gate"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-13",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.000000000000028, 39.999999570312525, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-15",
+													"index" : 2,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 360.713745000000017, 383.499999570312525, 30.0, 30.0 ]
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-5", 0 ],
+													"source" : [ "obj-1", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"source" : [ "obj-11", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"source" : [ "obj-13", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-12", 1 ],
+													"order" : 0,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"order" : 1,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"source" : [ "obj-5", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-6", 0 ],
+													"order" : 0,
+													"source" : [ "obj-5", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"order" : 1,
+													"source" : [ "obj-5", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-11", 0 ],
+													"source" : [ "obj-6", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-8", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-12", 0 ],
+													"source" : [ "obj-9", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 120.04412899999997, 190.5, 108.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p selectShaderFile"
 								}
 
 							}
@@ -107,7 +430,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 139.044129000000055, 308.0, 30.0, 30.0 ]
+									"patching_rect" : [ 120.04412899999997, 229.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -118,44 +441,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 11.999999999999943, 129.500000429687475, 79.0, 22.0 ],
+									"patching_rect" : [ 48.286254999999983, 55.500000429687475, 79.0, 22.0 ],
 									"text" : "prepend type"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 258.544128999999998, 142.0, 41.0, 22.0 ],
-									"text" : "baked"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 201.044128999999998, 142.0, 45.0, 22.0 ],
-									"text" : "project"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 201.044128999999998, 109.0, 134.0, 22.0 ],
-									"text" : "route 0 1"
 								}
 
 							}
@@ -167,20 +454,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 201.044128999999998, 61.070434999999975, 722.0, 22.0 ],
+									"patching_rect" : [ 101.044128999999998, 79.500000429687475, 722.0, 22.0 ],
 									"text" : "ossia.parameter shader/bake/enable @type bool @default 0 @description \"enables baking of shader - works NOT for stereo textures.\""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 139.286254999999983, 192.500000429687475, 125.0, 22.0 ],
-									"text" : "pak multiblend project"
 								}
 
 							}
@@ -191,7 +466,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 49.999999999999943, 192.500000429687475, 82.0, 22.0 ],
+									"patching_rect" : [ 101.044128999999998, 108.500000429687475, 82.0, 22.0 ],
 									"text" : "prepend bake"
 								}
 
@@ -204,7 +479,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 139.286254999999983, 32.0, 706.0, 22.0 ],
+									"patching_rect" : [ 48.286254999999983, 27.0, 706.0, 22.0 ],
 									"text" : "ossia.parameter shader/name @type string @description shader @default multiblend @range multiblend addition single @clip both"
 								}
 
@@ -217,96 +492,66 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 49.999999999999943, 304.0, 30.0, 30.0 ]
+									"patching_rect" : [ 48.286254999999983, 229.0, 30.0, 30.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
+									"destination" : [ "obj-17", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
-									"source" : [ "obj-12", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"order" : 1,
-									"source" : [ "obj-18", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
-									"order" : 0,
-									"source" : [ "obj-18", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"order" : 0,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"order" : 1,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-20", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-20", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 1 ],
-									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 1 ],
-									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
-									"source" : [ "obj-7", 0 ]
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-16", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"source" : [ "obj-8", 0 ]
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"order" : 0,
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"order" : 1,
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -9025,7 +9270,7 @@
 				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patcher" : 					{
@@ -9039,7 +9284,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 55.0, 423.0, 1300.0, 388.0 ],
+						"rect" : [ 34.0, 491.0, 1300.0, 388.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -9069,15 +9314,25 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-39",
-									"maxclass" : "newobj",
+									"id" : "obj-32",
+									"maxclass" : "comment",
 									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 805.666646000000014, 307.5, 84.0, 20.0 ],
+									"text" : "baking shader"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-28",
+									"index" : 3,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 945.66664666666702, 200.0, 289.0, 22.0 ],
-									"text" : "sprintf file bs.portal.texture.projectory.%s.prebake.jxs"
+									"patching_rect" : [ 805.666646000000014, 16.5, 30.0, 30.0 ]
 								}
 
 							}
@@ -9306,7 +9561,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 850.166646333333574, 61.0, 63.500000333333446, 22.0 ],
+									"patching_rect" : [ 833.166645666666568, 61.0, 63.500000333333446, 22.0 ],
 									"text" : "route file"
 								}
 
@@ -9489,7 +9744,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 770.666646000000014, 104.0, 119.0, 22.0 ],
+									"patching_rect" : [ 943.666646000000014, 104.0, 119.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -9508,7 +9763,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 770.666646000000014, 61.0, 73.0, 22.0 ],
+									"patching_rect" : [ 943.666646000000014, 61.0, 73.0, 22.0 ],
 									"text" : "route param"
 								}
 
@@ -9521,7 +9776,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 770.666646000000014, 321.0, 30.0, 30.0 ]
+									"patching_rect" : [ 943.666646000000014, 321.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -9544,7 +9799,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 806.16664633333346, 13.5, 145.0, 33.0 ],
+									"patching_rect" : [ 978.16664633333346, 13.5, 145.0, 33.0 ],
 									"text" : "shader data - we are baking only the left side..."
 								}
 
@@ -9553,12 +9808,12 @@
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-9",
-									"index" : 3,
+									"index" : 4,
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 770.666646000000014, 13.5, 30.0, 30.0 ]
+									"patching_rect" : [ 943.666646000000014, 13.5, 30.0, 30.0 ]
 								}
 
 							}
@@ -9622,7 +9877,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 850.16664633333346, 200.0, 88.0, 22.0 ],
+									"patching_rect" : [ 833.166645666666568, 246.5, 88.0, 22.0 ],
 									"text" : "prepend name"
 								}
 
@@ -9650,8 +9905,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 894.66664666666702, 251.0, 383.0, 22.0 ],
-									"text" : "jit.gl.shader sparck @file bs.portal.texture.projectory.single.prebake.jxs"
+									"patching_rect" : [ 805.666646000000014, 283.5, 109.0, 22.0 ],
+									"text" : "jit.gl.shader sparck"
 								}
 
 							}
@@ -9866,6 +10121,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-28", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-29", 0 ]
 								}
@@ -9923,13 +10185,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-39", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -9973,13 +10228,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-39", 0 ],
-									"source" : [ "obj-5", 3 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
 									"source" : [ "obj-6", 0 ]
 								}
@@ -9995,7 +10243,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -10003,7 +10251,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"order" : 1,
+									"order" : 0,
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -11216,7 +11464,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-24", 2 ],
+					"destination" : [ "obj-24", 3 ],
 					"order" : 1,
 					"source" : [ "obj-23", 0 ]
 				}
@@ -11372,6 +11620,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-35", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 2 ],
 					"source" : [ "obj-35", 1 ]
 				}
 

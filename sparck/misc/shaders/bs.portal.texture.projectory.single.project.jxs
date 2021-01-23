@@ -61,7 +61,7 @@
 		<bind param="collada_factor" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.texture.projectory.1.vs.gl2.jxs" />
+		<program name="vp" type="vertex" source="bs.portal.pass.projectory.1.vs.gl2.glsl" />
 
 		<program name="fp" type="fragment">
 <![CDATA[

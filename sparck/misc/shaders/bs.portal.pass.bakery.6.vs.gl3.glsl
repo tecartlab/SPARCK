@@ -24,6 +24,11 @@
  *
  */
 
+/* Vertex Shader
+ *
+ * default 6 texture projection vertex shader used for texture bakery
+ */
+
 #version 330 core
 
 in vec3 jit_position;
@@ -75,12 +80,11 @@ out jit_PerVertex {
 
 void main(void)
 {
-  // transform texcoords
-  jit_out.jit_texcoord0 = textureMatrix0 * vec4(jit_texcoord, 0., 1.);
+    // transform texcoords
+    jit_out.jit_texcoord0 = textureMatrix0 * vec4(jit_texcoord, 0., 1.);
 
-	// perform required transform on vertex
-	// gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
-  gl_Position = vec4(vec2(jit_texcoord).xy * 2. - 1., 0., 1.);
+ 	// transform vertex space to texture space: used for bakery
+    gl_Position = vec4(vec2(jit_texcoord).xy * 2. - 1., 0., 1.);
 
 	jit_out.normal = normalize(mat3(screen_m_matrix) * jit_normal);
 	jit_out.worldPos = vec3(screen_m_matrix * vec4(jit_position, 1));

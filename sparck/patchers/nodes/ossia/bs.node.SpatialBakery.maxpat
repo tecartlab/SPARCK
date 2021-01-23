@@ -9273,8 +9273,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 480.694396999999981, 138.929565000000025, 234.0, 22.0 ],
-					"text" : "sprintf file bs.portal.spatial.bakery.%s.6.jxs"
+					"patching_rect" : [ 480.694396999999981, 113.929565000000025, 267.0, 22.0 ],
+					"text" : "loadmess file bs.portal.spatial.bakery.applied.jxs"
 				}
 
 			}
@@ -9320,15 +9320,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"order" : 1,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"order" : 0,
 					"source" : [ "obj-2", 0 ]
 				}
 
