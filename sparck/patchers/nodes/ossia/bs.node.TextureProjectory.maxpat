@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 98.0, 454.0, 737.0, 404.0 ],
+		"rect" : [ 332.0, 410.0, 737.0, 404.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "TextureProjectory_1",
+		"globalpatchername" : "TextureProjectory",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-35",
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 103.0, 909.0, 370.0 ],
+						"rect" : [ 105.0, 417.0, 909.0, 370.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -204,8 +204,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 139.286254999999983, 32.0, 673.0, 22.0 ],
-									"text" : "ossia.parameter shader @type string @description shader @default multiblend @range multiblend addition single @clip both"
+									"patching_rect" : [ 139.286254999999983, 32.0, 706.0, 22.0 ],
+									"text" : "ossia.parameter shader/name @type string @description shader @default multiblend @range multiblend addition single @clip both"
 								}
 
 							}

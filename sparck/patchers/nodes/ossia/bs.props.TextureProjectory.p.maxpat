@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 308.0, 249.0, 610.0, 605.0 ],
+		"rect" : [ 77.0, 119.0, 610.0, 605.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "shader", "@text", "shader", "@size", 179, 19, "@type", "string", "@items", "multiblend", "addition", "single" ],
+					"args" : [ "#1", "shader/name", "@text", "shader", "@size", 179, 19, "@type", "string", "@items", "multiblend", "addition", "single" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -604,7 +604,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 2 ],
-					"order" : 4,
+					"order" : 0,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -612,7 +612,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 2 ],
-					"order" : 3,
+					"order" : 1,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -628,7 +628,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 2 ],
-					"order" : 1,
+					"order" : 3,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -636,7 +636,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 2 ],
-					"order" : 0,
+					"order" : 4,
 					"source" : [ "obj-13", 0 ]
 				}
 
