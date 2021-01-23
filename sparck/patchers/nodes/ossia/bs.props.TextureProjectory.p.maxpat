@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "shader/name", "@text", "shader", "@size", 179, 19, "@type", "string", "@items", "multiblend", "addition", "single" ],
+					"args" : [ "#1", "shader/name", "@text", "shader", "@size", 179, 19, "@type", "string", "@items", "multiblend", "addition", "single", "boxmap.list" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -54,7 +54,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 268.0, 116.0, 240.0, 22.0 ],
+					"patching_rect" : [ 271.5, 86.0, 240.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 240.0, 22.0 ],
 					"viewvisibility" : 1
@@ -77,7 +77,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 268.0, 90.0, 240.0, 21.0 ],
+					"patching_rect" : [ 271.5, 119.0, 240.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 20.0, 240.0, 20.0 ],
 					"viewvisibility" : 1
@@ -86,7 +86,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/bevel/curve", "@text", "bevel curve", "@size", 59, 19 ],
+					"args" : [ "#1", "blend/bevel/curve", "@text", "bevel curve", "@size", 59, 19, "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -102,14 +102,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 404.5, 524.0, 122.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 280.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 300.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/bevel/size", "@text", "bevel size", "@size", 59, 19 ],
+					"args" : [ "#1", "blend/bevel/size", "@text", "bevel size", "@size", 59, 19, "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -125,14 +125,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 404.5, 496.0, 122.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 280.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 300.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/angle/falloff", "@text", "angle falloff", "@size", 59, 19 ],
+					"args" : [ "#1", "blend/angle/falloff", "@text", "angle falloff", "@size", 59, 19, "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -148,14 +148,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 404.5, 466.0, 122.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 260.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 280.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/angle/limit", "@text", "angle limit", "@size", 59, 19 ],
+					"args" : [ "#1", "blend/angle/limit", "@text", "angle limit", "@size", 59, 19, "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -171,7 +171,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 404.5, 437.0, 122.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 260.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 280.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -194,14 +194,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 278.5, 471.0, 122.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 240.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 340.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/spread", "@text", "spread", "@size", 59, 19 ],
+					"args" : [ "#1", "blend/spread", "@text", "spread", "@size", 59, 19, "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -217,14 +217,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 278.5, 403.0, 122.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 220.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 240.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "distance", "@text", "distance", "@size", 59, 19 ],
+					"args" : [ "#1", "distance", "@text", "distance", "@size", 59, 19, "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -240,14 +240,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 278.5, 437.0, 122.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 220.0, 120.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 240.0, 120.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "angleMode", "@text", "angle mode", "@size", 179, 19, "@type", "int", "@items", "viewray", "direction" ],
+					"args" : [ "#1", "angleMode", "@text", "angle mode", "@size", 179, 19, "@type", "int", "@items", "viewray", "direction", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -261,9 +261,9 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 268.0, 366.0, 240.0, 22.0 ],
+					"patching_rect" : [ 271.5, 369.0, 240.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 200.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 220.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -316,7 +316,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerF", "@text", "BeamerF", "@size", 159, 19, "@menutype", "message", "@isnot", 2 ],
+					"args" : [ "#1", "beamerF", "@text", "BeamerF", "@size", 159, 19, "@menutype", "message", "@isnot", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -339,7 +339,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerE", "@text", "BeamerE", "@size", 159, 19, "@menutype", "message", "@isnot", 2 ],
+					"args" : [ "#1", "beamerE", "@text", "BeamerE", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -362,7 +362,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerD", "@text", "BeamerD", "@size", 159, 19, "@menutype", "message", "@isnot", 2 ],
+					"args" : [ "#1", "beamerD", "@text", "BeamerD", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -385,7 +385,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerC", "@text", "BeamerC", "@size", 159, 19, "@menutype", "message", "@isnot", 2 ],
+					"args" : [ "#1", "beamerC", "@text", "BeamerC", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -408,7 +408,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerB", "@text", "BeamerB", "@size", 159, 19, "@menutype", "message", "@isnot", 2 ],
+					"args" : [ "#1", "beamerB", "@text", "BeamerB", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -454,7 +454,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/bevel/rounded", "@text", "bevel round" ],
+					"args" : [ "#1", "blend/bevel/rounded", "@text", "bevel round", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -470,14 +470,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 286.5, 539.0, 72.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 300.0, 83.0, 20.0 ],
+					"presentation_rect" : [ 120.0, 320.0, 83.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/background", "@text", "blend bg" ],
+					"args" : [ "#1", "blend/background", "@text", "blend bg", "@is", "multiblend", "addition" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -493,14 +493,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 404.5, 403.0, 72.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 240.0, 83.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 260.0, 83.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "offcolor", "@text", "offcolor", "@size", 179, 19 ],
+					"args" : [ "#1", "offcolor", "@text", "bg color", "@size", 179, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -516,7 +516,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 271.5, 310.0, 247.0, 26.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 320.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 200.0, 240.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -592,9 +592,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 345.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 364.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 345.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 364.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_unfolded"
 				}
@@ -604,8 +604,24 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 2 ],
-					"order" : 0,
-					"source" : [ "obj-13", 0 ]
+					"order" : 2,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 2 ],
+					"order" : 14,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 2 ],
+					"order" : 10,
+					"source" : [ "obj-13", 1 ]
 				}
 
 			}
@@ -613,31 +629,95 @@
 				"patchline" : 				{
 					"destination" : [ "obj-15", 2 ],
 					"order" : 1,
-					"source" : [ "obj-13", 0 ]
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 2 ],
+					"order" : 13,
+					"source" : [ "obj-13", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 2 ],
-					"order" : 2,
-					"source" : [ "obj-13", 0 ]
+					"order" : 0,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 2 ],
+					"order" : 5,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 2 ],
+					"order" : 11,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 2 ],
+					"order" : 12,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 2 ],
+					"order" : 9,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-31", 2 ],
+					"order" : 8,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 2 ],
+					"order" : 7,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 2 ],
+					"order" : 6,
+					"source" : [ "obj-13", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 2 ],
-					"order" : 3,
-					"source" : [ "obj-13", 0 ]
+					"order" : 4,
+					"source" : [ "obj-13", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 2 ],
-					"order" : 4,
-					"source" : [ "obj-13", 0 ]
+					"order" : 3,
+					"source" : [ "obj-13", 1 ]
 				}
 
 			}
