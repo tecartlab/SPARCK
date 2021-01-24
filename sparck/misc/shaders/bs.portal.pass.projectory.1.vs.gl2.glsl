@@ -38,7 +38,7 @@ uniform mat4 collada_factor;
 uniform mat4 beamer_v_matrix[6];
 uniform mat4 beamer_p_matrix[6];
 
-uniform float far_clip[1];
+uniform float far_clip[6];
 
 varying vec4 beamer_uv[1];		// beamer uv position
 varying vec2 beamer_texcoord[1];// beamer texcoord

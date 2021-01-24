@@ -183,49 +183,42 @@ void main()
 	// sets from which side (back, both, front) it is visible
 	float side = (projection_mode == 0.)? 1.:max(sign(angle * projection_mode), 0.);
 
+	vec2 vpSize = vec2(0.166666, 1.0);
 	vec4 texcoord0;
-
-	vec4 color;
 
 	if(vl_abs.x > vl_abs.y && vl_abs.x > vl_abs.z){
 		if(viewline.x >= 0.0){ //RIGHT
 			texcoord0 = vec4(
-						(viewline.z / vl_abs.x) * 0.5 + 0.5,
-						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex2, (gl_TextureMatrix[0] * texcoord0).st);
+						(viewline.z / vl_abs.x) * (vpSize.s / 2.0) + (vpSize.s * 2.5),
+						(viewline.y / vl_abs.x) * (vpSize.t / 2.0) + (vpSize.t * 0.5), 0., 1.);
 		}else{ //LEFT
 			texcoord0 = vec4(
-						-(viewline.z / vl_abs.x) * 0.5 + 0.5,
-						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex0, (gl_TextureMatrix[0] * texcoord0).st);
+						-(viewline.z / vl_abs.x) * (vpSize.s / 2.0) + (vpSize.s * 0.5),
+						(viewline.y / vl_abs.x) * (vpSize.t / 2.0) + (vpSize.t * 0.5), 0., 1.);
 		}
-	} else if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
+	} else 	if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
 		if(viewline.y >= 0.0){ //TOP
 			texcoord0 = vec4(
-						(viewline.x / vl_abs.y) * 0.5 + 0.5,
-						(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex4, (gl_TextureMatrix[0] * texcoord0).st);
+						(viewline.x / vl_abs.y) * (vpSize.s / 2.0) + (vpSize.s * 4.5),
+						(viewline.z / vl_abs.y) * (vpSize.t / 2.0) + (vpSize.t * 0.5), 0., 1.);
 		}else{
 			texcoord0 = vec4( //BOTTOM
-						(viewline.x / vl_abs.y) * 0.5 + 0.5,
-						-(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex5, (gl_TextureMatrix[0] * texcoord0).st);
+						(viewline.x / vl_abs.y) * (vpSize.s / 2.0) + (vpSize.s * 5.5),
+						-(viewline.z / vl_abs.y) * (vpSize.t / 2.0) + (vpSize.t * 0.5), 0., 1.);
 		}
-	} else if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
+	} else 	if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
 		if(viewline.z >= 0.0){
 			texcoord0 = vec4( //BACK
-						-(viewline.x / vl_abs.z) * 0.5 + 0.5,
-						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex3, (gl_TextureMatrix[0] * texcoord0).st);
+						-(viewline.x / vl_abs.z) * (vpSize.s / 2.0) + (vpSize.s * 3.5),
+						(viewline.y / vl_abs.z) * (vpSize.t / 2.0) + (vpSize.t * 0.5), 0., 1.);
 		}else{
 			texcoord0 = vec4( //FRONT
-						(viewline.x / vl_abs.z) * 0.5 + 0.5,
-						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex1, (gl_TextureMatrix[0] * texcoord0).st);
+						(viewline.x / vl_abs.z) * (vpSize.s / 2.0) + (vpSize.s * 1.5),
+						(viewline.y / vl_abs.z) * (vpSize.t / 2.0) + (vpSize.t * 0.5), 0., 1.);
 		}
 	}
 
-	gl_FragColor = (side > 0)?color:offColor;
+	gl_FragColor = (side > 0)?texture2DRect(tex0, (gl_TextureMatrix[0] * texcoord0).st):offColor;
     
     // in case it is rendered to stage and stage_mode is set to colored:
 	if(mode == 0 && stage_mode >= 1){

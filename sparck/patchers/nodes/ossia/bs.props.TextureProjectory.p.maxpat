@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "shader/name", "@text", "shader", "@size", 179, 19, "@type", "string", "@items", "multiblend", "addition", "single", "boxmap.list" ],
+					"args" : [ "#1", "shader/name", "@text", "shader", "@size", 179, 19, "@type", "string", "@items", "single", "multiblend", "addition", "boxmap.list", "boxmap.stitched", "boxmap.crossed", "360VR.single", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -132,7 +132,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/angle/falloff", "@text", "angle falloff", "@size", 59, 19, "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "blend/angle/falloff", "@text", "angle falloff", "@size", 59, 19, "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -155,7 +155,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/angle/limit", "@text", "angle limit", "@size", 59, 19, "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "blend/angle/limit", "@text", "angle limit", "@size", 59, 19, "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -178,7 +178,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/interpolation", "@text", "interpolation", "@size", 59, 19 ],
+					"args" : [ "#1", "blend/interpolation", "@text", "interpolation", "@size", 59, 19, "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -201,7 +201,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/spread", "@text", "spread", "@size", 59, 19, "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "blend/spread", "@text", "spread", "@size", 59, 19, "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -224,7 +224,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "distance", "@text", "distance", "@size", 59, 19, "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "distance", "@text", "distance", "@size", 59, 19, "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -247,7 +247,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "angleMode", "@text", "angle mode", "@size", 179, 19, "@type", "int", "@items", "viewray", "direction", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "angleMode", "@text", "angle mode", "@size", 179, 19, "@type", "int", "@items", "viewray", "direction", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -270,7 +270,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "projectionMode", "@text", "projection", "@size", 179, 19, "@type", "int", "@items", "back side", "both sides", "front side" ],
+					"args" : [ "#1", "projectionMode", "@text", "project on", "@size", 179, 19, "@type", "int", "@items", "back side", "both sides", "front side" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -293,7 +293,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "stageMode", "@text", "stage", "@size", 179, 19, "@type", "int", "@items", "textured", "colored", "overlap", "map", "beamA", "beamB", "beamC", "beamD", "beamE", "beamF" ],
+					"args" : [ "#1", "stageMode", "@text", "3dViewer", "@size", 179, 19, "@type", "int", "@items", "textured", "colored", "overlap", "map", "beamA", "beamB", "beamC", "beamD", "beamE", "beamF" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -316,7 +316,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerF", "@text", "BeamerF", "@size", 159, 19, "@menutype", "message", "@isnot", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "beamerF", "@text", "projectionF", "@size", 159, 19, "@menutype", "message", "@isnot", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -339,7 +339,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerE", "@text", "BeamerE", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "beamerE", "@text", "projectionE", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -362,7 +362,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerD", "@text", "BeamerD", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "beamerD", "@text", "projectionD", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -385,7 +385,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerC", "@text", "BeamerC", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "beamerC", "@text", "projectionC", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -408,7 +408,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerB", "@text", "BeamerB", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "beamerB", "@text", "projectionB", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -431,7 +431,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "beamerA", "@text", "BeamerA", "@size", 159, 19, "@menutype", "message" ],
+					"args" : [ "#1", "beamerA", "@text", "projectionA", "@size", 159, 19, "@menutype", "message" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -477,7 +477,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/background", "@text", "blend bg", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "blend/background", "@text", "blend bg", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -612,7 +612,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 2 ],
-					"order" : 14,
+					"order" : 13,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -620,7 +620,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 2 ],
-					"order" : 10,
+					"order" : 9,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -636,7 +636,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 2 ],
-					"order" : 13,
+					"order" : 14,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -660,7 +660,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 2 ],
-					"order" : 11,
+					"order" : 10,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -668,22 +668,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-29", 2 ],
-					"order" : 12,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-30", 2 ],
-					"order" : 9,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-31", 2 ],
 					"order" : 8,
 					"source" : [ "obj-13", 1 ]
 				}
@@ -691,7 +675,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-32", 2 ],
+					"destination" : [ "obj-30", 2 ],
 					"order" : 7,
 					"source" : [ "obj-13", 1 ]
 				}
@@ -699,8 +683,24 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 2 ],
+					"destination" : [ "obj-31", 2 ],
 					"order" : 6,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 2 ],
+					"order" : 11,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 2 ],
+					"order" : 12,
 					"source" : [ "obj-13", 1 ]
 				}
 
