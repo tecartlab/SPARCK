@@ -86,7 +86,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/bevel/curve", "@text", "bevel curve", "@size", 59, 19, "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "blend/bevel/curve", "@text", "bevel curve", "@size", 59, 19, "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -109,7 +109,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/bevel/size", "@text", "bevel size", "@size", 59, 19, "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "blend/bevel/size", "@text", "bevel size", "@size", 59, 19, "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -454,7 +454,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "blend/bevel/rounded", "@text", "bevel round", "@is", "multiblend", "addition" ],
+					"args" : [ "#1", "blend/bevel/rounded", "@text", "bevel round", "@is", "multiblend", "addition", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -604,7 +604,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 2 ],
-					"order" : 2,
+					"order" : 4,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -612,30 +612,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 2 ],
-					"order" : 13,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-14", 2 ],
-					"order" : 9,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-15", 2 ],
-					"order" : 1,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-16", 2 ],
 					"order" : 14,
 					"source" : [ "obj-13", 1 ]
 				}
@@ -643,8 +619,32 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 2 ],
+					"order" : 12,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 2 ],
+					"order" : 3,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 2 ],
+					"order" : 13,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-19", 2 ],
-					"order" : 0,
+					"order" : 2,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -660,38 +660,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 2 ],
-					"order" : 10,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 2 ],
-					"order" : 8,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-30", 2 ],
-					"order" : 7,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-31", 2 ],
-					"order" : 6,
-					"source" : [ "obj-13", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-32", 2 ],
 					"order" : 11,
 					"source" : [ "obj-13", 1 ]
 				}
@@ -699,8 +667,40 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-29", 2 ],
+					"order" : 10,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 2 ],
+					"order" : 9,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-31", 2 ],
+					"order" : 8,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 2 ],
+					"order" : 7,
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-33", 2 ],
-					"order" : 12,
+					"order" : 6,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -708,7 +708,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 2 ],
-					"order" : 4,
+					"order" : 1,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -716,7 +716,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 2 ],
-					"order" : 3,
+					"order" : 0,
 					"source" : [ "obj-13", 1 ]
 				}
 

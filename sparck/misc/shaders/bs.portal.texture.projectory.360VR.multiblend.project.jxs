@@ -3,7 +3,7 @@
 	<param name="stage_mode" type="int" default="0" />
 	<param name="projection_mode" type="float" default="0" />
 
-	<param name="beamer_enable" type="float" default="0. 0. 0. 0. 0. 0." />
+	<param name="beamer_enable" type="int" default="0 0 0 0 0 0" description="value 0 if off or camera type (cam_params)" />
 	<param name="beamer_count" type="int" default="0" />
 
 	<param name="beamer_color" type="vec4" default="1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1." />
@@ -55,6 +55,7 @@
 		<bind param="tex4" program="fp" />
 		<bind param="tex5" program="fp" />
 
+		<bind param="beamer_enable" program="fp" />
 		<bind param="beamer_count" program="vp" />
 		<bind param="beamer_color" program="fp" />
 
@@ -116,7 +117,10 @@ uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
 
 uniform int beamer_count;
+uniform int beamer_enable[6];
 uniform vec4 beamer_color[6];
+
+uniform mat4 beamer_v_matrix[6];
 
 uniform vec3 beamer_pos[6];
 uniform vec3 beamer_dir[6];
@@ -177,15 +181,17 @@ vec4 alphablend(vec4 src, vec4 dst){
 // entry point
 void main()
 {
+    vec2    proj_texcoord[6];
+    vec4    proj_texUV[6];
 	float	vcurve[6];
 	float 	vangle[6];
 	float 	spreadedAngle[6];
-
 	int   	indexSort[6];
 
-	vec3 	ray, raynormal;
+    mat4    rot_matrix;
+	vec3 	ray, raynormal, viewline, vl_abs;
 	vec2 	col;
-	float 	curve, angle, linearCurve, powerCurve, visible, visible2, veepee, distance;
+	float 	curve, angle, linearCurve, powerCurve, visible, visible2, veepee, distancem, radius, theta, phi;
     int 	i, j;
 
   	for( i = 0; i < 6; i++){
@@ -203,13 +209,13 @@ void main()
 
 		// calculate the angle between the surface normal and the projected beam.
 		// 		rsp. the angle between the surface normal and the projector direction.
-		angle = dot(normal, raynormal * (1.0 - angle_mode) + beamer_dir[i] * angle_mode);
+		angle = (beamer_enable[i] == 10)?dot(normal, raynormal) :dot(normal, raynormal * (1.0 - angle_mode) + beamer_dir[i] * angle_mode);
 
 		// checks if the worldPos is in front of the camera.
 		//   the interpolation_correction factor is making sure that fragment
 		//   interpolation errors will be cut away, with the negative
 		//   sideeffect of less total angle visibility.
-		angle = angle * max(sign(dot(beamer_dir[i],raynormal)-interpolation_correction), 0.);
+		angle = (beamer_enable[i] == 10)?angle: angle * max(sign(dot(beamer_dir[i],raynormal)-interpolation_correction), 0.);
 
 		// sets from which side (back, both, front) it is visible
 		angle = (projection_mode == 0.)? abs(angle):angle * projection_mode;
@@ -234,8 +240,31 @@ void main()
 		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
 		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
 
-		vcurve[i] = powerCurve * visible;
-		vangle[i] = angle * visible * veepee;
+        /** calulate the proj_texcoord **/
+
+        // calculate rotation matrix from beamer view matrix - its not accurate and cause problem if
+        // the matrix is not scale = 1 1 1, but its a quick and functional fix that should not be a heavy
+        // performance hit.
+        rot_matrix = beamer_v_matrix[i];
+        rot_matrix[3] = vec4(0., 0., 0., 1.); // the positional infos are removed.
+
+        viewline = (rot_matrix * vec4(-ray, 1)).xyz;
+        vl_abs = abs(viewline);
+
+        // calculate the spherical coordinates
+        radius = length(viewline);
+        theta = atan(viewline.x, -viewline.z);
+        phi = atan(sqrt(viewline.z*viewline.z+viewline.x*viewline.x),viewline.y);
+        
+        // calculate the equirectangular coordinates if it is a boxcam -> beamer_enable == 10
+        proj_texUV[i] = (beamer_enable[i] == 10)?vec4((theta + PI) / (2 * PI), 1.0 - phi / PI, 0., 1.): beamer_uv[i];
+        proj_texcoord[i] = (beamer_enable[i] == 10)?vec2(gl_TextureMatrix[i] * proj_texUV[i]):beamer_texcoord[i];
+
+        /**********************************/
+
+        
+		vcurve[i] = (beamer_enable[i] == 10)?visible: powerCurve * visible;
+		vangle[i] = (beamer_enable[i] == 10)?angle: angle * visible * veepee;
 	}
 
 	//Sorting the viewport values
@@ -274,10 +303,10 @@ void main()
 	// calculate the color mode
 	if(stage_mode == 0){
 		// create the texture with up to 4 beamers
-		vec4 col = getTextureColor(indexSort[0]) * spreadedAngle[indexSort[0]];
-		col += getTextureColor(indexSort[1]) * spreadedAngle[indexSort[1]];
-		col += getTextureColor(indexSort[2]) * spreadedAngle[indexSort[2]];
-		col += getTextureColor(indexSort[3]) * spreadedAngle[indexSort[3]];
+		vec4 col = getTexture2DRect(indexSort[0], proj_texcoord[indexSort[0]]) * spreadedAngle[indexSort[0]];
+		col += getTexture2DRect(indexSort[1], proj_texcoord[indexSort[1]]) * spreadedAngle[indexSort[1]];
+		col += getTexture2DRect(indexSort[2], proj_texcoord[indexSort[2]]) * spreadedAngle[indexSort[2]];
+		col += getTexture2DRect(indexSort[3], proj_texcoord[indexSort[3]]) * spreadedAngle[indexSort[3]];
 		col = vec4(col.rgb, blendRef);
 		gl_FragColor = alphablend(col, offColor);
 	} else if(stage_mode == 1){

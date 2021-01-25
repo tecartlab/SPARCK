@@ -3,7 +3,7 @@
 	<param name="stage_mode" type="int" default="0" />
 	<param name="projection_mode" type="float" default="0" />
 
-	<param name="beamer_enable" type="float" default="1. 1. 1. 1. 1. 1." />
+	<param name="beamer_enable" type="float" default="0. 0. 0. 0. 0. 0." description="value 0 if off or camera type (cam_params)" />
 
 	<param name="beamer_color" type="vec4" default="1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1." />
 	<param name="offColor" type="vec4" default="0. 0. 0. 1." />
