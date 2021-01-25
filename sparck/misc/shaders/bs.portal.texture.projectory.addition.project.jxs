@@ -4,6 +4,7 @@
 	<param name="projection_mode" type="float" default="0" />
 
 	<param name="beamer_enable" type="float" default="1. 1. 1. 1. 1. 1." />
+	<param name="beamer_count" type="int" default="0" />
 
 	<param name="beamer_color" type="vec4" default="1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1." />
 	<param name="offColor" type="vec4" default="0. 0. 0. 1." />
@@ -48,6 +49,7 @@
 		<bind param="tex4" program="fp" />
 		<bind param="tex5" program="fp" />
 
+		<bind param="beamer_count" program="vp" />
 		<bind param="beamer_enable" program="fp" />
 		<bind param="beamer_color" program="fp" />
 
@@ -87,6 +89,7 @@ uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
 
+uniform int beamer_count;
 uniform float beamer_enable[6];
 uniform vec4 beamer_color[6];
 
@@ -106,19 +109,12 @@ varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
 
 vec4 getTexture2DRect(int index, vec2 coord){
-	if (index == 0){
-		return texture2DRect(tex0, coord);
-	} else if (index == 1){
-		return texture2DRect(tex1, coord);
-	} else if (index == 2){
-		return texture2DRect(tex2, coord);
-	} else if (index == 3){
-		return texture2DRect(tex3, coord);
-	} else if (index == 4){
-		return texture2DRect(tex4, coord);
-	} else if (index == 5){
-		return texture2DRect(tex5, coord);
-	}
+	return 
+        (index == 0)?texture2DRect(tex0, coord):
+        (index == 1)?texture2DRect(tex1, coord):
+        (index == 2)?texture2DRect(tex2, coord):
+        (index == 3)?texture2DRect(tex3, coord):
+        (index == 4)?texture2DRect(tex4, coord):texture2DRect(tex5, coord);
 }
 
 vec4 getProjectorColor(int i){
@@ -140,29 +136,27 @@ void main()
 	float angle;
 	int i;
 
-	for( i = 0; i < 6; i++){
-		if(beamer_enable[i] == 1.){
-			ray = beamer_pos[i] - worldPos;
-			raynormal = normalize(ray);
+	for( i = 0; i < beamer_count; i++){
+        ray = beamer_pos[i] - worldPos;
+        raynormal = normalize(ray);
 
-			// calculate the angle between the surface normal and the projected beam.
-			// 		rsp. the angle between the surface normal and the projector direction.
-			angle = dot(normal, raynormal);
+        // calculate the angle between the surface normal and the projected beam.
+        // 		rsp. the angle between the surface normal and the projector direction.
+        angle = dot(normal, raynormal);
 
-			// sets from which side (back, both, front) it is visible
-			angle = (projection_mode == 0.)? 1.:max(sign(angle * projection_mode), 0.);
+        // sets from which side (back, both, front) it is visible
+        angle = (projection_mode == 0.)? 1.:max(sign(angle * projection_mode), 0.);
 
-			// checks if the worldPos is in front of the camera.
-			//   the interpolation_correction factor is making sure that fragment
-			//   interpolation errors will be cut away, with the negative
-			//   sideeffect of less total angle visibility.
-			angle = angle * max(sign(dot(beamer_dir[i],raynormal)-interpolation_correction), 0.);
+        // checks if the worldPos is in front of the camera.
+        //   the interpolation_correction factor is making sure that fragment
+        //   interpolation errors will be cut away, with the negative
+        //   sideeffect of less total angle visibility.
+        angle = angle * max(sign(dot(beamer_dir[i],raynormal)-interpolation_correction), 0.);
 
-			// calculate the viewport linear box blend
-			col = (0.5 - abs(beamer_uv[i].xy - 0.5));
+        // calculate the viewport linear box blend
+        col = (0.5 - abs(beamer_uv[i].xy - 0.5));
 
-			fragColor += getProjectorColor(i) * sign(clamp(min(col.x,col.y), 0., 1.)) * angle;
-		}
+        fragColor += getProjectorColor(i) * sign(clamp(min(col.x,col.y), 0., 1.)) * angle;
 	}
 	gl_FragColor = alphablend(fragColor, offColor);
 }

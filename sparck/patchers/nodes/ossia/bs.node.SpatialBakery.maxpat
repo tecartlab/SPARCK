@@ -41,6 +41,18 @@
 		"globalpatchername" : "SpatialBakery",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 480.694396999999981, 112.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -48,7 +60,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 286.885864000000026, 31.0, 31.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 189.885864000000026, 9.0, 31.0, 20.0 ],
+					"presentation_rect" : [ 183.885864000000026, 9.0, 31.0, 20.0 ],
 					"text" : "reset"
 				}
 
@@ -9273,7 +9285,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 480.694396999999981, 113.929565000000025, 267.0, 22.0 ],
+					"patching_rect" : [ 480.694396999999981, 141.929565000000025, 267.0, 22.0 ],
 					"text" : "loadmess file bs.portal.spatial.bakery.applied.jxs"
 				}
 
@@ -9283,6 +9295,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
 					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-11", 0 ]
 				}
 
 			}
@@ -9391,7 +9410,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"order" : 0,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"order" : 1,
 					"source" : [ "obj-7", 0 ]
 				}
 

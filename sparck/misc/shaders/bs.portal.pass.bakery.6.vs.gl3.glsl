@@ -47,6 +47,7 @@ uniform mat4 viewport_matrix;
 uniform mat4 world_matrix;
 uniform mat4 collada_factor;
 
+uniform int beamer_count;
 uniform mat4 beamer_v_matrix[6];
 uniform mat4 beamer_p_matrix[6];
 
@@ -78,6 +79,14 @@ out jit_PerVertex {
     vec3 worldPos;
 } jit_out;
 
+mat4 mvp_matrix(int index){
+    return (index == 0)?mvp0_matrix:(index == 1)?mvp1_matrix:(index == 2)?mvp2_matrix:(index == 3)?mvp3_matrix:(index == 4)?mvp4_matrix:mvp5_matrix;
+}
+
+mat4 mv_matrix(int index){
+    return (index == 0)?mv0_matrix:(index == 1)?mv1_matrix:(index == 2)?mv2_matrix:(index == 3)?mv3_matrix:(index == 4)?mv4_matrix:mv5_matrix;
+}
+
 void main(void)
 {
     // transform texcoords
@@ -92,63 +101,16 @@ void main(void)
 	vec4 clip, device, screen;
     vec4 position;
 
-	// calculate the distance to beamer 0
-	position = mv0_matrix * vec4(jit_position, 1);
-    jit_out.depth[0] = length(position.xyz) / far_clip[0];
-	// calculate the UV-coordinate for beamer 0
-	clip = vec4(mvp0_matrix * vec4(jit_position, 1));
-	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
-	screen = viewport_matrix * device;
-	jit_out.beamer_uv[0] = vec4(screen.x, screen.y, 0., 1.);
-	jit_out.beamer_texcoord[0] = vec2(textureMatrix0 * jit_out.beamer_uv[0]);
+    for(int i = 0; i < beamer_count; i++){ 
+        // calculate the distance to beamer 0
+        position = mv_matrix(i) * vec4(jit_position, 1);
+        jit_out.depth[i] = length(position.xyz) / far_clip[i];
+        // calculate the UV-coordinate for beamer 0
+        clip = vec4(mvp_matrix(i) * vec4(jit_position, 1));
+        device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
+        screen = viewport_matrix * device;
+        jit_out.beamer_uv[i] = vec4(screen.x, screen.y, 0., 1.);
+        jit_out.beamer_texcoord[i] = vec2(textureMatrix0 * jit_out.beamer_uv[i]);
+    }
 
-	// calculate the distance to beamer 1
-	position = mv1_matrix * vec4(jit_position, 1);
-    jit_out.depth[1] = length(position.xyz) / far_clip[1];
-	// calculate the UV-coordinate for beamer 0
-	clip = vec4(mvp1_matrix * vec4(jit_position, 1));
-	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
-	screen = viewport_matrix * device;
-	jit_out.beamer_uv[1] = vec4(screen.x, screen.y, 0., 1.);
-	jit_out.beamer_texcoord[1] = vec2(textureMatrix1 * jit_out.beamer_uv[1]);
-
-	// calculate the distance to beamer 2
-	position = mv2_matrix * vec4(jit_position, 1);
-    jit_out.depth[2] = length(position.xyz) / far_clip[2];
-	// calculate the UV-coordinate for beamer 0
-	clip = vec4(mvp2_matrix * vec4(jit_position, 1));
-	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
-	screen = viewport_matrix * device;
-	jit_out.beamer_uv[2] = vec4(screen.x, screen.y, 0., 1.);
-	jit_out.beamer_texcoord[2] = vec2(textureMatrix2 * jit_out.beamer_uv[2]);
-
-	// calculate the distance to beamer 3
-	position = mv3_matrix * vec4(jit_position, 1);
-    jit_out.depth[3] = length(position.xyz) / far_clip[3];
-	// calculate the UV-coordinate for beamer 0
-	clip = vec4(mvp3_matrix * vec4(jit_position, 1));
-	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
-	screen = viewport_matrix * device;
-	jit_out.beamer_uv[3] = vec4(screen.x, screen.y, 0., 1.);
-	jit_out.beamer_texcoord[3] = vec2(textureMatrix3 * jit_out.beamer_uv[3]);
-
-	// calculate the distance to beamer 4
-	position = mv4_matrix * vec4(jit_position, 1);
-    jit_out.depth[4] = length(position.xyz) / far_clip[4];
-	// calculate the UV-coordinate for beamer 0
-	clip = vec4(mvp4_matrix * vec4(jit_position, 1));
-	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
-	screen = viewport_matrix * device;
-	jit_out.beamer_uv[4] = vec4(screen.x, screen.y, 0., 1.);
-	jit_out.beamer_texcoord[4] = vec2(textureMatrix4 * jit_out.beamer_uv[4]);
-
-	// calculate the distance to beamer 5
-	position = mv5_matrix * vec4(jit_position, 1);
-    jit_out.depth[5] = length(position.xyz) / far_clip[5];
-	// calculate the UV-coordinate for beamer 0
-	clip = vec4(mvp5_matrix * vec4(jit_position, 1));
-	device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
-	screen = viewport_matrix * device;
-	jit_out.beamer_uv[5] = vec4(screen.x, screen.y, 0., 1.);
-	jit_out.beamer_texcoord[5] = vec2(textureMatrix5 * jit_out.beamer_uv[5]);
 }

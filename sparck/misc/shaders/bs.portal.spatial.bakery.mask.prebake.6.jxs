@@ -64,7 +64,7 @@
 	<param name="tex7" type="int" default="7" />
 
 	<language name="glsl" version="1.2">
-		<bind param="beamer_count" program="fp" />
+		<bind param="beamer_count" program="vp" />
 		<bind param="beamer_color" program="fp" />
 
 		<bind param="bevel_size" program="fp" />
@@ -112,7 +112,7 @@
 		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.prebake.6.fs.gl2.glsl"/>
 	</language>
 	<language name="glsl" version="1.5">
-		<bind param="beamer_count" program="fp" />
+		<bind param="beamer_count" program="vp" />
 		<bind param="beamer_color" program="fp" />
 
 		<bind param="bevel_size" program="fp" />
