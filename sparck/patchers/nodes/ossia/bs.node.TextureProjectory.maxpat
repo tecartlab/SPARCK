@@ -8713,7 +8713,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerD", "@text", "Beam D", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer D selection" ],
+									"args" : [ "beamerD", "@text", "Beam D", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 1, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer D selection" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8738,7 +8738,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerF", "@text", "Beam F", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer F selection" ],
+									"args" : [ "beamerF", "@text", "Beam F", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 1, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer F selection" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8763,7 +8763,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerE", "@text", "Beam E", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer E selection" ],
+									"args" : [ "beamerE", "@text", "Beam E", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 0, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer E selection" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8788,7 +8788,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerC", "@text", "Beam C", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer C selection" ],
+									"args" : [ "beamerC", "@text", "Beam C", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer C selection" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8813,7 +8813,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerB", "@text", "Beam B", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer B selection" ],
+									"args" : [ "beamerB", "@text", "Beam B", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 1, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer B selection" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8838,7 +8838,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerA", "@text", "Beam A", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer A selection" ],
+									"args" : [ "beamerA", "@text", "Beam A", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer A selection" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -9489,7 +9489,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-37", 0 ],
-									"order" : 3,
+									"order" : 5,
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -9505,7 +9505,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-56", 0 ],
-									"order" : 2,
+									"order" : 3,
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -9513,7 +9513,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-58", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -9521,7 +9521,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"order" : 5,
+									"order" : 1,
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -10477,18 +10477,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-21",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"patching_rect" : [ 124.08332316666673, 95.0, 29.5, 22.0 ],
-									"text" : "+ 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-16",
@@ -10550,8 +10538,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 124.226180309523841, 126.0, 96.0, 22.0 ],
-									"text" : "prepend capture"
+									"patching_rect" : [ 216.226180309523841, 270.0, 113.0, 22.0 ],
+									"text" : "loadmess capture 1"
 								}
 
 							}
@@ -10651,13 +10639,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
 									"source" : [ "obj-20", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-36", 0 ],
-									"source" : [ "obj-21", 0 ]
 								}
 
 							}
@@ -10834,13 +10815,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
-									"source" : [ "obj-5", 1 ]
 								}
 
 							}

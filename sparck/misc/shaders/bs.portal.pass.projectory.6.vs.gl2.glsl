@@ -84,8 +84,7 @@ void main(void)
 	normal = normalize(mat3(screen_m_matrix) * gl_Normal);
 	worldPos = vec3(screen_m_matrix * gl_Vertex);
 
-	vec4 clip, device, screen;
-    vec4 position;
+	vec4 clip, device, screen, position;
 
     for(int i = 0; i < beamer_count; i++){ 
         // calculate the distance to beamer 0
