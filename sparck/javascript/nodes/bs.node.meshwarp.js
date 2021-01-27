@@ -385,10 +385,12 @@ function isNavigationEvent(){
 
 // set the background color of the editor
 function erase_color(_red, _green, _blue, _alpha){
+	init();
 	cameraObj.erase_color = [_red, _green, _blue, _alpha];
 }
 
 function interpolateNewMesh( _interpolate ){
+	init();
     meshMngr.interpolateNewMesh((_interpolate == 1)?true:false);
 }
 
