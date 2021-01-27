@@ -295,7 +295,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@package", "gl3", "@version", "0.2.2" ],
+					"args" : [ "@package", "gl3", "@version", "0.2.1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -570,11 +570,11 @@
 , 			{
 				"name" : "BlueButton",
 				"default" : 				{
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
 					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"centerjust" : [ 2 ],
 					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
 					"fontname" : [ "Courier New" ],
 					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
