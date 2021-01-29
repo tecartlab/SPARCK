@@ -84,8 +84,7 @@
 
 		<bind param="projection_mode" program="fp" />
 		<bind param="stage_mode" program="fp" />
-		<bind param="mode" program="fp" />
-        
+
 		<bind param="blend_spread" program="fp" />
 		<bind param="back_blend" program="fp" />
 		<bind param="distance_influence" program="fp" />
@@ -103,9 +102,9 @@
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl2.glsl" />
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl2.glsl" />
 
-		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.multiblend.project.fs.gl2.glsl" />
+		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.multiblend.bake.fs.gl2.glsl" />
 
     </language>
     <language name="glsl" version="1.5">
@@ -126,8 +125,6 @@
 		<bind param="textureMatrix3" program="vp" />
 		<bind param="textureMatrix4" program="vp" />
 		<bind param="textureMatrix5" program="vp" />
-
-	    <bind param="modelViewProjectionMatrix" program="vp" />
 
 		<bind param="beamer_enable" program="fp" />
 		<bind param="beamer_count" program="vp" />
@@ -163,9 +160,9 @@
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl3.glsl" />
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl3.glsl" />
 
-		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.multiblend.project.fs.gl3.glsl" />
+		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.multiblend.bake.fs.gl3.glsl" />
 
     </language>
 </jittershader>

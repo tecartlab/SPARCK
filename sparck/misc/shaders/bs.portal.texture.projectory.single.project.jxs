@@ -1,9 +1,11 @@
 <jittershader name="bs.portal.tex.proj.multi.direction.6-beam.jxs">
 	<description>SPARCK - multi projection - Shader</description>
+	<param name="mode" type="int" default="0" />
 	<param name="stage_mode" type="int" default="0" />
 	<param name="projection_mode" type="float" default="0" />
 
-	<param name="beamer_enable" type="float" default="0. 0. 0. 0. 0. 0." description="value 0 if off or camera type (cam_params)" />
+	<param name="beamer_enable" type="int" default="0 0 0 0 0 0" description="value 0 if off or camera type (cam_params)" />
+	<param name="beamer_count" type="int" default="0" />
 
 	<param name="beamer_color" type="vec4" default="1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1." />
 	<param name="offColor" type="vec4" default="0. 0. 0. 1." />
@@ -26,12 +28,31 @@
 
 	<param name="angle_limit" type="float" default="0. 0. 0. 0. 0. 0." />
 	<param name="angle_falloff" type="float" default="0.3 0.3 0.3 0.3 0.3 0.3" />
+	<param name="angle_limit_low" type="float" default="0. 0. 0. 0. 0. 0." />
+	<param name="angle_limit_high" type="float" default="0.2 0.2 0.2 0.2 0.2 0.2" />
+
+	<param name="far_clip" type="float" default="0. 0. 0. 0. 0. 0." />
 
 	<param name="blend_spread" type="float" default="1.0" />
+	<param name="back_blend" type="float" default="1." />
+	<param name="distance_influence" type="float" default="1." />
 
 	<param name="interpolation_correction" type="float" default="0.1" />
 
 	<param name="collada_factor" type="mat4" default="1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1." />
+
+    <param name="jit_position" type="vec3" state="POSITION" />
+	<param name="jit_texcoord" type="vec2" state="TEXCOORD" />
+	<param name="jit_normal" type="vec3" state="NORMAL" />
+
+	<param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
+
+	<param name="textureMatrix0" type="mat4" state="TEXTURE0_MATRIX" />
+	<param name="textureMatrix1" type="mat4" state="TEXTURE1_MATRIX" />
+	<param name="textureMatrix2" type="mat4" state="TEXTURE2_MATRIX" />
+	<param name="textureMatrix3" type="mat4" state="TEXTURE3_MATRIX" />
+	<param name="textureMatrix4" type="mat4" state="TEXTURE4_MATRIX" />
+	<param name="textureMatrix5" type="mat4" state="TEXTURE5_MATRIX" />
 
 	<param name="tex0" type="int" default="0" />
 	<param name="tex1" type="int" default="1" />
@@ -42,8 +63,80 @@
 
 	<language name="glsl" version="1.2">
 		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<bind param="tex2" program="fp" />
+		<bind param="tex3" program="fp" />
+		<bind param="tex4" program="fp" />
+		<bind param="tex5" program="fp" />
 
+		<bind param="beamer_enable" program="fp" />
+		<bind param="beamer_count" program="vp" />
 		<bind param="beamer_color" program="fp" />
+
+		<bind param="bevel_size" program="fp" />
+		<bind param="bevel_curve" program="fp" />
+		<bind param="bevel_round" program="fp" />
+
+		<bind param="beamer_pos" program="fp" />
+		<bind param="beamer_dir" program="fp" />
+
+		<bind param="beamer_v_matrix" program="vp" />
+		<bind param="beamer_p_matrix" program="vp" />
+
+		<bind param="projection_mode" program="fp" />
+		<bind param="stage_mode" program="fp" />
+		<bind param="mode" program="fp" />
+        
+		<bind param="blend_spread" program="fp" />
+		<bind param="back_blend" program="fp" />
+		<bind param="distance_influence" program="fp" />
+		<bind param="angle_mode" program="fp" />
+
+		<bind param="angle_limit_low" program="fp" />
+		<bind param="angle_limit_high" program="fp" />
+
+		<bind param="far_clip" program="fp" />
+
+		<bind param="offColor" program="fp" />
+
+		<bind param="world_matrix" program="vp" />
+		<bind param="collada_factor" program="vp" />
+		<bind param="interpolation_correction" program="vp" />
+		<bind param="viewport_matrix" program="vp" />
+
+		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl2.glsl" />
+
+		<program name="fp" type="fragment" source="bs.portal.texture.projectory.single.project.fs.gl2.glsl" />
+
+	</language>
+    <language name="glsl" version="1.5">
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<bind param="tex2" program="fp" />
+		<bind param="tex3" program="fp" />
+		<bind param="tex4" program="fp" />
+		<bind param="tex5" program="fp" />
+
+		<bind param="jit_position" program="vp" />
+	    <bind param="jit_texcoord" program="vp" />
+	    <bind param="jit_normal" program="vp" />
+
+		<bind param="textureMatrix0" program="vp" />
+		<bind param="textureMatrix1" program="vp" />
+		<bind param="textureMatrix2" program="vp" />
+		<bind param="textureMatrix3" program="vp" />
+		<bind param="textureMatrix4" program="vp" />
+		<bind param="textureMatrix5" program="vp" />
+
+	    <bind param="modelViewProjectionMatrix" program="vp" />
+
+		<bind param="beamer_enable" program="fp" />
+		<bind param="beamer_count" program="vp" />
+		<bind param="beamer_color" program="fp" />
+
+		<bind param="bevel_size" program="fp" />
+		<bind param="bevel_curve" program="fp" />
+		<bind param="bevel_round" program="fp" />
 
 		<bind param="beamer_pos" program="fp" />
 		<bind param="beamer_dir" program="fp" />
@@ -54,93 +147,26 @@
 		<bind param="projection_mode" program="fp" />
 		<bind param="stage_mode" program="fp" />
 
+		<bind param="blend_spread" program="fp" />
+		<bind param="back_blend" program="fp" />
+		<bind param="distance_influence" program="fp" />
+		<bind param="angle_mode" program="fp" />
+
+		<bind param="angle_limit_low" program="fp" />
+		<bind param="angle_limit_high" program="fp" />
+
+		<bind param="far_clip" program="fp" />
+
 		<bind param="offColor" program="fp" />
 
 		<bind param="world_matrix" program="vp" />
-		<bind param="interpolation_correction" program="vp" />
 		<bind param="collada_factor" program="vp" />
+		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.pass.projectory.1.vs.gl2.glsl" />
+		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl3.glsl" />
 
-		<program name="fp" type="fragment">
-<![CDATA[
+		<program name="fp" type="fragment" source="bs.portal.texture.projectory.single.project.fs.gl3.glsl" />
 
-// MIT License
-// Martin Froehlich for tecartlab.com
-// Copyright 2020 - tecartlab.com
-
-uniform float projection_mode;
-uniform int stage_mode;
-
-// samplers
-uniform sampler2DRect tex0;
-
-uniform vec4 beamer_color[6];
-
-uniform vec3 beamer_dir[6];
-uniform vec3 beamer_pos[6];
-
-uniform vec4 offColor; 	// off color
-
-uniform float interpolation_correction;
-
-// generated by the vertex shader
-
-varying vec4 beamer_uv[1];		// beamer uv position
-varying vec2 beamer_texcoord[1];// beamer texcoord
-
-varying vec3 normal;	// surface normal
-varying vec3 worldPos;	// vertex world position
-
-vec4 getTexture2DRect(int index, vec2 coord){
-	return texture2DRect(tex0, coord);
-}
-
-vec4 getProjectorColor(int i){
-	return (stage_mode == 0)?getTexture2DRect(i, beamer_texcoord[i]):beamer_color[i];
-}
-
-vec4 alphablend(vec4 src, vec4 dst){
-	float outA = src.a + dst.a * (1.0 - src.a);
-	return vec4((src.rgb * src.a + dst.rgb * dst.a * (1.0 - src.a))/outA, outA);
-}
-
-// entry point
-void main()
-{
-	vec4 fragColor = vec4(0., 0., 0., 0.0);
-
-	vec3 ray, raynormal;
-	vec2 col;
-	float angle;
-	int i = 0;
-
-	ray = beamer_pos[i] - worldPos;
-	raynormal = normalize(ray);
-
-	// calculate the angle between the surface normal and the projected beam.
-	// 		rsp. the angle between the surface normal and the projector direction.
-	angle = dot(normal, raynormal);
-
-	// sets from which side (back, both, front) it is visible
-	angle = (projection_mode == 0.)? 1.:max(sign(angle * projection_mode), 0.);
-
-	// checks if the worldPos is in front of the camera.
-	//   the interpolation_correction factor is making sure that fragment
-	//   interpolation errors will be cut away, with the negative
-	//   sideeffect of less total angle visibility.
-	angle = angle * max(sign(dot(beamer_dir[i],raynormal)-interpolation_correction), 0.);
-
-	// calculate the viewport linear box blend
-	col = (0.5 - abs(beamer_uv[i].xy - 0.5));
-
-	fragColor += getProjectorColor(i) * sign(clamp(min(col.x,col.y), 0., 1.)) * angle;
-
-	gl_FragColor = alphablend(fragColor, offColor);
-}
-
-]]>
-		</program>
-	</language>
+    </language>
 </jittershader>

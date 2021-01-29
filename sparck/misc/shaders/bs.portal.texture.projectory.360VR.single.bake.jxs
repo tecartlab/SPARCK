@@ -1,5 +1,6 @@
 <jittershader name="bs.portal.tex.proj.multi.direction.6-beam.jxs">
 	<description>SPARCK - multi projection - Shader</description>
+	<param name="mode" type="int" default="0" />
 	<param name="stage_mode" type="int" default="0" />
 	<param name="projection_mode" type="float" default="0" />
 
@@ -103,11 +104,11 @@
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl2.glsl" />
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl2.glsl" />
 
-		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.multiblend.project.fs.gl2.glsl" />
-
-    </language>
+		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.single.bake.fs.gl2.glsl" />
+        
+	</language>
     <language name="glsl" version="1.5">
 		<bind param="tex0" program="fp" />
 		<bind param="tex1" program="fp" />
@@ -126,8 +127,6 @@
 		<bind param="textureMatrix3" program="vp" />
 		<bind param="textureMatrix4" program="vp" />
 		<bind param="textureMatrix5" program="vp" />
-
-	    <bind param="modelViewProjectionMatrix" program="vp" />
 
 		<bind param="beamer_enable" program="fp" />
 		<bind param="beamer_count" program="vp" />
@@ -163,9 +162,9 @@
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl3.glsl" />
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl3.glsl" />
 
-		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.multiblend.project.fs.gl3.glsl" />
+		<program name="fp" type="fragment" source="bs.portal.texture.projectory.360VR.single.bake.fs.gl3.glsl" />
 
     </language>
 </jittershader>
