@@ -112,64 +112,86 @@ void main()
 		ray = beamer_pos[i] - worldPos;
 		raynormal = normalize(ray);
 
-		// calculate the angle between the surface normal and the projected beam.
-		// 		rsp. the angle between the surface normal and the projector direction.
-		angle = (beamer_enable[i] == 10)?dot(normal, raynormal) :dot(normal, raynormal * (1.0 - angle_mode) + beamer_dir[i] * angle_mode);
+        if(beamer_enable[i] == 10){ // it is a boxmap camera: calculate the equirectangular projection
+            // calculate the angle between the surface normal and the projected beam.
+            // 		rsp. the angle between the surface normal and the projector direction.
+            angle = dot(normal, raynormal);
 
-		// checks if the worldPos is in front of the camera.
-		//   the interpolation_correction factor is making sure that fragment
-		//   interpolation errors will be cut away, with the negative
-		//   sideeffect of less total angle visibility.
-		angle = (beamer_enable[i] == 10)?angle: angle * max(sign(dot(beamer_dir[i],raynormal)-interpolation_correction), 0.);
+            // sets from which side (back, both, front) it is visible
+            angle = (projection_mode == 0.)? abs(angle):angle * projection_mode;
 
-		// sets from which side (back, both, front) it is visible
-		angle = (projection_mode == 0.)? abs(angle):angle * projection_mode;
+            // it calculates the relation between the distance and the far clip
+            angle *= min(1.0, 1.0 - distance_influence * length(ray) / far_clip[i]);
 
-		// it calculates the relation between the distance and the far clip
-		angle *= min(1.0, 1.0 - distance_influence * length(ray) / far_clip[i]);
+            //calculates the fadeout factor for the angle;
+            visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
 
-		//calculates the fadeout factor for the angle;
-		visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
 
-		// calculate the viewport linear box blend
-		col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
-		col = clamp(col, 0.0, 1.0);
+            /** calulate the proj_texcoord **/
 
-		// transform the box blend into a chanfer box
-		linearCurve = (bevel_round[i] == 1)?1.0 - clamp(sqrt(pow(1.0-col.y,2.0) + pow(1.0-col.x,2.0)), 0.0, 1.0):clamp(min(col.x,col.y), 0., 1.);
+            // calculate rotation matrix from beamer view matrix - its not accurate and cause problem if
+            // the matrix is not scale = 1 1 1, but its a quick and functional fix that should not be a heavy
+            // performance hit.
+            rot_matrix = beamer_v_matrix[i];
+            rot_matrix[3] = vec4(0., 0., 0., 1.); // the positional infos are removed.
 
-		veepee = sign(linearCurve);
+            viewline = (rot_matrix * vec4(-ray, 1)).xyz;
+            vl_abs = abs(viewline);
 
-		// transform the linear blend into an s-shaped blend
-		float powFactor = 1.0 + abs(bevel_curve[i] * 5.0);
-		powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
-		powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
+            // calculate the spherical coordinates
+            radius = length(viewline);
+            theta = atan(viewline.x, -viewline.z);
+            phi = atan(sqrt(viewline.z*viewline.z+viewline.x*viewline.x),viewline.y);
 
-        /** calulate the proj_texcoord **/
+            // calculate the equirectangular coordinates if it is a boxcam -> beamer_enable == 10
+            proj_texUV[i] = vec4((theta + PI) / (2 * PI), 1.0 - phi / PI, 0., 1.);
+            proj_texcoord[i] = vec2(gl_TextureMatrix[i] * proj_texUV[i]);
 
-        // calculate rotation matrix from beamer view matrix - its not accurate and cause problem if
-        // the matrix is not scale = 1 1 1, but its a quick and functional fix that should not be a heavy
-        // performance hit.
-        rot_matrix = beamer_v_matrix[i];
-        rot_matrix[3] = vec4(0., 0., 0., 1.); // the positional infos are removed.
+            vcurve[i] = visible;
+            vangle[i] = angle;
+           
+        } else { // it is a camera frustum: calculate the normal projection
+            // calculate the angle between the surface normal and the projected beam.
+            // 		rsp. the angle between the surface normal and the projector direction.
+            angle = dot(normal, raynormal * (1.0 - angle_mode) + beamer_dir[i] * angle_mode);
 
-        viewline = (rot_matrix * vec4(-ray, 1)).xyz;
-        vl_abs = abs(viewline);
+            // checks if the worldPos is in front of the camera.
+            //   the interpolation_correction factor is making sure that fragment
+            //   interpolation errors will be cut away, with the negative
+            //   sideeffect of less total angle visibility.
+            angle = angle * max(sign(dot(beamer_dir[i],raynormal)-interpolation_correction), 0.);
 
-        // calculate the spherical coordinates
-        radius = length(viewline);
-        theta = atan(viewline.x, -viewline.z);
-        phi = atan(sqrt(viewline.z*viewline.z+viewline.x*viewline.x),viewline.y);
-        
-        // calculate the equirectangular coordinates if it is a boxcam -> beamer_enable == 10
-        proj_texUV[i] = (beamer_enable[i] == 10)?vec4((theta + PI) / (2 * PI), 1.0 - phi / PI, 0., 1.): beamer_uv[i];
-        proj_texcoord[i] = (beamer_enable[i] == 10)?vec2(gl_TextureMatrix[i] * proj_texUV[i]):beamer_texcoord[i];
+            // sets from which side (back, both, front) it is visible
+            angle = (projection_mode == 0.)? abs(angle):angle * projection_mode;
 
-        /**********************************/
+            // it calculates the relation between the distance and the far clip
+            angle *= min(1.0, 1.0 - distance_influence * length(ray) / far_clip[i]);
 
-        
-		vcurve[i] = (beamer_enable[i] == 10)?visible: powerCurve * visible;
-		vangle[i] = (beamer_enable[i] == 10)?angle: angle * visible * veepee;
+            //calculates the fadeout factor for the angle;
+            visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
+
+            // calculate the viewport linear box blend
+            col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
+            col = clamp(col, 0.0, 1.0);
+
+            // transform the box blend into a chanfer box
+            linearCurve = (bevel_round[i] == 1)?1.0 - clamp(sqrt(pow(1.0-col.y,2.0) + pow(1.0-col.x,2.0)), 0.0, 1.0):clamp(min(col.x,col.y), 0., 1.);
+
+            veepee = sign(linearCurve);
+
+            // transform the linear blend into an s-shaped blend
+            float powFactor = 1.0 + abs(bevel_curve[i] * 5.0);
+            powerCurve = linearCurve * linearCurve * (3. - 2. * linearCurve);
+            powerCurve = (bevel_curve[i] > 0.)?1.0 - pow(1.0 - powerCurve, powFactor):pow(powerCurve, powFactor);
+
+
+            proj_texUV[i] = beamer_uv[i];
+            proj_texcoord[i] = beamer_texcoord[i];
+
+            vcurve[i] = powerCurve * visible;
+            vangle[i] = angle * visible * veepee;
+           
+        }
 	}
 
 	//Sorting the viewport values
