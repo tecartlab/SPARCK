@@ -5360,7 +5360,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 373.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u186005032"
+													"text" : "anim u347013882"
 												}
 
 											}
@@ -5456,7 +5456,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 186.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u942005060"
+													"text" : "anim u649013845"
 												}
 
 											}
@@ -5517,7 +5517,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 551.273192999999992, 281.197387999999989, 105.0, 22.0 ],
-													"text" : "anim u452005088"
+													"text" : "anim u497011515"
 												}
 
 											}
@@ -7032,36 +7032,12 @@
 , 			{
 				"box" : 				{
 					"comment" : "",
-					"id" : "obj-2",
-					"index" : 0,
-					"maxclass" : "outlet",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 806.011718999999971, 472.455933000000016, 25.0, 25.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"comment" : "",
 					"id" : "obj-21",
 					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 895.011718999999971, 472.455933000000016, 25.0, 25.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"comment" : "",
-					"id" : "obj-17",
-					"index" : 0,
-					"maxclass" : "outlet",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 548.511718999999971, 472.455933000000016, 25.0, 25.0 ]
 				}
 
 			}
@@ -7474,7 +7450,7 @@
 					"patching_rect" : [ 707.4884033203125, 472.4559326171875, 48.0, 30.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 101.199999999999989, 26.0, 10.0, 10.0 ],
-					"varname" : "vpl_outlet[4/6]",
+					"varname" : "vpl_outlet[3/4]",
 					"viewvisibility" : 1
 				}
 
@@ -7603,7 +7579,7 @@
 					"patching_rect" : [ 453.622833000000014, 472.455933000000016, 48.0, 30.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 36.399999999999999, 26.0, 10.0, 10.0 ],
-					"varname" : "vpl_outlet[2/6]",
+					"varname" : "vpl_outlet[2/4]",
 					"viewvisibility" : 1
 				}
 

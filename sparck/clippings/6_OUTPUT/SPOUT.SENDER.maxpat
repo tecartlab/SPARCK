@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 190.0, 332.0, 640.0, 480.0 ],
+		"rect" : [ 84.0, 128.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -34,7 +34,7 @@
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
-		"tags" : "Sparck Node SyphonReceiver",
+		"tags" : "Sparck Node Syphon",
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
@@ -48,13 +48,12 @@
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.SyphonReceiver.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 4,
+					"name" : "bs.node.SpoutSender.maxpat",
+					"numinlets" : 4,
+					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "jit_gl_texture", "", "" ],
 					"patching_rect" : [ 0.0, 0.0, 180.0, 36.0 ],
-					"varname" : "SyphonReceiver",
+					"varname" : "SpoutSender",
 					"viewvisibility" : 1
 				}
 
@@ -62,9 +61,9 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.node.SyphonReceiver.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/ossia/_onlyOSX",
-				"patcherrelativepath" : "../../patchers/nodes/ossia/_onlyOSX",
+				"name" : "bs.node.SpoutSender.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/ossia/_onlyWin",
+				"patcherrelativepath" : "../../patchers/nodes/ossia/_onlyWin",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -125,30 +124,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.util.outlet.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../patchers/vpl",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.doubleBang.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"patcherrelativepath" : "../../patchers/utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.util.special.render.gate.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
 				"patcherrelativepath" : "../../patchers/utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.parameter.syphon.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/syphon",
-				"patcherrelativepath" : "../../patchers/ossia/syphon",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -157,7 +135,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "jit.gl.syphonclient.mxo",
+				"name" : "jit.gl.syphonserver.mxo",
 				"type" : "iLaX"
 			}
 , 			{

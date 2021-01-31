@@ -65,31 +65,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 3, "properties", -1, "@hint", "properties" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"hint" : "",
-					"id" : "obj-4",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.vpl.util.inlet.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 524.222197999999935, 25.0, 44.0, 31.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 166.0, 0.0, 10.0, 10.0 ],
-					"varname" : "vpl_inlet[3/3]",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"comment" : "",
 					"id" : "obj-5",
 					"index" : 0,
@@ -98,31 +73,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 494.0, 25.0, 25.0, 25.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#2", "#4", 2, "properties", -1, "@hint", "properties" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"hint" : "",
-					"id" : "obj-2",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.vpl.util.inlet.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 352.222197999999992, 25.0, 44.0, 31.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 85.0, 0.0, 10.0, 10.0 ],
-					"varname" : "vpl_inlet[2/3]",
-					"viewvisibility" : 1
 				}
 
 			}

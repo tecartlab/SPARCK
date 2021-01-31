@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 303.0, 92.0, 984.0, 457.0 ],
+		"rect" : [ 206.0, 79.0, 984.0, 457.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "SyphonReceive",
+		"globalpatchername" : "SpoutReceiver",
 		"boxes" : [ 			{
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
@@ -85,8 +85,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 23.0, 266.0, 149.0, 20.0 ],
-					"text" : "ossia.model node/SyphonClient"
+					"patching_rect" : [ 23.0, 266.0, 62.0, 20.0 ],
+					"text" : "ossia.model"
 				}
 
 			}
@@ -97,34 +97,20 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 521.0, 382.0, 19.0, 20.0 ],
+					"patching_rect" : [ 521.0, 343.0, 19.0, 20.0 ],
 					"text" : "t l"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-26",
-					"linecount" : 3,
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 681.0, 320.0, 134.0, 42.0 ],
-					"text" : "bs.ossia.parameter.syphon app \"syphon app\" appname getavailableservers"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-23",
-					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 521.0, 320.0, 158.0, 42.0 ],
-					"text" : "bs.ossia.parameter.syphon server \"syphon server\" servername getavailableservers"
+					"patching_rect" : [ 521.0, 306.0, 376.0, 20.0 ],
+					"text" : "bs.ossia.parameter.syphon sender \"spout sender\" servername getavailablesenders"
 				}
 
 			}
@@ -234,8 +220,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -510,8 +496,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -740,11 +726,11 @@
 					"fontsize" : 12.0,
 					"id" : "obj-6",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 521.0, 266.0, 208.0, 22.0 ],
-					"text" : "route clear servername appname dim"
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 521.0, 266.0, 139.0, 22.0 ],
+					"text" : "route clear SpoutSender"
 				}
 
 			}
@@ -893,9 +879,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 499.333344000000011, 227.5, 143.0, 22.0 ],
-					"text" : "jit.gl.syphonclient special"
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 499.333344000000011, 227.5, 146.0, 22.0 ],
+					"text" : "jit.gl.spoutreceiver special"
 				}
 
 			}
@@ -970,7 +956,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SyphonReceive", "@enable_properties", 1, "@help", "SyphonReceive", "@enable_body", 1 ],
+					"args" : [ "#0_id", "#1", "#2", "#3", "#4", "title", "SpoutReceiver", "@enable_properties", 1, "@help", "SpoutReceiver", "@enable_body", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -1177,13 +1163,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"order" : 1,
 					"source" : [ "obj-28", 3 ]
@@ -1201,7 +1180,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-75", 0 ],
-					"midpoints" : [ 530.5, 417.429565000000025, 828.666672000000062, 417.429565000000025, 828.666672000000062, 216.5, 508.833344000000011, 216.5 ],
+					"midpoints" : [ 530.5, 380.429565000000025, 691.666672000000062, 380.429565000000025, 691.666672000000062, 216.5, 508.833344000000011, 216.5 ],
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -1232,7 +1211,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-75", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -1240,7 +1219,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -1291,22 +1270,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
-					"order" : 1,
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-26", 1 ],
-					"source" : [ "obj-6", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"order" : 0,
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -1442,10 +1405,6 @@
 			}
 , 			{
 				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.gl.syphonclient.mxo",
 				"type" : "iLaX"
 			}
 , 			{
