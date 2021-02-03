@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 486.0, 146.0, 730.0, 480.0 ],
+		"rect" : [ 514.0, 206.0, 730.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -260,8 +260,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -891,8 +891,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1549,7 +1549,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 219.444427000000019, 123.5, 61.0, 20.0 ],
+					"patching_rect" : [ 208.444427000000019, 119.5, 61.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1583,8 +1583,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2487,128 +2487,128 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"patcherrelativepath" : "../../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.OptiTrack.stream.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/nodes/ossia",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.anim.node.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/msg",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/msg",
 				"patcherrelativepath" : "../../ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"patcherrelativepath" : "../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.parameter.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.model.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.send.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "perftrack.mxo",
-				"type" : "iLaX"
+				"name" : "bs.latencycomp.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.receive.selector.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
