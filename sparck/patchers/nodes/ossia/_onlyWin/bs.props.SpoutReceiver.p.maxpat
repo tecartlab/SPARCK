@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 113.0, 468.0, 729.0, 395.0 ],
+		"rect" : [ 804.0, 561.0, 781.0, 513.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -56,30 +56,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 174.0, 206.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.0, 40.0, 100.0, 19.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#1", "app", "@text", "app", "@size", 159, 19, "@menutype", "message" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 1,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-5",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.menu.maxpat",
-					"numinlets" : 3,
-					"numoutlets" : 4,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 248.0, 117.5, 201.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 20.0, 240.0, 19.0 ],
+					"presentation_rect" : [ 120.0, 20.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -102,14 +79,14 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 248.0, 146.0, 206.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 40.0, 100.0, 19.0 ],
+					"presentation_rect" : [ 0.0, 20.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "server", "@text", "server", "@size", 159, 19, "@menutype", "message" ],
+					"args" : [ "#1", "sender", "@text", "sender", "@size", 159, 19, "@menutype", "message" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -180,9 +157,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 40.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 40.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 20.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_folded"
 				}
@@ -201,9 +178,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 84.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 44.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 242.0, 84.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 44.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_unfolded"
 				}
@@ -227,43 +204,43 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.remote.menu.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../../ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../../gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../../../javascript/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.toggle.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../../ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.view.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.view.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.remote.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.remote.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "icst.button.mxo",
-				"type" : "iLaX"
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "icst.button.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,

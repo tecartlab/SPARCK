@@ -388,13 +388,12 @@
 				"box" : 				{
 					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 					"id" : "obj-45",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 595.5, 196.473174999999969, 341.0, 36.0 ],
-					"text" : "ossia.parameter flow @default false @type bool @description \"stream 1 receives data\" @clip both @mode get"
+					"patching_rect" : [ 595.5, 196.473174999999969, 470.0, 22.0 ],
+					"text" : "ossia.parameter flow @default false @type bool @description \"stream 1 receives data\""
 				}
 
 			}
