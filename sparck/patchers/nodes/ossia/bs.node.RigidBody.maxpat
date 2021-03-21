@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 484.0, 196.0, 905.0, 589.0 ],
+		"rect" : [ 328.0, 184.0, 464.0, 589.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -492,7 +492,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 437.183670000000006, 100.5, 73.0, 22.0 ],
+													"patching_rect" : [ 424.183670000000006, 209.5, 73.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -562,7 +562,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 293.0, 199.0, 32.0, 22.0 ],
+													"patching_rect" : [ 293.0, 181.0, 32.0, 22.0 ],
 													"text" : "gate"
 												}
 
@@ -1220,7 +1220,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 373.0, 199.0, 32.0, 22.0 ],
+													"patching_rect" : [ 373.0, 181.0, 32.0, 22.0 ],
 													"text" : "gate"
 												}
 
@@ -1232,7 +1232,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 424.183670000000006, 199.0, 32.0, 22.0 ],
+													"patching_rect" : [ 424.183670000000006, 181.0, 32.0, 22.0 ],
 													"text" : "gate"
 												}
 
@@ -1445,7 +1445,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-21", 0 ],
+													"destination" : [ "obj-8", 1 ],
 													"source" : [ "obj-2", 0 ]
 												}
 
@@ -1459,7 +1459,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-8", 1 ],
+													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-21", 0 ]
 												}
 
@@ -1636,7 +1636,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-6", 0 ],
+													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-8", 0 ]
 												}
 
@@ -3118,7 +3118,8 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "<list> to send direct messages to anim object. 'bang' for forced transformation bang, or use 'getlist' <get...> items for dump out current values (need a bang).",
+					"comment" : "<list> to send direct messages to anim object. 'bang' for forced transformation bang, or use 'getlist' <get...> items for dump out current values (needs a bang). Possible <get...> items: getposition, getquat, getscale, getworldpos, getworldquat, getworldscale, gettransform, getinvtransform, getworldtransform",
+					"hint" : "<list> to send direct messages to anim object. 'bang' for forced transformation bang, or use 'getlist' <get...> items for dump out current values (needs a bang). Possible <get...> items: getposition, getquat, getscale, getworldpos, getworldquat, getworldscale, gettransform, getinvtransform, getworldtransform",
 					"id" : "obj-14",
 					"index" : 0,
 					"maxclass" : "inlet",
