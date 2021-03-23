@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 10,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 249.0, 290.0, 752.0, 413.0 ],
+		"rect" : [ 225.0, 226.0, 752.0, 413.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -40,37 +40,13 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-22",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 506.5, 169.5, 178.0, 20.0 ],
-					"text" : "r #1::winrect::call"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-28",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 456.935181, 285.666626000000008, 103.0, 20.0 ],
-					"text" : "r bs::project::save"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 537.0, 234.0, 37.0, 20.0 ],
-					"text" : "call 1"
+					"patching_rect" : [ 528.435181000000057, 238.5, 32.0, 20.0 ],
+					"text" : "call 0"
 				}
 
 			}
@@ -102,9 +78,9 @@
 				"box" : 				{
 					"id" : "obj-26",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 385.435181, 335.0, 162.0, 20.0 ],
 					"text" : "bs.app.contexter bs::app::rc::editor"
 				}
@@ -129,7 +105,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 421.185181, 285.666626000000008, 19.0, 20.0 ],
+					"patching_rect" : [ 456.935181, 292.666626000000008, 19.0, 20.0 ],
 					"text" : "t l"
 				}
 
@@ -143,7 +119,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 421.185181, 195.5, 46.0, 19.0 ],
+					"patching_rect" : [ 456.935181, 238.5, 46.0, 19.0 ],
 					"text" : "visible $1"
 				}
 
@@ -306,8 +282,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -680,7 +656,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 186.0, 77.0, 59.0 ],
+					"patching_rect" : [ 315.0, 186.0, 77.0, 60.0 ],
 					"text" : "getrect, pickray $1, mousewheel $1, idlemouse $1, border $1, visible $1"
 				}
 
@@ -762,7 +738,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 4 ],
+					"destination" : [ "obj-26", 2 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -834,13 +810,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 2 ],
-					"source" : [ "obj-28", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -876,7 +845,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 2 ],
+					"destination" : [ "obj-26", 1 ],
 					"source" : [ "obj-61", 0 ]
 				}
 
@@ -898,14 +867,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.app.contexter.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.app.contexter.winrect.abs.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
