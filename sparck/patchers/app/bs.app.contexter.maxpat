@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 10,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 896.0, 307.0, 922.0, 367.0 ],
+		"rect" : [ 484.0, 307.0, 922.0, 367.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -130,7 +130,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 663.0, 181.0, 95.0, 36.0 ],
+					"patching_rect" : [ 663.0, 181.0, 95.0, 35.0 ],
 					"text" : "sprintf send %s::winrect::call"
 				}
 
