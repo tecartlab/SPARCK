@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 10,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -132,7 +132,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 234.0, 611.158020000000079, 147.0, 53.0 ],
+					"patching_rect" : [ 234.0, 611.158020000000079, 147.0, 52.0 ],
 					"text" : "jit.gl.render Output_4 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -175,7 +175,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 234.0, 516.158020000000079, 147.0, 53.0 ],
+					"patching_rect" : [ 234.0, 516.158020000000079, 147.0, 52.0 ],
 					"text" : "jit.gl.render Output_3 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -218,7 +218,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 237.25, 421.158020000000022, 147.0, 53.0 ],
+					"patching_rect" : [ 237.25, 421.158020000000022, 147.0, 52.0 ],
 					"text" : "jit.gl.render Output_2 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -248,8 +248,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -521,8 +521,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1221,7 +1221,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 234.0, 327.158020000000022, 147.0, 53.0 ],
+					"patching_rect" : [ 234.0, 327.158020000000022, 147.0, 52.0 ],
 					"text" : "jit.gl.render Output_1 @enable 0 @erase_color 0. 0. 0. 1."
 				}
 
@@ -1537,28 +1537,24 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "Jay3DeeWindow.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/externals",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/externals",
 				"patcherrelativepath" : "../../externals",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.app.backbone.contexter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/app",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/app",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.visibilityFix.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
 				"patcherrelativepath" : "../utils",
 				"type" : "JSON",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "mxj.mxe64",
-				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,

@@ -55,7 +55,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 666.0, 364.0, 754.0, 341.0 ],
+						"rect" : [ 652.0, 364.0, 754.0, 341.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -85,12 +85,48 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 622.0, 217.0, 76.0, 22.0 ],
+									"text" : "prepend rect"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 319.0, 94.0, 151.0, 33.0 ],
+									"text" : "filter out the setup and the mode jump position"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 4,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 232.0, 141.0, 386.0, 22.0 ],
+									"text" : "if $i2 == 105 && $i3 == 43 && $i4 == 20 then 0 else out2 $i1 $i2 $i3 $i4"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 256.0, 87.0, 60.0, 22.0 ],
+									"patching_rect" : [ 232.0, 105.0, 60.0, 22.0 ],
 									"text" : "zl.change"
 								}
 
@@ -114,20 +150,19 @@
 									"numinlets" : 4,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 256.0, 128.0, 476.0, 22.0 ],
-									"text" : "if $i1 == 40 && $i2 == 40 && $i3 == 80 && $i4 == 80 then 0 else out2 rect $i1 $i2 $i3 $i4"
+									"patching_rect" : [ 232.0, 181.0, 466.0, 22.0 ],
+									"text" : "if $i1 == 50 && $i2 == 50 && $i3 == 100 && $i4 == 100 then 0 else out2 $i1 $i2 $i3 $i4"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-22",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 94.0, 17.0, 99.0, 22.0 ],
+									"patching_rect" : [ 94.0, 17.0, 257.0, 22.0 ],
 									"text" : "r #1::winrect::call"
 								}
 
@@ -139,7 +174,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 94.0, 218.0, 42.0, 22.0 ],
+									"patching_rect" : [ 94.0, 250.0, 42.0, 22.0 ],
 									"text" : "gate 1"
 								}
 
@@ -147,11 +182,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 94.0, 265.0, 89.0, 22.0 ],
+									"patching_rect" : [ 94.0, 297.0, 324.0, 22.0 ],
 									"text" : "s #1::winrect::1"
 								}
 
@@ -165,14 +199,14 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 256.0, 37.0, 30.0, 30.0 ]
+									"patching_rect" : [ 232.0, 55.0, 30.0, 30.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-2", 1 ],
+									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-18", 1 ]
 								}
 
@@ -207,8 +241,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-18", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-6", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 1 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -269,7 +317,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-18",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -332,7 +380,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-6",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -413,7 +461,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-8",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -439,7 +487,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-19",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -451,7 +499,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-17",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -463,11 +511,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 12.5, 22.0, 25.0, 25.0 ]
 				}
 
@@ -574,6 +622,8 @@
 
 			}
  ],
+		"dependency_cache" : [  ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{

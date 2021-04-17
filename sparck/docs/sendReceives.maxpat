@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,6 +40,73 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-115",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 737.0, 381.172393999999997, 248.0, 20.0 ],
+					"text" : "preference default send to settings as default"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-116",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 724.0, 359.172393999999997, 150.0, 20.0 ],
+					"text" : "View3D"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-117",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 724.0, 403.21341000000001, 215.0, 22.0 ],
+					"text" : "s bs::app::viewer::window::rect::default"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-114",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 737.0, 294.0, 248.0, 20.0 ],
+					"presentation_linecount" : 2,
+					"text" : "preference default send to settings as default"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-113",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 724.0, 272.0, 150.0, 20.0 ],
+					"text" : "Editor"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-111",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 724.0, 316.041016000000013, 210.0, 22.0 ],
+					"text" : "s bs::app::editor::window::rect::default"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-110",
@@ -47,8 +114,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 322.5, 715.766051999999945, 150.0, 34.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 322.5, 715.766051999999945, 150.0, 33.0 ],
 					"text" : "sends always a '-1' and a integer '0' or higher"
 				}
 
@@ -124,7 +190,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 897.583374000000049, 560.722045999999978, 238.0, 20.0 ],
+					"patching_rect" : [ 990.583374000000049, 558.722045999999978, 238.0, 20.0 ],
 					"text" : "send when preferences are finished loaded"
 				}
 
@@ -135,7 +201,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 897.583374000000049, 586.5, 170.0, 22.0 ],
+					"patching_rect" : [ 990.583374000000049, 584.5, 170.0, 22.0 ],
 					"text" : "s bs::app::preferences::loaded"
 				}
 
@@ -168,7 +234,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 261.649077999999975, 262.0, 20.0 ],
+					"patching_rect" : [ 994.0, 259.649077999999975, 262.0, 20.0 ],
 					"text" : "the node with this title will recieve this message"
 				}
 
@@ -180,7 +246,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 901.0, 283.649077999999975, 157.0, 22.0 ],
+					"patching_rect" : [ 994.0, 281.649077999999975, 157.0, 22.0 ],
 					"text" : "r bs::app::node::<nodetitle>"
 				}
 
@@ -191,7 +257,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 313.733826000000022, 175.0, 20.0 ],
+					"patching_rect" : [ 994.0, 311.733826000000022, 175.0, 20.0 ],
 					"text" : "all nodes receive this message"
 				}
 
@@ -203,7 +269,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 901.0, 332.792174999999986, 109.0, 22.0 ],
+					"patching_rect" : [ 994.0, 330.792174999999986, 109.0, 22.0 ],
 					"text" : "r bs::app::allnodes"
 				}
 
@@ -214,7 +280,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 33.549697999999999, 241.0, 20.0 ],
+					"patching_rect" : [ 994.0, 31.549697999999999, 241.0, 20.0 ],
 					"text" : "the workspace db will receive this message"
 				}
 
@@ -228,7 +294,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 901.0, 55.549697999999999, 175.0, 22.0 ],
+					"patching_rect" : [ 994.0, 53.549697999999999, 175.0, 22.0 ],
 					"text" : "r <workspace>::vpl::workspace"
 				}
 
@@ -240,7 +306,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 200.649078000000003, 329.0, 34.0 ],
+					"patching_rect" : [ 994.0, 198.649078000000003, 329.0, 33.0 ],
 					"text" : "the node with this title will recieve this message - \nfor setting properties only!!!"
 				}
 
@@ -252,7 +318,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 901.0, 235.649078000000003, 149.0, 22.0 ],
+					"patching_rect" : [ 994.0, 233.649078000000003, 149.0, 22.0 ],
 					"text" : "r /sparck/node/<nodetitle>"
 				}
 
@@ -263,7 +329,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 148.0, 346.0, 20.0 ],
+					"patching_rect" : [ 994.0, 146.0, 346.0, 20.0 ],
 					"text" : "the node with this name (NOT TITLE) will recieve this message"
 				}
 
@@ -275,7 +341,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 901.0, 172.041016000000013, 175.0, 22.0 ],
+					"patching_rect" : [ 994.0, 170.041016000000013, 175.0, 22.0 ],
 					"text" : "r <nodename>::vpl::connection"
 				}
 
@@ -286,7 +352,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 87.225159000000005, 305.0, 20.0 ],
+					"patching_rect" : [ 994.0, 85.225159000000005, 305.0, 20.0 ],
 					"text" : "all nodes of the same workspace recieve the messages"
 				}
 
@@ -298,7 +364,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 901.0, 109.0, 177.0, 22.0 ],
+					"patching_rect" : [ 994.0, 107.0, 177.0, 22.0 ],
 					"text" : "r <workspace>::vpl::nodespace"
 				}
 
@@ -311,7 +377,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 909.5, 515.072997999999984, 112.0, 22.0 ],
+					"patching_rect" : [ 1002.5, 513.072997999999984, 112.0, 22.0 ],
 					"text" : "s bs::cmd::specials"
 				}
 
@@ -324,7 +390,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 909.5, 489.555297999999993, 97.0, 22.0 ],
+					"patching_rect" : [ 1002.5, 487.555297999999993, 97.0, 22.0 ],
 					"text" : "s bs::cmd::focus"
 				}
 
@@ -337,7 +403,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 909.5, 465.733826000000022, 98.0, 22.0 ],
+					"patching_rect" : [ 1002.5, 463.733826000000022, 98.0, 22.0 ],
 					"text" : "s bs::cmd::chars"
 				}
 
@@ -348,7 +414,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 418.733826000000022, 121.0, 20.0 ],
+					"patching_rect" : [ 994.0, 416.733826000000022, 121.0, 20.0 ],
 					"text" : "command messages"
 				}
 
@@ -359,7 +425,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 441.733826000000022, 68.0, 22.0 ],
+					"patching_rect" : [ 994.0, 439.733826000000022, 68.0, 22.0 ],
 					"text" : "s bs::cmds"
 				}
 
@@ -370,7 +436,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 901.0, 362.25714099999999, 235.0, 20.0 ],
+					"patching_rect" : [ 994.0, 360.25714099999999, 235.0, 20.0 ],
 					"text" : "send info to parameter database reflection"
 				}
 
@@ -382,7 +448,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 901.0, 384.25714099999999, 113.0, 22.0 ],
+					"patching_rect" : [ 994.0, 382.25714099999999, 113.0, 22.0 ],
 					"text" : "r bs::app::reflection"
 				}
 
@@ -393,7 +459,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 694.5, 185.915253000000007, 190.0, 20.0 ],
+					"patching_rect" : [ 726.5, 183.915253000000007, 190.0, 20.0 ],
 					"text" : "sends message 'debugger debug'"
 				}
 
@@ -404,7 +470,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 692.0, 210.041016000000013, 117.0, 22.0 ],
+					"patching_rect" : [ 724.0, 208.041016000000013, 117.0, 22.0 ],
 					"text" : "s bs::app::debugger"
 				}
 
@@ -460,7 +526,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 692.0, 118.041015999999999, 195.0, 34.0 ],
+					"patching_rect" : [ 724.0, 116.041015999999999, 195.0, 33.0 ],
 					"text" : "opens the reference AND displays the bs.help.%s.maxpat"
 				}
 
@@ -471,7 +537,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 692.0, 153.915253000000007, 150.0, 22.0 ],
+					"patching_rect" : [ 724.0, 151.915253000000007, 150.0, 22.0 ],
 					"text" : "s bs::app::reference::open"
 				}
 
@@ -643,7 +709,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 215.0, 545.371155000000044, 202.0, 62.0 ],
+					"patching_rect" : [ 215.0, 545.371155000000044, 202.0, 60.0 ],
 					"text" : "slab objects send bangs to this address to make sure the slabs get processed before the next renderpass is executed"
 				}
 
@@ -826,7 +892,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 692.0, 46.225158999999998, 163.0, 20.0 ],
+					"patching_rect" : [ 724.0, 44.225158999999998, 163.0, 20.0 ],
 					"text" : "r bs::system::settings::desktopsize"
 				}
 
@@ -840,7 +906,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 692.0, 71.225159000000005, 135.0, 20.0 ],
+					"patching_rect" : [ 724.0, 69.225159000000005, 135.0, 20.0 ],
 					"text" : "r bs::system::settings::name"
 				}
 

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 505.0, 129.0, 462.0, 264.0 ],
+		"rect" : [ 533.0, 185.0, 462.0, 295.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -41,13 +41,36 @@
 		"title" : "Dependencies",
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "@package", "ia.facestream", "@version", "1.0.0", "@url", "https://gitlab.zhdk.ch/iaspace/05_projects/1916_digitalhumans/face-stream-maxpackage" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-14",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.dep.packageTest.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 206.0, 436.5, 440.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 11.0, 256.0, 440.0, 24.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 186.0, 467.0, 22.0, 22.0 ]
+					"patching_rect" : [ 206.0, 504.0, 22.0, 22.0 ]
 				}
 
 			}
@@ -95,7 +118,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 186.0, 502.0, 30.0, 30.0 ]
+					"patching_rect" : [ 190.0, 544.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -131,7 +154,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 215.0, 467.0, 33.0, 22.0 ],
+					"patching_rect" : [ 235.0, 504.0, 33.0, 22.0 ],
 					"text" : "front"
 				}
 
@@ -143,8 +166,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 186.0, 437.5, 34.0, 22.0 ],
-					"text" : "sel 8"
+					"patching_rect" : [ 206.0, 474.5, 34.0, 22.0 ],
+					"text" : "sel 9"
 				}
 
 			}
@@ -155,10 +178,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 8.0, 527.0, 34.0 ],
+					"patching_rect" : [ 31.0, 8.0, 527.0, 33.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 11.0, 7.0, 317.0, 34.0 ],
+					"presentation_rect" : [ 11.0, 7.0, 317.0, 33.0 ],
 					"text" : "In order to run SPARCK without issues, \nall the following packages need to be installed"
 				}
 
@@ -183,7 +206,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.5, 431.5, 83.0, 50.0 ],
+					"patching_rect" : [ 18.5, 431.5, 83.0, 49.0 ],
 					"text" : "window flags nomenu, window exec"
 				}
 
@@ -272,7 +295,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@windows", "Max_Worldmaking_Package", "@macintosh", "ignore" ],
+					"args" : [ "@windows", "VR", "1.0.1", "@macintosh", "ignore" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -402,7 +425,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
+					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
 
@@ -418,6 +441,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -531,21 +561,17 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.dep.packageTest.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/dependency",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.dep.javaTest.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/dependency",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/dependency",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "mxj.mxe64",
-				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
@@ -570,13 +596,13 @@
 , 			{
 				"name" : "BlueButton",
 				"default" : 				{
-					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"centerjust" : [ 2 ],
-					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
-					"fontname" : [ "Courier New" ],
-					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"centerjust" : [ 2 ],
+					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
+					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontname" : [ "Courier New" ]
 				}
 ,
 				"parentstyle" : "",
