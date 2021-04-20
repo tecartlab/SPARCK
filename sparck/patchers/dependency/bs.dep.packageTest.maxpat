@@ -82,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 468.333333333333485, 51.0, 153.0, 35.0 ],
+					"patching_rect" : [ 468.333333333333485, 51.0, 153.0, 36.0 ],
 					"text" : "macintosh Syphon 1.0.6, windows Spout 2.0.7, done"
 				}
 
@@ -205,7 +205,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 405.333333333333371, 286.0, 237.0, 35.0 ],
+					"patching_rect" : [ 405.333333333333371, 286.0, 237.0, 36.0 ],
 					"text" : ";\rmax system windows getruntime #0_win"
 				}
 
@@ -252,7 +252,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 385.333333333333371, 245.0, 251.0, 35.0 ],
+					"patching_rect" : [ 385.333333333333371, 245.0, 251.0, 36.0 ],
 					"text" : ";\rmax system macintosh getruntime #0_mac"
 				}
 
@@ -417,8 +417,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 245.0, 590.5, 131.0, 35.0 ],
-					"text" : ";\rmax launchbrowser $1"
+					"patching_rect" : [ 245.0, 590.5, 131.0, 36.0 ],
+					"text" : ";\r\nmax launchbrowser $1"
 				}
 
 			}
@@ -477,7 +477,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 92.0, 6.0, 537.0, 35.0 ],
+					"patching_rect" : [ 92.0, 6.0, 537.0, 36.0 ],
 					"text" : "package max-mxj, version 7.2.7, url 'https://github.com/tecartlab/max-mxj/wiki/Install-Open-JDK13', done"
 				}
 
@@ -822,6 +822,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 118.0, 116.0, 54.0, 22.0 ],
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -887,7 +899,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 147.0, 362.0, 29.5, 22.0 ],
+									"patching_rect" : [ 148.0, 375.0, 29.5, 22.0 ],
 									"text" : "!- 1"
 								}
 
@@ -899,7 +911,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 147.0, 331.0, 29.5, 22.0 ],
+									"patching_rect" : [ 148.0, 344.0, 29.5, 22.0 ],
 									"text" : "!= 3"
 								}
 
@@ -911,7 +923,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 147.0, 269.0, 64.0, 22.0 ],
+									"patching_rect" : [ 148.0, 282.0, 64.0, 22.0 ],
 									"text" : "pack 0 0 0"
 								}
 
@@ -923,7 +935,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 147.0, 296.0, 43.0, 22.0 ],
+									"patching_rect" : [ 148.0, 309.0, 43.0, 22.0 ],
 									"text" : "zl.sum"
 								}
 
@@ -935,7 +947,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "int", "int" ],
-									"patching_rect" : [ 147.25, 160.0, 77.0, 22.0 ],
+									"patching_rect" : [ 148.25, 173.0, 77.0, 22.0 ],
 									"text" : "unpack 0 0 0"
 								}
 
@@ -947,7 +959,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "int", "int" ],
-									"patching_rect" : [ 295.25, 165.0, 77.0, 22.0 ],
+									"patching_rect" : [ 296.25, 178.0, 77.0, 22.0 ],
 									"text" : "unpack 0 0 0"
 								}
 
@@ -960,7 +972,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 244.5, 232.0, 24.0, 24.0 ]
+									"patching_rect" : [ 245.5, 245.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -972,7 +984,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 197.5, 232.0, 24.0, 24.0 ]
+									"patching_rect" : [ 198.5, 245.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -984,7 +996,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 147.0, 232.0, 24.0, 24.0 ]
+									"patching_rect" : [ 148.0, 245.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -995,7 +1007,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 244.5, 199.0, 29.5, 22.0 ],
+									"patching_rect" : [ 245.5, 212.0, 29.5, 22.0 ],
 									"text" : ">="
 								}
 
@@ -1007,7 +1019,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 197.5, 199.0, 29.5, 22.0 ],
+									"patching_rect" : [ 198.5, 212.0, 29.5, 22.0 ],
 									"text" : ">="
 								}
 
@@ -1019,7 +1031,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 147.0, 199.0, 29.5, 22.0 ],
+									"patching_rect" : [ 148.0, 212.0, 29.5, 22.0 ],
 									"text" : ">="
 								}
 
@@ -1031,7 +1043,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 265.0, 133.0, 140.0, 22.0 ],
+									"patching_rect" : [ 266.0, 146.0, 140.0, 22.0 ],
 									"text" : "regexp (\\\\d+).(\\\\d+).(\\\\d+)"
 								}
 
@@ -1043,7 +1055,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 117.0, 133.0, 140.0, 22.0 ],
+									"patching_rect" : [ 118.0, 146.0, 140.0, 22.0 ],
 									"text" : "regexp (\\\\d+).(\\\\d+).(\\\\d+)"
 								}
 
@@ -1133,6 +1145,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-92", 0 ],
 									"source" : [ "obj-25", 1 ]
 								}
@@ -1154,7 +1173,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-25", 0 ],
+									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-4", 1 ]
 								}
 
@@ -1320,8 +1339,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 590.5, 139.0, 35.0 ],
-					"text" : ";\rmax packagebrowser $1"
+					"patching_rect" : [ 98.0, 590.5, 139.0, 36.0 ],
+					"text" : ";\r\nmax packagebrowser $1"
 				}
 
 			}
