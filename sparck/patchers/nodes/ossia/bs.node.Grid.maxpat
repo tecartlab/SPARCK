@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Grid_1",
+		"globalpatchername" : "Grid",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-9",
@@ -640,6 +640,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 16.5, 57.0, 107.0, 22.0 ],
+									"text" : "routepass address"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-3",
 									"linecount" : 4,
@@ -647,7 +659,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 721.0, 7.0, 296.0, 62.0 ],
+									"patching_rect" : [ 721.0, 7.0, 296.0, 64.0 ],
 									"text" : "ossia.parameter depth/enable @type bool @default 1 @description \"Sorting the model autmatically to its z-depth. Switching this off allows to use the layer property. \""
 								}
 
@@ -685,7 +697,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 419.150879000000032, 12.333373999999992, 283.0, 35.0 ],
+									"patching_rect" : [ 419.150879000000032, 12.333373999999992, 283.0, 36.0 ],
 									"text" : "ossia.parameter depth/layer @type int @default 10 @description \"depth layer\""
 								}
 
@@ -699,10 +711,10 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "int", "" ],
-									"patching_rect" : [ 188.0, 54.0, 221.0, 49.0 ],
+									"patching_rect" : [ 188.0, 54.0, 221.0, 50.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 10,
-									"presentation_rect" : [ 92.41668701171875, 66.0, 90.0, 143.0 ],
+									"presentation_rect" : [ 92.41668701171875, 66.0, 90.0, 146.0 ],
 									"text" : "bs.ossia.parameter.rendergroup.drawto render/renderGroup \"Selection of the rendergroups to render this object\"",
 									"varname" : "renderGroup[1]"
 								}
@@ -722,18 +734,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.5, 236.0, 137.0, 22.0 ],
-									"text" : "sprintf address node/%s"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-106",
 									"linecount" : 3,
@@ -741,7 +741,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 490.250015000000019, 88.0, 193.000000000000057, 49.0 ],
+									"patching_rect" : [ 490.250015000000019, 88.0, 193.000000000000057, 50.0 ],
 									"text" : "ossia.parameter render/showaxis @type bool @default 0 @description \"draw axis\""
 								}
 
@@ -1060,7 +1060,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 16.5, 60.052734999999984, 97.0, 22.0 ],
+									"patching_rect" : [ 104.5, 112.0, 97.0, 22.0 ],
 									"text" : "route title enable"
 								}
 
@@ -1105,14 +1105,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"order" : 1,
 									"source" : [ "obj-2", 0 ]
 								}
@@ -1130,14 +1123,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-20", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"order" : 2,
-									"source" : [ "obj-27", 0 ]
 								}
 
 							}
@@ -1200,6 +1185,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-37", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-4", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -2272,7 +2271,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 381.0, 283.5, 138.0, 81.0 ],
+					"patching_rect" : [ 381.0, 283.5, 138.0, 83.0 ],
 					"text" : "jit.gl.gridshape sparck @matrixoutput 1 @shape plane @blend_enable 1 @automatic"
 				}
 
@@ -2485,124 +2484,109 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.gui.button.menu.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../../media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../javascript/vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../../media",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../vpl",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.rendergroup.drawto.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/rendergroup",
-				"patcherrelativepath" : "../../ossia/rendergroup",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.rendergroup.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/misc",
-				"patcherrelativepath" : "../../../javascript/misc",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/misc",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.anim.node.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/msg",
-				"patcherrelativepath" : "../../ossia/msg",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/msg",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.msg.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.parameter.tfm.local.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/transforms",
-				"patcherrelativepath" : "../../ossia/transforms",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.parameter.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.model.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.model.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.send.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.msg.receive.selector.mxo",
-				"type" : "iLaX"
+				"name" : "bs.msg.receive.selector.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
