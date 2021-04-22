@@ -30,7 +30,7 @@ var owner = this.patcher;
 
 // set up inlets/outlets/assist strings
 inlets = 1;
-outlets = 2;
+outlets = 3;
 setinletassist(0,"set");
 setoutletassist(0,"drawto");
 setoutletassist(1,"update");
@@ -42,7 +42,8 @@ if (jsarguments.length > 1)
 var IN_0 = 0;
 
 var OUT_MAIN = 0;
-var OUT_DUMP = 1;
+var OUT_ENABLED = 1;
+var OUT_DUMP = 2;
 
 var undefined = "off";
 
@@ -121,7 +122,10 @@ function anything()
                 }
                 if(out.length == 1){
                     out.push("off");
-                }
+                	outlet(OUT_ENABLED, 0);
+                } else {
+                	outlet(OUT_ENABLED, 1);
+				}
                 outlet(OUT_MAIN, out);
             }
  		}
