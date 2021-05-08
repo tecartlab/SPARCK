@@ -39,6 +39,7 @@ setoutletassist(1,"index");
 
 
 var myNodeID=null;
+var myIndex = -1;
 
 if (jsarguments.length>1)
 	myNodeID = jsarguments[1];
@@ -58,13 +59,14 @@ function bang(){
 
 function msg_int(v)
 {
-	enable(v);
+	enable((v === 1)?true:false);
 }
 
 
 function enable(_enable){
+	//post("enable " + _enable +  "\n");
 	if(_enable){	
-		uniqueBang.clients.push(myNodeID);
+		addEntry();
 	} else {
 		removeEntry();
 	}
@@ -74,17 +76,26 @@ function enable(_enable){
 
 function update(){
 	outlet(0, uniqueBang.clients.length);
-	if(myNodeID != null){
-		outlet(1, uniqueBang.clients.indexOf(myNodeID));
+	if(myNodeID !== null){
+		outlet(1, myIndex);
+	}
+}
+
+function addEntry(){
+	if(myNodeID !== null && myIndex === -1){
+		uniqueBang.clients.push(myNodeID);
+		myIndex = uniqueBang.clients.indexOf(myNodeID);
+		//post("addEntry " + myNodeID + " "  + myIndex + "\n");
+		messnamed("bs::bake::uniquebang", "update");
 	}
 }
 
 function removeEntry(){
-	if(myNodeID != null){
-		if(uniqueBang.clients.indexOf(myNodeID) != -1){
-			//post("removeEntry " + myNodeID + " "  + uniqueBang.clients.indexOf(myNodeID) + "\n");
-			uniqueBang.clients.splice(uniqueBang.clients.indexOf(myNodeID), 1);
-		}
+	if(myNodeID !== null && myIndex !== -1){
+		uniqueBang.clients.splice(myIndex, 1);
+		myIndex = -1;
+		//post("removeEntry " + myNodeID + " "  + myIndex + "\n");
+		messnamed("bs::bake::uniquebang", "update");
 	}
 }
 			

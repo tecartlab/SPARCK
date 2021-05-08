@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-54",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 614.0, 438.0, 29.5, 22.0 ],
+					"text" : "- 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-53",
@@ -82,7 +94,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 511.0, 405.0, 131.0, 22.0 ],
+					"patching_rect" : [ 614.0, 379.0, 131.0, 22.0 ],
 					"text" : "r bs::bake::uniquebang"
 				}
 
@@ -94,7 +106,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 511.0, 436.868469000000005, 141.0, 22.0 ],
+					"patching_rect" : [ 614.0, 407.868469000000005, 141.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "bs.bake.uniquebang.js",
 						"parameter_enable" : 0
@@ -916,7 +928,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-51", 4 ],
+					"destination" : [ "obj-54", 0 ],
 					"source" : [ "obj-50", 0 ]
 				}
 
@@ -932,6 +944,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-51", 4 ],
+					"source" : [ "obj-54", 0 ]
 				}
 
 			}
