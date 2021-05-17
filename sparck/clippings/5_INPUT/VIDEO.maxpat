@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
+			"major" : 8,
 			"minor" : 2,
-			"revision" : 5,
-			"architecture" : "x86",
+			"revision" : 0,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 84.0, 128.0, 447.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -36,6 +37,7 @@
 		"tags" : "BeamStreamer Node Texture",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"bgmode" : 0,
@@ -46,13 +48,13 @@
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.tex.moovie.1.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 4,
+					"name" : "bs.node.Video.maxpat",
+					"numinlets" : 2,
+					"numoutlets" : 5,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 0.0, 0.0, 180.0, 82.0 ],
-					"varname" : "Video_1",
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 0.0, 0.0, 180.0, 36.0 ],
+					"varname" : "Video",
 					"viewvisibility" : 1
 				}
 
@@ -60,147 +62,155 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-3::obj-34::obj-47::obj-19::obj-72" : [ "toggle", "toggle", 0 ],
-			"obj-3::obj-51::obj-10::obj-72" : [ "toggle[1]", "toggle", 0 ]
+			"obj-3::obj-99::obj-12::obj-47::obj-20::obj-72" : [ "toggle", "toggle", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "bs.node.tex.moovie.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/textures",
+				"name" : "bs.node.Video.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/ossia",
+				"patcherrelativepath" : "../../patchers/nodes/ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.util.nodelogic.maxpat",
+				"name" : "bs.msg.receive.key.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/_obsolete",
+				"patcherrelativepath" : "../../patchers/_obsolete",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.util.special.render.gate.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"patcherrelativepath" : "../../patchers/utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.logic.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"patcherrelativepath" : "../../patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.node.js",
+				"name" : "bs.vpl.node.logic.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"patcherrelativepath" : "../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.util.dialogSlim.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.global.keys.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.win.reactive.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.global.keys.getlast.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.unique.js",
+				"name" : "bs.vpl.node.title.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"patcherrelativepath" : "../../javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.go4help.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help",
+				"name" : "bs.node.gui.button.menu.png",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"patcherrelativepath" : "../../media",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"patcherrelativepath" : "../../patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.gui.svg.button.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"type" : "JSON",
+				"name" : "bs.vpl.node.pbody.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/vpl",
+				"patcherrelativepath" : "../../javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.node.logo.power.png",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
+				"patcherrelativepath" : "../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.inlet.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"patcherrelativepath" : "../../patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
+				"patcherrelativepath" : "../../patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.tex.moovie.properties.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/textures",
+				"name" : "bs.util.doubleBang.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"patcherrelativepath" : "../../patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.gui.windows.pops.maxpat",
+				"name" : "bs.ossia.parameter.file.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/ossia/file",
+				"patcherrelativepath" : "../../patchers/ossia/file",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.button.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.gui.windows.pops.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/gui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.node.logo.moovie.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.gui.svg.toggle.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.file.select.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/file",
+				"patcherrelativepath" : "../../patchers/gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.dialog.saveas.slim.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"patcherrelativepath" : "../../patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.msg.util.key.receive.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/msg",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.msg.util.key.receive.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/msg",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.special.render.gate.maxpat",
+				"name" : "bs.util.global.keys.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"patcherrelativepath" : "../../patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.util.win.reactive.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"patcherrelativepath" : "../../patchers/utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.msg.receive.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.parameter.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ossia.model.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0

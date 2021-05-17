@@ -8,6 +8,7 @@ uniform int stage_mode;
 
 // samplers
 uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
 
 uniform vec4 beamer_color[6];
 
@@ -26,8 +27,9 @@ varying vec2 beamer_texcoord[6];// beamer texcoord
 varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
 
+// since the first texture is the objects default texture, we are starting with the second one..
 vec4 getTexture2DRect(int index, vec2 coord){
-	return texture2DRect(tex0, coord);
+	return texture2DRect(tex1, coord);
 }
 
 vec4 getProjectorColor(int i){

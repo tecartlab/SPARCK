@@ -13,8 +13,10 @@ uniform int stage_mode;
 // samplers
 // samplers
 uniform samplerJit0 tex0;
+uniform samplerJit1 tex1;
 
 uniform mat4 textureMatrix0;
+uniform mat4 textureMatrix1;
 
 uniform vec4 beamer_color[6];
 
@@ -36,8 +38,9 @@ in jit_PerVertex {
 } jit_in;
 
 
+// since the first texture is the objects default texture, we are starting with the second one..
 vec4 getTexture2DRect(int index, vec2 coord){
-	return texture(tex0, coord);
+	return texture(tex1, coord);
 }
 
 vec4 getProjectorColor(int i){

@@ -13,13 +13,14 @@ uniform float projection_mode;
 uniform int stage_mode;
 uniform int mode;
 
-// samplers
+// samplers (the first texture is the objects default texture!!)
 uniform sampler2DRect tex0;
 uniform sampler2DRect tex1;
 uniform sampler2DRect tex2;
 uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -104,12 +105,12 @@ void main()
 
     // calculate the equirectangular coordinates
     proj_texUV[0] = vec4((theta + PI) / (2 * PI), 1.0 - phi / PI, 0., 1.);
-    proj_texcoord[0] = vec2(gl_TextureMatrix[0] * proj_texUV[0]);
+    proj_texcoord[0] = vec2(gl_TextureMatrix[1] * proj_texUV[0]);
 
     // check if we are still inside the farclip
     vcurve[0] = (far_clip[0] > radius)?angle: 0.;
 
-	gl_FragColor = (vcurve[0] > 0)?texture2DRect(tex0, proj_texcoord[0]):offColor;
+	gl_FragColor = (vcurve[0] > 0)?texture2DRect(tex1, proj_texcoord[0]):offColor;
     
     // in case it is rendered to stage and stage_mode is set to colored:
 	if(mode == 0 && stage_mode >= 1){

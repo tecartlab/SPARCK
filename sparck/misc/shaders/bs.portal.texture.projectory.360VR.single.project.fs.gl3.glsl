@@ -21,6 +21,7 @@ uniform samplerJit2 tex2;
 uniform samplerJit3 tex3;
 uniform samplerJit4 tex4;
 uniform samplerJit5 tex5;
+uniform samplerJit6 tex6;
 
 uniform mat4 textureMatrix0;
 uniform mat4 textureMatrix1;
@@ -28,6 +29,7 @@ uniform mat4 textureMatrix2;
 uniform mat4 textureMatrix3;
 uniform mat4 textureMatrix4;
 uniform mat4 textureMatrix5;
+uniform mat4 textureMatrix6;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -113,12 +115,12 @@ void main()
 
     // calculate the equirectangular coordinates
     proj_texUV[0] = vec4((theta + PI) / (2 * PI), 1.0 - phi / PI, 0., 1.);
-    proj_texcoord[0] = vec2(textureMatrix0 * proj_texUV[0]);
+    proj_texcoord[0] = vec2(textureMatrix1 * proj_texUV[0]);
 
     // check if we are still inside the farclip
     vcurve[0] = (far_clip[0] > radius)?angle: 0.;
 
-	outColor0 = (vcurve[0] > 0)?texture(tex0, proj_texcoord[0]):offColor;
+	outColor0 = (vcurve[0] > 0)?texture(tex1, proj_texcoord[0]):offColor;
     
     // in case it is rendered to stage and stage_mode is set to colored:
 	if(mode == 0 && stage_mode >= 1){

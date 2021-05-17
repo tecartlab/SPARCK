@@ -86,7 +86,7 @@ void main(void)
 
 	vec4 clip, device, screen, position;
 
-    for(int i = 0; i < beamer_count; i++){ 
+    for(int i = 0; i < beamer_count; i++){
         // calculate the distance to beamer 0
         position = mv_matrix(i) * gl_Vertex;
         depth[i] = length(position.xyz) / far_clip[i];
@@ -95,6 +95,8 @@ void main(void)
         device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
         screen = viewport_matrix * device;
         beamer_uv[i] = vec4(screen.x, screen.y, 0., 1.);
-        beamer_texcoord[i] = vec2(gl_TextureMatrix[i] * beamer_uv[i]);
+        // since the first texture is the objects default texture,
+        // we are starting with the second one, hence (i+1)
+        beamer_texcoord[i] = vec2(gl_TextureMatrix[i + 1] * beamer_uv[i]);
     }
 }

@@ -20,6 +20,7 @@ uniform sampler2DRect tex2;
 uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -62,13 +63,14 @@ const float PI_HALF = PI / 2.0;
 const vec4 WHITE = vec4( 1.0, 1.0, 1.0, 1.0);
 const vec4 BLACK = vec4( 0.0, 0.0, 0.0, 1.0);
 
+// since the first texture is the objects default texture, we are starting with the second one..
 vec4 getTexture2DRect(int index, vec2 coord){
 	return 
-        (index == 0)?texture2DRect(tex0, coord):
-        (index == 1)?texture2DRect(tex1, coord):
-        (index == 2)?texture2DRect(tex2, coord):
-        (index == 3)?texture2DRect(tex3, coord):
-        (index == 4)?texture2DRect(tex4, coord):texture2DRect(tex5, coord);
+        (index == 0)?texture2DRect(tex1, coord):
+        (index == 1)?texture2DRect(tex2, coord):
+        (index == 2)?texture2DRect(tex3, coord):
+        (index == 3)?texture2DRect(tex4, coord):
+        (index == 4)?texture2DRect(tex5, coord):texture2DRect(tex6, coord);
 }
 
 vec4 getTextureColor(int i){

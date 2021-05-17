@@ -32,14 +32,16 @@
 
 #version 120
 
-varying vec2 texcoord2;
+varying vec2 texcoord0;
+varying vec2 texcoord1;
 
 void main(void)
 {
 	// perform standard transform on vertex
 	gl_Position = ftransform();
 
- 	texcoord2 = vec2(gl_TextureMatrix[2] * gl_MultiTexCoord2);
+ 	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+ 	texcoord1 = vec2(gl_TextureMatrix[1] * gl_MultiTexCoord1);
 }
 
 ]]>
@@ -54,7 +56,8 @@ void main(void)
 	Multifunctional texture projection shader with full feature set.
 */
 
-varying vec2 texcoord2;
+varying vec2 texcoord0;
+varying vec2 texcoord1;
 
 uniform int mode;
 
@@ -72,16 +75,17 @@ uniform sampler2DRect tex7;
 void main()
 {
 
-  vec4 color[7];
-	color[0] = texture2DRect(tex0, texcoord2);
-	color[1] = texture2DRect(tex1, texcoord2);
-	color[2] = texture2DRect(tex2, texcoord2);
-	color[3] = texture2DRect(tex3, texcoord2);
-	color[4] = texture2DRect(tex4, texcoord2);
-	color[5] = texture2DRect(tex5, texcoord2);
-	color[6] = texture2DRect(tex6, texcoord2);
+	vec4 color[8];
+	color[0] = texture2DRect(tex0, texcoord0);
+	color[1] = texture2DRect(tex1, texcoord1);
+	color[2] = texture2DRect(tex2, texcoord1);
+	color[3] = texture2DRect(tex3, texcoord1);
+	color[4] = texture2DRect(tex4, texcoord1);
+	color[5] = texture2DRect(tex5, texcoord1);
+	color[6] = texture2DRect(tex6, texcoord1);
+	color[7] = texture2DRect(tex7, texcoord1);
 
-  gl_FragColor = color[mode];
+	gl_FragColor = color[mode + 1];
 }
 
 ]]>

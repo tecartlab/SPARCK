@@ -22,6 +22,7 @@ uniform samplerJit2 tex2;
 uniform samplerJit3 tex3;
 uniform samplerJit4 tex4;
 uniform samplerJit5 tex5;
+uniform samplerJit5 tex6;
 
 uniform mat4 textureMatrix0;
 uniform mat4 textureMatrix1;
@@ -29,6 +30,7 @@ uniform mat4 textureMatrix2;
 uniform mat4 textureMatrix3;
 uniform mat4 textureMatrix4;
 uniform mat4 textureMatrix5;
+uniform mat4 textureMatrix6;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -105,36 +107,36 @@ void main()
 			texcoord0 = vec4(
 						(viewline.z / vl_abs.x) * 0.5 + 0.5,
 						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
-			color = texture(tex2, (textureMatrix0 * texcoord0).st);
+			color = texture(tex3, (textureMatrix1 * texcoord0).st);
 		}else{ //LEFT
 			texcoord0 = vec4(
 						-(viewline.z / vl_abs.x) * 0.5 + 0.5,
 						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
-			color = texture(tex0, (textureMatrix0 * texcoord0).st);
+			color = texture(tex1, (textureMatrix1 * texcoord0).st);
 		}
 	} else if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
 		if(viewline.y >= 0.0){ //TOP
 			texcoord0 = vec4(
 						(viewline.x / vl_abs.y) * 0.5 + 0.5,
 						(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
-			color = texture(tex4, (textureMatrix0 * texcoord0).st);
+			color = texture(tex5, (textureMatrix1 * texcoord0).st);
 		}else{
 			texcoord0 = vec4( //BOTTOM
 						(viewline.x / vl_abs.y) * 0.5 + 0.5,
 						-(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
-			color = texture(tex5, (textureMatrix0 * texcoord0).st);
+			color = texture(tex6, (textureMatrix1 * texcoord0).st);
 		}
 	} else if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
 		if(viewline.z >= 0.0){
 			texcoord0 = vec4( //BACK
 						-(viewline.x / vl_abs.z) * 0.5 + 0.5,
 						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
-			color = texture(tex3, (textureMatrix0 * texcoord0).st);
+			color = texture(tex4, (textureMatrix1 * texcoord0).st);
 		}else{
 			texcoord0 = vec4( //FRONT
 						(viewline.x / vl_abs.z) * 0.5 + 0.5,
 						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
-			color = texture(tex1, (textureMatrix0 * texcoord0).st);
+			color = texture(tex2, (textureMatrix1 * texcoord0).st);
 		}
 	}
 

@@ -41,6 +41,7 @@ uniform mat4 textureMatrix2;
 uniform mat4 textureMatrix3;
 uniform mat4 textureMatrix4;
 uniform mat4 textureMatrix5;
+uniform mat4 textureMatrix6;
 
 uniform mat4 modelViewProjectionMatrix;
 
@@ -89,7 +90,7 @@ mat4 mv_matrix(int index){
 }
 
 mat4 texMatrix(int index){
-    return (index == 0)?textureMatrix0:(index == 1)?textureMatrix1:(index == 2)?textureMatrix2:(index == 3)?textureMatrix3:(index == 4)?textureMatrix4:textureMatrix5;
+    return (index == 0)?textureMatrix0:(index == 1)?textureMatrix1:(index == 2)?textureMatrix2:(index == 3)?textureMatrix3:(index == 4)?textureMatrix4:(index == 5)?textureMatrix5:textureMatrix6;
 }
 
 void main(void)
@@ -97,15 +98,15 @@ void main(void)
     // transform texcoords
     jit_out.jit_texcoord0 = textureMatrix0 * vec4(jit_texcoord, 0., 1.);
 
-	// transform vertex sapce to worldspace: used for projectory
-	gl_Position = modelViewProjectionMatrix * vec4(jit_position, 1);
+    // transform vertex sapce to worldspace: used for projectory
+    gl_Position = modelViewProjectionMatrix * vec4(jit_position, 1);
 
-	jit_out.normal = normalize(mat3(screen_m_matrix) * jit_normal);
-	jit_out.worldPos = vec3(screen_m_matrix * vec4(jit_position, 1));
+    jit_out.normal = normalize(mat3(screen_m_matrix) * jit_normal);
+    jit_out.worldPos = vec3(screen_m_matrix * vec4(jit_position, 1));
 
-	vec4 clip, device, screen, position;
+    vec4 clip, device, screen, position;
 
-    for(int i = 0; i < beamer_count; i++){ 
+    for(int i = 0; i < beamer_count; i++){
         // calculate the distance to beamer 0
         position = mv_matrix(i) * vec4(jit_position, 1);
         jit_out.depth[i] = length(position.xyz) / far_clip[i];
@@ -114,7 +115,9 @@ void main(void)
         device = vec4(clip.x / clip.w, clip.y / clip.w, clip.z / clip.w, 1.);
         screen = viewport_matrix * device;
         jit_out.beamer_uv[i] = vec4(screen.x, screen.y, 0., 1.);
-        jit_out.beamer_texcoord[i] = vec2(texMatrix(i) * jit_out.beamer_uv[i]);
+        // since the first texture is the objects default texture,
+        // we are starting with the second one, hence (i+1)
+        jit_out.beamer_texcoord[i] = vec2(texMatrix(i + 1) * jit_out.beamer_uv[i]);
     }
-    
+
 }

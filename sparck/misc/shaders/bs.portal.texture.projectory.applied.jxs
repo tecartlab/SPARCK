@@ -1,11 +1,13 @@
 <jittershader name="bs.portal.spatial.se.bake.mask.6.jxs">
 	<description>SPARCK - multi projection - Shader</description>
 	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
 
 	<param name="mode" type="int" default="0" />
 
 	<language name="glsl" version="1.2">
 		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
 
 		<bind param="mode" program="fp" />
 
@@ -19,13 +21,15 @@
 #version 120
 
 varying vec2 texcoord0;
+varying vec2 texcoord1;
 
 void main(void)
 {
 	// perform standard transform on vertex
 	gl_Position = ftransform();
 
- 	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	texcoord1 = vec2(gl_TextureMatrix[1] * gl_MultiTexCoord1);
 }
 
 ]]>
@@ -41,16 +45,18 @@ void main(void)
 */
 
 varying vec2 texcoord0;
+varying vec2 texcoord1;
 
 uniform int mode;
 
 // samplers
 uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
 
 // entry point
 void main()
 {
-  gl_FragColor = texture2DRect(tex0, texcoord0);
+  gl_FragColor = texture2DRect(tex1, texcoord1);
 }
 
 ]]>

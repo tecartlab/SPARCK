@@ -47,6 +47,7 @@
 	<param name="tex3" type="int" default="3" />
 	<param name="tex4" type="int" default="4" />
 	<param name="tex5" type="int" default="5" />
+	<param name="tex6" type="int" default="6" />
 
 	<language name="glsl" version="1.2">
 		<bind param="tex0" program="fp" />
@@ -55,6 +56,7 @@
 		<bind param="tex3" program="fp" />
 		<bind param="tex4" program="fp" />
 		<bind param="tex5" program="fp" />
+		<bind param="tex6" program="fp" />
 
 		<bind param="beamer_count" program="fp" />
 		<bind param="beamer_color" program="fp" />
@@ -117,6 +119,7 @@ uniform sampler2DRect tex2;
 uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -218,7 +221,7 @@ void main()
 		}
 	}
 
-	gl_FragColor = (side > 0)?texture2DRect(tex0, (gl_TextureMatrix[0] * texcoord0).st):offColor;
+	gl_FragColor = (side > 0)?texture2DRect(tex1, (gl_TextureMatrix[1] * texcoord0).st):offColor;
     
     // in case it is rendered to stage and stage_mode is set to colored:
 	if(mode == 0 && stage_mode >= 1){
