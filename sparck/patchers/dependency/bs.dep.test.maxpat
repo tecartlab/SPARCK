@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 533.0, 185.0, 462.0, 295.0 ],
+		"rect" : [ 533.0, 185.0, 462.0, 316.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -41,6 +41,29 @@
 		"title" : "Dependencies",
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "@package", "ICST Ambisonics", "@version", "3.0.1" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-18",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.dep.packageTest.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 170.0, 401.285714285714334, 440.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 11.0, 230.0, 440.0, 24.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "@package", "ia.facestream", "@version", "1.0.0", "@url", "https://gitlab.zhdk.ch/iaspace/05_projects/1916_digitalhumans/face-stream-maxpackage" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -55,9 +78,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 206.0, 436.5, 440.0, 24.0 ],
+					"patching_rect" : [ 207.0, 483.5, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 256.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 282.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -70,7 +93,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 206.0, 504.0, 22.0, 22.0 ]
+					"patching_rect" : [ 207.0, 551.0, 22.0, 22.0 ]
 				}
 
 			}
@@ -118,7 +141,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 190.0, 544.0, 30.0, 30.0 ]
+					"patching_rect" : [ 191.0, 591.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -154,7 +177,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 235.0, 504.0, 33.0, 22.0 ],
+					"patching_rect" : [ 236.0, 551.0, 33.0, 22.0 ],
 					"text" : "front"
 				}
 
@@ -166,7 +189,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 206.0, 474.5, 34.0, 22.0 ],
+					"patching_rect" : [ 207.0, 521.5, 34.0, 22.0 ],
 					"text" : "sel 9"
 				}
 
@@ -193,7 +216,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 18.5, 401.5, 60.0, 22.0 ],
+					"patching_rect" : [ 19.5, 448.5, 60.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -206,7 +229,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.5, 431.5, 83.0, 49.0 ],
+					"patching_rect" : [ 19.5, 478.5, 83.0, 49.0 ],
 					"text" : "window flags nomenu, window exec"
 				}
 
@@ -218,7 +241,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 18.5, 492.5, 69.0, 22.0 ],
+					"patching_rect" : [ 19.5, 539.5, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -309,9 +332,9 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 186.0, 399.5, 440.0, 24.0 ],
+					"patching_rect" : [ 187.0, 446.5, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 230.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 256.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -474,6 +497,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"order" : 1,
 					"source" : [ "obj-19", 1 ]
@@ -553,7 +583,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-18", 0 ],
 					"source" : [ "obj-9", 0 ]
 				}
 
@@ -572,6 +602,10 @@
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
@@ -596,13 +630,13 @@
 , 			{
 				"name" : "BlueButton",
 				"default" : 				{
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
-					"centerjust" : [ 2 ],
-					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
 					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"fontname" : [ "Courier New" ]
+					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
+					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
+					"fontname" : [ "Courier New" ],
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"centerjust" : [ 2 ]
 				}
 ,
 				"parentstyle" : "",
