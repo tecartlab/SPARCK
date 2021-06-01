@@ -599,8 +599,8 @@
 													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 4,
-													"outlettype" : [ "", "", "int", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "", "", "int", "", "" ],
 													"patching_rect" : [ 56.0, 17.0, 229.0, 49.0 ],
 													"text" : "bs.ossia.parameter.rendergroup.drawto marker/renderGroup \"Selection of the rendergroups to render the markers\""
 												}
@@ -3063,7 +3063,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.444426999999962, 263.211303999999984, 62.0, 20.0 ],
+					"patching_rect" : [ 33.94442699999999, 274.211303999999984, 62.0, 20.0 ],
 					"text" : "ossia.model"
 				}
 
@@ -3137,7 +3137,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 212.244426999999973, 247.211303999999984, 75.0, 20.0 ],
+					"patching_rect" : [ 186.94442699999999, 274.211303999999984, 75.0, 20.0 ],
 					"text" : "prepend name"
 				}
 
@@ -3149,7 +3149,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 212.244426999999973, 280.211303999999984, 62.0, 20.0 ],
+					"patching_rect" : [ 186.94442699999999, 307.211303999999984, 62.0, 20.0 ],
 					"text" : "pattrmarker"
 				}
 
@@ -3199,7 +3199,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "set <property> <value(s)>" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -3266,7 +3266,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 260.944427000000019, 321.211303999999984, 35.0, 20.0 ],
+					"patching_rect" : [ 241.644427000000036, 348.211303999999984, 35.0, 20.0 ],
 					"text" : "anim"
 				}
 
@@ -3302,7 +3302,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 212.244426999999973, 204.148224000000027, 99.0, 20.0 ],
+					"patching_rect" : [ 186.94442699999999, 231.148224000000027, 99.0, 20.0 ],
 					"text" : "route setmsgtitle"
 				}
 
@@ -3311,11 +3311,11 @@
 				"box" : 				{
 					"id" : "obj-28",
 					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 6,
-					"outlettype" : [ "", "", "", "", "", "" ],
-					"patching_rect" : [ 117.444426999999962, 168.148224000000027, 256.0, 20.0 ],
-					"text" : "routepass address enable setmsgtitle dispose transform"
+					"numinlets" : 7,
+					"numoutlets" : 7,
+					"outlettype" : [ "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 33.94442699999999, 179.148224000000027, 273.0, 20.0 ],
+					"text" : "routepass address set enable setmsgtitle dispose transform"
 				}
 
 			}
@@ -3486,7 +3486,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-28", 3 ]
+					"source" : [ "obj-28", 4 ]
 				}
 
 			}
@@ -3494,7 +3494,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
 					"order" : 0,
-					"source" : [ "obj-28", 2 ]
+					"source" : [ "obj-28", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"source" : [ "obj-28", 1 ]
 				}
 
 			}
@@ -3509,21 +3516,21 @@
 				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"order" : 1,
-					"source" : [ "obj-28", 2 ]
+					"source" : [ "obj-28", 3 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
-					"source" : [ "obj-28", 1 ]
+					"source" : [ "obj-28", 2 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 1 ],
-					"source" : [ "obj-28", 4 ]
+					"source" : [ "obj-28", 5 ]
 				}
 
 			}

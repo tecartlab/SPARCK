@@ -2488,8 +2488,8 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 4,
-													"outlettype" : [ "", "", "int", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "", "", "int", "", "" ],
 													"patching_rect" : [ 51.0, 307.0, 591.0, 22.0 ],
 													"text" : "bs.ossia.parameter.rendergroup.drawto gizmo/renderGroup \"render group to draw camera gizmo if parent is type mirror\""
 												}
@@ -5360,7 +5360,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 373.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u347013882"
+													"text" : "anim u623020609"
 												}
 
 											}
@@ -5456,7 +5456,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 186.666626000000008, 281.197387999999989, 106.0, 22.0 ],
-													"text" : "anim u649013845"
+													"text" : "anim u142020582"
 												}
 
 											}
@@ -5517,7 +5517,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 551.273192999999992, 281.197387999999989, 105.0, 22.0 ],
-													"text" : "anim u497011515"
+													"text" : "anim u557020555"
 												}
 
 											}
@@ -7176,18 +7176,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.5, 223.0, 137.0, 22.0 ],
-									"text" : "sprintf address node/%s"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"comment" : "",
 									"id" : "obj-4",
 									"index" : 4,
@@ -7214,11 +7202,11 @@
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 27.0, 60.0, 163.0, 22.0 ],
-									"text" : "routepass setmsgtitle enable"
+									"numinlets" : 5,
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 27.0, 60.0, 227.0, 22.0 ],
+									"text" : "routepass address set setmsgtitle enable"
 								}
 
 							}
@@ -7286,21 +7274,28 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-18", 0 ],
-									"source" : [ "obj-17", 0 ]
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-2", 3 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-2", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
 									"source" : [ "obj-2", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
+									"destination" : [ "obj-18", 0 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -7308,15 +7303,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"source" : [ "obj-2", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"order" : 2,
-									"source" : [ "obj-27", 0 ]
+									"source" : [ "obj-2", 4 ]
 								}
 
 							}
@@ -7449,7 +7436,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 707.4884033203125, 472.4559326171875, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 101.199999999999989, 26.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 112.0, 26.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[3/4]",
 					"viewvisibility" : 1
 				}
@@ -7483,7 +7470,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "set <property> <value(s)>" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -7578,7 +7565,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 453.622833000000014, 472.455933000000016, 48.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 36.399999999999999, 26.0, 10.0, 10.0 ],
+					"presentation_rect" : [ 58.0, 26.0, 10.0, 10.0 ],
 					"varname" : "vpl_outlet[2/4]",
 					"viewvisibility" : 1
 				}

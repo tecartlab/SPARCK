@@ -415,8 +415,8 @@
 									"id" : "obj-16",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "int", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "int", "", "" ],
 									"patching_rect" : [ 673.111746986762341, 18.000000000000028, 527.0, 22.0 ],
 									"text" : "bs.ossia.parameter.rendergroup.drawto gizmo/renderGroup \"render group to draw beamer gizmo\""
 								}
@@ -1210,7 +1210,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 13.381769824797288, 265.065795999999864, 62.0, 20.0 ],
+					"patching_rect" : [ 13.381769824797288, 194.197387999999876, 62.0, 20.0 ],
 					"text" : "ossia.model"
 				}
 
@@ -1225,7 +1225,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 13.381769824797288, 291.065795999999921, 69.0, 22.0 ],
+					"patching_rect" : [ 13.381769824797288, 227.065795999999921, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher",
 					"varname" : "vpl_ThisNodePatcher"
@@ -3363,18 +3363,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 33.0, 168.5, 137.0, 22.0 ],
-									"text" : "sprintf address node/%s"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-43",
@@ -3394,11 +3382,11 @@
 									"fontsize" : 10.0,
 									"id" : "obj-4",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 5,
-									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 180.0, 53.0, 206.0, 20.0 ],
-									"text" : "routepass setmsgtitle enable dispose nodeid"
+									"numinlets" : 7,
+									"numoutlets" : 7,
+									"outlettype" : [ "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 33.0, 52.0, 260.0, 20.0 ],
+									"text" : "routepass address set setmsgtitle enable dispose nodeid"
 								}
 
 							}
@@ -3411,7 +3399,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 180.0, 12.0, 30.0, 30.0 ]
+									"patching_rect" : [ 33.0, 11.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -3423,7 +3411,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 180.0, 209.1973876953125, 30.0, 30.0 ]
+									"patching_rect" : [ 115.0, 216.1973876953125, 30.0, 30.0 ]
 								}
 
 							}
@@ -3458,7 +3446,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 180.0, 168.5, 88.0, 22.0 ],
+									"patching_rect" : [ 115.0, 175.5, 88.0, 22.0 ],
 									"text" : "prepend name"
 								}
 
@@ -3470,7 +3458,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 180.0, 119.5, 99.0, 22.0 ],
+									"patching_rect" : [ 115.0, 126.5, 99.0, 22.0 ],
 									"text" : "route setmsgtitle"
 								}
 
@@ -3478,23 +3466,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"order" : 1,
-									"source" : [ "obj-27", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-37", 0 ],
-									"order" : 0,
 									"source" : [ "obj-27", 0 ]
 								}
 
@@ -3510,6 +3482,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
 									"order" : 1,
+									"source" : [ "obj-4", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-4", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -3517,14 +3503,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-43", 0 ],
-									"source" : [ "obj-4", 2 ]
+									"source" : [ "obj-4", 4 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-73", 0 ],
-									"source" : [ "obj-4", 1 ]
+									"source" : [ "obj-4", 3 ]
 								}
 
 							}
@@ -3532,7 +3518,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-73", 0 ],
 									"order" : 0,
-									"source" : [ "obj-4", 0 ]
+									"source" : [ "obj-4", 2 ]
 								}
 
 							}
@@ -3702,7 +3688,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "set <property> <value(s)>" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -4637,6 +4623,10 @@
 			}
 , 			{
 				"name" : "ossia.parameter.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
 , 			{

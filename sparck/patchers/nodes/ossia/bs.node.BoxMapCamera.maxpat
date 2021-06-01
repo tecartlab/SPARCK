@@ -672,8 +672,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "int", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "int", "", "" ],
 									"patching_rect" : [ 50.139007513671913, 100.0, 183.0, 49.0 ],
 									"text" : "bs.ossia.parameter.rendergroup.drawto gizmo/renderGroup \"enable render of camera gizmo\""
 								}
@@ -1015,19 +1015,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 8.5, 297.81591796875, 30.0, 30.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 8.5, 217.81591796875, 137.0, 22.0 ],
-									"text" : "sprintf address node/%s"
+									"patching_rect" : [ 24.500015258789062, 302.81591796875, 30.0, 30.0 ]
 								}
 
 							}
@@ -1071,11 +1059,11 @@
 								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 307.500015258789062, 77.0, 161.0, 22.0 ],
-									"text" : "routepass enable setmsgtitle"
+									"numinlets" : 5,
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 24.500015258789062, 81.0, 227.0, 22.0 ],
+									"text" : "routepass address set enable setmsgtitle"
 								}
 
 							}
@@ -1088,7 +1076,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 414.0, 135.81591796875, 173.0, 20.0 ],
+									"patching_rect" : [ 389.0, 139.81591796875, 173.0, 20.0 ],
 									"text" : "route enable title"
 								}
 
@@ -1102,7 +1090,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 307.500015258789062, 17.0, 30.0, 30.0 ]
+									"patching_rect" : [ 24.500015258789062, 21.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1189,14 +1177,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"order" : 4,
-									"source" : [ "obj-1", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
 									"order" : 0,
 									"source" : [ "obj-1", 1 ]
@@ -1229,7 +1209,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"source" : [ "obj-11", 2 ]
+									"source" : [ "obj-11", 4 ]
 								}
 
 							}
@@ -1237,7 +1217,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"order" : 0,
-									"source" : [ "obj-11", 0 ]
+									"source" : [ "obj-11", 2 ]
 								}
 
 							}
@@ -1245,6 +1225,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"order" : 1,
+									"source" : [ "obj-11", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-11", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -1252,7 +1246,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-89", 0 ],
-									"source" : [ "obj-11", 1 ]
+									"source" : [ "obj-11", 3 ]
 								}
 
 							}
@@ -1260,13 +1254,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-87", 0 ],
 									"source" : [ "obj-37", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -1393,7 +1380,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "set <property> <value(s)>" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,

@@ -526,11 +526,11 @@
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 35.0, 44.0, 107.0, 22.0 ],
-									"text" : "routepass address"
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 35.0, 44.0, 127.0, 22.0 ],
+									"text" : "routepass address set"
 								}
 
 							}
@@ -635,6 +635,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-3", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-3", 1 ]
 								}
 
@@ -881,8 +888,8 @@
 													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 4,
-													"outlettype" : [ "", "", "int", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "", "", "int", "", "" ],
 													"patching_rect" : [ 92.833434999999952, 100.0, 183.0, 49.0 ],
 													"text" : "bs.ossia.parameter.rendergroup.drawto gizmo/renderGroup \"enable render of camera gizmo\""
 												}
@@ -1704,8 +1711,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "int", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "int", "", "" ],
 									"patching_rect" : [ 148.0, 119.096191000000005, 229.000000000000057, 49.0 ],
 									"text" : "bs.ossia.parameter.rendergroup.drawto render/renderGroup \"Selection of the rendergroups to render this object\""
 								}
@@ -2227,7 +2234,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "set <property> <value(s)>" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,

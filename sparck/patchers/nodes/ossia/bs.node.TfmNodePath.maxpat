@@ -108,8 +108,8 @@
 					"id" : "obj-55",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "int", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "int", "", "" ],
 					"patching_rect" : [ 389.333374000000049, 578.56109600000002, 506.0, 20.0 ],
 					"text" : "bs.ossia.parameter.rendergroup.drawto render/renderGroup \"Selection of the rendergroups to render this object\""
 				}
@@ -813,11 +813,11 @@
 					"fontsize" : 10.0,
 					"id" : "obj-13",
 					"maxclass" : "newobj",
-					"numinlets" : 4,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 19.25, 124.211304000000013, 174.0, 20.0 ],
-					"text" : "routepass address enable setmsgtitle"
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 19.25, 124.211304000000013, 190.0, 20.0 ],
+					"text" : "routepass address set enable setmsgtitle"
 				}
 
 			}
@@ -1511,7 +1511,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "properties" ],
+					"args" : [ "#2", "#4", 1, "properties", -1, "@hint", "set <property> <value(s)>" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -1590,8 +1590,7 @@
 					"id" : "obj-51",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "" ],
+					"numoutlets" : 0,
 					"patching_rect" : [ 393.0, 707.56109600000002, 102.0, 23.0 ],
 					"text" : "jit.gl.path sparck"
 				}
@@ -1636,7 +1635,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
-					"source" : [ "obj-13", 3 ]
+					"source" : [ "obj-13", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"source" : [ "obj-13", 1 ]
 				}
 
 			}
@@ -1650,7 +1656,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
-					"source" : [ "obj-13", 2 ]
+					"source" : [ "obj-13", 3 ]
 				}
 
 			}
@@ -1658,7 +1664,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
 					"order" : 1,
-					"source" : [ "obj-13", 1 ]
+					"source" : [ "obj-13", 2 ]
 				}
 
 			}
@@ -1666,7 +1672,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-55", 0 ],
 					"order" : 0,
-					"source" : [ "obj-13", 1 ]
+					"source" : [ "obj-13", 2 ]
 				}
 
 			}
@@ -2210,6 +2216,10 @@
 			}
 , 			{
 				"name" : "ossia.parameter.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
 , 			{
