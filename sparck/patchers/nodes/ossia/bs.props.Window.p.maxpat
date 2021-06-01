@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -86,7 +86,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "export", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "export..", ".", "@size", 59, 19, "@hint", "Save current window content to ~/_export/_textures/<nodename>.png" ],
+					"args" : [ "#1", "export", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "export..", ".", "@size", 59, 19, "@hint", "Save current window content to ~/_export/_textures/<nodename>.png" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -108,7 +108,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "reset", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "reset...", "@size", 59, 19, "@mode", 1, "@hint", "reset to default window position" ],
+					"args" : [ "#1", "reset", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "reset...", "@size", 59, 19, "@mode", 1, "@hint", "reset to default window position" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -176,7 +176,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "displaySelection", "@text", "display", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "settings...", "@size", 179, 19, "@mode", 1 ],
+					"args" : [ "#1", "displaySelection", "@text", "display", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "settings...", "@size", 179, 19, "@mode", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -199,7 +199,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "position/mode", "@text", "position", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "Desktop", "@size", 59, 19 ],
+					"args" : [ "#1", "position/mode", "@text", "position", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "Desktop", "@size", 59, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 400.0, 91.0, 424.0, 503.0 ],
+		"rect" : [ 142.0, 316.0, 521.0, 503.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "#2", "@uselabeltext", 1, "@onlabeltext", "exit calibration", "@offlabeltext", "calibrate", "@size", 238, 19, "@gt", 3 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-6",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.remote.button.maxpat",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 123.5, 257.0, 257.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 0.0, 238.0, 19.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "",
 					"id" : "obj-5",
 					"index" : 0,
@@ -61,29 +84,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 242.5, 42.066345999999953, 30.0, 30.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "#1", "#2", "@usedisplaytext", 1, "@ondisplaytext", "exit calibration", "@offdisplaytext", "calibrate", "@size", 238, 19, "@gt", 3 ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-6",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.ossia.remote.button.maxpat",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 123.5, 257.0, 257.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 238.0, 19.0 ],
-					"viewvisibility" : 1
 				}
 
 			}
@@ -123,14 +123,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 334.0, 540.0, 1050.0, 316.0 ],
+						"rect" : [ 293.0, 637.0, 1050.0, 316.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -158,6 +158,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-10",
@@ -165,8 +166,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 121.0, 93.0, 607.0, 22.0 ],
-									"text" : "ignoreclick 1, offdisplaytext \"to calibrate: first load/create calibfile\", off_up_bg_color 0.824 0.498 0.498 1., mode 1"
+									"patching_rect" : [ 121.0, 93.0, 595.0, 22.0 ],
+									"text" : "ignoreclick 1, offlabeltext \"to calibrate: first load/create calibfile\", off_up_bg_color 0.824 0.498 0.498 1., mode 1"
 								}
 
 							}
@@ -189,8 +190,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 70.0, 132.0, 408.0, 22.0 ],
-									"text" : "ignoreclick 0, offdisplaytext, off_up_bg_color 0.698 0.827 0.502 1., mode 1"
+									"patching_rect" : [ 70.0, 132.0, 392.0, 22.0 ],
+									"text" : "ignoreclick 0, offlabeltext, off_up_bg_color 0.698 0.827 0.502 1., mode 1"
 								}
 
 							}
@@ -283,12 +284,11 @@
 					"off_up_bg_color" : [ 0.824, 0.498, 0.498, 1.0 ],
 					"off_up_fg_color" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
 					"off_up_textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ],
-					"offdisplaytext" : "to calibrate first load/create calibfile",
+					"offlabeltext" : "to calibrate: first load/create calibfile",
 					"on_down_bg_color" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"on_down_fg_color" : [ 0.541176470588235, 0.474509803921569, 0.27843137254902, 1.0 ],
 					"on_up_bg_color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"on_up_fg_color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
-					"ondisplaytext" : "exit calibration",
 					"onfontstyle" : 1,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
@@ -297,7 +297,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 238.0, 19.0 ],
 					"pviewfontsize" : 9.0,
 					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ],
-					"usedisplaytext" : 1
+					"uselabeltext" : 1
 				}
 
 			}

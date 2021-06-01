@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "pause", "@usedisplaytext", 1, "@ondisplaytext", "resume", "@offdisplaytext", "pause", "@size", 59, 19, "@mode", 0, "@hint", "pause/resume playback" ],
+					"args" : [ "#1", "pause", "@uselabeltext", 1, "@onlabeltext", "resume", "@offlabeltext", "pause", "@size", 59, 19, "@mode", 0, "@hint", "pause/resume playback" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -360,7 +360,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "stop", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "stop", "@size", 59, 19, "@hint", "stop playing ques" ],
+					"args" : [ "#1", "stop", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "stop", "@size", 59, 19, "@hint", "stop playing ques" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -382,7 +382,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "edit", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "edit...", "@size", 59, 19, "@mode", 1, "@hint", "edit mesh warp" ],
+					"args" : [ "#1", "edit", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "edit...", "@size", 59, 19, "@mode", 1, "@hint", "edit mesh warp" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -404,7 +404,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "progressbar", "@text", "show", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "progress...", "@size", 59, 19, "@mode", 1 ],
+					"args" : [ "#1", "progressbar", "@text", "show", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "progress...", "@size", 59, 19, "@mode", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

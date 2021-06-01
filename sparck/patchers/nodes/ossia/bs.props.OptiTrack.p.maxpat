@@ -224,7 +224,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "refetch", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "refetch...", "@size", 238, 19, "@mode", 1, "@hint", "refetch motive data description" ],
+					"args" : [ "#1", "refetch", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "refetch...", "@size", 238, 19, "@mode", 1, "@hint", "refetch motive data description" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

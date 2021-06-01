@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "refresh", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "refresh", "@size", 99, 19, "@mode", 1, "@hint", "refresh properties with editor settings" ],
+					"args" : [ "#1", "refresh", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "refresh", "@size", 99, 19, "@mode", 1, "@hint", "refresh properties with editor settings" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -62,7 +62,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "edit", "@text", "material", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "edit...", "@size", 79, 19, "@mode", 1, "@hint", "open material editor" ],
+					"args" : [ "#1", "edit", "@text", "material", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "edit...", "@size", 79, 19, "@mode", 1, "@hint", "open material editor" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

@@ -63,7 +63,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "start", "@usedisplaytext", 1, "@ondisplaytext", "stop", "@offdisplaytext", "start", "@size", 59, 19, "@mode", 0, "@hint", "start/stop playback" ],
+					"args" : [ "#1", "start", "@uselabeltext", 1, "@onlabeltext", "stop", "@offlabeltext", "start", "@size", 59, 19, "@mode", 0, "@hint", "start/stop playback" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

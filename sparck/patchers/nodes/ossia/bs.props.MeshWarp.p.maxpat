@@ -269,7 +269,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "export", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "export..", ".", "@size", 59, 19, "@hint", "Save current window content to ~/_export/_textures/<nodename>.png" ],
+					"args" : [ "#1", "export", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "export..", ".", "@size", 59, 19, "@hint", "Save current window content to ~/_export/_textures/<nodename>.png" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -291,7 +291,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "edit", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "edit...", "@size", 99, 19, "@mode", 1, "@hint", "edit mesh warp" ],
+					"args" : [ "#1", "edit", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "edit...", "@size", 99, 19, "@mode", 1, "@hint", "edit mesh warp" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -313,7 +313,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "setLattice", "@text", "lattice", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "setup...", "@size", 79, 19, "@mode", 1 ],
+					"args" : [ "#1", "setLattice", "@text", "lattice", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "setup...", "@size", 79, 19, "@mode", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

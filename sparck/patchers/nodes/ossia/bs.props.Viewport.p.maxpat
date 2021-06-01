@@ -63,7 +63,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "mesh/render", "@text", "mesh", "@usedisplaytext", 1, "@ondisplaytext", "render wireframe", "@offdisplaytext", "render flat", "@size", 179, 19 ],
+					"args" : [ "#1", "mesh/render", "@text", "mesh", "@uselabeltext", 1, "@onlabeltext", "render wireframe", "@offlabeltext", "render flat", "@size", 179, 19 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -319,7 +319,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "reset", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "reset...", "@size", 59, 19, "@mode", 1, "@hint", "reset to default settings" ],
+					"args" : [ "#1", "reset", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "reset...", "@size", 59, 19, "@mode", 1, "@hint", "reset to default settings" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -341,7 +341,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "tfm/reset", "@text", "tfm type", "@usedisplaytext", 1, "@ondisplaytext", "normalize", "@offdisplaytext", "off", "@size", 179, 19, "@isnot", "none" ],
+					"args" : [ "#1", "tfm/reset", "@text", "tfm type", "@uselabeltext", 1, "@onlabeltext", "normalize", "@offlabeltext", "off", "@size", 179, 19, "@isnot", "none" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

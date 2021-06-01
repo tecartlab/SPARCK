@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "calibrate", "@usedisplaytext", 1, "@ondisplaytext", "exit calibration", "@offdisplaytext", "calibrate", "@size", 239, 19, "@gt", 3 ],
+					"args" : [ "#1", "calibrate", "@uselabeltext", 1, "@onlabeltext", "exit calibration", "@offlabeltext", "calibrate", "@size", 239, 19, "@gt", 3 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

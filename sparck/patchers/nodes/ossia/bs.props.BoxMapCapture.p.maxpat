@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 425.0, 256.0, 363.0, 544.0 ],
+		"rect" : [ 425.0, 256.0, 645.0, 555.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "render/mode", "@text", "mode", "@menutype", "menu", "@type", "string", "@size", 119, 18, "@items", "split", "line", "cross" ],
+					"args" : [ "#1", "render/mode", "@text", "mode", "@type", "menu", "@type", "string", "@size", 119, 18, "@items", "split", "line", "cross" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -54,7 +54,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 263.0, 234.0, 208.0, 17.0 ],
+					"patching_rect" : [ 248.0, 242.0, 208.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 100.0, 182.0, 19.0 ],
 					"viewvisibility" : 1
@@ -91,7 +91,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 123.0, 299.0, 120.0, 17.0 ],
+					"patching_rect" : [ 123.0, 334.0, 120.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 41.0, 50.0, 17.0 ],
 					"text" : "render",
@@ -115,7 +115,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 248.0, 311.0, 208.0, 17.0 ],
+					"patching_rect" : [ 248.0, 346.0, 208.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 120.0, 182.0, 19.0 ],
 					"viewvisibility" : 1
@@ -161,7 +161,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 289.0, 72.0, 17.0 ],
+					"patching_rect" : [ 248.0, 324.0, 72.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 160.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -184,7 +184,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 268.0, 72.0, 17.0 ],
+					"patching_rect" : [ 248.0, 303.0, 72.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 140.0, 100.0, 19.0 ],
 					"viewvisibility" : 1
@@ -207,7 +207,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 240.0, 201.0, 23.0 ],
+					"patching_rect" : [ 248.0, 275.0, 201.0, 23.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 60.0, 60.0, 182.0, 19.0 ],
 					"viewvisibility" : 1
@@ -435,6 +435,10 @@
 			}
 , 			{
 				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
 , 			{

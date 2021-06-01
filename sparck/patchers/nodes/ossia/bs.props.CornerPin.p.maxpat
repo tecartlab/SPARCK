@@ -384,7 +384,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "reset", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "reset..", ".", "@size", 119, 19, "@hint", "reset settings" ],
+					"args" : [ "#1", "reset", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "reset..", ".", "@size", 119, 19, "@hint", "reset settings" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -406,7 +406,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "edit", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "edit...", "@size", 119, 19, "@mode", 1, "@hint", "edit cornerpin warp" ],
+					"args" : [ "#1", "edit", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "edit...", "@size", 119, 19, "@mode", 1, "@hint", "edit cornerpin warp" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,

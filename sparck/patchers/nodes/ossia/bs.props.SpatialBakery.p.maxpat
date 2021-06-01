@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "export", "@text", "texture", "@usedisplaytext", 1, "@ondisplaytext", "Output", "@offdisplaytext", "export", "@size", 59, 19, "@mode", 1, "@hint", "export texture to /_export/_textures", "@is", 1 ],
+					"args" : [ "#1", "export", "@text", "texture", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "export", "@size", 59, 19, "@mode", 1, "@hint", "export texture to /_export/_textures", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
