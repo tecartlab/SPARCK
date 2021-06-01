@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -196,8 +196,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 49.0, 19.0 ],
 					"pviewfontsize" : 9.0,
-					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ],
-					"usedisplaytext" : 1
+					"textcolor" : [ 0.254901960784314, 0.250980392156863, 0.501960784313725, 1.0 ]
 				}
 
 			}

@@ -63,7 +63,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "shader/bake/enable", "@text", "project to", "@usedisplaytext", 1, "@ondisplaytext", "baked texture", "@offdisplaytext", "canvas", "@size", 179, 19, "@isnot", "boxmap.stitched", "boxmap.crossed" ],
+					"args" : [ "#1", "shader/bake/enable", "@text", "project to", "@uselabeltext", 1, "@onlabeltext", "baked texture", "@offlabeltext", "canvas", "@size", 179, 19, "@isnot", "boxmap.stitched", "boxmap.crossed" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -867,6 +867,10 @@
 			}
 , 			{
 				"name" : "icst.button.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
 , 			{

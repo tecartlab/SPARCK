@@ -1,4 +1,4 @@
-<jittershader name="bs.portal.spatial.se.bake.mask.6.jxs">
+<jittershader name="bs.portal.spatial.bakery.mask.applied.jxs">
 	<description>SPARCK - multi projection - Shader</description>
 	<param name="tex0" type="int" default="0" />
 	<param name="tex1" type="int" default="1" />

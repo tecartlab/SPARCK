@@ -98,7 +98,7 @@
 		<bind param="collada_factor" program="vp" />
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
-        
+
 		<bind param="tex0" program="fp" />
 		<bind param="tex1" program="fp" />
 		<bind param="tex2" program="fp" />
@@ -109,7 +109,7 @@
 		<bind param="tex7" program="fp" />
 
 		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl2.glsl" />
-		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.prebake.6.fs.gl2.glsl"/>
+		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.bake.fs.gl2.glsl"/>
 	</language>
 	<language name="glsl" version="1.5">
 		<bind param="beamer_count" program="vp" />
@@ -169,6 +169,6 @@
 		<bind param="tex7" program="fp" />
 
 		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl3.glsl" />
-		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.prebake.6.fs.gl3.glsl"/>
+		<program name="fp" type="fragment" source="bs.portal.spatial.bakery.mask.bake.fs.gl3.glsl"/>
 	</language>
 </jittershader>
