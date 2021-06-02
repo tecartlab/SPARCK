@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 349.0, 398.0, 817.0, 418.0 ],
+		"rect" : [ 278.0, 213.0, 817.0, 418.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -5210,12 +5210,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
-									"linecount" : 11,
+									"linecount" : 13,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 304.083069000000023, 15.5, 469.0, 154.0 ],
-									"text" : "shader @text shader @types portal shader @description shader @offname none \n@out1 shader @outoff1 shader \n@out2 texture @outoff2 texture \n@out3 shader_right shader @outoff3 shader \n@out4 texture_right texture @outoff4 texture \n@out5 stereomode >< @outoff5 0 \n@out6 shader_baking shader @outoff6 shader \n@out7 capture\n@out8 texture_4bakingPass texture @outoff8 texture\n@out9 enable_baking @outoff9 enable_baking 0 \n@out10 depth_drawto drawto @outoff10 drawto"
+									"patching_rect" : [ 304.083069000000023, 15.5, 469.0, 181.0 ],
+									"text" : "shader @text shader @types portal shader @description shader @offname none \n@out1 shader @outoff1 shader \n@out2 texture @outoff2 texture \n@out3 shader_right shader @outoff3 shader \n@out4 texture_right texture @outoff4 texture \n@out5 stereomode >< @outoff5 0 \n@out6 shader_baking shader @outoff6 shader \n@out7 capture\n@out8 texture_4bakingPass texture @outoff8 texture\n@out9 enable_baking @outoff9 enable_baking 0 \n@out10 depth_drawto drawto @outoff10 drawto\n@out11 occlusion @outoff11 occlusion 0\n@out12 occlusion_update @outoff12 occlusion_update send off"
 								}
 
 							}
@@ -5293,6 +5293,41 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-26",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 403.083602999999698, 128.59619140625, 45.0, 22.0 ],
+													"text" : "update"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-11",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 353.416936333333126, 164.868469000000005, 49.0, 22.0 ],
+													"text" : "forward"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-7",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 403.083602999999698, 95.0, 32.0, 22.0 ],
+													"text" : "gate"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-18",
 													"maxclass" : "message",
 													"numinlets" : 2,
@@ -5322,7 +5357,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 488.083069000000023, 93.59619140625, 19.0, 22.0 ],
+													"patching_rect" : [ 488.0, 128.59619140625, 19.0, 22.0 ],
 													"text" : "t l"
 												}
 
@@ -5355,12 +5390,12 @@
 												"box" : 												{
 													"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 													"id" : "obj-1",
-													"linecount" : 6,
+													"linecount" : 9,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 237.788313954954617, 77.368469000000005, 153.000000000000057, 89.0 ],
+													"patching_rect" : [ 232.083590166666568, 111.368469000000005, 117.666692333333174, 129.0 ],
 													"text" : "ossia.parameter internal/bake/enable @type bool @default 0 @description \"indicates if baking pass is enabled\" @invisible 1 @mode get"
 												}
 
@@ -6014,18 +6049,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-42",
-													"linecount" : 3,
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 173.25024400000018, 172.368469000000005, 155.0, 47.0 ],
-													"text" : "condition for rendering:\n1. this baking shader is on\n2. this object is switched on"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-33",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
@@ -6052,11 +6075,11 @@
 												"box" : 												{
 													"id" : "obj-13",
 													"maxclass" : "newobj",
-													"numinlets" : 3,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 137.416936333333126, 47.868469000000005, 157.0, 22.0 ],
-													"text" : "route enable enable_baking"
+													"numinlets" : 5,
+													"numoutlets" : 5,
+													"outlettype" : [ "", "", "", "", "" ],
+													"patching_rect" : [ 137.416936333333126, 47.868469000000005, 307.0, 22.0 ],
+													"text" : "route enable enable_baking occlusion occlusion_update"
 												}
 
 											}
@@ -6067,7 +6090,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 137.083602999999755, 132.368469000000005, 88.333333333333371, 22.0 ],
+													"patching_rect" : [ 137.083602999999755, 132.368469000000005, 91.333333333333371, 22.0 ],
 													"text" : "pak 0 0"
 												}
 
@@ -6192,6 +6215,20 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-11", 0 ],
+													"source" : [ "obj-13", 3 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-13", 2 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-9", 1 ],
 													"order" : 1,
 													"source" : [ "obj-13", 1 ]
@@ -6229,6 +6266,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-10", 0 ],
+													"order" : 0,
 													"source" : [ "obj-16", 0 ]
 												}
 
@@ -6237,6 +6275,14 @@
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-16", 2 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 1 ],
+													"order" : 1,
+													"source" : [ "obj-16", 0 ]
 												}
 
 											}
@@ -6303,6 +6349,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-24", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-11", 0 ],
+													"source" : [ "obj-26", 0 ]
 												}
 
 											}
@@ -6456,6 +6509,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-26", 0 ],
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-51", 0 ],
 													"source" : [ "obj-8", 0 ]
 												}
@@ -6564,7 +6624,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "shader", "@text", "shader", "@types", "portal", "shader", "@out1", "shader", "@outoff1", "shader", "@out2", "texture", "@outoff2", "texture", "@out3", "shader_right", "shader", "@outoff3", "shader", "@out4", "texture_right", "texture", "@outoff4", "texture", "@out5", "stereomode", "><", "@outoff5", 0, "@out6", "shader_baking", "shader", "@outoff6", "shader", "@out7", "capture", "@out8", "texture_4bakingPass", "texture", "@outoff8", "texture", "@out9", "enable_baking", "@outoff9", "enable_baking", 0, "@out10", "depth_drawto", "drawto", "@outoff10", "drawto", "@offname", "none", "@description", "shader" ],
+									"args" : [ "shader", "@text", "shader", "@types", "portal", "shader", "@out1", "shader", "@outoff1", "shader", "@out2", "texture", "@outoff2", "texture", "@out3", "shader_right", "shader", "@outoff3", "shader", "@out4", "texture_right", "texture", "@outoff4", "texture", "@out5", "stereomode", "><", "@outoff5", 0, "@out6", "shader_baking", "shader", "@outoff6", "shader", "@out7", "capture", "@out8", "texture_4bakingPass", "texture", "@outoff8", "texture", "@out9", "enable_baking", "@outoff9", "enable_baking", 0, "@out10", "depth_drawto", "drawto", "@outoff10", "drawto", "@offname", "none", "@description", "shader", "@out11", "occlusion", "@outoff11", "occlusion", 0, "@out12", "occlusion_update", "@outoff12", "occlusion_update", "set" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -6760,6 +6820,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-7", 2 ],
 									"source" : [ "obj-19", 15 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 1 ],
+									"source" : [ "obj-19", 11 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 1 ],
+									"source" : [ "obj-19", 10 ]
 								}
 
 							}
