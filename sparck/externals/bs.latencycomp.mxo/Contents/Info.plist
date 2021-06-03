@@ -9,13 +9,13 @@
 	<key>CFBundleExecutable</key>
 	<string>bs.latencycomp</string>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>7.0.1</string>
+	<string>8.0.2</string>
 	<key>CFBundleLongVersionString</key>
-	<string>bs.latencycomp 7.0.1, Copyright 2014 Cycling '74</string>
+	<string>bs.latencycomp 8.0.2, Copyright 2014 Cycling '74</string>
 	<key>CFBundlePackageType</key>
 	<string>iLaX</string>
 	<key>CFBundleShortVersionString</key>
-	<string>7.0.1</string>
+	<string>8.0.2</string>
 	<key>CFBundleSignature</key>
 	<string>max2</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -23,13 +23,13 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>7.0.1</string>
+	<string>8.0.2</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>12C33</string>
+	<string>12D4e</string>
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
@@ -39,10 +39,10 @@
 	<key>DTSDKName</key>
 	<string>macosx11.1</string>
 	<key>DTXcode</key>
-	<string>1230</string>
+	<string>1240</string>
 	<key>DTXcodeBuild</key>
-	<string>12C33</string>
+	<string>12D4e</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.7</string>
+	<string>10.9</string>
 </dict>
 </plist>

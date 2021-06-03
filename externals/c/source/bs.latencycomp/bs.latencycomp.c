@@ -47,9 +47,9 @@ typedef struct bs_latencycomp
     MTQuaternion v_rot;
     MTVec3D v_posSpeed;
     MTQuaternion v_rotSpeed;
-    float v_compensation;
+    long v_compensation;
     float v_filter;
-    float v_time;
+    long v_time;
     t_atom v_outputList[8];
 } t_bs_latencycomp;
 
@@ -62,6 +62,7 @@ void *bs_latencycomp_new (t_symbol *s, short ac, t_atom *av);
 
 // attribute setter and getter
 t_max_err bs_filter_set(t_bs_latencycomp *x, t_object *attr, long argc, t_atom *argv);
+t_max_err bs_compensation_set(t_bs_latencycomp *x, t_object *attr, long argc, t_atom *argv);
 
 void ext_main(void *r)
 {
@@ -75,6 +76,7 @@ void ext_main(void *r)
 	CLASS_ATTR_FLOAT(c, "compensation", 0, t_bs_latencycomp, v_compensation);
 	CLASS_ATTR_CATEGORY(c, "compensation", 0, "Factor");
 	CLASS_ATTR_BASIC(c, "compensation", 0);
+    CLASS_ATTR_ACCESSORS(c, "compensation", NULL, bs_compensation_set);
 
     CLASS_ATTR_FLOAT(c, "filter", 0, t_bs_latencycomp, v_filter);
     CLASS_ATTR_CATEGORY(c, "filter", 0, "Factor");
@@ -88,6 +90,18 @@ void ext_main(void *r)
 	return;
 }
 
+t_max_err bs_compensation_set(t_bs_latencycomp *x, t_object *attr, long argc, t_atom *argv)
+{
+    long compensation = atom_getlong(argv);
+    if (compensation >= 0 ){
+        x->v_compensation = compensation;
+    } else {
+        x->v_compensation = 0;
+    }
+    return 0;
+}
+
+
 t_max_err bs_filter_set(t_bs_latencycomp *x, t_object *attr, long argc, t_atom *argv)
 {
     long size = atom_getlong(argv);
@@ -99,7 +113,7 @@ t_max_err bs_filter_set(t_bs_latencycomp *x, t_object *attr, long argc, t_atom *
         x->v_filter = atom_getfloat(argv);
     } else if (filter < 0.){
         x->v_filter = 0.;
-    }else if (filter > 1.0){
+    } else if (filter > 1.0){
         x->v_filter = 1.;
     }
     return 0;
@@ -114,7 +128,7 @@ void bs_latencycomp_list(t_bs_latencycomp *x, t_symbol *s, short argc, t_atom *a
     }
     
     // get time
-    float time = atom_getfloat(argv);
+    long time = atom_getlong(argv);
 
     // get position
     float px = atom_getfloat(argv + 1);
@@ -138,17 +152,17 @@ void bs_latencycomp_list(t_bs_latencycomp *x, t_symbol *s, short argc, t_atom *a
     }
 
     // get delta
-    float delta = time - x->v_time;
+    long delta = time - x->v_time;
     
-    if (delta != 0.0){
+    if (delta != 0){
         
-        if (x->v_compensation != 0.0) {
+        if (x->v_compensation != 0) {
             // get position and rotation speed
             MTVec3D dPos = mtSubtractVectorVector(pos, x->v_pos);
-            MTVec3D posSpeed = mtMultiplyVectorScalar(dPos, 1. / delta);
+            MTVec3D posSpeed = mtMultiplyVectorScalar(dPos, 1. / (double)delta);
             
             MTQuaternion dRot = mtSubtractMTQuaternionMTQuaternion(&rot, &x->v_rot);
-            MTQuaternion rotSpeed = mtMultMTQuaternionScalar(&dRot, 1. / delta);
+            MTQuaternion rotSpeed = mtMultMTQuaternionScalar(&dRot, 1. / (double)delta);
          
             /* Speed Smoothing */
 
@@ -161,7 +175,7 @@ void bs_latencycomp_list(t_bs_latencycomp *x, t_symbol *s, short argc, t_atom *a
             /* Prediction */
 
             // prepare output
-            float pTime = time;
+            long pTime = time;
             MTVec3D pPos = pos;
             MTQuaternion pRot = rot;
 
@@ -174,7 +188,6 @@ void bs_latencycomp_list(t_bs_latencycomp *x, t_symbol *s, short argc, t_atom *a
                 MTQuaternion pRotPredict = mtMultMTQuaternionScalar(&rotSpeed, x->v_compensation);
                 pRot = mtAddMTQuaternionMTQuaternion(&rot, &pRotPredict);
                 mtNormMTQuaternion(&pRot);
-
             }
 
             // update state

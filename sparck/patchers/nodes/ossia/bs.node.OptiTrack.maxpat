@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "OptiTrack_1",
+		"globalpatchername" : "OptiTrack",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-35",
@@ -922,7 +922,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 331.0, 85.0, 1075.0, 640.0 ],
+						"rect" : [ 92.0, 387.0, 1075.0, 640.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1042,7 +1042,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 458.5, 451.0, 581.0, 36.0 ],
+									"patching_rect" : [ 458.5, 451.0, 581.0, 35.0 ],
 									"text" : "ossia.parameter outgoingIP @type string @default localhost @description \"outgoing ip-address for sending motive commands to\""
 								}
 
@@ -1056,7 +1056,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 433.499999999999886, 351.351775999999973, 626.0, 36.0 ],
+									"patching_rect" : [ 433.499999999999886, 351.351775999999973, 626.0, 35.0 ],
 									"text" : "ossia.parameter outgoingPort @type int @default 54322 @description \"outgoing port for sending motive commands to\" @min 1000 @max 65535"
 								}
 
@@ -1269,7 +1269,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 508.0, 214.0, 500.0, 36.0 ],
+									"patching_rect" : [ 508.0, 214.0, 500.0, 35.0 ],
 									"text" : "ossia.parameter leapDebug @type bool @default false @description \"debug flag for latency compensation\""
 								}
 
@@ -1313,12 +1313,13 @@
 								"box" : 								{
 									"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
 									"id" : "obj-1",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 476.0, 76.0, 518.0, 22.0 ],
-									"text" : "ossia.parameter leap @type int @default 0 @description \"latency compensation\" @unit time.ms"
+									"patching_rect" : [ 476.0, 65.851775999999973, 584.0, 35.0 ],
+									"text" : "ossia.parameter leap @type int @default 0 @description \"latency compensation\" @clip both @min 0 @max 500"
 								}
 
 							}
