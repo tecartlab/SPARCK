@@ -78,7 +78,7 @@ void main()
     vec4 ray = vec4(worldPos - beamer_pos[0], 1);
     vec3 viewline = (rot_matrix * ray).xyz;
     vec3 vl_abs = abs(viewline);
-    
+
 	vec3 raynormal = normalize(-ray.xyz);
 
 	// calculate the angle between the surface normal and the projected beam.
@@ -97,41 +97,41 @@ void main()
 			texcoord0 = vec4(
 						(viewline.z / vl_abs.x) * 0.5 + 0.5,
 						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex3, (gl_TextureMatrix[0] * texcoord0).st);
+			color = texture2DRect(tex3, (gl_TextureMatrix[1] * texcoord0).st);
 		}else{ //LEFT
 			texcoord0 = vec4(
 						-(viewline.z / vl_abs.x) * 0.5 + 0.5,
 						(viewline.y / vl_abs.x) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex1, (gl_TextureMatrix[0] * texcoord0).st);
+			color = texture2DRect(tex1, (gl_TextureMatrix[1] * texcoord0).st);
 		}
 	} else if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
 		if(viewline.y >= 0.0){ //TOP
 			texcoord0 = vec4(
 						(viewline.x / vl_abs.y) * 0.5 + 0.5,
 						(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex5, (gl_TextureMatrix[0] * texcoord0).st);
+			color = texture2DRect(tex5, (gl_TextureMatrix[1] * texcoord0).st);
 		}else{
 			texcoord0 = vec4( //BOTTOM
 						(viewline.x / vl_abs.y) * 0.5 + 0.5,
 						-(viewline.z / vl_abs.y) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex6, (gl_TextureMatrix[0] * texcoord0).st);
+			color = texture2DRect(tex6, (gl_TextureMatrix[1] * texcoord0).st);
 		}
 	} else if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
 		if(viewline.z >= 0.0){
 			texcoord0 = vec4( //BACK
 						-(viewline.x / vl_abs.z) * 0.5 + 0.5,
 						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex4, (gl_TextureMatrix[0] * texcoord0).st);
+			color = texture2DRect(tex4, (gl_TextureMatrix[1] * texcoord0).st);
 		}else{
 			texcoord0 = vec4( //FRONT
 						(viewline.x / vl_abs.z) * 0.5 + 0.5,
 						(viewline.y / vl_abs.z) * 0.5 + 0.5, 0., 1.);
-			color = texture2DRect(tex2, (gl_TextureMatrix[0] * texcoord0).st);
+			color = texture2DRect(tex2, (gl_TextureMatrix[1] * texcoord0).st);
 		}
 	}
 
 	gl_FragColor = (side > 0)?color:offColor;
-    
+
     // in case it is rendered to stage and stage_mode is set to colored:
 	if(mode == 0 && stage_mode >= 1){
 		if(vl_abs.x > vl_abs.y && vl_abs.x > vl_abs.z){
