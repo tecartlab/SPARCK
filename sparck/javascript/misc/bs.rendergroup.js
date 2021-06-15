@@ -93,6 +93,13 @@ function anything()
             for(var i = 0; i < myContexts.length; i++){
                 rendergroups.set(myContexts[i], myGroup);
             }
+
+            if(myGroup == 0){
+            	outlet(OUT_ENABLED, 0);
+            } else {
+            	outlet(OUT_ENABLED, 1);
+			}
+
             outlet(OUT_DUMP, "bang");
         }
  		if(messagename.indexOf("drawto") != -1){
