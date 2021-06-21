@@ -40,6 +40,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "#1", "flow" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-33",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.ossia.remote.toggle.maxpat",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 450.0, 5.0, 27.0, 21.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 220.0, 0.0, 20.0, 19.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "#1", "scale", "@text", "scale" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -224,7 +247,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "refetch", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "refetch...", "@size", 238, 19, "@mode", 1, "@hint", "refetch motive data description" ],
+					"args" : [ "#1", "refetch", "@uselabeltext", 1, "@onlabeltext", "Output", "@offlabeltext", "refetch...", "@size", 238, 19, "@mode", 1, "@hint", "refetch motive data description", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -239,7 +262,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 248.0, 90.0, 221.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 0.0, 239.0, 19.0 ],
+					"presentation_rect" : [ 1.0, 0.0, 218.0, 19.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -744,6 +767,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-15", 2 ],
+					"source" : [ "obj-33", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
@@ -812,6 +842,10 @@
 			}
 , 			{
 				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
 , 			{
