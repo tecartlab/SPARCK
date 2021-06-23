@@ -154,8 +154,8 @@ void bs_latencycomp_list(t_bs_latencycomp *x, t_symbol *s, short argc, t_atom *a
     // get delta
     long delta = time - x->v_time;
     
-    if (delta != 0){
-        
+    if (delta > 0){
+        // make sure we only do forward prediction id the delta time is positive
         if (x->v_compensation != 0) {
             // get position and rotation speed
             MTVec3D dPos = mtSubtractVectorVector(pos, x->v_pos);
@@ -213,6 +213,12 @@ void bs_latencycomp_list(t_bs_latencycomp *x, t_symbol *s, short argc, t_atom *a
         } else {
             outlet_list(x->v_outlet, 0L, argc, argv);
         }
+    } else {
+        // otherwise we just store the current values
+        x->v_time = time;
+        x->v_pos = mtCopyVector3D(pos);
+        x->v_rot = mtCopyMTQuaternion(&rot);
+        return;
     }
 }
 
