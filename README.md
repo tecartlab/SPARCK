@@ -1,6 +1,6 @@
-# SPARCK
+# SPARCK MK2
 
-SPatial Augmented Reality Contruction Kit.
+SPatial Augmented Reality Contruction Kit Mark 2.
 
 Also includes QueScript.
 
