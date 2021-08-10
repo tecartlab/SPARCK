@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -89,7 +89,6 @@
 					"patching_rect" : [ 266.300000000000011, 162.903809000000024, 42.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 60.0, 17.0 ],
-					"text" : "#3",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
 
@@ -202,14 +201,12 @@
 				"box" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"bordercolor" : [ 0.541176, 0.47451, 0.278431, 1.0 ],
-					"bordersize" : 4.0,
 					"borderstyle" : 5,
 					"focusbordercode" : 3,
 					"focusbordercolor" : [ 1.0, 0.54902, 0.0, 1.0 ],
 					"focusbordersize" : 4.0,
 					"focusborderstyle" : 4,
 					"focusfgcolor" : [ 0.254902, 0.25098, 0.501961, 1.0 ],
-					"focusfontstyle" : 1,
 					"fontface" : 0,
 					"hint" : "",
 					"id" : "obj-16",
@@ -350,18 +347,18 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.remote.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.floatui.mxo",
-				"type" : "iLaX"
+				"name" : "icst.floatui.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "ossia.remote.mxo",
-				"type" : "iLaX"
+				"name" : "ossia.remote.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
