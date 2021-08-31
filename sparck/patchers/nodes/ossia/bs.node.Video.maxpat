@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Video_1",
+		"globalpatchername" : "Video",
 		"boxes" : [ 			{
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
