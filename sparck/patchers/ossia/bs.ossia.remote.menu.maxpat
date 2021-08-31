@@ -777,7 +777,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 677.0, 96.0, 667.0, 429.0 ],
+										"rect" : [ 920.0, 138.0, 667.0, 429.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1050,7 +1050,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 137.0, 337.0, 30.0, 30.0 ]
+													"patching_rect" : [ 144.0, 337.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1074,7 +1074,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 275.0, 193.0, 156.0, 35.0 ],
+													"patching_rect" : [ 275.0, 193.0, 156.0, 36.0 ],
 													"text" : "script sendbox refresh presentation_position $1 $2"
 												}
 
@@ -1095,11 +1095,11 @@
 												"box" : 												{
 													"id" : "obj-6",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 99.0, 106.0, 86.0, 22.0 ],
-													"text" : "routepass size"
+													"numinlets" : 3,
+													"numoutlets" : 3,
+													"outlettype" : [ "", "", "" ],
+													"patching_rect" : [ 99.0, 106.0, 109.0, 22.0 ],
+													"text" : "routepass size hint"
 												}
 
 											}
@@ -1253,6 +1253,13 @@
 													"destination" : [ "obj-17", 0 ],
 													"order" : 0,
 													"source" : [ "obj-4", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-12", 0 ],
+													"source" : [ "obj-6", 1 ]
 												}
 
 											}
@@ -2450,12 +2457,14 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.gui.svg.button.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
+				"patcherrelativepath" : "../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

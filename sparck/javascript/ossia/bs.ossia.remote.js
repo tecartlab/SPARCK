@@ -230,7 +230,7 @@ function type(_type){
 }
 
 function unit(_unit){
-    if(_unit == "none"){
+    if(_unit == ""){
         myUnit = "";
     } else {
         myUnit = " [" + _unit + "]";
