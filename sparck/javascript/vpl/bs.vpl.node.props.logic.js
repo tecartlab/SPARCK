@@ -50,6 +50,7 @@ var myRect = null;
 var mySize = null;
 var mySizeCollapsed = null;
 var myCollapsedHeight = 45;
+var mySizeIsCollapsed = false;
 
 var myFoldedSize = null;
 var myUnfoldedSize = null;
