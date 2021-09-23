@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "Canvas",
+		"globalpatchername" : "Canvas_1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-17",
@@ -106,7 +106,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 193.222045999999978, 54.0, 194.0, 49.0 ],
+									"patching_rect" : [ 193.222045999999978, 54.0, 194.0, 50.0 ],
 									"text" : "ossia.parameter color @type rgba @default 1. 1. 1. 1. @description \"default color\""
 								}
 
@@ -166,8 +166,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_gl_texture", "" ],
-									"patching_rect" : [ 193.222045999999978, 283.149353000000019, 105.0, 22.0 ],
-									"text" : "jit.gl.texture stage"
+									"patching_rect" : [ 193.222045999999978, 283.149353000000019, 70.0, 22.0 ],
+									"text" : "jit.gl.texture"
 								}
 
 							}
