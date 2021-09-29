@@ -25,8 +25,8 @@
  */
 
 // set up inlets/outlets/assist strings
-inlets = 7;
-outlets = 7;
+inlets = 9;
+outlets = 9;
 setinletassist(0,"matrixA");
 setinletassist(1,"matrixB");
 setoutletassist(0,"display feedback");
@@ -35,6 +35,9 @@ setoutletassist(2,"menu display 1");
 setoutletassist(3,"menu display 2");
 setoutletassist(4,"menu display 3");
 setoutletassist(5,"menu display 4");
+setoutletassist(6,"menu display 5");
+setoutletassist(7,"menu display 6");
+setoutletassist(8,"menu display 7");
 
 var myWindow = null;
 var myWidth = 0;
@@ -44,7 +47,7 @@ var myDispWidth = 0;
 var myDispHeight = 200;
 var myDispBorder = 20;
 
-var maxDisplays = 6;
+var maxDisplays = 8;
 var displayCount = 1;
 
 var coordinates = createArray(maxDisplays, 4);
@@ -91,6 +94,11 @@ function Scan(){
 	myWindow = this.patcher.wind;
 	myWidth = myWindow.location[2] - myWindow.location[0];
 	myHeight = myWindow.location[3] - myWindow.location[1];
+	
+	myCanvas  =  this.patcher.getnamed("vpl_canvas");
+	myWidth = myCanvas.rect[2] - myCanvas.rect[0];
+	myHeight = myCanvas.rect[3] - myCanvas.rect[1];
+	
 	myDispWidth = myWidth - myDispBorder * 2;
 	for(var i = 0; i < maxDisplays; i++){
 		myButtons[i] = this.patcher.getnamed("display_" + i);
@@ -163,6 +171,7 @@ function updateGUI(){
 		ratio = myDispHeight / maxHeight;
 	}
 	//post("got ratio=" + ratio + "\n");
+	//post("got myDispWidth=" + myDispWidth + "\n");
 	//post("got ratio: ratio=" + ratio + "\n");
 	for(var i = 0; i < maxDisplays; i++){
 		//post("got button:" + i + "\n");
