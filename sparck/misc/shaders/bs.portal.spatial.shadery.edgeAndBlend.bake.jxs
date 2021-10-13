@@ -2,9 +2,10 @@
 	<description>SPARCK - multi projection - Shader</description>
 	<param name="mode" type="int" default="0" />
 	<param name="stage_mode" type="int" default="0" />
+	<param name="occlusion" type="int" default="0" />
 	<param name="projection_mode" type="float" default="0" />
 
-	<param name="beamer_enable" type="int" default="0 0 0 0 0 0" description="value 0 if off or camera type (cam_params)" />
+	<param name="beamer_enable" type="float" default="1. 1. 1. 1. 1. 1." />
 	<param name="beamer_count" type="int" default="0" />
 
 	<param name="beamer_color" type="vec4" default="1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1." />
@@ -41,11 +42,9 @@
 
 	<param name="collada_factor" type="mat4" default="1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1." />
 
-    <param name="jit_position" type="vec3" state="POSITION" />
+	<param name="jit_position" type="vec3" state="POSITION" />
 	<param name="jit_texcoord" type="vec2" state="TEXCOORD" />
 	<param name="jit_normal" type="vec3" state="NORMAL" />
-
-	<param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
 
 	<param name="textureMatrix0" type="mat4" state="TEXTURE0_MATRIX" />
 	<param name="textureMatrix1" type="mat4" state="TEXTURE1_MATRIX" />
@@ -53,26 +52,18 @@
 	<param name="textureMatrix3" type="mat4" state="TEXTURE3_MATRIX" />
 	<param name="textureMatrix4" type="mat4" state="TEXTURE4_MATRIX" />
 	<param name="textureMatrix5" type="mat4" state="TEXTURE5_MATRIX" />
-	<param name="textureMatrix6" type="mat4" state="TEXTURE6_MATRIX" />
+	<param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
 
-	<param name="tex0" type="int" default="0" />
+    <param name="tex0" type="int" default="0" />
 	<param name="tex1" type="int" default="1" />
 	<param name="tex2" type="int" default="2" />
 	<param name="tex3" type="int" default="3" />
 	<param name="tex4" type="int" default="4" />
 	<param name="tex5" type="int" default="5" />
 	<param name="tex6" type="int" default="6" />
+	<param name="tex7" type="int" default="7" />
 
 	<language name="glsl" version="1.2">
-		<bind param="tex0" program="fp" />
-		<bind param="tex1" program="fp" />
-		<bind param="tex2" program="fp" />
-		<bind param="tex3" program="fp" />
-		<bind param="tex4" program="fp" />
-		<bind param="tex5" program="fp" />
-		<bind param="tex6" program="fp" />
-
-		<bind param="beamer_enable" program="fp" />
 		<bind param="beamer_count" program="vp" />
 		<bind param="beamer_color" program="fp" />
 
@@ -89,6 +80,7 @@
 		<bind param="projection_mode" program="fp" />
 		<bind param="stage_mode" program="fp" />
 		<bind param="mode" program="fp" />
+		<bind param="occlusion" program="fp" />
 
 		<bind param="blend_spread" program="fp" />
 		<bind param="back_blend" program="fp" />
@@ -98,7 +90,7 @@
 		<bind param="angle_limit_low" program="fp" />
 		<bind param="angle_limit_high" program="fp" />
 
-		<bind param="far_clip" program="fp" />
+		<bind param="far_clip" program="vp" />
 
 		<bind param="offColor" program="fp" />
 
@@ -107,12 +99,6 @@
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl2.glsl" />
-
-		<program name="fp" type="fragment" source="bs.portal.texture.projectory.multiblend.project.fs.gl2.glsl" />
-
-	</language>
-    <language name="glsl" version="1.5">
 		<bind param="tex0" program="fp" />
 		<bind param="tex1" program="fp" />
 		<bind param="tex2" program="fp" />
@@ -120,22 +106,12 @@
 		<bind param="tex4" program="fp" />
 		<bind param="tex5" program="fp" />
 		<bind param="tex6" program="fp" />
+		<bind param="tex7" program="fp" />
 
-		<bind param="jit_position" program="vp" />
-	    <bind param="jit_texcoord" program="vp" />
-	    <bind param="jit_normal" program="vp" />
-
-		<bind param="textureMatrix0" program="vp" />
-		<bind param="textureMatrix1" program="vp" />
-		<bind param="textureMatrix2" program="vp" />
-		<bind param="textureMatrix3" program="vp" />
-		<bind param="textureMatrix4" program="vp" />
-		<bind param="textureMatrix5" program="vp" />
-		<bind param="textureMatrix6" program="vp" />
-
-	    <bind param="modelViewProjectionMatrix" program="vp" />
-
-		<bind param="beamer_enable" program="fp" />
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl2.glsl" />
+		<program name="fp" type="fragment" source="bs.portal.spatial.shadery.edge.bake.fs.gl2.glsl"/>
+	</language>
+	<language name="glsl" version="1.5">
 		<bind param="beamer_count" program="vp" />
 		<bind param="beamer_color" program="fp" />
 
@@ -151,6 +127,8 @@
 
 		<bind param="projection_mode" program="fp" />
 		<bind param="stage_mode" program="fp" />
+		<bind param="mode" program="fp" />
+		<bind param="occlusion" program="fp" />
 
 		<bind param="blend_spread" program="fp" />
 		<bind param="back_blend" program="fp" />
@@ -160,7 +138,7 @@
 		<bind param="angle_limit_low" program="fp" />
 		<bind param="angle_limit_high" program="fp" />
 
-		<bind param="far_clip" program="fp" />
+		<bind param="far_clip" program="vp" />
 
 		<bind param="offColor" program="fp" />
 
@@ -169,9 +147,28 @@
 		<bind param="interpolation_correction" program="vp" />
 		<bind param="viewport_matrix" program="vp" />
 
-		<program name="vp" type="vertex" source="bs.portal.pass.projectory.6.vs.gl3.glsl" />
+		<bind param="jit_position" program="vp" />
+	    <bind param="jit_texcoord" program="vp" />
+	    <bind param="jit_normal" program="vp" />
 
-		<program name="fp" type="fragment" source="bs.portal.texture.projectory.multiblend.project.fs.gl3.glsl" />
+		<bind param="textureMatrix0" program="vp" />
+		<bind param="textureMatrix1" program="vp" />
+		<bind param="textureMatrix2" program="vp" />
+		<bind param="textureMatrix3" program="vp" />
+		<bind param="textureMatrix4" program="vp" />
+		<bind param="textureMatrix5" program="vp" />
+	    <bind param="modelViewProjectionMatrix" program="vp" />
 
-    </language>
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<bind param="tex2" program="fp" />
+		<bind param="tex3" program="fp" />
+		<bind param="tex4" program="fp" />
+		<bind param="tex5" program="fp" />
+		<bind param="tex6" program="fp" />
+		<bind param="tex7" program="fp" />
+
+		<program name="vp" type="vertex" source="bs.portal.pass.bakery.6.vs.gl3.glsl" />
+		<program name="fp" type="fragment" source="bs.portal.spatial.shadery.edge.bake.fs.gl3.glsl"/>
+	</language>
 </jittershader>
