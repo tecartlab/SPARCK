@@ -83,298 +83,545 @@ public class RunTimeEnvironment {
 		staticVars = new HashMap<String, ExpressionVar>();
 		localVarScope = new HashMap<String, ExpressionVar>();
 		allVarScopes.add(localVarScope);
-		
+
+		addOperator(new Operator("=", 5, false) {
+			@Override
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException{
+				if(parameters.size() == 2){
+					ExpressionEvaluated p0 = parameters.get(0).evaluated;
+					ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+					if(p1.isArray()){
+						if(!p0.isArray()) {
+							p0.makeArray();
+						}
+						if(p1.getArraySize() != p0.getArraySize()) {
+							p0.setValue(p1.getValues());
+						} else {
+							for(int i = 0; i < p1.getArraySize(); i++) {
+								p0.setArrayIndex(i, p1.getArrayIndex(i));
+							}
+						}
+					} else {
+						p0.setValue(p1.getValue());
+					}
+				}	
+				//throw new ExpressionException("= can only assign to a variable");
+			}
+		});
+
 		addOperator(new Operator("+", 20, true) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return parameters.get(0).add(parameters.get(1));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				if(p0.isArray()) {
+					if(!result.isArray() || result.getArraySize() != p0.getArraySize()) {
+						// we first have to adjust the result side
+						result.clear();
+						result.setValue(p0.getClonedValues());
+					}
+					// TODO: getArrayIndex(i) is resource hungry and is done multiple times: better store one call to a local var
+					ExpressionAtom p0Atom, p1Atom;
+					if(p1.isArray()) {
+						//p0 is array and p1 is array -> dont need to be same size, 
+						// each corresponding element will be added, be it numeric or string
+						for(int i = 0; i < p0.getArraySize() && i < p1.getArraySize(); i++) {
+							p0Atom = p0.getArrayIndex(i);
+							p1Atom = p1.getArrayIndex(i);
+							
+							if(p0Atom.isNumeric() && p1Atom.isNumeric()) {
+								result.getArrayIndex(i).setNumericValue(p0Atom.getNumericValue() + p1Atom.getNumericValue());
+							} else {
+								result.getArrayIndex(i).setStringValue(p0Atom.getStringValue() + p1Atom.getStringValue());
+							}
+						}						
+					} else {
+						//p0 is array and p1 is not -> p1 is added to each element of p0
+						for(int i = 0; i < p0.getArraySize(); i++) {
+							p0Atom = p0.getArrayIndex(i);
+							p1Atom = p1.getArrayIndex(i);
+							
+							if(p0Atom.isNumeric() && p1Atom.isNumeric()) {
+								result.getArrayIndex(i).setNumericValue(p0Atom.getNumericValue() + p1Atom.getNumericValue());
+							} else {
+								result.getArrayIndex(i).setStringValue(p0Atom.getStringValue() + p1Atom.getStringValue());
+							}
+						}												
+					}
+				} else { 
+					if(result.isArray()) {
+						// we first have to adjust the result side
+						result.clear();
+					}
+					if(p0.isNumeric() && p1.isNumeric()) {
+						result.setValue(p0.getNumericValue() + p1.getNumericValue());
+					} else {
+						result.setValue(p0.getStringValue() + p1.getStringValue());
+					}
+				}
 			}
 		});
 		addOperator(new Operator("-", 20, true) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(parameters.get(0).getNumberValue() - parameters.get(1).getNumberValue());
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException{
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+				
+				if(p0.isNumeric() && p1.isNumeric()) {
+					if(!p0.isArray() && !p1.isArray()) {
+						result.setValue(p0.getNumericValue() - p1.getNumericValue());
+					} else {
+						throw new ExpressionException("Array subtraction not supported");						
+					}
+				} else {
+					throw new ExpressionException("String subtraction not supported");												
+				}
 			}
 		});
 		addOperator(new Operator("*", 30, true) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(parameters.get(0).getNumberValue() * parameters.get(1).getNumberValue());
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				if(p0.isNumeric() && p1.isNumeric()) {
+					if(!p0.isArray() && !p1.isArray()) {
+						result.setValue(p0.getNumericValue() * p1.getNumericValue());
+					} else {
+						throw new ExpressionException("Array multiplication not supported");						
+					}
+				} else {
+					throw new ExpressionException("String multiplication not supported");												
+				}
 			}
 		});
 		addOperator(new Operator("/", 30, true) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(parameters.get(0).getNumberValue() / parameters.get(1).getNumberValue());
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				if(p0.isNumeric() && p1.isNumeric()) {
+					if(!p0.isArray() && !p1.isArray()) {
+						result.setValue(p0.getNumericValue() / p1.getNumericValue());
+					} else {
+						throw new ExpressionException("Array division not supported");						
+					}
+				} else {
+					throw new ExpressionException("String division not supported");												
+				}
 			}
 		});
 		addOperator(new Operator("%", 30, true) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(parameters.get(0).getNumberValue() % parameters.get(1).getNumberValue());
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				if(p0.isNumeric() && p1.isNumeric()) {
+					if(!p0.isArray() && !p1.isArray()) {
+						result.setValue(p0.getNumericValue() % p1.getNumericValue());
+					} else {
+						throw new ExpressionException("Array modulo not supported");						
+					}
+				} else {
+					throw new ExpressionException("String modulo not supported");												
+				}
 			}
 		});
 		addOperator(new Operator("^", 40, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.pow(parameters.get(0).getNumberValue(), parameters.get(1).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				if(p0.isNumeric() && p1.isNumeric()) {
+					if(!p0.isArray() && !p1.isArray()) {
+						result.setValue(Math.pow(p0.getNumericValue(), p1.getNumericValue()));
+					} else {
+						throw new ExpressionException("Array power not supported");						
+					}
+				} else {
+					throw new ExpressionException("String power not supported");												
+				}
 			}
 		});
 		
 		addOperator(new Operator("[]", 50, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
-				ExpressionVar array = parameters.get(0);
-				ExpressionVar indice = parameters.get(1);
-				if(array.isArray){
-					if(indice.isNumber){
-						int index = (int)indice.getNumberValue();
-						if(index < array.getParamSize()){
-							array.arrayIndex = index;
-							return array.getParam(index);
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated array = parameters.get(0).evaluated;
+				ExpressionEvaluated indice = parameters.get(1).evaluated;
+
+				if(array.isArray()){
+					if(indice.isNumeric()){
+						int index = (int)indice.getNumericValue();
+						if(index < array.getArraySize()){
+							result.setValue(array.getArrayIndex(index));
 						} 					
-						throw new ExpressionException("Array index out of bounds exception: " + index + " " + array.getParamSize());	
+						throw new ExpressionException("Array index out of bounds exception: " + index + " " + array.getArraySize());	
 					} 
-					throw new ExpressionException("Array index invalid number: " + parameters.get(1).getStringValue());
+					throw new ExpressionException("Array index invalid number: " + parameters.get(1).toString());
 				}
-				throw new ExpressionException("Invalid operation: " + parameters.get(0).getStringValue() + " is not an array.");
+				throw new ExpressionException("Invalid operation: " + parameters.get(0).toString() + " is not an array.");
 			}
 		});
 
-		addOperator(new Operator("&&", 4, false) {
+		addOperator(new Operator("&&", 8, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				boolean b1 = !parameters.get(0).equals(ExpressionVar.ZERO);
-				boolean b2 = !parameters.get(1).equals(ExpressionVar.ZERO);
-				return b1 && b2 ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				boolean b0 = !(p0.getNumericValue() == 0);
+				boolean b1 = !(p1.getNumericValue() == 0);
+				result.setValue((b0 && b1)?1:0);
 			}
 		});
 
-		addOperator(new Operator("||", 2, false) {
+		addOperator(new Operator("||", 8, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				boolean b1 = !parameters.get(0).equals(ExpressionVar.ZERO);
-				boolean b2 = !parameters.get(1).equals(ExpressionVar.ZERO);
-				return b1 || b2 ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				boolean b0 = !(p0.getNumericValue() == 0);
+				boolean b1 = !(p1.getNumericValue() == 0);
+				result.setValue((b0 || b1)?1:0);
 			}
 		});
 
 		addOperator(new Operator(">", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return parameters.get(0).compareTo(parameters.get(1)) == 1 ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				result.setValue((p0.getNumericValue() > p1.getNumericValue())?1:0);
 			}
 		});
 
 		addOperator(new Operator("gt", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
-				return operators.get(">").eval(parameters);
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				operators.get(">").eval(parameters, result);
 			}
 		});
 
 		addOperator(new Operator(">=", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return parameters.get(0).compareTo(parameters.get(1)) >= 0 ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				result.setValue((p0.getNumericValue() >= p1.getNumericValue())?1:0);
 			}
 		});
 
 		addOperator(new Operator("ge", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
-				return operators.get(">=").eval(parameters);
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				operators.get(">=").eval(parameters, result);
 			}
 		});
 
 		addOperator(new Operator("<", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return parameters.get(0).compareTo(parameters.get(1)) == -1 ? ExpressionVar.ONE
-						: ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				result.setValue((p0.getNumericValue() < p1.getNumericValue())?1:0);
 			}
 		});
 		
 		addOperator(new Operator("lt", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
-				return operators.get("<").eval(parameters);
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				operators.get("<").eval(parameters, result);
 			}
 		});
 
 		addOperator(new Operator("<=", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return parameters.get(0).compareTo(parameters.get(1)) <= 0 ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				result.setValue((p0.getNumericValue() <= p1.getNumericValue())?1:0);
 			}
 		});
 		
 		addOperator(new Operator("le", 10, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException{
-				return operators.get("<=").eval(parameters);
-			}
-		});
-
-		addOperator(new Operator("=", 7, false) {
-			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException{
-				if(parameters.size() == 2 && parameters.get(0).isUsedAsVariable){
-					if(parameters.get(0).isArray){
-						if(parameters.get(1).isArray){
-							// if we want to assign an array to a variable inside an expr node:
-							return parameters.get(0).copyFrom(parameters.get(1));
-						} else {
-							// assigned = assignee
-							// we need to evaluate the array to assigned again, incase the same array
-							// is also part of the evaluation tree inside the assignee
-							parameters.get(0).eval();
-							// this will set the the arrayIndex correctly.
-							int arrayIndex = parameters.get(0).getParam(0).arrayIndex;
-							// if it is an array we dive into the parameter:
-							// 		parameters.get(0) 							        // gets us the assigned var
-							//						 .getParam(0) 				        // gets us the array var
-							//                                   .getParam(arrayIndex)  // gets us the individual entry
-							//
-							return parameters.get(0).getParam(0).getParam(arrayIndex).set(parameters.get(1));
-						}
-					} else {
-						return parameters.get(0).set(parameters.get(1));
-					}
-				}	
-				throw new ExpressionException("= can only assign to a variable");
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException{
+				operators.get("<=").eval(parameters, result);
 			}
 		});
 
 		addOperator(new Operator("==", 7, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
-				return parameters.get(0).compareTo(parameters.get(1)) == 0 ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+
+				result.setValue((p0.getNumericValue() == p1.getNumericValue())?1:0);
 			}
 		});
 
 		addOperator(new Operator("!=", 7, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return parameters.get(0).compareTo(parameters.get(1)) != 0 ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+				
+				result.setValue((p0.getNumericValue() != p1.getNumericValue())?1:0);
 			}
 		});
 		
 		addOperator(new Operator("<>", 7, false) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
-				return operators.get("!=").eval(parameters);
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+
+				operators.get("!=").eval(parameters, result);
 			}
 		});
 
 		addFunction(new Function("LENGTH", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				if(parameters.get(0).isArray){
-					return new ExpressionVar(parameters.get(0).getParamSize());
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isArray()){
+					result.setValue(p0.getArraySize());
+				} else {
+					result.setValue(0d);
 				}
-				return ExpressionVar.ZERO;
+				return;					
 			}
 		});
 		addFunction(new Function("NOT", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				boolean zero = parameters.get(0).compareTo(ExpressionVar.ZERO) == 0;
-				return zero ? ExpressionVar.ONE : ExpressionVar.ZERO;
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				result.setValue((p0.getNumericValue() == 0)?1:0);
 			}
 		});
 
 		addFunction(new Function("IF", 3) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return (parameters.get(0).getNumberValue() == 1) ? parameters.get(1) : parameters.get(2);
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+				ExpressionEvaluated p2 = parameters.get(2).evaluated;
+
+				result.setValue((p0.getNumericValue() == 1)?p1.getValues():p2.getValues());
 			}
 		});
 
 		addFunction(new Function("RANDOM", 0) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.random());
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				result.setValue(Math.random());
 			}
 		});
 		addFunction(new Function("SIN", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.sin(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.sin(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("SIN doesnt work with arrays");
+				}
+				throw new ExpressionException("SIN doesnt work with strings");
 			}
 		});
 		addFunction(new Function("COS", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.cos(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.cos(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("COS doesnt work with arrays");
+				}
+				throw new ExpressionException("COS doesnt work with strings");
 			}
 		});
 		addFunction(new Function("TAN", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.tan(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.tan(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("TAN doesnt work with arrays");
+				}
+				throw new ExpressionException("TAN doesnt work with strings");
 			}
 		});
 		addFunction(new Function("ASIN", 1) { // added by av
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.asin(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.asin(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("ASIN doesnt work with arrays");
+				}
+				throw new ExpressionException("ASIN doesnt work with strings");
 			}
 		});
 		addFunction(new Function("ACOS", 1) { // added by av
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.acos(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.acos(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("ACOS doesnt work with arrays");
+				}
+				throw new ExpressionException("ACOS doesnt work with strings");
 			}
 		});
 		addFunction(new Function("ATAN", 1) { // added by av
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.atan(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.atan(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("ATAN doesnt work with arrays");
+				}
+				throw new ExpressionException("ATAN doesnt work with strings");
 			}
 		});
 		addFunction(new Function("SINH", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.sinh(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.sinh(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("SINH doesnt work with arrays");
+				}
+				throw new ExpressionException("SINH doesnt work with strings");
 			}
 		});
 		addFunction(new Function("COSH", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.cosh(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.cosh(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("COSH doesnt work with arrays");
+				}
+				throw new ExpressionException("COSH doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("TANH", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.tanh(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.tanh(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("TANH doesnt work with arrays");
+				}
+				throw new ExpressionException("TANH doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("RAD", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.toRadians(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.toRadians(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("RAD doesnt work with arrays");
+				}
+				throw new ExpressionException("RAD doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("DEG", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.toDegrees(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.toDegrees(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("DEG doesnt work with arrays");
+				}
+				throw new ExpressionException("DEG doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("ARRAY", -1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
 				if (parameters.size() == 0) {
 					throw new ExpressionException("ARRAY requires at least one parameter");
 				}
-				return new ExpressionVar(new ArrayList<ExpressionVar>(parameters));
+				if(parameters.size() != result.getArraySize() || !result.isArray()) {
+					result.clear();
+					for(ExpressionVar var: parameters) {
+						if(var.evaluated.isNumeric())
+							result.addValue(var.evaluated.getNumericValue());
+						else
+							result.addValue(var.evaluated.getStringValue());
+					}
+				} else {
+					ExpressionEvaluated varVal;
+					for(int i = 0; i < parameters.size(); i++) {
+						varVal = parameters.get(i).evaluated;
+						if(varVal.isNumeric())
+							result.setArrayIndex(i, varVal.getNumericValue());
+						else
+							result.setArrayIndex(i, varVal.getStringValue());
+					}					
+				}
 			}
 		});
 		addFunction(new Function("CLONE", -1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
 				throw new ExpressionException("CLONE is not working yet..");
 				/*
 				if (parameters.size() == 0) {
@@ -402,89 +649,215 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("MAX", -1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
 				if (parameters.size() == 0) {
 					throw new ExpressionException("MAX requires at least one parameter");
 				}
 				ExpressionVar max = null;
 				for (ExpressionVar parameter : parameters) {
-					if (max == null || parameter.compareTo(max) > 0) {
-						max = parameter;
+					if(parameter.isNumeric()) {
+						if(!parameter.isArray()) {
+							if (max == null || parameter.compareTo(max) > 0) {
+								max = parameter;
+							}
+						} else {
+							throw new ExpressionException("MIN doesnt work with arrays");
+						}
+					} else {
+						throw new ExpressionException("MIN doesnt work with strings");										
 					}
 				}
-				return max;
+					
+				result.setValue(max.getNumberValue());
 			}
 		});
 		addFunction(new Function("MIN", -1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
 				if (parameters.size() == 0) {
 					throw new ExpressionException("MIN requires at least one parameter");
 				}
+
 				ExpressionVar min = null;
 				for (ExpressionVar parameter : parameters) {
-					if (min == null || parameter.compareTo(min) < 0) {
-						min = parameter;
+					if(parameter.isNumeric()) {
+						if(!parameter.isArray()) {
+							if (min == null || parameter.compareTo(min) < 0) {
+								min = parameter;
+							}
+						} else {
+							throw new ExpressionException("MIN doesnt work with arrays");
+						}
+					} else {
+						throw new ExpressionException("MIN doesnt work with strings");										
 					}
 				}
-				return min;
+
+				result.setValue(min.getNumberValue());
+			}
+		});
+		addFunction(new Function("LERP", 3) {
+			@Override
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				if (parameters.size() < 3) {
+					throw new ExpressionException("LERP requires three parameters: step, start value, end value");
+				}
+				ExpressionEvaluated step = parameters.get(0).evaluated;
+				ExpressionEvaluated start = parameters.get(1).evaluated;
+				ExpressionEvaluated stop = parameters.get(2).evaluated;
+
+				
+				if(start.isArray() ^ stop.isArray()) {
+					throw new ExpressionException("LERP requires start value and end value to be of the same type");					
+				}
+
+				if(start.isArray() && stop.isArray() && (start.getArraySize() != stop.getArraySize())) {
+					throw new ExpressionException("LERP start array and end array need to be of the same size");										
+				}
+
+				if(!step.isNumeric() || !start.isNumeric() || !stop.isNumeric()) {
+					throw new ExpressionException("LERP requires step, start and end value to be numbers");										
+				}
+				double st, ed;
+							
+				if(start.isArray()) {
+					if(result.getArraySize() != start.getArraySize()) {
+						result.clear();
+						result.setValue(start.getClonedValues());
+					}
+					for (int i = 0; i < start.getArraySize(); i++) {
+						st = start.getArrayIndex(i).getNumericValue();
+						ed = stop.getArrayIndex(i).getNumericValue();
+						result.setArrayIndex(i, st + step.getNumericValue() * (ed - st));
+					}
+					
+				} else {
+					st = start.getNumericValue();
+					ed = stop.getNumericValue();
+					result.setValue(st + step.getNumericValue() * (ed - st));
+				}
 			}
 		});
 		addFunction(new Function("ABS", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.abs(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.abs(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("ABS doesnt work with arrays");
+				}
+					throw new ExpressionException("ABS doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("LOG", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.log(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.log(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("LOG doesnt work with arrays");
+				}
+				throw new ExpressionException("LOG doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("LOG10", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.log10(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+				
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.log10(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("LOG10 doesnt work with arrays");
+				}
+				throw new ExpressionException("LOG10 doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("ROUND", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.round(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.round(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("ROUND doesnt work with arrays");
+				}
+				throw new ExpressionException("ROUND doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("FLOOR", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return  new ExpressionVar(Math.floor(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.floor(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("FLOOR doesnt work with arrays");
+				}
+				throw new ExpressionException("FLOOR doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("CEILING", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) {
-				return new ExpressionVar(Math.ceil(parameters.get(0).getNumberValue()));
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+	
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						result.setValue(Math.ceil(p0.getNumericValue()));
+						return;
+					}
+					throw new ExpressionException("CEILING doesnt work with arrays");										
+				}
+				throw new ExpressionException("CEILING doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("SQRT", 1) {
 			@Override
-			public ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException {
-				if (parameters.get(0).compareTo(ExpressionVar.ZERO) == 0) {
-					return new ExpressionVar(0);
-				}
-				if (Math.signum(parameters.get(0).getNumberValue()) < 0) {
-					throw new ExpressionException(
-							"Argument to SQRT() function must not be negative");
-				}
+			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+				ExpressionEvaluated p0 = parameters.get(0).evaluated;
 
-				return new ExpressionVar(Math.sqrt(parameters.get(0).getNumberValue()));
+				if(p0.isNumeric()) {
+					if(!p0.isArray()) {
+						if(p0.getNumericValue() == 0) {
+							result.setValue(0);
+						} else {
+							if(Math.signum(p0.getNumericValue()) < 0){
+								throw new ExpressionException(
+										"Argument to SQRT() function must not be negative");		
+							}
+							result.setValue(Math.sqrt(p0.getNumericValue()));
+						}
+						return;
+					}
+					throw new ExpressionException("SQRT doesnt work with arrays");										
+				}
+				throw new ExpressionException("SQRT doesnt work with strings");										
+
 			}
 		});
 
-		setStaticVariable("NULL", ExpressionVar.NULL);
-		setStaticVariable("PI", ExpressionVar.PI);
-		setStaticVariable("TRUE", ExpressionVar.ONE);
-		setStaticVariable("FALSE", ExpressionVar.ZERO);
+
+		addStaticVariableNull();
+		setStaticVariable("PI", 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679);
+		setStaticVariable("TRUE", 1);
+		setStaticVariable("FALSE", 0);
 	}
 
 	/**
@@ -571,7 +944,7 @@ public class RunTimeEnvironment {
 	public ExpressionVar setLocalVariable(String variable, ExpressionVar value) {
 		ExpressionVar v = localVarScope.get(variable);
 		if(v != null){
-			if(value.isArray){
+			if(value.evaluated.isArray()){
 				return v.copyFrom(value);
 			} else {
 				return v.set(value);
@@ -693,11 +1066,19 @@ public class RunTimeEnvironment {
 	 * @param value
 	 *            The variable value.
 	 */
-	private void setStaticVariable(String variable, ExpressionVar value) {
+	private void setStaticVariable(String variable, double value) {
 		if(staticVars.containsKey(value))
-			staticVars.get(value).set(value);
+			staticVars.get(value).setValue(value);
 		else
-			staticVars.put(variable, value);
+			staticVars.put(variable, new ExpressionVar(value));
+	}
+
+	/**
+	 * Add a static variable NULL
+	 */
+	private void addStaticVariableNull() {
+		if(!staticVars.containsKey("NULL"))
+			staticVars.put("NULL", new ExpressionVar());
 	}
 
 	protected abstract class Operation {
@@ -714,7 +1095,7 @@ public class RunTimeEnvironment {
 		 * @return The function must return a new {@link ExpressionVar} value as a
 		 *         computing result.
 		 */
-		public abstract ExpressionVar eval(List<ExpressionVar> parameters) throws ExpressionException;		
+		public abstract void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException;		
 	}
 
 	/**

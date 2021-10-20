@@ -80,7 +80,7 @@ public class CmndVar extends Cmnd {
 			try {
 				myExpression.eval();
 				varValue = new ExpressionVar();
-				if(myExpression.isArray){
+				if(myExpression.isArray()){
 					varValue.copyFrom(myExpression);
 				} else {
 					varValue.set(myExpression);

@@ -98,10 +98,10 @@ public class QueMessageAtom extends QueMessageRAW{
 			for(Integer i: evalList.keySet()){
 //				System.out.println(" -> evallist int = " + i);
 				ev = evalList.get(i).eval();
-				if(ev.isNumber)
+				if(ev.isNumeric())
 					messageList[i] = Atom.newAtom(ev.getNumberValue());
 				else
-					messageList[i] = Atom.newAtom(ev.getStringValue());
+					messageList[i] = Atom.newAtom(ev.toString());
 			}
 		}
 		return this;

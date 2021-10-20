@@ -118,11 +118,11 @@ public class CMsgTime {
 		} catch (ExpressionException e) {
 			Debug.error("QueScript", "Expression Runtime Exception :" + e.getMessage());
 		}
-		if(mills.isNumber){
+		if(mills.isNumeric()){
 			return (long)mills.getNumberValue() + diffMills;
 		} else {
 			try {
-				return parse(mills.getStringValue())  + diffMills;
+				return parse(mills.toString())  + diffMills;
 			} catch (ScriptMsgException e) {
 				Debug.error("QueScript", "Expression Runtime Exception :" + e.getMessage());
 			}

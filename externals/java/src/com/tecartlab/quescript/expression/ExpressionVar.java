@@ -32,24 +32,12 @@ import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.expression.RunTimeEnvironment.Operation;
 
 public class ExpressionVar {
-	private static final String NULL_VALUE = "NULL";
-
-	public static final ExpressionVar ONE = new ExpressionVar(1);
-	public static final ExpressionVar ZERO = new ExpressionVar(0);
-	public static final ExpressionVar NULL = new ExpressionVar();
-	public static final ExpressionVar PI = new ExpressionVar(
-			3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679);
-
-	private double dValue;
-	private String sValue;
-
+	protected ExpressionEvaluated evaluated;
+		
 	protected int arrayIndex = 0;
 
 	private Operation operation;
-	private ArrayList<ExpressionVar> params;
-
-	public boolean isNumber = false;
-	public boolean isArray = false;
+	protected ArrayList<ExpressionVar> params;
 
 	// stores the expression if this instance is the result of an Expression.parse(rt)
 	private String expr = null;
@@ -61,8 +49,7 @@ public class ExpressionVar {
 	 * Creates an ExpressionVar with a NULL - Value
 	 */
 	public ExpressionVar(){
-		this.sValue = NULL_VALUE;
-		isNumber = false;
+		evaluated = new ExpressionEvaluated(0);
 	}
 
 	/**
@@ -70,8 +57,8 @@ public class ExpressionVar {
 	 * @param value
 	 */
 	public ExpressionVar(double value){
-		this.dValue = value;
-		isNumber = true;
+		this();
+		setValue(value);
 	}
 
 	/**
@@ -79,6 +66,7 @@ public class ExpressionVar {
 	 * @param value
 	 */
 	public ExpressionVar(String value){
+		this();
 		setValue(value);
 	}
 
@@ -87,34 +75,31 @@ public class ExpressionVar {
 	 * @param varValue
 	 */
 	public ExpressionVar(Operation op, ArrayList<ExpressionVar> p){
+		this();
+		// TODO:Check if still working
 		operation = op;
 		if(op.oper.equals("ARRAY") || op.oper.equals("[]")){
-			isArray = true;
+			evaluated.makeArray();
 			if(op.oper.equals("[]")){
 				isUsedAsVariable = true;
 			}
 		}
+		if(op.oper.equals("LERP") && p.get(1).isArray()){
+			evaluated.makeArray();
+		}
 		params = p;
-		this.dValue = 0;
-		isNumber = true;
 	}
 
 	/**
 	 * Creates an ExpressionVar Array with an Evaluation Tree
 	 * @param varValue
 	 */
+			
 	public ExpressionVar(ArrayList<ExpressionVar> p){
+		// TODO:Check if still working
 		operation = null;
 		params = p;
-		dValue = 0;
-		isNumber = true;
 		isUsedAsVariable = true;
-		if(p.size() > 0){
-			set(p.get(0));
-		}
-		if(p.size() > 1) {
-			isArray = true;
-		}
 	}
 
 
@@ -125,14 +110,11 @@ public class ExpressionVar {
 	 */
 	public ExpressionVar copyFrom(ExpressionVar expr){
 		this.arrayIndex = expr.arrayIndex;
-		this.dValue = expr.dValue;
 		this.expr = expr.expr;
-		this.isArray = expr.isArray;
-		this.isNumber = expr.isNumber;
+		this.evaluated = expr.evaluated.clone();
 		this.isUsedAsVariable = expr.isUsedAsVariable;
 		this.operation = expr.operation;
 		this.params = expr.params;
-		this.sValue = expr.sValue;
 		return this;
 	}
 
@@ -186,12 +168,8 @@ public class ExpressionVar {
 	 * @return this instance
 	 */
 	public ExpressionVar set(ExpressionVar val){
-		if(val.isNumber){
-			this.dValue = val.getNumberValue();
-			this.isNumber = true;
-		} else {
-			this.sValue = val.getStringValue();
-			this.isNumber = false;
+		if(val != null) {
+			evaluated = val.evaluated.clone();
 		}
 		return this;
 	}
@@ -203,11 +181,10 @@ public class ExpressionVar {
 	 */
 	public ExpressionVar setValue(String val){
 		try{
-			this.dValue = Double.parseDouble(val);
-			isNumber = true;
+			double dValue = Double.parseDouble(val);
+			this.evaluated.setValue(dValue);
 		} catch (NumberFormatException e){
-			this.sValue = val;
-			isNumber = false;
+			this.evaluated.setValue(val);
 		}
 		return this;
 	}
@@ -218,34 +195,45 @@ public class ExpressionVar {
 	 * @return this instance
 	 */
 	public ExpressionVar setValue(double val){
-		this.dValue = val;
-		isNumber = true;
+		this.evaluated.setValue(val);
 		return this;
 	}
+
+	/**
+	 * Mutate this instance and set it with an atom
+	 * @param val
+	 * @return
+	 */
+	public ExpressionVar setValue(ExpressionAtom val){
+		this.evaluated.setValue(val);
+		return this;
+	}
+
 
 	/**
 	 * Get the numeric value of this instance.
 	 * @return the numeric value. If it is a String var, it returns 0
 	 */
 	public double getNumberValue(){
-		if(isNumber)
-			return dValue;
-		return 0;
+		return this.evaluated.getNumericValue();
 	}
 
 	/**
-	 * Get the String value of this instance
-	 * @return the String. If it is a numeric var, the number returned as a String
+	 * check if evaluated value is an array
+	 * @return
 	 */
-	public String getStringValue(){
-		if(!isNumber)
-			return sValue;
-	    if(dValue == (long) dValue)
-	        return String.format("%d",(long)dValue);
-	    else
-	        return String.format("%s",dValue);
+	public boolean isArray() {
+		return this.evaluated.isArray();
 	}
-
+	
+	/**
+	 * check if evaluated value is numeric
+	 * @return
+	 */
+	public boolean isNumeric() {
+		return this.evaluated.isNumeric();		
+	}
+	
 	/**
 	 * Evaluates the Expression Tree (if there is one).
 	 * The result is stored inside this instance.
@@ -258,27 +246,22 @@ public class ExpressionVar {
 	public ExpressionVar eval() throws ExpressionException{
 		if(operation != null){
 			try {
-				for(ExpressionVar exp: params)
-					exp.eval();
-				set(operation.eval(params));
+				boolean dirtied = false;
+				for(ExpressionVar var: params) {
+					if(var.evaluated.isDirty()) {
+						var.eval();
+						dirtied = true;
+					}
+				}
+				if(dirtied)
+					operation.eval(params, evaluated);
+				
+				evaluated.cleaned();
 			} catch (ExpressionException e) {
 				throw new ExpressionException(e.getMessage() + "\n" + expr);
 			}
 		}
 		return this;
-	}
-
-	/**
-	 * Adds the provided Var to this Var.
-	 * If one of them is a String var, the returned var is a String var too.
-	 * @param v2
-	 * @return a new instance of an ExpressionVar containing the result
-	 */
-	protected ExpressionVar add(ExpressionVar v2) {
-		if(isNumber && v2.isNumber)
-			return new ExpressionVar(this.dValue + v2.getNumberValue());
-		else
-			return new ExpressionVar(getStringValue() + v2.getStringValue());
 	}
 
 	/**
@@ -290,17 +273,14 @@ public class ExpressionVar {
 	 * @return a new instance of an ExpressionVar containing the result
 	 */
 	protected int compareTo(ExpressionVar v2) {
-		if(isNumber && v2.isNumber)
-			return (getNumberValue() == v2.getNumberValue())? 0: (getNumberValue() > v2.getNumberValue())? 1: -1;
-		else
-			return (getStringValue().equals(v2.getStringValue()))? 0: 1;
+		return this.evaluated.compareTo(v2.evaluated);
 	}
 
 	/**
 	 * Returns a String representation of this instance
 	 */
 	public String toString(){
-		return getStringValue();
+		return evaluated.toString();
 	}
 
 }

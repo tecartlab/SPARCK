@@ -118,7 +118,7 @@ public class CmndDebugger extends Cmnd {
 					while(it.hasNext()){
 						var = it.next();
 						exVar = global.get(var);
-						getOutput().outputSendMsg(QueMsgFactory.getMsg("print").add(var).add(" = ").add(exVar.getStringValue()).add(" (" + ((exVar.isNumber)?"float":"string") + ")").done());
+						getOutput().outputSendMsg(QueMsgFactory.getMsg("print").add(var).add(" = ").add(exVar.toString()).add(" (" + ((exVar.isArray())?"array":(exVar.isNumeric())?"float":"string") + ")").done());
 					}
 				}
 			}
