@@ -29,7 +29,7 @@ package com.tecartlab.quescript.commands;
 import org.w3c.dom.Node;
 
 import com.tecartlab.quescript.expression.Expression;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.messages.CMsgShuttle;
@@ -39,7 +39,7 @@ import com.tecartlab.utils.Debug;
 public class CmndExpr extends Cmnd {
 	protected static String NODE_NAME = "expr";
 
-	ExpressionVar variable;
+	ExpressionNode variable;
 
 	public CmndExpr(Cmnd _parentNode){
 		super(_parentNode);

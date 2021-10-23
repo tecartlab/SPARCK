@@ -52,7 +52,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.tecartlab.quescript.QueMessage;
 import com.tecartlab.quescript.OutputConnector;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.messages.CMsgTrigger;
 import com.tecartlab.quescript.messages.ScriptMsgException;
@@ -383,13 +383,13 @@ public class QSManager implements OutputInterface{
 		}
 	}
 
-	public void var(String name, ArrayList<ExpressionVar> values){
+	public void var(String name, ArrayList<ExpressionNode> values){
 		if(globalExprEnvironment.containsVar(name)){
-			globalExprEnvironment.setLocalVariable(name, new ExpressionVar(values));
+			globalExprEnvironment.setLocalVariable(name, new ExpressionNode(values));
 		}
 	}
 
-	public void quevar(String _que, String _name, ArrayList<ExpressionVar> _values){
+	public void quevar(String _que, String _name, ArrayList<ExpressionNode> _values){
 		// we actually dont want quevar, because they set the <var>-defined variables,
 		// and they are reset to their initial expression every time the que restarts.
 		// this means, no variable ever set through this channel will be accessible

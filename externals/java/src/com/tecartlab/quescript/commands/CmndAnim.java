@@ -31,7 +31,7 @@ import java.util.Iterator;
 
 import org.w3c.dom.Node;
 
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.messages.CMsgAnim;
@@ -120,7 +120,7 @@ public class CmndAnim extends Cmnd {
 				// a fadeout time of zero is causing troubles with the algorithm:
 				// better set it to very short.
 				if(fadeoutTime.getTotalMillis()==0){
-					fadeoutTime = new CMsgTime(new ExpressionVar(1), 0);
+					fadeoutTime = new CMsgTime(new ExpressionNode(1), 0);
 				}
 				fadeoutTime_original = fadeoutTime.clone();
 			}

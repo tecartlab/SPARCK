@@ -31,7 +31,7 @@ import java.util.Iterator;
 
 import org.w3c.dom.Node;
 
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.messages.CMsgShuttle;
 import com.tecartlab.quescript.messages.ScriptMsgException;
@@ -105,14 +105,14 @@ public class CmndDebugger extends Cmnd {
 	public void lockLessBang(CMsgShuttle _msg){
 		if(debugMode){
 			String var;
-			ExpressionVar exVar;
+			ExpressionNode exVar;
 			Iterator<String> it;
 			getOutput().outputSendMsg(QueMsgFactory.getMsg("print").add("DEBUGGER " + name).done());
 
 			int levels = prt.getScopeLevels();
 			for(int i = 0; i < levels; i++){
 				if(showVarDomain >= i){
-					HashMap<String, ExpressionVar> global = (HashMap<String, ExpressionVar>) prt.getScope(i);
+					HashMap<String, ExpressionNode> global = (HashMap<String, ExpressionNode>) prt.getScope(i);
 					getOutput().outputSendMsg(QueMsgFactory.getMsg("print").add("-------  ").add("Scope:").add(i).add("  -------").done());
 					it = global.keySet().iterator();
 					while(it.hasNext()){

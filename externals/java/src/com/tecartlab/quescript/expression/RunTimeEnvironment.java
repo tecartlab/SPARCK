@@ -43,12 +43,12 @@ public class RunTimeEnvironment {
 	 * Super Storage for all Variables. The individual variables are stored inside 
 	 * HashMaps, their position inside this storage indicates their domain.
 	 */
-	private ArrayList<Map<String, ExpressionVar>> allVarScopes;
+	private ArrayList<Map<String, ExpressionNode>> allVarScopes;
 	
 	/**
 	 * local variable scope
 	 */
-	private HashMap<String, ExpressionVar> localVarScope;
+	private HashMap<String, ExpressionNode> localVarScope;
 	
 	/**
 	 * All defined operators with name and implementation.
@@ -63,33 +63,33 @@ public class RunTimeEnvironment {
 	/**
 	 * All defined variables with name and value.
 	 */
-	protected Map<String, ExpressionVar> staticVars;
+	protected Map<String, ExpressionNode> staticVars;
 
 	public RunTimeEnvironment(RunTimeEnvironment rt) {
 		operators = rt.operators;
 		functions = rt.functions;
 		staticVars = rt.staticVars;
-		allVarScopes = new ArrayList<Map<String, ExpressionVar>>();
-		for(Map<String, ExpressionVar> m: rt.allVarScopes)
+		allVarScopes = new ArrayList<Map<String, ExpressionNode>>();
+		for(Map<String, ExpressionNode> m: rt.allVarScopes)
 			allVarScopes.add(m);
-		localVarScope = new HashMap<String, ExpressionVar>();
+		localVarScope = new HashMap<String, ExpressionNode>();
 		allVarScopes.add(localVarScope);		
 	}
 
 	public RunTimeEnvironment() {
-		allVarScopes = new ArrayList<Map<String, ExpressionVar>>();
+		allVarScopes = new ArrayList<Map<String, ExpressionNode>>();
 		operators = new HashMap<String, Operator>();
 		functions = new HashMap<String, Function>();
-		staticVars = new HashMap<String, ExpressionVar>();
-		localVarScope = new HashMap<String, ExpressionVar>();
+		staticVars = new HashMap<String, ExpressionNode>();
+		localVarScope = new HashMap<String, ExpressionNode>();
 		allVarScopes.add(localVarScope);
 
 		addOperator(new Operator("=", 5, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException{
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException{
 				if(parameters.size() == 2){
-					ExpressionEvaluated p0 = parameters.get(0).evaluated;
-					ExpressionEvaluated p1 = parameters.get(1).evaluated;
+					ExpressionVar p0 = parameters.get(0).eValuated;
+					ExpressionVar p1 = parameters.get(1).eValuated;
 
 					if(p1.isArray()){
 						if(!p0.isArray()) {
@@ -108,18 +108,17 @@ public class RunTimeEnvironment {
 				}	
 				//throw new ExpressionException("= can only assign to a variable");
 			}
-		});
-
+		});		
 		addOperator(new Operator("+", 20, true) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				if(p0.isArray()) {
 					if(!result.isArray() || result.getArraySize() != p0.getArraySize()) {
 						// we first have to adjust the result side
-						result.clear();
+						result.reset();
 						result.setValue(p0.getClonedValues());
 					}
 					// TODO: getArrayIndex(i) is resource hungry and is done multiple times: better store one call to a local var
@@ -153,7 +152,7 @@ public class RunTimeEnvironment {
 				} else { 
 					if(result.isArray()) {
 						// we first have to adjust the result side
-						result.clear();
+						result.reset();
 					}
 					if(p0.isNumeric() && p1.isNumeric()) {
 						result.setValue(p0.getNumericValue() + p1.getNumericValue());
@@ -165,9 +164,9 @@ public class RunTimeEnvironment {
 		});
 		addOperator(new Operator("-", 20, true) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException{
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException{
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 				
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
@@ -182,9 +181,9 @@ public class RunTimeEnvironment {
 		});
 		addOperator(new Operator("*", 30, true) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
@@ -199,9 +198,9 @@ public class RunTimeEnvironment {
 		});
 		addOperator(new Operator("/", 30, true) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
@@ -216,9 +215,9 @@ public class RunTimeEnvironment {
 		});
 		addOperator(new Operator("%", 30, true) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
@@ -233,9 +232,9 @@ public class RunTimeEnvironment {
 		});
 		addOperator(new Operator("^", 40, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
@@ -247,19 +246,19 @@ public class RunTimeEnvironment {
 					throw new ExpressionException("String power not supported");												
 				}
 			}
-		});
-		
+		});	
 		addOperator(new Operator("[]", 50, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated array = parameters.get(0).evaluated;
-				ExpressionEvaluated indice = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar array = parameters.get(0).eValuated;
+				ExpressionVar indice = parameters.get(1).eValuated;
 
 				if(array.isArray()){
 					if(indice.isNumeric()){
 						int index = (int)indice.getNumericValue();
 						if(index < array.getArraySize()){
 							result.setValue(array.getArrayIndex(index));
+							return;
 						} 					
 						throw new ExpressionException("Array index out of bounds exception: " + index + " " + array.getArraySize());	
 					} 
@@ -268,131 +267,119 @@ public class RunTimeEnvironment {
 				throw new ExpressionException("Invalid operation: " + parameters.get(0).toString() + " is not an array.");
 			}
 		});
-
 		addOperator(new Operator("&&", 8, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				boolean b0 = !(p0.getNumericValue() == 0);
 				boolean b1 = !(p1.getNumericValue() == 0);
 				result.setValue((b0 && b1)?1:0);
 			}
 		});
-
 		addOperator(new Operator("||", 8, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				boolean b0 = !(p0.getNumericValue() == 0);
 				boolean b1 = !(p1.getNumericValue() == 0);
 				result.setValue((b0 || b1)?1:0);
 			}
 		});
-
 		addOperator(new Operator(">", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				result.setValue((p0.getNumericValue() > p1.getNumericValue())?1:0);
 			}
 		});
-
 		addOperator(new Operator("gt", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				operators.get(">").eval(parameters, result);
 			}
 		});
-
 		addOperator(new Operator(">=", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				result.setValue((p0.getNumericValue() >= p1.getNumericValue())?1:0);
 			}
 		});
-
 		addOperator(new Operator("ge", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				operators.get(">=").eval(parameters, result);
 			}
 		});
-
 		addOperator(new Operator("<", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				result.setValue((p0.getNumericValue() < p1.getNumericValue())?1:0);
 			}
-		});
-		
+		});	
 		addOperator(new Operator("lt", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				operators.get("<").eval(parameters, result);
 			}
 		});
-
 		addOperator(new Operator("<=", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				result.setValue((p0.getNumericValue() <= p1.getNumericValue())?1:0);
 			}
-		});
-		
+		});	
 		addOperator(new Operator("le", 10, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException{
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException{
 				operators.get("<=").eval(parameters, result);
 			}
 		});
-
 		addOperator(new Operator("==", 7, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				result.setValue((p0.getNumericValue() == p1.getNumericValue())?1:0);
 			}
 		});
-
 		addOperator(new Operator("!=", 7, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
 				
 				result.setValue((p0.getNumericValue() != p1.getNumericValue())?1:0);
 			}
 		});
-		
 		addOperator(new Operator("<>", 7, false) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 
 				operators.get("!=").eval(parameters, result);
 			}
 		});
 
+
 		addFunction(new Function("LENGTH", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isArray()){
 					result.setValue(p0.getArraySize());
@@ -404,34 +391,32 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("NOT", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				result.setValue((p0.getNumericValue() == 0)?1:0);
 			}
 		});
-
 		addFunction(new Function("IF", 3) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
-				ExpressionEvaluated p1 = parameters.get(1).evaluated;
-				ExpressionEvaluated p2 = parameters.get(2).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				ExpressionVar p1 = parameters.get(1).eValuated;
+				ExpressionVar p2 = parameters.get(2).eValuated;
 
 				result.setValue((p0.getNumericValue() == 1)?p1.getValues():p2.getValues());
 			}
 		});
-
 		addFunction(new Function("RANDOM", 0) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				result.setValue(Math.random());
 			}
 		});
 		addFunction(new Function("SIN", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -445,8 +430,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("COS", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -460,8 +445,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("TAN", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -475,8 +460,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("ASIN", 1) { // added by av
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -490,8 +475,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("ACOS", 1) { // added by av
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -505,8 +490,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("ATAN", 1) { // added by av
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -520,8 +505,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("SINH", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -535,8 +520,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("COSH", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -550,8 +535,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("TANH", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -565,8 +550,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("RAD", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -580,8 +565,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("DEG", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -595,33 +580,34 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("ARRAY", -1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				if (parameters.size() == 0) {
 					throw new ExpressionException("ARRAY requires at least one parameter");
 				}
-				if(parameters.size() != result.getArraySize() || !result.isArray()) {
+				if(!result.isArray() || parameters.size() != result.getArraySize()) {
 					result.clear();
-					for(ExpressionVar var: parameters) {
-						if(var.evaluated.isNumeric())
-							result.addValue(var.evaluated.getNumericValue());
+					for(ExpressionNode var: parameters) {
+						if(var.eValuated.isNumeric())
+							result.addValue(var.eValuated.getNumericValue());
 						else
-							result.addValue(var.evaluated.getStringValue());
+							result.addValue(var.eValuated.getStringValue());
 					}
 				} else {
-					ExpressionEvaluated varVal;
+					ExpressionVar varVal;
 					for(int i = 0; i < parameters.size(); i++) {
-						varVal = parameters.get(i).evaluated;
+						varVal = parameters.get(i).eValuated;
 						if(varVal.isNumeric())
 							result.setArrayIndex(i, varVal.getNumericValue());
 						else
 							result.setArrayIndex(i, varVal.getStringValue());
-					}					
+					}	
 				}
+				result.cleanup();
 			}
 		});
 		addFunction(new Function("CLONE", -1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				throw new ExpressionException("CLONE is not working yet..");
 				/*
 				if (parameters.size() == 0) {
@@ -649,12 +635,12 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("MAX", -1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				if (parameters.size() == 0) {
 					throw new ExpressionException("MAX requires at least one parameter");
 				}
-				ExpressionVar max = null;
-				for (ExpressionVar parameter : parameters) {
+				ExpressionNode max = null;
+				for (ExpressionNode parameter : parameters) {
 					if(parameter.isNumeric()) {
 						if(!parameter.isArray()) {
 							if (max == null || parameter.compareTo(max) > 0) {
@@ -673,13 +659,13 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("MIN", -1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				if (parameters.size() == 0) {
 					throw new ExpressionException("MIN requires at least one parameter");
 				}
 
-				ExpressionVar min = null;
-				for (ExpressionVar parameter : parameters) {
+				ExpressionNode min = null;
+				for (ExpressionNode parameter : parameters) {
 					if(parameter.isNumeric()) {
 						if(!parameter.isArray()) {
 							if (min == null || parameter.compareTo(min) < 0) {
@@ -698,13 +684,13 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("LERP", 3) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
 				if (parameters.size() < 3) {
 					throw new ExpressionException("LERP requires three parameters: step, start value, end value");
 				}
-				ExpressionEvaluated step = parameters.get(0).evaluated;
-				ExpressionEvaluated start = parameters.get(1).evaluated;
-				ExpressionEvaluated stop = parameters.get(2).evaluated;
+				ExpressionVar step = parameters.get(0).eValuated;
+				ExpressionVar start = parameters.get(1).eValuated;
+				ExpressionVar stop = parameters.get(2).eValuated;
 
 				
 				if(start.isArray() ^ stop.isArray()) {
@@ -721,17 +707,24 @@ public class RunTimeEnvironment {
 				double st, ed;
 							
 				if(start.isArray()) {
-					if(result.getArraySize() != start.getArraySize()) {
+					if((result.isArray()) || result.getArraySize() != start.getArraySize()) {
 						result.clear();
-						result.setValue(start.getClonedValues());
+						for (int i = 0; i < start.getArraySize(); i++) {
+							st = start.getArrayIndex(i).getNumericValue();
+							ed = stop.getArrayIndex(i).getNumericValue();
+							result.addValue(st + step.getNumericValue() * (ed - st));
+						}					
+					} else {
+						for (int i = 0; i < start.getArraySize(); i++) {
+							st = start.getArrayIndex(i).getNumericValue();
+							ed = stop.getArrayIndex(i).getNumericValue();
+							result.setArrayIndex(i, st + step.getNumericValue() * (ed - st));
+						}					
 					}
-					for (int i = 0; i < start.getArraySize(); i++) {
-						st = start.getArrayIndex(i).getNumericValue();
-						ed = stop.getArrayIndex(i).getNumericValue();
-						result.setArrayIndex(i, st + step.getNumericValue() * (ed - st));
-					}
-					
 				} else {
+					if(result.isArray()) {
+						result.reset();
+					}
 					st = start.getNumericValue();
 					ed = stop.getNumericValue();
 					result.setValue(st + step.getNumericValue() * (ed - st));
@@ -740,8 +733,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("ABS", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 				
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -755,8 +748,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("LOG", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 				
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -770,8 +763,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("LOG10", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 				
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -785,8 +778,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("ROUND", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -800,8 +793,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("FLOOR", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -815,8 +808,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("CEILING", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 	
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -830,8 +823,8 @@ public class RunTimeEnvironment {
 		});
 		addFunction(new Function("SQRT", 1) {
 			@Override
-			public void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException {
-				ExpressionEvaluated p0 = parameters.get(0).evaluated;
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				ExpressionVar p0 = parameters.get(0).eValuated;
 
 				if(p0.isNumeric()) {
 					if(!p0.isArray()) {
@@ -900,9 +893,9 @@ public class RunTimeEnvironment {
 	 * @param scope the scope to write the variable to: 0 - local scope, 1 - next higher etc.
 	 * @return reference to the protected variable, null if the domain is incorrect
 	 */
-	public ExpressionVar setVariable(String variable, ExpressionVar value, int scope) {
+	public ExpressionNode setVariable(String variable, ExpressionNode value, int scope) {
 		if(scope < allVarScopes.size()){
-			ExpressionVar v = getVar(variable);
+			ExpressionNode v = getVar(variable);
 			if(v != null){
 				return v.set(value);
 			} else {
@@ -923,8 +916,8 @@ public class RunTimeEnvironment {
 	 *            The variable value.
 	 * @return reference to the protected variable
 	 */
-	public ExpressionVar setVariable(String variable, ExpressionVar value) {
-		ExpressionVar v = getVar(variable);
+	public ExpressionNode setVariable(String variable, ExpressionNode value) {
+		ExpressionNode v = getVar(variable);
 		if(v != null){
 			return v.set(value);
 		} else {
@@ -941,10 +934,10 @@ public class RunTimeEnvironment {
 	 * @param value ExpressionVar object
 	 * @return the reference object of this variable
 	 */
-	public ExpressionVar setLocalVariable(String variable, ExpressionVar value) {
-		ExpressionVar v = localVarScope.get(variable);
+	public ExpressionNode setLocalVariable(String variable, ExpressionNode value) {
+		ExpressionNode v = localVarScope.get(variable);
 		if(v != null){
-			if(value.evaluated.isArray()){
+			if(value.eValuated.isArray()){
 				return v.copyFrom(value);
 			} else {
 				return v.set(value);
@@ -965,12 +958,12 @@ public class RunTimeEnvironment {
 	 *            The variable value.
 	 * @return reference to the protected variable
 	 */
-	public ExpressionVar setLocalVariable(String variable, double value) {
-		ExpressionVar v = localVarScope.get(variable);
+	public ExpressionNode setLocalVariable(String variable, double value) {
+		ExpressionNode v = localVarScope.get(variable);
 		if(v != null){
 			return v.setValue(value);
 		} else {
-			v = new ExpressionVar(value).setUsedAsVariable();
+			v = new ExpressionNode(value).setUsedAsVariable();
 			localVarScope.put(variable, v);
 			return v;
 		}
@@ -986,12 +979,12 @@ public class RunTimeEnvironment {
 	 *            The variable value.
 	 * @return reference to the protected variable
 	 */
-	public ExpressionVar setLocalVariable(String variable, String value) {
-		ExpressionVar v = localVarScope.get(variable);
+	public ExpressionNode setLocalVariable(String variable, String value) {
+		ExpressionNode v = localVarScope.get(variable);
 		if(v != null){
 			return v.setValue(value);
 		} else {
-			v = new ExpressionVar(value).setUsedAsVariable();
+			v = new ExpressionNode(value).setUsedAsVariable();
 			localVarScope.put(variable, v);
 			return v;
 		}
@@ -1002,9 +995,9 @@ public class RunTimeEnvironment {
 	 * @param variable
 	 * @return null if none of this name exists.
 	 */
-	public ExpressionVar getVar(String variable){
+	public ExpressionNode getVar(String variable){
 		for(int i = allVarScopes.size() - 1; i >= 0; i--){
-			ExpressionVar v = allVarScopes.get(i).get(variable);
+			ExpressionNode v = allVarScopes.get(i).get(variable);
 			if(v != null){
 				return v;
 			}
@@ -1017,9 +1010,9 @@ public class RunTimeEnvironment {
 	 * @param variable
 	 * @return null if none of this name exists.
 	 */
-	public ExpressionVar getLocalVar(String variable){
+	public ExpressionNode getLocalVar(String variable){
 		for(int i = localVarScope.size() - 1; i >= 0; i--){
-			ExpressionVar v = localVarScope.get(variable);
+			ExpressionNode v = localVarScope.get(variable);
 			if(v != null){
 				return v;
 			}
@@ -1033,7 +1026,7 @@ public class RunTimeEnvironment {
 	 * @return true if one of with this name exists.
 	 */
 	public boolean containsVar(String variable){
-		for(Map<String, ExpressionVar> m: allVarScopes){
+		for(Map<String, ExpressionNode> m: allVarScopes){
 			if(m.containsKey(variable)){
 				return true;
 			}
@@ -1054,7 +1047,7 @@ public class RunTimeEnvironment {
 	 * @param level - the top level is 0, the lowest level is getScopeLevels() - 1
 	 * @return
 	 */
-	public Map<String, ExpressionVar> getScope(int level){
+	public Map<String, ExpressionNode> getScope(int level){
 		return allVarScopes.get(level);
 	}
 
@@ -1070,7 +1063,7 @@ public class RunTimeEnvironment {
 		if(staticVars.containsKey(value))
 			staticVars.get(value).setValue(value);
 		else
-			staticVars.put(variable, new ExpressionVar(value));
+			staticVars.put(variable, new ExpressionNode(value));
 	}
 
 	/**
@@ -1078,7 +1071,7 @@ public class RunTimeEnvironment {
 	 */
 	private void addStaticVariableNull() {
 		if(!staticVars.containsKey("NULL"))
-			staticVars.put("NULL", new ExpressionVar());
+			staticVars.put("NULL", new ExpressionNode());
 	}
 
 	protected abstract class Operation {
@@ -1091,11 +1084,11 @@ public class RunTimeEnvironment {
 		 * 
 		 * @param parameters
 		 *            Parameters will be passed by the expression evaluator as a
-		 *            {@link List} of {@link ExpressionVar} values.
-		 * @return The function must return a new {@link ExpressionVar} value as a
+		 *            {@link List} of {@link ExpressionNode} values.
+		 * @return The function must return a new {@link ExpressionNode} value as a
 		 *         computing result.
 		 */
-		public abstract void eval(List<ExpressionVar> parameters, ExpressionEvaluated result) throws ExpressionException;		
+		public abstract void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException;		
 	}
 
 	/**

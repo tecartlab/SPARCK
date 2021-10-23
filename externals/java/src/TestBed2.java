@@ -31,7 +31,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.tecartlab.quescript.expression.Expression;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 
@@ -51,16 +51,16 @@ public class TestBed2 {
 			double eff = 10.0;
 			System.out.print(Double.toString(eff));
 
-			ExpressionVar result = null;
+			ExpressionNode result = null;
 
 			RunTimeEnvironment rt = new RunTimeEnvironment();
 
 			Expression expression;
 
-			ExpressionVar a2 = new ExpressionVar(5);
-			ExpressionVar a = new ExpressionVar("test");
-			ExpressionVar b = new ExpressionVar("test");
-			ExpressionVar f = new ExpressionVar(4);
+			ExpressionNode a2 = new ExpressionNode(5);
+			ExpressionNode a = new ExpressionNode("test");
+			ExpressionNode b = new ExpressionNode("test");
+			ExpressionNode f = new ExpressionNode(4);
 
 			rt.setVariable("a2",a2);
 

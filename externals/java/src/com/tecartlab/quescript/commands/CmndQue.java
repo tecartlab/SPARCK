@@ -213,7 +213,7 @@ public class CmndQue extends Cmnd{
 	 * @param name
 	 * @param values
 	 */
-	protected void setQueVar(String name, ArrayList<ExpressionVar> values){
+	protected void setQueVar(String name, ArrayList<ExpressionNode> values){
 		// we actually dont want quevar, because they set the <var>-defined variables,
 		// and they are reset to their initial expression every time the que restarts.
 		// this means, no variable ever set through this channel will be accessible

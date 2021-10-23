@@ -29,7 +29,7 @@ package com.tecartlab.quescript.commands;
 import org.w3c.dom.Node;
 
 import com.tecartlab.quescript.expression.Expression;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.messages.CMsgAnim;
@@ -45,9 +45,9 @@ public class CmndWhile extends Cmnd {
 	private static String ATTR_NEXT = "next";
 	private static String ATTR_NAME = "name";
 
-	private ExpressionVar whileCondition = null;
-	private ExpressionVar initExpression = null;
-	private ExpressionVar nextExpression = null;
+	private ExpressionNode whileCondition = null;
+	private ExpressionNode initExpression = null;
+	private ExpressionNode nextExpression = null;
 
 	private boolean running = false;
 
@@ -134,7 +134,8 @@ public class CmndWhile extends Cmnd {
 					// the <while> loop starts here. should be only called once
 					initExpression.eval();
 				}
-				if(whileCondition.eval().getNumberValue() >= 1){
+				whileCondition.eval();
+				if(whileCondition.getNumberValue() >= 1){
 					for(Cmnd child : getChildren()){
 						child.lockLessBang(_msg);
 					}

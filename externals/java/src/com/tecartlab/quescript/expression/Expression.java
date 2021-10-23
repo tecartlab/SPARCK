@@ -345,7 +345,7 @@ public class Expression {
 	 * The ExpressionVar representation of the left parenthesis, 
 	 * used for parsing varying numbers of function parameters.
 	 */
-	private static final ExpressionVar PARAMS_START = new ExpressionVar(0);
+	private static final ExpressionNode PARAMS_START = new ExpressionNode(0);
 
 	/**
 	 * What character to use for decimal separators.
@@ -626,11 +626,11 @@ public class Expression {
 	 * @return a ExpressionVar that contains an ExpressionTree.
 	 * @throws ExpressionException
 	 */
-	public ExpressionVar parse(RunTimeEnvironment rt) throws ExpressionException {
+	public ExpressionNode parse(RunTimeEnvironment rt) throws ExpressionException {
 		rpn = shuntingYard(rt);
 		validate(rpn, rt);
 
-		Stack<ExpressionVar> stack = new Stack<ExpressionVar>();
+		Stack<ExpressionNode> stack = new Stack<ExpressionNode>();
 
 		int scopeToken = 0;
 				
@@ -641,16 +641,16 @@ public class Expression {
 				token = token.substring(scopeToken);
 			}
 			if (rt.operators.containsKey(token)) {
-				ArrayList<ExpressionVar> p = new ArrayList<ExpressionVar>();
-				ExpressionVar v1 = stack.pop();
-				ExpressionVar v2 = stack.pop();
+				ArrayList<ExpressionNode> p = new ArrayList<ExpressionNode>();
+				ExpressionNode v1 = stack.pop();
+				ExpressionNode v2 = stack.pop();
 				p.add(v2);
 				p.add(v1);
-				stack.push(new ExpressionVar(rt.operators.get(token), p));
+				stack.push(new ExpressionNode(rt.operators.get(token), p));
 			} else if (rt.functions.containsKey(token.toUpperCase(Locale.ROOT))) {
 				if(scopeToken == 0){
 					Function f = rt.functions.get(token.toUpperCase(Locale.ROOT));
-					ArrayList<ExpressionVar> p = new ArrayList<ExpressionVar>(
+					ArrayList<ExpressionNode> p = new ArrayList<ExpressionNode>(
 							!f.numParamsVaries() ? f.getNumParams() : 0);
 					// pop parameters off the stack until we hit the start of 
 					// this function's parameter list
@@ -663,7 +663,7 @@ public class Expression {
 					if (!f.numParamsVaries() && p.size() != f.getNumParams()) {
 						throw new ExpressionException("Function " + token + " expected " + f.getNumParams() + " parameters, got " + p.size() + " | " +"{"+expression+"}" + infoString);
 					}
-					stack.push(new ExpressionVar(f, p));
+					stack.push(new ExpressionNode(f, p));
 				} else {
 					// if the token has a scopeToken in front, it is meant to be a variable, but
 					// it matches a function and that is not allowed.
@@ -673,10 +673,10 @@ public class Expression {
 				stack.push(PARAMS_START);
 			} else if (token.startsWith("'")) { 
 				// its a string
-				stack.push(new ExpressionVar(token.substring(1, token.length() - 1)));		
+				stack.push(new ExpressionNode(token.substring(1, token.length() - 1)));		
 			} else if(isNumber(token)){
 				// its a number
-				stack.add(new ExpressionVar(token));
+				stack.add(new ExpressionNode(token));
 			} else if (rt.staticVars.containsKey(token)) {
 				stack.push(rt.staticVars.get(token));
 			} else if (rt.containsVar(token)) {
@@ -685,7 +685,7 @@ public class Expression {
 					// matter if there is a variable in a higher scope
 					
 					// we first set a variable
-					rt.setLocalVariable(token, new ExpressionVar());	
+					rt.setLocalVariable(token, new ExpressionNode());	
 					// we need to get the reference of it if, since if it already existed, the old
 					// reference is what we want.
 					stack.push(rt.getLocalVar(token));					
@@ -698,7 +698,7 @@ public class Expression {
 				// if a scope token is set, we create one
 				if(scopeToken > 0){
 					// the : or the :: forces to create new variable inside the local scope
-					ExpressionVar newvar = new ExpressionVar();
+					ExpressionNode newvar = new ExpressionNode();
 					rt.setLocalVariable(token, newvar);					
 					stack.add(newvar);
 				} else {

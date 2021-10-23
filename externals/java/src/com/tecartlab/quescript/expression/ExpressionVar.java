@@ -1,286 +1,314 @@
-/* MIT License
- *
- * Copyright (c) 2012-2020 tecartlab.com
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- *
- * @author maybites
- *
- */
-
 package com.tecartlab.quescript.expression;
 
 import java.util.ArrayList;
 
-import com.tecartlab.quescript.expression.Expression.ExpressionException;
-import com.tecartlab.quescript.expression.RunTimeEnvironment.Operation;
-
 public class ExpressionVar {
-	protected ExpressionEvaluated evaluated;
-		
-	protected int arrayIndex = 0;
 
-	private Operation operation;
-	protected ArrayList<ExpressionVar> params;
+	private ArrayList<ExpressionAtom> values;
 
-	// stores the expression if this instance is the result of an Expression.parse(rt)
-	private String expr = null;
-
-	// tells if this instance is used as a variable inside RunTimeEnvironment.
-	protected boolean isUsedAsVariable = false;
-
+	private boolean isNumeric = false;
+	private boolean isArray = false;
+	
 	/**
-	 * Creates an ExpressionVar with a NULL - Value
+	 * Creates an ExpressionEvaluated with a NULL - state
 	 */
-	public ExpressionVar(){
-		evaluated = new ExpressionEvaluated(0);
+	private ExpressionVar(){
+		values = new ArrayList<ExpressionAtom>();
+		reset();
+	}
+	
+	/**
+	 * Creates an ExpressionEvaluated with a numeric - Value
+	 */
+	public ExpressionVar(double val){
+		this();
+		setValue(val);
+	}
+	
+	/**
+	 * Creates an ExpressionEvaluated with a String - Value
+	 */
+	public ExpressionVar(String val){
+		this();
+		setValue(val);
 	}
 
 	/**
-	 * Creates an ExpressionVar with the nummeric value of
-	 * @param value
+	 * Creates an ExpressionEvaluated with an array
 	 */
-	public ExpressionVar(double value){
+	public ExpressionVar(ArrayList<ExpressionAtom> val){
 		this();
-		setValue(value);
+		setValue(val);
 	}
 
 	/**
-	 * Creates an ExpressionVar with the String value of
-	 * @param value
+	 *  update the flags to properly represent the type of variable
 	 */
-	public ExpressionVar(String value){
-		this();
-		setValue(value);
+	protected void cleanup() {
+		isNumeric = true;		
+		for(ExpressionAtom atom: values) {
+			if(!atom.isNumeric())
+				isNumeric = false;
+		}
+		isArray = (values.size() > 1);
 	}
 
 	/**
-	 * Creates an ExpressionVar with an Evaluation Tree
-	 * @param varValue
+	 * clears this instance to a null state, ready to be filled with add..
 	 */
-	public ExpressionVar(Operation op, ArrayList<ExpressionVar> p){
-		this();
-		// TODO:Check if still working
-		operation = op;
-		if(op.oper.equals("ARRAY") || op.oper.equals("[]")){
-			evaluated.makeArray();
-			if(op.oper.equals("[]")){
-				isUsedAsVariable = true;
+	protected void clear() {
+		values.clear();
+		isNumeric = false;
+		isArray = false;
+	}
+	
+	/**
+	 * resets this instance to a numeric 0
+	 */
+	protected void reset() {
+		values.clear();
+		values.add(new ExpressionAtom(0));
+		isNumeric = true;
+		isArray = false;
+	}
+	
+	/**
+	 * start interpreting this Evaluated as array
+	 */
+	protected void makeArray() {
+		isArray = true;
+	}
+	
+	/**
+	 * checks if evaluated is numeric
+	 * @return
+	 */
+	protected boolean isNumeric() {
+		return isNumeric;
+	}
+
+	/**
+	 * checks if evaluated is array
+	 * @return
+	 */
+	protected boolean isArray() {
+		return isArray;
+	}
+
+	/**
+	 * Set the value as a string
+	 * @param val
+	 */
+	protected void setValue(String val) {
+		values.get(0).setStringValue(val);
+		isNumeric = false;
+		isArray = false;
+	}
+
+	/**
+	 * Set the value as a numeric
+	 * @param val
+	 */
+	protected void setValue(double val) {
+		values.get(0).setNumericValue(val);
+		isNumeric = true;
+		isArray = false;
+	}
+
+	/** 
+	 * Set the value with Atome
+	 * @param val
+	 */
+	protected void setValue(ExpressionAtom val) {
+		values.set(0, val);
+		isNumeric = val.isNumeric();
+		isArray = false;
+	}
+
+	/**
+	 * Set the value as a array
+	 * @param val
+	 */
+	protected void setValue(ArrayList<ExpressionAtom> val) {
+		values.clear();
+		int countString = 0;
+		for(ExpressionAtom atom: val) {
+			if(atom.isNumeric()) {
+				values.add(new ExpressionAtom(atom.getNumericValue()));
+			} else {
+				values.add(new ExpressionAtom(atom.getStringValue()));	
+				countString++;
 			}
 		}
-		if(op.oper.equals("LERP") && p.get(1).isArray()){
-			evaluated.makeArray();
-		}
-		params = p;
+		isNumeric = (countString == 0);
+		isArray = true;
 	}
 
 	/**
-	 * Creates an ExpressionVar Array with an Evaluation Tree
-	 * @param varValue
-	 */
-			
-	public ExpressionVar(ArrayList<ExpressionVar> p){
-		// TODO:Check if still working
-		operation = null;
-		params = p;
-		isUsedAsVariable = true;
-	}
-
-
-	/**
-	 * copies the content of the passed ExpressionVar into this ExpressionVar
-	 * @param expr
-	 * @returns this instance
-	 */
-	public ExpressionVar copyFrom(ExpressionVar expr){
-		this.arrayIndex = expr.arrayIndex;
-		this.expr = expr.expr;
-		this.evaluated = expr.evaluated.clone();
-		this.isUsedAsVariable = expr.isUsedAsVariable;
-		this.operation = expr.operation;
-		this.params = expr.params;
-		return this;
-	}
-
-	/**
-	 * get the number of parameters inside this ExpressionVar
-	 * @return the number of parameters
-	 */
-	protected int getParamSize(){
-		if(params != null){
-			return params.size();
-		}
-		return 0;
-	}
-
-
-	/**
-	 * get the ExpressionVar at the parameter index
+	 * set array index with numeric value
 	 * @param index
-	 * @return null if no parameter is set
+	 * @param val
 	 */
-	protected ExpressionVar getParam(int index){
-		if(params != null && params.size() > index){
-			return params.get(index);
-		}
-		return null;
+	protected void setArrayIndex(int index, double val) {
+		if(index < getArraySize())
+			this.values.get(index).setNumericValue(val);
 	}
 
 	/**
-	 * Used by RunTimeEnvironment to tell if this instance is a variable
+	 * set array index with string value
+	 * @param index
+	 * @param val
+	 */
+	protected void setArrayIndex(int index, String val) {
+		if(index < getArraySize())
+			this.values.get(index).setStringValue(val);
+		isNumeric = false;
+	}
+
+	/**
+	 * set array index with ExpressionAtom value
+	 * @param index
+	 * @param val
+	 */
+	protected void setArrayIndex(int index, ExpressionAtom val) {
+		if(index < getArraySize())
+			this.values.set(index, val);
+	}
+
+	/**
+	 * adds a numeric value to the array
+	 * @param val
+	 */
+	protected void addValue(double val) {
+		values.add(new ExpressionAtom(val));
+		isArray = true;
+	}
+
+	/** 
+	 * adds a string value to the array
+	 * @param val
+	 */
+	protected void addValue(String val) {
+		values.add(new ExpressionAtom(val));
+		isArray = true;
+		isNumeric = false;
+	}
+
+	/**
+	 * get the numerical value
 	 * @return
 	 */
-	public ExpressionVar setUsedAsVariable(){
-		isUsedAsVariable = true;
-		return this;
+	protected double getNumericValue() {
+		return values.get(0).getNumericValue();
 	}
 
 	/**
-	 * Used by Expression to store the expression if this instance is the result of
-	 * a parse() operation
-	 * @param expr
+	 * get the string value
 	 * @return
 	 */
-	protected ExpressionVar setExpression(String expr){
-		this.expr = expr;
-		return this;
+	protected String getStringValue() {
+		return values.get(0).getStringValue();
 	}
 
-	/**
-	 * Set this instance with the values of the passed ExpressionVar
-	 * @param val
-	 * @return this instance
-	 */
-	public ExpressionVar set(ExpressionVar val){
-		if(val != null) {
-			evaluated = val.evaluated.clone();
-		}
-		return this;
-	}
-
-	/**
-	 * Mutate this instance and set it with a String Value
-	 * @param val
-	 * @return this instance
-	 */
-	public ExpressionVar setValue(String val){
-		try{
-			double dValue = Double.parseDouble(val);
-			this.evaluated.setValue(dValue);
-		} catch (NumberFormatException e){
-			this.evaluated.setValue(val);
-		}
-		return this;
-	}
-
-	/**
-	 * Mutate this instance and set it with a double Value
-	 * @param val
-	 * @return this instance
-	 */
-	public ExpressionVar setValue(double val){
-		this.evaluated.setValue(val);
-		return this;
-	}
-
-	/**
-	 * Mutate this instance and set it with an atom
-	 * @param val
-	 * @return
-	 */
-	public ExpressionVar setValue(ExpressionAtom val){
-		this.evaluated.setValue(val);
-		return this;
-	}
-
-
-	/**
-	 * Get the numeric value of this instance.
-	 * @return the numeric value. If it is a String var, it returns 0
-	 */
-	public double getNumberValue(){
-		return this.evaluated.getNumericValue();
-	}
-
-	/**
-	 * check if evaluated value is an array
-	 * @return
-	 */
-	public boolean isArray() {
-		return this.evaluated.isArray();
-	}
 	
 	/**
-	 * check if evaluated value is numeric
+	 * get the string value. If it is a number, formated as specified 
 	 * @return
 	 */
-	public boolean isNumeric() {
-		return this.evaluated.isNumeric();		
-	}
-	
-	/**
-	 * Evaluates the Expression Tree (if there is one).
-	 * The result is stored inside this instance.
-	 * If this instance is returned by the parse() function of
-	 * Expression, this function should be called before you
-	 * attempt do get its value.
-	 * @return this instance
-	 * @throws ExpressionException
-	 */
-	public ExpressionVar eval() throws ExpressionException{
-		if(operation != null){
-			try {
-				boolean dirtied = false;
-				for(ExpressionVar var: params) {
-					if(var.evaluated.isDirty()) {
-						var.eval();
-						dirtied = true;
-					}
-				}
-				if(dirtied)
-					operation.eval(params, evaluated);
-				
-				evaluated.cleaned();
-			} catch (ExpressionException e) {
-				throw new ExpressionException(e.getMessage() + "\n" + expr);
-			}
-		}
-		return this;
+	protected String getStringValue(String format) {
+		return values.get(0).getStringValue(format);
 	}
 
+	/**
+	 * Get the atom value
+	 * @return
+	 */
+	protected ExpressionAtom getValue(){
+		return this.values.get(0);
+	}
+
+	/**
+	 * get the array as reference
+	 * @return array as reference
+	 */
+	protected ArrayList<ExpressionAtom> getValues(){
+		return this.values;
+	}
+
+	/**
+	 * get the array as values
+	 * @return
+	 */
+	protected ArrayList<ExpressionAtom> getClonedValues(){
+		ArrayList<ExpressionAtom> clone = new ArrayList<ExpressionAtom>();
+		for(ExpressionAtom each: values) {
+			clone.add(each.clone());
+		}
+		return clone;
+	}
+
+	/**
+	 * get size
+	 * @return
+	 */
+	protected int getArraySize() {
+		return this.values.size();
+	}
+	
+
+	/**
+	 * gets the Atom at this index. 
+	 * @param index
+	 * @return a null-state atom if the index is out of bounds
+	 */
+	protected ExpressionAtom getArrayIndex(int index) {
+		if(index < getArraySize())
+			return this.values.get(index);
+		return new ExpressionAtom();
+	}
+	
 	/**
 	 * Compares the numeric value of this instance with the argument.
+	 * @param v2
+	 * @returns
 	 * -1 if this instance is < than the argument
 	 * 0 if both are the same
 	 * +1 if this instance is > than the argument
-	 * @param v2
-	 * @return a new instance of an ExpressionVar containing the result
 	 */
 	protected int compareTo(ExpressionVar v2) {
-		return this.evaluated.compareTo(v2.evaluated);
+		if(this.isNumeric && v2.isNumeric)
+			return (getNumericValue() == v2.getNumericValue())? 0: (getNumericValue() > v2.getNumericValue())? 1: -1;
+		else
+			return (getStringValue().equals(v2.getStringValue()))? 0: 1;
 	}
-
+	
 	/**
-	 * Returns a String representation of this instance
+	 * parse contents to string
 	 */
-	public String toString(){
-		return evaluated.toString();
+	public String toString() {
+		if(isArray) {
+			String retrn = "[";
+			ExpressionAtom parameter;
+			for (int i = 0; i < values.size(); i++) {
+				parameter = values.get(i);
+				retrn += parameter.getStringValue();
+				if((i + 1) < values.size())
+					retrn += ", ";
+			}
+			retrn += "]";
+			return retrn;
+		}
+		return getStringValue();
 	}
-
+	
+	/**
+	 * clone this evaluated
+	 */
+	protected ExpressionVar clone() {
+		ExpressionVar clone = new ExpressionVar(this.values);
+		clone.isArray = this.isArray;
+		clone.isNumeric = this.isNumeric;
+		return clone;
+	}
+	
 }

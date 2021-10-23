@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 import org.w3c.dom.Node;
 
 import com.tecartlab.quescript.expression.Expression;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.messages.CMsgShuttle;
@@ -46,21 +46,21 @@ public class CmndTrack extends Cmnd {
 	private static String ATTR_FADETO = "fadeto";
 	private static String ATTR_NAME = "name";
 
-	private ExpressionVar[] keyValues;
+	private ExpressionNode[] keyValues;
 	private double[] relKeyTimes;
-	private ExpressionVar fadeTo;
+	private ExpressionNode fadeTo;
 	private double fadeFrom;
 
 	public String trackName;
 
-	private ExpressionVar calculatedValue;
+	private ExpressionNode calculatedValue;
 
 	boolean fadeToMode = false;
 
 	public CmndTrack(Cmnd _parentNode){
 		super(_parentNode);
 		super.setCmndName(NODE_NAME);
-		calculatedValue = new ExpressionVar(0);
+		calculatedValue = new ExpressionNode(0);
 	}
 
 	public void build(Node _xmlNode) throws ScriptMsgException{
@@ -83,7 +83,7 @@ public class CmndTrack extends Cmnd {
 			segmts.add(kv); // Add .replace("\"", "") to remove surrounding quotes.
 		}
 
-		keyValues = new ExpressionVar[segmts.size()];
+		keyValues = new ExpressionNode[segmts.size()];
 		boolean setupRelKeyTimes = false;
 		if(relKeyTimes == null){
 			relKeyTimes = new double[segmts.size()];
@@ -175,7 +175,7 @@ public class CmndTrack extends Cmnd {
 	 * get the object container for the calculated value;
 	 * @return
 	 */
-	public ExpressionVar getValueObject(){
+	public ExpressionNode getValueObject(){
 		return calculatedValue;
 	}
 

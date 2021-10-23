@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.tecartlab.quescript.QueMessage;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 
 public abstract class QueMessageRAW implements QueMessage{
@@ -40,7 +40,7 @@ public abstract class QueMessageRAW implements QueMessage{
 
 	protected ArrayList<Object> tempList;
 
-	protected HashMap<Integer, ExpressionVar> evalList;
+	protected HashMap<Integer, ExpressionNode> evalList;
 
 	protected int index;
 
@@ -64,10 +64,10 @@ public abstract class QueMessageRAW implements QueMessage{
 		return this;
 	}
 
-	protected QueMessageRAW add(ExpressionVar token){
+	protected QueMessageRAW add(ExpressionNode token){
 		index++;
 		if (evalList == null)
-			evalList = new HashMap<Integer, ExpressionVar>();
+			evalList = new HashMap<Integer, ExpressionNode>();
 		evalList.put(new Integer(index), token);
 		tempList.add(token);
 		return this;

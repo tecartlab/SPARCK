@@ -29,7 +29,7 @@ package com.tecartlab.quescript.commands;
 import org.w3c.dom.Node;
 
 import com.tecartlab.quescript.expression.Expression;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.messages.CMsgShuttle;
@@ -47,7 +47,7 @@ public class CmndIf extends Cmnd {
 
 	private int mode = -1;
 
-	private ExpressionVar ifCondition = null;
+	private ExpressionNode ifCondition = null;
 
 	private RunTimeEnvironment prt;
 
@@ -117,7 +117,8 @@ public class CmndIf extends Cmnd {
 	public void bang(CMsgShuttle _msg) {
 		if(!_msg.isWaitLocked()){
 			try {
-				if(ifCondition.eval().getNumberValue() == mode){
+				ifCondition.eval();
+				if(ifCondition.getNumberValue() == mode){
 					for(Cmnd child : getChildren()){
 						if(!child.isCmndName(CmndElse.NODE_NAME))
 							child.bang(_msg);
@@ -136,7 +137,8 @@ public class CmndIf extends Cmnd {
 
 	public void lockLessBang(CMsgShuttle _msg){
 		try {
-			if(ifCondition.eval().getNumberValue() == mode){
+			ifCondition.eval();
+			if(ifCondition.getNumberValue() == mode){
 				for(Cmnd child : getChildren()){
 					if(!child.isCmndName(CmndElse.NODE_NAME))
 						child.lockLessBang(_msg);

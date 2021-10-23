@@ -28,7 +28,7 @@ package com.tecartlab.quescript.messages;
 
 import java.util.Calendar;
 
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.utils.Debug;
 
@@ -38,7 +38,7 @@ public class CMsgTime {
 	final static int MINS = 2;
 	final static int HOURS = 3;
 
-	private ExpressionVar mills;
+	private ExpressionNode mills;
 
 	private long diffMills;
 
@@ -55,7 +55,7 @@ public class CMsgTime {
 	 * @param _ms_hourglass
 	 * @throws ScriptMsgException
 	 */
-	public CMsgTime(ExpressionVar mills, long diffMills) throws ScriptMsgException{
+	public CMsgTime(ExpressionNode mills, long diffMills) throws ScriptMsgException{
 		this.mills = mills;
 		this.diffMills = diffMills;
 	}
@@ -66,7 +66,7 @@ public class CMsgTime {
 	 * @throws ScriptMsgException
 	 */
 	public CMsgTime(String time) throws ScriptMsgException{
-		this.mills = new ExpressionVar(parse(time));
+		this.mills = new ExpressionNode(parse(time));
 		this.diffMills = 0;
 	}
 
@@ -97,7 +97,7 @@ public class CMsgTime {
 	}
 
 	private void setMilsTime(long mils){
-		mills = new ExpressionVar((double)mils);
+		mills = new ExpressionNode((double)mils);
 	}
 
 	private long getStringTime(float hours, float mins, float secs, float mils){

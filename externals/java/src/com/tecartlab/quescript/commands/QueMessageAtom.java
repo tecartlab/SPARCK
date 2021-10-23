@@ -29,7 +29,7 @@ package com.tecartlab.quescript.commands;
 import com.cycling74.max.Atom;
 
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 
 public class QueMessageAtom extends QueMessageRAW{
 
@@ -82,7 +82,7 @@ public class QueMessageAtom extends QueMessageRAW{
 				messageList[i] = Atom.newAtom((Double)tempList.get(i));
 			} else if(tempList.get(i) instanceof Long){
 				messageList[i] = Atom.newAtom((Long)tempList.get(i));
-			} else if(tempList.get(i) instanceof ExpressionVar){
+			} else if(tempList.get(i) instanceof ExpressionNode){
 				messageList[i] = Atom.newAtom(0);
 			} else {
 				messageList[i] = Atom.newAtom(0);
@@ -93,11 +93,12 @@ public class QueMessageAtom extends QueMessageRAW{
 
 	protected QueMessageRAW eval() throws ExpressionException {
 		if(evalList != null && evalList.size() > 0){
-			ExpressionVar ev;
+			ExpressionNode ev;
 //			System.out.println(" evallist size = " + evalList.size() + " | messageList size = " + messageList.length);
 			for(Integer i: evalList.keySet()){
 //				System.out.println(" -> evallist int = " + i);
-				ev = evalList.get(i).eval();
+				ev = evalList.get(i);
+				ev.eval();
 				if(ev.isNumeric())
 					messageList[i] = Atom.newAtom(ev.getNumberValue());
 				else

@@ -31,7 +31,7 @@ import java.util.Locale;
 import org.w3c.dom.Node;
 
 import com.tecartlab.quescript.expression.Expression;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.messages.CMsgShuttle;
@@ -43,8 +43,8 @@ public class CmndVar extends Cmnd {
 
 	private static String ATTR_NAME = "name";
 
-	ExpressionVar myExpression;
-	ExpressionVar varValue;
+	ExpressionNode myExpression;
+	ExpressionNode varValue;
 	String name;
 
 	RunTimeEnvironment prt;
@@ -79,7 +79,7 @@ public class CmndVar extends Cmnd {
 			// if no local variable of this name exists, create one with value NULL
 			try {
 				myExpression.eval();
-				varValue = new ExpressionVar();
+				varValue = new ExpressionNode();
 				if(myExpression.isArray()){
 					varValue.copyFrom(myExpression);
 				} else {
@@ -113,7 +113,9 @@ public class CmndVar extends Cmnd {
 		try {
 			// we already know that this variable must exist, since it was created on load-time
 			// so we can simply pass on the evaluation of the initial expression
-			prt.setLocalVariable(name, myExpression.eval());
+			// TODO: check if this causes problems:
+			myExpression.eval();
+			prt.setLocalVariable(name, myExpression);
 		} catch (ExpressionException e) {
 			Debug.error("QueScript que("+parentNode.getQueName()+") - Command <var>: Value Expression", e.getMessage());
 		}

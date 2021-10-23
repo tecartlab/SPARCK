@@ -29,7 +29,7 @@ package com.tecartlab.quescript.commands;
 import org.w3c.dom.Node;
 
 import com.tecartlab.quescript.expression.Expression;
-import com.tecartlab.quescript.expression.ExpressionVar;
+import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.messages.CMsgShuttle;
@@ -72,7 +72,7 @@ public class CmndWait extends Cmnd {
 	private boolean isComplexChild = false;
 	protected boolean complexResult = false;
 
-	private ExpressionVar untilWhileCondition = null;
+	private ExpressionNode untilWhileCondition = null;
 
 	public CmndWait(Cmnd _parentNode){
 		super(_parentNode);
@@ -225,7 +225,8 @@ public class CmndWait extends Cmnd {
 			break;
 		case MODE_WHILE:
 			try {
-				if(untilWhileCondition.eval().getNumberValue() == 0)
+				untilWhileCondition.eval();
+				if(untilWhileCondition.getNumberValue() == 0)
 					return true;
 			} catch (ExpressionException e) {
 				Debug.error("Script - Command <wait>", "while condition: " + e.getLocalizedMessage());
@@ -233,7 +234,8 @@ public class CmndWait extends Cmnd {
 			break;
 		case MODE_UNTIL:
 			try {
-				if(untilWhileCondition.eval().getNumberValue() == 1)
+				untilWhileCondition.eval();
+				if(untilWhileCondition.getNumberValue() == 1)
 					return true;
 			} catch (ExpressionException e) {
 				Debug.error("Script - Command <wait>", "until condition: " + e.getLocalizedMessage());

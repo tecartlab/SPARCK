@@ -37,13 +37,28 @@ public class ExpressionAtom {
 	}
 
 	protected double getNumericValue() {
-		return dValue;
+		if(isNumeric) {
+			return dValue;			
+		} else {
+			return 0;
+		}
 	}
 
 	protected String getStringValue() {
-		return sValue;
+		return getStringValue("%.2f");
 	}
-	
+
+	protected String getStringValue(String format) {
+		if(!isNumeric) {
+			return sValue;
+		} else {
+			if(dValue == (long) dValue)
+		        return String.format("%d", (long) dValue);
+		    else
+		        return String.format("%.2f", dValue);
+		}
+	}
+
 	protected void setStringValue(String val) {
 		isNumeric = false;
 		sValue = val;
