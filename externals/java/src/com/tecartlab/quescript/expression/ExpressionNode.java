@@ -45,9 +45,12 @@ public class ExpressionNode {
 	// stores the expression if this instance is the result of an Expression.parse(rt)
 	private String expr = null;
 
-	// tells if this instance is used as a variable inside RunTimeEnvironment.
-	protected boolean isUsedAsVariable = false;
+	// tells if this instance is used as a reference
+	private boolean isUsedAsReference = false;
 
+	// tells if this instance is used as a variable
+	private boolean isUsedAsVariable = false;
+	
 	/**
 	 * Creates an ExpressionVar with a NULL - Value
 	 */
@@ -80,15 +83,6 @@ public class ExpressionNode {
 	public ExpressionNode(Operation op, ArrayList<ExpressionNode> p){
 		this();
 		operation = op;
-		if(op.oper.equals("ARRAY") || op.oper.equals("[]")){
-			eValuated.makeArray();
-			if(op.oper.equals("[]")){
-				isUsedAsVariable = true;
-			}
-		}
-		if(op.oper.equals("LERP") && p.get(1).isArray()){
-			eValuated.makeArray();
-		}
 		nodeTree = p;
 	}
 
@@ -100,7 +94,6 @@ public class ExpressionNode {
 	public ExpressionNode(ArrayList<ExpressionNode> p){
 		operation = null;
 		nodeTree = p;
-		isUsedAsVariable = true;
 	}
 	
 	
@@ -112,7 +105,6 @@ public class ExpressionNode {
 		eValuated = p;
 		operation = null;
 		nodeTree = null;
-		isUsedAsVariable = true;
 	}
 
 	/**
@@ -146,7 +138,6 @@ public class ExpressionNode {
 	public ExpressionNode copyFrom(ExpressionNode expr){
 		this.expr = expr.expr;
 		this.eValuated = expr.eValuated.clone();
-		this.isUsedAsVariable = expr.isUsedAsVariable;
 		this.operation = expr.operation;
 		this.nodeTree = expr.nodeTree;
 		return this;
@@ -177,12 +168,37 @@ public class ExpressionNode {
 	}
 
 	/**
-	 * Used by RunTimeEnvironment to tell if this instance is a variable
+	 * indicate this instance is used as reference
+	 * @return
+	 */
+	public ExpressionNode setUsedAsReference(){
+		isUsedAsReference = true;
+		return this;
+	}
+
+	/**
+	 * check if this instance is used as reference
+	 * @return
+	 */
+	public boolean isUsedAsReference() {
+		return isUsedAsReference;
+	}
+
+	/**
+	 * indicate this instance is used as Variable
 	 * @return
 	 */
 	public ExpressionNode setUsedAsVariable(){
 		isUsedAsVariable = true;
 		return this;
+	}
+
+	/**
+	 * check if this instance is used as Variable
+	 * @return
+	 */
+	public boolean isUsedAsVariable() {
+		return isUsedAsVariable;
 	}
 
 	/**
@@ -196,6 +212,15 @@ public class ExpressionNode {
 		return this;
 	}
 
+	/**
+	 * return the expression of this node
+	 * @return
+	 */
+	protected String getExpression() {
+		return this.expr;
+	}
+	
+	
 	/**
 	 * Mutate this instance and set it with a String Value
 	 * @param val
@@ -316,7 +341,7 @@ public class ExpressionNode {
 	 * Returns a String representation of this instance
 	 */
 	public String toString(){
-		return eValuated.toString();
+		return eValuated.getStringValue();
 	}
 	
 	public ExpressionNode cloneToEvalOnly() {

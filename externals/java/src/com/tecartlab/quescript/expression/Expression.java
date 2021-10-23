@@ -42,6 +42,10 @@ import com.tecartlab.quescript.expression.RunTimeEnvironment.Function;
 import com.tecartlab.quescript.expression.RunTimeEnvironment.Operator;
 
 public class Expression {
+	// Scope prefix for creating local / overwriting global var
+	final static String SCOPE_PREFX_LOCAL = ":";
+	// Scope prefix for enforce creating local var
+	final static String SCOPE_PREFX_ENFORCE = "::";
 
 	/**
 	 * The original infix expression.
@@ -379,11 +383,18 @@ public class Expression {
 				ArrayList<ExpressionNode> p = new ArrayList<ExpressionNode>();
 				ExpressionNode v1 = stack.pop();
 				ExpressionNode v2 = stack.pop();
-				if(token.equals("@")) {
+				if(token.equals(RunTimeEnvironment.VAR_REFERNECE)) {
 					// create a by reference node
-					stack.push(v2.addToNodeTree(v1).setOperation(rt.operators.get(token)));
+					if(v2.isUsedAsReference()) {
+						// this variable it already a reference - bad:
+						throw new ExpressionException("Variable '" + v2.getExpression() + "' is already used as reference | " +"{"+expression+"}" + infoString);
+					} else if (v2.isUsedAsVariable()) {
+						// this variable it already a reference - equally bad:
+						throw new ExpressionException("Variable '" + v2.getExpression() + "' is already used and cannot be overwritten as reference | " +"{"+expression+"}" + infoString);						
+					}
+					stack.push(v2.addToNodeTree(v1).setOperation(rt.operators.get(token)).setUsedAsVariable().setUsedAsReference());
 				} else {
-					p.add(v2);
+					p.add(v2.setUsedAsVariable());
 					p.add(v1);
 					stack.push(new ExpressionNode(rt.operators.get(token), p));
 				}
@@ -425,7 +436,9 @@ public class Expression {
 					// matter if there is a variable in a higher scope
 					
 					// we first set a variable
-					rt.addLocalVariable(token, new ExpressionNode());	
+					ExpressionNode newvar = new ExpressionNode();
+
+					rt.addLocalVariable(token, newvar.setExpression(token));	
 					// we need to get the reference of it if, since if it already existed, the old
 					// reference is what we want.
 					stack.push(rt.getLocalVar(token));					
@@ -439,7 +452,7 @@ public class Expression {
 				if(scopeToken > 0){
 					// the : or the :: forces to create new variable inside the local scope
 					ExpressionNode newvar = new ExpressionNode();
-					rt.addLocalVariable(token, newvar);					
+					rt.addLocalVariable(token, newvar.setExpression(token));					
 					stack.add(newvar);
 				} else {
 					throw new ExpressionException("Variable '" + token + "' not declared | " +"{"+expression+"}" + infoString);
@@ -448,11 +461,11 @@ public class Expression {
 		}
 		return stack.pop().setExpression("{"+expression+"}" + infoString);
 	}
-
+	
 	private int hasScopePrefix(String var){
-		if(var.startsWith("::")){
+		if(var.startsWith(SCOPE_PREFX_ENFORCE)){
 			return 2;
-		} else if (var.startsWith(":")){
+		} else if (var.startsWith(SCOPE_PREFX_LOCAL)){
 			return 1;
 		}
 		return 0;

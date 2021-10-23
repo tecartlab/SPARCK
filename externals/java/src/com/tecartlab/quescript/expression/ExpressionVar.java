@@ -14,7 +14,7 @@ public class ExpressionVar {
 	 */
 	private ExpressionVar(){
 		values = new ArrayList<ExpressionAtom>();
-		reset();
+		reset(1);
 	}
 	
 	/**
@@ -64,12 +64,14 @@ public class ExpressionVar {
 	
 	/**
 	 * resets this instance to a numeric 0
+	 * @param size should be minimum 1
 	 */
-	protected void reset() {
+	protected void reset(int size) {
 		values.clear();
-		values.add(new ExpressionAtom(0));
+		for(int i = 0; i < size; i++)
+			values.add(new ExpressionAtom(0));
 		isNumeric = true;
-		isArray = false;
+		isArray = (size > 1)? true: false;
 	}
 	
 	/**
@@ -197,15 +199,25 @@ public class ExpressionVar {
 	 * @return
 	 */
 	protected String getStringValue() {
-		return values.get(0).getStringValue();
+		return getStringValue("%.2f");
 	}
 
-	
 	/**
-	 * get the string value. If it is a number, formated as specified 
-	 * @return
+	 * parse contents to string
 	 */
-	protected String getStringValue(String format) {
+	public String getStringValue(String format) {
+		if(isArray) {
+			String retrn = "[";
+			ExpressionAtom parameter;
+			for (int i = 0; i < values.size(); i++) {
+				parameter = values.get(i);
+				retrn += parameter.getStringValue(format);
+				if((i + 1) < values.size())
+					retrn += ", ";
+			}
+			retrn += "]";
+			return retrn;
+		}
 		return values.get(0).getStringValue(format);
 	}
 
@@ -271,26 +283,7 @@ public class ExpressionVar {
 		else
 			return (getStringValue().equals(v2.getStringValue()))? 0: 1;
 	}
-	
-	/**
-	 * parse contents to string
-	 */
-	public String toString() {
-		if(isArray) {
-			String retrn = "[";
-			ExpressionAtom parameter;
-			for (int i = 0; i < values.size(); i++) {
-				parameter = values.get(i);
-				retrn += parameter.getStringValue();
-				if((i + 1) < values.size())
-					retrn += ", ";
-			}
-			retrn += "]";
-			return retrn;
-		}
-		return getStringValue();
-	}
-	
+		
 	/**
 	 * clone this evaluated
 	 */

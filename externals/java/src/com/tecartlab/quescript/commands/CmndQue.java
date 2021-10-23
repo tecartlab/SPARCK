@@ -82,7 +82,7 @@ public class CmndQue extends Cmnd{
 		if(debugMode)
 			Debug.verbose("QueScript - NodeFactory", "... created Que:" + queName + " at " + lineNumber);
 
-		prt.setLocalVariable("$TIMER", 0);
+		prt.addLocalVariable("$TIMER", 0);
 		for(Cmnd child: this.getChildren()){
 			child.setup(prt);
 		}

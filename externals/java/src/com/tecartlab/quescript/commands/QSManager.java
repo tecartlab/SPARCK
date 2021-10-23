@@ -52,6 +52,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.tecartlab.quescript.QueMessage;
 import com.tecartlab.quescript.OutputConnector;
+import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.quescript.expression.ExpressionNode;
 import com.tecartlab.quescript.expression.ExpressionVar;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
@@ -140,10 +141,10 @@ public class QSManager implements OutputInterface{
 
 			Calendar md = Calendar.getInstance();
 			// create those variables so they are there once we need them on creation time.
-			globalExprEnvironment.setLocalVariable("$HOUR", md.get(Calendar.HOUR_OF_DAY));
-			globalExprEnvironment.setLocalVariable("$MIN", md.get(Calendar.MINUTE));
-			globalExprEnvironment.setLocalVariable("$SEC", md.get(Calendar.SECOND));
-			globalExprEnvironment.setLocalVariable("$MILLI", md.get(Calendar.MILLISECOND));
+			globalExprEnvironment.addLocalVariable("$HOUR", md.get(Calendar.HOUR_OF_DAY));
+			globalExprEnvironment.addLocalVariable("$MIN", md.get(Calendar.MINUTE));
+			globalExprEnvironment.addLocalVariable("$SEC", md.get(Calendar.SECOND));
+			globalExprEnvironment.addLocalVariable("$MILLI", md.get(Calendar.MILLISECOND));
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -151,7 +152,7 @@ public class QSManager implements OutputInterface{
 		} catch (SAXException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 
 		selfCommands = new ArrayList<String[]>();
 
@@ -165,11 +166,11 @@ public class QSManager implements OutputInterface{
 		// and then keep on going
 
 		Calendar md = Calendar.getInstance();
-		globalExprEnvironment.setLocalVariable("$HOUR", md.get(Calendar.HOUR_OF_DAY));
-		globalExprEnvironment.setLocalVariable("$MIN", md.get(Calendar.MINUTE));
-		globalExprEnvironment.setLocalVariable("$SEC", md.get(Calendar.SECOND));
-		globalExprEnvironment.setLocalVariable("$MILLI", md.get(Calendar.MILLISECOND));
-
+		globalExprEnvironment.addLocalVariable("$HOUR", md.get(Calendar.HOUR_OF_DAY));
+		globalExprEnvironment.addLocalVariable("$MIN", md.get(Calendar.MINUTE));
+		globalExprEnvironment.addLocalVariable("$SEC", md.get(Calendar.SECOND));
+		globalExprEnvironment.addLocalVariable("$MILLI", md.get(Calendar.MILLISECOND));
+		
 		// make sure that no concurrent triggers get lost.
 		triggerQueCopy = triggerQueue;
 		if(triggerQueue.size() > 0)
@@ -373,20 +374,29 @@ public class QSManager implements OutputInterface{
 	}
 
 	public void var(String name, double value){
-		if(globalExprEnvironment.containsVar(name)){
+		try {
 			globalExprEnvironment.setLocalVariable(name, value);
+		} catch (ExpressionException e) {
+			Debug.error("QueScript", "Error: " + e.getMessage());
+			outputInfoMsg(QueMsgFactory.getMsg(PARSING).add(PARSING_ERROR).add(e.getMessage()).done());
 		}
 	}
 
 	public void var(String name, String value){
-		if(globalExprEnvironment.containsVar(name)){
+		try {
 			globalExprEnvironment.setLocalVariable(name, value);
+		} catch (ExpressionException e) {
+			Debug.error("QueScript", "Error: " + e.getMessage());
+			outputInfoMsg(QueMsgFactory.getMsg(PARSING).add(PARSING_ERROR).add(e.getMessage()).done());
 		}
 	}
 
 	public void var(String name, ExpressionVar values){
-		if(globalExprEnvironment.containsVar(name)){
+		try {
 			globalExprEnvironment.setLocalVariable(name, values);
+		} catch (ExpressionException e) {
+			Debug.error("QueScript", "Error: " + e.getMessage());
+			outputInfoMsg(QueMsgFactory.getMsg(PARSING).add(PARSING_ERROR).add(e.getMessage()).done());
 		}
 	}
 

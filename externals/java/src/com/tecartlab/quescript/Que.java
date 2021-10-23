@@ -90,45 +90,30 @@ public class Que extends MaxObject implements OutputConnector{
 	 * @param name
 	 * @param val
 	 */
-	public void var(String name, int val){
-		queManager.var(name, val);
-	}
-
-	/**
-	 * set global variable
-	 * @param name
-	 * @param val
-	 */
-	public void var(String name, float val){
-		queManager.var(name, val);
-	}
-
-	/**
-	 * set global variable
-	 * @param name
-	 * @param val
-	 */
-	public void var(String name, String val){
-		queManager.var(name, val);
-	}
-
-	/**
-	 * set global variable
-	 * @param name
-	 * @param val
-	 */
 	public void var(Atom[] val){
-		ArrayList<ExpressionAtom> values = new ArrayList<ExpressionAtom>();
-		for(int i = 1; i < val.length; i++){
-			if(val[i].isString())
-				values.add(new ExpressionAtom(val[i].getString()));
-			else if(val[i].isFloat())
-				values.add(new ExpressionAtom(val[i].getFloat()));
-			else if(val[i].isInt())
-				values.add(new ExpressionAtom(val[i].getInt()));
-		}
-		ExpressionVar value = new ExpressionVar(values);
-		queManager.var(val[0].getString(), value);
+		if(val.length >= 2 && val[0].isString()) {
+			if(val.length == 2) {
+				if(val[1].isString()) {
+					queManager.var(val[0].getString(), val[1].getString());
+				} else if(val[1].isFloat()) {
+					queManager.var(val[0].getString(), val[1].getFloat());
+				} else if(val[1].isInt()) {
+					queManager.var(val[0].getString(), val[1].getInt());
+				}			
+			} else {
+				ArrayList<ExpressionAtom> values = new ArrayList<ExpressionAtom>();
+				for(int i = 1; i < val.length; i++){
+					if(val[i].isString())
+						values.add(new ExpressionAtom(val[i].getString()));
+					else if(val[i].isFloat())
+						values.add(new ExpressionAtom(val[i].getFloat()));
+					else if(val[i].isInt())
+						values.add(new ExpressionAtom(val[i].getInt()));
+				}
+				ExpressionVar value = new ExpressionVar(values);
+				queManager.var(val[0].getString(), value);
+			}
+		} 
 	}
 
 	/**

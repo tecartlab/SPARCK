@@ -108,7 +108,7 @@ public class CMsgShuttle {
 		frameTime = newFrameTime;
 		nodesInShutdown = 0;
 		if(hasTimer()){
-			rt.setLocalVariable("$TIMER", frameTime.getTotalMillis() - timerTime.getTotalMillis());
+			rt.addLocalVariable("$TIMER", frameTime.getTotalMillis() - timerTime.getTotalMillis());
 		}
 	}
 

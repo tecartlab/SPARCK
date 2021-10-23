@@ -39,6 +39,8 @@ import com.tecartlab.quescript.expression.Expression.ExpressionException;
 import com.tecartlab.utils.Debug;
 
 public class RunTimeEnvironment {
+	final static String VAR_REFERNECE = "->";
+	
 	/**
 	 * Super Storage for all Variables. The individual variables are stored inside 
 	 * HashMaps, their position inside this storage indicates their domain.
@@ -84,7 +86,7 @@ public class RunTimeEnvironment {
 		localVarScope = new HashMap<String, ExpressionNode>();
 		allVarScopes.add(localVarScope);
 
-		addOperator(new Operator("@", 5, false) {
+		addOperator(new Operator(VAR_REFERNECE, 5, false) {
 			@Override
 			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException{
 				if(parameters.size() == 1){
@@ -142,10 +144,8 @@ public class RunTimeEnvironment {
 				if(p0.isArray()) {
 					if(!result.isArray() || result.getArraySize() != p0.getArraySize()) {
 						// we first have to adjust the result side
-						result.reset();
-						result.setValues(p0.getClonedValues());
+						result.reset(p0.getArraySize());
 					}
-					// TODO: getArrayIndex(i) is resource hungry and is done multiple times: better store one call to a local var
 					ExpressionAtom p0Atom, p1Atom;
 					if(p1.isArray()) {
 						//p0 is array and p1 is array -> dont need to be same size, 
@@ -164,19 +164,21 @@ public class RunTimeEnvironment {
 						//p0 is array and p1 is not -> p1 is added to each element of p0
 						for(int i = 0; i < p0.getArraySize(); i++) {
 							p0Atom = p0.getArrayIndex(i);
-							p1Atom = p1.getArrayIndex(i);
 							
-							if(p0Atom.isNumeric() && p1Atom.isNumeric()) {
-								result.getArrayIndex(i).setNumericValue(p0Atom.getNumericValue() + p1Atom.getNumericValue());
+							if(p0Atom.isNumeric() && p1.isNumeric()) {
+								result.getArrayIndex(i).setNumericValue(p0Atom.getNumericValue() + p1.getNumericValue());
 							} else {
-								result.getArrayIndex(i).setStringValue(p0Atom.getStringValue() + p1Atom.getStringValue());
+								result.getArrayIndex(i).setStringValue(p0Atom.getStringValue() + p1.getStringValue());
 							}
 						}												
+					}
+					if(!result.isArray()) {
+						result.cleanup();
 					}
 				} else { 
 					if(result.isArray()) {
 						// we first have to adjust the result side
-						result.reset();
+						result.reset(1);
 					}
 					if(p0.isNumeric() && p1.isNumeric()) {
 						result.setValue(p0.getNumericValue() + p1.getNumericValue());
@@ -195,8 +197,30 @@ public class RunTimeEnvironment {
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
 						result.setValue(p0.getNumericValue() - p1.getNumericValue());
-					} else {
-						throw new ExpressionException("Array subtraction not supported");						
+					} else if(p0.isArray()) {
+						if(!result.isArray() || result.getArraySize() != p0.getArraySize()) {
+							// we first have to adjust the result side
+							result.reset(p0.getArraySize());
+						}
+						ExpressionAtom p0Atom, p1Atom;
+						if (p1.isArray()) {
+							//p0 is array and p1 is array -> dont need to be same size, 
+							// each corresponding element will be subtracted
+							for(int i = 0; i < p0.getArraySize() && i < p1.getArraySize(); i++) {
+								p0Atom = p0.getArrayIndex(i);
+								p1Atom = p1.getArrayIndex(i);
+								result.getArrayIndex(i).setNumericValue(p0Atom.getNumericValue() - p1Atom.getNumericValue());
+							}													
+						} else {
+							//p0 is array and p1 is not -> p1 is subtracted from each element of p0
+							for(int i = 0; i < p0.getArraySize(); i++) {
+								p0Atom = p0.getArrayIndex(i);
+								result.getArrayIndex(i).setNumericValue(p0Atom.getNumericValue() - p1.getNumericValue());
+							}																			
+						}
+						if(!result.isArray()) {
+							result.cleanup();
+						}
 					}
 				} else {
 					throw new ExpressionException("String subtraction not supported");												
@@ -747,7 +771,7 @@ public class RunTimeEnvironment {
 					}
 				} else {
 					if(result.isArray()) {
-						result.reset();
+						result.reset(1);
 					}
 					st = start.getNumericValue();
 					ed = stop.getNumericValue();
@@ -925,7 +949,7 @@ public class RunTimeEnvironment {
 			} else if(v != null){
 				return v.setValues(value.getValues());
 			} else {
-				allVarScopes.get(allVarScopes.size() - 1 - scope).put(variable, value.setUsedAsVariable());
+				allVarScopes.get(allVarScopes.size() - 1 - scope).put(variable, value);
 				return value;
 			}
 		}
@@ -949,7 +973,7 @@ public class RunTimeEnvironment {
 		} else if(v != null){
 			return v.setValues(value.getValues());
 		} else {
-			localVarScope.put(variable, value.setUsedAsVariable());
+			localVarScope.put(variable, value);
 			return value;
 		}
 	}
@@ -973,29 +997,29 @@ public class RunTimeEnvironment {
 				return v.setValues(value.getValues());
 			}
 		} else {
-			localVarScope.put(variable, value.setUsedAsVariable());
+			localVarScope.put(variable, value);
 			return value;
 		}
 	}
 
 	/**
-	 * Sets a variable value. If a local variable of the same name already exists, 
+	 * Adds a variable. If a local variable of the same name already exists, 
 	 * it uses the existing one, otherwise it will create a new one
 	 * 
 	 * @param variable
 	 *            The variable name.
 	 * @param value
 	 *            The variable value.
-	 * @return reference to the protected variable
+	 * @return reference to the variable
 	 */
-	public ExpressionNode setLocalVariable(String variable, double value) {
+	public ExpressionNode addLocalVariable(String variable, double value) {
 		ExpressionNode v = localVarScope.get(variable);
 		if(v != null){
 			return v.setValue(value);
 		} else {
-			v = new ExpressionNode(value).setUsedAsVariable();
-			localVarScope.put(variable, v);
-			return v;
+			ExpressionNode newVar = new ExpressionNode(value);
+			localVarScope.put(variable, newVar.setUsedAsVariable());
+			return newVar;
 		}
 	}
 
@@ -1008,15 +1032,34 @@ public class RunTimeEnvironment {
 	 * @param value
 	 *            The variable value.
 	 * @return reference to the protected variable
+	 * @throws ExpressionException 
 	 */
-	public ExpressionNode setLocalVariable(String variable, String value) {
+	public ExpressionNode setLocalVariable(String variable, double value) throws ExpressionException {
 		ExpressionNode v = localVarScope.get(variable);
 		if(v != null){
 			return v.setValue(value);
 		} else {
-			v = new ExpressionNode(value).setUsedAsVariable();
-			localVarScope.put(variable, v);
-			return v;
+			throw new ExpressionException("Variable '" + variable + "' is unkown | add <var name=\"" + variable + "\"></var> to your <script>");
+		}
+	}
+
+	/**
+	 * Sets a variable value. If a local variable of the same name already exists, 
+	 * it uses the existing one, otherwise it will create a new one
+	 * 
+	 * @param variable
+	 *            The variable name.
+	 * @param value
+	 *            The variable value.
+	 * @return reference to the protected variable
+	 * @throws ExpressionException 
+	 */
+	public ExpressionNode setLocalVariable(String variable, String value) throws ExpressionException {
+		ExpressionNode v = localVarScope.get(variable);
+		if(v != null){
+			return v.setValue(value);
+		} else {
+			throw new ExpressionException("Variable '" + variable + "' is unkown | add <var name=\"" + variable + "\"></var>  to your <script>");
 		}
 	}
 
@@ -1029,15 +1072,14 @@ public class RunTimeEnvironment {
 	 * @param value
 	 *            The variable value.
 	 * @return reference to the protected variable
+	 * @throws ExpressionException 
 	 */
-	public ExpressionNode setLocalVariable(String variable, ExpressionVar value) {
+	public ExpressionNode setLocalVariable(String variable, ExpressionVar value) throws ExpressionException {
 		ExpressionNode v = localVarScope.get(variable);
 		if(v != null){
 			return v.setValues(value);
 		} else {
-			v = new ExpressionNode(value).setUsedAsVariable();
-			localVarScope.put(variable, v);
-			return v;
+			throw new ExpressionException("Variable '" + variable + "' is unkown | add <var name=\"" + variable + "\"></var> to your <script> ");
 		}
 	}
 
