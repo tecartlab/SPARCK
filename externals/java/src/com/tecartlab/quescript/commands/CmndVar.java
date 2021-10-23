@@ -64,33 +64,34 @@ public class CmndVar extends Cmnd {
 	public void setup(RunTimeEnvironment rt)throws ScriptMsgException{
 		prt = rt;
 		if(super.content != null){
+			name = getAttributeValue(ATTR_NAME);
+
 			try {
-				myExpression = new Expression(super.content, "{", "}").setInfo(" at line(" + lineNumber + ")").parse(rt);
+				// during the creation of myExpression, the variable is registered in the local scope
+				myExpression = new Expression(super.content, "{", "}").prepend(":" + name + " = ").setInfo(" at line(" + lineNumber + ")").parse(rt);
 			} catch (ExpressionException e) {
 				throw new ScriptMsgException("QueScript - Command <var>: Value Expression: " + e.getMessage());
 			}
-
-			name = getAttributeValue(ATTR_NAME);
 
 			if(prt.functions.containsKey(name.toUpperCase(Locale.ROOT))){
 				throw new ScriptMsgException("QueScript - Command <var>: Attribute name: Variable name invalid: It matches a function: " + name + "() at line(" + lineNumber + ")");
 			}
 
-			// if no local variable of this name exists, create one with value NULL
 			try {
 				myExpression.eval();
-				varValue = new ExpressionNode();
-				if(myExpression.isArray()){
-					varValue.copyFrom(myExpression);
-				} else {
-					varValue.set(myExpression);
-				}
-				varValue.setUsedAsVariable();
+
 				// we create two different expressionVars because we dont want to
 				//   have the original expression altered by any other process.
 				//     the varValue variable is passed on to other expressions, might be part of them and
 				//     altered by them, so we can't afford to break these references.
-				prt.setLocalVariable(name, varValue);
+				
+				//varValue = new ExpressionNode();
+				
+				//varValue.setValues(myExpression.getValues());
+
+				//varValue.setUsedAsVariable();
+				
+				//prt.setLocalVariable(name, varValue);
 			} catch (ExpressionException e) {
 				Debug.error("QueScript que("+parentNode.getQueName()+") - Command <var>: Value Expression", e.getMessage());
 			}
@@ -115,7 +116,7 @@ public class CmndVar extends Cmnd {
 			// so we can simply pass on the evaluation of the initial expression
 			// TODO: check if this causes problems:
 			myExpression.eval();
-			prt.setLocalVariable(name, myExpression);
+			//prt.addLocalVariable(name, myExpression);
 		} catch (ExpressionException e) {
 			Debug.error("QueScript que("+parentNode.getQueName()+") - Command <var>: Value Expression", e.getMessage());
 		}

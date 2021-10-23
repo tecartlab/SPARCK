@@ -102,8 +102,42 @@ public class ExpressionNode {
 		nodeTree = p;
 		isUsedAsVariable = true;
 	}
+	
+	
+	/**
+	 * Creates a node with just the provided value
+	 * @param p
+	 */
+	public ExpressionNode(ExpressionVar p){
+		eValuated = p;
+		operation = null;
+		nodeTree = null;
+		isUsedAsVariable = true;
+	}
 
+	/**
+	 * Add a node at the end of the internal branch of the nodeTree
+	 * @param expr
+	 * @return
+	 */
+	public ExpressionNode addToNodeTree(ExpressionNode expr) {
+		if(nodeTree == null) {
+			this.nodeTree = new ArrayList<ExpressionNode>();
+		}
+		this.nodeTree.add(expr);	
+		return this;
+	}
 
+	/**
+	 * set the operation for the evaluation of this branch
+	 * @param op
+	 * @return
+	 */
+	public ExpressionNode setOperation(Operation op) {
+		this.operation = op;
+		return this;
+	}
+	
 	/**
 	 * copies the content of the passed ExpressionVar into this ExpressionVar
 	 * @param expr
@@ -163,18 +197,6 @@ public class ExpressionNode {
 	}
 
 	/**
-	 * Set this instance with the values of the passed ExpressionVar
-	 * @param val
-	 * @return this instance
-	 */
-	public ExpressionNode set(ExpressionNode val){
-		if(val != null) {
-			eValuated = val.eValuated.clone();
-		}
-		return this;
-	}
-
-	/**
 	 * Mutate this instance and set it with a String Value
 	 * @param val
 	 * @return this instance
@@ -209,6 +231,24 @@ public class ExpressionNode {
 		return this;
 	}
 
+	
+	/**
+	 * Mutate this instance and populate the evaluation it with a copy of val
+	 * @param val
+	 * @return
+	 */
+	public ExpressionNode setValues(ExpressionVar val){
+		this.eValuated.setValues(val.getClonedValues());
+		return this;
+	}
+
+	/** 
+	 * get the reference of the evaluated values of this instance
+	 * @return
+	 */
+	public ExpressionVar getValues(){
+		return this.eValuated;
+	}
 
 	/**
 	 * Get the numeric value of this instance.
@@ -278,5 +318,10 @@ public class ExpressionNode {
 	public String toString(){
 		return eValuated.toString();
 	}
-
+	
+	public ExpressionNode cloneToEvalOnly() {
+		ExpressionNode clone = new ExpressionNode();
+		clone.eValuated = this.eValuated.clone();
+		return clone;
+	}
 }

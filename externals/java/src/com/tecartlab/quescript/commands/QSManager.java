@@ -53,6 +53,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import com.tecartlab.quescript.QueMessage;
 import com.tecartlab.quescript.OutputConnector;
 import com.tecartlab.quescript.expression.ExpressionNode;
+import com.tecartlab.quescript.expression.ExpressionVar;
 import com.tecartlab.quescript.expression.RunTimeEnvironment;
 import com.tecartlab.quescript.messages.CMsgTrigger;
 import com.tecartlab.quescript.messages.ScriptMsgException;
@@ -383,9 +384,9 @@ public class QSManager implements OutputInterface{
 		}
 	}
 
-	public void var(String name, ArrayList<ExpressionNode> values){
+	public void var(String name, ExpressionVar values){
 		if(globalExprEnvironment.containsVar(name)){
-			globalExprEnvironment.setLocalVariable(name, new ExpressionNode(values));
+			globalExprEnvironment.setLocalVariable(name, values);
 		}
 	}
 

@@ -146,7 +146,7 @@ public class CmndAnim extends Cmnd {
 			if(child.isCmndName(CmndTrack.NODE_NAME)){
 				CmndTrack flt = (CmndTrack)child;
 				prt.setVariable(name+"."+flt.trackName, flt.getValueObject(), 1);
-				prt.setLocalVariable(flt.trackName, flt.getValueObject());
+				prt.addLocalVariable(flt.trackName, flt.getValueObject());
 				valueInterolators.add(flt);
 				if(relKeyTiming != null)
 					flt.setKeyTimes(relKeyTiming);

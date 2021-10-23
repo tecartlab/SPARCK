@@ -34,7 +34,9 @@ import com.cycling74.max.MaxObject;
 
 import com.tecartlab.quescript.commands.QSManager;
 import com.tecartlab.quescript.commands.QueMsgFactory;
+import com.tecartlab.quescript.expression.ExpressionAtom;
 import com.tecartlab.quescript.expression.ExpressionNode;
+import com.tecartlab.quescript.expression.ExpressionVar;
 import com.tecartlab.utils.Debug;
 
 /**
@@ -116,16 +118,17 @@ public class Que extends MaxObject implements OutputConnector{
 	 * @param val
 	 */
 	public void var(Atom[] val){
-		ArrayList<ExpressionNode> values = new ArrayList<ExpressionNode>();
+		ArrayList<ExpressionAtom> values = new ArrayList<ExpressionAtom>();
 		for(int i = 1; i < val.length; i++){
 			if(val[i].isString())
-				values.add(new ExpressionNode(val[i].getString()));
+				values.add(new ExpressionAtom(val[i].getString()));
 			else if(val[i].isFloat())
-				values.add(new ExpressionNode(val[i].getFloat()));
+				values.add(new ExpressionAtom(val[i].getFloat()));
 			else if(val[i].isInt())
-				values.add(new ExpressionNode(val[i].getInt()));
+				values.add(new ExpressionAtom(val[i].getInt()));
 		}
-		queManager.var(val[0].getString(), values);
+		ExpressionVar value = new ExpressionVar(values);
+		queManager.var(val[0].getString(), value);
 	}
 
 	/**

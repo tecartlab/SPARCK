@@ -84,6 +84,30 @@ public class RunTimeEnvironment {
 		localVarScope = new HashMap<String, ExpressionNode>();
 		allVarScopes.add(localVarScope);
 
+		addOperator(new Operator("@", 5, false) {
+			@Override
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException{
+				if(parameters.size() == 1){
+					ExpressionVar p0 = parameters.get(0).eValuated;
+
+					if(p0.isArray()){
+						if(!result.isArray()) {
+							result.makeArray();
+						}
+						if(p0.getArraySize() != result.getArraySize()) {
+							result.setValues(p0.getValues());
+						} else {
+							for(int i = 0; i < p0.getArraySize(); i++) {
+								result.setArrayIndex(i, p0.getArrayIndex(i));
+							}
+						}
+					} else {
+						result.setValue(p0.getValue());
+					}
+				}	
+				//throw new ExpressionException("= can only assign to a variable");
+			}
+		});		
 		addOperator(new Operator("=", 5, false) {
 			@Override
 			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException{
@@ -96,7 +120,7 @@ public class RunTimeEnvironment {
 							p0.makeArray();
 						}
 						if(p1.getArraySize() != p0.getArraySize()) {
-							p0.setValue(p1.getValues());
+							p0.setValues(p1.getValues());
 						} else {
 							for(int i = 0; i < p1.getArraySize(); i++) {
 								p0.setArrayIndex(i, p1.getArrayIndex(i));
@@ -119,7 +143,7 @@ public class RunTimeEnvironment {
 					if(!result.isArray() || result.getArraySize() != p0.getArraySize()) {
 						// we first have to adjust the result side
 						result.reset();
-						result.setValue(p0.getClonedValues());
+						result.setValues(p0.getClonedValues());
 					}
 					// TODO: getArrayIndex(i) is resource hungry and is done multiple times: better store one call to a local var
 					ExpressionAtom p0Atom, p1Atom;
@@ -404,7 +428,7 @@ public class RunTimeEnvironment {
 				ExpressionVar p1 = parameters.get(1).eValuated;
 				ExpressionVar p2 = parameters.get(2).eValuated;
 
-				result.setValue((p0.getNumericValue() == 1)?p1.getValues():p2.getValues());
+				result.setValues((p0.getNumericValue() == 1)?p1.getValues():p2.getValues());
 			}
 		});
 		addFunction(new Function("RANDOM", 0) {
@@ -896,8 +920,10 @@ public class RunTimeEnvironment {
 	public ExpressionNode setVariable(String variable, ExpressionNode value, int scope) {
 		if(scope < allVarScopes.size()){
 			ExpressionNode v = getVar(variable);
-			if(v != null){
-				return v.set(value);
+			if(v == value) {
+				return value;
+			} else if(v != null){
+				return v.setValues(value.getValues());
 			} else {
 				allVarScopes.get(allVarScopes.size() - 1 - scope).put(variable, value.setUsedAsVariable());
 				return value;
@@ -918,8 +944,10 @@ public class RunTimeEnvironment {
 	 */
 	public ExpressionNode setVariable(String variable, ExpressionNode value) {
 		ExpressionNode v = getVar(variable);
-		if(v != null){
-			return v.set(value);
+		if(v == value) {
+			return value;
+		} else if(v != null){
+			return v.setValues(value.getValues());
 		} else {
 			localVarScope.put(variable, value.setUsedAsVariable());
 			return value;
@@ -927,20 +955,22 @@ public class RunTimeEnvironment {
 	}
 
 	/**
-	 * Sets this variable inside the local scope no matter if there are other variables of the 
+	 * adds this node as a variable inside the local scope no matter if there are other variables of the 
 	 * same name in higher scopes. If there is already a variable, it will inject the content of the
 	 * value into its Expression
 	 * @param variable String identifier
 	 * @param value ExpressionVar object
 	 * @return the reference object of this variable
 	 */
-	public ExpressionNode setLocalVariable(String variable, ExpressionNode value) {
+	public ExpressionNode addLocalVariable(String variable, ExpressionNode value) {
 		ExpressionNode v = localVarScope.get(variable);
-		if(v != null){
+		if(v == value) {
+			return value;
+		} else if(v != null){
 			if(value.eValuated.isArray()){
 				return v.copyFrom(value);
 			} else {
-				return v.set(value);
+				return v.setValues(value.getValues());
 			}
 		} else {
 			localVarScope.put(variable, value.setUsedAsVariable());
@@ -989,7 +1019,28 @@ public class RunTimeEnvironment {
 			return v;
 		}
 	}
-	
+
+	/**
+	 * Sets a variable values. If a local variable of the same name already exists, 
+	 * it uses the existing one, otherwise it will create a new one
+	 * 
+	 * @param variable
+	 *            The variable name.
+	 * @param value
+	 *            The variable value.
+	 * @return reference to the protected variable
+	 */
+	public ExpressionNode setLocalVariable(String variable, ExpressionVar value) {
+		ExpressionNode v = localVarScope.get(variable);
+		if(v != null){
+			return v.setValues(value);
+		} else {
+			v = new ExpressionNode(value).setUsedAsVariable();
+			localVarScope.put(variable, v);
+			return v;
+		}
+	}
+
 	/**
 	 * Returns the specified variable, looks first at the local scope and keeps on moving upwards.
 	 * @param variable

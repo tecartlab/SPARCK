@@ -38,7 +38,7 @@ public class ExpressionVar {
 	 */
 	public ExpressionVar(ArrayList<ExpressionAtom> val){
 		this();
-		setValue(val);
+		setValues(val);
 	}
 
 	/**
@@ -126,22 +126,12 @@ public class ExpressionVar {
 	}
 
 	/**
-	 * Set the value as a array
+	 * Set the value as an array
 	 * @param val
 	 */
-	protected void setValue(ArrayList<ExpressionAtom> val) {
-		values.clear();
-		int countString = 0;
-		for(ExpressionAtom atom: val) {
-			if(atom.isNumeric()) {
-				values.add(new ExpressionAtom(atom.getNumericValue()));
-			} else {
-				values.add(new ExpressionAtom(atom.getStringValue()));	
-				countString++;
-			}
-		}
-		isNumeric = (countString == 0);
-		isArray = true;
+	protected void setValues(ArrayList<ExpressionAtom> val) {
+		values = val;
+		this.cleanup();
 	}
 
 	/**
@@ -305,9 +295,7 @@ public class ExpressionVar {
 	 * clone this evaluated
 	 */
 	protected ExpressionVar clone() {
-		ExpressionVar clone = new ExpressionVar(this.values);
-		clone.isArray = this.isArray;
-		clone.isNumeric = this.isNumeric;
+		ExpressionVar clone = new ExpressionVar(this.getClonedValues());
 		return clone;
 	}
 	

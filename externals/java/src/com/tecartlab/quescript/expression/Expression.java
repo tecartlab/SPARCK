@@ -24,6 +24,9 @@
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * @author Udo Klimaschewski (http://about.me/udo.klimaschewski)
+ * @author Martin Fröhlich (http://maybites.ch)
  * 
  */
 
@@ -38,292 +41,6 @@ import java.util.Stack;
 import com.tecartlab.quescript.expression.RunTimeEnvironment.Function;
 import com.tecartlab.quescript.expression.RunTimeEnvironment.Operator;
 
-/**
- * <h1>EvalEx - Java Expression Evaluator</h1>
- * 
- * <h2>Introduction</h2> EvalEx is a handy expression evaluator for Java, that
- * allows to evaluate simple mathematical and boolean expressions. <br>
- * Key Features:
- * <ul>
- * <li>Uses ExpressionVar for calculation and result</li>
- * <li>Three class implementation, very compact</li>
- * <li>No dependencies to external libraries</li>
- * <li>Supports variables</li>
- * <li>Supports strings</li>
- * <li>Standard boolean and mathematical operators</li>
- * <li>Standard basic mathematical and boolean functions</li>
- * </ul>
- * <br>
- * <h2>Examples</h2>
- * 
- * <pre>
- *  ExpressionVar result = null;
- *  
- *  RunTimeEnvironment rt = new RunTimeEnvironment();
- *  
- *  Expression expression = new Expression("1+1/3");
- *  result = expression.parse(rt):
- *  
- *  System.out.printlnt("result = " + result.eval());
- *  
- *  result = new Expression("(3.4 + -4.1)/2").parse(rt);
- *  
- *  ExpressionVar a = new ExpressionVar("2.4");
- *  ExpressionVar b = new ExpressionVar("9.235");
- *  
- *  rt.addPublicVariable("a", a);
- *  rt.addPublicVariable("b", b);
- *  
- *  result = new Expression("SQRT(a^2 + b^2").parse(rt);
- *  
- *  System.out.printlnt("result = " + result.eval());
- *  
- *  result = new Expression("2.4/PI").parse(rt);
- *  
- *  System.out.printlnt("result = " + result.eval());
- *  
- *  result = new Expression("random() &gt; 0.5").parse(rt);
- *  
- *  System.out.printlnt("result = " + result.eval());
- *  
- *  ExpressionVar x = new ExpressionVar("22.9");
- *  rt.addPublicVariable("x", x);
- *  
- *  result = new Expression("not(x &lt; 7 || sqrt(max(x,9)) &lt;= 3))").parse(rt);
- *  
- *  System.out.printlnt("result = " + result.eval());
- *  
- * </pre>
- * 
- * <br>
- * <h2>Supported Operators</h2>
- * <table>
- * <tr>
- * <th>Mathematical Operators</th>
- * </tr>
- * <tr>
- * <th>Operator</th>
- * <th>Description</th>
- * </tr>
- * <tr>
- * <td>+</td>
- * <td>Additive operator</td>
- * </tr>
- * <tr>
- * <td>-</td>
- * <td>Subtraction operator</td>
- * </tr>
- * <tr>
- * <td>*</td>
- * <td>Multiplication operator</td>
- * </tr>
- * <tr>
- * <td>/</td>
- * <td>Division operator</td>
- * </tr>
- * <tr>
- * <td>%</td>
- * <td>Remainder operator (Modulo)</td>
- * </tr>
- * <tr>
- * <td>^</td>
- * <td>Power operator</td>
- * </tr>
- * </table>
- * <br>
- * <table>
- * <tr>
- * <th>Boolean Operators<sup>*</sup></th>
- * </tr>
- * <tr>
- * <th>Operator</th>
- * <th>Description</th>
- * </tr>
- * <tr>
- * <td>=</td>
- * <td>Equals</td>
- * </tr>
- * <tr>
- * <td>==</td>
- * <td>Equals</td>
- * </tr>
- * <tr>
- * <td>!=</td>
- * <td>Not equals</td>
- * </tr>
- * <tr>
- * <td>&lt;&gt;</td>
- * <td>Not equals</td>
- * </tr>
- * <tr>
- * <td>&lt;</td>
- * <td>Less than</td>
- * </tr>
- * <tr>
- * <td>&lt;=</td>
- * <td>Less than or equal to</td>
- * </tr>
- * <tr>
- * <td>&gt;</td>
- * <td>Greater than</td>
- * </tr>
- * <tr>
- * <td>&gt;=</td>
- * <td>Greater than or equal to</td>
- * </tr>
- * <tr>
- * <td>&amp;&amp;</td>
- * <td>Boolean and</td>
- * </tr>
- * <tr>
- * <td>||</td>
- * <td>Boolean or</td>
- * </tr>
- * </table>
- * *Boolean operators result always in a ExpressionVar value of 1 or 0 (zero). Any
- * non-zero value is treated as a _true_ value. Boolean _not_ is implemented by
- * a function. <br>
- * <h2>Supported Functions</h2>
- * <table>
- * <tr>
- * <th>Function<sup>*</sup></th>
- * <th>Description</th>
- * </tr>
- * <tr>
- * <td>NOT(<i>expression</i>)</td>
- * <td>Boolean negation, 1 (means true) if the expression is not zero</td>
- * </tr>
- * <tr>
- * <td>IF(<i>condition</i>,<i>value_if_true</i>,<i>value_if_false</i>)</td>
- * <td>Returns one value if the condition evaluates to true or the other if it
- * evaluates to false</td>
- * </tr>
- * <tr>
- * <td>RANDOM()</td>
- * <td>Produces a random number between 0 and 1</td>
- * </tr>
- * <tr>
- * <td>MIN(<i>e1</i>,<i>e2</i>, <i>...</i>)</td>
- * <td>Returns the smallest of the given expressions</td>
- * </tr>
- * <tr>
- * <td>MAX(<i>e1</i>,<i>e2</i>, <i>...</i>)</td>
- * <td>Returns the biggest of the given expressions</td>
- * </tr>
- * <tr>
- * <td>ABS(<i>expression</i>)</td>
- * <td>Returns the absolute (non-negative) value of the expression</td>
- * </tr>
- * <tr>
- * <td>ROUND(<i>expression</i>)</td>
- * <td>Rounds a value</td>
- * </tr>
- * <tr>
- * <td>FLOOR(<i>expression</i>)</td>
- * <td>Rounds the value down to the nearest integer</td>
- * </tr>
- * <tr>
- * <td>CEILING(<i>expression</i>)</td>
- * <td>Rounds the value up to the nearest integer</td>
- * </tr>
- * <tr>
- * <td>LOG(<i>expression</i>)</td>
- * <td>Returns the natural logarithm (base e) of an expression</td>
- * </tr>
- * <tr>
- * <td>LOG10(<i>expression</i>)</td>
- * <td>Returns the common logarithm (base 10) of an expression</td>
- * </tr>
- * <tr>
- * <td>SQRT(<i>expression</i>)</td>
- * <td>Returns the square root of an expression</td>
- * </tr>
- * <tr>
- * <td>SIN(<i>expression</i>)</td>
- * <td>Returns the trigonometric sine of an angle (in radians)</td>
- * </tr>
- * <tr>
- * <td>COS(<i>expression</i>)</td>
- * <td>Returns the trigonometric cosine of an angle (in radians)</td>
- * </tr>
- * <tr>
- * <td>TAN(<i>expression</i>)</td>
- * <td>Returns the trigonometric tangens of an angle (in radians)</td>
- * </tr>
- * <tr>
- * <td>ASIN(<i>expression</i>)</td>
- * <td>Returns the angle of asin (in radians)</td>
- * </tr>
- * <tr>
- * <td>ACOS(<i>expression</i>)</td>
- * <td>Returns the angle of acos (in radians)</td>
- * </tr>
- * <tr>
- * <td>ATAN(<i>expression</i>)</td>
- * <td>Returns the angle of atan (in radians)</td>
- * </tr>
- * <tr>
- * <td>SINH(<i>expression</i>)</td>
- * <td>Returns the hyperbolic sine of a value</td>
- * </tr>
- * <tr>
- * <td>COSH(<i>expression</i>)</td>
- * <td>Returns the hyperbolic cosine of a value</td>
- * </tr>
- * <tr>
- * <td>TANH(<i>expression</i>)</td>
- * <td>Returns the hyperbolic tangens of a value</td>
- * </tr>
- * <tr>
- * <td>RAD(<i>expression</i>)</td>
- * <td>Converts an angle measured in radians to an approximately equivalent
- * angle measured in radians</td>
- * </tr>
- * <tr>
- * <td>DEG(<i>expression</i>)</td>
- * <td>Converts an angle measured in radians to an approximately equivalent
- * angle measured in radians</td>
- * </tr>
- * </table>
- * *Functions names are case insensitive. <br>
- * <h2>Supported Constants</h2>
- * <table>
- * <tr>
- * <th>Constant</th>
- * <th>Description</th>
- * </tr>
- * <tr>
- * <td>PI</td>
- * <td>The value of <i>PI</i>, exact to 100 digits</td>
- * </tr>
- * <tr>
- * <td>TRUE</td>
- * <td>The value one</td>
- * </tr>
- * <tr>
- * <td>FALSE</td>
- * <td>The value zero</td>
- * </tr>
- * </table>
- * 
-
- * 
- * The software is licensed under the MIT Open Source license (see LICENSE
- * file). <br>
- * <ul>
- * <li>The *power of* operator (^) implementation was copied from [Stack
- * Overflow
- * ](http://stackoverflow.com/questions/3579779/how-to-do-a-fractional-power
- * -on-ExpressionVar-in-java) Thanks to Gene Marin</li>
- * <li>The SQRT() function implementation was taken from the book [The Java
- * Programmers Guide To numerical
- * Computing](http://www.amazon.de/Java-Number-Cruncher
- * -Programmers-Numerical/dp/0130460419) (Ronald Mak, 2002)</li>
- * </ul>
- * 
- * @author Udo Klimaschewski (http://about.me/udo.klimaschewski)
- * @author Martin Fröhlich (http://maybites.ch)
- */
 public class Expression {
 
 	/**
@@ -386,6 +103,24 @@ public class Expression {
 		this.expression = expression;
 	}
 	
+	/**
+	 * adds a prefix to the expression
+	 * @param prefix
+	 */
+	public Expression prepend(String prefix) {
+		expression = prefix + expression;
+		return this;
+	}
+
+	/**
+	 * adds a postfix to the expression
+	 * @param postfix
+	 */
+	public Expression append(String postfix) {
+		expression = expression + postfix;
+		return this;
+	}
+
 	/**
 	 * Allows to enter some more infos about the expression. ie. in which line of the script
 	 * it is located. Usefull for debugging purposes.
@@ -644,9 +379,14 @@ public class Expression {
 				ArrayList<ExpressionNode> p = new ArrayList<ExpressionNode>();
 				ExpressionNode v1 = stack.pop();
 				ExpressionNode v2 = stack.pop();
-				p.add(v2);
-				p.add(v1);
-				stack.push(new ExpressionNode(rt.operators.get(token), p));
+				if(token.equals("@")) {
+					// create a by reference node
+					stack.push(v2.addToNodeTree(v1).setOperation(rt.operators.get(token)));
+				} else {
+					p.add(v2);
+					p.add(v1);
+					stack.push(new ExpressionNode(rt.operators.get(token), p));
+				}
 			} else if (rt.functions.containsKey(token.toUpperCase(Locale.ROOT))) {
 				if(scopeToken == 0){
 					Function f = rt.functions.get(token.toUpperCase(Locale.ROOT));
@@ -685,7 +425,7 @@ public class Expression {
 					// matter if there is a variable in a higher scope
 					
 					// we first set a variable
-					rt.setLocalVariable(token, new ExpressionNode());	
+					rt.addLocalVariable(token, new ExpressionNode());	
 					// we need to get the reference of it if, since if it already existed, the old
 					// reference is what we want.
 					stack.push(rt.getLocalVar(token));					
@@ -699,7 +439,7 @@ public class Expression {
 				if(scopeToken > 0){
 					// the : or the :: forces to create new variable inside the local scope
 					ExpressionNode newvar = new ExpressionNode();
-					rt.setLocalVariable(token, newvar);					
+					rt.addLocalVariable(token, newvar);					
 					stack.add(newvar);
 				} else {
 					throw new ExpressionException("Variable '" + token + "' not declared | " +"{"+expression+"}" + infoString);
