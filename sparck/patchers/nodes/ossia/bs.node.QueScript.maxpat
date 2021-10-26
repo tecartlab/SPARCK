@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "QueScript",
+		"globalpatchername" : "QueScript_1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-11",
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -87,13 +87,36 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "<execute>", "<execute>" ],
+									"patching_rect" : [ 355.0, 204.0, 131.0, 22.0 ],
+									"text" : "t <execute> <execute>"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 50.0, 381.0, 95.0, 22.0 ],
+									"text" : "route <execute>"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 349.5, 66.0, 20.0 ],
+									"patching_rect" : [ 50.0, 427.5, 78.0, 22.0 ],
 									"text" : "prepend play"
 								}
 
@@ -101,12 +124,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-56",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 291.5, 74.0, 20.0 ],
+									"patching_rect" : [ 50.0, 289.5, 87.0, 22.0 ],
 									"text" : "prepend range"
 								}
 
@@ -114,12 +136,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-55",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 267.5, 64.0, 20.0 ],
+									"patching_rect" : [ 49.999999999999972, 253.5, 75.0, 22.0 ],
 									"text" : "zl.group 512"
 								}
 
@@ -132,20 +153,19 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "" ],
-									"patching_rect" : [ 50.0, 323.5, 437.0, 20.0 ],
-									"text" : "bs.ossia.parameter.menu script/ques @description \"ques menu\" @tags enableitem_0 @clip both"
+									"patching_rect" : [ 50.0, 335.5, 569.0, 35.0 ],
+									"text" : "bs.ossia.parameter.menu script/ques @default <execute> @range <execute> @description \"ques menu\" @tags enableitem_0"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-21",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 187.0, 100.0, 52.0, 20.0 ],
+									"patching_rect" : [ 355.0, 116.0, 58.0, 22.0 ],
 									"text" : "loadbang"
 								}
 
@@ -157,7 +177,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 270.0, 237.5, 43.0, 20.0 ],
+									"patching_rect" : [ 270.0, 197.5, 43.0, 22.0 ],
 									"text" : "set $1"
 								}
 
@@ -170,7 +190,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 193.25, 237.5, 71.0, 20.0 ],
+									"patching_rect" : [ 193.249999999999972, 197.5, 71.0, 35.0 ],
 									"text" : "set <execute>"
 								}
 
@@ -183,7 +203,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 97.75, 237.5, 89.0, 20.0 ],
+									"patching_rect" : [ 97.749999999999972, 197.5, 89.0, 35.0 ],
 									"text" : "zlclear, <execute>"
 								}
 
@@ -195,7 +215,7 @@
 									"numinlets" : 6,
 									"numoutlets" : 6,
 									"outlettype" : [ "", "", "", "", "", "" ],
-									"patching_rect" : [ 50.0, 155.5, 257.749999999999886, 20.0 ],
+									"patching_rect" : [ 50.0, 155.5, 257.749999999999886, 22.0 ],
 									"text" : "route name start done stop play"
 								}
 
@@ -221,7 +241,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 429.5, 30.0, 30.0 ]
+									"patching_rect" : [ 50.0, 470.5, 30.0, 30.0 ]
 								}
 
 							}
@@ -271,6 +291,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
+									"order" : 1,
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"order" : 0,
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -298,7 +327,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-52", 0 ]
 								}
 
@@ -319,8 +348,29 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-6", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-52", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-56", 0 ],
+									"source" : [ "obj-9", 1 ]
 								}
 
 							}
@@ -432,6 +482,7 @@
 									"hint" : "",
 									"id" : "obj-8",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.ossia.parameter.msg.maxpat",
 									"numinlets" : 1,
@@ -1276,6 +1327,7 @@
 					"hint" : "",
 					"id" : "obj-32",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.outlet.maxpat",
 					"numinlets" : 1,
@@ -1566,6 +1618,7 @@
 									"hint" : "",
 									"id" : "obj-7",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.ossia.parameter.file.maxpat",
 									"numinlets" : 1,
@@ -2056,6 +2109,7 @@
 					"hint" : "",
 					"id" : "obj-28",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.inlet.maxpat",
 					"numinlets" : 1,
@@ -2106,6 +2160,7 @@
 					"hint" : "",
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.outlet.maxpat",
 					"numinlets" : 1,
@@ -2590,6 +2645,7 @@
 					"hint" : "",
 					"id" : "obj-15",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.outlet.maxpat",
 					"numinlets" : 1,
@@ -2615,6 +2671,7 @@
 					"hint" : "",
 					"id" : "obj-12",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.inlet.maxpat",
 					"numinlets" : 1,
@@ -2664,6 +2721,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-34",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.node.logic.maxpat",
 					"numinlets" : 4,
