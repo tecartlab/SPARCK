@@ -121,6 +121,23 @@ public class ExpressionNode {
 	}
 
 	/**
+	 * Clears the nodeTree and adds the specified node
+	 * @param expr
+	 * @return
+	 */
+	public ExpressionNode setNodeTree(ExpressionNode expr) {
+		if(nodeTree == null) {
+			this.nodeTree = new ArrayList<ExpressionNode>();
+		} else {
+			this.nodeTree.clear();
+		}
+		if(expr != null) {
+			this.nodeTree.add(expr);	
+		}
+		return this;
+	}
+
+	/**
 	 * set the operation for the evaluation of this branch
 	 * @param op
 	 * @return
@@ -173,6 +190,11 @@ public class ExpressionNode {
 	 */
 	public ExpressionNode setUsedAsReference(){
 		isUsedAsReference = true;
+		return this;
+	}
+
+	public ExpressionNode unsetUsedAsReference(){
+		isUsedAsReference = false;
 		return this;
 	}
 

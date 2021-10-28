@@ -89,23 +89,19 @@ public class RunTimeEnvironment {
 		addOperator(new Operator(VAR_REFERNECE, 5, false) {
 			@Override
 			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException{
-				if(parameters.size() == 1){
+				// the evaluation operator is a very special animal:
+				// when two parameters appear, then the evaluation happens inside an <eval> node
+				// which means, that the variable (first paramater) will get the the second parameter as 
+				// the node tree to be evaluated, with the evaluation operator as an operator.
+				//
+				// when then the variable is used, the variable gets evaluated (having only one paramater ->
+				// the above referenced nodetree), it will store the evaluated result inside the var.
+				if(parameters.size() == 2){					
+					parameters.get(0).setNodeTree(parameters.get(1)).setOperation(operators.get(VAR_REFERNECE)).setUsedAsReference();
+				} else if (parameters.size() == 1) {
 					ExpressionVar p0 = parameters.get(0).eValuated;
 
-					if(p0.isArray()){
-						if(!result.isArray()) {
-							result.makeArray();
-						}
-						if(p0.getArraySize() != result.getArraySize()) {
-							result.setValues(p0.getValues());
-						} else {
-							for(int i = 0; i < p0.getArraySize(); i++) {
-								result.setArrayIndex(i, p0.getArrayIndex(i));
-							}
-						}
-					} else {
-						result.setValue(p0.getValue());
-					}
+					result.setValueCopy(p0);
 				}	
 				//throw new ExpressionException("= can only assign to a variable");
 			}
@@ -116,21 +112,12 @@ public class RunTimeEnvironment {
 				if(parameters.size() == 2){
 					ExpressionVar p0 = parameters.get(0).eValuated;
 					ExpressionVar p1 = parameters.get(1).eValuated;
-
-					if(p1.isArray()){
-						if(!p0.isArray()) {
-							p0.makeArray();
-						}
-						if(p1.getArraySize() != p0.getArraySize()) {
-							p0.setValues(p1.getValues());
-						} else {
-							for(int i = 0; i < p1.getArraySize(); i++) {
-								p0.setArrayIndex(i, p1.getArrayIndex(i));
-							}
-						}
-					} else {
-						p0.setValue(p1.getValue());
+					
+					if(parameters.get(0).isUsedAsReference()){
+						parameters.get(0).setNodeTree(null).unsetUsedAsReference();
 					}
+
+					p0.setValueCopy(p1);
 				}	
 				//throw new ExpressionException("= can only assign to a variable");
 			}
@@ -142,7 +129,7 @@ public class RunTimeEnvironment {
 				ExpressionVar p1 = parameters.get(1).eValuated;
 
 				if(p0.isArray()) {
-					if(!result.isArray() || result.getArraySize() != p0.getArraySize()) {
+					if(result.isArray() ? (result.getArraySize() != p0.getArraySize()) : true) { //NAND
 						// we first have to adjust the result side
 						result.reset(p0.getArraySize());
 					}
@@ -198,7 +185,7 @@ public class RunTimeEnvironment {
 					if(!p0.isArray() && !p1.isArray()) {
 						result.setValue(p0.getNumericValue() - p1.getNumericValue());
 					} else if(p0.isArray()) {
-						if(!result.isArray() || result.getArraySize() != p0.getArraySize()) {
+						if(result.isArray() ? (result.getArraySize() != p0.getArraySize()) : true) { //NAND
 							// we first have to adjust the result side
 							result.reset(p0.getArraySize());
 						}
@@ -236,6 +223,16 @@ public class RunTimeEnvironment {
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
 						result.setValue(p0.getNumericValue() * p1.getNumericValue());
+					} else if (p0.isArray() && !p1.isArray()) {
+						//p0 is array and p1 is not array  
+						// each array element will be multiplied with the second value
+						if(result.isArray() ? (result.getArraySize() != p0.getArraySize()) : true) { //NAND
+							// we first have to adjust the result side
+							result.reset(p0.getArraySize());
+						}
+						for(int i = 0; i < p0.getArraySize(); i++) {
+							result.getArrayIndex(i).setNumericValue(p0.getArrayIndex(i).getNumericValue() * p1.getNumericValue());
+						}													
 					} else {
 						throw new ExpressionException("Array multiplication not supported");						
 					}
@@ -253,6 +250,16 @@ public class RunTimeEnvironment {
 				if(p0.isNumeric() && p1.isNumeric()) {
 					if(!p0.isArray() && !p1.isArray()) {
 						result.setValue(p0.getNumericValue() / p1.getNumericValue());
+					} else if (p0.isArray() && !p1.isArray()) {
+						//p0 is array and p1 is not array  
+						// each array element will be multiplied with the second value
+						if(result.isArray() ? (result.getArraySize() != p0.getArraySize()) : true) { //NAND
+							// we first have to adjust the result side
+							result.reset(p0.getArraySize());
+						}
+						for(int i = 0; i < p0.getArraySize(); i++) {
+							result.getArrayIndex(i).setNumericValue(p0.getArrayIndex(i).getNumericValue() / p1.getNumericValue());
+						}													
 					} else {
 						throw new ExpressionException("Array division not supported");						
 					}
@@ -755,13 +762,14 @@ public class RunTimeEnvironment {
 				double st, ed;
 							
 				if(start.isArray()) {
-					if((result.isArray()) || result.getArraySize() != start.getArraySize()) {
+					if(result.isArray() ? (result.getArraySize() != start.getArraySize()) : true) { //NAND
 						result.clear();
 						for (int i = 0; i < start.getArraySize(); i++) {
 							st = start.getArrayIndex(i).getNumericValue();
 							ed = stop.getArrayIndex(i).getNumericValue();
 							result.addValue(st + step.getNumericValue() * (ed - st));
-						}					
+						}	
+						result.cleanup();
 					} else {
 						for (int i = 0; i < start.getArraySize(); i++) {
 							st = start.getArrayIndex(i).getNumericValue();
@@ -777,6 +785,61 @@ public class RunTimeEnvironment {
 					ed = stop.getNumericValue();
 					result.setValue(st + step.getNumericValue() * (ed - st));
 				}
+			}
+		});
+		addFunction(new Function("VEC.LENGTH", 1) {
+			@Override
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				if (parameters.size() < 1) {
+					throw new ExpressionException("VEC.LENGTH requires one numeric array");
+				}
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				
+				if(p0.isNumeric()) {
+					if(p0.isArray()) {
+						double sum = 0;
+						double val = 0;
+						for (int i = 0; i < p0.getArraySize(); i++) {
+							val = p0.getArrayIndex(i).getNumericValue();
+							sum += (val * val);
+						}	
+						result.setValue(Math.sqrt(sum));
+						return;
+					}
+					throw new ExpressionException("VEC.LENGTH works only with arrays");
+				}
+				throw new ExpressionException("VEC.LENGTH doesnt work with strings");										
+			}
+		});
+		addFunction(new Function("VEC.NORMALISE", 1) {
+			@Override
+			public void eval(List<ExpressionNode> parameters, ExpressionVar result) throws ExpressionException {
+				if (parameters.size() < 1) {
+					throw new ExpressionException("VEC.NORMALISE requires one numeric array");
+				}
+				ExpressionVar p0 = parameters.get(0).eValuated;
+				
+				if(p0.isNumeric()) {
+					if(p0.isArray()) {
+						double sum = 0;
+						double val = 0;
+						for (int i = 0; i < p0.getArraySize(); i++) {
+							val = p0.getArrayIndex(i).getNumericValue();
+							sum += (val * val);
+						}	
+						sum = Math.sqrt(sum);
+						if(result.isArray() ? (result.getArraySize() != p0.getArraySize()) : true) { //NAND
+							// we first have to adjust the result side
+							result.reset(p0.getArraySize());
+						}
+						for(int i = 0; i < p0.getArraySize(); i++) {
+							result.getArrayIndex(i).setNumericValue(p0.getArrayIndex(i).getNumericValue() / sum);
+						}							
+						return;
+					}
+					throw new ExpressionException("VEC.LENGTH works only with arrays");
+				}
+				throw new ExpressionException("VEC.LENGTH doesnt work with strings");										
 			}
 		});
 		addFunction(new Function("ABS", 1) {

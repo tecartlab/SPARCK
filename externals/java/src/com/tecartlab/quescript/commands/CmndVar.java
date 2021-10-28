@@ -68,7 +68,7 @@ public class CmndVar extends Cmnd {
 
 			try {
 				// during the creation of myExpression, the variable is registered in the local scope
-				myExpression = new Expression(super.content, "{", "}").prepend(":" + name + " = ").setInfo(" at line(" + lineNumber + ")").parse(rt);
+				myExpression = new Expression(super.content, "{", "}").setVar(name).setInfo(" at line(" + lineNumber + ")").parse(rt);
 			} catch (ExpressionException e) {
 				throw new ScriptMsgException("QueScript - Command <var>: Value Expression: " + e.getMessage());
 			}

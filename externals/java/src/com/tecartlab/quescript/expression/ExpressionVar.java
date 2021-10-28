@@ -98,6 +98,22 @@ public class ExpressionVar {
 	}
 
 	/**
+	 * take the values from the provided ExpressionVar and copy its values
+	 * @param var
+	 */
+	protected void setValueCopy(ExpressionVar var) {
+		if(var.getArraySize() != values.size()) {
+			values = var.getClonedValues();
+		} else {
+			for(int i = 0; i < var.getArraySize(); i++) {
+				values.get(i).setValueCopy(var.getArrayIndex(i));
+			}
+		}
+		isNumeric = var.isNumeric();
+		isArray = var.isArray();
+	}
+	
+	/**
 	 * Set the value as a string
 	 * @param val
 	 */
@@ -233,7 +249,7 @@ public class ExpressionVar {
 	 * get the array as reference
 	 * @return array as reference
 	 */
-	protected ArrayList<ExpressionAtom> getValues(){
+	public ArrayList<ExpressionAtom> getValues(){
 		return this.values;
 	}
 

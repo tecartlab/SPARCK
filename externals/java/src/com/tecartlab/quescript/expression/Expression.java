@@ -106,7 +106,22 @@ public class Expression {
 			expression = expression.substring(0, expression.length() - trimEnd.length());
 		this.expression = expression;
 	}
-	
+
+	/**
+	 * adds a prefix to the expression
+	 * @param varName
+	 */
+	public Expression setVar(String varName) {
+		if(expression.indexOf("=") != -1) {
+			expression = ":" + varName + expression;
+		} else if(expression.indexOf("->") != -1) {
+			expression = ":" + varName + expression;
+		} else {
+			expression = ":" + varName + " = " + expression;
+		}
+		return this;
+	}
+
 	/**
 	 * adds a prefix to the expression
 	 * @param prefix
@@ -384,7 +399,9 @@ public class Expression {
 				ExpressionNode v1 = stack.pop();
 				ExpressionNode v2 = stack.pop();
 				if(token.equals(RunTimeEnvironment.VAR_REFERNECE)) {
+					v2.setUsedAsReference();
 					// create a by reference node
+					/**
 					if(v2.isUsedAsReference()) {
 						// this variable it already a reference - bad:
 						throw new ExpressionException("Variable '" + v2.getExpression() + "' is already used as reference | " +"{"+expression+"}" + infoString);
@@ -393,11 +410,11 @@ public class Expression {
 						throw new ExpressionException("Variable '" + v2.getExpression() + "' is already used and cannot be overwritten as reference | " +"{"+expression+"}" + infoString);						
 					}
 					stack.push(v2.addToNodeTree(v1).setOperation(rt.operators.get(token)).setUsedAsVariable().setUsedAsReference());
-				} else {
-					p.add(v2.setUsedAsVariable());
-					p.add(v1);
-					stack.push(new ExpressionNode(rt.operators.get(token), p));
+					**/
 				}
+				p.add(v2.setUsedAsVariable());
+				p.add(v1);
+				stack.push(new ExpressionNode(rt.operators.get(token), p));
 			} else if (rt.functions.containsKey(token.toUpperCase(Locale.ROOT))) {
 				if(scopeToken == 0){
 					Function f = rt.functions.get(token.toUpperCase(Locale.ROOT));

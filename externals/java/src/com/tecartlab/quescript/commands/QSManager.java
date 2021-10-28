@@ -278,6 +278,8 @@ public class QSManager implements OutputInterface{
 				e.remove();
 			}
 		}
+		
+		this.clearGlobalVars();
 
 		try {
 		    // Validate Script against the XSD

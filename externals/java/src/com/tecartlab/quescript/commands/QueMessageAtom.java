@@ -26,66 +26,50 @@
 
 package com.tecartlab.quescript.commands;
 
+import java.util.ArrayList;
+
 import com.cycling74.max.Atom;
 
 import com.tecartlab.quescript.expression.Expression.ExpressionException;
+import com.tecartlab.quescript.expression.ExpressionAtom;
 import com.tecartlab.quescript.expression.ExpressionNode;
 
 public class QueMessageAtom extends QueMessageRAW{
 
 	private Atom[] messageList;
-
-	private int iterationIndex;
-
+	private ArrayList<Atom> msgList;
+	
 	protected QueMessageAtom(String messageName){
 		super(messageName);
 	}
 
 	public boolean hasAtoms() {
-		return (messageList == null)?false: true;
+		return (msgList.size() > 0)?true: false;
 	}
 
 	public Object[] getAtoms() {
-		return messageList;
-	}
-
-	public void iterate() {
-		iterationIndex = 0;
-	}
-
-	public boolean hasNext() {
-		return (iterationIndex <= index);
-	}
-
-	public boolean isNextString() {
-		return messageList[iterationIndex].isString();
-	}
-
-	public boolean isNextFloat() {
-		return messageList[iterationIndex].isFloat();
-	}
-
-	public String nextString() {
-		return messageList[iterationIndex].toString();
-	}
-
-	public float nextFloat() {
-		return messageList[iterationIndex].toFloat();
+		Atom[] arr = new Atom[msgList.size()];
+		return msgList.toArray(arr);
 	}
 
 	protected QueMessageRAW done() {
 		messageList = new Atom[index + 1];
+		msgList = new ArrayList<Atom>();
 		for(int i = 0; i <= index; i++){
 			if(tempList.get(i) instanceof String){
 				messageList[i] = Atom.newAtom((String)tempList.get(i));
+				msgList.add(messageList[i]);
 			} else if(tempList.get(i) instanceof Double){
 				messageList[i] = Atom.newAtom((Double)tempList.get(i));
+				msgList.add(messageList[i]);
 			} else if(tempList.get(i) instanceof Long){
 				messageList[i] = Atom.newAtom((Long)tempList.get(i));
+				msgList.add(messageList[i]);
 			} else if(tempList.get(i) instanceof ExpressionNode){
-				messageList[i] = Atom.newAtom(0);
+				messageList[i] = null;
 			} else {
 				messageList[i] = Atom.newAtom(0);
+				msgList.add(messageList[i]);
 			}
 		}
 		return this;
@@ -95,25 +79,38 @@ public class QueMessageAtom extends QueMessageRAW{
 		if(evalList != null && evalList.size() > 0){
 			ExpressionNode ev;
 //			System.out.println(" evallist size = " + evalList.size() + " | messageList size = " + messageList.length);
-			for(Integer i: evalList.keySet()){
-//				System.out.println(" -> evallist int = " + i);
-				ev = evalList.get(i);
-				ev.eval();
-				if(ev.isNumeric())
-					messageList[i] = Atom.newAtom(ev.getNumberValue());
-				else
-					messageList[i] = Atom.newAtom(ev.toString());
+			msgList.clear();
+			for(int i = 0; i < messageList.length; i++) {
+				if(messageList[i] == null) {
+					ev = evalList.get(i);
+					ev.eval();
+					if(ev.isArray()) {
+						for(ExpressionAtom atom: ev.getValues().getValues()) {
+							if(atom.isNumeric())
+								msgList.add(Atom.newAtom(atom.getNumericValue()));
+							else
+								msgList.add(Atom.newAtom(atom.getStringValue()));							
+						}
+					} else {
+						if(ev.isNumeric())
+							msgList.add(Atom.newAtom(ev.getNumberValue()));
+						else
+							msgList.add(Atom.newAtom(ev.toString()));
+					}
+				} else {
+					msgList.add(messageList[i]);
+				}
 			}
 		}
 		return this;
 	}
 
 	protected String[] getStringArray(String cmdName, String queName){
-		String[] cmnd = new String[messageList.length + 2];
+		String[] cmnd = new String[msgList.size() + 2];
 		cmnd[0] = cmdName;
 		cmnd[1] = queName;
-		for(int i = 0; i < messageList.length; i++){
-			cmnd[i + 2] = messageList[i].getString();
+		for(int i = 0; i < msgList.size(); i++){
+			cmnd[i + 2] = msgList.get(i).getString();
 		}
 		return cmnd;
 	}

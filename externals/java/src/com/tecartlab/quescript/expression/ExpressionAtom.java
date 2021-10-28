@@ -36,7 +36,7 @@ public class ExpressionAtom {
 		this.sValue = val;
 	}
 
-	protected double getNumericValue() {
+	public double getNumericValue() {
 		if(isNumeric) {
 			return dValue;			
 		} else {
@@ -44,7 +44,7 @@ public class ExpressionAtom {
 		}
 	}
 
-	protected String getStringValue() {
+	public String getStringValue() {
 		return getStringValue("%.2f");
 	}
 
@@ -59,6 +59,14 @@ public class ExpressionAtom {
 		}
 	}
 
+	protected void setValueCopy(ExpressionAtom val) {
+		isNumeric = val.isNumeric;
+		if(isNumeric)
+			dValue = val.dValue;
+		else
+			sValue = val.sValue;
+	}
+	
 	protected void setStringValue(String val) {
 		isNumeric = false;
 		sValue = val;
@@ -73,7 +81,7 @@ public class ExpressionAtom {
 	 * Queries the type of atom
 	 * @return
 	 */
-	protected boolean isNumeric() {
+	public boolean isNumeric() {
 		return isNumeric;
 	}
 	
