@@ -30,7 +30,7 @@ import com.tecartlab.tools.Const;
 
 /**
  * 
- * @author Martin Fršhlich
+ * @author Martin Frï¿½hlich
  *
  * This class is heavily indebted by the openframeworks Quaternion class and code from
  * Patrick Kochlik + Dennis Paul. And others...
@@ -89,8 +89,8 @@ public class Quaternionf {
 	 * 
 	 * @param theX  imaginary x value
 	 * @param theY  imaginary y value
-	 * @param theZ  imaginary w value
 	 * @param theW  imaginary z value
+	 * @param theZ  imaginary w value
 	 */
 	public Quaternionf(float theX, float theY, float theZ, float theW) {
 		reset();
