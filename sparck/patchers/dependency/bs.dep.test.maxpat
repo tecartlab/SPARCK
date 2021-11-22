@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 533.0, 185.0, 462.0, 316.0 ],
+		"rect" : [ 505.0, 187.0, 462.0, 332.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -41,6 +41,30 @@
 		"title" : "Dependencies",
 		"boxes" : [ 			{
 				"box" : 				{
+					"args" : [ "@package", "MaxMSP", "8.2.+", "@version", 820, "@url", "https://cycling74.com/downloads" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-11",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.dep.maxVersion.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 31.0, 169.0, 440.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 11.0, 51.0, 440.0, 24.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "@package", "ICST Ambisonics", "@version", "3.0.1" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -49,38 +73,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-18",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.packageTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 170.0, 401.285714285714334, 440.0, 24.0 ],
+					"patching_rect" : [ 207.0, 463.285714285714334, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 230.0, 440.0, 24.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "@package", "ia.facestream", "@version", "1.0.0", "@url", "https://gitlab.zhdk.ch/iaspace/05_projects/1916_digitalhumans/face-stream-maxpackage" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-14",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.dep.packageTest.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 207.0, 483.5, 440.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 282.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 263.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -93,7 +95,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 207.0, 551.0, 22.0, 22.0 ]
+					"patching_rect" : [ 207.0, 535.0, 22.0, 22.0 ]
 				}
 
 			}
@@ -141,7 +143,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 191.0, 591.0, 30.0, 30.0 ]
+					"patching_rect" : [ 207.0, 583.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -177,7 +179,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 236.0, 551.0, 33.0, 22.0 ],
+					"patching_rect" : [ 236.0, 535.0, 33.0, 22.0 ],
 					"text" : "front"
 				}
 
@@ -189,7 +191,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 207.0, 521.5, 34.0, 22.0 ],
+					"patching_rect" : [ 207.0, 505.5, 34.0, 22.0 ],
 					"text" : "sel 9"
 				}
 
@@ -216,7 +218,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 19.5, 448.5, 60.0, 22.0 ],
+					"patching_rect" : [ 19.5, 492.0, 60.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -229,7 +231,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 19.5, 478.5, 83.0, 49.0 ],
+					"patching_rect" : [ 19.5, 522.0, 83.0, 49.0 ],
 					"text" : "window flags nomenu, window exec"
 				}
 
@@ -241,7 +243,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 19.5, 539.5, 69.0, 22.0 ],
+					"patching_rect" : [ 19.5, 583.0, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -257,15 +259,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.javaTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 31.0, 146.0, 440.0, 24.0 ],
+					"patching_rect" : [ 60.0, 208.0, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 48.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 81.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -280,15 +283,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-13",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.packageTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 141.0, 327.071428571428555, 440.0, 24.0 ],
+					"patching_rect" : [ 170.0, 389.071428571428555, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 178.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 211.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -303,38 +307,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-12",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.packageTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 119.0, 290.85714285714289, 440.0, 24.0 ],
+					"patching_rect" : [ 148.0, 352.85714285714289, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 152.0, 440.0, 24.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "@windows", "VR", "1.0.1", "@macintosh", "ignore" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-11",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.dep.packageTest.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 187.0, 446.5, 440.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 256.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 185.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -349,15 +331,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-10",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.packageTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 97.5, 254.642857142857139, 440.0, 24.0 ],
+					"patching_rect" : [ 126.5, 316.64285714285711, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 126.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 159.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -372,15 +355,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.packageTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 164.0, 363.285714285714334, 440.0, 24.0 ],
+					"patching_rect" : [ 193.0, 425.285714285714334, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 204.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 237.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -395,22 +379,23 @@
 					"enablevscroll" : 0,
 					"id" : "obj-8",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.packageTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 75.5, 218.428571428571416, 440.0, 24.0 ],
+					"patching_rect" : [ 104.5, 280.428571428571445, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 100.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 133.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@package", "max-mxj", "@version", "7.2.6", "@url", "https://github.com/tecartlab/max-mxj/releases" ],
+					"args" : [ "@package", "max-mxj", "@version", "8.2.0", "@url", "https://github.com/tecartlab/max-mxj/releases" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -418,15 +403,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.dep.packageTest.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 49.0, 182.214285714285722, 440.0, 24.0 ],
+					"patching_rect" : [ 78.0, 244.214285714285722, 440.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 74.0, 440.0, 24.0 ],
+					"presentation_rect" : [ 11.0, 107.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -448,7 +434,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
 
@@ -464,13 +450,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-13", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -497,7 +476,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -534,14 +513,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
+					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-22", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
+					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -604,6 +583,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "bs.dep.maxVersion.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/dependency",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
@@ -630,13 +616,13 @@
 , 			{
 				"name" : "BlueButton",
 				"default" : 				{
-					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"bgcolor" : [ 0.160784, 0.733333, 0.980392, 1.0 ],
 					"elementcolor" : [ 0.640617, 0.64074, 0.640596, 1.0 ],
+					"selectioncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"fontname" : [ "Courier New" ],
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"centerjust" : [ 2 ]
+					"centerjust" : [ 2 ],
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
