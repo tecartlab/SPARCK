@@ -136,7 +136,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/stereo/spread", "@text", "spread" ],
+					"args" : [ "#1", "lens/stereo/spread", "@text", "spread", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -184,7 +184,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "lens/adapt/factor", "@text", "factor" ],
+					"args" : [ "#1", "lens/adapt/factor", "@text", "factor", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
