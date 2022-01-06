@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 24.0, 200.0, 60.0, 22.0 ],
+					"text" : "zl.change"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -248,6 +260,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"midpoints" : [ 118.5, 185.807618000000048, 92.999999999999943, 185.807618000000048, 92.999999999999943, 91.403809000000024, 118.5, 91.403809000000024 ],
+					"order" : 0,
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -256,6 +269,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-16", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"order" : 1,
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -331,7 +352,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-9", 0 ],
 					"midpoints" : [ 147.5, 130.451904500000012, 33.5, 130.451904500000012 ],
 					"source" : [ "obj-26", 1 ]
 				}
@@ -344,21 +365,28 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.remote.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "icst.floatui.mxe64",
-				"type" : "mx64"
+				"name" : "icst.floatui.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
-				"type" : "mx64"
+				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

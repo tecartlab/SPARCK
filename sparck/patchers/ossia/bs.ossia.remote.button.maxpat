@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 133.0, 145.0, 777.0, 480.0 ],
+		"rect" : [ 133.0, 145.0, 679.0, 417.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 161.805542000000116, 303.0, 60.0, 22.0 ],
+					"text" : "zl.change"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
@@ -82,7 +94,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 57.805542000000116, 350.0, 30.0, 30.0 ]
+					"patching_rect" : [ 161.805542000000116, 341.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -156,18 +168,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 57.805542000000116, 224.903809000000024, 55.0, 22.0 ],
-					"text" : "route set"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"borderstyle" : 5,
 					"fontface" : 0,
 					"iconbackground" : 3,
@@ -191,7 +191,7 @@
 					"onfontstyle" : 1,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 133.305542000000116, 227.903809000000024, 49.0, 19.0 ],
+					"patching_rect" : [ 133.305542000000116, 212.903809000000024, 69.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 49.0, 19.0 ],
 					"pviewfontsize" : 9.0,
@@ -316,16 +316,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"order" : 0,
 					"source" : [ "obj-26", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"order" : 1,
-					"source" : [ "obj-26", 0 ]
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-26", 1 ]
 				}
 
 			}
@@ -333,15 +331,15 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"midpoints" : [ 142.805542000000116, 256.807618000000048, 113.805542000000059, 256.807618000000048, 113.805542000000059, 140.403809000000024, 142.805542000000116, 140.403809000000024 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-7", 0 ],
+					"order" : 0,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -356,25 +354,25 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"source" : [ "obj-6", 0 ]
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.remote.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
-				"type" : "mx64"
+				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "icst.button.mxe64",
-				"type" : "mx64"
+				"name" : "icst.button.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

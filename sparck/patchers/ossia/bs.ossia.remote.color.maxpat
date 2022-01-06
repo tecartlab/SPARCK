@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 106.0, 296.0, 60.0, 22.0 ],
+					"text" : "zl.change"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
@@ -99,7 +111,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 335.0, 30.0, 30.0 ]
+					"patching_rect" : [ 106.0, 335.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -311,7 +323,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-26", 1 ]
 				}
 
@@ -325,15 +337,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-4", 0 ],
+					"order" : 0,
 					"source" : [ "obj-26", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-7", 0 ],
 					"order" : 2,
 					"source" : [ "obj-26", 1 ]
 				}
@@ -343,6 +355,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-20", 2 ],
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -364,6 +383,15 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"midpoints" : [ 58.305542000000116, 283.807618000000048, 29.305542000000059, 283.807618000000048, 29.305542000000059, 107.403809000000024, 58.305542000000116, 107.403809000000024 ],
+					"order" : 1,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"order" : 0,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -371,13 +399,14 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.remote.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
+				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
-				"type" : "mx64"
+				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

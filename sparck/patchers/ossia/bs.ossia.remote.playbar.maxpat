@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 24.0, 245.0, 60.0, 22.0 ],
+					"text" : "zl.change"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "newobj",
@@ -166,7 +178,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 24.0, 235.0, 30.0, 30.0 ]
+					"patching_rect" : [ 24.0, 281.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -248,6 +260,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
@@ -304,16 +323,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"source" : [ "obj-26", 2 ]
+					"destination" : [ "obj-10", 0 ],
+					"midpoints" : [ 147.5, 130.451904500000012, 33.5, 130.451904500000012 ],
+					"source" : [ "obj-26", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"midpoints" : [ 147.5, 130.451904500000012, 33.5, 130.451904500000012 ],
-					"source" : [ "obj-26", 1 ]
+					"destination" : [ "obj-20", 0 ],
+					"source" : [ "obj-26", 2 ]
 				}
 
 			}
@@ -347,8 +366,17 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"order" : 1,
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"midpoints" : [ 118.5, 226.807618000000048, 92.999999999999943, 226.807618000000048, 92.999999999999943, 91.403809000000024, 118.5, 91.403809000000024 ],
+					"order" : 0,
 					"source" : [ "obj-8", 0 ]
 				}
 

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 47.0, 224.0, 60.0, 22.0 ],
+					"text" : "zl.change"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
@@ -108,7 +120,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 48.805542000000116, 242.0, 30.0, 30.0 ]
+					"patching_rect" : [ 47.0, 259.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -300,8 +312,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"midpoints" : [ 158.805542000000116, 164.951904500000012, 58.305542000000116, 164.951904500000012 ],
+					"destination" : [ "obj-7", 0 ],
+					"midpoints" : [ 158.805542000000116, 164.951904500000012, 56.5, 164.951904500000012 ],
 					"source" : [ "obj-26", 1 ]
 				}
 
@@ -322,8 +334,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"midpoints" : [ 129.805542000000116, 218.807618000000048, 109.305542000000059, 218.807618000000048, 109.305542000000059, 124.403809000000024, 129.805542000000116, 124.403809000000024 ],
+					"order" : 0,
 					"source" : [ "obj-9", 0 ]
 				}
 
@@ -335,21 +355,29 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 1,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.ossia.remote.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.remote.mxe64",
-				"type" : "mx64"
+				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "icst.intui.mxe64",
-				"type" : "mx64"
+				"name" : "icst.intui.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
