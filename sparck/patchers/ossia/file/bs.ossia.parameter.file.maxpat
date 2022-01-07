@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -150,8 +150,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -310,8 +310,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 6,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -589,8 +589,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 6,
+															"minor" : 2,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -932,11 +932,11 @@
 													"fontsize" : 12.0,
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 3,
+													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 274.75, 346.0, 145.0, 22.0 ],
-													"text" : "sprintf symout %s/%s.%s"
+													"patching_rect" : [ 274.75, 346.0, 123.0, 22.0 ],
+													"text" : "sprintf symout %s/%s"
 												}
 
 											}
@@ -1615,8 +1615,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 6,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1974,8 +1974,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 6,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2621,6 +2621,7 @@
 					"hint" : "",
 					"id" : "obj-34",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.gui.svg.button.maxpat",
 					"numinlets" : 1,
@@ -2700,8 +2701,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2975,8 +2976,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3021,8 +3022,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 6,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3569,8 +3570,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 6,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3760,8 +3761,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 6,
+															"minor" : 2,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3993,8 +3994,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 6,
+															"minor" : 2,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4761,8 +4762,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 6,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5552,8 +5553,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 6,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6110,7 +6111,7 @@
 					"autopopulate" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-3",
-					"items" : [ "select...", ",", "SaveAs...", ",", "Save", ",", "<separator>", ",", "_assets", ",", "_export", ",", "_settings", ",", "_tmp", ",", "Bug.zip", ",", "device.maxpat" ],
+					"items" : [ "select...", ",", "SaveAs...", ",", "Save", ",", "<separator>", ",", "_assets", ",", "_export", ",", "_settings", ",", "_tmp", ",", "BoxMap.maxpat", ",", "BoxMap_projection.maxpat", ",", "CalibrationCross.maxpat", ",", "CornerPin.maxpat", ",", "DrawMask.maxpat", ",", "DynBeamer.maxpat", ",", "Empty.maxpat", ",", "FaceStream.maxpat", ",", "Light.maxpat", ",", "LookAtCamera.maxpat", ",", "Material.maxpat", ",", "MeshWarp.maxpat", ",", "Optitrack.maxpat", ",", "OutputWin.maxpat", ",", "QueScript.maxpat", ",", "SkyBox.maxpat", ",", "SpatialBakery_Basic.maxpat", ",", "SpatialBakery_MaskAndBlend.maxpat", ",", "SpatialBakery_occlusion.maxpat", ",", "SpatialBakery_occlusion_fpsTest.maxpat", ",", "SpatialShadery_Basic.maxpat", ",", "SyphonTestbed.maxpat", ",", "Texture.maxpat", ",", "TextureProjectory_360VR.maxpat", ",", "TextureProjectory_360VR_Multiple.maxpat", ",", "TextureProjectory_Multiple.maxpat", ",", "Video.maxpat" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6118,7 +6119,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 95.0, 345.0, 128.333333333333371, 19.0 ],
 					"pattrmode" : 1,
-					"prefix" : "MacintoshHD:/Users/maybites/Arbeiten/01_projekte/150816_SPARCK/00_projects/02_CodeIncubator/_ossia/project/",
+					"prefix" : "~/Arbeiten/01_projekte/150816_SPARCK/00_projects/_testbed/",
 					"prefix_mode" : 2,
 					"presentation" : 1,
 					"presentation_rect" : [ 68.0, 0.0, 132.0, 19.0 ],
@@ -6365,6 +6366,10 @@
 			}
 , 			{
 				"name" : "bs.msg.receive.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
  ],
