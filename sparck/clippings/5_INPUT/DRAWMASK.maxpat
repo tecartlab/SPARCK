@@ -49,13 +49,13 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.Texture.maxpat",
-					"numinlets" : 1,
+					"name" : "bs.node.DrawMask.maxpat",
+					"numinlets" : 2,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "jit_gl_texture", "", "" ],
 					"patching_rect" : [ 0.0, 0.0, 180.0, 36.0 ],
-					"varname" : "Texture",
+					"varname" : "DrawMask",
 					"viewvisibility" : 1
 				}
 
@@ -63,7 +63,7 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-3::obj-99::obj-12::obj-47::obj-20::obj-72" : [ "toggle", "toggle", 0 ],
+			"obj-3::obj-32::obj-38::obj-12::obj-47::obj-20::obj-72" : [ "toggle", "toggle", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -72,7 +72,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "bs.node.Texture.maxpat",
+				"name" : "bs.node.DrawMask.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/ossia",
 				"patcherrelativepath" : "../../patchers/nodes/ossia",
 				"type" : "JSON",
@@ -135,6 +135,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "bs.node.draw.editor.js",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/nodes",
+				"patcherrelativepath" : "../../javascript/nodes",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "bs.vpl.util.outlet.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/vpl",
 				"patcherrelativepath" : "../../patchers/vpl",
@@ -143,6 +150,13 @@
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
+				"patcherrelativepath" : "../../patchers/utils",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.util.editorGate.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
 				"patcherrelativepath" : "../../patchers/utils",
 				"type" : "JSON",

@@ -381,8 +381,10 @@ function ui_window(){
 		args.splice(0, 1);
         if(cameraObj.enable == 1){
             args = cameraObj.getviewportray(uiEvent.currentPosX, uiEvent.currentPosY);
-            uiEvent.pickray(args[0],args[1],args[2],args[3],args[4],args[5]);
-        }
+			if(args != null){
+            	uiEvent.pickray(args[0],args[1],args[2],args[3],args[4],args[5]);
+        	}
+		}
 	}else if(args[0] == 'size'){
 		args.splice(0, 1);
 		uiEvent.windowSize(args[0],args[1]);
