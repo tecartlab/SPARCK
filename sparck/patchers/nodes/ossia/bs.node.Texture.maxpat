@@ -41,6 +41,30 @@
 		"globalpatchername" : "Texture_1",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 448.226844999999912, 188.640869000000009, 34.0, 20.0 ],
+					"text" : "file \" \""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 448.226844999999912, 154.0, 69.0, 20.0 ],
+					"text" : "route dispose"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-41",
 					"maxclass" : "newobj",
@@ -484,7 +508,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 511.226844999999912, 95.429564999999997, 267.0, 31.0 ],
+					"patching_rect" : [ 448.226844999999912, 50.429564999999997, 267.0, 31.0 ],
 					"text" : "ossia.parameter image/filewatch @type bool @default 0 @description \"enable autoload of changed file\" @priority 2"
 				}
 
@@ -498,14 +522,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 511.226844999999912, 135.859130000000022, 107.0, 22.0 ],
+					"patching_rect" : [ 448.226844999999912, 90.859130000000022, 107.0, 22.0 ],
 					"text" : "prepend fileWatch"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "image/file", "@pathstyle", "native", "@pathtype", "boot", "@cmdRead", "read", "@cmdSaveAs", "read", "@cmdSave", "read", "@fileExtension", "xml", "@relativePath", "_assets/_textures", "@depth", 2, "@types", "TIFF", "GIFf", "JPEG", "PNG", "@readonly", 1, "@setable", 1, "@description", "load texture. (drag n' drop -> stored in ~/_assets/_textures)", "@text", "image", "@messageonselect", "read" ],
+					"args" : [ "image/file", "@pathstyle", "native", "@pathtype", "boot", "@cmdRead", "read", "@cmdSaveAs", "read", "@cmdSave", "read", "@fileExtension", "xml", "@relativePath", "_assets/_textures", "@depth", 2, "@types", "TIFF", "GIFf", "JPEG", "PNG", "@readonly", 1, "@setable", 1, "@messageOnSelect", "dispose", "@description", "load texture. (drag n' drop -> stored in ~/_assets/_textures)", "@text", "image", "@messageonselect", "read" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -521,7 +545,7 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 511.226844999999912, 168.85913000000005, 203.0833740234375, 20.0 ],
+					"patching_rect" : [ 448.226844999999912, 123.85913000000005, 203.0833740234375, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -758,7 +782,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 511.226844999999912, 202.429565000000025, 29.5, 20.0 ],
+					"patching_rect" : [ 498.226844999999912, 192.429565000000025, 29.5, 20.0 ],
 					"text" : "t b l"
 				}
 
@@ -1029,6 +1053,27 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-95", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
@@ -1193,7 +1238,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-99", 0 ]
 				}
 
