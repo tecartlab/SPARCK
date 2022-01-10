@@ -25,8 +25,8 @@
 	<param name="uFrustumNear" type="float" default="0.05" />
 	<param name="uFrustumFar" type="float" default="100.0" />
 
-	<param name="depthTexture" type="int" default="0" />
-	<param name="normalTexture" type="int" default="1" />
+	<param name="colorTexture" type="int" default="0" />
+	<param name="comboTexture" type="int" default="1" />
 	<param name="noiseTexture" type="int" default="2" />
 
 	<language name="glsl" version="1.0">
@@ -46,8 +46,8 @@
 		<bind param="uFrustumNear" program="vp" />
 		<bind param="uFrustumFar" program="vp" />
 
-		<bind param="depthTexture" program="fp" />
-		<bind param="normalTexture" program="fp" />
+		<bind param="colorTexture" program="fp" />
+		<bind param="comboTexture" program="fp" />
 		<bind param="noiseTexture" program="fp" />
 		<program name="vp" type="vertex">
 <![CDATA[
@@ -55,6 +55,7 @@
 // MIT License
 // Martin Froehlich for tecartlab.com
 // Copyright 2020 - tecartlab.com
+#version 120
 	
 uniform float uFrustumLeft;
 uniform float uFrustumRight;
@@ -78,11 +79,11 @@ void main()
     gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
 
     // transform texcoords from unit to pixel coordinates
-    vDepthCoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+    vDepthCoord = vec2(gl_TextureMatrix[1] * gl_MultiTexCoord0);
     vNormalCoord = vec2(gl_TextureMatrix[1] * gl_MultiTexCoord1);
     vNoiseCoord = vec2(gl_TextureMatrix[2] * gl_MultiTexCoord2);
     // extract the x and y scalars from the texture matrix to determine dimensions
-    vDepthDim = vec2 (abs(gl_TextureMatrix[0][0][0]),abs(gl_TextureMatrix[0][1][1]));
+    vDepthDim = vec2 (abs(gl_TextureMatrix[1][0][0]),abs(gl_TextureMatrix[1][1][1]));
     vNormalDim = vec2 (abs(gl_TextureMatrix[1][0][0]),abs(gl_TextureMatrix[1][1][1]));
     vNoiseDim = vec2 (abs(gl_TextureMatrix[1][0][0]),abs(gl_TextureMatrix[1][1][1]));
 
@@ -96,8 +97,11 @@ void main()
 		<program name="fp" type="fragment">
 <![CDATA[
 
-uniform sampler2DRect depthTexture;
-uniform sampler2DRect normalTexture;
+#version 120
+#extension GL_ARB_texture_rectangle : enable
+
+uniform sampler2DRect colorTexture;
+uniform sampler2DRect comboTexture;
 uniform sampler2DRect noiseTexture;
 
 const int MAX_KERNEL_SIZE = 128;
@@ -130,14 +134,14 @@ varying vec3 viewRay;
 //------------------------------------------
 //general stuff
 
-vec3 decodeNormal(in vec4 normal) {
+vec3 decodeNormal(vec3 normal) {
 	vec3 result = normal.rgb * 2.0 - 1.0;
 //	result.z = (result.x * result.x + result.y * result.y) * 2.0 - 1.0;
 //	result.xy = normalize(result.xy) * sqrt(1.0 - result.z * result.z);
 	return result.xyz;
 }
 
-vec3 encodeNormal(in vec3 enc) {
+vec3 encodeNormal(vec3 enc) {
 	vec3 result = enc;
 //	result.xy = normalize(enc.xy) * sqrt(enc.z * 0.5 + 0.5);
 //	result.z = 0.0;
@@ -147,7 +151,7 @@ vec3 encodeNormal(in vec3 enc) {
 
 
 /*----------------------------------------------------------------------------*/
-float ssao(in mat3 kernelBasis, in vec3 originPos, in float radius) {
+float ssao(mat3 kernelBasis, vec3 originPos, float radius) {
 	float occlusion = 0.0;
 	for (int i = 0; i < uKernelSize; ++i) {
 	//	get sample position:
@@ -160,7 +164,7 @@ float ssao(in mat3 kernelBasis, in vec3 originPos, in float radius) {
 		offset.xy = offset.xy * 0.5 + 0.5; // scale/bias to texcoords
 
 	//	get sample depth:
-		float sampleDepth = texture2DRect(depthTexture, vDepthDim * offset.xy).r * uFrustumFar;
+		float sampleDepth = texture2DRect(comboTexture, vDepthDim * offset.xy).a * uFrustumFar;
 		//sampleDepth = linearizeDepth(sampleDepth, uProjectionMatrix);
 
 		float rangeCheck = smoothstep(0.0, 1.0, radius / abs(originPos.z - sampleDepth));
@@ -178,12 +182,12 @@ void main() {
 	noiseTexCoords *= vDepthCoord;
 
 //	get view space origin:
-	float originDepth = texture2DRect(depthTexture, vDepthCoord).r * uFrustumFar;
+	float originDepth = texture2DRect(comboTexture, vDepthCoord).a * uFrustumFar;
 	vec3 normalViewRay = normalize(viewRay);
 	vec3 originPos = normalViewRay * originDepth;
 
 //	get view space normal:
-	vec3 normal = decodeNormal(texture2DRect(normalTexture, vNormalCoord));
+	vec3 normal = decodeNormal(texture2DRect(comboTexture, vNormalCoord).rgb);
 
 //	construct kernel basis matrix:
 	vec3 rvec = texture2DRect(noiseTexture, vNoiseCoord).rgb * 2.0 - 1.0;
@@ -195,6 +199,9 @@ void main() {
 
 //	if(worldPos.z > 0.0)
 		gl_FragColor = vec4(ssao(kernelBasis, originPos, uRadius));
+		gl_FragColor = vec4(texture2DRect(comboTexture, vDepthCoord).y, 0., 0., 1.);
+		//gl_FragColor = vec4(texture2DRect(comboTexture, vDepthCoord).rgb, 1.);
+		//gl_FragColor = texture2DRect(colorTexture, vDepthCoord) * vec4(ssao(kernelBasis, originPos, uRadius));
 //	else
 //		gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
 //		gl_FragColor = vec4(worldPos.z, worldPos.z, worldPos.z, 1.0);
