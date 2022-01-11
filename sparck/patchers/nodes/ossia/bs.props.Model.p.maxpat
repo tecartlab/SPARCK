@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 9,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 887.0, 45.0, 447.0, 855.0 ],
+		"rect" : [ 439.0, 45.0, 447.0, 855.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -48,6 +48,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-42",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.int.maxpat",
 					"numinlets" : 3,
@@ -71,6 +72,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-41",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -94,6 +96,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-40",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -117,6 +120,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-39",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
@@ -140,6 +144,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-38",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.int.maxpat",
 					"numinlets" : 3,
@@ -163,6 +168,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-37",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -186,6 +192,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-36",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -209,12 +216,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-35",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.color.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "list", "", "" ],
 					"patching_rect" : [ 249.5, 502.0, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 320.0, 240.0, 19.0 ],
@@ -232,12 +240,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-34",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.color.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "list", "", "" ],
 					"patching_rect" : [ 249.5, 481.0, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 300.0, 240.0, 19.0 ],
@@ -255,12 +264,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-33",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.color.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "list", "", "" ],
 					"patching_rect" : [ 249.5, 460.0, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 280.0, 240.0, 19.0 ],
@@ -278,12 +288,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-32",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.color.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "list", "", "" ],
 					"patching_rect" : [ 249.5, 437.0, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 260.0, 240.0, 19.0 ],
@@ -301,6 +312,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-31",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
@@ -324,6 +336,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-19",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -347,6 +360,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-15",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
@@ -362,7 +376,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "shader", "@text", "shader", "@size", 159, 19, "@menutype", "message", "@isnot", "none" ],
+					"args" : [ "#1", "shader", "@text", "shader", "@size", 159, 19, "@menutype", "message", "@is", "none" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -370,6 +384,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-21",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
@@ -393,6 +408,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-30",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
@@ -416,6 +432,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-29",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
@@ -439,6 +456,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-27",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -462,6 +480,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-28",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.float.maxpat",
 					"numinlets" : 3,
@@ -485,6 +504,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-26",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -508,6 +528,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-25",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -531,12 +552,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-18",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.color.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "list", "", "" ],
 					"patching_rect" : [ 249.5, 414.0, 200.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 240.0, 240.0, 19.0 ],
@@ -554,6 +576,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-23",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
@@ -577,6 +600,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-14",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -600,6 +624,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-13",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
@@ -623,6 +648,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-10",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
@@ -646,6 +672,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-46",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.select.maxpat",
 					"numinlets" : 3,
@@ -684,6 +711,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.tfm.local.maxpat",
 					"numinlets" : 3,
@@ -722,6 +750,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-16",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -745,6 +774,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-12",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.int.maxpat",
 					"numinlets" : 3,
@@ -768,6 +798,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-11",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.toggle.maxpat",
 					"numinlets" : 3,
@@ -791,6 +822,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-8",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.menu.maxpat",
 					"numinlets" : 3,
@@ -814,6 +846,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.rendergroup.maxpat",
 					"numinlets" : 3,
@@ -952,7 +985,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 2 ],
-					"order" : 0,
+					"order" : 4,
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -960,7 +993,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-32", 2 ],
-					"order" : 1,
+					"order" : 3,
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -976,7 +1009,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-34", 2 ],
-					"order" : 3,
+					"order" : 1,
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -984,7 +1017,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-35", 2 ],
-					"order" : 4,
+					"order" : 0,
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -1120,6 +1153,10 @@
 			}
 , 			{
 				"name" : "ossia.remote.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
 				"type" : "iLaX"
 			}
 , 			{
