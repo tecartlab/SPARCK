@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 0,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 316.0, 99.0, 1071.0, 737.0 ],
-		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 51.0, 95.0, 1071.0, 737.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-15",
@@ -45,8 +46,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 878.5, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 878.5, 180.0, 29.5, 22.0 ],
-					"style" : "",
 					"text" : "t l l"
 				}
 
@@ -61,13 +60,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-14",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 736.149963, 605.5, 205.0, 40.0 ],
+					"patching_rect" : [ 736.149962999999957, 605.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 561.0, 205.0, 35.0 ],
 					"varname" : "P",
@@ -83,9 +83,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 951.0, 674.719543, 25.0, 25.0 ],
-					"presentation_rect" : [ 951.0, 674.719543, 25.0, 25.0 ],
-					"style" : ""
+					"patching_rect" : [ 951.0, 674.719543000000044, 25.0, 25.0 ]
 				}
 
 			}
@@ -103,7 +101,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 162.0, 23.0, 45.0, 13.0 ],
 					"rounded" : 2.0,
-					"style" : "",
 					"text" : "Reset"
 				}
 
@@ -116,8 +113,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 942.0, 230.0, 19.0, 22.0 ],
-					"presentation_rect" : [ 942.0, 230.0, 19.0, 22.0 ],
-					"style" : "",
 					"text" : "t l"
 				}
 
@@ -129,9 +124,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 942.0, 150.903809, 83.0, 22.0 ],
-					"presentation_rect" : [ 942.0, 150.903809, 83.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 942.0, 150.903808999999995, 83.0, 22.0 ],
 					"text" : "routepass title"
 				}
 
@@ -143,9 +136,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 268.5, 88.070435, 110.0, 22.0 ],
-					"presentation_rect" : [ 268.5, 88.070435, 110.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 268.5, 88.070435000000003, 110.0, 22.0 ],
 					"text" : "route setparameter"
 				}
 
@@ -157,9 +148,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 846.899963, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 846.899963, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 846.899962999999957, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -172,8 +161,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 815.0, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 815.0, 180.0, 29.5, 22.0 ],
-					"style" : "",
 					"text" : "t l l"
 				}
 
@@ -185,9 +172,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 783.099976, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 783.099976, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 783.09997599999997, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -202,13 +187,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-59",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 720.299988, 560.5, 205.0, 40.0 ],
+					"patching_rect" : [ 720.299987999999985, 560.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 526.0, 205.0, 35.0 ],
 					"varname" : "O",
@@ -226,13 +212,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-58",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 698.299988, 518.5, 205.0, 40.0 ],
+					"patching_rect" : [ 698.299987999999985, 518.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 491.0, 205.0, 35.0 ],
 					"varname" : "N",
@@ -250,13 +237,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-57",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 669.299988, 474.5, 205.0, 40.0 ],
+					"patching_rect" : [ 669.299987999999985, 474.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 456.0, 205.0, 35.0 ],
 					"varname" : "M",
@@ -274,13 +262,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-56",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 648.399963, 432.5, 205.0, 40.0 ],
+					"patching_rect" : [ 648.399962999999957, 432.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 421.0, 205.0, 35.0 ],
 					"varname" : "L",
@@ -298,13 +287,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-55",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 625.299988, 390.5, 205.0, 40.0 ],
+					"patching_rect" : [ 625.299987999999985, 390.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 386.0, 205.0, 35.0 ],
 					"varname" : "K",
@@ -322,13 +312,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-54",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 600.299988, 348.5, 205.0, 40.0 ],
+					"patching_rect" : [ 600.299987999999985, 348.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 351.0, 205.0, 35.0 ],
 					"varname" : "J",
@@ -346,13 +337,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-53",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 571.299988, 306.5, 205.0, 40.0 ],
+					"patching_rect" : [ 571.299987999999985, 306.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 316.0, 205.0, 35.0 ],
 					"varname" : "I",
@@ -370,13 +362,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-52",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 407.950012, 609.5, 205.0, 40.0 ],
+					"patching_rect" : [ 407.950012000000015, 609.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 281.0, 205.0, 35.0 ],
 					"varname" : "H",
@@ -394,13 +387,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-51",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 393.299988, 562.719543, 205.0, 40.0 ],
+					"patching_rect" : [ 393.299987999999985, 562.719543000000044, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 246.0, 205.0, 35.0 ],
 					"varname" : "G",
@@ -418,13 +412,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-50",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 372.299988, 518.5, 205.0, 40.0 ],
+					"patching_rect" : [ 372.299987999999985, 518.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 211.0, 205.0, 35.0 ],
 					"varname" : "F",
@@ -442,13 +437,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-49",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 344.149994, 476.5, 205.0, 40.0 ],
+					"patching_rect" : [ 344.149993999999992, 476.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 176.0, 205.0, 35.0 ],
 					"varname" : "E",
@@ -466,13 +462,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-48",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 320.299988, 434.5, 205.0, 40.0 ],
+					"patching_rect" : [ 320.299987999999985, 434.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 141.0, 205.0, 35.0 ],
 					"varname" : "D",
@@ -490,8 +487,9 @@
 					"enablevscroll" : 0,
 					"id" : "obj-47",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
@@ -514,13 +512,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-46",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 273.700012, 350.5, 205.0, 40.0 ],
+					"patching_rect" : [ 273.700012000000015, 350.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 71.0, 205.0, 35.0 ],
 					"varname" : "B",
@@ -535,9 +534,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 750.899963, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 750.899963, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 750.899962999999957, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -550,8 +547,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 719.0, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 719.0, 180.0, 29.5, 22.0 ],
-					"style" : "",
 					"text" : "t l l"
 				}
 
@@ -563,9 +558,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 687.099976, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 687.099976, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 687.09997599999997, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -577,9 +570,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 655.200012, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 655.200012, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 655.200012000000015, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -591,9 +582,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 623.299988, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 623.299988, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 623.299987999999985, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -606,8 +595,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 591.0, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 591.0, 180.0, 29.5, 22.0 ],
-					"style" : "",
 					"text" : "t l l"
 				}
 
@@ -620,8 +607,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 559.5, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 559.5, 180.0, 29.5, 22.0 ],
-					"style" : "",
 					"text" : "t l l"
 				}
 
@@ -633,9 +618,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 527.599976, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 527.599976, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 527.59997599999997, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -647,9 +630,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 495.700012, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 495.700012, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 495.700012000000015, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -661,9 +642,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 463.799988, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 463.799988, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 463.799987999999985, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -675,9 +654,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 431.899994, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 431.899994, 180.0, 29.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 431.899993999999992, 180.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -690,8 +667,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 400.0, 180.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 400.0, 180.0, 29.5, 22.0 ],
-					"style" : "",
 					"text" : "t l l"
 				}
 
@@ -704,10 +679,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 445.0, 47.070435, 525.0, 49.0 ],
+					"patching_rect" : [ 445.0, 47.070435000000003, 525.0, 49.0 ],
 					"presentation_linecount" : 3,
-					"presentation_rect" : [ 445.0, 47.070435, 525.0, 49.0 ],
-					"style" : "",
 					"text" : "0 myVeryOwnVec3 0. 0. 0. 0. vec4 @desc=don't_.use_spaces!|@min=0.0|@max=1.0|@gui=0|@desc0=posX|@desc1=posY|@desc2=posZ"
 				}
 
@@ -719,9 +692,7 @@
 					"numinlets" : 17,
 					"numoutlets" : 17,
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 377.399963, 238.903809, 531.800049, 22.0 ],
-					"presentation_rect" : [ 377.399963, 238.903809, 531.800049, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 377.399963000000014, 238.903808999999995, 531.800048999999944, 22.0 ],
 					"text" : "routepass p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15"
 				}
 
@@ -734,9 +705,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 246.299988, 690.0, 25.0, 25.0 ],
-					"presentation_rect" : [ 246.299988, 690.0, 25.0, 25.0 ],
-					"style" : ""
+					"patching_rect" : [ 246.299988000000013, 690.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -747,9 +716,7 @@
 					"numinlets" : 17,
 					"numoutlets" : 17,
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 400.0, 150.903809, 529.400024, 22.0 ],
-					"presentation_rect" : [ 400.0, 150.903809, 529.400024, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 400.0, 150.903808999999995, 529.40002400000003, 22.0 ],
 					"text" : "route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"
 				}
 
@@ -764,13 +731,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
+					"name" : "bs.node.ShaderRaymarcher.param.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 246.299988, 306.5, 205.0, 40.0 ],
+					"patching_rect" : [ 246.299988000000013, 306.5, 205.0, 40.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 36.0, 205.0, 35.0 ],
 					"varname" : "A",
@@ -787,9 +755,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 268.5, 47.070435, 25.0, 25.0 ],
-					"presentation_rect" : [ 268.5, 47.070435, 25.0, 25.0 ],
-					"style" : ""
+					"patching_rect" : [ 268.5, 47.070435000000003, 25.0, 25.0 ]
 				}
 
 			}
@@ -802,9 +768,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 131.333328, 57.605652, 74.0, 22.0 ],
-					"presentation_rect" : [ 131.333328, 57.605652, 74.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 131.333327999999995, 57.605651999999999, 74.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -819,13 +783,14 @@
 					"enablevscroll" : 0,
 					"id" : "obj-132",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.gui.windows.pops.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 24.333336, 144.403809, 210.0, 35.0 ],
+					"patching_rect" : [ 24.333335999999999, 144.403808999999995, 210.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 210.0, 22.0 ],
 					"viewvisibility" : 1
@@ -842,9 +807,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 76.277893, 88.070435, 98.0, 22.0 ],
-					"presentation_rect" : [ 76.277893, 88.070435, 98.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 76.277893000000006, 88.070435000000003, 98.0, 22.0 ],
 					"text" : "prepend window"
 				}
 
@@ -859,9 +822,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 268.5, 204.903809, 94.0, 22.0 ],
-					"presentation_rect" : [ 268.5, 204.903809, 94.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 268.5, 204.903808999999995, 94.0, 22.0 ],
 					"text" : "route parameter"
 				}
 
@@ -876,8 +837,6 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 230.75, 4.605652, 59.5, 22.0 ],
-					"presentation_rect" : [ 230.75, 4.605652, 59.5, 22.0 ],
-					"style" : "",
 					"text" : "autopattr",
 					"varname" : "u806005979"
 				}
@@ -891,9 +850,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 76.277893, 37.306427, 20.0, 20.0 ],
-					"presentation_rect" : [ 76.277893, 37.306427, 20.0, 20.0 ],
-					"style" : ""
+					"patching_rect" : [ 76.277893000000006, 37.306426999999999, 20.0, 20.0 ]
 				}
 
 			}
@@ -906,10 +863,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 24.333336, 198.903809, 69.0, 22.0 ],
-					"presentation_rect" : [ 24.333336, 198.903809, 69.0, 22.0 ],
+					"patching_rect" : [ 24.333335999999999, 198.903808999999995, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
-					"style" : "",
 					"text" : "thispatcher"
 				}
 
@@ -923,9 +878,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 215.333344, 47.070435, 25.0, 25.0 ],
-					"presentation_rect" : [ 215.333344, 47.070435, 25.0, 25.0 ],
-					"style" : ""
+					"patching_rect" : [ 215.333344000000011, 47.070435000000003, 25.0, 25.0 ]
 				}
 
 			}
@@ -945,7 +898,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 210.0, 600.5 ],
 					"proportion" : 0.39,
-					"style" : "",
 					"varname" : "vpl_canvas"
 				}
 
@@ -1109,14 +1061,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-46", 1 ],
-					"order" : 15,
-					"source" : [ "obj-13", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-47", 1 ],
 					"order" : 14,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1124,7 +1068,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-48", 1 ],
+					"destination" : [ "obj-47", 1 ],
 					"order" : 13,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1132,7 +1076,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-49", 1 ],
+					"destination" : [ "obj-48", 1 ],
 					"order" : 12,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1140,7 +1084,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-50", 1 ],
+					"destination" : [ "obj-49", 1 ],
 					"order" : 11,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1148,7 +1092,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-51", 1 ],
+					"destination" : [ "obj-50", 1 ],
 					"order" : 10,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1156,7 +1100,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-52", 1 ],
+					"destination" : [ "obj-51", 1 ],
 					"order" : 9,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1164,7 +1108,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-53", 1 ],
+					"destination" : [ "obj-52", 1 ],
 					"order" : 8,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1172,7 +1116,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-54", 1 ],
+					"destination" : [ "obj-53", 1 ],
 					"order" : 7,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1180,7 +1124,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-55", 1 ],
+					"destination" : [ "obj-54", 1 ],
 					"order" : 6,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1188,7 +1132,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-56", 1 ],
+					"destination" : [ "obj-55", 1 ],
 					"order" : 5,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1196,7 +1140,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-57", 1 ],
+					"destination" : [ "obj-56", 1 ],
 					"order" : 4,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1204,7 +1148,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-58", 1 ],
+					"destination" : [ "obj-57", 1 ],
 					"order" : 3,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1212,7 +1156,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-59", 1 ],
+					"destination" : [ "obj-58", 1 ],
 					"order" : 2,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1220,7 +1164,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 1 ],
+					"destination" : [ "obj-59", 1 ],
 					"order" : 1,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1228,8 +1172,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-7", 1 ],
+					"order" : 15,
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-114", 0 ],
-					"midpoints" : [ 224.833336, 201.153809, 278.0, 201.153809 ],
+					"midpoints" : [ 224.833336000000003, 201.153808999999995, 278.0, 201.153808999999995 ],
 					"source" : [ "obj-132", 1 ]
 				}
 
@@ -1758,48 +1710,48 @@
 		"dependency_cache" : [ 			{
 				"name" : "bs.gui.windows.pops.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
+				"patcherrelativepath" : "../../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.windows.pops.js",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/gui",
-				"patcherrelativepath" : "../../../javascript/gui",
+				"patcherrelativepath" : "../../../../javascript/gui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.win.reactive.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/utils",
-				"patcherrelativepath" : "../../utils",
+				"patcherrelativepath" : "../../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.logo.camera.png",
+				"name" : "bs.node.logo.power.png",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media",
-				"patcherrelativepath" : "../../../media",
-				"type" : "PNG ",
+				"patcherrelativepath" : "../../../../media",
+				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
+				"patcherrelativepath" : "../../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.toggle.maxpat",
 				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
+				"patcherrelativepath" : "../../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.shader.tex.proj.raymarcher.1.param.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/effects",
+				"name" : "bs.node.ShaderRaymarcher.param.maxpat",
+				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/nodes/ossia/shaders",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -1824,7 +1776,8 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ]
+ ],
+		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ]
 	}
 
 }
