@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 185.0, 788.0, 432.0 ],
+		"rect" : [ 34.0, 406.0, 788.0, 432.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -99,7 +99,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -172,7 +172,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -545,6 +545,7 @@
 									"hint" : "",
 									"id" : "obj-1",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.ossia.parameter.msg.maxpat",
 									"numinlets" : 1,
@@ -608,6 +609,7 @@
 									"hint" : "",
 									"id" : "obj-19",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.ossia.parameter.msg.maxpat",
 									"numinlets" : 1,
@@ -859,7 +861,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -916,6 +918,7 @@
 									"hint" : "",
 									"id" : "obj-13",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "bs.ossia.parameter.msg.maxpat",
 									"numinlets" : 1,
@@ -1271,7 +1274,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1566,6 +1569,7 @@
 					"hint" : "",
 					"id" : "obj-6",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.inlet.maxpat",
 					"numinlets" : 1,
@@ -1637,7 +1641,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1697,7 +1701,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2074,7 +2078,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2231,7 +2235,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2553,7 +2557,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2599,7 +2603,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 2,
-															"revision" : 0,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2856,7 +2860,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3014,7 +3018,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3189,7 +3193,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3345,7 +3349,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 2,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3872,6 +3876,7 @@
 					"hint" : "",
 					"id" : "obj-12",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.inlet.maxpat",
 					"numinlets" : 1,
@@ -3922,6 +3927,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-19",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.node.logic.maxpat",
 					"numinlets" : 4,
@@ -3966,7 +3972,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "mesh/file", "@pathstyle", "native", "@pathtype", "boot", "@cmdRead", "read", "@cmdSaveAs", "read", "@cmdSave", "read", "@fileExtension", "xml", "@relativePath", "_assets/_models", "@depth", 3, "@types", "J3dm", "J3ds", "Jac", "Jase", "Jb3d", "Jbvh", "Jcob", "Jcsm", "Jdae", "Jdxf", "Jhmp", "Jirm", "Jirr", "Jlwo", "Jlxo", "Jmd2", "Jmd3", "Jmd5", "Jmdc", "Jmdl", "Jmsd", "Jndo", "Jnff", "Jobj", "Joff", "Jogr", "Jpk3", "Jply", "Jq3d", "Jq3s", "Jraw", "Js8w", "Jscb", "Jsmd", "Jstl", "Jter", "Jvta", "Jxmd", "@readonly", 1, "@setable", 1, "@description", "@description", "read model file. Make sure the mesh is triangulated. (drag n' drop -> stored in ~/_assets/_models)", "@text", "calibration", "@messageonselect", "read" ],
+					"args" : [ "mesh/file", "@pathstyle", "native", "@pathtype", "boot", "@cmdRead", "read", "@cmdSaveAs", "read", "@cmdSave", "read", "@fileExtension", "xml", "@relativePath", "_assets/_models", "@depth", 3, "@types", "J3dm", "J3ds", "Jac", "Jase", "Jb3d", "Jbvh", "Jcob", "Jcsm", "Jdae", "Jdxf", "Jhmp", "Jirm", "Jirr", "Jlwo", "Jlxo", "Jmd2", "Jmd3", "Jmd5", "Jmdc", "Jmdl", "Jmsd", "Jndo", "Jnff", "Jobj", "Joff", "Jogr", "Jpk3", "Jply", "Jq3d", "Jq3s", "Jraw", "Js8w", "Jscb", "Jsmd", "Jstl", "Jter", "Jvta", "Jxmd", "@readonly", 1, "@setable", 1, "@description", "read model file. Make sure the mesh is triangulated. (drag n' drop -> stored in ~/_assets/_models)", "@text", "calibration", "@messageonselect", "read" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -3975,6 +3981,7 @@
 					"hint" : "",
 					"id" : "obj-99",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.parameter.file.maxpat",
 					"numinlets" : 1,

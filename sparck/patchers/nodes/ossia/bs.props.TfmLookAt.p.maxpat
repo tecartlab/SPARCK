@@ -55,7 +55,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 263.0, 169.5, 211.0, 101.0 ],
+					"patching_rect" : [ 278.0, 350.5, 211.0, 101.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 180.0, 242.0, 99.0 ],
 					"viewvisibility" : 1
@@ -79,7 +79,7 @@
 					"numoutlets" : 3,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 248.0, 154.5, 211.0, 101.0 ],
+					"patching_rect" : [ 278.0, 213.0, 211.0, 101.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 80.0, 242.0, 99.0 ],
 					"viewvisibility" : 1
@@ -103,7 +103,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 278.0, 238.0, 208.0, 17.0 ],
+					"patching_rect" : [ 278.0, 128.0, 208.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 140.0, 40.0, 102.0, 19.0 ],
 					"viewvisibility" : 1
@@ -127,7 +127,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 278.0, 215.0, 208.0, 17.0 ],
+					"patching_rect" : [ 278.0, 105.0, 208.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 40.0, 144.0, 19.0 ],
 					"viewvisibility" : 1
@@ -151,7 +151,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 278.0, 262.0, 208.0, 17.0 ],
+					"patching_rect" : [ 278.0, 152.0, 208.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 60.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
@@ -175,7 +175,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 278.0, 166.653809000000024, 201.0, 22.0 ],
+					"patching_rect" : [ 278.0, 324.653809000000024, 201.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 20.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
@@ -199,7 +199,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int", "", "" ],
-					"patching_rect" : [ 278.0, 135.653809000000024, 201.0, 22.0 ],
+					"patching_rect" : [ 278.0, 187.653809000000024, 201.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 242.0, 19.0 ],
 					"viewvisibility" : 1
