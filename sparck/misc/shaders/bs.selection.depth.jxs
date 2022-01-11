@@ -14,25 +14,29 @@
 // MIT License
 // Martin Froehlich for tecartlab.com
 // Copyright 2020 - tecartlab.com
+#version 120
+
+uniform float far_clip;
 
 varying vec4 position;
+varying float depth;
 
 void main (void){
-	position = gl_ModelViewMatrix * gl_Vertex;
    	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+ 	position = gl_ModelViewMatrix * gl_Vertex;
+    depth = length(position.xyz) / far_clip;
 }
 ]]>
 		</program>
 		<program name="fp" type="fragment">
 <![CDATA[
 
-varying vec4 position;
 uniform float far_clip;
 
+varying float depth;
+
 void main (void){
-	float depth = length(position.xyz) / far_clip;
 	gl_FragColor = vec4(depth, depth, depth, 1.0);
-	//gl_FragColor = vec4(far_clip / 90., 0, 0, 1);
 }
 ]]>
 		</program>

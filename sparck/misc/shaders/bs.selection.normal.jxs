@@ -1,24 +1,28 @@
-<jittershader name="depth">
+<jittershader name="normal">
 	<description>
-	shader to capture depth and linearize values (0-1)
+	shader to capture normal
 	</description>
-
-	 <param name="far_clip" type="float" default="100.0" />
+	<param name="world_matrix" type="mat4" state="WORLD_MATRIX" />
 
 	<language name="glsl" version="1.0">
-		<bind param="far_clip" program="vp" />
-
-		<program name="vp" type="vertex">
+        <bind param="world_matrix" program="vp" />
+	
+        <program name="vp" type="vertex">
 <![CDATA[
 
 // MIT License
 // Martin Froehlich for tecartlab.com
 // Copyright 2020 - tecartlab.com
+#version 120
+
+uniform mat4 world_matrix;
 
 varying vec4 position;
+varying vec3 normal;	// surface normal
 
 void main (void){
 	position = gl_ModelViewMatrix * gl_Vertex;
+	normal = normalize(mat3(world_matrix) * gl_Normal);
    	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
 }
 ]]>
@@ -27,11 +31,10 @@ void main (void){
 <![CDATA[
 
 varying vec4 position;
-uniform float far_clip;
+varying vec3 normal;	// surface normal
 
 void main (void){
-	float depth = length(position.xyz) / far_clip;
-	gl_FragColor = vec4(depth, depth, depth, 1.0);
+	gl_FragColor = vec4(normal.xyz, 1.0);
 }
 ]]>
 		</program>
