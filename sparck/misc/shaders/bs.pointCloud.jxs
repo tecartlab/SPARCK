@@ -1,0 +1,92 @@
+<jittershader name="pointCloud">
+	<description>Renders a mesh into a point cloud</description>
+	<param name="encodeMode" type="int" default="0"/>
+    
+	<param name="cullNear" type="float" default="0."/>
+	<param name="cullFar" type="float" default="10."/>
+    
+	<param name="depthNear" type="float" default="0."/>
+	<param name="depthFar" type="float" default="10."/>
+    
+	<param name="pOff" type="vec2" default="319.909, 240.728"/>
+	<param name="focal" type="vec2" default="386.323, 386.323"/>
+	<param name="dim" type="vec2" default="640, 480"/>
+
+    <param name="texdim" type="vec2" state="TEXDIM0" />
+	<param name="image" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="encodeMode" program="vp" />
+
+        <bind param="cullNear" program="vp" />
+		<bind param="cullFar" program="vp" />
+
+        <bind param="depthNear" program="vp" />
+		<bind param="depthFar" program="vp" />
+
+        <bind param="pOff" program="vp" />
+        <bind param="focal" program="vp" />
+        <bind param="dim" program="vp" />
+    
+        <bind param="texdim" program="fp" />
+		<bind param="image" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+uniform sampler2DRect image;
+
+uniform int encodeMode;
+
+uniform float cullNear;
+uniform float cullFar;
+
+uniform float depthNear;
+uniform float depthFar;
+
+uniform vec2 pOff;
+uniform vec2 focal;
+uniform vec2 dim;
+
+varying vec4 tc;
+
+void main (void)
+{
+    tc = gl_MultiTexCoord0;
+    
+    vec4 encodedDepth = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc.x * 0.5, tc.y, tc.z, 1.)));
+
+    // calculate distance in [m]
+    //float decodedDepth = (sqrEncode == 1)?1. - sqrt(1. - encodedDepth.g):encodedDepth.r; // square or linear
+    float decodedDepth = (encodeMode == 1)?sqrt(encodedDepth.g):encodedDepth.r; // square or linear
+    //float decodedDepth = (sqrEncode == 1)?encodedDepth.g:encodedDepth.r; // square or linear
+    float distance = mix(depthFar, depthNear, decodedDepth);
+    
+    vec4 pt = vec4(((tc.xy * dim) - pOff) / focal * distance, - distance, 1.);
+    vec4 mvPosition = gl_ModelViewMatrix * pt;
+    
+    //gl_PointSize = pixelSize * ( 300.0 / -mvPosition.z );
+	
+    gl_Position = gl_ProjectionMatrix * mvPosition;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+//sinewave spatial distortion shader
+uniform sampler2DRect image;
+
+varying vec4 tc;
+
+void main (void)
+{
+
+    // read color from color map
+	vec4 color = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc.x * 0.5 + 0.5, tc.y, tc.z, 1.)));
+
+	//add to the input texture position
+	gl_FragColor = color;
+}
+]]>
+		</program>
+	</language>
+</jittershader>
