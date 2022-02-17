@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 0,
+			"major" : 8,
+			"minor" : 2,
 			"revision" : 1,
-			"architecture" : "x86",
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 103.0, 218.0, 495.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -36,6 +37,7 @@
 		"tags" : "BeamStreamer Node Shader",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"bgmode" : 0,
@@ -45,12 +47,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.node.shader.material.1.maxpat",
+					"name" : "bs.node.Material.maxpat",
 					"numinlets" : 10,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 211.0, 66.0 ],
+					"patching_rect" : [ 0.0, 0.0, 180.0, 36.0 ],
 					"varname" : "Material",
 					"viewvisibility" : 1
 				}
@@ -59,180 +62,120 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-1::obj-47::obj-19::obj-72" : [ "toggle[1]", "toggle", 0 ],
-			"obj-1::obj-99::obj-10::obj-72" : [ "toggle", "toggle", 0 ]
+			"obj-1::obj-15::obj-99::obj-12::obj-47::obj-20::obj-72" : [ "toggle", "toggle", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "bs.node.shader.material.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
+				"name" : "bs.node.Material.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/nodes/ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.util.nodelogic.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
+				"name" : "bs.vpl.node.logic.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.node.js",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/javascript",
-				"patcherrelativepath" : "../../javascript",
+				"name" : "bs.vpl.node.logic.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.node.logo.default.png",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/media",
-				"patcherrelativepath" : "../../media",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.dialogSlim.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.global.keys.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.win.reactive.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.util.global.keys.getlast.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.unique.js",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/javascript",
-				"patcherrelativepath" : "../../javascript",
+				"name" : "bs.vpl.node.title.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.go4help.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
+				"name" : "bs.node.gui.button.menu.png",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.file.select.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
+				"name" : "bs.vpl.node.pbody.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.node.logo.power.png",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.util.inlet.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.parameter.file.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/file",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.button.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.dialog.saveas.slim.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.receive.key.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
+				"name" : "bs.util.global.keys.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.util.key.receive.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
+				"name" : "bs.util.win.reactive.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.msg.util.key.receive.js",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
+				"name" : "ossia.parameter.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "bs.msg.receive.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.node.shader.material.properties.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.gui.util.color.values.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "bs.msg.send.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bs.gui.windows.pops.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.gui.windows.pops.js",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "pin.png",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/media",
-				"patcherrelativepath" : "../../media",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.node.logo.beamer.png",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/media",
-				"patcherrelativepath" : "../../media",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.msg.send.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.msg.sender.js",
-				"bootpath" : "~/Arbeiten/01_projekte/121121_BeamStreamer/00_dev/app_BeamStreamerTwo/BeamStreamer/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
+				"name" : "ossia.model.mxe64",
+				"type" : "mx64"
 			}
  ],
-		"embedsnapshot" : 0
+		"autosave" : 0
 	}
 
 }
