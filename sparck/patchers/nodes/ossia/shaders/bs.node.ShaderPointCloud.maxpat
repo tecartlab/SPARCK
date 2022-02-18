@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 987.0, 278.0, 657.0, 351.0 ],
+		"rect" : [ 907.0, 246.0, 657.0, 351.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -388,7 +388,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 473.0, 137.0, 978.0, 671.0 ],
+						"rect" : [ 473.0, 137.0, 1080.0, 671.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -417,6 +417,33 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 383.555479999999989, 618.640869000000066, 110.0, 20.0 ],
+									"text" : "prepend bitDepthMode"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 383.555479999999989, 585.894469999999956, 601.0, 22.0 ],
+									"text" : "ossia.parameter bitDepthMode @type bool @default 0 @description \"bit depth mode. false = 8bit, true = 16bit\""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 									"id" : "obj-20",
@@ -573,8 +600,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 324.055479999999989, 306.640869000000009, 88.0, 20.0 ],
-									"text" : "prepend depthFar"
+									"patching_rect" : [ 324.055479999999989, 306.640869000000009, 104.0, 20.0 ],
+									"text" : "prepend distanceMax"
 								}
 
 							}
@@ -586,8 +613,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 324.055479999999989, 277.640869000000009, 549.0, 22.0 ],
-									"text" : "ossia.parameter depthFar @type float @default 10. @min 0. @clip low @description \"depth field end\""
+									"patching_rect" : [ 324.055479999999989, 277.640869000000009, 678.0, 22.0 ],
+									"text" : "ossia.parameter distanceMax @type float @default 10. @min 0. @clip low @description \"distance minimum (depth clip near)\""
 								}
 
 							}
@@ -599,7 +626,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 227.055479999999989, 247.640869000000009, 568.0, 22.0 ],
+									"patching_rect" : [ 192.055479999999989, 190.640869000000009, 568.0, 22.0 ],
 									"text" : "ossia.parameter cullFar @type float @default 10. @min 0. @clip low @description \"far culling pointcloud\""
 								}
 
@@ -613,7 +640,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 227.055479999999989, 277.640869000000009, 78.0, 20.0 ],
+									"patching_rect" : [ 192.055479999999989, 220.640869000000009, 78.0, 20.0 ],
 									"text" : "prepend cullFar"
 								}
 
@@ -627,8 +654,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 192.055479999999989, 219.640869000000009, 95.0, 20.0 ],
-									"text" : "prepend depthNear"
+									"patching_rect" : [ 280.555479999999989, 249.640869000000009, 101.0, 20.0 ],
+									"text" : "prepend distanceMin"
 								}
 
 							}
@@ -640,8 +667,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 192.055479999999989, 190.640869000000009, 554.0, 22.0 ],
-									"text" : "ossia.parameter depthNear @type float @default 0. @min 0. @clip low @description \"depth field start\""
+									"patching_rect" : [ 280.555479999999989, 220.640869000000009, 666.0, 22.0 ],
+									"text" : "ossia.parameter distanceMin @type float @default 0. @min 0. @clip low @description \"distance minimum (depth clip near)\""
 								}
 
 							}
@@ -766,7 +793,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"order" : 4,
+									"order" : 5,
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -806,7 +833,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"order" : 5,
+									"order" : 4,
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -906,6 +933,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-23", 0 ],
+									"source" : [ "obj-24", 0 ]
 								}
 
 							}
