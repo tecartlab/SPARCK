@@ -49,8 +49,9 @@ uniform vec2 pOff;
 uniform vec2 focal;
 uniform vec2 dim;
 
-varying vec4 tc;
-varying float distance;
+varying vec4 tc[5];
+varying float distancePt;
+varying vec4 verticeColor;
 
 float decodedDepth;
 float upperDepth;
@@ -58,23 +59,42 @@ float lowerDepth;
 
 void main (void)
 {
-    tc = gl_MultiTexCoord0;
+    tc[0] = gl_MultiTexCoord0;
+		tc[1] = gl_MultiTexCoord0 + 1.0 / dim.x;
+		tc[2] = gl_MultiTexCoord0 - 1.0 / dim.x;
+		tc[3] = gl_MultiTexCoord0 + 1.0 / dim.y;
+		tc[4] = gl_MultiTexCoord0 - 1.0 / dim.y;
 
-		vec4 encodedDepth = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc.x * 0.5, tc.y, tc.z, 1.)));
+		vec4 encodedDepth[5];
+		float decodedDepth[5];
+		float distance[5];
 
-		decodedDepth = (encodeMode == 1)?sqrt(encodedDepth.r):encodedDepth.r; // square or linear
-		if (bitDepthMode == 1){
-			// decode 16bit depth from green and blue channel
-			upperDepth = (encodeMode == 1)?sqrt(encodedDepth.g):encodedDepth.g;
-			lowerDepth = (encodeMode == 1)?sqrt(encodedDepth.b):encodedDepth.b;
-			//decodedDepth = float((int(upperDepth * 256) << 8) | int(lowerDepth * 256)) / pow(2, 16);
-			decodedDepth = upperDepth;
+		bool drawing = true;
+
+		for(int i = 0; i < 5; i++){
+			encodedDepth[i] = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[i].x * 0.5, tc[i].y, tc[i].z, 1.)));
+
+			decodedDepth[i] = encodedDepth[i].r; // square or linear
+			if (bitDepthMode == 1){
+				decodedDepth[i] = encodedDepth[i].g + encodedDepth[i].b / 255.0;
+			}
+
+			// calculate distance in [m]
+			distance[i] = mix(distanceMax, distanceMin, decodedDepth[i]);
+			if(abs(distance[0] - distance[i]) > 0.02){
+				drawing = false;
+			}
 		}
 
-		// calculate distance in [m]
-		distance = mix(distanceMax, distanceMin, decodedDepth);
+		if(drawing){
+			distancePt = distance[0];
+			verticeColor = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[0].x * 0.5 + 0.5, tc[0].y, tc[0].z, 1.)));
+		} else {
+			distancePt = 100.0;
+			verticeColor = vec4(1., 1., 1., 1.);
+		}
 
-    vec4 pt = vec4(((tc.xy * dim) - pOff) / focal * distance, - distance, 1.);
+		vec4 pt = vec4(((tc[0].xy * dim) - pOff) / focal * distancePt, - distancePt, 1.);
 
     vec4 mvPosition = gl_ModelViewMatrix * pt;
 
@@ -92,23 +112,24 @@ uniform sampler2DRect image;
 
 uniform float cullFar;
 
-varying vec4 tc;
-varying float distance;
+varying vec4 tc[5];
+varying float distancePt;
+varying vec4 verticeColor;
 
 void main (void)
 {
 	// read color from color map
 	vec4 color = vec4(0., 0., 0., 0.);
 
-	if (distance < cullFar){
+	if (distancePt < cullFar && verticeColor.a == 0.0){
 		// read color from color map
-		color = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc.x * 0.5 + 0.5, tc.y, tc.z, 1.)));
+		color = verticeColor;
 	} else {
 		discard;
 	}
 
 	//add to the input texture position
-	gl_FragColor = color;
+	gl_FragColor = vec4(color.rgb, 1.0);
 }
 ]]>
 		</program>
