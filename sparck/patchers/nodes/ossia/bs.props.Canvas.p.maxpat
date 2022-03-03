@@ -581,7 +581,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "tfm", "@text", "local transformations:" ],
+					"args" : [ "#1", "tfm/local", "@text", "local transformations:" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
