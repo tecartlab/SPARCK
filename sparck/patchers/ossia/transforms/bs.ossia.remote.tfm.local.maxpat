@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,19 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 37.0, 73.0, 112.0, 22.0 ],
+					"text" : "ossia.view tfm/local"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "newobj",
@@ -138,14 +151,13 @@
 					"patching_rect" : [ 286.305542000000059, 141.0, 103.0, 17.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 1.0, 240.0, 17.0 ],
-					"text" : "",
 					"textcolor" : [ 0.238638, 0.238638, 0.238638, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/local/scale", "@text", "scale" ],
+					"args" : [ "#1", "scale", "@text", "scale" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -153,6 +165,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.vec3f.XYZ.set.maxpat",
 					"numinlets" : 3,
@@ -168,7 +181,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/local/rot", "@text", "rotation" ],
+					"args" : [ "#1", "rot", "@text", "rotation" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -176,6 +189,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-2",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.vec3f.XYZ.maxpat",
 					"numinlets" : 3,
@@ -191,7 +205,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "#2/local/pos", "@text", "position" ],
+					"args" : [ "#1", "pos", "@text", "position" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -199,6 +213,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.ossia.remote.vec3f.XYZ.maxpat",
 					"numinlets" : 3,
@@ -371,6 +386,13 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "bs.ossia.remote.float.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
+				"patcherrelativepath" : "..",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
 				"patcherrelativepath" : "../../../javascript/ossia",
@@ -381,13 +403,6 @@
 				"name" : "bs.ossia.remote.vec3f.XYZ.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
 				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.float.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "..",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -404,6 +419,10 @@
 			}
 , 			{
 				"name" : "ossia.remote.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "ossia.view.mxe64",
 				"type" : "mx64"
 			}
  ],

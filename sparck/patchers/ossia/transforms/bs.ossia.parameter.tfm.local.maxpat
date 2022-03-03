@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 725.0, 169.0, 1372.0, 745.0 ],
+		"rect" : [ 487.0, 245.0, 1432.0, 669.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,19 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"color" : [ 0.12549, 0.796078, 0.894118, 1.0 ],
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 900.805542000000059, 23.0, 89.0, 22.0 ],
+					"text" : "ossia.model #1"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "newobj",
@@ -97,8 +110,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 6,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -673,8 +686,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 141.638878000000062, 23.0, 787.0, 22.0 ],
-					"text" : "ossia.parameter #1/local/matrix @type list @default 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. @description \"local transformation matrix\" @priority 3"
+					"patching_rect" : [ 141.638878000000062, 23.0, 739.0, 22.0 ],
+					"text" : "ossia.parameter matrix @type list @default 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. @description \"local transformation matrix\" @priority 3"
 				}
 
 			}
@@ -730,13 +743,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-67",
-					"linecount" : 5,
+					"linecount" : 4,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1262.305542000000059, 349.070434999999975, 133.0, 77.0 ],
-					"text" : "ossia.parameter #1/local/scaleZ @type float @default 1. @description \"local scale z\" @priority 1"
+					"patching_rect" : [ 1262.305542000000059, 349.070434999999975, 159.0, 64.0 ],
+					"text" : "ossia.parameter scaleZ @type float @default 1. @description \"local scale z\" @priority 1"
 				}
 
 			}
@@ -749,8 +762,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1100.805542000000059, 349.070434999999975, 160.0, 64.0 ],
-					"text" : "ossia.parameter #1/local/scaleY @type float @default 1. @description \"local scale y\" @priority 1"
+					"patching_rect" : [ 1100.805542000000059, 349.070434999999975, 158.0, 64.0 ],
+					"text" : "ossia.parameter scaleY @type float @default 1. @description \"local scale y\" @priority 1"
 				}
 
 			}
@@ -775,8 +788,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 939.305542000000059, 273.0, 339.0, 36.0 ],
-					"text" : "ossia.parameter #1/local/scale @type vec3f @default 1. 1. 1. @description \"local scale x y z\""
+					"patching_rect" : [ 939.305542000000059, 273.0, 426.0, 36.0 ],
+					"text" : "ossia.parameter scale @type vec3f @default 1. 1. 1. @description \"local scale x y z\""
 				}
 
 			}
@@ -790,7 +803,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 939.305542000000059, 349.070434999999975, 160.0, 64.0 ],
-					"text" : "ossia.parameter #1/local/scaleX @type float @default 1. @description \"local scale x\" @priority 1"
+					"text" : "ossia.parameter scaleX @type float @default 1. @description \"local scale x\" @priority 1"
 				}
 
 			}
@@ -834,13 +847,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-39",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 751.305542000000059, 349.070434999999975, 122.0, 91.0 ],
-					"text" : "ossia.parameter #1/local/rotZ @type float @default 0. @description \"local rotation z [deg]\" @priority 1"
+					"patching_rect" : [ 751.305542000000059, 349.070434999999975, 138.0, 77.0 ],
+					"text" : "ossia.parameter rotZ @type float @default 0. @description \"local rotation z [deg]\" @priority 1"
 				}
 
 			}
@@ -848,13 +861,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-40",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 610.805542000000059, 349.070434999999975, 135.0, 91.0 ],
-					"text" : "ossia.parameter #1/local/rotY @type float @default 0. @description \"local rotation y [deg]\" @priority 1"
+					"patching_rect" : [ 610.805542000000059, 349.070434999999975, 137.0, 77.0 ],
+					"text" : "ossia.parameter rotY @type float @default 0. @description \"local rotation y [deg]\" @priority 1"
 				}
 
 			}
@@ -879,8 +892,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 470.305542000000059, 273.0, 403.0, 36.0 ],
-					"text" : "ossia.parameter #1/local/rot @type vec3f @default 0. 0. 0. @unit orientation.euler @description \"local rotation x y z\""
+					"patching_rect" : [ 470.305542000000059, 273.0, 423.0, 36.0 ],
+					"text" : "ossia.parameter rot @type vec3f @default 0. 0. 0. @unit orientation.euler @description \"local rotation x y z\""
 				}
 
 			}
@@ -888,13 +901,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-43",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 470.305542000000059, 349.070434999999975, 135.0, 91.0 ],
-					"text" : "ossia.parameter #1/local/rotX @type float @default 0. @description \"local rotation x [deg]\" @priority 1"
+					"patching_rect" : [ 470.305542000000059, 349.070434999999975, 139.0, 77.0 ],
+					"text" : "ossia.parameter rotX @type float @default 0. @description \"local rotation x [deg]\" @priority 1"
 				}
 
 			}
@@ -938,13 +951,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-31",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 287.305542000000116, 349.070434999999975, 127.999999999999943, 91.0 ],
-					"text" : "ossia.parameter #1/local/posZ @unit distance.m @type float @default 0. @description \"local position z\" @priority 1"
+					"patching_rect" : [ 287.305542000000116, 349.070434999999975, 133.999999999999943, 77.0 ],
+					"text" : "ossia.parameter posZ @unit distance.m @type float @default 0. @description \"local position z\" @priority 1"
 				}
 
 			}
@@ -952,13 +965,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-29",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 155.805542000000059, 349.070434999999975, 126.0, 91.0 ],
-					"text" : "ossia.parameter #1/local/posY @unit distance.m @type float @default 0. @description \"local position y\" @priority 1"
+					"patching_rect" : [ 155.805542000000059, 349.070434999999975, 128.0, 77.0 ],
+					"text" : "ossia.parameter posY @unit distance.m @type float @default 0. @description \"local position y\" @priority 1"
 				}
 
 			}
@@ -983,8 +996,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 24.305542000000059, 273.0, 366.0, 36.0 ],
-					"text" : "ossia.parameter #1/local/pos @type vec3f @default 0. 0. 0. @unit position.cart3D @description \"local position x y z\""
+					"patching_rect" : [ 24.305542000000059, 273.0, 402.694457999999941, 36.0 ],
+					"text" : "ossia.parameter pos @type vec3f @default 0. 0. 0. @unit position.cart3D @description \"local position x y z\""
 				}
 
 			}
@@ -992,13 +1005,13 @@
 				"box" : 				{
 					"color" : [ 0.125490196078431, 0.796078431372549, 0.894117647058824, 1.0 ],
 					"id" : "obj-4",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 24.305542000000059, 349.070434999999975, 128.0, 91.0 ],
-					"text" : "ossia.parameter #1/local/posX @unit distance.m @type float @default 0. @description \"local position x\" @priority 1"
+					"patching_rect" : [ 24.305542000000059, 349.070434999999975, 129.5, 77.0 ],
+					"text" : "ossia.parameter posX @unit distance.m @type float @default 0. @description \"local position x\" @priority 1"
 				}
 
 			}
@@ -1454,7 +1467,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-70", 0 ],
-					"midpoints" : [ 1053.805542000000059, 537.0, 1393.305542000000059, 537.0, 1393.305542000000059, 262.0, 948.805542000000059, 262.0 ],
+					"midpoints" : [ 1053.805542000000059, 537.0, 1421.305542000000059, 537.0, 1421.305542000000059, 262.0, 948.805542000000059, 262.0 ],
 					"source" : [ "obj-64", 0 ]
 				}
 
@@ -1549,6 +1562,10 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "ossia.model.mxe64",
+				"type" : "mx64"
+			}
+, 			{
 				"name" : "ossia.parameter.mxe64",
 				"type" : "mx64"
 			}
@@ -1578,6 +1595,16 @@
 					"accentcolor" : [ 1.0, 0.5, 0.0, 1.0 ]
 				}
 ,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "STYLE1",
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "jpatcher001",
 				"parentstyle" : "",
 				"multi" : 0
 			}
