@@ -1,13 +1,13 @@
 <jittershader name="pointCloud">
 	<description>Renders a mesh into a point cloud</description>
 	<param name="encodeMode" type="int" default="0"/>
-	<param name="bitDepthMode" type="int" default="0"/>
+	<param name="holeDetect" type="float" default="0"/>
 
 	<param name="cullNear" type="float" default="0."/>
 	<param name="cullFar" type="float" default="10."/>
 
 	<param name="distanceMin" type="float" default="0."/>
-	<param name="distanceMax" type="float" default="4."/>
+	<param name="distanceMax" type="float" default="6."/>
 
 	<param name="pOff" type="vec2" default="319.909, 240.728"/>
 	<param name="focal" type="vec2" default="386.323, 386.323"/>
@@ -17,7 +17,7 @@
 	<param name="image" type="int" default="0" />
 	<language name="glsl" version="1.0">
 		<bind param="encodeMode" program="vp" />
-		<bind param="bitDepthMode" program="vp" />
+		<bind param="holeDetect" program="vp" />
 
 	  <bind param="cullNear" program="vp" />
 		<bind param="cullFar" program="vp" />
@@ -37,7 +37,7 @@
 uniform sampler2DRect image;
 
 uniform int encodeMode;
-uniform int bitDepthMode;
+uniform float holeDetect;
 
 uniform float cullNear;
 uniform float cullFar;
@@ -57,6 +57,52 @@ float decodedDepth;
 float upperDepth;
 float lowerDepth;
 
+float dispMin = 1.0 / distanceMax;
+float dispMax = 1.0 / distanceMin;
+
+vec3 rgb2hsv(vec3 c)
+{
+    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+int RGBtoD(vec4 colrDepth)
+{
+	int r = round(colrDepth.r * 255.0);
+	int g = round(colrDepth.g * 255.0);
+	int b = round(colrDepth.b * 255.0);
+	// conversion from RGB color to quantized depth value
+	if (b + g + r < 255)
+	{
+		return 0;
+	}
+	else if (r >= g && r >= b)
+	{
+		if (g >= b)
+		{
+			return g - b;
+		}
+		else
+		{
+			return (g - b) + 1529;
+		}
+	}
+	else if (g >= r && g >= b)
+	{
+		return b - r + 510;
+	}
+	else if (b >= g && b >= r)
+	{
+		return r - g + 1020;
+	}
+	return 0;
+}
+
 void main (void)
 {
     tc[0] = gl_MultiTexCoord0;
@@ -72,29 +118,47 @@ void main (void)
 		bool drawing = true;
 
 		for(int i = 0; i < 5; i++){
-			encodedDepth[i] = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[i].x * 0.5, tc[i].y, tc[i].z, 1.)));
+			encodedDepth[i] = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[i].r * 0.5, tc[i].g, tc[i].b, 1.)));
 
-			decodedDepth[i] = encodedDepth[i].r; // square or linear
-			if (bitDepthMode == 1){
+			if(encodeMode == 0){
+				decodedDepth[i] = encodedDepth[i].r;
+				// calculate distance in [m]
+				distance[i] = mix(distanceMax, distanceMin, decodedDepth[i]);
+			} if(encodeMode == 1){
 				decodedDepth[i] = encodedDepth[i].g + encodedDepth[i].b / 255.0;
+				// calculate distance in [m]
+				distance[i] = mix(distanceMax, distanceMin, decodedDepth[i]);
+			} else if(encodeMode == 2){
+				decodedDepth[i] = RGBtoD(encodedDepth[i]) / 1529.0;
+				// calculate distance in [m]
+				distance[i] = distanceMin + decodedDepth[i] * (distanceMax - distanceMin);
+			} else if(encodeMode == 3){
+				decodedDepth[i] = RGBtoD(encodedDepth[i]);
+				// calculate distance in [m]
+				distance[i] = 1529.0 / (1529.0 * dispMin + decodedDepth[i] * (dispMax - dispMin));
+			} else if(encodeMode == 4){
+				decodedDepth[i] = rgb2hsv(encodedDepth[i]).r;
+				// calculate distance in [m]
+				distance[i] = distanceMin + decodedDepth[i] * (distanceMax - distanceMin);
 			}
 
 			// calculate distance in [m]
-			distance[i] = mix(distanceMax, distanceMin, decodedDepth[i]);
-			if(abs(distance[0] - distance[i]) > 0.02){
+			if(abs(distance[0] - distance[i]) > holeDetect){
 				drawing = false;
 			}
 		}
 
-		if(drawing){
+		if(drawing && distanceMin < distance[0]){
 			distancePt = distance[0];
-			verticeColor = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[0].x * 0.5 + 0.5, tc[0].y, tc[0].z, 1.)));
+			verticeColor = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[0].r * 0.5 + 0.5, tc[0].g, tc[0].b, 1.)));
 		} else {
-			distancePt = 100.0;
-			verticeColor = vec4(1., 1., 1., 1.);
+			distancePt = 20.0;
+			verticeColor = vec4(0., 0., 0., 0.);
 		}
 
 		vec4 pt = vec4(((tc[0].xy * dim) - pOff) / focal * distancePt, - distancePt, 1.);
+
+		//pt = vec4(((tc[0].xy * dim) - pOff) / focal * 3.0, -3.0, 1.);
 
     vec4 mvPosition = gl_ModelViewMatrix * pt;
 
@@ -111,7 +175,6 @@ void main (void)
 uniform sampler2DRect image;
 
 uniform float cullFar;
-
 varying vec4 tc[5];
 varying float distancePt;
 varying vec4 verticeColor;
@@ -121,8 +184,9 @@ void main (void)
 	// read color from color map
 	vec4 color = vec4(0., 0., 0., 0.);
 
-	if (distancePt < cullFar && verticeColor.a == 0.0){
+	if (distancePt < cullFar && verticeColor.a >= 0.99999){
 		// read color from color map
+		//color = verticeColor;
 		color = verticeColor;
 	} else {
 		discard;
