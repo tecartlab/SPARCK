@@ -175,6 +175,7 @@ void main (void)
 uniform sampler2DRect image;
 
 uniform float cullFar;
+uniform float cullNear;
 varying vec4 tc[5];
 varying float distancePt;
 varying vec4 verticeColor;
@@ -184,7 +185,7 @@ void main (void)
 	// read color from color map
 	vec4 color = vec4(0., 0., 0., 0.);
 
-	if (distancePt < cullFar && verticeColor.a >= 0.99999){
+	if (cullNear < distancePt && distancePt < cullFar && verticeColor.a >= 0.99999){
 		// read color from color map
 		//color = verticeColor;
 		color = verticeColor;
