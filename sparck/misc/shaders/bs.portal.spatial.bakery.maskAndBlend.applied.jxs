@@ -120,7 +120,7 @@ void main()
 	vec4 v1 = color[mode];
 
 	// first apply the custom gradient
-	float alph = gradient[int(v1.r * 100.)];
+	float alph = gradient[int(v1.r * 99.)];
 
 	// calculate soft edge
 	float alphaBlend = softedgeblend(alph);
