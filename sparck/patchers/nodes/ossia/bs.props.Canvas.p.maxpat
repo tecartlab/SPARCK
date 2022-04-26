@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 175.0, 51.0, 789.0, 770.0 ],
+		"rect" : [ -938.0, 180.0, 355.0, 770.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -62,7 +62,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "bake/dim/size", "@is", "custom" ],
+					"args" : [ "#1", "render/bake/dim/size", "@is", "custom" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -86,7 +86,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "bake/border", "@text", "border width", "@is", 1 ],
+					"args" : [ "#1", "render/bake/border", "@text", "border width", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -110,7 +110,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "bake/unique", "@text", "bake unique", "@is", 1 ],
+					"args" : [ "#1", "render/bake/unique", "@text", "bake unique", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -134,7 +134,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "bake/dim/square", "@text", "bake dim", "@type", "string", "@size", 59, 19, "@items", 64, 128, 256, 512, 1024, 2048, 4096, "custom", "@is", 1 ],
+					"args" : [ "#1", "render/bake/dim/square", "@text", "bake dim", "@type", "string", "@size", 59, 19, "@items", 64, 128, 256, 512, 1024, 2048, 4096, "custom", "@is", 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -970,105 +970,78 @@
 		"dependency_cache" : [ 			{
 				"name" : "2int.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/basic/util",
-				"patcherrelativepath" : "../../ossia/basic/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "RenderGroupCell_capture_C.png",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"patcherrelativepath" : "../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.gui.svg.button.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
-				"patcherrelativepath" : "../../gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.color.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.float.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.int.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
-				"patcherrelativepath" : "../../../javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.menu.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.rendergroup.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/rendergroup",
-				"patcherrelativepath" : "../../ossia/rendergroup",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.select.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.tfm.local.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
-				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.toggle.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.ossia.remote.vec2i.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
-				"patcherrelativepath" : "../../ossia",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.vec3f.XYZ.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
-				"patcherrelativepath" : "../../ossia/transforms",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.ossia.remote.vec3f.XYZ.set.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
-				"patcherrelativepath" : "../../ossia/transforms",
 				"type" : "JSON",
 				"implicit" : 1
 			}
