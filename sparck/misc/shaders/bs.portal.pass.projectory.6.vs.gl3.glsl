@@ -57,7 +57,7 @@ uniform float far_clip[6];
 
 // vertex
 out jit_PerVertex {
-    vec4 jit_texcoord0;
+    vec4 jit_texcoord6;
     vec4 beamer_uv[6];
     vec2 beamer_texcoord[6];
     float depth[6];
@@ -96,7 +96,7 @@ mat4 texMatrix(int index){
 void main(void)
 {
     // transform texcoords
-    jit_out.jit_texcoord0 = textureMatrix0 * vec4(jit_texcoord, 0., 1.);
+    jit_out.jit_texcoord6 = textureMatrix6 * vec4(jit_texcoord, 0., 1.);
 
     // transform vertex sapce to worldspace: used for projectory
     gl_Position = modelViewProjectionMatrix * vec4(jit_position, 1);

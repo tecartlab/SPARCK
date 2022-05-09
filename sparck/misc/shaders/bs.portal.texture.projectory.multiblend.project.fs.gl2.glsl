@@ -50,6 +50,7 @@ uniform float interpolation_correction;
 
 varying vec4 beamer_uv[6];		// beamer uv position
 varying vec2 beamer_texcoord[6];// beamer texcoord
+varying vec2 texcoord6;         // default texcoord
 
 varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
@@ -62,6 +63,18 @@ const float PI = 3.1415926535897932384626433832795;
 const float PI_HALF = PI / 2.0;
 const vec4 WHITE = vec4( 1.0, 1.0, 1.0, 1.0);
 const vec4 BLACK = vec4( 0.0, 0.0, 0.0, 1.0);
+
+vec4 textureColor[7];
+
+void setTextureColor(){
+    textureColor[0] = texture2DRect(tex0, beamer_texcoord[0]);
+    textureColor[1] = texture2DRect(tex1, beamer_texcoord[1]);
+    textureColor[2] = texture2DRect(tex2, beamer_texcoord[2]);
+    textureColor[3] = texture2DRect(tex3, beamer_texcoord[3]);
+    textureColor[4] = texture2DRect(tex4, beamer_texcoord[4]);
+    textureColor[5] = texture2DRect(tex5, beamer_texcoord[5]);
+    textureColor[6] = texture2DRect(tex6, texcoord6);
+}
 
 // since the first texture is the objects default texture, we are starting with the second one..
 vec4 getTexture2DRect(int index, vec2 coord){
@@ -103,6 +116,8 @@ void main()
 		indexSort[i] = i;
 	}
 
+    setTextureColor();
+    
     //Calculating the factor of importance for each beamer
 	for( i = 0; i < beamer_count; i++){
 		// calculate the viewray from the camera to this fragment
@@ -127,6 +142,9 @@ void main()
 
 		//calculates the fadeout factor for the angle;
 		visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
+
+        //and apply alpha value of this texture
+        visible = visible * textureColor[i].a;
 
 		// calculate the viewport linear box blend
 		col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
@@ -182,10 +200,10 @@ void main()
 	// calculate the color mode
 	if(stage_mode == 0){
 		// create the texture with up to 4 beamers
-		vec4 col = getTextureColor(indexSort[0]) * spreadedAngle[indexSort[0]];
-		col += getTextureColor(indexSort[1]) * spreadedAngle[indexSort[1]];
-		col += getTextureColor(indexSort[2]) * spreadedAngle[indexSort[2]];
-		col += getTextureColor(indexSort[3]) * spreadedAngle[indexSort[3]];
+		vec4 col = textureColor[indexSort[0]] * spreadedAngle[indexSort[0]];
+		col += textureColor[indexSort[1]] * spreadedAngle[indexSort[1]];
+		col += textureColor[indexSort[2]] * spreadedAngle[indexSort[2]];
+		col += textureColor[indexSort[3]] * spreadedAngle[indexSort[3]];
 		col = vec4(col.rgb, blendRef);
 		gl_FragColor = alphablend(col, offColor);
 	} else if(stage_mode == 1){

@@ -53,6 +53,7 @@
 	<param name="textureMatrix3" type="mat4" state="TEXTURE3_MATRIX" />
 	<param name="textureMatrix4" type="mat4" state="TEXTURE4_MATRIX" />
 	<param name="textureMatrix5" type="mat4" state="TEXTURE5_MATRIX" />
+	<param name="textureMatrix6" type="mat4" state="TEXTURE6_MATRIX" />
 
 	<param name="tex0" type="int" default="0" />
 	<param name="tex1" type="int" default="1" />
@@ -60,6 +61,7 @@
 	<param name="tex3" type="int" default="3" />
 	<param name="tex4" type="int" default="4" />
 	<param name="tex5" type="int" default="5" />
+	<param name="tex6" type="int" default="6" />
 
 	<language name="glsl" version="1.2">
 		<bind param="tex0" program="fp" />
@@ -68,6 +70,7 @@
 		<bind param="tex3" program="fp" />
 		<bind param="tex4" program="fp" />
 		<bind param="tex5" program="fp" />
+		<bind param="tex6" program="fp" />
 
 		<bind param="beamer_enable" program="fp" />
 		<bind param="beamer_count" program="vp" />
@@ -116,6 +119,7 @@
 		<bind param="tex3" program="fp" />
 		<bind param="tex4" program="fp" />
 		<bind param="tex5" program="fp" />
+		<bind param="tex6" program="fp" />
 
 		<bind param="jit_position" program="vp" />
 	    <bind param="jit_texcoord" program="vp" />
@@ -127,6 +131,9 @@
 		<bind param="textureMatrix3" program="vp" />
 		<bind param="textureMatrix4" program="vp" />
 		<bind param="textureMatrix5" program="vp" />
+		<bind param="textureMatrix6" program="vp" />
+
+        <bind param="modelViewProjectionMatrix" program="vp" />
 
 		<bind param="beamer_enable" program="fp" />
 		<bind param="beamer_count" program="vp" />
