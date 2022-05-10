@@ -32,7 +32,7 @@ uniform float bevel_size[6];
 uniform float bevel_curve[6];
 uniform int bevel_round[6];
 
-uniform vec4 offColor; 	    // off color
+uniform vec4 offColor; 	// off color
 uniform int back_blend;     // blend background color
 uniform int use_bgcolor;    // use background color
 
@@ -66,7 +66,7 @@ const vec4 WHITE = vec4( 1.0, 1.0, 1.0, 1.0);
 const vec4 BLACK = vec4( 0.0, 0.0, 0.0, 1.0);
 
 vec4 getTexture2DRect(int index, vec2 coord){
-	return 
+	return
         (index == 0)?texture2DRect(tex0, coord):
         (index == 1)?texture2DRect(tex1, coord):
         (index == 2)?texture2DRect(tex2, coord):
@@ -91,9 +91,6 @@ void main()
 	float 	spreadedAngle[6];
 
 	int   	indexSort[6];
-    
-    vec4 textureColor[6];
-    vec4 bgTextureColor;
 
 	vec3 	ray, raynormal;
 	vec2 	col;
@@ -105,14 +102,11 @@ void main()
 		vangle[i] = 0.0;
 		spreadedAngle[i] = 0.0;
 		indexSort[i] = i;
-        textureColor[i] = vec4(0., 0., 0., 1.);
 	}
     
-    bgTextureColor = texture2DRect(tex6, texcoord6);
-
     //Calculating the factor of importance for each beamer
 	for( i = 0; i < beamer_count; i++){
-        textureColor[i] = getTextureColor(i);
+        //textureColor[i] = getTextureColor(i);
 		// calculate the viewray from the camera to this fragment
 		ray = beamer_pos[i] - worldPos;
 		raynormal = normalize(ray);
@@ -135,9 +129,9 @@ void main()
 
 		//calculates the fadeout factor for the angle;
 		visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
-        
+
         //and apply alpha value of this texture
-        visible = visible * textureColor[i].a;
+        visible = visible * getTextureColor(i).a;
 
 		// calculate the viewport linear box blend
 		col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
@@ -174,7 +168,7 @@ void main()
 	spreadedAngle[indexSort[2]] = vcurve[indexSort[2]] * vangle[indexSort[2]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[2]]), blendSpread);
 	spreadedAngle[indexSort[3]] = vcurve[indexSort[3]] * vangle[indexSort[3]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[3]]), blendSpread);
 
-	float sumAngle = 0.0001 + spreadedAngle[indexSort[0]] + spreadedAngle[indexSort[1]] + spreadedAngle[indexSort[2]] + spreadedAngle[indexSort[3]];
+	float sumAngle = 0.00001 + spreadedAngle[indexSort[0]] + spreadedAngle[indexSort[1]] + spreadedAngle[indexSort[2]] + spreadedAngle[indexSort[3]];
 
 	// normalizing the blend factors for the first time
 	// and multiply it with the curve.
@@ -188,15 +182,16 @@ void main()
 
 	//absolute blend factor, used to blend in the background color
 	//    make sure it is not bigger than 1.
-	float blendRef = min(1.0, sumCurve + (1. - back_blend) * sign(sumAngle));
-    
-    vec4 color = textureColor[indexSort[0]] * spreadedAngle[indexSort[0]];
-    color += textureColor[indexSort[1]] * spreadedAngle[indexSort[1]];
-    color += textureColor[indexSort[2]] * spreadedAngle[indexSort[2]];
-    color += textureColor[indexSort[3]] * spreadedAngle[indexSort[3]];
+	float blendRef = min(1.0,sumCurve + (1. - back_blend)) * sign(sumAngle);
+
+    vec4 color = getTextureColor(indexSort[0]) * spreadedAngle[indexSort[0]];
+    color += getTextureColor(indexSort[1]) * spreadedAngle[indexSort[1]];
+    color += getTextureColor(indexSort[2]) * spreadedAngle[indexSort[2]];
+    color += getTextureColor(indexSort[3]) * spreadedAngle[indexSort[3]];
     color = vec4(color.rgb, color.a * (1. - back_blend) + blendRef * (back_blend));
-    
-    vec4 bgColor = bgTextureColor * (1. - use_bgcolor) + offColor * use_bgcolor;
-    
+
+    // create gbcolor - either taking it from the background texture or the flat color
+    vec4 bgColor = texture2DRect(tex6, texcoord6) * (1. - use_bgcolor) + offColor * use_bgcolor;
+
     gl_FragData[0] = alphablend(color, bgColor);
 }
