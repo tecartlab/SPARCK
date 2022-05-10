@@ -65,18 +65,6 @@ const float PI_HALF = PI / 2.0;
 const vec4 WHITE = vec4( 1.0, 1.0, 1.0, 1.0);
 const vec4 BLACK = vec4( 0.0, 0.0, 0.0, 1.0);
 
-vec4 textureColor[7];
-
-void setTextureColor(){
-    textureColor[0] = texture2DRect(tex0, beamer_texcoord[0]);
-    textureColor[1] = texture2DRect(tex1, beamer_texcoord[1]);
-    textureColor[2] = texture2DRect(tex2, beamer_texcoord[2]);
-    textureColor[3] = texture2DRect(tex3, beamer_texcoord[3]);
-    textureColor[4] = texture2DRect(tex4, beamer_texcoord[4]);
-    textureColor[5] = texture2DRect(tex5, beamer_texcoord[5]);
-    textureColor[6] = texture2DRect(tex6, texcoord6);
-}
-
 vec4 getTexture2DRect(int index, vec2 coord){
 	return 
         (index == 0)?texture2DRect(tex0, coord):
@@ -103,6 +91,9 @@ void main()
 	float 	spreadedAngle[6];
 
 	int   	indexSort[6];
+    
+    vec4 textureColor[6];
+    vec4 bgTextureColor;
 
 	vec3 	ray, raynormal;
 	vec2 	col;
@@ -114,12 +105,14 @@ void main()
 		vangle[i] = 0.0;
 		spreadedAngle[i] = 0.0;
 		indexSort[i] = i;
+        textureColor[i] = vec4(0., 0., 0., 1.);
 	}
     
-    setTextureColor();
+    bgTextureColor = texture2DRect(tex6, texcoord6);
 
     //Calculating the factor of importance for each beamer
 	for( i = 0; i < beamer_count; i++){
+        textureColor[i] = getTextureColor(i);
 		// calculate the viewray from the camera to this fragment
 		ray = beamer_pos[i] - worldPos;
 		raynormal = normalize(ray);
@@ -203,7 +196,7 @@ void main()
     color += textureColor[indexSort[3]] * spreadedAngle[indexSort[3]];
     color = vec4(color.rgb, color.a * (1. - back_blend) + blendRef * (back_blend));
     
-    vec4 bgColor = textureColor[6] * (1. - use_bgcolor) + offColor * use_bgcolor;
+    vec4 bgColor = bgTextureColor * (1. - use_bgcolor) + offColor * use_bgcolor;
     
     gl_FragData[0] = alphablend(color, bgColor);
 }
