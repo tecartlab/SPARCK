@@ -60,7 +60,7 @@ float lowerDepth;
 float dispMin = 1.0 / distanceMax;
 float dispMax = 1.0 / distanceMin;
 
-vec3 rgb2hsv(vec3 c)
+vec3 rgb2hsv(vec4 c)
 {
     vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
     vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
@@ -73,9 +73,9 @@ vec3 rgb2hsv(vec3 c)
 
 int RGBtoD(vec4 colrDepth)
 {
-	int r = round(colrDepth.r * 255.0);
-	int g = round(colrDepth.g * 255.0);
-	int b = round(colrDepth.b * 255.0);
+	int r = int(round(colrDepth.r * 255.0));
+	int g = int(round(colrDepth.g * 255.0));
+	int b = int(round(colrDepth.b * 255.0));
 	// conversion from RGB color to quantized depth value
 	if (b + g + r < 255)
 	{
@@ -118,7 +118,7 @@ void main (void)
 		bool drawing = true;
 
 		for(int i = 0; i < 5; i++){
-			encodedDepth[i] = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[i].r * 0.5, tc[i].g, tc[i].b, 1.)));
+			encodedDepth[i] = texture2DRect(image, vec2(gl_TextureMatrix[0] * vec4(tc[i].r * 0.5, tc[i].g, tc[i].b, 1.0)));
 
 			if(encodeMode == 0){
 				decodedDepth[i] = encodedDepth[i].r;

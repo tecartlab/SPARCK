@@ -42,6 +42,7 @@ uniform float far_clip[6];
 
 varying vec4 beamer_uv[1];		// beamer uv position
 varying vec2 beamer_texcoord[1];// beamer texcoord
+varying vec2 texcoord6;         // default texcoord
 
 varying float depth[1];// beamer distance
 
@@ -57,7 +58,7 @@ mat4 mvp0_matrix = beamer_p_matrix[0] * mv0_matrix;
 void main(void)
 {
     // transform texcoords
-    //texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+    texcoord6 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
 
 	// transform vertex space to worldspace: used for projectory
 	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;

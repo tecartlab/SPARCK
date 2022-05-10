@@ -41,6 +41,8 @@ uniform mat4 textureMatrix2;
 uniform mat4 textureMatrix3;
 uniform mat4 textureMatrix4;
 uniform mat4 textureMatrix5;
+uniform mat4 textureMatrix6;
+
 uniform mat4 modelViewProjectionMatrix;
 
 uniform mat4 viewport_matrix;
@@ -71,9 +73,9 @@ mat4 mvp5_matrix = beamer_p_matrix[5] * mv5_matrix;
 
 // vertex
 out jit_PerVertex {
-    vec4 jit_texcoord0;
     vec4 beamer_uv[6];
     vec2 beamer_texcoord[6];
+    vec2 texcoord6;
     float depth[6];
     vec3 normal;
     vec3 worldPos;
@@ -90,7 +92,7 @@ mat4 mv_matrix(int index){
 void main(void)
 {
     // transform texcoords
-    jit_out.jit_texcoord0 = textureMatrix0 * vec4(jit_texcoord, 0., 1.);
+    jit_out.texcoord6 = vec2(textureMatrix6 * vec4(jit_texcoord, 0., 1.));
 
  	// transform vertex space to texture space: used for bakery
     gl_Position = vec4(vec2(jit_texcoord).xy * 2. - 1., 0., 1.);

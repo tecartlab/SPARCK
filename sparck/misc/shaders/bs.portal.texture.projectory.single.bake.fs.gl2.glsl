@@ -8,6 +8,12 @@ uniform int stage_mode;
 
 // samplers
 uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+uniform sampler2DRect tex2;
+uniform sampler2DRect tex3;
+uniform sampler2DRect tex4;
+uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
 
 uniform vec4 beamer_color[6];
 
@@ -24,6 +30,7 @@ uniform float interpolation_correction;
 
 varying vec4 beamer_uv[6];		// beamer uv position
 varying vec2 beamer_texcoord[6];// beamer texcoord
+varying vec2 texcoord6;         // default texcoord
 
 varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
@@ -70,5 +77,8 @@ void main()
 
 	vec4 fragColor = getProjectorColor(i) * sign(clamp(min(col.x,col.y), 0., 1.)) * angle;
 
-	gl_FragData[0] = alphablend(fragColor, offColor);
+    // create gbcolor - either taking it from the background texture or the flat color
+    vec4 bgColor = texture2DRect(tex6, texcoord6) * (1. - use_bgcolor) + offColor * use_bgcolor;
+
+	gl_FragData[0] = alphablend(fragColor, bgColor);
 }

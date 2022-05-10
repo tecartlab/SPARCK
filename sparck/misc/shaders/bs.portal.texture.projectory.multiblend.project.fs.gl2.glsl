@@ -21,6 +21,7 @@ uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
 uniform sampler2DRect tex6;
+uniform sampler2DRect tex7;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];
@@ -51,7 +52,7 @@ uniform float interpolation_correction;
 
 varying vec4 beamer_uv[6];		// beamer uv position
 varying vec2 beamer_texcoord[6];// beamer texcoord
-varying vec2 texcoord6;         // default texcoord
+varying vec2 texcoord7;         // default texcoord
 
 varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
@@ -64,18 +65,6 @@ const float PI = 3.1415926535897932384626433832795;
 const float PI_HALF = PI / 2.0;
 const vec4 WHITE = vec4( 1.0, 1.0, 1.0, 1.0);
 const vec4 BLACK = vec4( 0.0, 0.0, 0.0, 1.0);
-
-vec4 textureColor[7];
-
-void setTextureColor(){
-    textureColor[0] = texture2DRect(tex0, beamer_texcoord[0]);
-    textureColor[1] = texture2DRect(tex1, beamer_texcoord[1]);
-    textureColor[2] = texture2DRect(tex2, beamer_texcoord[2]);
-    textureColor[3] = texture2DRect(tex3, beamer_texcoord[3]);
-    textureColor[4] = texture2DRect(tex4, beamer_texcoord[4]);
-    textureColor[5] = texture2DRect(tex5, beamer_texcoord[5]);
-    textureColor[6] = texture2DRect(tex6, texcoord6);
-}
 
 // since the first texture is the objects default texture, we are starting with the second one..
 vec4 getTexture2DRect(int index, vec2 coord){
@@ -116,8 +105,6 @@ void main()
 		spreadedAngle[i] = 0.0;
 		indexSort[i] = i;
 	}
-
-    setTextureColor();
     
     //Calculating the factor of importance for each beamer
 	for( i = 0; i < beamer_count; i++){
@@ -145,7 +132,7 @@ void main()
 		visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
 
         //and apply alpha value of this texture
-        visible = visible * textureColor[i].a;
+        visible = visible * getTextureColor(i).a;
 
 		// calculate the viewport linear box blend
 		col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
@@ -192,11 +179,14 @@ void main()
 	spreadedAngle[indexSort[2]] *= normalizeOne;
 	spreadedAngle[indexSort[3]] *= normalizeOne;
 
-	float sumCurve = vcurve[indexSort[0]] + vcurve[indexSort[1]] + vcurve[indexSort[2]] + vcurve[indexSort[3]];
+	float sumCurve = 0.00001 + vcurve[indexSort[0]] + vcurve[indexSort[1]] + vcurve[indexSort[2]] + vcurve[indexSort[3]];
 
 	//absolute blend factor, used to blend in the background color
 	//    make sure it is not bigger than 1.
 	float blendRef = min(1.0,sumCurve + (1. - back_blend)) * sign(sumAngle);
+
+    // create gbcolor - either taking it from the background texture or the flat color
+    vec4 bgColor = texture2DRect(tex7, texcoord7) * (1. - use_bgcolor) + offColor * use_bgcolor;
 
 	// calculate the color mode
 	if(stage_mode == 0){

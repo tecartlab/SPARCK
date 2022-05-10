@@ -25,6 +25,7 @@ uniform float interpolation_correction;
 
 varying vec4 beamer_uv[6];		// beamer uv position
 varying vec2 beamer_texcoord[6];// beamer texcoord
+varying vec2 texcoord7;         // default texcoord
 
 varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
@@ -72,5 +73,8 @@ void main()
 
 	vec4 fragColor = getProjectorColor(i) * sign(clamp(min(col.x,col.y), 0., 1.)) * angle;
 
-	gl_FragColor = alphablend(fragColor, offColor);
+    // create gbcolor - either taking it from the background texture or the flat color
+    vec4 bgColor = texture2DRect(tex7, texcoord7) * (1. - use_bgcolor) + offColor * use_bgcolor;
+
+	gl_FragColor = alphablend(fragColor, bgColor);
 }
