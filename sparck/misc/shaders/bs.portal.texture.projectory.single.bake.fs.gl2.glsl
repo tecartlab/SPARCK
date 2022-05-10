@@ -14,7 +14,9 @@ uniform vec4 beamer_color[6];
 uniform vec3 beamer_dir[6];
 uniform vec3 beamer_pos[6];
 
-uniform vec4 offColor; 	// off color
+uniform vec4 offColor; 	    // off color
+uniform int back_blend;     // blend background color
+uniform int use_bgcolor;    // use background color
 
 uniform float interpolation_correction;
 

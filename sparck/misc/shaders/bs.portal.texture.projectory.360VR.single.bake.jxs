@@ -8,7 +8,10 @@
 	<param name="beamer_count" type="int" default="0" />
 
 	<param name="beamer_color" type="vec4" default="1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1." />
-	<param name="offColor" type="vec4" default="0. 0. 0. 1." />
+
+    <param name="offColor" type="vec4" default="0. 0. 0. 1." />
+	<param name="use_bgcolor" type="int" default="1." />
+	<param name="back_blend" type="int" default="1." />
 
 	<param name="beamer_pos" type="vec3" default="0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0." />
 	<param name="beamer_dir" type="vec3" default="0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1." />
@@ -34,7 +37,6 @@
 	<param name="far_clip" type="float" default="0. 0. 0. 0. 0. 0." />
 
 	<param name="blend_spread" type="float" default="1.0" />
-	<param name="back_blend" type="float" default="1." />
 	<param name="distance_influence" type="float" default="1." />
 
 	<param name="interpolation_correction" type="float" default="0.1" />
@@ -91,7 +93,6 @@
 		<bind param="mode" program="fp" />
         
 		<bind param="blend_spread" program="fp" />
-		<bind param="back_blend" program="fp" />
 		<bind param="distance_influence" program="fp" />
 		<bind param="angle_mode" program="fp" />
 
@@ -101,6 +102,8 @@
 		<bind param="far_clip" program="fp" />
 
 		<bind param="offColor" program="fp" />
+		<bind param="use_bgcolor" program="fp" />
+		<bind param="back_blend" program="fp" />
 
 		<bind param="world_matrix" program="vp" />
 		<bind param="collada_factor" program="vp" />
@@ -151,7 +154,6 @@
 		<bind param="stage_mode" program="fp" />
 
 		<bind param="blend_spread" program="fp" />
-		<bind param="back_blend" program="fp" />
 		<bind param="distance_influence" program="fp" />
 		<bind param="angle_mode" program="fp" />
 
@@ -161,6 +163,8 @@
 		<bind param="far_clip" program="fp" />
 
 		<bind param="offColor" program="fp" />
+		<bind param="use_bgcolor" program="fp" />
+		<bind param="back_blend" program="fp" />
 
 		<bind param="world_matrix" program="vp" />
 		<bind param="collada_factor" program="vp" />

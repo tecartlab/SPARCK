@@ -32,10 +32,11 @@ uniform float bevel_size[6];
 uniform float bevel_curve[6];
 uniform int bevel_round[6];
 
-uniform vec4 offColor; 	// off color
+uniform vec4 offColor; 	    // off color
+uniform int back_blend;     // blend background color
+uniform int use_bgcolor;    // use background color
 
 uniform float distance_influence;
-uniform float back_blend;
 uniform float blend_spread;
 uniform float angle_mode;
 
@@ -202,10 +203,7 @@ void main()
     color += textureColor[indexSort[3]] * spreadedAngle[indexSort[3]];
     color = vec4(color.rgb, color.a * (1. - back_blend) + blendRef * (back_blend));
     
-    vec4 bgColor = textureColor[6] * (1. - back_blend) + offColor * back_blend;
+    vec4 bgColor = textureColor[6] * (1. - use_bgcolor) + offColor * use_bgcolor;
     
     gl_FragData[0] = alphablend(color, bgColor);
-    //gl_FragData[0] = vec4(color.rgb + textureColor[6].rgb * textureColor[6].a * (1.0 - color.a), color.a + textureColor[6].a * (1.0 - color.a));
-    //gl_FragData[0] = vec4( blendRef, 0, 0, 1);
-
 }

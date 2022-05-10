@@ -43,10 +43,11 @@ uniform float bevel_size[6];
 uniform float bevel_curve[6];
 uniform int bevel_round[6];
 
-uniform vec4 offColor; 	// off color
+uniform vec4 offColor; 	    // off color
+uniform int back_blend;     // blend background color
+uniform int use_bgcolor;    // use background color
 
 uniform float distance_influence;
-uniform float back_blend;
 uniform float blend_spread;
 uniform float angle_mode;
 
