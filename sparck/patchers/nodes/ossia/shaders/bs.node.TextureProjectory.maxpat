@@ -38,10 +38,10 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "TextureProjectory",
+		"globalpatchername" : "TextureProjectory_1",
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#2", "#4", 15, "texture", 1, "@hint", "Default texture)" ],
+					"args" : [ "#2", "#4", 15, "texture", 1, "@hint", "Background texture" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -1749,7 +1749,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 106.0, 483.0, 909.0, 370.0 ],
+						"rect" : [ 106.0, 483.0, 1194.0, 370.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1779,12 +1779,24 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 34.044128999999998, 60.0, 168.286254999999983, 22.0 ],
+									"text" : "t s s s s"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-10",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 391.0, 87.500000429687475, 29.5, 22.0 ],
+									"patching_rect" : [ 391.0, 134.500000429687475, 29.5, 22.0 ],
 									"text" : "0"
 								}
 
@@ -1796,7 +1808,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 391.0, 59.500000429687475, 218.0, 22.0 ],
+									"patching_rect" : [ 391.0, 106.500000429687475, 218.0, 22.0 ],
 									"text" : "route boxmap.stitched boxmap.crossed"
 								}
 
@@ -2065,7 +2077,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 172.286254999999983, 185.0, 98.0, 22.0 ],
+									"patching_rect" : [ 172.286254999999983, 232.0, 98.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2085,7 +2097,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 172.286254999999983, 261.0, 30.0, 30.0 ]
+									"patching_rect" : [ 172.286254999999983, 308.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2096,7 +2108,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 115.044128999999998, 209.0, 29.5, 22.0 ],
+									"patching_rect" : [ 115.044128999999998, 256.0, 29.5, 22.0 ],
 									"text" : "0"
 								}
 
@@ -2108,7 +2120,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.044128999999998, 209.0, 29.5, 22.0 ],
+									"patching_rect" : [ 34.044128999999998, 256.0, 29.5, 22.0 ],
 									"text" : "1"
 								}
 
@@ -2120,7 +2132,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 34.044128999999998, 177.0, 100.0, 22.0 ],
+									"patching_rect" : [ 34.044128999999998, 224.0, 100.0, 22.0 ],
 									"text" : "route boxmap.list"
 								}
 
@@ -2133,7 +2145,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 34.044128999999998, 261.0, 30.0, 30.0 ]
+									"patching_rect" : [ 34.044128999999998, 308.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2144,7 +2156,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 294.286254999999983, 185.0, 19.0, 22.0 ],
+									"patching_rect" : [ 294.286254999999983, 232.0, 19.0, 22.0 ],
 									"text" : "t l"
 								}
 
@@ -2156,7 +2168,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 294.286254999999983, 87.500000429687475, 79.0, 22.0 ],
+									"patching_rect" : [ 294.286254999999983, 134.500000429687475, 79.0, 22.0 ],
 									"text" : "prepend type"
 								}
 
@@ -2169,7 +2181,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 391.0, 119.500000429687475, 722.0, 22.0 ],
+									"patching_rect" : [ 391.0, 166.500000429687475, 722.0, 22.0 ],
 									"text" : "ossia.parameter shader/bake/enable @type bool @default 0 @description \"enables baking of shader - works NOT for stereo textures.\""
 								}
 
@@ -2181,7 +2193,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 391.0, 148.500000429687475, 82.0, 22.0 ],
+									"patching_rect" : [ 391.0, 195.500000429687475, 82.0, 22.0 ],
 									"text" : "prepend bake"
 								}
 
@@ -2195,7 +2207,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 34.044128999999998, 11.0, 850.0, 35.0 ],
+									"patching_rect" : [ 34.044128999999998, 11.0, 850.0, 36.0 ],
 									"text" : "ossia.parameter shader/name @type string @description shader @default multiblend @range single multiblend boxmap.list boxmap.stitched boxmap.crossed 360VR.single 360VR.multiblend @clip both"
 								}
 
@@ -2208,7 +2220,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 294.286254999999983, 261.0, 30.0, 30.0 ]
+									"patching_rect" : [ 294.286254999999983, 308.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2243,32 +2255,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
-									"order" : 2,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"order" : 3,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"order" : 0,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"order" : 1,
+									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -2326,6 +2313,34 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-9", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-9", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-9", 2 ]
 								}
 
 							}
@@ -4727,7 +4742,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 452.0, 213.0, 1246.0, 548.0 ],
+						"rect" : [ 452.0, 213.0, 624.0, 548.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -8799,7 +8814,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerD", "@text", "Beam D", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 1, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer D selection" ],
+									"args" : [ "projectorD", "@text", "projector D", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 1, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "projector D" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8825,7 +8840,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerF", "@text", "Beam F", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 1, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer F selection" ],
+									"args" : [ "projectorF", "@text", "projector F", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 1, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "projector F" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8851,7 +8866,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerE", "@text", "Beam E", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 0, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer E selection" ],
+									"args" : [ "projectorE", "@text", "projector E", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 0, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "projector E" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8877,7 +8892,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerC", "@text", "Beam C", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer C selection" ],
+									"args" : [ "projectorC", "@text", "projector C", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 0, 1, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "projector C" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8903,7 +8918,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerB", "@text", "Beam B", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 1, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer B selection" ],
+									"args" : [ "projectorB", "@text", "projector B", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 0, 1, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "projector B" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -8929,7 +8944,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "beamerA", "@text", "Beam A", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "Beamer A selection" ],
+									"args" : [ "projectorA", "@text", "Projector A", "@types", "capture", "camera", "@out1", "color", "@outoff1", "color", 1, 0, 0, 1, "@out2", "anim_left", "anim", "@outoff2", "anim", "@out3", "p_matrix_left", "p_l", "@out4", "anim_right", "anim", "@outoff4", "anim", "@out5", "p_matrix_right", "p_r", "@out6", "frustum", "@out7", "stereomode", "@outoff7", "stereomode", 0, "@out8", "cam_params", "@outoff8", "cam_params", 0, "@offname", "<none>", "@description", "projector A" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -11248,7 +11263,7 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 105.0, 31.0, 150.0, 60.0 ],
+																	"patching_rect" : [ 105.0, 31.0, 150.0, 62.0 ],
 																	"text" : "boxmap.cross and boxmap.stitched don't have a baking shader implemented"
 																}
 
@@ -11260,8 +11275,8 @@
 																	"numinlets" : 3,
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
-																	"patching_rect" : [ 50.0, 93.0, 205.0, 22.0 ],
-																	"text" : "route boxmap.cross boxmap.stitched"
+																	"patching_rect" : [ 50.0, 93.0, 218.0, 22.0 ],
+																	"text" : "route boxmap.crossed boxmap.stitched"
 																}
 
 															}

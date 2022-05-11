@@ -169,7 +169,7 @@ void main()
 	spreadedAngle[indexSort[2]] = vcurve[indexSort[2]] * vangle[indexSort[2]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[2]]), blendSpread);
 	spreadedAngle[indexSort[3]] = vcurve[indexSort[3]] * vangle[indexSort[3]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[3]]), blendSpread);
 
-	float sumAngle = spreadedAngle[indexSort[0]] + spreadedAngle[indexSort[1]] + spreadedAngle[indexSort[2]] + spreadedAngle[indexSort[3]];
+	float sumAngle = 0.0001 + spreadedAngle[indexSort[0]] + spreadedAngle[indexSort[1]] + spreadedAngle[indexSort[2]] + spreadedAngle[indexSort[3]];
 
 	// normalizing the blend factors for the first time
 	// and multiply it with the curve.
@@ -191,12 +191,12 @@ void main()
 	// calculate the color mode
 	if(stage_mode == 0){
 		// create the texture with up to 4 beamers
-		vec4 col = textureColor[indexSort[0]] * spreadedAngle[indexSort[0]];
-		col += textureColor[indexSort[1]] * spreadedAngle[indexSort[1]];
-		col += textureColor[indexSort[2]] * spreadedAngle[indexSort[2]];
-		col += textureColor[indexSort[3]] * spreadedAngle[indexSort[3]];
-		col = vec4(col.rgb, blendRef);
-		gl_FragColor = alphablend(col, offColor);
+		vec4 col = getTextureColor(indexSort[0]) * spreadedAngle[indexSort[0]];
+		col += getTextureColor(indexSort[1]) * spreadedAngle[indexSort[1]];
+		col += getTextureColor(indexSort[2]) * spreadedAngle[indexSort[2]];
+		col += getTextureColor(indexSort[3]) * spreadedAngle[indexSort[3]];
+        col = vec4(col.rgb, col.a * (1. - back_blend) + blendRef * (back_blend));
+		gl_FragColor = alphablend(col, bgColor);
 	} else if(stage_mode == 1){
 		// create the colormix with up to 4 beamers
 		vec4 col = beamer_color[indexSort[0]] * spreadedAngle[indexSort[0]];

@@ -20,6 +20,7 @@ uniform sampler2DRect tex2;
 uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
 
 uniform int beamer_count;
 uniform int beamer_enable[6];
@@ -53,6 +54,7 @@ uniform float interpolation_correction;
 
 varying vec4 beamer_uv[6];		// beamer uv position
 varying vec2 beamer_texcoord[6];// beamer texcoord
+varying vec2 texcoord6;         // default texcoord
 
 varying vec3 normal;	// surface normal
 varying vec3 worldPos;	// vertex world position
@@ -127,6 +129,8 @@ void main()
             //calculates the fadeout factor for the angle;
             visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
 
+            //and apply alpha value of this texture
+            visible = visible * getTextureColor(i).a;
 
             /** calulate the proj_texcoord **/
 
@@ -171,6 +175,9 @@ void main()
             //calculates the fadeout factor for the angle;
             visible = smoothstep(angle_limit_low[i], angle_limit_high[i], angle);
 
+            //and apply alpha value of this texture
+            visible = visible * getTextureColor(i).a;
+
             // calculate the viewport linear box blend
             col = (0.5 - abs(beamer_uv[i].xy - 0.5)) * (20. - bevel_size[i] * 18.0);
             col = clamp(col, 0.0, 1.0);
@@ -212,7 +219,7 @@ void main()
 	spreadedAngle[indexSort[2]] = vcurve[indexSort[2]] * vangle[indexSort[2]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[2]]), blendSpread);
 	spreadedAngle[indexSort[3]] = vcurve[indexSort[3]] * vangle[indexSort[3]] * pow((1. - vangle[indexSort[0]] + vangle[indexSort[3]]), blendSpread);
 
-	float sumAngle = spreadedAngle[indexSort[0]] + spreadedAngle[indexSort[1]] + spreadedAngle[indexSort[2]] + spreadedAngle[indexSort[3]];
+	float sumAngle = 0.0001 + spreadedAngle[indexSort[0]] + spreadedAngle[indexSort[1]] + spreadedAngle[indexSort[2]] + spreadedAngle[indexSort[3]];
 
 	// normalizing the blend factors for the first time
 	// and multiply it with the curve.
@@ -232,7 +239,10 @@ void main()
     color += getTexture2DRect(indexSort[1], proj_texcoord[indexSort[1]]) * spreadedAngle[indexSort[1]];
     color += getTexture2DRect(indexSort[2], proj_texcoord[indexSort[2]]) * spreadedAngle[indexSort[2]];
     color += getTexture2DRect(indexSort[3], proj_texcoord[indexSort[3]]) * spreadedAngle[indexSort[3]];
-    color = vec4(color.rgb, blendRef);
+    color = vec4(color.rgb, color.a * (1. - back_blend) + blendRef * (back_blend));
+
+    // create gbcolor - either taking it from the background texture or the flat color
+    vec4 bgColor = texture2DRect(tex6, texcoord6) * (1. - use_bgcolor) + offColor * use_bgcolor;
     
-    gl_FragData[0] = alphablend(color, offColor);
+    gl_FragData[0] = alphablend(color, bgColor);
 }

@@ -199,7 +199,7 @@ void main()
 						-(viewline.z / vl_abs.x) * (vpSize.s / 2.0) + (vpSize.s * 0.5),
 						(viewline.y / vl_abs.x) * (vpSize.t / 2.0) + (vpSize.t * 1.5), 0., 1.);
 		}
-	} else 	if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
+	} else if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
 		if(viewline.y >= 0.0){ //TOP
 			texcoord0 = vec4(
 						(viewline.x / vl_abs.y) * (vpSize.s / 2.0) + (vpSize.s * 1.5),
@@ -209,7 +209,7 @@ void main()
 						(viewline.x / vl_abs.y) * (vpSize.s / 2.0) + (vpSize.s * 1.5),
 						-(viewline.z / vl_abs.y) * (vpSize.t / 2.0) + (vpSize.t * 0.5), 0., 1.);
 		}
-	} else 	if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
+	} else if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
 		if(viewline.z >= 0.0){
 			texcoord0 = vec4( //BACK
 						-(viewline.x / vl_abs.z) * (vpSize.s / 2.0) + (vpSize.s * 3.5),
@@ -227,9 +227,9 @@ void main()
 	if(mode == 0 && stage_mode >= 1){
 		if(vl_abs.x > vl_abs.y && vl_abs.x > vl_abs.z){
 			gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
-		} else 	if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
+		} else if(vl_abs.y > vl_abs.x && vl_abs.y > vl_abs.z){
 			gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
-		} else 	if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
+		} else if(vl_abs.z > vl_abs.x && vl_abs.z > vl_abs.y){
 			gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
 		}
 	}

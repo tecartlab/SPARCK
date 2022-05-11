@@ -9,6 +9,12 @@ uniform int stage_mode;
 // samplers
 uniform sampler2DRect tex0;
 uniform sampler2DRect tex1;
+uniform sampler2DRect tex2;
+uniform sampler2DRect tex3;
+uniform sampler2DRect tex4;
+uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
+uniform sampler2DRect tex7;
 
 uniform vec4 beamer_color[6];
 

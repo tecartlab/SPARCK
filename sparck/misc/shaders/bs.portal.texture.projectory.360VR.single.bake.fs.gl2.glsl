@@ -20,6 +20,7 @@ uniform sampler2DRect tex2;
 uniform sampler2DRect tex3;
 uniform sampler2DRect tex4;
 uniform sampler2DRect tex5;
+uniform sampler2DRect tex6;
 
 uniform int beamer_count;
 uniform vec4 beamer_color[6];

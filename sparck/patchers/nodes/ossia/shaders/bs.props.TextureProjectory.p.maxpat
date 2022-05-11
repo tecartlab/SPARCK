@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 859.0, 496.0, 782.0, 605.0 ],
+		"rect" : [ 859.0, 496.0, 390.0, 605.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "#1", "bgcolor/use", "@text", "use bgcolor", "@is", "single", "multiblend", "addition", "360VR.single", "360VR.multiblend" ],
+					"args" : [ "#1", "bgcolor/use", "@text", "use bgcolor", "@is", "single", "multiblend", "360VR.single", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -352,7 +352,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "capture/beamerF", "@text", "projectionF", "@size", 159, 19, "@menutype", "message", "@isnot", "@is", "multiblend", "addition", "360VR.multiblend" ],
+					"args" : [ "#1", "capture/projectorF", "@text", "projectionF", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -376,7 +376,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "capture/beamerE", "@text", "projectionE", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
+					"args" : [ "#1", "capture/projectorE", "@text", "projectionE", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -400,7 +400,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "capture/beamerD", "@text", "projectionD", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
+					"args" : [ "#1", "capture/projectorD", "@text", "projectionD", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -424,7 +424,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "capture/beamerC", "@text", "projectionC", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
+					"args" : [ "#1", "capture/projectorC", "@text", "projectionC", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -448,7 +448,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "capture/beamerB", "@text", "projectionB", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "addition", "360VR.multiblend" ],
+					"args" : [ "#1", "capture/projectorB", "@text", "projectionB", "@size", 159, 19, "@menutype", "message", "@is", "multiblend", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -472,7 +472,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "capture/beamerA", "@text", "projectionA", "@size", 159, 19, "@menutype", "message" ],
+					"args" : [ "#1", "capture/projectorA", "@text", "projectionA", "@size", 159, 19, "@menutype", "message" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -520,7 +520,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "#1", "bgcolor/blend", "@text", "blend bg", "@is", "single", "multiblend", "addition", "360VR.single", "360VR.multiblend" ],
+					"args" : [ "#1", "bgcolor/blend", "@text", "blend bg", "@is", "single", "multiblend", "360VR.single", "360VR.multiblend" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
@@ -616,9 +616,9 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 0.0, 242.0, 140.0 ],
+					"patching_rect" : [ 0.0, 0.0, 242.0, 61.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 20.0, 242.0, 140.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 242.0, 61.0 ],
 					"proportion" : 0.39,
 					"varname" : "vpl_canvas_folded"
 				}
@@ -656,7 +656,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 2 ],
-					"order" : 4,
+					"order" : 2,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -688,7 +688,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 2 ],
-					"order" : 3,
+					"order" : 1,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -704,7 +704,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 2 ],
-					"order" : 2,
+					"order" : 0,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -768,7 +768,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 2 ],
-					"order" : 1,
+					"order" : 4,
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -776,7 +776,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 2 ],
-					"order" : 0,
+					"order" : 3,
 					"source" : [ "obj-13", 1 ]
 				}
 
