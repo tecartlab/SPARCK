@@ -355,6 +355,7 @@ function expand(){
         messnamed(myNodeID + "::pbody", "name", myNodePBodyFileName);
         myIOlets.expand(myNodeSizes[myExpandedMode], myIOLetButtonSize/2 + myTitleBarHeight + myPBodyOffset + myCanvasLowerSpacing);
     } else {
+        messnamed(myNodeID + "::pbody", "clear");
         myIOlets.expand(myNodeSizes[myExpandedMode], myIOLetButtonSize/2 + myTitleBarHeight);
     }
     //vpl_body.message("hidden", !myExpandedMode);
@@ -450,6 +451,8 @@ function nodespace(wrksp){
 // called by the unique script
 function title(newtitle){
 	dpost("set new title " + newtitle + " -> nodeid =  " + myNodeID + "\n");
+	myExpandedMode = 0;
+	expand();
 	myNodeTitle = newtitle;
 	myNodeOssiaModel = "node/" + newtitle;
     myNodeAddress = "sparck:/" + myNodeOssiaModel;

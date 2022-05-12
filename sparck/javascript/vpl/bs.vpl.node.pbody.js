@@ -103,6 +103,14 @@ function name(_name){
     }
 }
 
+function clear(){
+    if(myBodyName != null){
+        myBodyName = null;
+        outlet(OUTLET_THISPATCHER, "script", "sendbox", "vpl_properties", "name", "bs.vpl.node.pbody.empty");  
+        getSize();
+    }
+}
+
 function enable(_enable){
 }
 
