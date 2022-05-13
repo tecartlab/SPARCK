@@ -3,12 +3,13 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 0,
+			"minor" : 3,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 5.0, 50.0, 540.0, 650.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -36,6 +37,7 @@
 		"tags" : "",
 		"style" : "default",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"title" : "BoxMapCamera - Help",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -47,6 +49,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-4",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.links.maxpat",
 					"numinlets" : 0,
@@ -69,6 +72,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.textblock.maxpat",
 					"numinlets" : 0,
@@ -76,7 +80,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 32.5, 574.0, 296.0, 44.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 782.0, 517.0, 114.0 ],
+					"presentation_rect" : [ 5.0, 692.0, 517.0, 114.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -91,6 +95,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-2",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.textblock.maxpat",
 					"numinlets" : 0,
@@ -98,7 +103,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 32.5, 519.0, 296.0, 44.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 692.0, 517.0, 80.0 ],
+					"presentation_rect" : [ 5.0, 602.0, 517.0, 80.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -113,38 +118,16 @@
 					"enablevscroll" : 0,
 					"id" : "obj-6",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "bs.help.util.node.reference.maxpat",
+					"name" : "bs.help.util.ossia.reference.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 32.5, 460.0, 296.0, 44.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 501.0, 517.0, 184.0 ],
+					"presentation_rect" : [ 5.0, 256.0, 517.0, 338.0 ],
 					"varname" : "bs.help.util.node.reference[1]",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "BoxMapCamera", "n", "NodeReference" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-1",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "bs.help.util.node.reference.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 32.5, 406.0, 296.0, 44.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 256.0, 517.0, 240.0 ],
-					"varname" : "bs.help.util.node.reference",
 					"viewvisibility" : 1
 				}
 
@@ -159,6 +142,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-36",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.help.util.node.head.maxpat",
 					"numinlets" : 2,
@@ -181,10 +165,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 32.5, 303.0, 72.0, 17.0 ],
-					"presentation_rect" : [ 32.5, 303.0, 72.0, 17.0 ],
+					"patching_rect" : [ 32.5, 303.0, 72.0, 18.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
-					"style" : "",
 					"text" : "thispatcher"
 				}
 
@@ -198,9 +180,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 309.5, 303.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 309.5, 303.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 309.5, 303.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -213,9 +193,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 303.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 7.0, 303.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 7.0, 303.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -229,9 +207,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 309.5, 1.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 309.5, 1.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 309.5, 1.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -245,9 +221,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 32.5, 1.0, 17.0, 17.0 ],
-					"presentation_rect" : [ 32.5, 1.0, 17.0, 17.0 ],
-					"style" : ""
+					"patching_rect" : [ 32.5, 1.0, 17.0, 17.0 ]
 				}
 
 			}
@@ -261,8 +235,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 2.0, 942.0, 522.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 942.0, 522.0, 21.0 ],
-					"style" : "",
+					"presentation_rect" : [ 0.0, 852.0, 522.0, 21.0 ],
 					"text" : "*__________________________________________________________*",
 					"varname" : "lastLine"
 				}
@@ -278,9 +251,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 68.5, 1140.0, 231.0, 31.0 ],
-					"presentation_rect" : [ 68.5, 1140.0, 231.0, 31.0 ],
-					"style" : "",
-					"text" : ";\rmax launchbrowser http://tecartlab.com/feedback/"
+					"presentation_linecount" : 2,
+					"text" : ";\r\nmax launchbrowser http://tecartlab.com/feedback/"
 				}
 
 			}
@@ -297,9 +269,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 68.5, 1115.0, 261.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 144.0, 900.0, 168.0, 23.0 ],
+					"presentation_rect" : [ 144.0, 810.0, 168.0, 23.0 ],
 					"rounded" : 10.0,
-					"style" : "",
 					"text" : "http://tecartlab.com/feedback/",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 0,
@@ -350,81 +321,144 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.help.util.node.head.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
-				"patcherrelativepath" : "../util",
+				"name" : "RenderGroupCell_capture_C.png",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.gui.svg.button.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/gui",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.help.node.head.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/help",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.help.node.links.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/help",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.help.node.notes.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/help",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.help.node.reference.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/help",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.help.util.getpos.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/help",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.help.util.node.reference.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
-				"patcherrelativepath" : "../util",
+				"name" : "bs.help.util.node.head.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/help/util",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.help.node.reference.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "BoxMapCamera_n.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media/nodes",
-				"patcherrelativepath" : "../../../media/nodes",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "BoxMapCamera_p.png",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/media/nodes",
-				"patcherrelativepath" : "../../../media/nodes",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.help.util.node.textblock.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
-				"patcherrelativepath" : "../util",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.help.node.notes.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.help.util.node.links.maxpat",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/patchers/help/util",
-				"patcherrelativepath" : "../util",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/help/util",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.help.node.links.js",
-				"bootpath" : "~/Arbeiten/01_projekte/150816_SPARCK/01_dev/app_sparck/sparck/javascript/help",
-				"patcherrelativepath" : "../../../javascript/help",
+				"name" : "bs.help.util.node.textblock.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/help/util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.help.util.ossia.reference.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/help/util",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.float.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/ossia",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.menu.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.rendergroup.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/rendergroup",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.tfm.local.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/transforms",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.ossia.remote.toggle.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.props.BoxMapCamera.p.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/nodes/ossia",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icst.button.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "icst.floatui.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "mxj.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "ossia.remote.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "ossia.view.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0,
@@ -432,13 +466,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}

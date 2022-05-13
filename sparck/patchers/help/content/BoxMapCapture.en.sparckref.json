@@ -11,37 +11,44 @@
 ,
 	"seealso": {
         "BoxMapCamera" : "",
-        "BoxMapProjection" : ""
+        "TextureProjectory" : ""
   	}
 ,
 	"NodeReference": {
-        "Camera" : {
-            "digest" : "",
-            "descript" : "select the node from where to render."
-        }, 
-        "target" : {
-            "digest" : "",
-            "descript" : "render context. \n<li>'stage' is for normal openGL \n<li>'shady' is for rendering with shadows"
-        },
-       "RenderGroup" : {
+  	}
+, 
+	"PropertyReference" : {
+       "capture" : {
             "digest" : "",
             "descript" : "render group to draw. Model/Canvas/MeshWarp/Grid have an equivalent in which you can choose which group to draw to."
+        },
+        "parent" : {
+            "digest" : "",
+            "descript" : "select the camera node from where to render."
+        }, 
+        "dim" : {
+            "digest" : "",
+            "descript" : "sets the texture size of this render pass. Try using sizes like 256x256, 512x512, 1024x1024, 2048x2048."
+        },
+        "bgcolor" : {
+            "digest" : "",
+            "descript" : "the background color"
+        },
+        "mode" : {
+            "digest" : "",
+            "descript" : "the result of the renderpass. 'split' will render our all the different directions as seperate textures, 'line' renders then out in one texture [-x, -z, x, z, -y, y] and 'cross' in one texture in the shape of the cubmap cross"
         },
         "pass" : {
             "digest" : "",
             "descript" : "Renderpass. This defines when in a frame-pass (see reference) this Capure node does the rendering. A manual renderpass will only be executed right after loading a project or when pressing the 'manual renderpass button' in the main menu."
         },
-        "dim" : {
+        "blend" : {
             "digest" : "",
-            "descript" : "sets the texture size of this render pass. Try using sizes like 256x256, 512x512, 1024x1024, 2048x2048."
+            "descript" : "allows blending."
         },
-        "bg color" : {
+        "antialias" : {
             "digest" : "",
-            "descript" : "the background color"
-        },
-        "shader" : {
-            "digest" : "",
-            "descript" : "Applies this shader to all objects rendered in this renderpass."
+            "descript" : "antialiases the output."
         }
     }
 ,

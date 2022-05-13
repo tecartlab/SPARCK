@@ -13,18 +13,18 @@
         "Material" : ""
   	}
 ,
-	"NodeReference": {
-        "file" : {
+	"PropertyReference": {
+        "imagefile" : {
             "digest" : "",
             "descript" : "loads the file from ~_assets/_textures/_cubemaps"
         },
-        "render" : {
-            "digest" : "",
-            "descript" : "select the renderpass"
-       },
         "filewatch" : {
             "digest" : "",
             "descript" : "loads automaticaly a changed image file"
+        },
+        "pass" : {
+            "digest" : "",
+            "descript" : "select the renderpass"
        }
   	}
 ,

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 856.0, 85.0, 530.0, 760.0 ],
+		"rect" : [ 714.0, 118.0, 632.0, 1007.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,40 +40,59 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 14.0, 113.0, 127.0, 22.0 ],
-					"text" : "sprintf pic %s_%s.png"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 14.0, 72.0, 93.0, 22.0 ],
-					"text" : "loadmess #1 #2"
+					"patching_rect" : [ 18.0, 151.0, 86.0, 22.0 ],
+					"text" : "prepend name"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-9",
-					"ignoreclick" : 1,
-					"maxclass" : "fpic",
+					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 14.0, 178.181824000000006, 224.0, 347.818175999999994 ],
-					"pic" : "#1_#2.png",
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 18.0, 124.0, 163.0, 22.0 ],
+					"text" : "sprintf bs.props.%s.p.maxpat"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 18.0, 87.0, 77.0, 22.0 ],
+					"text" : "loadmess #1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-1",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bs.vpl.node.pbody.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 14.5, 183.0, 227.0, 397.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 36.0, 242.0, 1600.0 ]
+					"presentation_rect" : [ 5.0, 36.0, 242.0, 1600.0 ],
+					"viewvisibility" : 1
 				}
 
 			}
@@ -163,15 +182,8 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"source" : [ "obj-11", 0 ]
 				}
 
 			}
@@ -196,11 +208,38 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "bs.help.node.reference.js",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/help",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "D:/00_core/Sparck/dev/sparck/patchers/vpl",
+				"patcherrelativepath" : "../../vpl",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],

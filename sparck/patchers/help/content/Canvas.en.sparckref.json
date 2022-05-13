@@ -17,21 +17,45 @@
   	}
 ,
 	"NodeReference": {
-        "file" : {
+  	}
+, 
+	"PropertyReference" : {
+        "drawto" : {
+            "digest" : "",
+            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
+        },
+        "shape" : {
+            "digest" : "",
+            "descript" : "select the shape or model file to draw. If a file, it needs to be located inside the ~/_assets/_model folder. you can also drag'n drop files, which will be copied into the _model folder and autmatically selected."
+        },
+        "meshfile" : {
             "digest" : "drag n' drop",
-            "descript" : "select the model file to draw. the file needs to be located inside the ~/_assets/_model folder. you can also drag'n drop files, which will be copied into the _model folder and autmatically selected."
+            "descript" : "If the shape is a file, it needs to be located inside the ~/_assets/_model folder. you can also drag'n drop files, which will be copied into the _model folder and autmatically selected."
+        },
+        "fileWatch" : {
+            "digest" : "",
+            "descript" : "watches the model file. when it changes, it will be autmatically reloaded"
+        },
+        "shader" : {
+            "digest" : "",
+            "descript" : "the shader applied to the canvas. If it is a SpatialShadery or TextureProjectory shader, additional paramaters allow"
+        },
+        "bake dim" : {
+            "digest" : "[px]",
+            "descript" : "the baked texure dimension"
+        },
+        "bake unique" : {
+            "digest" : "",
+            "descript" : "attempts to execute the baking render pass for each individual canvas in another subsequent frame"
+        },
+        "border width" : {
+            "digest" : "[px]",
+            "descript" : "bleeds the baking results over its borders. Can fix some artifacts"
         },
         "parent" : {
             "digest" : "",
             "descript" : "parent transformation node"
-       }
-  	}
-, 
-	"PropertyReference" : {
-        "RenderGroup" : {
-            "digest" : "",
-            "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
-        },
+       },
         "position" : {
             "digest" : "(local transformation)",
             "descript" : "position x y z"
@@ -44,25 +68,21 @@
             "digest" : "(local transformation)",
             "descript" : "scale x y z"
         },
-        "normalize" : {
-            "digest" : "",
-            "descript" : "normalizes the model"
-        },
-        "shader" : {
-            "digest" : "",
-            "descript" : "link to Shader Node"
-        },
-        "defaut texture" : {
-            "digest" : "",
-            "descript" : "default texture"
-        },
         "color" : {
             "digest" : "",
             "descript" : "object color"
         },
-        "depth" : {
+        "frontface" : {
+            "digest" : "draw..",
+            "descript" : "\n\t<li>polygons - only faces\n\t<li>lines - only lines \n\t<li>points - only vertices"
+        },
+        "backface" : {
+            "digest" : "draw..",
+            "descript" : "\n\t<li>polygons - only faces\n\t<li>lines - only lines \n\t<li>points - only vertices"
+        },
+        "cullface" : {
             "digest" : "",
-            "descript" : "depth buffering"
+            "descript" : "choose cullface: \n\t<li>0=Off \n\t<li>1=Back \n\t<li>2=Front"
         },
         "blend" : {
             "digest" : "",
@@ -72,49 +92,13 @@
             "digest" : "",
             "descript" : "choose blendmode: \n\t<li>alphablend \n\t<li>add \n\t<li>multiply \n\t<li>screen \n\t<li>exclusion \n\t<li>colorblend \n\t<li>coloradd \n\t<li>alphaadd"
         },
-        "displaylist" : {
+        "depth" : {
             "digest" : "",
-            "descript" : "enables displaylist - can speed up drawing"
+            "descript" : "depth buffering"
         },
-        "cachemode" : {
-            "digest" : "",
-            "descript" : "choose cachemode: \n\t<li>vertexarray \n\t<li>displaylist \n\t<li>vertexbuffer \n\t<li>immediate"
-        },
-        "cullface" : {
-            "digest" : "",
-            "descript" : "choose cullface: \n\t<li>0=Off \n\t<li>1=Back \n\t<li>2=Front"
-        },
-        "drawgroup" : {
-            "digest" : "",
-            "descript" : "if the model has drawgroups, choose."
-        },
-        "polymode" : {
-            "digest" : "draw..",
-            "descript" : "\n\t<li>polygons - only faces\n\t<li>lines - only lines \n\t<li>points - only vertices"
-        },
-        "antialias" : {
-            "digest" : "",
-            "descript" : "use antialias"
-        },
-        "axes" : {
+        "showaxes" : {
             "digest" : "",
             "descript" : "show axes of the models origin"
-        },
-        "animate" : {
-            "digest" : "",
-            "descript" : "if model has an animation, play it"
-        },
-        "nodeaxes" : {
-            "digest" : "",
-            "descript" : "if modesl has nodes, show axes of the nodes"
-        },
-        "matrixouput" : {
-            "digest" : "",
-            "descript" : "ouputs the faces as a jitter matrix on the dumpout outlet"
-        },
-        "fileWatch" : {
-            "digest" : "",
-            "descript" : "watches the model file. when it changes, it will be autmatically reloaded"
         },
         "publish transformation" : {
             "digest" : "",

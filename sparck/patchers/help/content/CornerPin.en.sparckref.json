@@ -14,6 +14,9 @@
   	}
 ,
 	"NodeReference": {
+  	}
+, 
+	"PropertyReference" : {
         "edit" : {
             "digest" : "",
             "descript" : "sets the focus of the editor window to this node"
@@ -21,23 +24,16 @@
         "reset" : {
             "digest" : "",
             "descript" : "resets the corner pins to their default positions"
-       }
-  	}
-, 
-	"PropertyReference" : {
-        "RenderGroup" : {
+        },
+        "drawto" : {
             "digest" : "",
             "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
         },
-        "render to" : {
+        "viewport" : {
             "digest" : "",
-            "descript" : "Select the ViewPort node to directly render to."
+            "descript" : "select viewport this cornerpin is directly rendered to. Inside the viewport node you should set the mesh to 'off'"
         },
-        "defaut texture" : {
-            "digest" : "",
-            "descript" : "default texture"
-        },
-        "color" : {
+        "object color" : {
             "digest" : "",
             "descript" : "object color"
         },

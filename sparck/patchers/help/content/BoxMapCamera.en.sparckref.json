@@ -15,13 +15,12 @@
   	}
 ,
 	"NodeReference": {
-        "3DViewer" : {
+  	}
+, 
+	"PropertyReference" : {
+        "directions" : {
             "digest" : "",
-            "descript" : "show Camera icon on 3DViewer"
-        },
-        "parent" : {
-            "digest" : "",
-            "descript" : "parent transformation node"
+            "descript" : "sets which of the 6 Box-sides need to rendered"
         },
         "near" : {
             "digest" : "",
@@ -31,13 +30,10 @@
             "digest" : "",
             "descript" : "far frustum clip"
         },
-        "direction" : {
+        "parent" : {
             "digest" : "",
-            "descript" : "sets which of the 6 Box-sides need to rendered"
-        }
-  	}
-, 
-	"PropertyReference" : {
+            "descript" : "parent transformation node"
+        },
         "position" : {
             "digest" : "(local transformation)",
             "descript" : "position x y z"
@@ -49,6 +45,10 @@
         "scale" : {
             "digest" : "(local transformation)",
             "descript" : "scale x y z"
+        },
+        "gizmo" : {
+            "digest" : "",
+            "descript" : "show Camera icon on 3DViewer"
         }
     }
 ,

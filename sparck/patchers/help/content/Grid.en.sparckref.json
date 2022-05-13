@@ -13,7 +13,10 @@
   	}
 ,
 	"NodeReference": {
-        "RenderGroup" : {
+  	}
+, 
+	"PropertyReference" : {
+        "drawto" : {
             "digest" : "",
             "descript" : "set the render group. Capture/Beamer/3DViewer have an equivalent in which you can choose which group to render."
         },
@@ -21,13 +24,6 @@
             "digest" : "",
             "descript" : "parent transformation node"
         },
-        "gridsize" : {
-            "digest" : "",
-            "descript" : "grid slice size."
-        }
-  	}
-, 
-	"PropertyReference" : {
         "position" : {
             "digest" : "(local transformation)",
             "descript" : "position x y z"
@@ -39,6 +35,14 @@
         "scale" : {
             "digest" : "(local transformation)",
             "descript" : "scale x y z"
+        },
+        "gridsize" : {
+            "digest" : "",
+            "descript" : "grid slice size."
+        },
+        "depth" : {
+            "digest" : "",
+            "descript" : "enable autodepth"
         },
         "layer" : {
             "digest" : "",

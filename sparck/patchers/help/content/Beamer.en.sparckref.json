@@ -1,41 +1,40 @@
 {
 	"digest": "The virtual representation of a projector",
 	"description" : {
-        "desc1" : "A Beamer represents a real world project inside SPARCK's 3D space",
-        "desc2" : "It usually gets its transformation RIG from a calibration process"
+        "desc1" : "A Beamer represents a real world projector inside SPARCK's 3D space",
+        "desc2" : "It has a calibration mode to find the orientation and lense properties (extrinsic and intrinsic transformations) of the projector."
 	}
 ,
 	"links" : {
         "Video" : "http://tecartlab.com/tutorials"}
 ,
 	"seealso": {
-        "Calibrator" : "",
         "SceneCapture" : "",
         "TfmMirror" : "",
         "TfmLookAt" : ""
   	}
 ,
 	"NodeReference": {
-        "file" : {
-            "digest" : "",
-            "descript" : "select the transformation RIG. The file needs to be located inside the ~/_assets/_projectors folder. This file is created with the help of a Calibrator node."
-        },
-        "RIG" : {
-            "digest" : "",
-            "descript" : "opens the transformation rig"
-       }
   	}
 , 
 	"PropertyReference" : {
-        "stage" : {
+        "parent" : {
             "digest" : "",
-            "descript" : "render context. \n<li>'stage' is for normal openGL \n<li>'shady' is for rendering with shadows"
+            "descript" : "reference to parent transformation node."
         },
-        "RenderGroup" : {
+        "calibfile" : {
             "digest" : "",
-            "descript" : "set the render group to draw. Model/Canvas/MeshWarp/Grid have an equivalent in which you can choose which group to draw to."
+            "descript" : "select the transformation RIG. The file needs to be located inside the ~/_assets/_projectors folder. You need first create a calibration file by selecting 'save as..' and choosing a file name. Once a file exists and is selected the calibration button is enabled."
         },
-        "erase color" : {
+        "calibrate" : {
+            "digest" : "",
+            "descript" : "opens the calibration editor"
+       },
+        "dimensions" : {
+            "digest" : "",
+            "descript" : "sets the texture size of this render pass"
+        },
+        "bgcolor" : {
             "digest" : "",
             "descript" : "the background color"
         },
@@ -43,96 +42,84 @@
             "digest" : "",
             "descript" : "creates two renderpasses for each stereo texture"
         },
-        "E" : {
+        "blend" : {
             "digest" : "",
-            "descript" : "export the transformation matrix, projection matrix, world translation and world quaternion of the used transfom RIG."
+            "descript" : "enables blending"
         },
-        "identify beamer" : {
+        "antialias" : {
             "digest" : "",
-            "descript" : "use the RIG-color as backgroud color"
+            "descript" : "enables antialiasing"
         },
-        "set texture dimensions" : {
+        "identify" : {
             "digest" : "",
-            "descript" : "sets the texture size of this render pass"
+            "descript" : "use the calibration-color as backgroud color"
+        },
+        "gizmo" : {
+            "digest" : "",
+            "descript" : "set the render group to draw the gizmo to."
         }
     }
 , 
 	"RIGReference" : {
+        "Color" : {
+            "digest" : "",
+            "descript" : "identifies the Beamer/Calibrator in the 3DViewer"
+        },
         "Model" : {
             "digest" : "",
             "descript" : "Calibration model. Needs to be of type Wavefront OBJ."
         },
-        "Calibration" : {
-            "digest" : "",
-            "descript" : "The calibration settings. If you want to keep your calibration targets you need to save them here."
+        "use Model transformation" : {
+            "digest" : "toggle",
+            "descript" : "additional transformations on the calibration model to place it correctly to the world reference"
         },
-        "color" : {
-            "digest" : "",
-            "descript" : "identifies the Beamer/Calibrator in the 3DViewer"
+        "implement parent transformation" : {
+            "digest" : "toggle",
+            "descript" : "you can calibrate the beamer while attached to a mocap rigidbody that is referenced by the parent transformation node. If this is the case, the calibration process automatically calculates the local transformation from the actual transformation of the projectors lens and stores it here."
         },
-        "near clip" : {
-            "digest" : "[m]",
-            "descript" : "near frustum clipping"
+        "focus editor" : {
+            "digest" : "button",
+            "descript" : "opens the editor window and focuses it to this calibration"
         },
-        "far clip" : {
-            "digest" : "[m]",
-            "descript" : "far frustum clipping"
+        "gather 3DViewer lookat" : {
+            "digest" : "button",
+            "descript" : "takes the current 3DViewer point of view and applies it as a temporary solution"
         },
-        "distance" : {
-            "digest" : "[m]",
-            "descript" : "distance of projector from the origin target"
-        },
-        "polar" : {
-            "digest" : "[deg]",
-            "descript" : "polar angle. When used by the Calibrator - node, this setting can be modified with <alt>-mouse drag inside the editor window."
-        },
-        "azimuth" : {
-            "digest" : "[deg]",
-            "descript" : "azimuth angle. When used by the Calibrator - node, this setting can be modified with <alt>-mouse drag inside the editor window."
-        },
-        "tilt" : {
-            "digest" : "[deg]",
-            "descript" : "tilt angle."
+        "display.." : {
+            "digest" : "button",
+            "descript" : "opens the display window to select the display the projector is currently connected to gather the correct resolution"
         },
         "width" : {
-            "digest" : "[m]",
-            "descript" : "projection width at origin target. When used by the Calibrator - node, this setting can be modified with <ctrl>-mouse drag inside the editor window."
+            "digest" : "[px]",
+            "descript" : "projector resolution width"
         },
         "height" : {
-            "digest" : "[m]",
-            "descript" : "projection height at origin target. When used by the Calibrator - node, this setting can be modified with <ctrl>-mouse drag inside the editor window."
+            "digest" : "[px]",
+            "descript" : "projector resolution height"
+        },
+        "enable calibration" : {
+            "digest" : "toggle",
+            "descript" : "enables the calibration button. Only enable once the correct resolution is set"
+        },
+        "show/hide" : {
+            "digest" : "button",
+            "descript" : "shows / hides calibration flags"
+        },
+        "frustum" : {
+            "digest" : "",
+            "descript" : "shows the solutions frustum"
+        },
+        "transformation" : {
+            "digest" : "matrix",
+            "descript" : "shows the solutions transformation matrix"
         },
         "reset" : {
             "digest" : "",
-            "descript" : "resets autgenerated values"
+            "descript" : "resets values"
         },
-        "position" : {
-            "digest" : "Calibration / Canvas model",
-            "descript" : "position x y z"
-        },
-        "rotation" : {
-            "digest" : "Calibration / Canvas model",
-            "descript" : "rotation x y z"
-        },
-        "scale" : {
-            "digest" : "Calibration / Canvas model",
-            "descript" : "scale"
-        },
-        "position" : {
-            "digest" : "Stage offset",
-            "descript" : "position x y z"
-        },
-        "rotation" : {
-            "digest" : "Stage offset",
-            "descript" : "rotation x y z"
-        },
-        "position" : {
-            "digest" : "Stage",
-            "descript" : "position x y z"
-        },
-        "rotation" : {
-            "digest" : "Stage",
-            "descript" : "rotation x y z"
+        "save and close" : {
+            "digest" : "button",
+            "descript" : "saves the solution and closes the calibration window"
         }
     }
 ,
