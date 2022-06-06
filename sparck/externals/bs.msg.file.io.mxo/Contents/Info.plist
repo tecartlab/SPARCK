@@ -12,13 +12,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>bs.math.lookat</string>
+	<string>bs.msg.file.io</string>
 	<key>CFBundleIdentifier</key>
 	<string>.</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleLongVersionString</key>
-	<string>bs.math.lookat  - </string>
+	<string>bs.msg.file.io  - </string>
 	<key>CFBundlePackageType</key>
 	<string>iLaX</string>
 	<key>CFBundleSignature</key>

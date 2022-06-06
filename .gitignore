@@ -5,8 +5,9 @@ c_externals/sysbuild/
 *.sdf
 *.db
 exporting/WIN/
-build/WIN/build
-build/WIN/step_02_maxScriptForExport.txt
-build/OSX
+sparck/build_app/WIN/build
+sparck/build_app/WIN/step_02_maxScriptForExport.txt
+sparck/build_app/OSX
+sparck/build
 *.user
 *.suo
