@@ -8,7 +8,7 @@
         <property name="project.name" value="Lib_Sparck"/>
  		<property name="main.class.name" value="CamSolver"/>
  		<property name="jar.name" value="sparck.jar"/>
- 		<property name="export.dir" value="${PROJECT_LOC}/../../../sparck/java-classes/lib"/>
+ 		<property name="export.dir" value="${PROJECT_LOC}/../../../java-classes/lib"/>
 
  		<!--
  	 	 		==================================================================
