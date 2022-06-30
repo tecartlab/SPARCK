@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 3,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 206.0, 85.0, 984.0, 457.0 ],
+		"rect" : [ 140.0, 671.0, 801.0, 420.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -220,8 +220,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 3,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -496,8 +496,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 3,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -672,13 +672,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -787,6 +787,7 @@
 					"hint" : "",
 					"id" : "obj-17",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.outlet.maxpat",
 					"numinlets" : 1,
@@ -927,6 +928,7 @@
 					"hint" : "",
 					"id" : "obj-31",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.util.inlet.maxpat",
 					"numinlets" : 1,
@@ -964,6 +966,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-28",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bs.vpl.node.logic.maxpat",
 					"numinlets" : 4,
@@ -972,7 +975,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 0.962971999999997, 59.5, 185.555542000000003, 37.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 180.0, 29.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 180.0, 36.0 ],
 					"varname" : "vpl_nodelogic",
 					"viewvisibility" : 1
 				}
@@ -1320,99 +1323,93 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bs.vpl.node.logic.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../../vpl",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.node.logic.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../../javascript/vpl",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.node.title.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../../javascript/vpl",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bs.node.gui.button.menu.png",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.node.pbody.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../../vpl",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.node.pbody.js",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
-				"patcherrelativepath" : "../../../../javascript/vpl",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.node.logo.power.png",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/media",
-				"patcherrelativepath" : "../../../../media",
 				"type" : "PNG",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.vpl.util.inlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../../vpl",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bs.vpl.util.outlet.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
-				"patcherrelativepath" : "../../../vpl",
+				"name" : "bs.ossia.parameter.syphon.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/syphon",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.doubleBang.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bs.util.special.render.gate.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/utils",
-				"patcherrelativepath" : "../../../utils",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bs.ossia.parameter.syphon.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/ossia/syphon",
-				"patcherrelativepath" : "../../../ossia/syphon",
+				"name" : "bs.vpl.node.logic.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.logic.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ossia.parameter.mxe64",
-				"type" : "mx64"
+				"name" : "bs.vpl.node.pbody.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.pbody.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.node.title.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.util.inlet.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bs.vpl.util.outlet.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/patchers/vpl",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "jit.gl.spoutreceiver.mxe64",
 				"type" : "mx64"
 			}
 , 			{
+				"name" : "node.classes.js",
+				"bootpath" : "~/Documents/Max 8/Packages/sparck/javascript/vpl/classes",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ossia.model.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "ossia.parameter.mxe64",
 				"type" : "mx64"
 			}
  ],
@@ -1421,13 +1418,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
