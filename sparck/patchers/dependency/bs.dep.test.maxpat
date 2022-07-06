@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 2,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -57,8 +57,6 @@
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 222.0, 503.285714285714334, 440.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 289.0, 440.0, 24.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -479,13 +477,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-14", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-15", 0 ]
 				}
@@ -507,7 +498,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
+					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
