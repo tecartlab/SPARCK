@@ -1,5 +1,16 @@
 # SPARCK MK2
 
+## Disclaimer
+
+>**This Repo is NOT UNDER DEVELOPMENT anymore**
+>
+>Up to September 2022 this tool was developed here but maintenance has shifted to the following URL:
+>
+
+https://github.com/immersive-arts/SPARCK2
+
+## About
+
 SPatial Augmented Reality Contruction Kit Mark 2 Beta.
 
 Also includes QueScript.
